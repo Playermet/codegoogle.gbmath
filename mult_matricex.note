@@ -1,0 +1,58 @@
+#include <iostream>
+#include <string>
+#include <ctime>
+#include <cstdlib>
+ 
+using namespace std;
+ 
+const int M = 3, N = 8, MN = M * N;
+ 
+void genereeri(int* m)
+{
+    for(int k = 0; k < MN; k++)
+        m[k] = (rand() % 201) - 100; // -100 .. 100
+}
+ 
+void mult_classic(int a[M][N], int b[N][M], int c[M][M])
+{
+    for(int i = 0; i < M; i++) // i = ряд матрицы a
+    {
+        for(int j = 0; j < M; j++) // j = столбец матрицы b
+        {
+            int skalaar = 0;
+            for(int k = 0; k < N; k++)
+                skalaar += a[i][k] * b[k][j];
+ 
+            c[i][j] = skalaar;
+        }
+    }
+}
+ 
+void print(int m[], int elemente, int veerge, string nimetus)
+{
+    cout << "\n*** " << nimetus << " ***";
+    for(int i = 0; i < elemente; i++)
+    {
+        if(i % veerge == 0)
+            cout << endl;
+        cout << m[i] << '\t';
+    }
+    cout << endl;
+}
+ 
+int main()
+{
+    int x[M][N], y[N][M], z[M][M];
+ 
+    srand(time(NULL)); // Randomize
+    genereeri(&x[0][0]);
+    genereeri(&y[0][0]);
+ 
+    clock_t algus = clock();
+    mult_classic(x, y, z);
+    cout << float(clock() - algus) / CLOCKS_PER_SEC << " sekundit\n";
+ 
+    print(&x[0][0], M * N, N, "x");
+    print(&y[0][0], N * M, M, "y");
+    print(&z[0][0], M * M, M, "z");
+}
