@@ -1,9 +1,10 @@
-/**  \file
- \brief  ÿÿÿÿÿÿÿÿÿÿÿÿÿ
+ï»¿/**  \file
+ \brief  ÑÑÑÑÑÑÑÑÑÑÑÑÑ
 *
 *
 *
 */
+
 
 #ifndef __GBMATH_H__
     #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>

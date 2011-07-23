@@ -1,5 +1,8 @@
-﻿// matrix4x4.hpp
+﻿/**  \file
+ \brief matrix 4x4 template .
 
+*/
+ 
 #ifndef __MATRIX_4X4_HPP__
 #define __MATRIX_4X4_HPP__
 

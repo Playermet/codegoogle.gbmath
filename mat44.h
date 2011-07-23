@@ -940,7 +940,7 @@ namespace gbmath
 				glGetFloatv(GL_MODELVIEW_MATRIX, &_11);
 			}
 
-#endif // gb  OpenGL
+#endif //   OpenGL
 
 
 #ifdef _D3D9_H_  // d3d9 device methods

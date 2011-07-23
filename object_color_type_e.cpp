@@ -1,9 +1,4 @@
-﻿/** \file
-  \brief enum color on object
-*/
-
-#pragma once
-
+﻿
 #include "_gbmath.h"
 //#include "ObjectColotType_e.h"
 

@@ -1,4 +1,7 @@
-﻿// matrix3x3.hpp
+﻿/**  \file
+ \brief matrix 3x3 template .
+
+*/
 
 
 #ifndef __MATRIX_3X3_HPP__
