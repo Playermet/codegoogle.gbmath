@@ -1,5 +1,8 @@
-﻿// vector2.hpp
-
+﻿/** \file
+ \brief vector 2d template.
+ 
+*/
+ 
 #ifndef __GBMATH_VECTOR2_H__
 #define __GBMATH_VECTOR2_H__
 

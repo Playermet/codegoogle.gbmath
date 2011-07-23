@@ -1,10 +1,12 @@
-﻿// vector3.hpp
-
+﻿/** \file
+ \brief vector 3d template.
+ 
+*/
+ 
 #ifndef __GBMATH_VECTOR3_H__
 #define __GBMATH_VECTOR3_H__
 
 #pragma once
-
 
  
 
