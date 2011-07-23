@@ -1,10 +1,6 @@
 ﻿
-//#include "pch.h"
-//#include "stdafx.h"
-//#include "d3d9pch.h"
-
-
 #include "_gbmath.h"
+
 #include <stdlib.h>
 #include <time.h>
 

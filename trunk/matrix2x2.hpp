@@ -1,5 +1,8 @@
-﻿// matrix2x2.hpp
+﻿/**  \file
+ \brief matrix 2x2 template .
 
+*/
+ 
 
 #ifndef __MATRIX_2X2_HPP__
 #define __MATRIX_2X2_HPP__

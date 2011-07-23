@@ -1,5 +1,5 @@
-/**  \file
- \brief ÿÿÿÿÿÿÿÿ
+ï»¿/**  \file
+ \brief ÑÑÑÑÑÑÑÑ
 
 
  */
@@ -7,7 +7,7 @@
 #pragma once
 
 #ifndef __GBMATH_H__
-#error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
+	#error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
 

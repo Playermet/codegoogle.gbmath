@@ -1,5 +1,4 @@
 ﻿
-
 #include "_gbmath.h"
 
 

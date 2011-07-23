@@ -2,6 +2,10 @@
 #include "_gbmath.h"
 //#include "color3.h"
 
+namespace gbmath
+{
+
+
 /*
 inline Color3f& Color3f::operator = (const uicolor32_t col)
 {
@@ -12,3 +16,6 @@ inline Color3f& Color3f::operator = (const uicolor32_t col)
 };
 
 */
+
+
+}
