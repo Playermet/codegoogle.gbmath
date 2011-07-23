@@ -1,24 +1,22 @@
-﻿/**  \file 
+﻿/**  \file
  \brief яяяяяяяя
- 
- 
+
+
 */
 
 #pragma once
 
-#ifndef __GB_FMATH_H__
-    #error НЕ ВКЛЮЧАЙТЕ ЭТОТ ФАЙЛ. ВКЛЮЧАЙТЕ:   #include <gb/fmath/math.h>  
+#ifndef __GBMATH_H__
+    #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
 
-namespace gb 
+ 
+namespace gbmath
 {
 
-	namespace fmath
-	{
-	
-	
-	
+
+
 
 
    //! \brief Сборка векторов вида.
@@ -29,13 +27,13 @@ namespace gb
 	 vec3   eyeUp;        ///<   Верх  наблюдателя.
 
 	 //! \brief  Получить вектор направления наблюдения.
-	 vec3 direction() const 
-	 { 
+	 vec3 direction() const
+	 {
 		 vec3 res(eyeAt-eyePosition);
 		 res.normalize();
 		 return res;
 	 }
-   
+
 	 void decomposeInverseView(const mat44& mInvView)
 	 {
 		 assert(false);
@@ -47,17 +45,15 @@ namespace gb
 
 
      // up  = *( (vec3*)&minv._21);
-	 
+
 	 }
 
    };
-	
-	
-	
-	
-	
-	
-	
-	
-	}
+
+
+
+
+
+ 
 }
+

@@ -6,28 +6,26 @@
 
 #pragma once
 
-#ifndef __GB_FMATH_H__
-    #error НЕ ВКЛЮЧАЙТЕ ЭТОТ ФАЙЛ. ВКЛЮЧАЙТЕ:   #include <gb/fmath/math.h>  
+#ifndef __GBMATH_H__
+    #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
 
-namespace gb 
+ 
+namespace gbmath
 {
 
-	namespace fmath
-	{
-	
-	
-	
 
 
-		/** \brief Базовый 4d-вектор. Поправить операторы по эпислону   */		
+
+
+		/** \brief Базовый 4d-вектор. Поправить операторы по эпислону   */
 		struct vec4  {
 
-		    union 
+		    union
 			{
-			
-				struct 
+
+				struct
 				{
 				   float x, y, z, w;
 				};
@@ -47,13 +45,13 @@ namespace gb
 			inline vec4(float _x, float _y, float _z, float _w)   { x=_x;   y=_y; z=_z; w=_w;  }
 			inline vec4(int   _x, int   _y, int   _z, int   _w)   { x=(float)_x;   y=(float)_y;  z=(float)_z; w=(float)_w;}
 
-			//! \brief Присваивание из float-массива 
+			//! \brief Присваивание из float-массива
 			inline void operator = (const float* pf) {x=pf[0]; y=pf[1]; z=pf[2]; w=pf[3]; }
- 
-					 
+
+
 			inline bool  operator == (const vec4 &v) const {	return (x == v.x && y == v.y && z == v.z && w == v.w); }
 			inline bool  operator != (const vec4 &v) const {	return (x != v.x || y != v.y || z != v.z || w != v.w); }
- 
+
 			inline vec4  operator + () const   { 	return *this; }
 			inline vec4  operator - () const { vec4 res;	res.x = -x;	res.y = -y;	res.z = -z;	res.w = -w;	return res; }
 
@@ -70,7 +68,7 @@ namespace gb
 
 			inline operator  const float*() const  { return &x; }
 			inline operator        float*()        { return &x; }
- 
+
 
 
 			inline float operator [] (unsigned int index) const
@@ -80,7 +78,7 @@ namespace gb
 				return pf[index];
 			}
 
-			inline  float& operator [] (unsigned int index) 
+			inline  float& operator [] (unsigned int index)
 			{
 				assert(index<4 && "invalid index");
 				float* pf = &x;
@@ -94,16 +92,16 @@ namespace gb
 			inline operator D3DXVECTOR4*() { return (D3DXVECTOR4*)&x; }
 			inline operator const D3DXVECTOR4*() const { return (D3DXVECTOR4*)&x; }
 			inline operator D3DXVECTOR4() const  {  return D3DXVECTOR4(x,y,z,w); }
-		   	inline void operator = (const D3DXVECTOR4& v) {	x=v.x; y=v.y; z=v.z; w=v.w; }	
-#endif					
-			
+		   	inline void operator = (const D3DXVECTOR4& v) {	x=v.x; y=v.y; z=v.z; w=v.w; }
+#endif
+
 			//! \brief Обнулить все компоненты
 		    inline void setzero() {x=y=z=w=0.0f; }
 			//! проверить равны ли все компоненты нулю
 			inline bool empty() const { return ( (x==0.0f) && (y==0.0f) && (z==0.0f) && (w==0.0f) ); }
 
 			inline vec4& set    (float _x, float _y, float _z, float _w) { x=_x; y=_y; z=_z; w=_w; return *this; }
- 
+
 			//! \brief  Все ли компоненты нулевые по эпсилону.
 			inline bool isZero(float epsilon) const
 			{
@@ -118,7 +116,7 @@ namespace gb
 			//! \brief   Вернуть скалярное произведение с вектором v
 			inline float   dot (const vec4& v) const { return x*v.x + y*v.y + z*v.z + w*v.w; }
 
-			
+
 #pragma message ("KS777: MATH::VEC4 >> NEED CHECK CROSS METHOD !!!"  __FILE__)
 			//! \brief Получить векторное (перекрестное)  произведение с вектором v.
 			inline vec4  cross ( const vec4 & v) const
@@ -133,7 +131,7 @@ namespace gb
 
 
 			// НЕПРАВИЛЬНО !!!!
-			void cross( const vec4& U, const vec4& V, const vec4& W )   
+			void cross( const vec4& U, const vec4& V, const vec4& W )
 			{
 				assert(false && "bad code !");
 
@@ -156,7 +154,7 @@ namespace gb
 			//! \brief  Инвертировать.
 			inline vec4&   invert() {  x=-x; y=-y; z=-z; w=-w; return *this; };
 			//! \brief  Вернуть инвертированый.
-			inline vec4    inverted() const 
+			inline vec4    inverted() const
 			{
 				vec4 res = *this;
 				res.invert();
@@ -164,21 +162,21 @@ namespace gb
 			}
 
 			//! \brief  Вернуть вектор по линейной интерполяции между this и v  по коэффициенту k
-			inline vec4    lerp(const vec4& v, const float k) 
+			inline vec4    lerp(const vec4& v, const float k)
 			{
 				vec4 r;
 				r.x = x + (v.x - x) * k;
 				r.y = y + (v.y - y) * k;
 				r.z = z + (v.z - z) * k;
 				r.w = w + (v.w - w) * k;
-				return r;			
+				return r;
 			}
 
 
 
 			//! \brief  Получить минимальную компоненту.
-			inline float minval() const 
-			{ 	  
+			inline float minval() const
+			{
 				float res = x;
 				if(y<res) res=y;
 				if(z<res) res=z;
@@ -188,45 +186,45 @@ namespace gb
 
 			//! \brief Получить максимальную компоненту.
 			inline float maxval() const
-			{   
+			{
 				float res = x;
 				if(res<y) res=y;
 				if(res<z) res=z;
 				if(res<w) res=w;
 				return res;
-			}	
- 
+			}
+
 		/** \brief  вычисл. минимальной абсолютной компоненты.  */
-		inline float minAbsVal() const 
-		{ 
-			float ax=abs(x); 
-			float ay=abs(y); 
-			float az=abs(z); 
+		inline float minAbsVal() const
+		{
+			float ax=abs(x);
+			float ay=abs(y);
+			float az=abs(z);
 			float aw=abs(w);
-				  float res=ax;    
-				  if(ay<res) res=ay; 
-				  if(az<res) res=az; 
-				  if(aw<res) res=aw; 
-				  return res; 
+				  float res=ax;
+				  if(ay<res) res=ay;
+				  if(az<res) res=az;
+				  if(aw<res) res=aw;
+				  return res;
 		}
 
 		/** \brief  вычисл. максимальной абсолютной компоненты.  */
-		inline float maxAbsVal() const 
-		{ 
-			float ax=abs(x); 
-			float ay=abs(y); 
-			float az=abs(z); 
+		inline float maxAbsVal() const
+		{
+			float ax=abs(x);
+			float ay=abs(y);
+			float az=abs(z);
 			float aw=abs(w);
 				  float res=ax;
-				  if(ay>res) res=ay; 
-				  if(az>res) res=az;	 
-				  if(aw>res) res=aw;	
-				  return res;	
+				  if(ay>res) res=ay;
+				  if(az>res) res=az;
+				  if(aw>res) res=aw;
+				  return res;
 		}
 
 
 		//! \brief Выполнить отсечение значений в диапазоне между vmin и vmax
-		inline void clump(const vec4& vmin, const vec4& vmax) 
+		inline void clump(const vec4& vmin, const vec4& vmax)
 		{
 			if( x < vmin.x) x=vmin.x;  if(x > vmax.x) x=vmax.x;
 			if( y < vmin.y) y=vmin.y;  if(y > vmax.y) y=vmax.y;
@@ -236,19 +234,19 @@ namespace gb
 
 
 
-	//void toCstr(char* buf) const 
+	//void toCstr(char* buf) const
 	//{
 	//	*buf = '\0';
 	//    sprintf(buf, "%f %f %f %f", x, y, z, w );
 	//}
 
-	//bool fromCstr(const char* s) 
+	//bool fromCstr(const char* s)
 	//{
 	//	const int NS = sscanf(s, "%f%f%f%f", &x, &y, &z, &w);
 	//	if(4!=NS)  return false;
 	//	return true;
 	//}
- 
+
 
 			friend std::ostream &operator << (std::ostream &stream, const vec4& v)
 			{
@@ -257,7 +255,7 @@ namespace gb
 			}
 
 
- 			operator std::string() const 
+ 			operator std::string() const
 			{
 				std::ostringstream ss;
 				ss << x << " " << y << " " << z << " " << w;
@@ -282,7 +280,7 @@ namespace gb
 				ss >> v.w;
 				return ss;
 			}
- 
+
 			friend std::istream &operator >> (std::istream &stream, vec4& v)
 			{
 				stream >> v.x;
@@ -291,12 +289,12 @@ namespace gb
 				stream >> v.w;
 				return stream;
 			}
-			
 
 
-		}; 
+
+		};
 		// end vec4
+
+
  
-	
-	}
 }

@@ -10,18 +10,14 @@
 
 
 
-#ifndef __GB_FMATH_H__
-#error НЕ ВКЛЮЧАЙТЕ ЭТОТ ФАЙЛ. ВКЛЮЧАЙТЕ:   #include <gb/fmath/math.h>  
+#ifndef __GBMATH_H__
+#error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
 
+ 
 
-
-
-namespace gb
-{
-
-	namespace fmath
+	namespace gbmath
 	{
 
 
@@ -43,165 +39,165 @@ namespace gb
 				b = c.b;
 			}
 
-			inline color3<T>( T _r , T _g , T _b ) 
+			inline color3<T>( T _r , T _g , T _b )
 			{
-				r = _r; 
-				g = _g; 
-				b = _b; 
-			} 
- 
+				r = _r;
+				g = _g;
+				b = _b;
+			}
+
 			inline  operator T*()                { return &r; }
 			inline  operator const T*() const    { return &r; }
 
 
 
-			inline bool operator == (const color3<T>& c) const 
-			{ 
-				return (r==c.r) && (g==c.g) && (b==c.b) ;  
+			inline bool operator == (const color3<T>& c) const
+			{
+				return (r==c.r) && (g==c.g) && (b==c.b) ;
 			}
 
-			inline bool operator != (const color3<T>& c) const 
-			{ 
-				return (r!=c.r) && (g!=c.g) && (b!=c.b) ;  
+			inline bool operator != (const color3<T>& c) const
+			{
+				return (r!=c.r) && (g!=c.g) && (b!=c.b) ;
 			}
 
-			inline color3<T>& operator *= (const T s)    
-			{ 
-				r*=s; 
-				b*=s; 
-				g*=s; 
-				return *this; 
+			inline color3<T>& operator *= (const T s)
+			{
+				r*=s;
+				b*=s;
+				g*=s;
+				return *this;
 			}
 
-			inline color3<T>& operator *= (const color3<T>& c) 
-			{ 
-				r *= c.r; 
-				b *= c.b; 
-				g *= c.g; 
-				return *this; 
+			inline color3<T>& operator *= (const color3<T>& c)
+			{
+				r *= c.r;
+				b *= c.b;
+				g *= c.g;
+				return *this;
 			}
 
-			inline color3<T>& operator /= (const T s)    
-			{ 
-				r /= s; 
-				b /= s; 
-				g /= s; 
-				return *this; 
+			inline color3<T>& operator /= (const T s)
+			{
+				r /= s;
+				b /= s;
+				g /= s;
+				return *this;
 			}
 
-			inline color3<T>& operator /= (const color3<T>& c) 
-			{ 
-				r /= c.r; 
-				b /= c.b; 
-				g /= c.g; 
-				return *this; 
+			inline color3<T>& operator /= (const color3<T>& c)
+			{
+				r /= c.r;
+				b /= c.b;
+				g /= c.g;
+				return *this;
 			}
 
-			inline color3<T>& operator += (const T s)    
-			{ 
-				r += s; 
-				b += s; 
-				g += s; 
-				return *this; 
+			inline color3<T>& operator += (const T s)
+			{
+				r += s;
+				b += s;
+				g += s;
+				return *this;
 			}
 
-			inline color3<T>& operator += (const color3<T>& c) 
-			{ 
-				r += c.r; 
-				b += c.b; 
-				g += c.g; 
-				return *this; 
+			inline color3<T>& operator += (const color3<T>& c)
+			{
+				r += c.r;
+				b += c.b;
+				g += c.g;
+				return *this;
 			}
 
-			inline color3<T>& operator -= (const T s)    
-			{ 
-				r -= s; 
-				b -= s; 
-				g -= s; 
-				return *this; 
+			inline color3<T>& operator -= (const T s)
+			{
+				r -= s;
+				b -= s;
+				g -= s;
+				return *this;
 			}
 
-			inline color3<T>& operator -= (const color3<T>& c) 
-			{ 
-				r -= c.r; 
-				b -= c.b; 
-				g -= c.g; 
-				return *this; 
+			inline color3<T>& operator -= (const color3<T>& c)
+			{
+				r -= c.r;
+				b -= c.b;
+				g -= c.g;
+				return *this;
 			}
 
-			inline color3<T>  operator + (const color3<T>& c) const  
-			{ 
+			inline color3<T>  operator + (const color3<T>& c) const
+			{
 				color3<T> res;
-				res.r = r + c.r; 
-				res.g = g + c.g; 
-				res.b = b + c.b;  
-				return res;   
+				res.r = r + c.r;
+				res.g = g + c.g;
+				res.b = b + c.b;
+				return res;
 			}
 
-			inline color3<T>  operator + (const T f) const  
-			{ 
+			inline color3<T>  operator + (const T f) const
+			{
 				color3<T> res;
-				res.r = r + f; 
-				res.g = g + f; 
-				res.b = b + f;  
-				return res;   
+				res.r = r + f;
+				res.g = g + f;
+				res.b = b + f;
+				return res;
 			}
 
 
-			inline color3<T>   operator - (const color3<T>& c) const  
-			{ 
+			inline color3<T>   operator - (const color3<T>& c) const
+			{
 				color3f res;
-				res.r = r - c.r; 
-				res.g = g - c.g; 
-				res.b = b - c.b;  
-				return res;   
+				res.r = r - c.r;
+				res.g = g - c.g;
+				res.b = b - c.b;
+				return res;
 			}
 
-			inline color3<T>   operator - (const T f) const  
-			{ 
+			inline color3<T>   operator - (const T f) const
+			{
 				color3<T> res;
-				res.r = r - f; 
-				res.g = g - f; 
-				res.b = b - f;  
-				return res;   
+				res.r = r - f;
+				res.g = g - f;
+				res.b = b - f;
+				return res;
 			}
 
 
 			inline color3<T>   operator / (const color3<T>& c) const
-			{ 
+			{
 				color3<T> res;
-				res.r = r / c.r; 
-				res.g = g / c.g; 
-				res.b = b / c.b;  
-				return res;   
+				res.r = r / c.r;
+				res.g = g / c.g;
+				res.b = b / c.b;
+				return res;
 			}
 
-			inline color3<T>   operator / (const T f) const  
-			{ 
+			inline color3<T>   operator / (const T f) const
+			{
 				color3<T> res;
-				res.r = r / f; 
-				res.g = g / f; 
-				res.b = b / f;  
-				return res;   
+				res.r = r / f;
+				res.g = g / f;
+				res.b = b / f;
+				return res;
 			}
 
 
-			color3<T>   operator * (const color3<T>& c) const  
-			{ 
+			color3<T>   operator * (const color3<T>& c) const
+			{
 				color3<T> res;
-				res.r = r * c.r; 
-				res.g = g * c.g; 
-				res.b = b * c.b;  
-				return res;   
+				res.r = r * c.r;
+				res.g = g * c.g;
+				res.b = b * c.b;
+				return res;
 			}
 
-			color3<T>   operator * (const T f) const  
-			{ 
+			color3<T>   operator * (const T f) const
+			{
 				color3<T> res;
-				res.r = r * f; 
-				res.g = g * f; 
-				res.b = b * f;  
-				return res;   
+				res.r = r * f;
+				res.g = g * f;
+				res.b = b * f;
+				return res;
 			}
 
 
@@ -214,21 +210,21 @@ namespace gb
 
 
 			//! \brief  проверка  каждый компонент ноль : XXX ????? need replace : is_zero
-			inline bool empty() const 
-			{ 
+			inline bool empty() const
+			{
 				const T _e = T();
-				return (r == _e) && (g == _e) && (b == _e) && (a == _e); 
+				return (r == _e) && (g == _e) && (b == _e) && (a == _e);
 			}
 
 			//! \brief  занулить каждый компонент. need:  set_zero
-			inline void setzero() 
-			{ 
-				r = g = b = a = T(); 
+			inline void setzero()
+			{
+				r = g = b = a = T();
 			}
 
 
 
-			//! \brief    линейная интерполяция между this и color по коэф. k. 
+			//! \brief    линейная интерполяция между this и color по коэф. k.
 			inline color3<T> lerp(const color3<T>& c, const T k) const
 			{
 				color3<T> res;
@@ -240,27 +236,27 @@ namespace gb
 			}
 
 
-			//! \brief Масштабирование цвета. Изменение яркости. 
-			inline color3<T>& modulate(const color3<T>& color) 
+			//! \brief Масштабирование цвета. Изменение яркости.
+			inline color3<T>& modulate(const color3<T>& color)
 			{
 				r *= color.r;
-				g *= color.g; 
-				b *= color.b; 
+				g *= color.g;
+				b *= color.b;
 				return *this;
 			}
 
-			//! \brief вернутб масштабирование цвета. Изменение яркости. 
+			//! \brief вернутб масштабирование цвета. Изменение яркости.
 			inline color3<T> modulated(const color3<T>& c) const
 			{
 				color3<T> res;
 				res.r = r * c.r;
-				res.g = g * c.g; 
-				res.b = b * c.b; 
+				res.g = g * c.g;
+				res.b = b * c.b;
 				return *this;
 			}
 
-			//! \brief   Негатив. 
-			inline color3<T>& negative() 
+			//! \brief   Негатив.
+			inline color3<T>& negative()
 			{
 				r = 1 - r;
 				g = 1 - g;
@@ -268,8 +264,8 @@ namespace gb
 				return *this;
 			}
 
-			//! \brief   Негатив. 
-			inline color3<T> negatived() const 
+			//! \brief   Негатив.
+			inline color3<T> negatived() const
 			{
 				color3<T> res (*this);
 				res.negative();
@@ -277,17 +273,17 @@ namespace gb
 			}
 
 
-			//! \brief Отсечение значений в пределах 0.0 ... 1.0  
-			inline color3<T>& saturate() 
+			//! \brief Отсечение значений в пределах 0.0 ... 1.0
+			inline color3<T>& saturate()
 			{
 				if(r>1) r=1;   if(r<0) r=0;
-				if(g>1) g=1;   if(g<0) g=0; 
+				if(g>1) g=1;   if(g<0) g=0;
 				if(b>1) b=1;   if(b<0) b=0;
 				return *this;
 			}
 
-			//! \brief Отсечение значений в пределах 0.0 ... 1.0  
-			inline color3<T> saturated() const 
+			//! \brief Отсечение значений в пределах 0.0 ... 1.0
+			inline color3<T> saturated() const
 			{
 				color3<T> res (*this);
 				res.saturate();
@@ -295,7 +291,7 @@ namespace gb
 			}
 
 			//! \brief Установить как средний цвет между this и col .
-			inline color3<T>& average(const color3<T>& c) 
+			inline color3<T>& average(const color3<T>& c)
 			{
 				const T _two = (T)2;
 				r = (r + c.r) / _two;
@@ -312,10 +308,10 @@ namespace gb
 				return res;
 			}
 
- 
 
-			//! \brief изменить контраст 
-			inline color3<T>& adjust_contrast(const T k) 
+
+			//! \brief изменить контраст
+			inline color3<T>& adjust_contrast(const T k)
 			{
 				const T _half = (T)0.5;
 				r =  _half + k * ( r - _half);
@@ -325,8 +321,8 @@ namespace gb
 			}
 
 
-			//! \brief получить цвет с изменённым контрастом 
-			inline color3<T> adjusted_contrast(const T k) const 
+			//! \brief получить цвет с изменённым контрастом
+			inline color3<T> adjusted_contrast(const T k) const
 			{
 				color3<T> res(*this);
 				res.adjust_contrast(k);
@@ -335,8 +331,8 @@ namespace gb
 
 
 
-			//! \brief изменить насыщенность 
-			inline color3<T>& adjust_saturation( const T k )  
+			//! \brief изменить насыщенность
+			inline color3<T>& adjust_saturation( const T k )
 			{
 				const T grey  =  r * (T)0.2125 +  g * (T)0.7154 +  b * (T)0.0721 ;
 				r  = grey + k * ( k - grey );
@@ -345,25 +341,25 @@ namespace gb
 				return *this;
 			}
 
-			inline color3<T> adjusted_saturation( const T k ) const 
+			inline color3<T> adjusted_saturation( const T k ) const
 			{
 				color3<T> res (*this);
 				res.adjust_saturation( k );
 				return res;
 			}
 
-			//! \brief Установить белый цвет  
-			inline color3<T>& set_white() 
+			//! \brief Установить белый цвет
+			inline color3<T>& set_white()
 			{
-				r = g = b = (T)1;  
-				return *this; 
+				r = g = b = (T)1;
+				return *this;
 			}
 
-			//! \brief Установить чёрный цвет  
-			inline color3<T>& set_black() 
+			//! \brief Установить чёрный цвет
+			inline color3<T>& set_black()
 			{
-				r = g = b = (T)0; 
-				return *this; 
+				r = g = b = (T)0;
+				return *this;
 			}
 
 
@@ -395,9 +391,9 @@ namespace gb
 
 			friend std::stringstream &operator >> (std::stringstream &stream, color3<T>& c) throw (std::invalid_argument)
 			{
-				stream >> c.r; 
-				stream >> c.g; 
-				stream >> c.b; 
+				stream >> c.r;
+				stream >> c.g;
+				stream >> c.b;
 
 				if(stream.fail())
 				{
@@ -412,10 +408,10 @@ namespace gb
 			#if defined(_MSC_VER)
 			#pragma warning( pop )
 			#endif
- 
+
 
 		};
 
 
-	}
+ 
 }

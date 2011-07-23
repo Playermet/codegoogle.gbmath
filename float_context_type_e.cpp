@@ -1,14 +1,13 @@
 ﻿
-#include "fmath.h"
+#include "_gbmath.h"
 
 
-//using namespace gb::fmath;
+//using namespace fmath;
 
-namespace gb
+
+namespace gbmath
 {
-namespace fmath
-{
- 
+
 
 	static void __str_touper(std::string& str)
 	{
@@ -38,7 +37,7 @@ std::string  float_context_type_e::tostr(const float_context_type_e::e val)
 	 //case XXXXXX: {} break;
 
 
-	 default: 
+	 default:
 		 {
 
 		 }
@@ -49,7 +48,7 @@ std::string  float_context_type_e::tostr(const float_context_type_e::e val)
 }
 
 //=============================================================
-bool float_context_type_e::fromstr(float_context_type_e::e& valOut, 
+bool float_context_type_e::fromstr(float_context_type_e::e& valOut,
 								   const char* strarg)
 {
 std::string str = strarg;
@@ -60,33 +59,33 @@ std::string str = strarg;
    {
 	   valOut =  XXXXXX;
 	   return true;
-   } 
+   }
    ******************************/
- 
+
 
    if( ("TIME" == str) || ("TIME0_X" == str) )
    {
 	   valOut =  TIME;
 	   return true;
-   } 
+   }
 
    if( ("COSTIME" == str) || ("COSTIME0_1" == str))
    {
 	   valOut =  COSTIME;
 	   return true;
-   } 
+   }
 
    if( ("SINTIME" == str) || ("SINTIME0_1" == str))
    {
 	   valOut =  SINTIME;
 	   return true;
-   } 
+   }
 
    if( ("TANTIME" == str) || ("TANTIME0_1" == str))
    {
 	   valOut =  TANTIME;
 	   return true;
-   } 
+   }
 
    /**************
    if("XXXXX" == str)
@@ -95,7 +94,7 @@ std::string str = strarg;
 	   return true;
    } ****************/
 
- 
+
 
 
 		  //TIMESPEED,
@@ -118,59 +117,59 @@ std::string str = strarg;
 	 valOut = TIMEELAPSED;
      return true;
    }
- 
+
    if("VIEWPORTWIDTH" == str)
    {
 	   valOut =  VIEWPORTWIDTH;
 	   return true;
-   } 
+   }
 
    if("VIEWPORTHEIGHT" == str)
    {
 	   valOut =  VIEWPORTHEIGHT;
 	   return true;
-   } 
+   }
 
 
    if("VIEWPORTWIDTHINVERSE" == str)
    {
 	   valOut =  VIEWPORTWIDTHINVERSE;
 	   return true;
-   } 
+   }
 
    if("VIEWPORTHEIGHTINVERSE" == str)
    {
 	   valOut =  VIEWPORTHEIGHTINVERSE;
 	   return true;
-   } 
- 
+   }
+
 
    if("FOV" == str)
    {
 	   valOut =  FOV;
 	   return true;
-   } 
+   }
 
    if( ("FARCLIPPLANE" == str) || ("FAR" == str))
    {
 	   valOut =  FARCLIPPLANE;
 	   return true;
-   }  
+   }
 
    if( ("NEARCLIPPLANE" == str) || ("NEAR" == str))
    {
 	   valOut =  NEARCLIPPLANE;
 	   return true;
-   } 
+   }
 
 
    if( ("ASPECT" == str) || ("ASP" == str) )
    {
 	   valOut =  ASPECT;
 	   return true;
-   } 
- 
- 
+   }
+
+
 
 			  /***********************************
 		  RANDOMFRACTION1PERPASS,
@@ -183,7 +182,7 @@ std::string str = strarg;
 		  RANDOMFRACTION3PEREFFECT,
 		  RANDOMFRACTION4PEREFFECT,
 			 ****************************************/
- 
+
 		  //PASSINDEX,
 
 
@@ -206,49 +205,49 @@ std::string str = strarg;
    }
 
    //-----------------------------------------
-  
+
    if("MOUSECOORDINATEX" == str)
    {
 	 valOut = MOUSECOORDINATEX;
      return true;
    }
 
- 
+
    if("MOUSECOORDINATEY" == str)
    {
 	 valOut = MOUSECOORDINATEY;
      return true;
    }
 
- 
+
    if("MOUSECOORDINATEXNDC" == str)
    {
 	 valOut = MOUSECOORDINATEXNDC;
      return true;
-   }			 
+   }
 
-  
+
    if("MOUSECOORDINATEYNDC" == str)
    {
 	 valOut = MOUSECOORDINATEYNDC;
      return true;
    }
 
-  
+
    if("MODELBOUNDINGSPHERERADIUS" == str)
    {
 	 valOut = MODELBOUNDINGSPHERERADIUS;
      return true;
    }
 
-  
+
  //  if("SPECULARPOWER" == str)
  //  {
 //	 valOut = SPECULARPOWER;
  //    return true;
  //  }
 
- 
+
 
 		//  ROTATEZ,
 
@@ -259,16 +258,15 @@ std::string str = strarg;
 		  //ALPHA,
 		  //LIGTHMAPINTENSITY,
 		  //ANIMATESPEED,
- 
 
- 
 
- 
+
+
+
 
   return false;
 }
- 
- 
-}
-}
 
+
+
+}

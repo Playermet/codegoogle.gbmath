@@ -1,9 +1,8 @@
 
+#pragma once
 
-namespace gb
+namespace gbmath
 {
-	namespace color
-	{
 	
 	template <typename T>
 	class bitmap {
@@ -61,9 +60,7 @@ namespace gb
 	
 	
 	
-	}
-
-
 }
 
-template <>
+
+

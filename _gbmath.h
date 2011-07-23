@@ -1,5 +1,5 @@
-﻿/** \file fmath.h
- \brief Для включения всех fmath-либ.
+﻿/** \file
+* \brief MAIN HEADER.
 *
 *
 *
@@ -11,14 +11,12 @@
 \todo  удалить собственные #ifdef XXXXXX
 \todo  Поправить макрозащиту на типы RECT и POINT
  
- 
-
 *
 *
 */
 
-  #pragma once
-#define __GB_FMATH_H__
+#pragma once
+#define __GBMATH_H__
  
 #define _USE_MATH_DEFINES
 
@@ -52,15 +50,16 @@
 	#pragma  warning(disable : 4995 4996 4290)
 #endif
 
-// base
-typedef           char     int8_t;
-typedef  unsigned char    uint8_t;
-
-typedef  unsigned char    byte_t;
 
 
+#include "config.h"
 
-//#include "../base/Types.h"
+namespace gbmath
+{
+	// base types
+	typedef  unsigned char    byte_t;
+}
+
 #include "point.h"
 #include "rectangle.h"
 
@@ -92,15 +91,13 @@ typedef  unsigned char    byte_t;
 #include "vector4.hpp"
 
 // new matrix template
-/*********************************
 #include "matrix.hpp"
 #include "matrix_quad.hpp"
 #include "matrix2x2.hpp"
 #include "matrix3x3.hpp"
 #include "matrix4x4.hpp"
-*********************************/
 
-//#include "matrices.h"
+
 
 #include "mat22.h"
 #include "mat33.h"

@@ -6,25 +6,20 @@
 
 #pragma once
 
-#ifndef __GB_FMATH_H__
-    #error НЕ ВКЛЮЧАЙТЕ ЭТОТ ФАЙЛ. ВКЛЮЧАЙТЕ:   #include <gb/fmath/math.h>  
+#ifndef __GBMATH_H__
+    #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
 
-namespace gb 
+ 
+namespace gbmath
 {
-
-	namespace fmath
-	{
-	
-	
-	
 
  
 		//! \brief Матрица 2x2
-		struct mat22 
+		struct mat22
 		{
-			union 
+			union
 			{
 				struct {
 
@@ -44,12 +39,12 @@ namespace gb
 
 			inline operator  const float*() const  { return &_11; };
 			inline operator        float*()        { return &_11; };
-			
+
 
 			inline mat22&  operator =  ( const mat22& m)
 			{
-				floats [0][0] = m.floats [0][0]; 
-				floats [0][1] = m.floats [0][1]; 
+				floats [0][0] = m.floats [0][0];
+				floats [0][1] = m.floats [0][1];
 				floats [1][0] = m.floats [1][0];
 				floats [1][1] = m.floats [1][1];
 				return *this;
@@ -70,7 +65,7 @@ namespace gb
 	        /**	 \brief Обращение знака всех элементов матрицы	*/
 			inline mat22 operator - () const { mat22 r=*this; r._11=-r._11; r._12=-r._12; r._21=-r._21; r._22=-r._22; return r; };
 
- 
+
 			/** \brief  Покомпонентное сложение   (this = this + m) */
 			inline mat22&  operator += ( const mat22& m)
 			{
@@ -101,7 +96,7 @@ namespace gb
 				return *this;
 			};
 
-			/** \brief  Покомпонентное умножение (this = this * m) */            
+			/** \brief  Покомпонентное умножение (this = this * m) */
 			inline mat22&  operator *= ( float f)
 			{
 				floats [0][0] *= f;
@@ -163,12 +158,12 @@ namespace gb
 
 			inline vec2  operator * ( const vec2& v ) const
 			{
-				vec2 res; 
+				vec2 res;
 				res.x =  floats [0][0]*v.x + floats [0][1]*v.y ;
 				res.y =  floats [1][0]*v.x + floats [1][1]*v.y ;
 				return res;
 			}
-			
+
 			inline vec2 row(unsigned int index)
 			{
 			   assert(index<2 && "invalid index");
@@ -177,32 +172,32 @@ namespace gb
 			   {
 			    case 0: { res.x=_11; res.y=_12; } break;
 			    case 1: { res.x=_21; res.y=_22; } break;
-				default: {}				
+				default: {}
 			   }
 			   return res;
 			}
-			
+
 			inline vec2 column(unsigned int index)
 			{
-			   assert(index<2 && "invalid index");			
+			   assert(index<2 && "invalid index");
 			   vec2 res;
 			   switch(index)
 			   {
 			    case 0: { res.x=_11; res.y=_21; } break;
 			    case 1: { res.x=_12; res.y=_22; } break;
-				default: {}				
-			   }			   
+				default: {}
+			   }
 			   return res;
-			}			
-			
+			}
+
 
 			inline bool empty() const { return _11==0.0f && _12==0.0f && _21==0.0f && _22==0.0f; }
 			inline mat22&  setzero()     { _11=_12=_21=_22=0.0f; return *this; }
 			inline mat22&  setIdentity() {	_11=1.0f; _12=0.0f;	_21=0.0f; _22=1.0f;	return *this; }
 			inline mat22&  transpone()   {  register float f=_12; _12=_21; _21=f;  return *this; }
-			inline bool isIdentity() const	   
+			inline bool isIdentity() const
 			{
-			    return floats[0][0] == 1.0f && floats[0][1] == 0.0f &&  
+			    return floats[0][0] == 1.0f && floats[0][1] == 0.0f &&
 					   floats[1][0] == 0.0f && floats[1][1] == 1.0f;
 			}
 
@@ -210,7 +205,7 @@ namespace gb
 
 			inline mat22&  invert ()
 			{
-			   float det =   determinant();  
+			   float det =   determinant();
 			   mat22 m;
 				 m.floats [0][0] =  floats [1][1] / det;
 				 m.floats [0][1] = -floats [0][1] / det;
@@ -252,26 +247,22 @@ namespace gb
 
 			inline mat22&  setMirrorX () { setIdentity();  floats [0][0] = -1.0; return *this; };
 			inline mat22&  setMirrorY () { setIdentity();  floats [1][1] = -1.0; return *this; };
+
+
+		};
+
+
+
+
+
+
+		static const mat22     MATRIX22_IDENTITY =  mat22
+		(
+		  1.0f,  0.0f,
+		  0.0f,  1.0f
+		);
+
+
+
  
-
-		}; 
-
-
-
-	
-
-
-static const mat22     MATRIX22_IDENTITY =  mat22 
-(
-  1.0f,  0.0f,
-  0.0f,  1.0f
-);
-	
-	
-	
-	
-	
-	
-	
-	}
 }

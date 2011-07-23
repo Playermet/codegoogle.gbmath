@@ -4,15 +4,19 @@
  */
 
 #pragma once
-#include <string>
 
 
-namespace gb
+#ifndef __GBMATH_H__
+    #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
+#endif
+
+
+//#include <string>
+
+
+ 
+namespace gbmath
 {
-
-
-     namespace color
-     {
  
 		struct object_color_type_e
 		{
@@ -40,5 +44,5 @@ namespace gb
 		};	 
 	 
 	 
-	 }
+ 
 }

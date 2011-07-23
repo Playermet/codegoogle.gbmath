@@ -1,50 +1,49 @@
-﻿/**  \file 
+﻿/**  \file
  \brief яяяяяяяя
- 
- 
+
+
 */
 
 #pragma once
 
-#ifndef __GB_FMATH_H__
-    #error НЕ ВКЛЮЧАЙТЕ ЭТОТ ФАЙЛ. ВКЛЮЧАЙТЕ:   #include <gb/fmath/math.h>  
+#ifndef __GBMATH_H__
+    #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
 
-namespace gb 
+ 
+
+namespace gbmath
 {
 
-	namespace fmath
-	{
-	
 	#pragma message("NEED RENAME  "   __FILE__ )
 
 	/** \brief  Углы Элера. Сборка углов поворота по всем трём осям. */
 	class euler_angles {
 	public:
-		float yaw;    ///<   Yaw around the y-axis, in radians. 
+		float yaw;    ///<   Yaw around the y-axis, in radians.
 		float pitch;  ///<   Pitch around the x-axis, in radians.
 		float roll;   ///<   Roll around the z-axis, in radians.
- 
-		inline euler_angles() 
+
+		inline euler_angles()
 		{
 			yaw = pitch = roll = 0.0f;
 		}
 
-		inline euler_angles(const euler_angles& ea  ) 
+		inline euler_angles(const euler_angles& ea  )
 		{
-			yaw   = ea.yaw; 
+			yaw   = ea.yaw;
 			pitch = ea.pitch;
-			roll  = ea.roll; 
+			roll  = ea.roll;
 		}
 
 		inline euler_angles(float fYaw, float fPitch, float fRoll)
-		{ 
-			yaw   = fYaw;  
-			pitch = fPitch;  
-			roll  = fRoll; 
+		{
+			yaw   = fYaw;
+			pitch = fPitch;
+			roll  = fRoll;
 		}
-			  			  
+
 
 		friend std::ostream &operator << (std::ostream &stream, const euler_angles& ea)
 		{
@@ -52,7 +51,7 @@ namespace gb
 			return stream;
 		}
 
-		operator std::string() const 
+		operator std::string() const
 		{
 			std::ostringstream ss;
 			ss << yaw << " " << pitch << " " << roll ;
@@ -68,11 +67,11 @@ namespace gb
 			if( ss.fail() ) throw std::invalid_argument("bad input string");
 		}
 
- 
+
 
 
 	};
+
+
  
-	
-	}
 }

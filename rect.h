@@ -6,60 +6,56 @@
 
 #pragma once
 
-#ifndef __GB_FMATH_H__
-    #error НЕ ВКЛЮЧАЙТЕ ЭТОТ ФАЙЛ. ВКЛЮЧАЙТЕ:   #include <gb/fmath/math.h>  
+#ifndef __GBMATH_H__
+    #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
 
 
-
-namespace gb 
+namespace gbmath
 {
 
-	namespace fmath
-	{
-	
-	
+
 #pragma message("#error  need rename class  (aabr or rect)"  __FILE__ )
 
 		//! Прямоугольник по мин. и макс координате
 		class Rect {
 		public:
-			float x1; ///< кооордината x  верхнего левого угла . 
+			float x1; ///< кооордината x  верхнего левого угла .
 			float y1; ///< координата  y  верхнего левого угла .
 
-			float x2; ///< кооордината x  нижнего правого  угла . 
+			float x2; ///< кооордината x  нижнего правого  угла .
 			float y2; ///< координата  y  нижнего правого  угла .
 
 
 			//! \brief Углы прямоугольника
-			struct Corners 
+			struct Corners
 			{
 				 vec2 points[4];
 			};
- 
+
 
 			inline Rect() { x1 = y1 = x2 = y2 = 0.0f;  }
-			inline Rect(const Rect& r) 
+			inline Rect(const Rect& r)
 			{
-				x1=r.x1; y1=r.y1;  x2=r.x2; y2=r.y2; 
+				x1=r.x1; y1=r.y1;  x2=r.x2; y2=r.y2;
 			}
-			
+
 			inline Rect(float _x1, float _y1, float _x2, float _y2) { x1=_x1; y1=_y1; x2=_x2; y2=_y2; }
 
-#if ( defined(_WINDOWS_)  )	
-			Rect(const POINT p1, const POINT p2)  
-			{ 
-				x1=(float)p1.x;  
-				y1=(float)p1.y;  
-				x2=(float)p2.x;  
-				y2=(float)p2.y;  
+#if ( defined(_WINDOWS_)  )
+			Rect(const POINT p1, const POINT p2)
+			{
+				x1=(float)p1.x;
+				y1=(float)p1.y;
+				x2=(float)p2.x;
+				y2=(float)p2.y;
 			}
 			Rect(const RECT& rec) {  *this = rec; }
-#endif 
+#endif
 
 #ifdef __GB__BASE__RECTANGLE_H__
-			Rect(const gb::base::Rectangle& rec)
+			Rect(const base::Rectangle& rec)
 			{
 			   *this = rec;
 			}
@@ -71,33 +67,33 @@ namespace gb
 
 
 
-#if ( defined(_WINDOWS_) )	
+#if ( defined(_WINDOWS_) )
 
 			inline void set(const POINT& np1, const POINT& np2) { x1=(float)np1.x; y1=(float)np1.y; x2=(float)np2.x; y2=(float)np2.y; };
-			inline void operator = (const RECT& rec) 
+			inline void operator = (const RECT& rec)
 			{
 				x1 = (float)rec.left;
 				y1 = (float)rec.top;
 				x2 = (float)rec.right;
-				y2 = (float)rec.bottom;    
+				y2 = (float)rec.bottom;
 			}
 
 
-			inline operator RECT () const 
+			inline operator RECT () const
 			{
 				RECT res;
 				res.left   = (long)x1;
 				res.top    = (long)y1;
 				res.right  = (long)x2;
 				res.bottom = (long)y2;
-				return res; 
-			}  
+				return res;
+			}
 
-#endif  
+#endif
 
 
 #ifdef __GB__BASE__RECTANGLE_H__
-			inline void operator = (const gb::base::Rectangle& rec)
+			inline void operator = (const base::Rectangle& rec)
 			{
 				x1 = (float)rec.left;
 				y1 = (float)rec.top;
@@ -105,14 +101,14 @@ namespace gb
 				y2 = y1 + (float)rec.height;
 			}
 
-			inline operator gb::base::Rectangle() const 
+			inline operator base::Rectangle() const
 			{
-				return gb::base::Rectangle( (int)x1, (int)y1, (int)(x2-x1), (int)(y2-y1) );
+				return base::Rectangle( (int)x1, (int)y1, (int)(x2-x1), (int)(y2-y1) );
 			}
 #endif
 
 
-			//! \brief Занулить 
+			//! \brief Занулить
 			inline void setzero() { x1=y1=x2=y2=0.0; }
 			//! \brief  проверка всех компонентов на ноль
 			inline bool empty() const { return ( (x1==0.0f) && (y1==0.0f) && (x2==0.0f) && (y2==0.0f) ); }
@@ -126,39 +122,39 @@ namespace gb
 #if ( defined(_WINDOWS_) )
 
 			/** \brief Движение координат на указаное значение */
-			inline void translate(const POINT& p) 
-			{  
-				translate( (float)p.x, (float)p.y );   
+			inline void translate(const POINT& p)
+			{
+				translate( (float)p.x, (float)p.y );
 			}
 
-#endif  
+#endif
 
 
-			//! \brief Получение ширины прямоугольника  
+			//! \brief Получение ширины прямоугольника
 			inline float getWidth()  const { return (x2-x1); };
 
-			//! \brief Получение высоты прямоуголника   
-			inline float getHeight() const { return (y2-y1); }; 
+			//! \brief Получение высоты прямоуголника
+			inline float getHeight() const { return (y2-y1); };
 
 			//! \brief Получить/установить первичную координату прямоугольника
 			inline  vec2  minCoord() const {  vec2 res; res.x=x1; res.y=y1; return res; }
-			inline void          minCoord( vec2& coord)       
-			{ 
+			inline void          minCoord( vec2& coord)
+			{
 				x1=coord.x;
 				y1=coord.y;
 			}
-		
+
 			//! \brief Получить/установить Вторичную координату прямоугольника
-			inline  vec2 maxCoord() const 
-			{  
-				vec2 res; 
-				res.x=x2; 
-				res.y=y2; 
-				return res; 
+			inline  vec2 maxCoord() const
+			{
+				vec2 res;
+				res.x=x2;
+				res.y=y2;
+				return res;
 			}
 
-			inline void         maxCoord( vec2& coord)       
-			{ 
+			inline void         maxCoord( vec2& coord)
+			{
 				x2=coord.x;
 				y2=coord.y;
 			}
@@ -166,8 +162,8 @@ namespace gb
 			// TODO void move(const Normal2& normal, float distance) { }
 
 			//! \brief  Извлечь все 4 вершины прямоугольника.
-			void extractCorners(Corners& _outCorners) 
-			{	  
+			void extractCorners(Corners& _outCorners)
+			{
 				_outCorners.points[0] =  vec2(x1, y1);
 				_outCorners.points[2] =  vec2(x2, y1);
 				_outCorners.points[3] =  vec2(x2, y2);
@@ -175,47 +171,47 @@ namespace gb
 			}
 
 
-		
-			/** \brief Установить новую позицию по верхнему левому краю прямоугольника. 
+
+			/** \brief Установить новую позицию по верхнему левому краю прямоугольника.
 			      Размеры сохраняются. */
-			inline void setPositionTopLeft(float x, float y) 
-			{   
-				float w=getWidth();  
-				float h=getHeight();  
-				x1=x; y1=y; 
-				x2=x1+w; y2=y+h;  
+			inline void setPositionTopLeft(float x, float y)
+			{
+				float w=getWidth();
+				float h=getHeight();
+				x1=x; y1=y;
+				x2=x1+w; y2=y+h;
 			}
 
-			inline void setPositionTopLeft(const  vec2& v) { setPositionTopLeft(v.x,v.y); }  
+			inline void setPositionTopLeft(const  vec2& v) { setPositionTopLeft(v.x,v.y); }
 
 #if ( defined(_WINDOWS_) )
 
-			/** \brief Установить новую позицию по верхнему левому краю прямоугольника. 
+			/** \brief Установить новую позицию по верхнему левому краю прямоугольника.
 			        Размеры сохраняются. */
-			inline void setPositionTopLeft(const POINT& pnt) 
-			{  
-				setPositionTopLeft((float)pnt.x, (float)pnt.y);   
+			inline void setPositionTopLeft(const POINT& pnt)
+			{
+				setPositionTopLeft((float)pnt.x, (float)pnt.y);
 			}
 
 			/** \brief Получить точку координату верхнего левого угла прямоугольника. */
-			inline POINT getPositionTopLeft() const 
-			{ 
-				POINT res; 
-				res.x=(long)x1; 
-				res.y=(long)y1; 
-				return res; 
+			inline POINT getPositionTopLeft() const
+			{
+				POINT res;
+				res.x=(long)x1;
+				res.y=(long)y1;
+				return res;
 			}
 
-#endif 
+#endif
 
 
-  
+
   /** \brief Установить новую ширину. Координата левого вернего угла не меняется. */
   inline void setWidth(float fWidth)   { x2 = x1 + fWidth;  }
   /** \brief Установить новую высоту. Координата левого вернего угла не меняется. */
   inline void setHeight(float fHeight) { y2 = y1 + fHeight; }
   /** \brief Установить новую ширину и высоту. Координата левого вернего угла не меняется. */
-  inline void setWidthHeight(float fWidth, float fHeight) 
+  inline void setWidthHeight(float fWidth, float fHeight)
   {
    x2 = x1 + fWidth;
    y2 = y1 + fHeight;
@@ -224,49 +220,49 @@ namespace gb
 
 #if defined(_WINDOWS_)
 
-  //! \brief Получить  координату верхнего левого угла прямоугольника. 
-  inline POINT getTopLeft_p() const 
-  {  
-	  POINT res; 
-	  res.x=(long)x1; 
-	  res.y=(long)y1; 
-	  return res; 
+  //! \brief Получить  координату верхнего левого угла прямоугольника.
+  inline POINT getTopLeft_p() const
+  {
+	  POINT res;
+	  res.x=(long)x1;
+	  res.y=(long)y1;
+	  return res;
   }
 
   //! \brief Получить  координату нижнег оправого угла прямоугольника.
-  inline POINT getBottomRight_p() const 
-  {  
-	  POINT res; 
-	  res.x=(long)x2; 
-	  res.y=(long)y2; 
-	  return res; 
+  inline POINT getBottomRight_p() const
+  {
+	  POINT res;
+	  res.x=(long)x2;
+	  res.y=(long)y2;
+	  return res;
   }
 
 #endif
 
 
   //! \brief Получить  координату верхнего левого угла прямоугольника.
-  inline  vec2 getTopLeft() const 
-  {   
-	  vec2 res; 
-	  res.x=x1; 
-	  res.y=y1; 
-	  return res; 
+  inline  vec2 getTopLeft() const
+  {
+	  vec2 res;
+	  res.x=x1;
+	  res.y=y1;
+	  return res;
   }
 
-  //! \brief Получить  координату нижнего правого угла прямоугольника. 
-  inline  vec2 getBottomRight() const 
-  {   
-	  vec2 res; 
-	  res.x=x2; 
-	  res.y=y2; 
-	  return res; 
+  //! \brief Получить  координату нижнего правого угла прямоугольника.
+  inline  vec2 getBottomRight() const
+  {
+	  vec2 res;
+	  res.x=x2;
+	  res.y=y2;
+	  return res;
   }
 
 
 
   /** \brief Получить центральную среднюю точку прямоугольника */
-  inline  vec2 getCenterPoint() const 
+  inline  vec2 getCenterPoint() const
   {
 	   vec2 res;
 	   vec2 pTpLft = getTopLeft();
@@ -275,30 +271,30 @@ namespace gb
 	  res.x = (pTpLft.x + pBtRt.x) / 2.0f;
 	  res.y = (pTpLft.y + pBtRt.y) / 2.0f;
 
-	  return res; 
+	  return res;
   }
 
   /** \brief  Установить координаты прямоугольника по средней точке. Размеры не меняются.  */
-  inline void  setCenterPoint(const  vec2& pnt) 
+  inline void  setCenterPoint(const  vec2& pnt)
   {
 	  float nw = getWidth();
 	  float nh = getHeight();
 
-	  //setPositionTopLeft( pnt.x - nw/2 , pnt.y - nh/2); 
-	  //float w=getWidth();  
+	  //setPositionTopLeft( pnt.x - nw/2 , pnt.y - nh/2);
+	  //float w=getWidth();
 	  //float h=getHeight();
 
-	  x1=(float)pnt.x - nw/2.0f; 
-	  y1=(float)pnt.y - nh/2.0f; 
+	  x1=(float)pnt.x - nw/2.0f;
+	  y1=(float)pnt.y - nh/2.0f;
 
-	  x2=x1 + nw; 
-	  y2=y1 + nh; 
+	  x2=x1 + nw;
+	  y2=y1 + nh;
   };
 
 #if ( defined(_WINDOWS_)  )
 
   /** \brief Отсечение координат точки p в пределах прямоугольника */
-  inline void clumpCoord(   POINT& pntTobeClump ) const 
+  inline void clumpCoord(   POINT& pntTobeClump ) const
   {
 	  if( (float)pntTobeClump.x < x1 ) { pntTobeClump.x = (long)x1; };
 	  if( (float)pntTobeClump.x > x2 ) { pntTobeClump.x = (long)x2; };
@@ -309,7 +305,7 @@ namespace gb
 #endif
 
   /** \brief Отсечение координат точки p в пределах прямоугольника */
-  inline void clumpCoord( vec2& pntTobeClump ) const 
+  inline void clumpCoord( vec2& pntTobeClump ) const
   {
 	  if( pntTobeClump.x < x1 ) { pntTobeClump.x = x1; };
 	  if( pntTobeClump.x > x2 ) { pntTobeClump.x = x2; };
@@ -319,8 +315,8 @@ namespace gb
 
 
 
-  //! \brief Проверка попадания точки в прямоугольник . 
-  inline bool checkContainPoint(int x, int y) const 
+  //! \brief Проверка попадания точки в прямоугольник .
+  inline bool checkContainPoint(int x, int y) const
   {
 	  if( (x>x1) && (y>y1) && (x<x2) && (y<y2)  ) return true;
 	  return false;
@@ -334,24 +330,24 @@ namespace gb
   //!   \brief Вычислить площадь.
   inline float computeSquare() { return ( getWidth() * getHeight()  );  };
 
- 
+
 
   /** \brief  В виде в строку разделёную пробелами  */
-  void  toCstr(char* buf) const 
+  void  toCstr(char* buf) const
   {
 	  *buf = '\0';
-	  sprintf(buf, "%i %i    %i  %i",  x1, y1, x2, y2  );   
+	  sprintf(buf, "%i %i    %i  %i",  x1, y1, x2, y2  );
   };
 
   /** \brief Прочитать значения из строки разделёной пробелами */
-  bool fromCstr(const char* s) 
+  bool fromCstr(const char* s)
   {
-	  const int n = sscanf(s, "%i %i %i %i",   x1, y1, x2, y2   ); 
+	  const int n = sscanf(s, "%i %i %i %i",   x1, y1, x2, y2   );
 	  if(n!=4) return false;
 	  return true;
   };
 
- 
+
 
 
 #ifdef _D3D9_H_
@@ -365,7 +361,7 @@ namespace gb
   inline operator const D3DRECT* ()  const {  return (D3DRECT*)&x1;  }
 
   /** \brief  Установить из вьпорта d3d9 устройства */
-  inline void operator =  ( const D3DVIEWPORT9& vp ) 
+  inline void operator =  ( const D3DVIEWPORT9& vp )
   {
 	  x1 = (float)vp.X;
 	  y1 = (float)vp.Y;
@@ -387,25 +383,18 @@ namespace gb
 
 
 
-	  // todo 
+	  // todo
   // std::string tostr() const {......}
   // bool        fromstr(const std::string& str) {.....}
 
 
 
-     //! \brief печать на консоль 
+     //! \brief печать на консоль
     void print() const {   printf("%f  %f     %f  %f", x1, y1,   x2, y2);    };
 
 		};
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	}
+
+
+
 }

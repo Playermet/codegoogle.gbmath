@@ -6,22 +6,20 @@
 
 #pragma once
 
-#ifndef __GB_FMATH_H__
-    #error НЕ ВКЛЮЧАЙТЕ ЭТОТ ФАЙЛ. ВКЛЮЧАЙТЕ:   #include <gb/fmath/math.h>  
+#ifndef __GBMATH_H__
+    #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
 
-namespace gb 
+ 
+namespace gbmath
 {
 
-	namespace fmath
-	{
-	
-	
+
 	#pragma message( "!!!!  rename this  "  __FILE__ )
 
 	  //! \brief  Сборка из данных перспективной проекции.
-	  struct perspective_projection_data  
+	  struct perspective_projection_data
 	  {
 			float fovy;
 			float aspect;
@@ -33,10 +31,10 @@ namespace gb
 			{
 				aspect = mPerspectProjLH._22/mPerspectProjLH._11;
 				fovy   = 2.0f  * atan(1.0f/mPerspectProjLH._22);
-				zn = -mPerspectProjLH._43/mPerspectProjLH._33; 
+				zn = -mPerspectProjLH._43/mPerspectProjLH._33;
 				zf =  mPerspectProjLH._43/(1.0f-mPerspectProjLH._33);
 			}
-	 
+
 
 			friend std::ostream &operator << (std::ostream &stream, const perspective_projection_data& a)
 			{
@@ -44,7 +42,7 @@ namespace gb
 				return stream;
 			}
 
-			operator std::string() const 
+			operator std::string() const
 			{
 				std::ostringstream ss;
 				ss << fovy << " " << aspect << " " << zn << " " << zf ;
@@ -58,7 +56,7 @@ namespace gb
 				ss >> aspect;
 				ss >> zn;
 				ss >> zf;
-				if( ss.fail() ) 
+				if( ss.fail() )
 					throw std::invalid_argument("bad input string");
 			}
 
@@ -91,9 +89,6 @@ namespace gb
 
 	  };
 
-	
-	
-	
-	
-	}
+
+ 
 }

@@ -1,25 +1,23 @@
 ﻿/**  \file
  \brief   яяяяячччччч
- 
-    
- * \todo УБрать FAILED SUCC и все виндовские макросы.  
+
+
+ * \todo УБрать FAILED SUCC и все виндовские макросы.
  * \todo Подружить с не windows ....
 
 */
 
 #pragma once
 
-#ifndef __GB_FMATH_H__
-    #error НЕ ВКЛЮЧАЙТЕ ЭТОТ ФАЙЛ. ВКЛЮЧАЙТЕ:   #include <gb/fmath/math.h>  
+#ifndef __GBMATH_H__
+    #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
 
-namespace gb 
+
+namespace gbmath
 {
 
-	namespace fmath
-	{
-	
 
 
 
@@ -27,34 +25,34 @@ namespace gb
 		class GeometryContext  {
 		public:
 		             GeometryContext() {}
-		   virtual  ~GeometryContext() {} 
-		 
+		   virtual  ~GeometryContext() {}
+
 
 		  long  setMatrices(const  mat44 *mWorld,
-						    const  mat44 *mView, 
+						    const  mat44 *mView,
 						    const  mat44 *mProj );
 
-		  /** \brief Для перекрытия пользователем.  При изменении матриц.  
+		  /** \brief Для перекрытия пользователем.  При изменении матриц.
 					 Если матрица не меняется тогда параметр NULL.
 					 возвращает результат установки матрицы.  */
 		  virtual long onNewMatrices(const  mat44 *mWorld,
-									 const  mat44 *mView, 
-									 const  mat44 *mProj ) 
+									 const  mat44 *mView,
+									 const  mat44 *mProj )
 		  {
-		     return 0; 
+		     return 0;
 		  }
 
-			inline long  set_matrix_World(const mat44 *m) 
+			inline long  set_matrix_World(const mat44 *m)
 			{
 			  return setMatrices(m, NULL, NULL);
-			}	 
+			}
 
-			inline long set_matrix_View(const mat44 *m) 
+			inline long set_matrix_View(const mat44 *m)
 			{
 			  return setMatrices(NULL, m, NULL);
 			}
 
-			inline long set_matrix_Proj(const mat44 *m) 
+			inline long set_matrix_Proj(const mat44 *m)
 			{
 			  return setMatrices(NULL, NULL, m);
 			}
@@ -111,14 +109,14 @@ namespace gb
 		  const vec4 *get_vector4_ViewDir()const;
 		  const vec4 *get_vector4_ViewUp()const;
 		  const vec4 *get_vector4_ViewSide()const;
-		  
-		   
-		  const mat44 *get_matrix_by_context_type(const matrix4x4_context_type_e::e) const; 
+
+
+		  const mat44 *get_matrix_by_context_type(const matrix4x4_context_type_e::e) const;
 		  const vec4 *get_vector4_by_context_type(const vector_context_type_e::e) const;
 
 
 		//  const vec3 *get_vector3_Unproject(const  ViewportZ *vp, const  POINT *pntCoord)const;
-		 
+
 		 // const vec3 *GetMouseCoordCameraUnproject(const ViewportZ *vp, const POINT *pntMouseCoord)const;
 		 // const vec3 *GetMouseCoordCameraUnproject()const;
 
@@ -127,25 +125,25 @@ namespace gb
 		  float get_projection_Fov()const
 		  {
 		    const perspective_projection_data *prj = get_projection_Data();
-		    return prj->fovy; 
+		    return prj->fovy;
 		  }
 
 		  float get_projection_Aspect()const
 		  {
 		    const perspective_projection_data *prj = get_projection_Data();
-		    return prj->aspect; 
+		    return prj->aspect;
 		  }
 
 		  float get_projection_ZNear()const
 		  {
 		    const perspective_projection_data *prj = get_projection_Data();
-		    return prj->zn; 
+		    return prj->zn;
 		  }
 
 		  float get_projection_ZFar()const
 		  {
 		    const perspective_projection_data *prj = get_projection_Data();
-		    return prj->zf; 
+		    return prj->zf;
 		  }
 
 		   /* ****************************************
@@ -154,7 +152,7 @@ namespace gb
 		  int  PushMatrixProj()const;
 
 		  int  PushMatrices(BOOLFLAG bWorld, BOOLFLAG bView, BOOLFLAG bProj)const;
-		  inline int  PushAllMatrices()const 
+		  inline int  PushAllMatrices()const
 		  {
 		    PushMatrices(1, 1, 1);
 		  }
@@ -195,18 +193,18 @@ namespace gb
 		    int  setProjectionZNearZFar(float fZNear, float fZFar) ;
 
 		  //-----------------------------------------------------------------------
-		 
+
 
 		    TransformData  getWorldTransformData()const;
 		    const TransformData  *getWorldTransformDataPtr()const;
 
 		    vec3 getWorldScaling()const;
 
-		 
+
 		    AxiesAngle getWorldRotationAxiesAngle()const;
 
 		    Quaternion getWorldRotationQuaternion()const;
-		 
+
 
 		    vec3 getWorldPosition()const;
 
@@ -227,13 +225,13 @@ namespace gb
 		    int  setWorldScalingTranslation(float fScale, const vec3 *vTrnsl) ;
 		    int  setWorldScalingTranslation(float fScale, float x, float y, float z) ;
 
-			int  setWorldIdentity()  
+			int  setWorldIdentity()
 			{
 			   mat44 mident(1.0f);
 				return setMatrices(&mident, NULL, NULL);
 			}
 
-		  
+
 			/*
 		    UINT get_matrix_WorldStackSize()const
 		  {
@@ -250,7 +248,7 @@ namespace gb
 		     */
 
 
-			//gb::fmath::perspective_projection_data
+			//gbmath::perspective_projection_data
 
 		protected:
 		   void __checkViewVectors() const;
@@ -269,28 +267,28 @@ namespace gb
 		  //    /** \brief Структура Вспомогательная сборка матриц для класса MatricesContext */
 		  struct MatricesStore
 		  {
-		    matrixStore_s 
+		    matrixStore_s
 
-			mViewProjection, 
-			mViewProjectionInverse, 
-			mViewProjectionInverseTranspone, 
-			mViewProjectionTranspone, 
-		    mViewTranspone, 
-			mViewInverse, 
-			mViewInverseTranspone, 
-		    mProjectionInverse, 
-			mProjectionTranspone, 
-			mProjectionInverseTranspone, 
-		    mWorldViewProjection, 
+			mViewProjection,
+			mViewProjectionInverse,
+			mViewProjectionInverseTranspone,
+			mViewProjectionTranspone,
+		    mViewTranspone,
+			mViewInverse,
+			mViewInverseTranspone,
+		    mProjectionInverse,
+			mProjectionTranspone,
+			mProjectionInverseTranspone,
+		    mWorldViewProjection,
 			mWorldViewProjectionTranspone,
-			mWorldViewProjectionInverse, 
-			mWorldViewProjectionInverseTranspone, 
-		    mWorldTranspone, 
-			mWorldInverse, 
-			mWorldInverseTranspone, 
-			mWorldView, 
-			mWorldViewTranspone, 
-			mWorldViewInverse, 
+			mWorldViewProjectionInverse,
+			mWorldViewProjectionInverseTranspone,
+		    mWorldTranspone,
+			mWorldInverse,
+			mWorldInverseTranspone,
+			mWorldView,
+			mWorldViewTranspone,
+			mWorldViewInverse,
 			mWorldViewInverseTranspone;
 
 		  };
@@ -325,9 +323,9 @@ namespace gb
 		  //* последний пересчитаный вектор MouseCoordCameraUnproject
 		  mutable vec3 m_vec3_MouseCoordCameraUnproject;
 
-		  //* изменилимь ли данные проекции 
+		  //* изменилимь ли данные проекции
 		  mutable BOOLFLAG m_bChangeProjectionData;
-		  //* данные проекции 
+		  //* данные проекции
 		  mutable perspective_projection_data m_PerspectiveProjData;
 
 		  //* изменились ли вью параметры
@@ -336,8 +334,8 @@ namespace gb
 		  //* вью параметры
 		  mutable EyeData m_EyeData;
 
-		 // gb::fmathEyeData
-		 
+		 // fmathEyeData
+
 
 			/******************************
 		  mutable CFixedMatrixStack m_MatrixStackWorld;
@@ -350,13 +348,13 @@ namespace gb
 
 		  // временно исключено !
 		 // mutable Quaternion m_qRotation;
-		 
+
 
 		};
 		// end class
 
 
-	
-	
-	}
+
+
+
 }

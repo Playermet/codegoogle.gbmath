@@ -6,19 +6,17 @@
 
 #pragma once
 
-#ifndef __GB_FMATH_H__
-    #error НЕ ВКЛЮЧАЙТЕ ЭТОТ ФАЙЛ. ВКЛЮЧАЙТЕ:   #include <gb/fmath/math.h>  
+#ifndef __GBMATH_H__
+    #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
 
-namespace gb 
+ 
+namespace gbmath
 {
 
-	namespace fmath
-	{
-	
-	
-	
+  #pragma message("!!need addoperatiions "  __FILE__ )
+
 
 
    //! \brief Сборка из данных трансформации: скалирование(вектор) + поворот(кват.) + позиция(вектор).
@@ -28,13 +26,8 @@ namespace gb
 	    Quaternion   qRotation;     ///< вращение
 	    vec3         vTranslation;  ///<  позиция
    };
-	
-	
-	
-	
-	
-	
-	
-	
-	}
+
+
+
+ 
 }
