@@ -1,6 +1,8 @@
-﻿// vector4.hpp
-
-
+﻿/** \file
+ \brief vector 4d template.
+ 
+*/
+ 
 #ifndef __GBMATH_VECTOR4_H__
 #define __GBMATH_VECTOR4_H__
 
