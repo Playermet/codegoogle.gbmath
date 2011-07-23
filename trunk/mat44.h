@@ -6,27 +6,25 @@
 
 #pragma once
 
-#ifndef __GB_FMATH_H__
-    #error НЕ ВКЛЮЧАЙТЕ ЭТОТ ФАЙЛ. ВКЛЮЧАЙТЕ:   #include <gb/fmath/math.h>  
+#ifndef __GBMATH_H__
+    #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
 
-namespace gb 
+
+namespace gbmath
 {
 
-	namespace fmath
-	{
-	
-	
 
-		
 
-		//! \brief Матрица 4x4. 
+
+
+		//! \brief Матрица 4x4.
 		struct mat44
 		{
-			union 
+			union
 			{
-				struct 
+				struct
 				{
 
 				   float _11,  _12,  _13,  _14,
@@ -47,7 +45,7 @@ namespace gb
 			inline mat44(float a)
 			{
 			   setIdentity();
-			   _11=a; 
+			   _11=a;
 			   _22=a;
 			   _33=a;
 			   _44=a;
@@ -58,7 +56,7 @@ namespace gb
 			inline mat44( float _11_, float _12_, float _13_, float _14_,
 	                      float _21_, float _22_, float _23_, float _24_,
 	                      float _31_, float _32_, float _33_, float _34_,
-	                      float _41_, float _42_, float _43_, float _44_ ) : 
+	                      float _41_, float _42_, float _43_, float _44_ ) :
 				_11( _11_ ), _12( _12_ ), _13( _13_ ), _14( _14_ ),
 				_21( _21_ ), _22( _22_ ), _23( _23_ ), _24( _24_ ),
 				_31( _31_ ), _32( _32_ ), _33( _33_ ), _34( _34_ ),
@@ -77,7 +75,7 @@ namespace gb
 
 			inline operator D3DMATRIX*()   { return (D3DMATRIX*)&_11; }
 			inline operator const D3DMATRIX*() const  { return (D3DMATRIX*)&_11; }
-			inline operator const D3DMATRIX() const 
+			inline operator const D3DMATRIX() const
 			{
 			   D3DMATRIX res;
 			   for(int c=0;c<4; c++)
@@ -115,13 +113,13 @@ namespace gb
 			}
 
 #endif //  #ifdef _D3D9_H_
- 
+
 
 
 #ifdef __D3DX9MATH_H__
 			inline operator D3DXMATRIX*()   { return (D3DXMATRIX*)&_11; }
 			inline operator const D3DXMATRIX*() const  { return (D3DXMATRIX*)&_11; }
-			inline operator const D3DXMATRIX() const 
+			inline operator const D3DXMATRIX() const
 			{
 			   D3DXMATRIX res;
 			   for(int c=0;c<4; c++)
@@ -142,8 +140,8 @@ namespace gb
 				 {
 				  floats[c][j] = m.m [c][j];
 				 }
-			   }		
-			
+			   }
+
 			}
 
 
@@ -173,7 +171,7 @@ namespace gb
 				_44 = pfArray[15];
 
 			}
- 
+
 
 
 			/**    \brief Строгое сравнение    */
@@ -229,8 +227,8 @@ namespace gb
 			};
 
 
-			
- 
+
+
 			/**   \brief Инверсия знака компонентов  */
 			inline mat44 operator - () const
 			{
@@ -260,7 +258,7 @@ namespace gb
 			}
 
 
- 
+
 			/**   \brief Поэлементное сложение матриц  */
 			inline mat44 operator + ( const mat44& m ) const
 			{
@@ -319,7 +317,7 @@ namespace gb
 
 
 			/**   \brief Умножение всех элементов матрицы на скаляр   */
-			inline mat44 operator * (  float f ) const 
+			inline mat44 operator * (  float f ) const
 			{
 				mat44 r;
 
@@ -392,12 +390,12 @@ namespace gb
 				return *this;
 			}
 
- 
+
 			// ПРОВЕРЕНО !
 			inline mat44 operator * ( const mat44& m ) const
 			{
 				mat44 r;
-					
+
 			 r._11 = floats[0][0] * m.floats[0][0] + floats[0][1] * m.floats[1][0] + floats[0][2] * m.floats[2][0] + floats[0][3] * m.floats[3][0];
 			 r._12 = floats[0][0] * m.floats[0][1] + floats[0][1] * m.floats[1][1] + floats[0][2] * m.floats[2][1] + floats[0][3] * m.floats[3][1];
 			 r._13 = floats[0][0] * m.floats[0][2] + floats[0][1] * m.floats[1][2] + floats[0][2] * m.floats[2][2] + floats[0][3] * m.floats[3][2];
@@ -412,18 +410,18 @@ namespace gb
 			 r._32 = floats[2][0] * m.floats[0][1] + floats[2][1] * m.floats[1][1] + floats[2][2] * m.floats[2][1] + floats[2][3] * m.floats[3][1];
 			 r._33 = floats[2][0] * m.floats[0][2] + floats[2][1] * m.floats[1][2] + floats[2][2] * m.floats[2][2] + floats[2][3] * m.floats[3][2];
 			 r._34 = floats[2][0] * m.floats[0][3] + floats[2][1] * m.floats[1][3] + floats[2][2] * m.floats[2][3] + floats[2][3] * m.floats[3][3];
-			 
+
 			 r._41 = floats[3][0] * m.floats[0][0] + floats[3][1] * m.floats[1][0] + floats[3][2] * m.floats[2][0] + floats[3][3] * m.floats[3][0];
 			 r._42 = floats[3][0] * m.floats[0][1] + floats[3][1] * m.floats[1][1] + floats[3][2] * m.floats[2][1] + floats[3][3] * m.floats[3][1];
 			 r._43 = floats[3][0] * m.floats[0][2] + floats[3][1] * m.floats[1][2] + floats[3][2] * m.floats[2][2] + floats[3][3] * m.floats[3][2];
 			 r._44 = floats[3][0] * m.floats[0][3] + floats[3][1] * m.floats[1][3] + floats[3][2] * m.floats[2][3] + floats[3][3] * m.floats[3][3];
-		 
+
 				return  r;
 			}
 
 
 			/**    \brief Умножение вектора на матрицу .  ПРОВЕРЕНО!  */
-			inline vec4 operator * ( const vec4& v ) const 
+			inline vec4 operator * ( const vec4& v ) const
 			{
 				vec4 r;
 				r.x =  _11 * v.x +  _21 * v.y +  _31 * v.z +  _41 * v.w;
@@ -436,25 +434,25 @@ namespace gb
 			bool empty() const
 			{
 		      static const mat44 _ZERO(0.0f);
-			  if( memcmp( &_ZERO._11 , &_11 , sizeof(mat44) ) == 0 ) 
+			  if( memcmp( &_ZERO._11 , &_11 , sizeof(mat44) ) == 0 )
 				      return true;
 			  return false;
 			}
- 
+
 			//! \brief Зануление всех элементов.
 			inline void       setzero() { memset(&_11, 0, sizeof(mat44)  ); }
 
 			//! \brief Установить в идентичную
-			inline mat44&   setIdentity() 
+			inline mat44&   setIdentity()
 			{
 				_11=1.0f; _12=0.0f; _13=0.0f; _14=0.0f;
-				_21=0.0f; _22=1.0f; _23=0.0f; _24=0.0f; 
-				_31=0.0f; _32=0.0f; _33=1.0f; _34=0.0f;  
-				_41=0.0f; _42=0.0f; _43=0.0f; _44=1.0f; 
+				_21=0.0f; _22=1.0f; _23=0.0f; _24=0.0f;
+				_31=0.0f; _32=0.0f; _33=1.0f; _34=0.0f;
+				_41=0.0f; _42=0.0f; _43=0.0f; _44=1.0f;
 				 return *this;
 	        }
 
-			inline bool isIdentity() const	   
+			inline bool isIdentity() const
 			{
 			 return floats[0][0] == 1.0f && floats[0][1] == 0.0f && floats[0][2] == 0.0f && floats[0][3] == 0.0f &&
 					floats[1][0] == 0.0f && floats[1][1] == 1.0f && floats[1][2] == 0.0f && floats[1][3] == 0.0f &&
@@ -466,20 +464,20 @@ namespace gb
 			inline mat44& reset() { setIdentity(); return *this; }
 
 			//! \brief Транспонирование. (Отражение элементов по главной диагонали)  ПРОВЕРЕНА!
-			inline mat44& transpone() 
-			{  
+			inline mat44& transpone()
+			{
 				   register float f;
 				f = _12;  _12 = _21;  _21 = f;
 				f = _13;  _13 = _31;  _31 = f;
 				f = _14;  _14 = _41;  _41 = f;
 				f = _23;  _23 = _32;  _32 = f;
 				f = _24;  _24 = _42;  _42 = f;
-				f = _34;  _34 = _43;  _43 = f; 
+				f = _34;  _34 = _43;  _43 = f;
 				  return *this;
 			}
 
 			//!  религиозно-синтаксическое   Вычислить и вернуть транспонированое значение .
-			mat44 transponed() const 
+			mat44 transponed() const
 			{
 				mat44 res = *this;
 				res.transpone();
@@ -492,7 +490,7 @@ namespace gb
 			/** \brief Вычислить и вернуть определитель.  */
 			inline float determinant()  const
 			{
-				 return 
+				 return
 					( _11 *  _22 -  _12 *  _21) * ( _33 *  _44 -  _34 *  _43) -
 					( _11 *  _23 -  _13 *  _21) * ( _32 *  _44 -  _34 *  _42) +
 					( _11 *  _24 -  _14 *  _21) * ( _32 *  _43 -  _33 *  _42) +
@@ -505,27 +503,27 @@ namespace gb
 			mat44&  invert () throw();
 
 			//! \brief Вернуть инвертированую
-			mat44 inverted() const throw() 
+			mat44 inverted() const throw()
 			{
 			  mat44 res = *this;
-			  res.invert(); 
+			  res.invert();
 			  return res;
 			}
 
 
-			vec4 getRow(unsigned int index) const 
+			vec4 getRow(unsigned int index) const
 			{
 				assert(index<4  && "invalid index" );
 				return vec4( floats[index][0], floats[index][1], floats[index][2], floats[index][3] );
 			}
 
-			vec4 setRow(unsigned int index, const vec4& row)   
+			vec4 setRow(unsigned int index, const vec4& row)
 			{
 				assert(index<4  && "invalid index" );
 				floats[index][0]=row.x; floats[index][1]=row.y; floats[index][2]=row.z; floats[index][3]=row.w;
 			}
- 
-			vec4 getColumn(unsigned int index) const 
+
+			vec4 getColumn(unsigned int index) const
 			{
 				assert( index<4 && "invalid index" );
 				return vec4( floats[0][index], floats[1][index], floats[2][index], floats[3][index] );
@@ -539,7 +537,7 @@ namespace gb
 
 			//! \brief   Изволечь данные трансляции.
 			inline vec3 getTranslation() const
-			{		  
+			{
 				return vec3(floats[3][0], floats[3][1], floats[3][2]);
 			}
 
@@ -549,7 +547,7 @@ namespace gb
 			void decompose( vec3& scale,  Quaternion& rot, vec3& pos ) const;
 
 			//-------------------------------------------------------------
- 
+
 			//! \brief Построение матрицы отражения по оси X
 			inline mat44& setMirrorX ()
 			{
@@ -558,7 +556,7 @@ namespace gb
 				return *this;
 			}
 
-			//! \brief Построение матрицы отражения по оси Y 
+			//! \brief Построение матрицы отражения по оси Y
 			inline mat44& setMirrorY ()
 			{
 				setIdentity();
@@ -574,7 +572,7 @@ namespace gb
 				return *this;
 			}
 
-		    //! \brief Построение матрицы отражения по плоскости plane.   ПРОВЕРЕНА! 
+		    //! \brief Построение матрицы отражения по плоскости plane.   ПРОВЕРЕНА!
 			mat44& setReflection(const plane_s& plane );
 
 
@@ -582,49 +580,49 @@ namespace gb
 			mat44&  setShadow(const vec4& Light, const plane_s&Plane );
 
 			//! \brief Построение матрицы поворота по оси X на угол angle . ПРОВЕРЕНА!
-			inline mat44&  setRotationX( const float angle )  
-			{ 
-				setIdentity();  
+			inline mat44&  setRotationX( const float angle )
+			{
+				setIdentity();
 				float sina, cosa;
 				scalar::sincos(angle, sina, cosa);
-				_22 =  cosa;    
+				_22 =  cosa;
 				_23 =  sina;
-				_32 = -sina;   
+				_32 = -sina;
 				_33 =  cosa;
                   return *this;
 			}
 
 			//! \brief Построение матрицы поворота по оси Y на угол angle . ПРОВЕРЕНО!
-			inline mat44&  setRotationY( const float angle )  
+			inline mat44&  setRotationY( const float angle )
 			{
-				setIdentity(); 
+				setIdentity();
 				float sina, cosa;
 				scalar::sincos(angle, sina, cosa);
-				_11 =  cosa;  
+				_11 =  cosa;
 				_13 = -sina;
-				_31 =  sina; 
+				_31 =  sina;
 				_33 =  cosa;
 				return *this;
 			};
 
 			//! \brief Построение матрицы поворота по оси Z на угол angle . ПРОВЕРЕНО!
-			inline mat44&  setRotationZ( const float angle ) 
+			inline mat44&  setRotationZ( const float angle )
 			{
-				setIdentity(); 
+				setIdentity();
 				float sina, cosa;
 				scalar::sincos(angle, sina, cosa);
-				_11 =  cosa;  
+				_11 =  cosa;
 				_12 =  sina;
-				_21 = -sina; 
+				_21 = -sina;
 				_22 =  cosa;
 				return *this;
 			};
 
 
 			//! \brief Построение матрицы поворота по оси vAx на угол angle . ПРОВЕРЕНО!
-			inline mat44&  setRotationAxis( const vec3& vAx,  const float angle ) 
+			inline mat44&  setRotationAxis( const vec3& vAx,  const float angle )
 			{
-				float sina, cosa, mcosa; 
+				float sina, cosa, mcosa;
 				scalar::sincos( angle , sina, cosa );
 				mcosa = 1.0f - cosa;
 
@@ -658,7 +656,7 @@ namespace gb
 
 
 			//! \brief Построение матрицы поворота по оси по компонентам(axX,axY,axZ) на угол angle  . ПРОВЕРЕНО!
-			inline mat44&  setRotationAxis( float axX, float axY, float axZ, float angle )  
+			inline mat44&  setRotationAxis( float axX, float axY, float axZ, float angle )
 			{
 				vec3 vax;
 				vax.x = axX; vax.y = axY; vax.z = axZ;
@@ -685,42 +683,42 @@ namespace gb
 
 
 			//! \brief Построение матрицы сдвига (позиции)  . ПРОВЕРЕНО!
-			inline mat44&  setTranslation( float x, float y, float z )  
+			inline mat44&  setTranslation( float x, float y, float z )
 			{
 				setIdentity();
-				_41 = x;   _42 = y;  _43 = z;  
+				_41 = x;   _42 = y;  _43 = z;
 				return *this;
 			};
 
 			//! \brief Построение матрицы сдвига (позиции)  ПРОВЕРЕНО!
-			inline mat44&  setTranslation( const vec3& vTransl) 
+			inline mat44&  setTranslation( const vec3& vTransl)
 			{
 				return  setTranslation(  vTransl.x, vTransl.y, vTransl.z);
 			}
-			
-			//! \brief Построение матрицы масштабирования ПРОВЕРЕНО!			
-			inline mat44&  setScaling( float x, float y, float z)  
+
+			//! \brief Построение матрицы масштабирования ПРОВЕРЕНО!
+			inline mat44&  setScaling( float x, float y, float z)
 			{
-				_11 = x;   _12=0.0f;   _13=0.0f;   _14=0.0f; 
-				_21=0.0f;  _22 = y;    _23=0.0f;   _24=0.0f;	
-				_31=0.0f;  _32=0.0f;   _33 = z;    _34=0.0f;	
+				_11 = x;   _12=0.0f;   _13=0.0f;   _14=0.0f;
+				_21=0.0f;  _22 = y;    _23=0.0f;   _24=0.0f;
+				_31=0.0f;  _32=0.0f;   _33 = z;    _34=0.0f;
 				_41=0.0f;  _42=0.0f;   _43=0.0f;   _44 = 1.0f;
 				return *this;
 			}
-			
-			//! \brief Построение матрицы масштабирования	 ПРОВЕРЕНО!		
-			inline mat44&  setScaling( const vec3& vScaling) 
+
+			//! \brief Построение матрицы масштабирования	 ПРОВЕРЕНО!
+			inline mat44&  setScaling( const vec3& vScaling)
 			{
 			  return setScaling( vScaling.x, vScaling.y, vScaling.z );
 			}
 
 
-			//! \brief Построить как матрицу трансформации 
-			mat44& setTransformation(const vec3& vScale, 
+			//! \brief Построить как матрицу трансформации
+			mat44& setTransformation(const vec3& vScale,
 								            const  Quaternion& qRotation,
 								            const vec3& vTranslation);
 
-			//! \brief Построить как матрицу трансформации 
+			//! \brief Построить как матрицу трансформации
 			mat44& setWorldTransform(const TransformData& t);
 
 
@@ -753,37 +751,37 @@ namespace gb
 			}
 
 
-			//! \brief Построение ортографической матрицы   ПРОВЕРЕНА 
-			inline void setOrthoOffCenterLH(float minX, float maxX, float minY, float maxY, float zn, float zf) 
+			//! \brief Построение ортографической матрицы   ПРОВЕРЕНА
+			inline void setOrthoOffCenterLH(float minX, float maxX, float minY, float maxY, float zn, float zf)
 			{
 				_11 = 2.0f/(maxX-minX);         _12 = 0.0f,                     _13 = 0.0f,            _14 = 0.0f;
 				_21 = 0.0f,                     _22 = 2.0f/(maxY-minY);         _23 = 0.0f,            _24 = 0.0f;
 				_31 = 0.0f,                     _32 = 0.0f,                     _33 = 1.0f/(zf-zn);    _34 = 0.0f;
 				_41 = (minX+maxX)/(minX-maxX);  _42 = (maxY+minY)/(minY-maxY);  _43 = zn/(zn-zf);      _44 = 1.0f;
 			}
- 
 
-			//! \brief Построение ортографической матрицы  ПРОВЕРЕНА   
+
+			//! \brief Построение ортографической матрицы  ПРОВЕРЕНА
 			inline void setOrthoOffCenterRH(float minX, float maxX, float minY, float maxY, float zn, float zf)
 			{
 				_11=2.0f/(maxX-minX);        _12=0.0f;                     _13=0.0f;            _14=0.0f;
 				_21=0.0f;                    _22=2.0f/(maxY-minY);         _23=0.0f;            _24=0.0f;
-				_31=0.0f;                    _32=0.0f;                     _33=1.0f/(zn-zf);    _34=0.0f;  
-				_41=(minX+maxX)/(minX-maxX); _42=(maxY+minY)/(minY-maxY);  _43=zn/(zn-zf);      _44=1.0f;  
+				_31=0.0f;                    _32=0.0f;                     _33=1.0f/(zn-zf);    _34=0.0f;
+				_41=(minX+maxX)/(minX-maxX); _42=(maxY+minY)/(minY-maxY);  _43=zn/(zn-zf);      _44=1.0f;
 
 				// 2/(r-l)      0            0           0
 				// 0            2/(t-b)      0           0
 				// 0            0            1/(zn-zf)   0
 				// (l+r)/(l-r)  (t+b)/(b-t)  zn/(zn-zf)  l
 			}
- 
+
 
 			//-------------------------------------------------------------
 
 			//! \brief построение перспективной левосторонней матрицы. ПРОВЕРЕНА.
-			void setPerspectiveFovLH(float fov, float asp, float zn, float zf) 
+			void setPerspectiveFovLH(float fov, float asp, float zn, float zf)
 			{
-				const float yScale =   gb::fmath::scalar::cotan(fov/2.0f); //yScale = cot(fovY/2)
+				const float yScale =   gbmath::scalar::cotan(fov/2.0f); //yScale = cot(fovY/2)
 				const float xScale = yScale / asp;     //xScale = yScale / aspect ratio
 
 				//xScale     0          0               0
@@ -799,25 +797,25 @@ namespace gb
 			//! \brief построение перспективной правосторонней матрицы. ПРОВЕРЕНА.
 			void setPerspectiveFovRH(float fov, float asp, float zn, float zf)
 			{
-			 const float yScale =   gb::fmath::scalar::cotan(fov/2.0f);
-			 const float xScale = yScale / asp; 
-				
+			 const float yScale =   gbmath::scalar::cotan(fov/2.0f);
+			 const float xScale = yScale / asp;
+
 			    _11 = xScale;   _12 = 0.0f;    _13 = 0.0f;           _14 = 0.0f;
 				_21 = 0.0f;     _22 = yScale;  _23 = 0.0f;           _24 = 0.0f;
 				_31 = 0.0f;     _32 = 0.0f;    _33 = zf/(zn-zf);     _34 = -1.0f;
-				_41 = 0.0f;     _42 = 0.0f;    _43 = zn*zf/(zn-zf);  _44 = 0.0f;					
+				_41 = 0.0f;     _42 = 0.0f;    _43 = zn*zf/(zn-zf);  _44 = 0.0f;
 				// xScale     0          0              0
 				// 0        yScale       0              0
 				// 0        0        zf/(zn-zf)        -1
 				// 0        0        zn*zf/(zn-zf)      0
 				// where:
-				// yScale = cot(fovY/2)   
+				// yScale = cot(fovY/2)
 				// xScale = yScale / aspect ratio
 			}
 
 
 			//! \brief Построение перспективной левосторонней матрицы по высоте и ширине .ПРОВЕРЕНА.
-			void setPerspectiveLH(float w, float h, float zn, float zf) 
+			void setPerspectiveLH(float w, float h, float zn, float zf)
 			{
 				// 2*zn/w  0       0              0
 				// 0       2*zn/h  0              0
@@ -831,7 +829,7 @@ namespace gb
 			}
 
 			//! \brief Построение перспективной правосторонней матрицы по высоте и ширине. ПРОВЕРЕНА.
-			void setPerspectiveRH(float w, float h, float zn, float zf) 
+			void setPerspectiveRH(float w, float h, float zn, float zf)
 			{
 				// 2*zn/w  0       0              0
 				// 0       2*zn/h  0              0
@@ -843,16 +841,16 @@ namespace gb
 				_31 = 0.0f,       _32 = 0.0f,       _33 = zf/(zn-zf);     _34 = -1.0f;
 				_41 = 0.0f,       _42 = 0.0f,       _43 = zn*zf/(zn-zf);  _44 = 0.0f;
 			}
- 
+
 
 			//-------------------------------------------------------------
 
 			/** \brief Построение левосторонней матрицы вида. ПРОВЕРЕНА.  */
 			void setViewLookAtLH(const vec3& eye, const vec3& at, const vec3& up)
 			{
-            vec3  zaxis = (at - eye);  zaxis.normalize(); 
+            vec3  zaxis = (at - eye);  zaxis.normalize();
 		    vec3  xaxis = up.cross(zaxis); xaxis.normalize();
-		    vec3  yaxis =  zaxis.cross(xaxis); 
+		    vec3  yaxis =  zaxis.cross(xaxis);
 
 		   _11=xaxis.x;           _12=yaxis.x;            _13=zaxis.x;            _14=0.0f;
 		   _21=xaxis.y;           _22=yaxis.y;            _23=zaxis.y;            _24=0.0f;
@@ -865,35 +863,35 @@ namespace gb
 			// xaxis.x           yaxis.x           zaxis.x          0
 			// xaxis.y           yaxis.y           zaxis.y          0
 			// xaxis.z           yaxis.z           zaxis.z          0
-			// -dot(xaxis, eye)  -dot(yaxis, eye)  -dot(zaxis, eye)  l	
+			// -dot(xaxis, eye)  -dot(yaxis, eye)  -dot(zaxis, eye)  l
 			}
 
 
 			/** \brief Построение правосторонней матрицы вида. ПРОВЕРЕНА.  */
 			void setViewLookAtRH(const vec3& eye, const vec3& at, const vec3& up)
 			{
-            vec3  zaxis = (eye - at);  zaxis.normalize(); 
+            vec3  zaxis = (eye - at);  zaxis.normalize();
 		    vec3  xaxis = up.cross(zaxis); xaxis.normalize();
-		    vec3  yaxis =  zaxis.cross(xaxis); 			
-			
+		    vec3  yaxis =  zaxis.cross(xaxis);
+
 		   _11=xaxis.x;           _12=yaxis.x;            _13=zaxis.x;            _14=0.0f;
 		   _21=xaxis.y;           _22=yaxis.y;            _23=zaxis.y;            _24=0.0f;
 		   _31=xaxis.z;           _32=yaxis.z;            _33=zaxis.z;            _34=0.0f;
-		   _41= -xaxis.dot(eye);  _42= -yaxis.dot(eye);   _43= -zaxis.dot(eye);   _44=1.0f;			
-			
+		   _41= -xaxis.dot(eye);  _42= -yaxis.dot(eye);   _43= -zaxis.dot(eye);   _44=1.0f;
+
 	    	// zaxis = normal(Eye - At)
 	    	// xaxis = normal(cross(Up, zaxis))
-	    	// yaxis = cross(zaxis, xaxis)	    
+	    	// yaxis = cross(zaxis, xaxis)
 	    	//  xaxis.x           yaxis.x           zaxis.x          0
 	    	//  xaxis.y           yaxis.y           zaxis.y          0
 	    	//  xaxis.z           yaxis.z           zaxis.z          0
-	     	// -dot(xaxis, eye)  -dot(yaxis, eye)  -dot(zaxis, eye)  	
+	     	// -dot(xaxis, eye)  -dot(yaxis, eye)  -dot(zaxis, eye)
 			}
 
 
 			/** \brief Построение левосторонней матрицы вида  по направлению взгляда */
-			inline  void setViewDirLH(const vec3& eye, const vec3& dir, const vec3& up) 
-			{ 
+			inline  void setViewDirLH(const vec3& eye, const vec3& dir, const vec3& up)
+			{
                 #pragma message ("KS777 MATH::MAT44  need check setViewDirLH" __FILE__ )
 
 				vec3 dirn = dir.normalized();
@@ -906,8 +904,8 @@ namespace gb
 			}
 
 			/** \brief Построение правосторонней матрицы вида  по направлению взгляда */
-			inline  void setViewDirRH(const vec3& eye, const vec3& dir, const vec3& up) 
-			{ 
+			inline  void setViewDirRH(const vec3& eye, const vec3& dir, const vec3& up)
+			{
 				#pragma message ("KS777 MATH::MAT44 warn  need check setViewDirRH" __FILE__ )
 
 				vec3 to = dir.normalized();
@@ -924,15 +922,15 @@ namespace gb
 
 #if ( defined GB_OPENGL  && defined __GL_H__ )
 
-			//! \brief  Старый способ  перемножения матрицы с текущей в OpenGL 
+			//! \brief  Старый способ  перемножения матрицы с текущей в OpenGL
 			inline void glMul()  { glMultMatrixf( (GLfloat*)&_11  ); }
 
-			//! \brief   Старый способ загрузки матрицы  в OpenGL 
+			//! \brief   Старый способ загрузки матрицы  в OpenGL
 			inline void glLoad() { glLoadMatrixf( (GLfloat*)&_11  ); }
 
 			//! \brief Загрузить из контекста OpenGL проекционную матрицу.
-			inline void glGetProjection() 
-			{    
+			inline void glGetProjection()
+			{
 				glGetFloatv(GL_PROJECTION_MATRIX, &_11);
 			}
 
@@ -947,26 +945,26 @@ namespace gb
 
 #ifdef _D3D9_H_  // d3d9 device methods
 
-			   //! \brief Установить матрицу в устройство d3d9 как матрицу ВИДА 
-			   inline HRESULT makeDevice9TransfView(IDirect3DDevice9* pdevice) const 
+			   //! \brief Установить матрицу в устройство d3d9 как матрицу ВИДА
+			   inline HRESULT makeDevice9TransfView(IDirect3DDevice9* pdevice) const
 			   {
 				   return pdevice->SetTransform(D3DTS_VIEW, (D3DMATRIX*)&_11 );
 			   }
 
-			   //! \brief Установить матрицу в устройство d3d9 как матрицу ПРОЕКЦИИ  
+			   //! \brief Установить матрицу в устройство d3d9 как матрицу ПРОЕКЦИИ
 			   inline HRESULT makeDevice9TransfProj(IDirect3DDevice9* pdevice) const
 			   {
 				   return pdevice->SetTransform(D3DTS_PROJECTION, (D3DMATRIX*)&_11 );
 			   }
 
-			   //! \brief Установить матрицу в устройство d3d9 как матрицу ТРАНСФОРМАЦИИ  	
-			   inline HRESULT makeDevice9TransfWorld(IDirect3DDevice9* pdevice) 
+			   //! \brief Установить матрицу в устройство d3d9 как матрицу ТРАНСФОРМАЦИИ
+			   inline HRESULT makeDevice9TransfWorld(IDirect3DDevice9* pdevice)
 			   {
 				   return pdevice->SetTransform(D3DTS_WORLD, (D3DMATRIX*)&_11 );
 			   }
 
-			   //! \brief Установить матрицу в девайс как матрицу трансформации по данному типу trType 		
-			   inline HRESULT makeDevice9Transf(IDirect3DDevice9* pdevice, D3DTRANSFORMSTATETYPE trType ) const 
+			   //! \brief Установить матрицу в девайс как матрицу трансформации по данному типу trType
+			   inline HRESULT makeDevice9Transf(IDirect3DDevice9* pdevice, D3DTRANSFORMSTATETYPE trType ) const
 			   {
 				   return pdevice->SetTransform( trType, (D3DMATRIX*)&_11 );
 			   }
@@ -974,20 +972,20 @@ namespace gb
 
 
 
-			   //! \brief Получить из устройства d3d9   матрицу ВИДА 
-			   inline HRESULT readDevice9TransfView(IDirect3DDevice9* pdevice)   
+			   //! \brief Получить из устройства d3d9   матрицу ВИДА
+			   inline HRESULT readDevice9TransfView(IDirect3DDevice9* pdevice)
 			   {
 				   return pdevice->GetTransform(D3DTS_VIEW, (D3DMATRIX*)&_11 );
 			   }
 
-			   //! \brief Получить из устройства устройства d3d9   матрицу ПРОЕКЦИИ  
-			   inline HRESULT readDevice9TransfProj(IDirect3DDevice9* pdevice)  
+			   //! \brief Получить из устройства устройства d3d9   матрицу ПРОЕКЦИИ
+			   inline HRESULT readDevice9TransfProj(IDirect3DDevice9* pdevice)
 			   {
 				   return pdevice->GetTransform(D3DTS_PROJECTION, (D3DMATRIX*)&_11 );
 			   }
 
-			   //! \brief Получить из устройства устройства d3d9   матрицу ТРАНСФОРМАЦИИ  	
-			   inline HRESULT readDevice9TransfWorld(IDirect3DDevice9* pdevice) 
+			   //! \brief Получить из устройства устройства d3d9   матрицу ТРАНСФОРМАЦИИ
+			   inline HRESULT readDevice9TransfWorld(IDirect3DDevice9* pdevice)
 			   {
 				   return pdevice->GetTransform(D3DTS_WORLD, (D3DMATRIX*)&_11 );
 			   }
@@ -1001,33 +999,33 @@ namespace gb
 				//! \brief Вывод значений на консоль
 			   inline void print() const
 			   {
-				   printf("\n%f   %f   %f   %f  \n%f   %f   %f   %f  \n%f   %f   %f   %f  \n%f   %f   %f   %f  \n  ", 
-					   _11, _12, _13, _14, 
+				   printf("\n%f   %f   %f   %f  \n%f   %f   %f   %f  \n%f   %f   %f   %f  \n%f   %f   %f   %f  \n  ",
+					   _11, _12, _13, _14,
 					   _21, _22, _23, _24,
-					   _31, _32, _33, _34,	 
-					   _41, _42, _43, _44	 
+					   _31, _32, _33, _34,
+					   _41, _42, _43, _44
 					   );
 			   }
 
-		
-		};	
-	
-	
-	
-	
-	
 
-static const mat44     MATRIX44_IDENTITY =  mat44 
-(
-  1.0f,  0.0f,  0.0f,  0.0f,
-  0.0f,  1.0f,  0.0f,  0.0f,
-  0.0f,  0.0f,  1.0f,  0.0f,
-  0.0f,  0.0f,  0.0f,  1.0f 
-);
+		};
 
 
-	
-	
-	
-	}
+
+
+
+
+			static const mat44     MATRIX44_IDENTITY =  mat44
+			(
+			  1.0f,  0.0f,  0.0f,  0.0f,
+			  0.0f,  1.0f,  0.0f,  0.0f,
+			  0.0f,  0.0f,  1.0f,  0.0f,
+			  0.0f,  0.0f,  0.0f,  1.0f
+			);
+
+
+
+
+
+
 }

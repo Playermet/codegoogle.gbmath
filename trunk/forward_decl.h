@@ -1,19 +1,18 @@
 ﻿/** \file fmath_forward_decl.h
- \brief Для gb::fmath форвард-декларации.
+ \brief Для fmath форвард-декларации.
 
 
 */
 
 #pragma once
 
-#ifndef __GB_FMATH_H__
-    #error НЕ ВКЛЮЧАЙТЕ ЭТОТ ФАЙЛ. ВКЛЮЧАЙТЕ:   #include <gb/fmath/math.h>  
+#ifndef __GBMATH_H__
+    #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
- 
 
-namespace gb
-{
-namespace fmath
+
+
+namespace gbmath
 {
 
 //---------------------------------------------------------------
@@ -24,7 +23,7 @@ namespace scalar
 
 }
 //---------------------------------------------------------------
- 
+
 // color
 
 template <typename T>
@@ -60,7 +59,7 @@ struct matrix4x4;
 
 class  Quaternion;
 
- 
+
 //namespace geom2d  {
 
 struct Size2d;
@@ -116,24 +115,18 @@ class ViewportZ;
 
 //---------------------------------------------------------------
 
-namespace context 
-{
+//namespace context {
 
 struct float_context_type_e;
 class float_context;
 struct vector_context_type_e;
 struct matrix4x4_context_type_e;
 class GeometryContext;
- 
 
-}
+
+//}
 
 
 //---------------------------------------------------------------
 }
-// end namespace fmath
-
-}
-// end namespace gb
-
-// end file
+// end namespace gbmath

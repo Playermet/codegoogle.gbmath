@@ -1,26 +1,24 @@
-﻿/**  \file 
+﻿/**  \file
  \brief яяяяяяяя
- 
- 
+
+
 */
 
 #pragma once
 
-#ifndef __GB_FMATH_H__
-    #error НЕ ВКЛЮЧАЙТЕ ЭТОТ ФАЙЛ. ВКЛЮЧАЙТЕ:   #include <gb/fmath/math.h>  
+#ifndef __GBMATH_H__
+    #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
 
-namespace gb 
+
+namespace gbmath
 {
 
-	namespace fmath
-	{
-	
-	
 
 
-#pragma message("ks777: gb::fmath::context  ПРОВЕРЯТЬ И ДОБАВЛЯТЬ ПО СЕМАНТИКАМ RENDER MONKEY  "  __FILE__)
+
+#pragma message("ks777: gbmath::context  ПРОВЕРЯТЬ И ДОБАВЛЯТЬ ПО СЕМАНТИКАМ RENDER MONKEY  "  __FILE__)
 
       //!  семантика параметра типа  float
       struct float_context_type_e
@@ -30,9 +28,9 @@ namespace gb
 		  UNDEFINED  =  0,   ///< не определено !
 
 
- 
+
 		  TIME,
- 
+
 		  COSTIME,
 		  SINTIME,
 		  TANTIME,
@@ -41,7 +39,7 @@ namespace gb
 		  //COSTIME0_1,
 		  //SINTIME0_1,
 		  //TANTIME0_1,
- 
+
 		  //TIMESPEED,
 
 		  //TAN0_2PI,
@@ -79,7 +77,7 @@ namespace gb
 		  RANDOMFRACTION3PEREFFECT,
 		  RANDOMFRACTION4PEREFFECT,
 			 */
- 
+
 		  //PASSINDEX,
 
 		  RIGTHMOUSEBUTTON,
@@ -87,7 +85,7 @@ namespace gb
 		  MIDDLEMOUSEBUTTON,
 
 		  //MIDDLEMOUSEBUTTON,
-			 
+
 
 		  MOUSECOORDINATEX,
 		  MOUSECOORDINATEY,
@@ -109,7 +107,7 @@ namespace gb
 		  //ALPHA,
 		  //LIGTHMAPINTENSITY,
 		  //ANIMATESPEED,
- 
+
 
 
 		  UNUSED_DECLARED_LAST,	///< Этот пункт не используется. Декларируется последним.
@@ -123,16 +121,16 @@ namespace gb
 		 static bool fromstr(float_context_type_e::e&, const char*);
 
 
-	  }; 
+	  };
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	}
+
+
+
+
+
+
+
+
+
+
 }

@@ -6,18 +6,16 @@
 
 #pragma once
 
-#ifndef __GB_FMATH_H__
-    #error НЕ ВКЛЮЧАЙТЕ ЭТОТ ФАЙЛ. ВКЛЮЧАЙТЕ:   #include <gb/fmath/math.h>  
+#ifndef __GBMATH_H__
+    #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
 
-namespace gb 
+ 
+namespace gbmath
 {
 
-	namespace fmath
-	{
-	
-	
+
 
 
 		/** \brief Сущность описывает точку/координату/позицию в 3х-мерном пространстве.
@@ -40,7 +38,7 @@ namespace gb
 
 			inline operator       vec3 () const { return  vec3 (_x,_y,_z);  }
 			inline operator const vec3*() const { return (vec3*)&_x; }
-	
+
 #ifdef _D3D9_H_
 			inline operator D3DVECTOR*() { return (D3DVECTOR*)&_x; }
 			inline operator const D3DVECTOR*() const { return (D3DVECTOR*)&_x; }
@@ -49,7 +47,7 @@ namespace gb
 #endif
 
 
-			//! \brief установка  средней точки  
+			//! \brief установка  средней точки
 			inline Point3& setMiddle(const  vec3& p1, const  vec3& p2)
 			{
 				_x = (p1.x + p2.x) / 2.0f;
@@ -59,7 +57,7 @@ namespace gb
 			}
 
 
-			//! \brief установка  средней точки  
+			//! \brief установка  средней точки
 			inline Point3& setMiddle(const Point3& p)
 			{
 				_x = (_x + p._x) / 2.0f;
@@ -79,37 +77,37 @@ namespace gb
 			}
 
 			//! \brief  Перемещение точки по направлению normal на расстояние distance
-			Point3& moveAlongNormal(const Normal3& normal, float distance) 
+			Point3& moveAlongNormal(const Normal3& normal, float distance)
 			{
-				 vec3 vn = normal; 
+				 vec3 vn = normal;
 				vn *= distance;
 				_x += vn.x; _y=vn.y; _z=vn.z;
 				return *this;
 			}
-			
+
 			//! \brief Вернуть расстояние между точками.
-			inline float distanceBetween(const Point3& p) const    
+			inline float distanceBetween(const Point3& p) const
 			{
 		       vec3 sub = ( vec3)*this - ( vec3)p;
 			  return sub.length();
 		    }
-			
-			
+
+
 			/**  \brief  Изменить расстояние между this и точкой pnt по коэф. k.
-			 Если k меньше 1 то производится сближение, если больше , то удаление   */ 
-			Point3& adjustDistancePoint(const Point3& pnt, const float k) 
+			 Если k меньше 1 то производится сближение, если больше , то удаление   */
+			Point3& adjustDistancePoint(const Point3& pnt, const float k)
 			{
-				 vec3 dv  = ( vec3)pnt - ( vec3)*this; 
+				 vec3 dv  = ( vec3)pnt - ( vec3)*this;
 			  float dist = dv.length();
 			   Normal3 n  =  dv ;
 			  moveAlongNormal( n,  dist - (dist * k) );
 			  return *this;
 			}
 
- 
+
 			//! \brief Трансформировать точку по матрице m
-			Point3& transform(const  mat44& m) 
-			{ 
+			Point3& transform(const  mat44& m)
+			{
 			    vec3 v = *this;
 			   v.transformCoord(m);
 			   *this = v;
@@ -117,17 +115,11 @@ namespace gb
 			}
 
 			// void fromScreenSpace(const Point2& p, const VP& vp, const M& m) {....}
-		
+
 		};
 		// end class
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	}
+
+
+
+ 
 }

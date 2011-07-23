@@ -6,36 +6,24 @@
 
 #pragma once
 
-#ifndef __GB_FMATH_H__
-    #error НЕ ВКЛЮЧАЙТЕ ЭТОТ ФАЙЛ. ВКЛЮЧАЙТЕ:   #include <gb/fmath/math.h>  
+#ifndef __GBMATH_H__
+    #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
 
-namespace gb 
+ 
+namespace gbmath
 {
 
-	namespace fmath
-	{
-	
-	
-	
-	
-	
+ 
+
+		class OOBB  {
+		public:
+
+			OOBB(){}
 
 
-	class OOBB  {
-	public:
+		};
 
-		OOBB(){}	
-	
-	
-	};
-	
-	
-	
-	
-	
-	
-	
-	}
+ 
 }

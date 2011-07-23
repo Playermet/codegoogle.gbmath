@@ -1,20 +1,19 @@
-/**  \file 
+/**  \file
  \brief ÿÿÿÿÿÿÿÿ
- 
+
 
  */
 
 #pragma once
- 
-#ifndef __GB_FMATH_H__
-#error ÍÅ ÂÊËŞ×ÀÉÒÅ İÒÎÒ ÔÀÉË. ÂÊËŞ×ÀÉÒÅ:   #include <gb/fmath/math.h>  
+
+#ifndef __GBMATH_H__
+#error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
-namespace gb
-{
 
-	namespace fmath 
-	{
+
+namespace gbmath
+{
 
 
 
@@ -22,10 +21,10 @@ namespace gb
 
 			color3_24() {  r = g = b = 0; }
 
-			  
+
 
 		};
 
-	}
+
 
 }

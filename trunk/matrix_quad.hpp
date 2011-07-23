@@ -7,22 +7,20 @@
 
 #pragma once
 
-#ifndef __GB_FMATH_H__
-    #error НЕ ВКЛЮЧАЙТЕ ЭТОТ ФАЙЛ. ВКЛЮЧАЙТЕ:   #include <gb/fmath/math.h>  
+#ifndef __GBMATH_H__
+    #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
 //#include "matrix.hpp"
 
-namespace gb
+ 
+namespace gbmath
 {
 
-	namespace fmath
-	{
-	
- 
+
 	template <typename T, size_t N>
 	struct matrix_quad : public  matrix<T, N, N> {
-	  
+
 
 		inline matrix_quad() {}
 
@@ -61,7 +59,7 @@ namespace gb
 				for(size_t j=0; j<N; j++)
 				{
 					res.at(i,j) = T();
-					for (size_t k=0; k<N; k++) 
+					for (size_t k=0; k<N; k++)
 					{
 						res.at(i,j) += a.at(i,k) * b.at(k,j);
 					}
@@ -79,29 +77,29 @@ namespace gb
 
 
 
-	}; 
+	};
 
 
 	//------------------------------------------------------------------------------------------------
-	
+
 	namespace __test
 	{
-	
+
 	inline void __test_matrix_quad()
 	{
 		matrix_quad<float,4> mat;
 
 		using namespace std;
 		cout << mat << std::endl;
-	
+
 
 	   system("pause");
 
 	   cout << "set identity" << endl;
 		mat.set_identity();
 	   cout << mat <<endl;
-	
-	
+
+
 
 
 
@@ -109,17 +107,13 @@ namespace gb
 		 system("pause");
 	    int _end =0;
 	}
-	
-	
+
+
 	}
 
 
 
-
-
-	
-	
-	}
+ 
 }
 
 #endif // __MATRIX_QUAD_HPP__

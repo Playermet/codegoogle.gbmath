@@ -5,19 +5,17 @@
 
 #pragma once
 
-#ifndef __GB_FMATH_H__
-    #error НЕ ВКЛЮЧАЙТЕ ЭТОТ ФАЙЛ. ВКЛЮЧАЙТЕ:   #include <gb/fmath/math.h>  
+#ifndef __GBMATH_H__
+    #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
 #include <boost/array.hpp>
 #include <iostream>
 #include <string>
 
-namespace gb
+ 
+namespace gbmath
 {
-
-	namespace fmath
-	{
 
 	template <typename T, size_t NumColumns, size_t NumRows>
 	struct matrix : public boost::array< T , NumColumns * NumRows > {
@@ -32,8 +30,8 @@ namespace gb
 
 
 		inline matrix<T,NumColumns,NumRows>(const T* _array)
-		{ 
-			*this = _array; 
+		{
+			*this = _array;
 		}
 
 
@@ -41,7 +39,7 @@ namespace gb
 		inline operator        T*()        { return elems; }
 
 
-		inline matrix<T,NumColumns,NumRows> operator - () const 
+		inline matrix<T,NumColumns,NumRows> operator - () const
 		{
 			matrix<T,NumColumns,NumRows> res;
 			for(size_t c=0; c<size(); c++)
@@ -165,7 +163,7 @@ namespace gb
 		}
 
 
-		boost::array<T,NumRows> get_column() const 
+		boost::array<T,NumRows> get_column() const
 		{
 			boost::array<T,NumRows> res;
 			for(size_t c=0; c<NumRows; c++)
@@ -175,7 +173,7 @@ namespace gb
 			return res;
 		}
 
-		boost::array<T,NumColumns> get_row() const 
+		boost::array<T,NumColumns> get_row() const
 		{
 			boost::array<T,NumColumns> res;
 			for(size_t c=0; c<NumColumns; c++)
@@ -193,25 +191,25 @@ namespace gb
 			}
 			return elems[ row * NumColumns + column ];	// [ c * NumColumns + j ];
 		}
-	
-	
+
+
 		#pragma message("NEED ADD to/from string operators  "   __FILE__ )
-	
+
 		/*
 		template <>
 		matrix<T,NumColumns,NumRows> operator * (const matrix<T,NumColumns,NumRows>& a) const
 		{
 			BOOST_STATIC_ASSERT(   )
-		
+
 			matrix<T,NumColumns,NumRows> r;
-			
-			
-		
-		
+
+
+
+
 			return r;
 		}
 	 */
- 
+
 		friend std::ostream &operator << (std::ostream &stream, const matrix<T,NumColumns,NumRows>& m)
 		{
 				for(size_t c=0; c<NumRows; c++)
@@ -220,14 +218,14 @@ namespace gb
 					{
 						const T temp =  m[ c * NumColumns + j ];   //< temp
 						stream << temp;
-						
+
 						if(j != NumColumns-1)
 						{
 							stream << " ";
 						}
-						
+
 					}
-					
+
 					stream << "\n";
 				}
 
@@ -235,20 +233,20 @@ namespace gb
 
 			return stream;
 		}
-		 
+
 
 	protected:
 		inline T& __at(size_t column, size_t row)
 		{
 			return elems[ row * NumColumns + column ];
 		}
-	 
+
 
 	};
 
 
 
-	namespace __test 
+	namespace __test
 	{
 		inline void __test_matrix()
 		{
@@ -288,9 +286,7 @@ namespace gb
 	}
 
 
-
-
-	}
+ 
 
 }
 

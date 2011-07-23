@@ -1,11 +1,9 @@
 ﻿
-#include "fmath.h"
+#include "_gbmath.h"
 
 
-namespace gb
-{
-
-namespace fmath
+ 
+namespace gbmath
 {
 
 
@@ -14,10 +12,10 @@ namespace fmath
 //=========================================================================
 
 //=========================================================================
-void Frustum::make(const  mat44& mViewProj) 
+void Frustum::make(const  mat44& mViewProj)
 {
- 
-	// left plane 
+
+	// left plane
 	planes[0].a = mViewProj._14 + mViewProj._13;
 	planes[0].b = mViewProj._24 + mViewProj._23;
 	planes[0].c = mViewProj._34 + mViewProj._33;
@@ -70,19 +68,19 @@ void Frustum::make(const  mat44& mViewProj)
 	//D3DXPlaneNormalize((D3DXPLANE*)&planes[5], (D3DXPLANE*)&planes[5]);
 	planes[5].normalize();
 
- 
+
 };
 
 
 //=========================================================================
-bool Frustum::checkPoint(const  vec3& point) const  
+bool Frustum::checkPoint(const  vec3& point) const
 {
-	for(int c=0; c<6; c++) 
+	for(int c=0; c<6; c++)
 	{
 		if( planes[c].dotCoord(point) < 0.0f )
 		//if(D3DXPlaneDotCoord( (D3DXPLANE*)&planes[c], &D3DXVECTOR3(pos->x, pos->y, pos->z)) < 0.0f)
 		{
-			return true;		
+			return true;
 		}
 
 	}
@@ -91,62 +89,62 @@ bool Frustum::checkPoint(const  vec3& point) const
 
 
 //=========================================================================
-bool Frustum::checkSphere(const Sphere& sphere)  const 
+bool Frustum::checkSphere(const Sphere& sphere)  const
 {
-	for(int c=0; c<6; c++) 
-	{  
+	for(int c=0; c<6; c++)
+	{
 		if( planes[c].dotCoord(sphere.center) < -sphere.radius  )
 		//if(  D3DXPlaneDotCoord((D3DXPLANE*)&planes[c], &D3DXVECTOR3(sphere->center.x, sphere->center.y, sphere->center.z))  <  -sphere->radius  )
 		{
           return true;
 		}
- 
+
 	}
 
 	return false;
 };
 
 //=========================================================================
-bool Frustum::checkAABB(const AABB& aabb) const  
+bool Frustum::checkAABB(const AABB& aabb) const
 {
 
-	for(int c=0; c<6; c++) 
+	for(int c=0; c<6; c++)
 	{
 	    if( planes[c].dotCoord(  vec3(aabb.min.x, aabb.min.y, aabb.min.z) ) >= 0.0f )
         //if(D3DXPlaneDotCoord((D3DXPLANE*)&planes[c], &D3DXVECTOR3(aabb.min.x, aabb.min.y, aabb.min.z)) >= 0.0f)
 			continue;
-					
-	      if( planes[c].dotCoord(  vec3(aabb.max.x, aabb.min.y, aabb.min.z) ) >= 0.0f ) 	
+
+	      if( planes[c].dotCoord(  vec3(aabb.max.x, aabb.min.y, aabb.min.z) ) >= 0.0f )
 		//if(D3DXPlaneDotCoord((D3DXPLANE*)&planes[c], &D3DXVECTOR3(aabb.max.x, aabb.min.y, aabb.min.z)) >= 0.0f)
 			continue;
-			
-	      if( planes[c].dotCoord(  vec3(aabb.min.x, aabb.max.x, aabb.min.z) ) >= 0.0f ) 			
+
+	      if( planes[c].dotCoord(  vec3(aabb.min.x, aabb.max.x, aabb.min.z) ) >= 0.0f )
 		//if(D3DXPlaneDotCoord((D3DXPLANE*)&planes[c], &D3DXVECTOR3(aabb.min.x, aabb.max.x, aabb.min.z)) >= 0.0f)
 			continue;
-			
-	      if( planes[c].dotCoord(  vec3(aabb.max.x, aabb.max.x, aabb.min.z) ) >= 0.0f ) 			
+
+	      if( planes[c].dotCoord(  vec3(aabb.max.x, aabb.max.x, aabb.min.z) ) >= 0.0f )
 		//if(D3DXPlaneDotCoord((D3DXPLANE*)&planes[c], &D3DXVECTOR3(aabb.max.x, aabb.max.x, aabb.min.z)) >= 0.0f)
 			continue;
-			
-	      if( planes[c].dotCoord(  vec3(aabb.min.x, aabb.min.y, aabb.max.z) ) >= 0.0f )			
+
+	      if( planes[c].dotCoord(  vec3(aabb.min.x, aabb.min.y, aabb.max.z) ) >= 0.0f )
 		//if(D3DXPlaneDotCoord((D3DXPLANE*)&planes[c], &D3DXVECTOR3(aabb.min.x, aabb.min.y, aabb.max.z)) >= 0.0f)
 			continue;
-			
-	      if( planes[c].dotCoord(  vec3(aabb.max.x, aabb.min.y, aabb.max.z) ) >= 0.0f )			
+
+	      if( planes[c].dotCoord(  vec3(aabb.max.x, aabb.min.y, aabb.max.z) ) >= 0.0f )
 		//if(D3DXPlaneDotCoord((D3DXPLANE*)&planes[c], &D3DXVECTOR3(aabb.max.x, aabb.min.y, aabb.max.z)) >= 0.0f)
 			continue;
-			
-	      if( planes[c].dotCoord(  vec3(aabb.min.x, aabb.max.x, aabb.max.z) ) >= 0.0f )			
+
+	      if( planes[c].dotCoord(  vec3(aabb.min.x, aabb.max.x, aabb.max.z) ) >= 0.0f )
 		//if(D3DXPlaneDotCoord((D3DXPLANE*)&planes[c], &D3DXVECTOR3(aabb.min.x, aabb.max.x, aabb.max.z)) >= 0.0f)
 			continue;
-			
-	      if( planes[c].dotCoord(  vec3(aabb.max.x, aabb.max.x, aabb.max.z) ) >= 0.0f )			
+
+	      if( planes[c].dotCoord(  vec3(aabb.max.x, aabb.max.x, aabb.max.z) ) >= 0.0f )
 		//if(D3DXPlaneDotCoord((D3DXPLANE*)&planes[c], &D3DXVECTOR3(aabb.max.x, aabb.max.x, aabb.max.z)) >= 0.0f)
 			continue;
 
-			
+
 		return true;
-		
+
 	} // for
 
 	return false;
@@ -154,6 +152,6 @@ bool Frustum::checkAABB(const AABB& aabb) const
 
 
 
-}
+
 }
 

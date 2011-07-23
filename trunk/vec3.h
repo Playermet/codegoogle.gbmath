@@ -6,27 +6,24 @@
 
 #pragma once
 
-#ifndef __GB_FMATH_H__
-    #error НЕ ВКЛЮЧАЙТЕ ЭТОТ ФАЙЛ. ВКЛЮЧАЙТЕ:   #include <gb/fmath/math.h>  
+#ifndef __GBMATH_H__
+    #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
-
-namespace gb 
+ 
+namespace gbmath
 {
 
-	namespace fmath
-	{
-	
-	
 
 
-		/** \brief Базовый 3d-вектор.  Поправить операторы по эпислону */		
+
+		/** \brief Базовый 3d-вектор.  Поправить операторы по эпислону */
 		struct vec3  {
 
-		    union 
+		    union
 			{
-			
-				struct 
+
+				struct
 				{
 				   float x, y, z;
 				};
@@ -48,9 +45,9 @@ namespace gb
 
 			//inline vec3(vec4);
 
-			//! \brief Присваивание из float-массива 
+			//! \brief Присваивание из float-массива
 			inline void operator = (const float* pf) {x=pf[0]; y=pf[1]; z=pf[2]; }
-				 
+
 			inline bool  operator == (const vec3 &v) const { return (x == v.x && y == v.y && z == v.z ); }
 			inline bool  operator != (const vec3 &v) const { return (x != v.x || y != v.y || z != v.z ); }
 
@@ -73,12 +70,12 @@ namespace gb
 			inline vec3 &  operator *= (const vec3 &v)    {	x *= v.x;	y *= v.y;	z *= v.z;	return *this; }
 			inline vec3 &  operator /= (float f)            {	x /= f;	y /= f;	z /= f;	return *this; }
 			inline vec3 &  operator /= (const vec3 &v)    {	x /= v.x;	y /= v.y;	z /= v.z;	return *this; }
- 
-			//inline vec3 &  operator += (float f) {  } 
+
+			//inline vec3 &  operator += (float f) {  }
 
 			inline operator  const float*() const  { return &x; }
 			inline operator        float*()        { return &x; }
- 
+
 
 			inline float operator [] (unsigned int index) const
 			{
@@ -87,7 +84,7 @@ namespace gb
 				return pf[index];
 			}
 
-			inline  float& operator [] (unsigned int index) 
+			inline  float& operator [] (unsigned int index)
 			{
 				assert(index<3 && "invalid index");
 				float* pf = &x;
@@ -139,20 +136,20 @@ namespace gb
 			        r.x = y * v.z  -  z * v.y;
 			        r.y = z * v.x  -  x * v.z;
 			        r.z = x * v.y  -  y * v.x;
-					return r;		 
+					return r;
 			}
 
-			//! \brief  Нормализовать 
-			inline vec3&   normalize ()	  
-			{ 
+			//! \brief  Нормализовать
+			inline vec3&   normalize ()
+			{
 				if( (0.0f==x) && (0.0f==y) && (0.0f==z) ) // < без этого глючит. nan
-					   return *this; 
+					   return *this;
 
-				register float fl=length(); 
-				x/=fl; 
-				y/=fl; 
-				z/=fl; 
-				return *this; 
+				register float fl=length();
+				x/=fl;
+				y/=fl;
+				z/=fl;
+				return *this;
 			}
 
 			//! \brief  Вернуть нормализованый
@@ -162,25 +159,25 @@ namespace gb
 			inline float distance(const vec3& point)   const { return  sqrt( distanceSq(point) );  }
 			//! \brief  Вычислить и вернуть квадрат расстояния между точками  this и point.
 			inline float distanceSq(const vec3& point) const { return vec3(*this-point).lengthSq() ;  }
- 
+
 
 			//! \brief Получить наибольшее абсолютное из каждой компоненты
 			inline float     getMaxLength () const {   return scalar::max3 ( fabs (x), fabs (y), fabs (z) );   }
 
 			inline vec3&   invert() {x=-x; y=-y; z=-z; return *this; };
 
-			inline vec3    lerp(const vec3& v, const float k) const 
+			inline vec3    lerp(const vec3& v, const float k) const
 			{
 				vec3 r;
 				r.x = x + (v.x - x) * k;
 				r.y = y + (v.y - y) * k;
 				r.z = z + (v.z - z) * k;
-				return r;			
+				return r;
 			};
 
 			//! \brief     получить минимальную компоненту
-			inline float minval() const   
-			{ 
+			inline float minval() const
+			{
 				float ret = x;
 				if (y < ret) ret = y;
 				if (z < ret) ret = z;
@@ -189,7 +186,7 @@ namespace gb
 
 			//! \brief     получить максимальную компоненту
 			inline float maxval()  const
-			{  
+			{
 				float ret = x;
 				if (ret < y) ret = y;
 				if (ret < z) ret = z;
@@ -199,11 +196,11 @@ namespace gb
 
 
 			//* \brief   вычисл. мин. абсолютное из компонент.
-			inline float minAbsVal() const 
+			inline float minAbsVal() const
 			{
 				float ax=abs(x);
-				float ay=abs(y); 
-				float az=abs(z); 
+				float ay=abs(y);
+				float az=abs(z);
 				float res=ax;
 				if(ay<res) res=ay;
 				if(az<res) res=az;
@@ -214,8 +211,8 @@ namespace gb
 			inline float maxAbsVal() const
 			{
 				float ax=abs(x);
-				float ay=abs(y); 
-				float az=abs(z); 
+				float ay=abs(y);
+				float az=abs(z);
 				float res=ax;
 				if(ay>res) res=ay;
 				if(az>res) res=az;
@@ -224,8 +221,8 @@ namespace gb
 
 
 
-			//! \brief  Сравнить два вектора v1 и v2 и присвоить максимальный 
-			vec3& maximize(const vec3& v1, const vec3& v2) 
+			//! \brief  Сравнить два вектора v1 и v2 и присвоить максимальный
+			vec3& maximize(const vec3& v1, const vec3& v2)
 			{
 				if (v1.x > v2.x) x = v1.x; else x = v2.x;
 				if (v1.y > v2.y) y = v1.y; else y = v2.y;
@@ -236,14 +233,14 @@ namespace gb
 			//! \brief  Сравнить вектор v и собственное значение и присвоить максимальный
 			vec3& maximize(const vec3& v)
 			{
-				if (v.x > x) x = v.x; 
-				if (v.y > y) y = v.y; 
-				if (v.z > z) z = v.z; 
+				if (v.x > x) x = v.x;
+				if (v.y > y) y = v.y;
+				if (v.z > z) z = v.z;
 				return *this;
 			}
 
-			//! \brief  Сравнить два вектора v1 и v2 и присвоить минимальный 
-			vec3& minimize(const vec3& v1, const vec3& v2) 
+			//! \brief  Сравнить два вектора v1 и v2 и присвоить минимальный
+			vec3& minimize(const vec3& v1, const vec3& v2)
 			{
 				if (v1.x < v2.x) x = v1.x; else x = v2.x;
 				if (v1.y < v2.y) y = v1.y; else y = v2.y;
@@ -251,8 +248,8 @@ namespace gb
 				return *this;
 			}
 
-			//! \brief  Сравнить вектор v и собственное значение и присвоить минимальный  
-			vec3& minimize(const vec3& v) 
+			//! \brief  Сравнить вектор v и собственное значение и присвоить минимальный
+			vec3& minimize(const vec3& v)
 			{
 				if (v.x < x) x = v.x;
 				if (v.y < y) y = v.y;
@@ -268,7 +265,7 @@ namespace gb
 
 
 			//! \brief  отсеч значения в диапазоне между vmin и vmax
-			inline vec3& clump(const vec3& vmin, const vec3& vmax) 
+			inline vec3& clump(const vec3& vmin, const vec3& vmax)
 			{
 				if( x < vmin.x) x=vmin.x;  if(x > vmax.x) x=vmax.x;
 				if( y < vmin.y) y=vmin.y;  if(y > vmax.y) y=vmax.y;
@@ -277,11 +274,11 @@ namespace gb
 			}
 
 			//! \brief Вернуть среднюю точку между this и point
-			inline vec3 middle(const vec3& point) const 
+			inline vec3 middle(const vec3& point) const
 			{
 			    vec3 res;
 			      res.x = ( x + point.x ) / 2.0f;
-			      res.y = ( y + point.y ) / 2.0f;			
+			      res.y = ( y + point.y ) / 2.0f;
 			      res.z = ( z + point.z ) / 2.0f;
 			         return res;
 			}
@@ -293,40 +290,40 @@ namespace gb
 			vec3&  transformCoord(const mat44& m);
 			//! \brief Тарнсформировать по матрице m   как нормаль. ПРОВЕРЕНО!
 			vec3&  transformNormal(const mat44& m);
-				
-			 // TODO: 
-			    // void transformCoordArray(float* pfOut, int strideOut, const float* pvInput, int strideInput,  const M44& m, const int num) {...} 
-			    // void transformNormalArray(float* pfOut, int strideOut, const float* pvInput, int strideInput,  const M44& m, const int num) {...} 
+
+			 // TODO:
+			    // void transformCoordArray(float* pfOut, int strideOut, const float* pvInput, int strideInput,  const M44& m, const int num) {...}
+			    // void transformNormalArray(float* pfOut, int strideOut, const float* pvInput, int strideInput,  const M44& m, const int num) {...}
 
 
-			/** \brief  Проекция вектора из виртуального "зазеркалья" на экран. 
+			/** \brief  Проекция вектора из виртуального "зазеркалья" на экран.
 			     Возвращает спроектированый экранный вектор. ПРОВЕРЕНА!	*/
-			vec3 project ( 
+			vec3 project (
 				const ViewportZ& vp,   //<  область вывода
 				const  mat44& Proj, //<	матрица проекции
 				const  mat44& View, //<	матрица вида
 				const  mat44& World //<	матрица модельная
-				)  const; 
+				)  const;
 
 
 
-			/** \brief Анпроекция. Перевод из экранных координат в пространственые координаты 
+			/** \brief Анпроекция. Перевод из экранных координат в пространственые координаты
 			Возвращает переведённый вектор . ПРОВЕРЕНА! */
-			vec3  unproject( 
+			vec3  unproject(
 				const ViewportZ& vp,    //<  область вывода
 				const  mat44& Proj,	//<	матрица проекции
 				const  mat44& View,	//<	матрица вида
 				const  mat44& World	//<	матрица модельная
 				) const	;
 
-   
+
 			friend std::ostream &operator << (std::ostream &stream, const vec3& v)
 			{
 				stream << v.x << " " << v.y << " " << v.z ;
 				return stream;
 			}
 
-			operator std::string() const 
+			operator std::string() const
 			{
 				std::ostringstream ss;
 				ss << x << " " << y << " " << z;
@@ -363,14 +360,14 @@ namespace gb
 
 
 		}; // end vec3
-			
-	
-	
-	
+
+
+
+
 	//	#error operator << and >> need
-	
-	
-	
-	
-	}
+
+
+
+
+ 
 }

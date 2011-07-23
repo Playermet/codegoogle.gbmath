@@ -1,14 +1,18 @@
-﻿
-#include "fmath.h"
+﻿/** \file
+  \brief enum color on object
+*/
+
+#pragma once
+
+#include "_gbmath.h"
 //#include "ObjectColotType_e.h"
 
-namespace gb
+
+
+ 
+namespace gbmath
 {
 
-
-     namespace color
-     {
-	
 
 			std::string object_color_type_e::tostr(e _enum)
 			{
@@ -41,13 +45,13 @@ namespace gb
 
 				default:
 					{
-					}	    
+					}
 				}
 
 				return res;
 			}
-	
-	
+
+
 
 			bool object_color_type_e::fromstr(e& outval, const std::string& str_arg)
 			{
@@ -84,10 +88,7 @@ namespace gb
 
 			  return false;
 			}
-	
-	 
-	 
-	 
-	 }
-}
 
+
+ 
+}

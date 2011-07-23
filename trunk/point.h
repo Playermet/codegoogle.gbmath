@@ -1,7 +1,7 @@
 ﻿/** \file
   \brief   simple point. яяяяяяяяяяяяяяя
-  
- 
+
+
 */
 
 #pragma once
@@ -16,23 +16,20 @@
 #include <sstream>
 #include <string>
 
-
-namespace gb 
+ 
+namespace gbmath
 {
 
-	namespace fmath
-	{
-	
-	
-	
-	
+
+
+
 	//! \brief   simple point.
 	class Point {
 	public:
 
 		int x;
 		int y;
- 
+
 		inline Point() { x=y=0; }
 		inline Point(const Point& p) { x=p.x; y=p.y; }
 
@@ -41,51 +38,51 @@ namespace gb
 		#endif
 
 		inline Point(int _x, int _y) { init(_x,_y);  }
-  
+
 		inline void init(int _x, int _y) { x=_x; y=_y; }
- 
+
 
 		#ifdef _WINDOWS_
 
-		inline void operator = (const POINT& p) 
+		inline void operator = (const POINT& p)
 		{
 			x = p.x;
 			y = p.y;
 		}
 
-		inline operator POINT() const 
+		inline operator POINT() const
 		{
 			POINT res = {x,y};
 			return res;
 		}
 
 		#endif
- 
 
-		inline Point operator + (const Point& p) const 
+
+		inline Point operator + (const Point& p) const
 		{
 			return Point( x+p.x , y+p.y );
 		}
- 
-		inline Point& operator += (const Point& p)  
+
+		inline Point& operator += (const Point& p)
 		{
 			x += p.x;
 			y += p.y;
 			return *this;
-		} 
+		}
 
-		inline Point operator - (const Point& p) const 
+		inline Point operator - (const Point& p) const
 		{
 			return Point( x-p.x , y-p.y );
 		}
 
-		inline Point& operator -= (const Point& p)  
+		inline Point& operator -= (const Point& p)
 		{
 			x -= p.x;
 			y -= p.y;
 			return *this;
-		} 
- 
+		}
+
 		friend std::ostream& operator << (std::ostream& os, const Point& p)
 		{
 			os << p.x << " " << p.y ;
@@ -93,7 +90,7 @@ namespace gb
 		}
 
 
-		operator std::string() const 
+		operator std::string() const
 		{
 			std::ostringstream ss;
 			ss << x << " " << y;
@@ -107,7 +104,7 @@ namespace gb
 			ss >> y;
 			if( ss.fail() ) throw std::invalid_argument("bad input string");
 		}
-  
+
 
 
 
@@ -116,9 +113,7 @@ namespace gb
 
 
 }
-//end namespace base
-
-}
-//end namespace gb
+ 
+ 
 
 // end file

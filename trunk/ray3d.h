@@ -3,43 +3,41 @@
 
 
   \todo Сделать перечечения: луч, сфера, бокс, плоскость,
-  \todo   bool checkIntersectRay(const Ray3d& ray) {....} 
+  \todo   bool checkIntersectRay(const Ray3d& ray) {....}
   \todo   bool checkIntersecеSphere(const Sphere& sph) {....}
-  \todo  bool checkIntersectAABB(const AABB& aabb) {....} 
-  \todo  bool checkIntersectPlane(const Plane& aabb) {....} 
+  \todo  bool checkIntersectAABB(const AABB& aabb) {....}
+  \todo  bool checkIntersectPlane(const Plane& aabb) {....}
 
 */
 
 #pragma once
 
-#ifndef __GB_FMATH_H__
-    #error НЕ ВКЛЮЧАЙТЕ ЭТОТ ФАЙЛ. ВКЛЮЧАЙТЕ:   #include <gb/fmath/math.h>  
+#ifndef __GBMATH_H__
+    #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
 
-namespace gb 
+ 
+namespace gbmath
 {
 
-	namespace fmath
-	{
-	
- 
-	//! \brief Луч в 3-D по позиции и направлению   
+
+	//! \brief Луч в 3-D по позиции и направлению
 	class Ray3d {
 	public:
 	    vec3   orig; ///< точка центр луча (позиция)
 	    vec3   dir;  ///< направление луча. Должен быть нормализован.
-	   
+
 	   inline Ray3d() {}
 	   inline Ray3d(const Ray3d& r) {orig=r.orig; dir=r.dir; }
-	   
+
 	   // возможно нужно убрать параметр bNeedNormalizeDir
 	   inline Ray3d(const  vec3& _orig, const  vec3& _dir, bool bNeedNormalizeDir=true)
        {
 	      orig=_orig;
 	      dir=_dir;
-	      if(bNeedNormalizeDir) 
-			  dir.normalize();	   
+	      if(bNeedNormalizeDir)
+			  dir.normalize();
 	   }
 
 	//! \brief  Трансформировать луч по матрице m
@@ -48,8 +46,8 @@ namespace gb
 	     orig.transformCoord(m);
 	     dir.transformNormal(m);
 	}
-	
- 
+
+
 
 //>>>>>>>>>>>>>>>       checkIntersectSphere  >>>>>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -84,8 +82,8 @@ bool  checkIntersectSphere(const Sphere& sphere) const
      return false;
 }
 
-	 
- /**   \brief 
+
+ /**   \brief
  http://www.gamecoder.ru/2011/04/3d-3d.html    */
 bool checkIntersectSphere_2 (const Sphere& sphere, float* result)
 {
@@ -124,13 +122,13 @@ bool checkIntersectSphere_2 (const Sphere& sphere, float* result)
    else
 	   res =  root2;
       if(result) *result = root2;
-  
+
    return ( res >= 0.0f );
 }
 
 
 // Aslan.   Проверка пересечения со сферой.  ПРОВЕРЕНО
-bool checkIntersectSphere_3( const Sphere& sph )   
+bool checkIntersectSphere_3( const Sphere& sph )
 {
 	const float __infin__  = _INFCODE;
   float res = 0.0f;
@@ -140,7 +138,7 @@ bool checkIntersectSphere_3( const Sphere& sph )
 
  // квадрат радиуса
   const float r =  (sph.radius * sph.radius);
-  
+
   // квадрат расстояния от точки до центра сферы
    float d;
   {
@@ -150,30 +148,30 @@ bool checkIntersectSphere_3( const Sphere& sph )
     // d =  vs.lengthSq(); //  sph.center.lengthSq();//  lenghtSq(p); // norm2(c-p);
 	   d = sph.center.distanceSq(orig);
   }
-  
+
   // проекция центра сферы на луч
   float s =   (sph.center-orig).dot(dir) / dir.length(); //         sprod(c-p,l)/norm(l);
-  
+
   if( (d>r) && (s<0) ) // точка снаружи сферы и луч направлен от сферы
   {
-  
+
     res = __infin__; // return INF; // нет пересечения
 	 return false;
   }
-	
+
   // квадрат расстояния от прямой до центра сферы по теореме Пифагора
   float h = d - s*s;
-  
+
   if(h>r) // луч не пересекает сферу
   {
       res = __infin__;
 	return false;
   }
- 
-  res = s+sqrt(r-h)*fmath::scalar::sign(r-d); // расстояние до пересечения
+
+  res = s+sqrt(r-h)*gbmath::scalar::sign(r-d); // расстояние до пересечения
 
   // inline int Sign(float x) {  return (x>0)-(x<0);  }
-  
+
   return  true;
 }
 
@@ -219,9 +217,9 @@ bool checkIntersectAABB(const AABB& aabb,  float* result)
       {
          tmp = t1;
          t2 = t1;
-         t2 = tmp;         
+         t2 = tmp;
       }
-      
+
       if(t1 > t_near)
       {
          t_near = t1;
@@ -249,9 +247,9 @@ bool checkIntersectAABB(const AABB& aabb,  float* result)
       {
          tmp = t1;
          t2 = t1;
-         t2 = tmp;         
+         t2 = tmp;
       }
-      
+
       if(t1 > t_near)
       {
          t_near = t1;
@@ -276,9 +274,9 @@ bool checkIntersectAABB(const AABB& aabb,  float* result)
       {
          tmp = t1;
          t2 = t1;
-         t2 = tmp;         
+         t2 = tmp;
       }
-      
+
       if(t1 > t_near)
       {
          t_near = t1;
@@ -302,12 +300,12 @@ bool checkIntersectAABB(const AABB& aabb,  float* result)
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
- 
+
 //
 //>>>>>>>>>>>>>>>>>  checkIntersectPlane  >>>>>>>>>>>>>>>>>>>>>>>>>
 //
 
-//bool checkIntersectPlane(vec3& outContactCoord, const Plane& aabb) {....} 
+//bool checkIntersectPlane(vec3& outContactCoord, const Plane& aabb) {....}
 
 // http://www.gamecoder.ru/2011/04/3d-3d.html
 
@@ -363,26 +361,22 @@ inline float distanceToPlane( plane_s& plane )   const
 
 	return (deltaD/cosAlpha);
 }
- 
-	
+
+
 	   //! \brief  вывод на консоль.
 
-       //inline void print() const 
-	   //{ 
-		//   orig.print(); printf("  "); 
-		//	dir.print(); printf("  "); 
+       //inline void print() const
+	   //{
+		//   orig.print(); printf("  ");
+		//	dir.print(); printf("  ");
 	   //}
 
 
-	
+
 	};
 		// end class
-	
-	
-	
-	
-	
-	
-	
-	}
+
+
+
+ 
 }

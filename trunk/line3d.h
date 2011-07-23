@@ -6,27 +6,25 @@
 
 #pragma once
 
-#ifndef __GB_FMATH_H__
-    #error НЕ ВКЛЮЧАЙТЕ ЭТОТ ФАЙЛ. ВКЛЮЧАЙТЕ:   #include <gb/fmath/math.h>  
+#ifndef __GBMATH_H__
+    #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
 
-namespace gb 
+ 
+namespace gbmath
 {
 
-	namespace fmath
-	{
-	
- 
 
-	//! \brief   Линия(Прямая) в трёхмерном пространстве по двум точкам  
+
+	//! \brief   Линия(Прямая) в трёхмерном пространстве по двум точкам
 	class Line3d {
 	public:
-		 vec3   src; 
+		 vec3   src;
 		 vec3   dest;
 
 		inline Line3d() {};
-		inline Line3d(const Line3d& l) {src=l.src; dest=l.dest; };	
+		inline Line3d(const Line3d& l) {src=l.src; dest=l.dest; };
 		inline Line3d(const  vec3& _src, const  vec3& _dest) {src=_src; dest=_dest; };
 
 		//! \brief Получить направление от src к dest
@@ -53,22 +51,18 @@ namespace gb
 
 
 		//! вывод на консоль.
-		//inline void print() const 
-		//{ 
-		//	src.print(); printf("  "); 
-		//	dest.print(); printf("  \n"); 
+		//inline void print() const
+		//{
+		//	src.print(); printf("  ");
+		//	dest.print(); printf("  \n");
 		//};
 
 	}; // Line
 
 
 
-	
-	
-	
-	
-	
-	
-	
-	}
+
+
+ 
 }
+

@@ -6,17 +6,14 @@
 
 #pragma once
 
-#ifndef __GB_FMATH_H__
-    #error НЕ ВКЛЮЧАЙТЕ ЭТОТ ФАЙЛ. ВКЛЮЧАЙТЕ:   #include <gb/fmath/math.h>  
+#ifndef __GBMATH_H__
+    #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
-
-namespace gb 
+ 
+namespace gbmath
 {
 
-	namespace fmath
-	{
-	
 
 
 		//! Линия в 2d по двум точкам
@@ -33,30 +30,30 @@ namespace gb
 			   src=_src;
 			   dest=_dest;
 			}
-			
-			Normal2 direction() const 
+
+			Normal2 direction() const
 			{
 			    Normal2 res = (dest - src);
-			    return res;	
+			    return res;
 			}
-			
+
 
 			inline void set(const  vec2& _src,  vec2& _dest)
 			{
 			 src  = _src;
 			 dest = _dest;
 			}
-			
-			
-			// vec2 projectPoint(const vec2& pnt) const 
-			
+
+
+			// vec2 projectPoint(const vec2& pnt) const
+
 			// checkIntersect......
-			
-			
-			
-			
+
+
+
+
 		};
+
+
  
-	
-	}
 }

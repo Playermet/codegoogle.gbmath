@@ -5,38 +5,25 @@
 
 #pragma once
 
-#ifndef __GB_FMATH_H__
-    #error НЕ ВКЛЮЧАЙТЕ ЭТОТ ФАЙЛ. ВКЛЮЧАЙТЕ:   #include <gb/fmath/math.h>  
+#ifndef __GBMATH_H__
+    #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
-
-namespace gb 
+#pragma message ("!!! NEDD operators >> << to/from string "  __FILE__ )
+ 
+namespace gbmath
 {
-
-	namespace fmath
-	{
-	
-	
-
-
-
-
+ 
 
    //! \brief  Сборка трансформации , но для повотора импользуется ось и угол.
-   struct TransformData2 
+   struct TransformData2
    {
 	   vec3        scaling;
 	   AxiesAngle  rotation;
 	   vec3        translatiion;
    };
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	}
+
+
+
+ 
 }

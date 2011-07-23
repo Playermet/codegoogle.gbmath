@@ -1,25 +1,24 @@
 ﻿// vector4.hpp
 
-#ifndef __VECTOR4_H__
-#define __VECTOR4_H__
+
+#ifndef __GBMATH_VECTOR4_H__
+#define __GBMATH_VECTOR4_H__
 
 #pragma once
 
+ 
 
-namespace gb
+namespace gbmath
 {
 
-	namespace fmath
-	{
-	
 		template <typename T>
 		struct vector4 {
- 
+
 			T  x, y, z, w;
- 
+
 			inline vector4<T> ()
-			{ 
-				x = y = z = w = T(); 
+			{
+				x = y = z = w = T();
 			}
 
 			inline vector4<T> (const vector4<T>& a)
@@ -29,14 +28,14 @@ namespace gb
 				z = a.z;
 				w = a.w;
 			}
-			
+
 			inline vector4<T> (const vector2<T>& v, const T _z,  const T _w)
 			{
-				x = a.x; 
-				y = a.y; 
-				z = _z; 
+				x = a.x;
+				y = a.y;
+				z = _z;
 				w = _w;
-			}			
+			}
 
 			inline vector4<T> (const vector3<T>& v, const T _w)
 			{
@@ -55,7 +54,7 @@ namespace gb
 				z=_z;
 				w=_w;
 			}
- 
+
 
 			inline void operator = (const T* _array)
 			{
@@ -64,48 +63,48 @@ namespace gb
 				z = _array[2];
 				w = _array[3];
 			}
- 
-					 
+
+
 			inline bool  operator == (const vector4<T> &v) const
 			{
 				return (x == v.x && y == v.y && z == v.z && w == v.w);
 			}
-			
+
 			inline bool  operator != (const vector4<T> &v) const
 			{
 				return (x != v.x || y != v.y || z != v.z || w != v.w);
 			}
- 
+
 			inline vector4<T>  operator + () const
 			{
 				return *this;
 			}
-			
+
 			inline vector4<T>  operator - () const
 			{
 				return vector4<T>( -x, -y, -z, -w );
 			}
-			
+
 
 			inline vector4<T>  operator + (const vector4<T> &v) const
 			{
 				vector4<T> res(*this);
 				res += v;
-				return res; 
+				return res;
 			}
-			
+
 			inline vector4<T>  operator - (const vector4<T> &v) const
 			{
 				return vector4<T> res(*this);
 				res -= v;
-				return res; 
+				return res;
 			}
-			
+
 			inline vector4<T>  operator * (const T value) const
 			{
-				return vector4<T> res ( x * value, y * value, z * value, w * value );	
+				return vector4<T> res ( x * value, y * value, z * value, w * value );
 			}
-			
+
 			inline vector4<T>  operator / (const T value) const
 			{
 				return vector4<T>( x/f, y/f, z/f, w/f );
@@ -117,39 +116,39 @@ namespace gb
 				y += v.y;
 				z += v.z;
 				w += v.w;
-				return *this; 
+				return *this;
 			}
-			
+
 			inline vector4<T> &  operator -= (const vector4<T> &v)
 			{
 				x -= v.x;
 				y -= v.y;
 				z -= v.z;
 				w -= v.w;
-				return *this; 
+				return *this;
 			}
-			
+
 			inline vector4<T> &  operator *= (const T value)
 			{
-				x *= value;	
-				y *= value;	
-				z *= value;	
+				x *= value;
+				y *= value;
+				z *= value;
 				w *= value;
 				return *this;
 			}
 
 			inline vector4<T> &  operator /= (const T value)
 			{
-				x /= value;	
-				y /= value;	
-				z /= value;	
+				x /= value;
+				y /= value;
+				z /= value;
 				w /= value;
 				return *this;
 			}
 
 			inline operator  const T*() const  { return &x; }
 			inline operator        T*()        { return &x; }
- 
+
 
 
 			inline T operator [] (const size_t index) const
@@ -158,18 +157,18 @@ namespace gb
 				{
 					throw std::bad_index("invalid index");
 				}
-				
+
 				const T* _array = &x;
 				return _array[index];
 			}
 
-			inline  T& operator [] (const size_t index) 
+			inline  T& operator [] (const size_t index)
 			{
 				if(index>3)
 				{
 					throw std::bad_index("invalid index");
 				}
-				
+
 				T* _array = &x;
 				return *(_array + index);
 			}
@@ -181,34 +180,34 @@ namespace gb
 			// inline operator D3DXVECTOR4*() { return (D3DXVECTOR4*)&x; }
 			// inline operator const D3DXVECTOR4*() const { return (D3DXVECTOR4*)&x; }
 			// inline operator D3DXVECTOR4() const  {  return D3DXVECTOR4(x,y,z,w); }
-		   	// inline void operator = (const D3DXVECTOR4& v) {	x=v.x; y=v.y; z=v.z; w=v.w; }	
-			// #endif	
+		   	// inline void operator = (const D3DXVECTOR4& v) {	x=v.x; y=v.y; z=v.z; w=v.w; }
+			// #endif
 
 
-				
-			
+
+
 			//! \brief Обнулить все компоненты  old:  setzero
 		    inline void set_zero()
-			{ 
+			{
 				x = y = z = w = T();
 			}
-			
+
 			//! проверить равны ли все компоненты нулю   old :  empty
 			inline bool is_zero() const
 			{
 				const T _ZERO = T();
-				return (x == _ZERO) && (y == _ZERO) && (z == _ZERO) && (w == _ZERO); 
+				return (x == _ZERO) && (y == _ZERO) && (z == _ZERO) && (w == _ZERO);
 			}
 
-			inline vector4<T>& set ( const T _x,  const T _y,  const T _z,  const T _w ) 
-			{ 
-				x = _x; 
-				y = _y; 
-				z = _z; 
-				w = _w; 
-				return *this; 
+			inline vector4<T>& set ( const T _x,  const T _y,  const T _z,  const T _w )
+			{
+				x = _x;
+				y = _y;
+				z = _z;
+				w = _w;
+				return *this;
 			}
- 
+
 			//! \brief  Все ли компоненты нулевые по эпсилону.    old:  isZero
 			inline bool is_zero(const T epsilon) const
 			{
@@ -220,7 +219,7 @@ namespace gb
 			{
 				return (T) sqrt( x*x + y*y + z*z + w*w );
 			}
-			
+
 			//! \brief  получить квадрат длинны  old:  lengthSq
 			inline T length_sq() const
 			{
@@ -233,7 +232,7 @@ namespace gb
 				return x * a.x + y * a.y + z * a.z + w * a.w;
 			}
 
-			
+
 #pragma message ("KS777: MATH::vector4<T> >> NEED CHECK CROSS METHOD !!!"  __FILE__)
 
 			//! \brief Получить векторное (перекрестное)  произведение с вектором v.
@@ -250,7 +249,7 @@ namespace gb
 
 			/*************************************************
 			// НЕПРАВИЛЬНО !!!!
-			void cross( const vector4<T>& U, const vector4<T>& V, const vector4<T>& W )   
+			void cross( const vector4<T>& U, const vector4<T>& V, const vector4<T>& W )
 			{
 				assert(false && "bad code !");
 
@@ -270,41 +269,41 @@ namespace gb
 				*this = Out;
 			}
 			******************************************************/
-			
-			
+
+
 
 			//! \brief  Инвертировать.
 			inline vector4<T>&   invert()
-			{ 
-				x = -x; 
-				y = -y; 
-				z = -z; 
-				w = -w; 
-				return *this; 
+			{
+				x = -x;
+				y = -y;
+				z = -z;
+				w = -w;
+				return *this;
 			}
-			
+
 			//! \brief  Вернуть инвертированый.
-			inline vector4<T>    inverted() const 
+			inline vector4<T>    inverted() const
 			{
 				return vector4<T> ( -x, -y, -z, -w );
 			}
 
 			//! \brief  Вернуть вектор по линейной интерполяции между this и v  по коэффициенту k
-			inline vector4<T>    lerp(const vector4<T>& v, const T k) 
+			inline vector4<T>    lerp(const vector4<T>& v, const T k)
 			{
 				vector4<T> r;
 				r.x = x + (v.x - x) * k;
 				r.y = y + (v.y - y) * k;
 				r.z = z + (v.z - z) * k;
 				r.w = w + (v.w - w) * k;
-				return r;			
+				return r;
 			}
 
 
 
 			//! \brief  Получить минимальную компоненту.  old: minval
-			inline T min_value() const 
-			{ 	  
+			inline T min_value() const
+			{
 				T res = x;
 				if(y < res) res = y;
 				if(z < res) res = z;
@@ -314,45 +313,45 @@ namespace gb
 
 			//! \brief Получить максимальную компоненту.  old: maxval
 			inline T max_value() const
-			{   
+			{
 				T res = x;
 				if(res < y) res = y;
 				if(res < z) res = z;
 				if(res < w) res = w;
 				return res;
-			}	
- 
+			}
+
 			/** \brief  вычисл. минимальной абсолютной компоненты.   old:  minAbsVal   */
-			inline T min_abs_value() const 
-			{ 
-				T ax = abs(x); 
-				T ay = abs(y); 
-				T az = abs(z); 
+			inline T min_abs_value() const
+			{
+				T ax = abs(x);
+				T ay = abs(y);
+				T az = abs(z);
 				T aw = abs(w);
-				T res = ax;    
-				if(ay < res) res = ay; 
-				if(az < res) res = az; 
-				if(aw < res) res = aw; 
-				return res; 
+				T res = ax;
+				if(ay < res) res = ay;
+				if(az < res) res = az;
+				if(aw < res) res = aw;
+				return res;
 			}
 
 			/** \brief  вычисл. максимальной абсолютной компоненты.    old:  maxAbsVal    */
-			inline T max_abs_value() const 
-			{ 
-				T ax = abs(x); 
-				T ay = abs(y); 
-				T az = abs(z); 
+			inline T max_abs_value() const
+			{
+				T ax = abs(x);
+				T ay = abs(y);
+				T az = abs(z);
 				T aw = abs(w);
 				T res = ax;
-				if(ay > res) res = ay; 
-				if(az > res) res = az;	 
-				if(aw > res) res = aw;	
-				return res;	
+				if(ay > res) res = ay;
+				if(az > res) res = az;
+				if(aw > res) res = aw;
+				return res;
 			}
 
 
 			//! \brief Выполнить отсечение значений в диапазоне между vmin и vmax
-			vector4<T>&  clump(const vector4<T>& vmin, const vector4<T>& vmax) 
+			vector4<T>&  clump(const vector4<T>& vmin, const vector4<T>& vmax)
 			{
 				if( x < vmin.x) x = vmin.x;  if(x > vmax.x) x = vmax.x;
 				if( y < vmin.y) y = vmin.y;  if(y > vmax.y) y = vmax.y;
@@ -360,7 +359,7 @@ namespace gb
 				if( w < vmin.w) w = vmin.w;  if(w > vmax.w) w = vmax.w;
 				return *this;
 			}
- 
+
 
 			friend std::ostream &operator << (std::ostream &stream, const vector4<T>& v)
 			{
@@ -381,7 +380,7 @@ namespace gb
 
 			friend std::istringstream &operator >> (std::istringstream &stream, vector4<T>& v) throw (std::invalid_argument)
 			{
-				stream >> v.x; 
+				stream >> v.x;
 				stream >> v.y;
 				stream >> v.z;
 				stream >> v.w;
@@ -396,19 +395,16 @@ namespace gb
 
 
 
- 
- 
 
-		}; 
- 
- 
-	
-	}
+
+
+		};
+
+
+
 
 }
 
 
 
-
-
-#endif // #ifdef __VECTOR4_H__
+#endif // #ifdef __GBMATH_VECTOR4_H__

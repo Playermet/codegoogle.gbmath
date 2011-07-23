@@ -6,15 +6,13 @@
 
 #pragma once
 
-#ifndef __GB_FMATH_H__
-   #error НЕ ВКЛЮЧАЙТЕ ЭТОТ ФАЙЛ. ВКЛЮЧАЙТЕ:   #include <gb/fmath/math.h>  
+#ifndef __GBMATH_H__
+   #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
-namespace gb 
-{
 
-  namespace fmath
-  {
+namespace gbmath
+{
 
 //----------------------------------------------------------------------
 
@@ -30,14 +28,14 @@ namespace gb
 
 		inline Quaternion() { x=y=z=0.0f; w=1.0f; }
 		inline Quaternion(const Quaternion& q)
-		{ 
-			x=q.x; y=q.y; z=q.z; w=q.w; 
+		{
+			x=q.x; y=q.y; z=q.z; w=q.w;
 			normalize();
 		}
 
-		inline Quaternion(float _x, float _y, float _z, float _w) 
-		{ 
-			x=_x; y=_y; z=_z; w=_w; 
+		inline Quaternion(float _x, float _y, float _z, float _w)
+		{
+			x=_x; y=_y; z=_z; w=_w;
 			normalize();
 		}
 
@@ -58,7 +56,7 @@ namespace gb
 
 
 		inline bool operator == (const Quaternion &q) const
-		{ 
+		{
 			return	x == q.x && y == q.y && z == q.z && w == q.w ||
 				x == -q.x && y == -q.y && z == -q.z && w == -q.w;
 		}
@@ -86,7 +84,7 @@ namespace gb
 			w -= q.w;
 			return *this;
 		}
- 
+
 		inline Quaternion& operator *= ( const float f )
 		{
 			x *= f;
@@ -105,7 +103,7 @@ namespace gb
 			w *= fInverse;
 			return *this;
 		}
- 
+
 		inline Quaternion operator + () const
 		{
 			return *this;
@@ -125,10 +123,10 @@ namespace gb
 		{
 			return Quaternion(x - q.x, y - q.y, z - q.z, w - q.w);
 		}
- 
+
 
 		//!   ПРОВЕРЕНО
-		inline Quaternion operator * ( const Quaternion &q ) const 
+		inline Quaternion operator * ( const Quaternion &q ) const
 		{
 			Quaternion res;
 			res.x = w*q.x + x*q.w + z*q.y - y*q.z;
@@ -138,7 +136,7 @@ namespace gb
 			res.w = w*q.w - x*q.x - y*q.y - z*q.z;
 			return res;
 		}
- 
+
 		inline Quaternion operator * ( const float f ) const
 		{
 			return Quaternion( x*f, y*f, z*f, w*f );
@@ -150,14 +148,14 @@ namespace gb
 			const float fInverse = 1.0f / f;
 			return Quaternion(x * fInverse, y * fInverse, z * fInverse, w * fInverse);
 		}
- 
-		inline Quaternion&   operator *= (const Quaternion &q) 
-		{ 
-			Quaternion r(*this); 
-			*this=r*q; 
-			return *this;   
-		} 
- 
+
+		inline Quaternion&   operator *= (const Quaternion &q)
+		{
+			Quaternion r(*this);
+			*this=r*q;
+			return *this;
+		}
+
 
 #ifdef __D3DX9MATH_H__
 
@@ -173,7 +171,7 @@ namespace gb
 		//----------------------------------------------------------------//
 		//                           МЕТОДЫ		        	              //
 		//----------------------------------------------------------------//
- 
+
 		// \brief  Присвоить значения  затем нормализовать
 		inline void set(float _x, float _y, float _z, float _w)
 		{
@@ -188,7 +186,7 @@ namespace gb
 
 		// \brief Проверка на идентичное значение
 		inline bool isIdentity(float eps = 0.0f) const
-		{ 
+		{
 			return abs(x) <= eps && abs(y) <= eps && abs(z) <= eps && abs(w) - 1.0f <= eps;
 		}
 
@@ -201,7 +199,7 @@ namespace gb
 		inline Quaternion&  normalize()
 		{
 			const float len = length();
-			if (len > 1e-6) 
+			if (len > 1e-6)
 			{
 				x /= len;
 				y /= len;
@@ -225,8 +223,8 @@ namespace gb
 			  return  res;
 		}
 
-		//! \brief Вернуть скалярное произведение 
-		inline float dot(const Quaternion &g) const 
+		//! \brief Вернуть скалярное произведение
+		inline float dot(const Quaternion &g) const
 		{
 			return w*g.w + x*g.x + y*g.y + z*g.z;
 		}
@@ -235,7 +233,7 @@ namespace gb
 		Quaternion  pow(const Quaternion &q, float exponent) const;
 
 		//! \brief  Инвертировать.  ПРОВЕРЕНО !
-		void inverse () 
+		void inverse ()
 		{
 			const float fNorm = x*x + y*y + z*z + w*w;
 			if ( fNorm > 0.0 )
@@ -253,15 +251,15 @@ namespace gb
 		}
 
 		//! \brief  Вернуть инвертированый .
-		inline Quaternion inversed() const 
+		inline Quaternion inversed() const
 		{
 		  Quaternion res(*this);
-		  res.inverse(); 
+		  res.inverse();
 		  return res;
 		}
 
 
- 
+
 
 		////*  natural log
 		//Quaternion  logn () const
@@ -304,10 +302,10 @@ namespace gb
 
 
 		// todo Сделать без d3dx
-		Quaternion  exp(const Quaternion& qu) const 
+		Quaternion  exp(const Quaternion& qu) const
 		{
 			//Given a pure quaternion defined by:
-			// q = (0, theta * v); 
+			// q = (0, theta * v);
 			//This method calculates the exponential result.
 			//exp(Q) = (cos(theta), sin(theta) * v)
 			Quaternion res;
@@ -344,7 +342,7 @@ namespace gb
 
 
 
-		/**  имеются небольшие несоответствия с d3dx  
+		/**  имеются небольшие несоответствия с d3dx
 		-------------------------------------
 		0.606882  0.275320  0.666870  0.333432
 		-------------------------------------
@@ -355,7 +353,7 @@ namespace gb
 		//inline Quaternion slerp(const Quaternion &q, float t) const { Quaternion r = slerp(*this, q, t); return r;  };
 
 
-		inline float getRotationAngle() const 
+		inline float getRotationAngle() const
 		{
 			// Compute the half angle.  Remember that w = cos(theta / 2)
 			float thetaOver2 = scalar::safeAcos(w);
@@ -383,7 +381,7 @@ namespace gb
 			return *this;
 		}
 
-		inline Quaternion&	setRotationY(float theta) 
+		inline Quaternion&	setRotationY(float theta)
 		{
 			const float	k =   theta*0.5f;
 			w = cos(k);
@@ -393,7 +391,7 @@ namespace gb
 			return *this;
 		}
 
-		inline Quaternion&  setRotationZ(float theta) 
+		inline Quaternion&  setRotationZ(float theta)
 		{
 			float	k = theta*0.5f;
 			w = cos(k);
@@ -415,9 +413,9 @@ namespace gb
 		{
 			float	sp, sb, sh;
 			float	cp, cb, ch;
-			gb::fmath::scalar::sincos(pitch * 0.5f , sp , cp  ); 
-			gb::fmath::scalar::sincos(roll * 0.5f  , sb , cb  );
-			gb::fmath::scalar::sincos(yaw * 0.5f   , sh , ch  );
+			gbmath::scalar::sincos(pitch * 0.5f , sp , cp  );
+			gbmath::scalar::sincos(roll * 0.5f  , sb , cb  );
+			gbmath::scalar::sincos(yaw * 0.5f   , sh , ch  );
 			  x =  -(-ch*sp*cb - sh*cp*sb);
 			  y =  -(ch*sp*sb  - sh*cb*cp);
 			  z =  -(sh*sp*cb  - ch*cp*sb);
@@ -425,20 +423,20 @@ namespace gb
 		}
 
 
-		//! \brief  Построить поворотный по углам эллера  
+		//! \brief  Построить поворотный по углам эллера
 		void setRotationEulersAngles(const euler_angles& ea);
 
 		//! \brief Построение из матрицы поворота
 		Quaternion&  setRotationMatrix(const  mat44& m);
- 
+
  /*****************************
-		inline void  invert() 
+		inline void  invert()
 		{
 			*this = conjugate(*this);
 			*this /= lengthSq();
 		}
 
-		inline Quaternion inverse() const 
+		inline Quaternion inverse() const
 		{
 			return conjugate(*this) / lengthSq();
 		}
@@ -454,7 +452,7 @@ namespace gb
 			return stream;
 		}
 
-		operator std::string() const 
+		operator std::string() const
 		{
 			std::ostringstream ss;
 			ss << x << " " << y << " " << z << " " << w;
@@ -477,9 +475,7 @@ namespace gb
 
 	};
 
- 
+
 // static const Quaternion QUATERNION_IDENTITY = Quaternion( 0.0f, 0.0f, 0.0f, 1.0f );
 
-  } // end namespace fmath
-} // end namespace gb
-// end file
+} // end namespace gbmath

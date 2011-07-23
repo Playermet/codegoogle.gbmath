@@ -1,16 +1,15 @@
 
-#include "fmath.h"
- 
+#include "_gbmath.h"
+
 
 #ifdef _MSC_VER
-#pragma  warning(push)
-#pragma  warning(disable : 4290)
+	#pragma  warning(push)
+	#pragma  warning(disable : 4290)
 #endif
 
 
-namespace gb
-{
-namespace fmath
+ 
+namespace gbmath
 {
 
 
@@ -22,15 +21,15 @@ float float_context::getValue_by_context_type(
 									   ) const    throw(std::runtime_error&)
 {
 
-switch(val) 
+switch(val)
 	{
- 
+
 case float_context_type_e::TIME : { return time;} break;
 
 case float_context_type_e::COSTIME : { return cos(time); } break;
 case float_context_type_e::SINTIME : { return sin(time); } break;
 case float_context_type_e::TANTIME : { return tan(time); } break;
- 
+
 //
 //case float_context_type_e::TIME0_1 : {XXXXXXXX} break;
 //case float_context_type_e::COSTIME0_1 : {XXXXXXXX} break;
@@ -44,7 +43,7 @@ case float_context_type_e::TANTIME : { return tan(time); } break;
 //case float_context_type_e::SINTIME0_PI : {XXXXXXXX} break;
 //case float_context_type_e::TANTIME0_2PI : {XXXXXXXX} break;
 //case float_context_type_e::TIMECYCLEPERIOD : {XXXXXXXX} break;
-// 
+//
 
 case float_context_type_e::FPS : { return (float)fps; } break;
 
@@ -62,7 +61,7 @@ case float_context_type_e::FOV : { return projData.fovy; } break;
 case float_context_type_e::FARCLIPPLANE  : { return projData.zf; } break;
 case float_context_type_e::NEARCLIPPLANE : { return projData.zn; } break;
 
-// 
+//
 //case float_context_type_e::RANDOMFRACTION1PERPASS : {XXXXXXXX} break;
 //case float_context_type_e::RANDOMFRACTION2PERPASS : {XXXXXXXX} break;
 //case float_context_type_e::RANDOMFRACTION3PERPASS : {XXXXXXXX} break;
@@ -75,9 +74,9 @@ case float_context_type_e::NEARCLIPPLANE : { return projData.zn; } break;
 //
 //case float_context_type_e::PASSINDEX : {XXXXXXXX} break;
 //case float_context_type_e::MIDDLEMOUSEBUTTON : {XXXXXXXX} break;
-// 
+//
 
-case float_context_type_e::RIGTHMOUSEBUTTON : 
+case float_context_type_e::RIGTHMOUSEBUTTON :
 	{
 	 if(mouseData.bRIghtButtonDown)
 		 {
@@ -88,7 +87,7 @@ case float_context_type_e::RIGTHMOUSEBUTTON :
 		 return 0.0f;
 		 }
 	} break;
-case float_context_type_e::LEFTMOUSEBUTTON : 
+case float_context_type_e::LEFTMOUSEBUTTON :
 	{
 	if(mouseData.bLeftButtonDown)
 		{
@@ -99,13 +98,13 @@ case float_context_type_e::LEFTMOUSEBUTTON :
 		return 0.0f;
 		}
 	} break;
- 
+
 case float_context_type_e::MOUSECOORDINATEX : { return (float)mouseData.x; } break;
 case float_context_type_e::MOUSECOORDINATEY : { return (float)mouseData.y; } break;
 
 //case float_context_type_e::MOUSECOORDINATEXNDC : {XXXXXXXX} break;
 //case float_context_type_e::MOUSECOORDINATEYNDC : {XXXXXXXX} break;
-case float_context_type_e::MODELBOUNDINGSPHERERADIUS : 
+case float_context_type_e::MODELBOUNDINGSPHERERADIUS :
 	{
 	         return modelBoundingSphereRadius;
 	} break;
@@ -120,13 +119,13 @@ case float_context_type_e::ASPECT : {  return  projData.aspect; } break;
 //case float_context_type_e::LIGTHMAPINTENSITY : {} break;
 //case float_context_type_e::ANIMATESPEED : {} break;
 
- 
+
 
 			default:
 				{
 
 				}
- 
+
 
 	 }
 
@@ -135,10 +134,8 @@ throw std::runtime_error("value not found");
 }
 
 
-
-}
 }
 
 #ifdef _MSC_VER
-#pragma  warning(pop)
+	#pragma  warning(pop)
 #endif

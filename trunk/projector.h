@@ -6,22 +6,20 @@
 
 #pragma once
 
-#ifndef __GB_FMATH_H__
-    #error НЕ ВКЛЮЧАЙТЕ ЭТОТ ФАЙЛ. ВКЛЮЧАЙТЕ:   #include <gb/fmath/math.h>  
+#ifndef __GBMATH_H__
+    #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
 
-namespace gb 
+ 
+namespace gbmath
 {
 
-	namespace fmath
-	{
-	
-	
+
 //	#error need this class ??
 
 
-	//!  \brief Клас бесконечный прожектор по лучу (точка основания) и углу прожектора 
+	//!  \brief Клас бесконечный прожектор по лучу (точка основания) и углу прожектора
 	class  Projector {
 	public:
 		Ray3d ray;   ///< луч (центр и направление прожектора)
@@ -33,13 +31,7 @@ namespace gb
 
 	}; // Projector
 
-	
-	
-	
-	
-	
-	
-	
-	
-	}
+
+
+ 
 }

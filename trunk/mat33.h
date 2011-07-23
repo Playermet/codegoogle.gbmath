@@ -6,26 +6,24 @@
 
 #pragma once
 
-#ifndef __GB_FMATH_H__
-    #error НЕ ВКЛЮЧАЙТЕ ЭТОТ ФАЙЛ. ВКЛЮЧАЙТЕ:   #include <gb/fmath/math.h>  
+#ifndef __GBMATH_H__
+    #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
 
-namespace gb 
+ 
+namespace gbmath
 {
 
-	namespace fmath
-	{
-	
-	
-	
 
 
-		//! \brief Матрица 3x3 
+
+
+		//! \brief Матрица 3x3
 		struct mat33
 		{
-		
-			union 
+
+			union
 			{
 				struct {
 
@@ -57,8 +55,8 @@ namespace gb
 
 			inline mat33&  operator =  ( const mat22& m)
 			{
-				floats [0][0] = m.floats [0][0]; 
-				floats [0][1] = m.floats [0][1]; 
+				floats [0][0] = m.floats [0][0];
+				floats [0][1] = m.floats [0][1];
 				floats [1][0] = m.floats [1][0];
 				floats [1][1] = m.floats [1][1];
 				return *this;
@@ -68,7 +66,7 @@ namespace gb
 			{
 			 _11=  pfArray[0]; _12= pfArray[1];  _13= pfArray[2];
 			 _21=  pfArray[3]; _22= pfArray[4];  _23= pfArray[5];
-			 _31=  pfArray[6]; _32= pfArray[7];  _33= pfArray[8];	
+			 _31=  pfArray[6]; _32= pfArray[7];  _33= pfArray[8];
 			}
 
 			mat33& operator = ( float a );
@@ -77,9 +75,9 @@ namespace gb
 	        inline mat33 operator - () const
 		    {
 			   mat33 r = *this;
-				r._11=-r._11;   r._12=-r._12;   r._13=-r._13; 
-				r._21=-r._21;   r._22=-r._22;   r._23=-r._23; 
-				r._31=-r._31;   r._32=-r._32;   r._33=-r._33; 		   
+				r._11=-r._11;   r._12=-r._12;   r._13=-r._13;
+				r._21=-r._21;   r._22=-r._22;   r._23=-r._23;
+				r._31=-r._31;   r._32=-r._32;   r._33=-r._33;
 			   return r;
 		    };
 
@@ -112,25 +110,25 @@ namespace gb
 					          _21, _22 );
 			}
 
-			inline bool empty() const 
-			{ 
-				return _11==0.0f && _12==0.0f && _13==0.0f 
-					&& _21==0.0f && _22==0.0f && _23==0.0f 
-					&& _31==0.0f && _32==0.0f && _33==0.0f; 
+			inline bool empty() const
+			{
+				return _11==0.0f && _12==0.0f && _13==0.0f
+					&& _21==0.0f && _22==0.0f && _23==0.0f
+					&& _31==0.0f && _32==0.0f && _33==0.0f;
 			}
 
 			//! \brief  Занулить все элементы
 			inline void setzero() { _11=_12=_13=_21=_22=_23=_31=_32=_33=0.0f; }
 
 			//! \brief Сбросить в идентичную
-			inline void setIdentity() 
+			inline void setIdentity()
 			{
 				_11=1.0f; _12=0.0f; _13=0.0f;
 				_21=0.0f; _22=1.0f; _23=0.0f;
 				_31=0.0f; _32=0.0f; _33=1.0f;
 		    }
 
-			inline bool isIdentity() const	   
+			inline bool isIdentity() const
 			{
 			    return floats[0][0] == 1.0f && floats[0][1] == 0.0f && floats[0][2] == 0.0f &&
 					   floats[1][0] == 0.0f && floats[1][1] == 1.0f && floats[1][2] == 0.0f &&
@@ -140,22 +138,22 @@ namespace gb
 			//! \brief Сбросить в идентичную
 			inline void reset() { setIdentity(); }
 
-			 //! \brief  Транспонировать матрицу 
-			inline mat33&   transpone() 
-			{ 
+			 //! \brief  Транспонировать матрицу
+			inline mat33&   transpone()
+			{
 				 register float t;
 			    t=_12;  _12=_21; _21=t;
 			    t=_13;  _13=_31; _31=t;
-			    t=_23;  _23=_32; _32=t; 
+			    t=_23;  _23=_32; _32=t;
 				  return *this;
 			}
 
 			//! \brief    Вернуть транспонированую матрицу
-			inline mat33 getTransponed() const 
+			inline mat33 getTransponed() const
 			{
 				mat33 res = *this;
 				res.transpone();
-				return res;			
+				return res;
 			}
 
 			float  determinant () const;
@@ -179,29 +177,29 @@ namespace gb
 
 
 			//! \brief  Вывод значений на консоль
-			inline void print() const 
+			inline void print() const
 			{
-			 printf("%f  %f  %f  \n%f  %f  %f  \n%f  %f  %f", 
-				 _11, _12, _13, 
-				 _21, _22, _23, 
+			 printf("%f  %f  %f  \n%f  %f  %f  \n%f  %f  %f",
+				 _11, _12, _13,
+				 _21, _22, _23,
 				 _31, _32, _33 );
 			}
- 
-		
+
+
 		};
- 
-	
-	
-	
-	
-static const mat33     MATRIX33_IDENTITY =  mat33 
+
+
+
+
+
+static const mat33     MATRIX33_IDENTITY =  mat33
 (
   1.0f,  0.0f,  0.0f,
   0.0f,  1.0f,  0.0f,
   0.0f,  0.0f,  1.0f
 );
-	
-	
-	
-	}
+
+
+
+ 
 }

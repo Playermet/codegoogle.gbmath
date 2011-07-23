@@ -6,45 +6,43 @@
 
 #pragma once
 
-#ifndef __GB_FMATH_H__
-    #error НЕ ВКЛЮЧАЙТЕ ЭТОТ ФАЙЛ. ВКЛЮЧАЙТЕ:   #include <gb/fmath/math.h>  
+#ifndef __GBMATH_H__
+    #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
-
-namespace gb 
+ 
+namespace gbmath
 {
-	namespace fmath
-	{
 
-		//! \brief Треугольник по трём точкам . 
+		//! \brief Треугольник по трём точкам .
 		class Triangle {
 		public:
-			 vec3   p1; ///< первая точка(вершина) треугольника 
-			 vec3   p2; ///< вторая точка(вершина) треугольника   
-			 vec3   p3; ///< третья точка(вершина) треугольника 
+			 vec3   p1; ///< первая точка(вершина) треугольника
+			 vec3   p2; ///< вторая точка(вершина) треугольника
+			 vec3   p3; ///< третья точка(вершина) треугольника
 
 
 			inline Triangle() {}
-			inline Triangle(const Triangle& t) 
-			{ 
-				*this = t; 
+			inline Triangle(const Triangle& t)
+			{
+				*this = t;
 			}
 
-			inline Triangle(const  vec3 _p1, const  vec3 _p2, const  vec3 _p3) 
+			inline Triangle(const  vec3 _p1, const  vec3 _p2, const  vec3 _p3)
 			{
-				p1 = _p1;	
-				p2 = _p2;	
-				p3 = _p3;	
+				p1 = _p1;
+				p2 = _p2;
+				p3 = _p3;
 			}
 
-			inline void set(const  vec3 _p1, const  vec3 _p2, const  vec3 _p3) 
+			inline void set(const  vec3 _p1, const  vec3 _p2, const  vec3 _p3)
 			{
-				p1=_p1;	p2=_p2;	p3=_p3;	
+				p1=_p1;	p2=_p2;	p3=_p3;
 			}
 
 			/** \brief Вычислить и вернуть среднюю точку треугольника */
-			inline  vec3 middle_point() const 
-			{ 
+			inline  vec3 middle_point() const
+			{
 				vec3 res;
 				res.x = (p1.x + p2.x + p3.x) / 3.0f;
 				res.y = (p1.y + p2.y + p3.y) / 3.0f;
@@ -52,22 +50,22 @@ namespace gb
 				return res;
 			}
 
-			//! \brief Вычислить и вернуть плоскость по точкам треугольника 
+			//! \brief Вычислить и вернуть плоскость по точкам треугольника
 			plane_s get_plane() const
 			{
-				plane_s plane; 
-				plane.make_from_points(p1,p2,p3); 	
+				plane_s plane;
+				plane.make_from_points(p1,p2,p3);
 				return plane;
 			}
 
 
 			#if ( defined(GB_OPENGL) && defined(__GL_H__)   )
 			//! \brief Вывод вершин по OpenGL  по старинке.
-			inline void glVertex()   
+			inline void glVertex()
 			{
 				glVertex3f(p1.x, p1.y, p1.z);
 				glVertex3f(p2.x, p2.y, p2.z);
-				glVertex3f(p3.x, p3.y, p3.z); 
+				glVertex3f(p3.x, p3.y, p3.z);
 			}
 			#endif
 
@@ -79,7 +77,7 @@ namespace gb
 				return stream;
 			}
 
-			operator std::string() const 
+			operator std::string() const
 			{
 				std::ostringstream ss;
 				ss << p1 << " " << p2 << " " << p3 ;
@@ -109,6 +107,6 @@ namespace gb
 
 
 
-		};	
-	}
+		};
+ 
 }

@@ -1,12 +1,13 @@
-/** \file
- \brief  Цветовые константы.
+п»ї/** \file
+ \brief  Р¦РІРµС‚РѕРІС‹Рµ РєРѕРЅСЃС‚Р°РЅС‚С‹.
 */
 
 #pragma once
- 
-#ifndef __GB_FMATH_H__
-	#error НЕ ВКЛЮЧАЙТЕ ЭТОТ ФАЙЛ. ВКЛЮЧАЙТЕ:   #include <gb/fmath/math.h>  
+
+#ifndef __GBMATH_H__
+	#error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
+
 
 
 #if  1
@@ -17,18 +18,16 @@
 //#include "..\color4f.h"
 
 
-namespace gb
-{
 
- namespace fmath
+ namespace gbmath
  {
- 
- 
-    //! \brief  Цветовые константы.
+
+
+    //! \brief  Р¦РІРµС‚РѕРІС‹Рµ РєРѕРЅСЃС‚Р°РЅС‚С‹.
    namespace color_const
    {
-   
-   	
+
+
 
 
 //-------------------------------------------------------------------------
@@ -296,11 +295,11 @@ static const     unsigned int      CUICOLOR_YELLOW           = 0xFFFFFF00;
 static const     unsigned int      CUICOLOR_YELLOWGREEN      = 0xFF9ACD32;
 
 
-   
-   
+
+
    }
  }
-}
+
 
 
 #endif

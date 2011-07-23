@@ -1,16 +1,14 @@
 ﻿
-#include "fmath.h"
+#include "_gbmath.h"
 
-namespace gb
-{
-
-namespace fmath
+ 
+namespace gbmath
 {
 
 
 // =============================================================
 
-// float vec2::ccw(const vec2& v) const 
+// float vec2::ccw(const vec2& v) const
 // {
    // vec3 vv1;
    // vv1.x =  x;
@@ -67,7 +65,5 @@ namespace fmath
 
 
 
-
-}
-
+ 
 }

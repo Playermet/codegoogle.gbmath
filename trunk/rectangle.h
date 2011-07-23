@@ -1,12 +1,12 @@
- /**   \file  
-  \brief  Simple rectangle  яяяяяяяяяяя   
- 
- 
+ /**   \file
+  \brief  Simple rectangle  яяяяяяяяяяя
+
+
  */
- 
+
 #pragma once
 
-//#define __GB__BASE__RECTANGLE_H__ 
+//#define __GB__BASE__RECTANGLE_H__
 
 //#include "../Config.h"
 //#include "Types.h"
@@ -18,14 +18,11 @@
 #include <string>
 */
 
-
-namespace gb 
+ 
+namespace gbmath
 {
 
-	namespace fmath
-	{
-	
-		
+
 		//! \brief Прямоугольник
 		// Эта структура превратилась в кучу дерьма
 		struct Rectangle
@@ -35,11 +32,11 @@ namespace gb
 			int width;  //< ширина.
 			int height; //< высота.
 
-			Rectangle() 
+			Rectangle()
 			{
 				left = top = width = height = 0;
 			}
-			
+
 			Rectangle(int w, int h)
 			{
 				width = w;
@@ -73,7 +70,7 @@ namespace gb
 
 			void init(int x, int y, int w, int h)
 			{
-				left = x; 
+				left = x;
 				top  = y;
 				width  = w;
 				height = h;
@@ -108,7 +105,7 @@ namespace gb
 			}
 
 
-			inline operator RECT() const 
+			inline operator RECT() const
 			{
 				RECT r;
 				r.top = top;
@@ -120,10 +117,10 @@ namespace gb
 #endif
 
 			// \brief Проверка нахождения точки в прямоугольнике.  // old name: checkPoint
-			inline bool check_point(int x, int y) const 
+			inline bool check_point(int x, int y) const
 			{
 			  if( (x>left) && (x<left+width) && (y>top) && (y<top+height) ) return true;
-			  return false;			
+			  return false;
 			}
 
 			inline bool check_point(const Point& p) // old name :  checkPoint
@@ -170,7 +167,7 @@ namespace gb
 
 #ifdef _WINDOWS_
 			//! \brief  Получить центральную координату.
-			inline POINT center() const 
+			inline POINT center() const
 			{
 				POINT res = { (left+width)/2 , (top+height)/2 };
 				return res;
@@ -181,15 +178,15 @@ namespace gb
 
 			friend std::ostream& operator << (std::ostream& os, const Rectangle& r)
 			{
-				os << r.left << " " << r.top << " " << r.width << " " << r.height; 
+				os << r.left << " " << r.top << " " << r.width << " " << r.height;
 				return os;
 			}
 
 
-			operator std::string() const 
+			operator std::string() const
 			{
 				std::ostringstream ss;
-				ss << left << " " << top << " " << width << " " << height; 
+				ss << left << " " << top << " " << width << " " << height;
 				return ss.str();
 			}
 
@@ -202,10 +199,10 @@ namespace gb
 				ss >> height;
 				if( ss.fail() ) throw std::invalid_argument("bad input string");
 			}
- 
+
 
 
 		};
-		
-	}
+
+ 
 }

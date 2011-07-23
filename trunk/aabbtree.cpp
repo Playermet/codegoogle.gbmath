@@ -1,9 +1,8 @@
 ﻿
-#include "fmath.h"
- 
-namespace gb
-{
-namespace fmath
+#include "_gbmath.h"
+
+
+namespace gbmath
 {
 
 
@@ -12,4 +11,3 @@ namespace fmath
 
 }
 
-}
