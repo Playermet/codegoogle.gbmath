@@ -37,13 +37,13 @@ namespace gbmath
 
 
 //=========================================================================
-//				GeometryContext
+//				geometry_context
 //=========================================================================
 
 
 
 //=========================================================================
-long  GeometryContext::setMatrices(const mat44 *mWorld, const mat44 *mView, const mat44 *mProj)
+long  geometry_context::setMatrices(const mat44 *mWorld, const mat44 *mView, const mat44 *mProj)
 {
   long  hr = 0;
 
@@ -159,7 +159,7 @@ long  GeometryContext::setMatrices(const mat44 *mWorld, const mat44 *mView, cons
 };
 
 //====================================================================
-const mat44 *GeometryContext::get_matrix_ViewProjection()const
+const mat44 *geometry_context::get_matrix_ViewProjection()const
 {
   if (m_matr.mViewProjection .bChangeFlag)
   {
@@ -173,7 +173,7 @@ const mat44 *GeometryContext::get_matrix_ViewProjection()const
 };
 
 //====================================================================
-const mat44 *GeometryContext::get_matrix_ViewProjectionInverse()const
+const mat44 *geometry_context::get_matrix_ViewProjectionInverse()const
 {
   if (m_matr.mViewProjectionInverse.bChangeFlag)
   {
@@ -190,7 +190,7 @@ const mat44 *GeometryContext::get_matrix_ViewProjectionInverse()const
 };
 
 //====================================================================
-const mat44 *GeometryContext::get_matrix_ViewProjectionInverseTranspone()const
+const mat44 *geometry_context::get_matrix_ViewProjectionInverseTranspone()const
 {
   if (m_matr.mViewProjectionInverseTranspone.bChangeFlag)
   {
@@ -211,7 +211,7 @@ const mat44 *GeometryContext::get_matrix_ViewProjectionInverseTranspone()const
 };
 
 //====================================================================
-const mat44 *GeometryContext::get_matrix_ViewProjectionTranspone()const
+const mat44 *geometry_context::get_matrix_ViewProjectionTranspone()const
 {
   if (m_matr.mViewProjectionTranspone.bChangeFlag)
   {
@@ -227,7 +227,7 @@ const mat44 *GeometryContext::get_matrix_ViewProjectionTranspone()const
 };
 
 //====================================================================
-const mat44 *GeometryContext::get_matrix_ViewTranspone()const
+const mat44 *geometry_context::get_matrix_ViewTranspone()const
 {
   if (m_matr.mViewTranspone.bChangeFlag)
   {
@@ -241,7 +241,7 @@ const mat44 *GeometryContext::get_matrix_ViewTranspone()const
 };
 
 //====================================================================
-const mat44 *GeometryContext::get_matrix_ViewInverse()const
+const mat44 *geometry_context::get_matrix_ViewInverse()const
 {
   if (m_matr.mViewInverse.bChangeFlag)
   {
@@ -255,7 +255,7 @@ const mat44 *GeometryContext::get_matrix_ViewInverse()const
 };
 
 //====================================================================
-const mat44 *GeometryContext::get_matrix_ViewInverseTranspone()const
+const mat44 *geometry_context::get_matrix_ViewInverseTranspone()const
 {
   if (m_matr.mViewInverseTranspone.bChangeFlag)
   {
@@ -271,7 +271,7 @@ const mat44 *GeometryContext::get_matrix_ViewInverseTranspone()const
 };
 
 //====================================================================
-const mat44 *GeometryContext::get_matrix_ProjectionInverse()const
+const mat44 *geometry_context::get_matrix_ProjectionInverse()const
 {
   if (m_matr.mProjectionInverse.bChangeFlag)
   {
@@ -285,7 +285,7 @@ const mat44 *GeometryContext::get_matrix_ProjectionInverse()const
 };
 
 //====================================================================
-const mat44 *GeometryContext::get_matrix_ProjectionTranspone()const
+const mat44 *geometry_context::get_matrix_ProjectionTranspone()const
 {
   if (m_matr.mProjectionTranspone.bChangeFlag)
   {
@@ -299,7 +299,7 @@ const mat44 *GeometryContext::get_matrix_ProjectionTranspone()const
 };
 
 //====================================================================
-const mat44 *GeometryContext::get_matrix_ProjectionInverseTranspone()const
+const mat44 *geometry_context::get_matrix_ProjectionInverseTranspone()const
 {
   if (m_matr.mProjectionInverseTranspone.bChangeFlag)
   {
@@ -315,7 +315,7 @@ const mat44 *GeometryContext::get_matrix_ProjectionInverseTranspone()const
 };
 
 //====================================================================
-const mat44 *GeometryContext::get_matrix_WorldViewProjection()const
+const mat44 *geometry_context::get_matrix_WorldViewProjection()const
 {
   if (m_matr.mWorldViewProjection.bChangeFlag)
   {
@@ -332,7 +332,7 @@ const mat44 *GeometryContext::get_matrix_WorldViewProjection()const
 };
 
 //====================================================================
-const mat44 *GeometryContext::get_matrix_WorldViewProjectionTranspone()const
+const mat44 *geometry_context::get_matrix_WorldViewProjectionTranspone()const
 {
   if (m_matr.mWorldViewProjectionTranspone.bChangeFlag)
   {
@@ -351,7 +351,7 @@ const mat44 *GeometryContext::get_matrix_WorldViewProjectionTranspone()const
 };
 
 //====================================================================
-const mat44 *GeometryContext::get_matrix_WorldViewProjectionInverse()const
+const mat44 *geometry_context::get_matrix_WorldViewProjectionInverse()const
 {
   if (m_matr.mWorldViewProjectionInverse.bChangeFlag)
   {
@@ -371,7 +371,7 @@ const mat44 *GeometryContext::get_matrix_WorldViewProjectionInverse()const
 };
 
 //====================================================================
-const mat44 *GeometryContext::get_matrix_WorldViewProjectionInverseTranspone()const
+const mat44 *geometry_context::get_matrix_WorldViewProjectionInverseTranspone()const
 {
   mat44 temp;
   if (m_matr.mWorldViewProjectionInverseTranspone.bChangeFlag)
@@ -395,7 +395,7 @@ const mat44 *GeometryContext::get_matrix_WorldViewProjectionInverseTranspone()co
 };
 
 //====================================================================
-const mat44 *GeometryContext::get_matrix_WorldTranspone()const
+const mat44 *geometry_context::get_matrix_WorldTranspone()const
 {
   if (m_matr.mWorldTranspone.bChangeFlag)
   {
@@ -409,7 +409,7 @@ const mat44 *GeometryContext::get_matrix_WorldTranspone()const
 };
 
 //====================================================================
-const mat44 *GeometryContext::get_matrix_WorldInverse()const
+const mat44 *geometry_context::get_matrix_WorldInverse()const
 {
   if (m_matr.mWorldInverse.bChangeFlag)
   {
@@ -423,7 +423,7 @@ const mat44 *GeometryContext::get_matrix_WorldInverse()const
 };
 
 //====================================================================
-const mat44 *GeometryContext::get_matrix_WorldInverseTranspone()const
+const mat44 *geometry_context::get_matrix_WorldInverseTranspone()const
 {
   if (m_matr.mWorldInverseTranspone.bChangeFlag)
   {
@@ -440,7 +440,7 @@ const mat44 *GeometryContext::get_matrix_WorldInverseTranspone()const
 };
 
 //====================================================================
-const mat44 *GeometryContext::get_matrix_WorldView()const
+const mat44 *geometry_context::get_matrix_WorldView()const
 {
   if (m_matr.mWorldView .bChangeFlag)
   {
@@ -454,7 +454,7 @@ const mat44 *GeometryContext::get_matrix_WorldView()const
 };
 
 //====================================================================
-const mat44 *GeometryContext::get_matrix_WorldViewTranspone()const
+const mat44 *geometry_context::get_matrix_WorldViewTranspone()const
 {
   if (m_matr.mWorldViewTranspone.bChangeFlag)
   {
@@ -474,7 +474,7 @@ const mat44 *GeometryContext::get_matrix_WorldViewTranspone()const
 
 
 //====================================================================
-const mat44 *GeometryContext::get_matrix_WorldViewInverse()const
+const mat44 *geometry_context::get_matrix_WorldViewInverse()const
 {
   if (m_matr.mWorldViewInverse.bChangeFlag)
   {
@@ -491,7 +491,7 @@ const mat44 *GeometryContext::get_matrix_WorldViewInverse()const
 };
 
 //====================================================================
-const mat44 *GeometryContext::get_matrix_WorldViewInverseTranspone()const
+const mat44 *geometry_context::get_matrix_WorldViewInverseTranspone()const
 {
   if (m_matr.mWorldViewInverseTranspone.bChangeFlag)
   {
@@ -511,7 +511,7 @@ const mat44 *GeometryContext::get_matrix_WorldViewInverseTranspone()const
 };
 
 //=====================================================================
-const vec4* GeometryContext::get_vector4_by_context_type(
+const vec4* geometry_context::get_vector4_by_context_type(
 	     const vector_context_type_e::e val) const
 {
   switch(val)
@@ -553,7 +553,7 @@ const vec4* GeometryContext::get_vector4_by_context_type(
 };
 
 //====================================================================
-const mat44 * GeometryContext::get_matrix_by_context_type(
+const mat44 * geometry_context::get_matrix_by_context_type(
 				const matrix4x4_context_type_e::e  val
 				) const
 {
@@ -732,7 +732,7 @@ const mat44 * GeometryContext::get_matrix_by_context_type(
 }
 
 //====================================================================
-void GeometryContext::__checkViewVectors()const
+void geometry_context::__checkViewVectors()const
 {
   if (m_matr.mViewInverse.bChangeFlag)
   {
@@ -745,7 +745,7 @@ void GeometryContext::__checkViewVectors()const
 };
 
 //====================================================================
-const vec4 *GeometryContext::get_vector4_ViewPos()const
+const vec4 *geometry_context::get_vector4_ViewPos()const
 {
   __checkViewVectors();
   m_vec4Temp.x = m_VewPos.x;
@@ -756,7 +756,7 @@ const vec4 *GeometryContext::get_vector4_ViewPos()const
 };
 
 //====================================================================
-const vec4 *GeometryContext::get_vector4_ViewDir()const
+const vec4 *geometry_context::get_vector4_ViewDir()const
 {
   __checkViewVectors();
   m_vec4Temp.x = m_ViewDir.x;
@@ -767,7 +767,7 @@ const vec4 *GeometryContext::get_vector4_ViewDir()const
 };
 
 //====================================================================
-const vec4 *GeometryContext::get_vector4_ViewUp()const
+const vec4 *geometry_context::get_vector4_ViewUp()const
 {
   __checkViewVectors();
   m_vec4Temp.x = m_ViewUp.x;
@@ -778,7 +778,7 @@ const vec4 *GeometryContext::get_vector4_ViewUp()const
 };
 
 //====================================================================
-const vec3 *GeometryContext::get_vector3_ViewSide()const
+const vec3 *geometry_context::get_vector3_ViewSide()const
 {
   #pragma message ("ПРОВЕРИТЬ ПОЛУЧЕНИЕ БОКОВОГО ВЕКТОРА ВИДА")
  // D3DXVec3Cross(&m_vec3Temp, &m_ViewDir, &m_ViewUp);
@@ -789,7 +789,7 @@ const vec3 *GeometryContext::get_vector3_ViewSide()const
 };
 
 //====================================================================
-const vec4 *GeometryContext::get_vector4_ViewSide()const
+const vec4 *geometry_context::get_vector4_ViewSide()const
 {
   vec3 res =  *get_vector3_ViewUp();
   m_vec4Temp.x = res.x;
@@ -801,7 +801,7 @@ const vec4 *GeometryContext::get_vector4_ViewSide()const
 
  /************************
 //==================================================================
-const vec3 *GeometryContext::GetMouseCoordCameraUnproject()const
+const vec3 *geometry_context::GetMouseCoordCameraUnproject()const
 {
   //ViewportZ  vp ;
   //  POINT  pntMouseCoord ;
@@ -817,7 +817,7 @@ const vec3 *GeometryContext::GetMouseCoordCameraUnproject()const
 };
 
 //==================================================================
-const vec3 *GeometryContext::get_vector3_Unproject(const  ViewportZ *vp, const  POINT *pntCoord)const
+const vec3 *geometry_context::get_vector3_Unproject(const  ViewportZ *vp, const  POINT *pntCoord)const
 {
   vec3 vsrc;
   vsrc.x = (FLOAT)pntCoord->x;
@@ -870,7 +870,7 @@ const vec3 *GeometryContext::get_vector3_Unproject(const  ViewportZ *vp, const  
 };
 
 //====================================================================
-const vec3 *GeometryContext::GetMouseCoordCameraUnproject(const ViewportZ *vp, const POINT *pntMouseCoord)const
+const vec3 *geometry_context::GetMouseCoordCameraUnproject(const ViewportZ *vp, const POINT *pntMouseCoord)const
 {
 
   if (m_bMouseCoordCameraUnproject_change)
@@ -897,17 +897,17 @@ const vec3 *GeometryContext::GetMouseCoordCameraUnproject(const ViewportZ *vp, c
 };
  ************************************/
 
-const vec3 *GeometryContext::get_vector3_VewPos()const
+const vec3 *geometry_context::get_vector3_VewPos()const
 {
   __checkViewVectors();
   return  &m_VewPos;
 };
-const vec3 *GeometryContext::get_vector3_ViewDir()const
+const vec3 *geometry_context::get_vector3_ViewDir()const
 {
   __checkViewVectors();
   return  &m_ViewDir;
 };
-const vec3 *GeometryContext::get_vector3_ViewUp()const
+const vec3 *geometry_context::get_vector3_ViewUp()const
 {
   __checkViewVectors();
   return  &m_ViewUp;
@@ -915,7 +915,7 @@ const vec3 *GeometryContext::get_vector3_ViewUp()const
 
 
 //===============================================
-const perspective_projection_data *GeometryContext::get_projection_Data()const
+const perspective_projection_data *geometry_context::get_projection_Data()const
 {
   if (m_BoolChangedMatr.bProjChange)
   {
@@ -940,7 +940,7 @@ const perspective_projection_data *GeometryContext::get_projection_Data()const
 /****************************
 
 //============================================================
-int  GeometryContext::PushMatrixWorld()const
+int  geometry_context::PushMatrixWorld()const
 {
   int  hr = 0;
 
@@ -963,7 +963,7 @@ int  GeometryContext::PushMatrixWorld()const
 };
 
 //============================================================
-int  GeometryContext::PushMatrixView()const
+int  geometry_context::PushMatrixView()const
 {
   int  hr = 0;
   if (m_MatrixStackView.full())
@@ -985,7 +985,7 @@ int  GeometryContext::PushMatrixView()const
 };
 
 //============================================================
-int  GeometryContext::PushMatrixProj()const
+int  geometry_context::PushMatrixProj()const
 {
   int  hr = 0;
 
@@ -1008,7 +1008,7 @@ int  GeometryContext::PushMatrixProj()const
 };
 
 //============================================================
-int  GeometryContext::PushMatrices(BOOLFLAG bWorld, BOOLFLAG bView, BOOLFLAG bProj)const
+int  geometry_context::PushMatrices(BOOLFLAG bWorld, BOOLFLAG bView, BOOLFLAG bProj)const
 {
   int  hr = 0;
 
@@ -1068,7 +1068,7 @@ int  GeometryContext::PushMatrices(BOOLFLAG bWorld, BOOLFLAG bView, BOOLFLAG bPr
 
 
 //============================================================
-int  GeometryContext::PopMatrixWorld()const
+int  geometry_context::PopMatrixWorld()const
 {
   int  hr = 0;
 
@@ -1083,7 +1083,7 @@ int  GeometryContext::PopMatrixWorld()const
 };
 
 //============================================================
-int  GeometryContext::PopMatrixView()const
+int  geometry_context::PopMatrixView()const
 {
   int  hr = 0;
 
@@ -1097,7 +1097,7 @@ int  GeometryContext::PopMatrixView()const
 };
 
 //============================================================
-int  GeometryContext::PopMatrixProj()const
+int  geometry_context::PopMatrixProj()const
 {
   int  hr = 0;
 
@@ -1111,7 +1111,7 @@ int  GeometryContext::PopMatrixProj()const
 };
 
 //============================================================
-int  GeometryContext::PopMatrices(BOOLFLAG bWorld, BOOLFLAG bView, BOOLFLAG bProj)const
+int  geometry_context::PopMatrices(BOOLFLAG bWorld, BOOLFLAG bView, BOOLFLAG bProj)const
 {
   int  hr = 0;
 
@@ -1145,7 +1145,7 @@ int  GeometryContext::PopMatrices(BOOLFLAG bWorld, BOOLFLAG bView, BOOLFLAG bPro
 
 
 //=======================================================
-int  GeometryContext::PopAllMatrices()const
+int  geometry_context::PopAllMatrices()const
 {
   int  hr = 0;
 
@@ -1155,14 +1155,14 @@ int  GeometryContext::PopAllMatrices()const
 ****************************************/
 
 //=======================================================
-EyeData GeometryContext::getViewParams()const
+eyedata geometry_context::getViewParams()const
 {
-  EyeData res =  *getViewParamsPtr();
+  eyedata res =  *getViewParamsPtr();
   return res;
 };
 
 //=======================================================
-const EyeData *GeometryContext::getViewParamsPtr()const
+const eyedata *geometry_context::getViewParamsPtr()const
 {
   #pragma message ("ПОГОНЯТЬ В ОТЛАДКЕ ЭТОТ МЕТОД")
 
@@ -1174,19 +1174,19 @@ const EyeData *GeometryContext::getViewParamsPtr()const
 	 m_EyeData.decomposeInverseView(m_matr.mViewInverse.matrix);
 
    // #pragma message ("ПРОВЕРИТЬ ПОЛУЧЕНИЕ ВЕКТОРОВ  ВИДА ИЗ ИНВЕРСНОЙ ВИДОВОЙ МАТРИЦЫ ")
-   // m_EyeData.eyePosition = *((vec3*) &m_matr.mViewInverse.matrix._41);
+   // m_EyeData.eye_position = *((vec3*) &m_matr.mViewInverse.matrix._41);
    // vec3 vViewDir = *((vec3*) &m_matr.mViewInverse.matrix._31);
-   // m_EyeData.eyeUp = *((Normal3*) &m_matr.mViewInverse.matrix._21);
+   // m_EyeData.eye_up = *((Normal3*) &m_matr.mViewInverse.matrix._21);
 
     #pragma message("ks777  ПРОВЕРИТЬ !!!!  " __FILE__)
       assert(false&&"NEED CKECK!! ");
    // float fDistToCenter = vViewDir.length();  // D3DXVec3Length(&vViewDir);
 
 	/**
-    m_EyeData.eyeUp = m_EyeData.eyePosition;
-    m_EyeData.eyeUp.x() += fDistToCenter;
-    m_EyeData.eyeUp.y() += fDistToCenter;
-    m_EyeData.eyeUp.z() += fDistToCenter;
+    m_EyeData.eye_up = m_EyeData.eye_position;
+    m_EyeData.eye_up.x() += fDistToCenter;
+    m_EyeData.eye_up.y() += fDistToCenter;
+    m_EyeData.eye_up.z() += fDistToCenter;
 	   */
 
     m_bIsParameter_EyeData_changed =  0 ;
@@ -1198,20 +1198,20 @@ const EyeData *GeometryContext::getViewParamsPtr()const
 
 
 //===========================================================
-int  GeometryContext::setViewParams(const  vec3 *eye, const  vec3 *at, const  vec3 *up)
+int  geometry_context::setViewParams(const  vec3 *eye, const  vec3 *at, const  vec3 *up)
 {
   int  hr = 0;
 
-  EyeData vp = getViewParams();
+  eyedata vp = getViewParams();
 
   if (eye)
-    vp.eyePosition=  *eye;
+    vp.eye_position=  *eye;
 
   if (at)
-    vp.eyeAt=  *at;
+    vp.eye_at=  *at;
 
   if (up)
-    vp.eyeUp =  *up;
+    vp.eye_up =  *up;
 
   hr |= setViewParams(&vp);
 
@@ -1219,16 +1219,16 @@ int  GeometryContext::setViewParams(const  vec3 *eye, const  vec3 *at, const  ve
 };
 
 //===========================================================
-int  GeometryContext::setViewParams(const EyeData *pvp)
+int  geometry_context::setViewParams(const eyedata *pvp)
 {
   int  hr = 0;
 
   mat44 mv;
   m_EyeData =  *pvp;
 
-//  D3DXMatrixLookAtLH(&mv, &m_EyeData.eyePosition, &m_EyeData.eyeUp, &m_EyeData.eyeUp);
+//  D3DXMatrixLookAtLH(&mv, &m_EyeData.eye_position, &m_EyeData.eye_up, &m_EyeData.eye_up);
 
-  mv.setViewLookAtLH( m_EyeData.eyePosition, m_EyeData.eyeAt, m_EyeData.eyeUp  );
+  mv.setViewLookAtLH( m_EyeData.eye_position, m_EyeData.eye_at, m_EyeData.eye_up  );
 
 
   hr |= set_matrix_View(&mv);
@@ -1237,36 +1237,36 @@ int  GeometryContext::setViewParams(const EyeData *pvp)
 };
 
 //===========================================================
-int  GeometryContext::setViewEye(const vec3 *eye)
+int  geometry_context::setViewEye(const vec3 *eye)
 {
   int  hr = 0;
 
-  EyeData vp = getViewParams();
-  vp.eyePosition =  *eye;
+  eyedata vp = getViewParams();
+  vp.eye_position =  *eye;
   hr |= setViewParams(&vp);
 
   return hr;
 };
 
 //===========================================================
-int  GeometryContext::setViewAt(const vec3 *at)
+int  geometry_context::setViewAt(const vec3 *at)
 {
   int  hr = 0;
 
-  EyeData vp = getViewParams();
-  vp.eyeAt =  *at;
+  eyedata vp = getViewParams();
+  vp.eye_at =  *at;
   hr |= setViewParams(&vp);
 
   return hr;
 };
 
 //===========================================================
-int  GeometryContext::setViewUp(const vec3 *up)
+int  geometry_context::setViewUp(const vec3 *up)
 {
   int  hr = 0;
 
-  EyeData vp = getViewParams();
-  vp.eyeUp =  *up;
+  eyedata vp = getViewParams();
+  vp.eye_up =  *up;
   hr |= setViewParams(&vp);
 
   return hr;
@@ -1278,7 +1278,7 @@ int  GeometryContext::setViewUp(const vec3 *up)
 
 
 //==============================================
-int  GeometryContext::setProjectionParams(float fFov, float fAsp, float fZNear, float fZFar)
+int  geometry_context::setProjectionParams(float fFov, float fAsp, float fZNear, float fZFar)
 {
   int  hr = 0;
 
@@ -1295,7 +1295,7 @@ int  GeometryContext::setProjectionParams(float fFov, float fAsp, float fZNear, 
 };
 
 //===================================
-int  GeometryContext::setProjectionParams(const perspective_projection_data *proj)
+int  geometry_context::setProjectionParams(const perspective_projection_data *proj)
 {
   int  hr = 0;
   try
@@ -1318,7 +1318,7 @@ int  GeometryContext::setProjectionParams(const perspective_projection_data *pro
 };
 
 //==============================================
-int  GeometryContext::setProjectionFov(float fFov)
+int  geometry_context::setProjectionFov(float fFov)
 {
   int  hr = 0;
 
@@ -1338,7 +1338,7 @@ int  GeometryContext::setProjectionFov(float fFov)
 };
 
 //===================================================
-int  GeometryContext::setProjectionAsp(float fAsp)
+int  geometry_context::setProjectionAsp(float fAsp)
 {
   int  hr = 0;
 
@@ -1361,7 +1361,7 @@ int  GeometryContext::setProjectionAsp(float fAsp)
 };
 
 //===================================================
-int  GeometryContext::setProjectionZNear(float fZNear)
+int  geometry_context::setProjectionZNear(float fZNear)
 {
   int  hr = 0;
 
@@ -1382,7 +1382,7 @@ int  GeometryContext::setProjectionZNear(float fZNear)
 };
 
 //===================================================
-int  GeometryContext::setProjectionZFar(float fZFar)
+int  geometry_context::setProjectionZFar(float fZFar)
 {
   int  hr = 0;
 
@@ -1401,7 +1401,7 @@ int  GeometryContext::setProjectionZFar(float fZFar)
 }
 
 //=====================================================
-int  GeometryContext::setProjectionZNearZFar(float fZNear, float fZFar)
+int  geometry_context::setProjectionZNearZFar(float fZNear, float fZFar)
 {
   int  hr = 0;
 
@@ -1422,7 +1422,7 @@ int  GeometryContext::setProjectionZNearZFar(float fZNear, float fZFar)
 };
 
 //==========================================
-TransformData  GeometryContext::getWorldTransformData()const
+TransformData  geometry_context::getWorldTransformData()const
 {
   TransformData  res =  *getWorldTransformDataPtr();
   return res;
@@ -1430,7 +1430,7 @@ TransformData  GeometryContext::getWorldTransformData()const
 
 
 //==========================================
-const TransformData  *GeometryContext::getWorldTransformDataPtr()const
+const TransformData  *geometry_context::getWorldTransformDataPtr()const
 {
 
   if (m_bTransfDataChange)
@@ -1489,7 +1489,7 @@ const TransformData  *GeometryContext::getWorldTransformDataPtr()const
 };
 
 //==========================================
-vec3 GeometryContext::getWorldScaling()const
+vec3 geometry_context::getWorldScaling()const
 {
 
   vec3 res = getWorldTransformDataPtr()->vScaling;
@@ -1499,7 +1499,7 @@ vec3 GeometryContext::getWorldScaling()const
 };
 
 //==========================================
-AxiesAngle GeometryContext::getWorldRotationAxiesAngle() const
+axies_angle geometry_context::getWorldRotationAxiesAngle() const
 {
 	const TransformData  *ptd = getWorldTransformDataPtr();
 	Quaternion qrot =  ptd->qRotation;
@@ -1507,7 +1507,7 @@ AxiesAngle GeometryContext::getWorldRotationAxiesAngle() const
 };
 
 //==========================================
-Quaternion GeometryContext::getWorldRotationQuaternion()const
+Quaternion geometry_context::getWorldRotationQuaternion()const
 {
   // get const to check calculate
   const TransformData  *ptr = getWorldTransformDataPtr();
@@ -1523,7 +1523,7 @@ Quaternion GeometryContext::getWorldRotationQuaternion()const
 };
 
 //==========================================
-vec3 GeometryContext::getWorldPosition()const
+vec3 geometry_context::getWorldPosition()const
 {
 
   const TransformData  *ptd = getWorldTransformDataPtr();
@@ -1534,7 +1534,7 @@ vec3 GeometryContext::getWorldPosition()const
 
 
 //==========================================
-int  GeometryContext::setWorldTransformData(const TransformData  *pTr)
+int  geometry_context::setWorldTransformData(const TransformData  *pTr)
 {
   int  hr = 0;
 
@@ -1581,7 +1581,7 @@ int  GeometryContext::setWorldTransformData(const TransformData  *pTr)
 };
 
 //==========================================
-int  GeometryContext::setWorldPositionVal(float x, float y, float z)
+int  geometry_context::setWorldPositionVal(float x, float y, float z)
 {
   int  hr = 0;
   TransformData  trd = getWorldTransformData();
@@ -1597,7 +1597,7 @@ int  GeometryContext::setWorldPositionVal(float x, float y, float z)
 };
 
 //==========================================
-int  GeometryContext::setWorldPositionVec(const vec3 *pos)
+int  geometry_context::setWorldPositionVec(const vec3 *pos)
 {
   int  hr = 0;
   vec3 vpos =  *pos;
@@ -1608,7 +1608,7 @@ int  GeometryContext::setWorldPositionVec(const vec3 *pos)
 
 
 //==========================================
-int  GeometryContext::setWorldRotationYawPitchRoll(float yaw, float pitch, float roll)
+int  geometry_context::setWorldRotationYawPitchRoll(float yaw, float pitch, float roll)
 {
   int  hr = 0;
   Quaternion q;
@@ -1622,7 +1622,7 @@ int  GeometryContext::setWorldRotationYawPitchRoll(float yaw, float pitch, float
 };
 
 /********************************
-int  GeometryContext::setWorldRotationVal(float axX, float axY, float axZ, float angle)
+int  geometry_context::setWorldRotationVal(float axX, float axY, float axZ, float angle)
 {
   int  hr = 0;
   TransformData  trd = getWorldTransformData();
@@ -1648,7 +1648,7 @@ int  GeometryContext::setWorldRotationVal(float axX, float axY, float axZ, float
 *******************************/
 
 //==========================================
-int  GeometryContext::setWorldRotationQuaternion(const Quaternion *q)
+int  geometry_context::setWorldRotationQuaternion(const Quaternion *q)
 {
   int  hr = 0;
   TransformData  trd = getWorldTransformData();
@@ -1690,7 +1690,7 @@ trd.qRotation = *q;
 };
 
 //=========================================================================
-int  GeometryContext::setWorldRotationAxiesAngle(const vec3 *vAx, float angle )
+int  geometry_context::setWorldRotationAxiesAngle(const vec3 *vAx, float angle )
 {
   int  hr = 0;
 
@@ -1712,7 +1712,7 @@ int  GeometryContext::setWorldRotationAxiesAngle(const vec3 *vAx, float angle )
 
 
 //=========================================================================
-int  GeometryContext::setWorldScaling(float val)
+int  geometry_context::setWorldScaling(float val)
 {
   int  hr = 0;
   hr |= setWorldScaling(val, val, val);
@@ -1721,7 +1721,7 @@ int  GeometryContext::setWorldScaling(float val)
 };
 
 //=========================================================================
-int  GeometryContext::setWorldScaling(float x, float y, float z)
+int  geometry_context::setWorldScaling(float x, float y, float z)
 {
 	int  hr = 0;
 
@@ -1736,7 +1736,7 @@ int  GeometryContext::setWorldScaling(float x, float y, float z)
 };
 
 //=========================================================================
-int  GeometryContext::setWorldScalingVec(const vec3 *vSc)
+int  geometry_context::setWorldScalingVec(const vec3 *vSc)
 {
   int  hr = 0;
   vec3 scale =  *vSc;
@@ -1746,7 +1746,7 @@ int  GeometryContext::setWorldScalingVec(const vec3 *vSc)
 };
 
 //=========================================================================
-int  GeometryContext::setWorldScalingTranslation(float fScale, const vec3 *vTrnsl)
+int  geometry_context::setWorldScalingTranslation(float fScale, const vec3 *vTrnsl)
 {
   int  hr = 0;
   TransformData  tr = getWorldTransformData();
@@ -1758,7 +1758,7 @@ int  GeometryContext::setWorldScalingTranslation(float fScale, const vec3 *vTrns
 };
 
 //=========================================================================
-int  GeometryContext::setWorldScalingTranslation(float fScale, float x, float y, float z)
+int  geometry_context::setWorldScalingTranslation(float fScale, float x, float y, float z)
 {
   int  hr = 0;
   vec3 vtr;

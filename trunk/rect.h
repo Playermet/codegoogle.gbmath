@@ -16,7 +16,8 @@ namespace gbmath
 {
 
 
-#pragma message("#error  need rename class  (aabr or rect)"  __FILE__ )
+#pragma message("!!!  #error  need rename class  (aabr or rect)"  __FILE__ )
+#pragma message("!!!  #error  need  set vec2 min  and vec2 max   "  __FILE__ )
 
 		//! Прямоугольник по мин. и макс координате
 		class Rect {

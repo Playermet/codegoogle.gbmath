@@ -1,7 +1,6 @@
 ﻿/**  \file
  \brief яяяяяяяя
 
-
 */
 
 #pragma once
@@ -10,26 +9,21 @@
     #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
-
- 
 namespace gbmath
 {
 
 
-
-
-
    //! \brief Сборка векторов вида.
-   struct EyeData
+   struct eyedata
    {
-	 vec3   eyePosition;  ///<	 Точка позиция наблюдателя.
-	 vec3   eyeAt;        ///<   Точка цель наблюдателя.
-	 vec3   eyeUp;        ///<   Верх  наблюдателя.
+	 vec3   eye_position;  ///<	 Точка позиция наблюдателя.
+	 vec3   eye_at;        ///<   Точка цель наблюдателя.
+	 vec3   eye_up;        ///<   Верх  наблюдателя.
 
 	 //! \brief  Получить вектор направления наблюдения.
 	 vec3 direction() const
 	 {
-		 vec3 res(eyeAt-eyePosition);
+		 vec3 res(eye_at-eye_position);
 		 res.normalize();
 		 return res;
 	 }
@@ -37,9 +31,9 @@ namespace gbmath
 	 void decomposeInverseView(const mat44& mInvView)
 	 {
 		 assert(false);
-	 // eyePosition.x = minv._41;
-	 // eyePosition.y = minv._42;
-	 // eyePosition.z = minv._43;
+	 // eye_position.x = minv._41;
+	 // eye_position.y = minv._42;
+	 // eye_position.z = minv._43;
 
      // dir = *( (vec3*)&minv._31);
 

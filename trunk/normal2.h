@@ -20,7 +20,7 @@ namespace gbmath
 
 
 //! \brief  Нормаль, направление в двухмерном измерении /xx
-class Normal2 {
+class normal2 {
 private:
    float _x;
    float _y;
@@ -34,17 +34,17 @@ private:
 
 public:
 	// по дефолту нормаль смотрит по Y
-	Normal2() { _x=0.0f; _y=1.0f;  }
-	Normal2(const Normal2& n) {  _x=n._x;   _y=n._y; }
+	normal2() { _x=0.0f; _y=1.0f;  }
+	normal2(const normal2& n) {  _x=n._x;   _y=n._y; }
 
 	//! \brief Передавать правильные значения для нормали. Нельзя оба в ноль и т.д.
-	Normal2(float x, float y)
+	normal2(float x, float y)
 	{
 		if( (0.0f==_x) && (0.0f==_y) )  throw std::runtime_error("invalid arg");
 		_x=x; _y=y; __normalize();
 	}
 
-	Normal2(const  vec2& vn) { *this = vn; }
+	normal2(const  vec2& vn) { *this = vn; }
 
 
 	inline float x() const { return _x; }
@@ -56,7 +56,7 @@ public:
 
 	// setDirBetweenPoints(const Point2& src, const Point2& dest)
     // void transform(const  mat44_s& m) {....}
-	// Normal2 cross(){...}
+	// normal2 cross(){...}
 	// inline float angle(const Normal& n) const {...}
 
 	// rotate (const mat22_s& m) {...}

@@ -12,11 +12,9 @@
 //#include "Types.h"
 #include "point.h"
 
-/*
 #include <ostream>
 #include <sstream>
 #include <string>
-*/
 
  
 namespace gbmath
@@ -197,7 +195,10 @@ namespace gbmath
 				ss >> top;
 				ss >> width;
 				ss >> height;
-				if( ss.fail() ) throw std::invalid_argument("bad input string");
+				if( ss.fail() ) 
+				{
+					throw std::invalid_argument("bad input string");
+				}
 			}
 
 

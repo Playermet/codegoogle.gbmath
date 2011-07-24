@@ -8,11 +8,11 @@ namespace gbmath
 
 
 //=========================================================================
-//  Frustum
+//  frustum
 //=========================================================================
 
 //=========================================================================
-void Frustum::make(const  mat44& mViewProj)
+void frustum::make(const  mat44& mViewProj)
 {
 
 	// left plane
@@ -73,7 +73,7 @@ void Frustum::make(const  mat44& mViewProj)
 
 
 //=========================================================================
-bool Frustum::checkPoint(const  vec3& point) const
+bool frustum::checkPoint(const  vec3& point) const
 {
 	for(int c=0; c<6; c++)
 	{
@@ -89,7 +89,7 @@ bool Frustum::checkPoint(const  vec3& point) const
 
 
 //=========================================================================
-bool Frustum::checkSphere(const Sphere& sphere)  const
+bool frustum::checkSphere(const sphere& sphere)  const
 {
 	for(int c=0; c<6; c++)
 	{
@@ -105,7 +105,7 @@ bool Frustum::checkSphere(const Sphere& sphere)  const
 };
 
 //=========================================================================
-bool Frustum::checkAABB(const AABB& aabb) const
+bool frustum::checkAABB(const aabb& aabb) const
 {
 
 	for(int c=0; c<6; c++)

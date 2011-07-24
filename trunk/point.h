@@ -7,9 +7,7 @@
 #pragma once
 
 //#include "../Config.h"
-
 //#include "config.h"
-
 //#include "Types.h"
 
 #include <ostream>
@@ -17,27 +15,36 @@
 #include <string>
 
  
-namespace gbmath
-{
-
-
+namespace gbmath {
 
 
 	//! \brief   simple point.
 	class Point {
 	public:
 
-		int x;
-		int y;
+		union 
+		{
+			int x;
+			int left;
+		};
+
+		union 
+		{
+			int y;
+			int top;
+		};
+
+		//int x;
+		//int y;
 
 		inline Point() { x=y=0; }
 		inline Point(const Point& p) { x=p.x; y=p.y; }
+		inline Point(int _x, int _y) { init(_x,_y);  }
 
 		#ifdef _WINDOWS_
 		inline Point(const POINT& p) { *this = p; }
 		#endif
 
-		inline Point(int _x, int _y) { init(_x,_y);  }
 
 		inline void init(int _x, int _y) { x=_x; y=_y; }
 
@@ -102,7 +109,10 @@ namespace gbmath
 			std::istringstream ss(str);
 			ss >> x;
 			ss >> y;
-			if( ss.fail() ) throw std::invalid_argument("bad input string");
+			if( ss.fail() )
+			{
+				throw std::invalid_argument("bad input string");
+			}
 		}
 
 

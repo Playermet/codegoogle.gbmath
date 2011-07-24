@@ -7,7 +7,7 @@ namespace gbmath
 
 
 //=====================================================================
-void  vec3::operator = (const Point3& pnt)
+void  vec3::operator = (const point3& pnt)
 {
  x=pnt._x;
  y=pnt._y;

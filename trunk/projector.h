@@ -20,16 +20,16 @@ namespace gbmath
 
 
 	//!  \brief Клас бесконечный прожектор по лучу (точка основания) и углу прожектора
-	class  Projector {
+	class  projector {
 	public:
-		Ray3d ray;   ///< луч (центр и направление прожектора)
+		ray3d ray;   ///< луч (центр и направление прожектора)
 		float phi; ///< угол конуса
 
-		Projector() {};
-		Projector(const Projector& pr) {ray=pr.ray; phi=pr.phi;  };
+		projector() {};
+		projector(const projector& pr) {ray=pr.ray; phi=pr.phi;  };
 
 
-	}; // Projector
+	}; // projector
 
 
 

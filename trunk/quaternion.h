@@ -11,6 +11,9 @@
 #endif
 
 
+#pragma message("!!!! NEED RENAME QUAT  "  __FILE__  )
+
+
 namespace gbmath
 {
 
@@ -363,9 +366,9 @@ namespace gbmath
 
 		 vec3  getRotationAxis() const;
 
-		AxiesAngle getRotationAxiesAngle() const;
+		axies_angle getRotationAxiesAngle() const;
 
-		AxiesAngle toAxiesAngle() const ;
+		axies_angle toAxiesAngle() const ;
 
 
 		inline Quaternion& setRotationX(float theta) {
@@ -405,7 +408,7 @@ namespace gbmath
 		Quaternion&         setRotationAxis(const  vec3 &axis, float theta) ;
 
 
-		Quaternion&  setRotationAxis(const AxiesAngle& aa) ;
+		Quaternion&  setRotationAxis(const axies_angle& aa) ;
 
 
 		//! \brief  Построить поворотный по углам эллера

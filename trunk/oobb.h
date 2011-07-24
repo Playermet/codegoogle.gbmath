@@ -17,13 +17,13 @@ namespace gbmath
 
  
 
-		class OOBB  {
-		public:
+	class oobb {
+	public:
 
-			OOBB(){}
+		oobb() { }
 
 
-		};
+	};
 
  
 }

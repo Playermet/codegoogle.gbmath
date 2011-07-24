@@ -277,22 +277,22 @@ Quaternion&  Quaternion::setRotationAxis(const  vec3 &axis, float theta)
 }
 
 //=========================================================================
-inline AxiesAngle Quaternion::getRotationAxiesAngle() const
+inline axies_angle Quaternion::getRotationAxiesAngle() const
 {
-	 AxiesAngle res;
+	 axies_angle res;
 	res.angle = getRotationAngle();
 	res.axies = getRotationAxis();
 	return res;
 }
 
 //=========================================================================
-AxiesAngle Quaternion::toAxiesAngle() const
+axies_angle Quaternion::toAxiesAngle() const
 {
 	return getRotationAxiesAngle();
 }
 
 //=========================================================================
-Quaternion&  Quaternion::setRotationAxis(const AxiesAngle& aa)
+Quaternion&  Quaternion::setRotationAxis(const axies_angle& aa)
 {
 	return setRotationAxis( aa.axies , aa.angle );
 }

@@ -1,7 +1,6 @@
 ﻿/**  \file
- \brief ??????
-
-
+* \brief ??????
+*
 */
 
 #pragma once
@@ -11,11 +10,10 @@
 #endif
 
 
- 
 namespace gbmath
 {
 
-  #pragma message("!!need addoperatiions "  __FILE__ )
+  #pragma message("!!need add operatiions  >> << to from string  "  __FILE__ )
 
 
 

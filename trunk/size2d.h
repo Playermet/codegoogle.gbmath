@@ -14,7 +14,7 @@ namespace gbmath
 {
 
         /** \brief 2-х мерный размер. */
-		struct Size2d {
+		struct size2d {
 
 			union
 			{

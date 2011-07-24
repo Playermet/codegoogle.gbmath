@@ -62,14 +62,14 @@ class  Quaternion;
 
 //namespace geom2d  {
 
-struct Size2d;
+struct size2d;
 
-class Normal2;
-class Point2;
+class normal2;
+class point2;
 class Rect;
 class Circle;
-class Line3d;
-class Ray3d;
+class line3d;
+class ray3d;
 
 //}
 
@@ -77,21 +77,21 @@ class Ray3d;
 
 //namespace geom3d {
 
-struct Size3d;
-class Normal3;
-class Point3;
+struct size3d;
+class normal3;
+class point3;
 
-struct AxiesAngle;
-class Sphere;
-class AABB;
-class Ray3d;
-class Line3d;
+struct axies_angle;
+class sphere;
+class aabb;
+class ray3d;
+class line3d;
 class euler_angles;
-class Triangle;
+class triangle;
 
 struct plane_s;
 
-class  Projector;
+class  projector;
 class  Frustum;
 class  Cilinder;
 
@@ -106,7 +106,7 @@ struct TransformData;
 //namespace proj {
 
 struct PerspectiveProjData;
-struct RelatCoord;
+struct related_coord;
 
 struct vieport_s;
 class ViewportZ;
@@ -121,7 +121,7 @@ struct float_context_type_e;
 class float_context;
 struct vector_context_type_e;
 struct matrix4x4_context_type_e;
-class GeometryContext;
+class geometry_context;
 
 
 //}

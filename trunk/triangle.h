@@ -15,20 +15,20 @@ namespace gbmath
 {
 
 		//! \brief Треугольник по трём точкам .
-		class Triangle {
+		class triangle {
 		public:
 			 vec3   p1; ///< первая точка(вершина) треугольника
 			 vec3   p2; ///< вторая точка(вершина) треугольника
 			 vec3   p3; ///< третья точка(вершина) треугольника
 
 
-			inline Triangle() {}
-			inline Triangle(const Triangle& t)
+			inline triangle() {}
+			inline triangle(const triangle& t)
 			{
 				*this = t;
 			}
 
-			inline Triangle(const  vec3 _p1, const  vec3 _p2, const  vec3 _p3)
+			inline triangle(const  vec3 _p1, const  vec3 _p2, const  vec3 _p3)
 			{
 				p1 = _p1;
 				p2 = _p2;
@@ -71,7 +71,7 @@ namespace gbmath
 
 
 
-			friend std::ostream &operator << (std::ostream &stream, const Triangle& t)
+			friend std::ostream &operator << (std::ostream &stream, const triangle& t)
 			{
 				stream << t.p1 << " " << t.p2 << " " << t.p3 ;
 				return stream;
