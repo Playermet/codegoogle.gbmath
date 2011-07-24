@@ -9,17 +9,12 @@
 #ifndef __GBMATH_H__
     #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
-
-
  
 namespace gbmath
 {
 
-
-
-
    //! \brief Стандартная пирамида видимости
-   class Frustum  {
+   class frustum  {
    public:
 
 	   union {
@@ -35,8 +30,8 @@ namespace gbmath
 		   plane_s  planes[6] ;
 	   };
 
-	   inline Frustum() {}
-	   inline Frustum(const Frustum& f) { *this=f; }
+	   inline frustum() {}
+	   inline frustum(const frustum& f) { *this=f; }
 
 
 	   /** \brief Выполнить построение из матричного произведения view * proj */
@@ -53,10 +48,10 @@ namespace gbmath
 	   bool checkPoint(const  vec3& point) const;
 
        //! \brief Проверка попадания сферы в пирамиду
-	   bool checkSphere(const Sphere& sphere)  const;
+	   bool checkSphere(const sphere& sphere)  const;
 
 	   //! \brief Проверка попадания бокса в пирамиду
-       bool checkAABB(const AABB& aabb) const;
+       bool checkAABB(const aabb& aabb) const;
 
 
 
@@ -74,7 +69,7 @@ namespace gbmath
 		// printf("bottom="); bottom.print(); printf("\n");
  	// }
 
-	 friend std::ostream &operator << ( std::ostream &stream, const Frustum& fr )
+	 friend std::ostream &operator << ( std::ostream &stream, const frustum& fr )
 	 {
 		 stream  << "front  = " << fr.front << "\n"
 				 << "back   = " << fr.back << "\n"

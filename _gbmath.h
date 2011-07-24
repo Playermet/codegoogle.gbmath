@@ -2,21 +2,12 @@
 * \brief MAIN HEADER.
 *
 *
-*
-
-\todo  Поменять ассерты на исключения  
-\todo  Поправить операторы для сравнения по эпсилону.
-\todo  Перенести в cpp методы матрицы 4x4 .
-\todo  Тяжелые методы матриц перенести в cpp
-\todo  удалить собственные #ifdef XXXXXX
-\todo  Поправить макрозащиту на типы RECT и POINT
- 
-*
-*
 */
 
 #pragma once
 #define __GBMATH_H__
+
+#include "__todo.h"
  
 #define _USE_MATH_DEFINES
 
@@ -28,11 +19,12 @@
 //#include <stdlib.h>
 //#include <cstdio>
 
-#include <string>
 #include <istream>
 #include <ostream>
 #include <iostream>
 #include <sstream>
+
+#include <string>
 
 #include <vector>
 #include <stdexcept>
@@ -119,30 +111,28 @@ namespace gbmath
 #include "normal3.h"
 #include "point3.h"
 #include "size3d.h"
-#include "objcontainse.h"
-#include "plane.h"
+#include "obj_contains_e.h"
+#include "plane.h"    
 #include "sphere.h"
 #include "aabb.h"
 #include "oobb.h"
-#include "aabbtree.h"
+#include "aabb_tree.h"
 #include "ray3d.h"
-#include "axiesangle.h"
+#include "axies_angle.h"
 #include "cilinder.h"
 #include "euler_angles.h"
 #include "frustum.h"
 #include "eyedata.h"
 #include "line3d.h"
-
 #include "transformdata_quat.h"
 #include "transformdata_axang.h"
-
 #include "triangle.h"
 #include "projector.h"
 
 
 // proj
-#include "perspective_projdata.h"
-#include "relat_coord.h"
+#include "perspective_projection_data.h"
+#include "related_coord.h"
 #include "viewport.h"
 
 
@@ -155,21 +145,22 @@ namespace gbmath
 
 
 
-
 #ifdef _MSC_VER
 	#pragma  warning(pop)
 #endif
 
-// do include static lib for VC
-#if GB_LIB
-	#ifndef _LIB_GB_FMATH
-		#ifdef _DEBUG
-				#pragma comment( lib , "gb_fmath_d.lib" )
-		#else
-				#pragma comment( lib , "gb_fmath.lib" )
-		#endif
-	#endif
-#endif
+//
+//// do include static lib for VC
+//#if GB_LIB
+//	#ifndef _LIB_GB_FMATH
+//		#ifdef _DEBUG
+//				#pragma comment( lib , "gb_fmath_d.lib" )
+//		#else
+//				#pragma comment( lib , "gb_fmath.lib" )
+//		#endif
+//	#endif
+//#endif
+//
 
 
 // end file

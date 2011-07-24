@@ -19,7 +19,7 @@ namespace gbmath
    struct TransformData2
    {
 	   vec3        scaling;
-	   AxiesAngle  rotation;
+	   axies_angle  rotation;
 	   vec3        translatiion;
    };
 

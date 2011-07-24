@@ -18,18 +18,17 @@ namespace gbmath
 
 
 
-
    //! \brief Класс цилиндр по точкам координатам центров основания и радиусу
-   class Cilinder {
+   class cilinder {
    public:
 	    vec3  p1;  ///< Первая центральная координата в основании цилиндра.
 	    vec3  p2;  ///< Вторая центральная координата в основании цилиндра.
 
 	   float      radius; ///< Радиус цилиндра
 
-	   Cilinder() {}
-	   Cilinder(const Cilinder& c) { p1=c.p1; p2=c.p2; radius=c.radius;  }
-	   Cilinder(const  vec3& _p1, const  vec3& _p2, float _radius)
+	   cilinder() {}
+	   cilinder(const cilinder& c) { p1=c.p1; p2=c.p2; radius=c.radius;  }
+	   cilinder(const  vec3& _p1, const  vec3& _p2, float _radius)
 	   {
 		   p1=_p1;
 		   p2=_p2;
@@ -51,7 +50,7 @@ namespace gbmath
 
 
    };
-   //  end class Cilinder
+   //  end class cilinder
 
 
 

@@ -9,13 +9,13 @@ namespace gbmath
 
 
 //=========================================================================
-//  Sphere
+//  sphere
 //=========================================================================
 
 //=========================================================================
-AABB Sphere::toAabbInside() const
+aabb sphere::toAabbInside() const
 {
-  AABB res;
+  aabb res;
 
    static const float k =  1.0f / sqrt(1.0f+1.0f+1.0f);
 
@@ -33,9 +33,9 @@ AABB Sphere::toAabbInside() const
 }
 
 //=========================================================================
-AABB Sphere::toAabbOutside() const
+aabb sphere::toAabbOutside() const
 {
-    AABB res;
+    aabb res;
 
   res.min.x = center.x - radius;
   res.min.y = center.y - radius;

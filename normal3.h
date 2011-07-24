@@ -13,13 +13,11 @@
  
 namespace gbmath
 {
-
-
-
+ 
 
 		/** \brief Сущность описывает направление/нормаль в 3х-мерном пространстве.
 		   Уровень выше, чем вектор.  Всегда нормализован.  */
-		class Normal3 {
+		class normal3 {
 		private:
 			float _x;
 			float _y;
@@ -38,10 +36,10 @@ namespace gbmath
 
 
 			//! \brief  По дефолту нормаль смотрит в Z .
-			inline Normal3() { _x=0.0f; _y=0.0f; _z=1.0f;  }
-			inline Normal3(const Normal3& n) { _x=n._x; _y=n._y; _z=n._z; }
-			inline Normal3(float x, float y, float z) { _x=x; _y=y; _z=z; __normalize(); }
-			inline Normal3(const  vec3& v) { *this = v;  }
+			inline normal3() { _x=0.0f; _y=0.0f; _z=1.0f;  }
+			inline normal3(const normal3& n) { _x=n._x; _y=n._y; _z=n._z; }
+			inline normal3(float x, float y, float z) { _x=x; _y=y; _z=z; __normalize(); }
+			inline normal3(const  vec3& v) { *this = v;  }
 
 
 			inline operator  const float*() const  { return &_x; };
@@ -56,20 +54,20 @@ namespace gbmath
 			inline operator  const vec3*() const { return (vec3*)&_x; }
 
 			//! \brief  Вычислить угол между нормалями
-			inline float angle (const Normal3& n)
+			inline float angle (const normal3& n)
 			{
 				const float fdot = _x*n._x + _y*n._y + _z*n._z;
                 return acos(  fdot );
 			}
 
 			 //! \brief Установить как направление между точками pntDest и pntSrc .
-			Normal3& setDirectionBetweenPoints(const Point3& pntSrc, const Point3& pntDest);
+			normal3& setDirectionBetweenPoints(const point3& pntSrc, const point3& pntDest);
 
 			//! \brief Изменить направление на противоположное
 			inline void negate() {_x=-_x; _y=-_y; _z=-_z; }
 
 			//! \brief  Трансформировать нормаль по матрице m
-			Normal3& transform(const  mat44& m)
+			normal3& transform(const  mat44& m)
 			{
 			    vec3 v = *this;
 			   v.transformNormal(m);

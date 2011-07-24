@@ -15,13 +15,13 @@ namespace gbmath
 {
 
 
-#pragma message("!!!! rename AABB  "   __FILE__ )
+#pragma message("!!!! rename aabb  "   __FILE__ )
 
 
 	// много инфы по боксу   http://www.devmaster.net/forums/showthread.php?t=10324
 
 	//! \brief Бокс по мин. и макс. координатам. Axis Aligned Bounding Box.
-	class AABB {
+	class aabb {
 	public:
 	vec3   min; ///< минимальная точка бокса
 	vec3   max; ///< максимальная точка бокса
@@ -45,9 +45,9 @@ namespace gbmath
 
 		};
 
-	inline AABB() {}
-	inline AABB(const AABB& aabb) {min=aabb.min; max=aabb.max; }
-	inline AABB(const  vec3& _min, const  vec3& _max) { min=_min; max=_max; }
+	inline aabb() {}
+	inline aabb(const aabb& aabb) {min=aabb.min; max=aabb.max; }
+	inline aabb(const  vec3& _min, const  vec3& _max) { min=_min; max=_max; }
 
 	inline void setzero()
 	{
@@ -55,27 +55,28 @@ namespace gbmath
 		max.setzero();
 	}
 
-	inline bool operator == (const AABB& aabb) { return (min == aabb.min) && (max == aabb.max); }
+	inline bool operator == (const aabb& aabb) { return (min == aabb.min) && (max == aabb.max); }
 
 
 	//! \brief Вернуть объединённый с боксом
-	inline AABB operator + (const AABB& aabb) const
+	inline aabb operator + (const aabb& _aabb) const
 	{
-		AABB res = *this;
-		if (aabb.min.x < res.min.x)   res.min.x = aabb.min.x;
-		if (aabb.min.y < res.min.y)   res.min.y = aabb.min.y;
-		if (aabb.min.z < res.min.z)   res.min.z = aabb.min.z;
+#pragma message("!!!!!НАДО ПРОВЕРИТЬ ПОСЛЕ РЕФРАКТОРИНГА     "  __FILE__ )
+		aabb res = *this;
+		if (_aabb.min.x < res.min.x)   res.min.x = _aabb.min.x;
+		if (_aabb.min.y < res.min.y)   res.min.y = _aabb.min.y;
+		if (_aabb.min.z < res.min.z)   res.min.z = _aabb.min.z;
 
-		if (aabb.max.x > res.max.x)   res.max.x = aabb.max.x;
-		if (aabb.max.y > res.max.y)   res.max.y = aabb.max.y;
-		if (aabb.max.z > res.max.z)   res.max.z = aabb.max.z;
+		if (_aabb.max.x > res.max.x)   res.max.x = _aabb.max.x;
+		if (_aabb.max.y > res.max.y)   res.max.y = _aabb.max.y;
+		if (_aabb.max.z > res.max.z)   res.max.z = _aabb.max.z;
 		return res;
 	}
 
 	//! \brief Вернуть объединённый с точкой
-	inline AABB operator + (const  vec3& pnt) const
+	inline aabb operator + (const  vec3& pnt) const
 	{
-		AABB res = *this;
+		aabb res = *this;
 		if(pnt.x < res.min.x) res.min.x = pnt.x;
 		if(pnt.y < res.min.y) res.min.y = pnt.y;
 		if(pnt.z < res.min.z) res.min.z = pnt.z;
@@ -87,20 +88,20 @@ namespace gbmath
 	}
 
 	//! \brief Объединить с боксом
-	inline AABB& operator += (const AABB& aabb)
+	inline aabb& operator += (const aabb& _aabb)
 	{
-		if (aabb.min.x < min.x)  min.x=aabb.min.x;
-		if (aabb.min.y < min.y)  min.y=aabb.min.y;
-		if (aabb.min.z < min.z)  min.z=aabb.min.z;
+		if (_aabb.min.x < min.x)  min.x=_aabb.min.x;
+		if (_aabb.min.y < min.y)  min.y=_aabb.min.y;
+		if (_aabb.min.z < min.z)  min.z=_aabb.min.z;
 
-		if (aabb.max.x > max.x)  max.x=aabb.max.x;
-		if (aabb.max.y > max.y)  max.y=aabb.max.y;
-		if (aabb.max.z > max.z)  max.z=aabb.max.z;
+		if (_aabb.max.x > max.x)  max.x=_aabb.max.x;
+		if (_aabb.max.y > max.y)  max.y=_aabb.max.y;
+		if (_aabb.max.z > max.z)  max.z=_aabb.max.z;
 		return *this;
 	}
 
 	//! \brief Объединить с точкой pnt
-	inline AABB& operator += (const  vec3& pnt)
+	inline aabb& operator += (const  vec3& pnt)
 	{
 		includePoint(pnt);
 		return *this;
@@ -146,7 +147,7 @@ namespace gbmath
 	}
 
 	//! \brief  Включить координату pnt в бокс
-	AABB& includePoint(const  vec3& pnt)
+	aabb& includePoint(const  vec3& pnt)
 	{
 		if (pnt.x < min.x) min.x = pnt.x;
 		if (pnt.y < min.y) min.y = pnt.y;
@@ -183,9 +184,9 @@ namespace gbmath
 	inline float size_z() const { return max.z - min.z; }
 
 	//! \brief Получить 3d-размер бокса
-	inline Size3d size3d() const
+	inline size3d size() const
 	{
-		Size3d res;
+		size3d res;
 		res.x = size_x();
 		res.y = size_y();
 		res.z = size_z();
@@ -241,7 +242,7 @@ namespace gbmath
 
 
 	//! \brief  Трансформировать по матрице m . Получить выровненые вершины.
-	AABB& transform(const  mat44& m)
+	aabb& transform(const  mat44& m)
 	{
 		corners cr;
 		extractCorners(cr);
@@ -268,7 +269,7 @@ namespace gbmath
 	}
 
 	//! \brief Объединить с боксом
-	inline AABB& includeAabb( const AABB& aabb)
+	inline aabb& includeAabb( const aabb& aabb)
 	{
 		if (aabb.min.x <   min.x)     min.x=aabb.min.x;
 		if (aabb.min.y <   min.y)     min.y=aabb.min.y;
@@ -282,9 +283,9 @@ namespace gbmath
 	}
 
 	//! \brief  Преобразование в сферу. Край сферы по углам бокса.
-	Sphere toSphere() const
+	sphere toSphere() const
 	{
-		Sphere res;
+		sphere res;
 		res.center =  min.middle(max);
 		res.radius =  min.distance(max) * 0.5f;
 		return res;
@@ -302,12 +303,12 @@ namespace gbmath
 	bool checkIntersectPlane(const plane_s& pl) const;
 
 	//bool checkIntersectRay(const Ray& ray) {....}
-	//bool checkIntersecеSphere(const Sphere& sph) {....}
-	//bool checkIntersectAABB_ex(Plane& outContactPlane, const AABB& aabb) {....}
+	//bool checkIntersecеSphere(const sphere& sph) {....}
+	//bool checkIntersectAABB_ex(Plane& outContactPlane, const aabb& aabb) {....}
 
 
 	//* времянка. Проверка пересечения боксов.
-	bool checkIntersectAABB(const AABB& b) const
+	bool checkIntersectAABB(const aabb& b) const
 	{
 		if( (max.x < b.min.x) || (min.x > b.max.x) ) return false;
 		if( (max.y < b.min.y) || (min.y > b.max.y) ) return false;
@@ -317,7 +318,7 @@ namespace gbmath
 
 
 	// http://www.devmaster.net/forums/showthread.php?t=10324   #5
-	bool checkIntersectAABB_2(AABB& aabb) const
+	bool checkIntersectAABB_2(aabb& aabb) const
 	{
 		return
 		min.x > aabb.max.x || max.x < aabb.min.x ||
@@ -330,7 +331,7 @@ namespace gbmath
 
 	//function AABBContainsAABB(const mainAABB, testAABB : TAABB) : TSpaceContains;
 
-	ObjContainsE checkContainsAabb( const AABB& box ) const
+	obj_contains_e checkContainsAabb( const aabb& box ) const
 	{
 		if
 		(( min.x<box.max.x) &&
@@ -359,9 +360,9 @@ namespace gbmath
 	};
 
 
-	ObjContainsE checkContainsSphere( const Sphere& s)  const
+	obj_contains_e checkContainsSphere( const sphere& s)  const
 	{
-		AABB b = s.toAabbOutside();
+		aabb b = s.toAabbOutside();
 		return checkContainsAabb(b);
 	};
 

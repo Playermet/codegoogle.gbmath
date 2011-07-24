@@ -209,7 +209,7 @@ namespace gbmath
 			***************************/
 
 
-			void operator = (const Point3& pnt);
+			void operator = (const point3& pnt);
 
 			// old: setzero
 		    inline void set_zero()

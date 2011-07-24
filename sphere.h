@@ -18,24 +18,24 @@ namespace gbmath
 
 
 	//! \brief Сфера по центральной точке и радиусу. Она же Bounding sphere.
-	class Sphere {
+	class sphere {
 	public:
 
 	   vec3  center;  ///<  центральная координата сферы.
 	  float   radius;  ///<  радиус сферы.
 
-	  inline Sphere()
+	  inline sphere()
 	  {
 		   center.setzero();
 		   radius = 0.0f;
 	  }
 
-	  inline Sphere(const Sphere& s)
+	  inline sphere(const sphere& s)
 	  {
 		  center = s.center;
 		  radius = s.radius;
 	  }
-	  inline Sphere(const  vec3& _center, const float _radius)
+	  inline sphere(const  vec3& _center, const float _radius)
 	  {
 		  center = _center;
 		  radius = _radius;
@@ -58,7 +58,7 @@ namespace gbmath
 
 
 	  //! \brief Получить расстояние между краями сфер. Вернёт отрицательное значение если сферы пересекаются.
-	  inline float distanceBetweenSpheres(const Sphere& s) const
+	  inline float distanceBetweenSpheres(const sphere& s) const
 	  {
 		  const float dist = center.distance(s.center);
 		  float res = dist - ( radius + s.radius );
@@ -66,14 +66,14 @@ namespace gbmath
 	  }
 
 	  //! \brief  Получить бокс построеный  внутри сферы.	ПРОВЕРЕНО
-	  AABB toAabbInside() const;
+	  aabb toAabbInside() const;
 
 	  //! \brief  Получить бокс построеный по краю сферы. ПРОВЕРЕНО
-	  AABB toAabbOutside() const;
+	  aabb toAabbOutside() const;
 
 
 	  //! \brief Проверка пересечения сфер  . ПРОВЕРЕНО
-	  inline bool checkIntersectSphere(const Sphere& s) const
+	  inline bool checkIntersectSphere(const sphere& s) const
 	  {
 		  const float dist = center.distance(s.center);
 		  const float rsum = radius + s.radius;
@@ -86,12 +86,12 @@ namespace gbmath
 
 
 //bool checkIntersectRay(const Ray& ray) {....}	<- ненадо. Есть у луча
-//bool checkIntersecеSphere(const Sphere& sph) {....}   есть
-//bool checkIntersectAABB(const AABB& aabb) {....}
+//bool checkIntersecеSphere(const sphere& sph) {....}   есть
+//bool checkIntersectAABB(const aabb& aabb) {....}
 //bool checkIntersectPlane(const Plane& aabb) {....}
 
 
-	ObjContainsE BSphereContainsBSphere(const Sphere& s) const
+	obj_contains_e BSphereContainsBSphere(const sphere& s) const
 	{
 	   const float d2 = (center - s.center).lengthSq();
 

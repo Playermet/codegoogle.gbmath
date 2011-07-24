@@ -10,22 +10,20 @@
     #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
-
  
 namespace gbmath
 {
 
 
-
 	//! \brief   Линия(Прямая) в трёхмерном пространстве по двум точкам
-	class Line3d {
+	class line3d {
 	public:
 		 vec3   src;
 		 vec3   dest;
 
-		inline Line3d() {};
-		inline Line3d(const Line3d& l) {src=l.src; dest=l.dest; };
-		inline Line3d(const  vec3& _src, const  vec3& _dest) {src=_src; dest=_dest; };
+		inline line3d() {};
+		inline line3d(const line3d& l) {src=l.src; dest=l.dest; };
+		inline line3d(const  vec3& _src, const  vec3& _dest) {src=_src; dest=_dest; };
 
 		//! \brief Получить направление от src к dest
 		inline  vec3 direction() const {  vec3 r (dest - src); r.normalize(); return r; }

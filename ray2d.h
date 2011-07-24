@@ -20,14 +20,14 @@ namespace gbmath
 
 
 		/** \brief Луч в 2d  по позиции  (исходной точке)  и  направлению  */
-		class Ray2d {
+		class ray2d {
 		public:
 			 vec2   orig; ///< точка центр луча
 			 vec2   dir;  ///< направление луча ( должен быть нормализован)
 
-			inline Ray2d() {}
-			inline Ray2d(const Ray2d& r) {orig=r.orig; dir=r.dir; }
-			inline Ray2d(const  vec2& _orig, const  vec2& _dir, bool bNeedNormalizeDir)
+			inline ray2d() {}
+			inline ray2d(const ray2d& r) {orig=r.orig; dir=r.dir; }
+			inline ray2d(const  vec2& _orig, const  vec2& _dir, bool bNeedNormalizeDir)
 			{
 				orig=_orig;
 				dir=_dir;

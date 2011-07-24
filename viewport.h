@@ -39,6 +39,8 @@ namespace gbmath
 
 	   }
 
+#pragma message("!!! warning 4297 !!"  __FILE__  )
+
 	   inline void fromdevice(IDirect3DDevice9* pdevice) throw()
 	   {
 		   D3DVIEWPORT9 vp;

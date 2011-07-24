@@ -20,16 +20,16 @@ namespace gbmath
 
 		/** \brief Сущность описывает точку/координату/позицию в 3х-мерном пространстве.
 		   Уровень выше, чем вектор */
-		class Point3 {
+		class point3 {
 		public:
 			float _x;
 			float _y;
 			float _z;
 
 			//! \brief  По дефолту координата нулевая .
-			inline Point3() { _x=0.0f; _y=0.0f; _z=0.0f;  }
-			inline Point3(const Point3& p) { _x=p._x; _y=p._y; _z=p._z; }
-			inline Point3(float x, float y, float z) {_x=x; _y=y; _z=z; }
+			inline point3() { _x=0.0f; _y=0.0f; _z=0.0f;  }
+			inline point3(const point3& p) { _x=p._x; _y=p._y; _z=p._z; }
+			inline point3(float x, float y, float z) {_x=x; _y=y; _z=z; }
 
 			inline operator  const float*() const  { return &_x; };
 			inline operator        float*()        { return &_x; };
@@ -48,7 +48,7 @@ namespace gbmath
 
 
 			//! \brief установка  средней точки
-			inline Point3& setMiddle(const  vec3& p1, const  vec3& p2)
+			inline point3& setMiddle(const  vec3& p1, const  vec3& p2)
 			{
 				_x = (p1.x + p2.x) / 2.0f;
 				_y = (p1.y + p2.y) / 2.0f;
@@ -58,7 +58,7 @@ namespace gbmath
 
 
 			//! \brief установка  средней точки
-			inline Point3& setMiddle(const Point3& p)
+			inline point3& setMiddle(const point3& p)
 			{
 				_x = (_x + p._x) / 2.0f;
 				_y = (_y + p._y) / 2.0f;
@@ -67,7 +67,7 @@ namespace gbmath
 			}
 
 			//! \brief  Движение к точке posTo на расстояние distance
-			Point3& moveTo(const Point3& posTo, float distance)
+			point3& moveTo(const point3& posTo, float distance)
 			{
 				 vec3 vn = ( vec3)posTo - ( vec3)*this;
 				vn.normalize();
@@ -77,7 +77,7 @@ namespace gbmath
 			}
 
 			//! \brief  Перемещение точки по направлению normal на расстояние distance
-			Point3& moveAlongNormal(const Normal3& normal, float distance)
+			point3& moveAlongNormal(const normal3& normal, float distance)
 			{
 				 vec3 vn = normal;
 				vn *= distance;
@@ -86,7 +86,7 @@ namespace gbmath
 			}
 
 			//! \brief Вернуть расстояние между точками.
-			inline float distanceBetween(const Point3& p) const
+			inline float distanceBetween(const point3& p) const
 			{
 		       vec3 sub = ( vec3)*this - ( vec3)p;
 			  return sub.length();
@@ -95,18 +95,18 @@ namespace gbmath
 
 			/**  \brief  Изменить расстояние между this и точкой pnt по коэф. k.
 			 Если k меньше 1 то производится сближение, если больше , то удаление   */
-			Point3& adjustDistancePoint(const Point3& pnt, const float k)
+			point3& adjustDistancePoint(const point3& pnt, const float k)
 			{
 				 vec3 dv  = ( vec3)pnt - ( vec3)*this;
 			  float dist = dv.length();
-			   Normal3 n  =  dv ;
+			   normal3 n  =  dv ;
 			  moveAlongNormal( n,  dist - (dist * k) );
 			  return *this;
 			}
 
 
 			//! \brief Трансформировать точку по матрице m
-			Point3& transform(const  mat44& m)
+			point3& transform(const  mat44& m)
 			{
 			    vec3 v = *this;
 			   v.transformCoord(m);

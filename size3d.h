@@ -13,7 +13,7 @@
 namespace gbmath
 {
 		/** \brief 3-х мерный размер */
-		struct Size3d {
+		struct size3d {
 
 			union
 			{

@@ -22,10 +22,10 @@ namespace gbmath
 
 
 		//! \brief Геометрический контекст.
-		class GeometryContext  {
+		class geometry_context  {
 		public:
-		             GeometryContext() {}
-		   virtual  ~GeometryContext() {}
+		             geometry_context() {}
+		   virtual  ~geometry_context() {}
 
 
 		  long  setMatrices(const  mat44 *mWorld,
@@ -173,12 +173,12 @@ namespace gbmath
 
 
 
-		   EyeData getViewParams()const;
-		    const EyeData *getViewParamsPtr()const;
+		   eyedata getViewParams()const;
+		    const eyedata *getViewParamsPtr()const;
 
 
 		    int  setViewParams(const  vec3 *eye, const  vec3 *at, const  vec3 *up) ;
-		    int  setViewParams(const EyeData *pvp) ;
+		    int  setViewParams(const eyedata *pvp) ;
 
 		    int  setViewEye(const vec3 *eye) ;
 		    int  setViewAt(const vec3 *at) ;
@@ -201,7 +201,7 @@ namespace gbmath
 		    vec3 getWorldScaling()const;
 
 
-		    AxiesAngle getWorldRotationAxiesAngle()const;
+		    axies_angle getWorldRotationAxiesAngle()const;
 
 		    Quaternion getWorldRotationQuaternion()const;
 
@@ -332,7 +332,7 @@ namespace gbmath
 		  mutable BOOLFLAG m_bIsParameter_EyeData_changed;
 
 		  //* вью параметры
-		  mutable EyeData m_EyeData;
+		  mutable eyedata m_EyeData;
 
 		 // fmathEyeData
 

@@ -20,14 +20,14 @@ namespace gbmath
 
 
 	//! \brief   Позиция, точка в двухмерном измерении  ВОЗМОЖНО УДАЛИТЬ
-	class Point2 {
+	class point2 {
 	public:
 	   float _x;
 	   float _y;
 
-	   Point2() { _x=0.0f; _y=0.0f; }
-	   Point2(const Point2& p) {_x=p._x ; _y=p._y ; }
-	   Point2(const float x, const float y) { _x=x;  _y=y; }
+	   point2() { _x=0.0f; _y=0.0f; }
+	   point2(const point2& p) {_x=p._x ; _y=p._y ; }
+	   point2(const float x, const float y) { _x=x;  _y=y; }
 
 	   inline operator const float* () const { return &_x; }
 

@@ -8,11 +8,11 @@ namespace gbmath
 
 
 //=========================================================================
-//  AABB
+//  aabb
 //=========================================================================
 
 //=========================================================================
-bool AABB::checkIntersectPlane(const plane_s& pl) const
+bool aabb::checkIntersectPlane(const plane_s& pl) const
 {
 
 

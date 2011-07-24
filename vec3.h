@@ -108,7 +108,7 @@ namespace gbmath
 		   	inline void operator = (const D3DXVECTOR3& v) {	x=v.x; y=v.y; z=v.z; }
 #endif // #ifdef __D3DX9MATH_H__
 
-			void operator = (const Point3& pnt);
+			void operator = (const point3& pnt);
 
 
 		    inline void setzero() {x=y=z=0.0f; }

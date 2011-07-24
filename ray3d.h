@@ -3,9 +3,9 @@
 
 
   \todo Сделать перечечения: луч, сфера, бокс, плоскость,
-  \todo   bool checkIntersectRay(const Ray3d& ray) {....}
+  \todo   bool checkIntersectRay(const ray3d& ray) {....}
   \todo   bool checkIntersecеSphere(const Sphere& sph) {....}
-  \todo  bool checkIntersectAABB(const AABB& aabb) {....}
+  \todo  bool checkIntersectAABB(const aabb& aabb) {....}
   \todo  bool checkIntersectPlane(const Plane& aabb) {....}
 
 */
@@ -23,16 +23,16 @@ namespace gbmath
 
 
 	//! \brief Луч в 3-D по позиции и направлению
-	class Ray3d {
+	class ray3d {
 	public:
 	    vec3   orig; ///< точка центр луча (позиция)
 	    vec3   dir;  ///< направление луча. Должен быть нормализован.
 
-	   inline Ray3d() {}
-	   inline Ray3d(const Ray3d& r) {orig=r.orig; dir=r.dir; }
+	   inline ray3d() {}
+	   inline ray3d(const ray3d& r) {orig=r.orig; dir=r.dir; }
 
 	   // возможно нужно убрать параметр bNeedNormalizeDir
-	   inline Ray3d(const  vec3& _orig, const  vec3& _dir, bool bNeedNormalizeDir=true)
+	   inline ray3d(const  vec3& _orig, const  vec3& _dir, bool bNeedNormalizeDir=true)
        {
 	      orig=_orig;
 	      dir=_dir;
@@ -52,7 +52,7 @@ namespace gbmath
 //>>>>>>>>>>>>>>>       checkIntersectSphere  >>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 //  http://netlib.narod.ru/library/book0032/ch15_04.htm
-bool  checkIntersectSphere(const Sphere& sphere) const
+bool  checkIntersectSphere(const sphere& sphere) const
 {
 	 vec3 v =  this->orig - sphere.center;
 
@@ -85,7 +85,7 @@ bool  checkIntersectSphere(const Sphere& sphere) const
 
  /**   \brief
  http://www.gamecoder.ru/2011/04/3d-3d.html    */
-bool checkIntersectSphere_2 (const Sphere& sphere, float* result)
+bool checkIntersectSphere_2 (const sphere& sphere, float* result)
 {
 	 vec3 vect = orig - sphere.center ;
 
@@ -128,7 +128,7 @@ bool checkIntersectSphere_2 (const Sphere& sphere, float* result)
 
 
 // Aslan.   Проверка пересечения со сферой.  ПРОВЕРЕНО
-bool checkIntersectSphere_3( const Sphere& sph )
+bool checkIntersectSphere_3( const sphere& sph )
 {
 	const float __infin__  = _INFCODE;
   float res = 0.0f;
@@ -181,11 +181,11 @@ bool checkIntersectSphere_3( const Sphere& sph )
 //>>>>>>>>>>>>>>      checkIntersectAABB        >>>>>>>>>>>>>>>>>>>>>>>>>>>
 //
 
-//bool checkIntersectAABB( const AABB& aabb) {....}
+//bool checkIntersectAABB( const aabb& aabb) {....}
 
 
 // http://www.gamecoder.ru/2011/04/3d-3d.html
-bool checkIntersectAABB(const AABB& aabb,  float* result)
+bool checkIntersectAABB(const aabb& aabb,  float* result)
 {
    //Проверим если луч находится внутри параллелепипеда.
    if (   orig.x >= aabb.min.x

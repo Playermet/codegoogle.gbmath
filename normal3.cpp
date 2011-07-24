@@ -9,11 +9,11 @@ namespace gbmath
 
 
 //=========================================================================
-//                          Normal3
+//                          normal3
 //=========================================================================
 
 //=========================================================================
-	Normal3& Normal3::setDirectionBetweenPoints(const Point3& pntSrc, const Point3& pntDest)
+	normal3& normal3::setDirectionBetweenPoints(const point3& pntSrc, const point3& pntDest)
 	{
 		 vec3 v;
 		v.x=  pntDest._x - pntSrc._x; // пусть пока так будет
