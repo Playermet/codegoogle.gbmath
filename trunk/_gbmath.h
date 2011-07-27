@@ -77,18 +77,24 @@ namespace gbmath
 #include "vec3.h"
 #include "vec4.h"
 
+
+/*
 // new vectors  template
 #include "vector2.hpp"
 #include "vector3.hpp"
 #include "vector4.hpp"
+*/
 
+
+
+/*
 // new matrix template
 #include "matrix.hpp"
 #include "matrix_quad.hpp"
 #include "matrix2x2.hpp"
 #include "matrix3x3.hpp"
 #include "matrix4x4.hpp"
-
+*/
 
 
 #include "mat22.h"
