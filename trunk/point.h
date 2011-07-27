@@ -11,6 +11,7 @@
 //#include "Types.h"
 
 #include <ostream>
+#include <iostream>
 #include <sstream>
 #include <string>
 
@@ -19,7 +20,7 @@ namespace gbmath {
 
 
 	//! \brief   simple point.
-	class Point {
+	struct point {
 	public:
 
 		union 
@@ -37,12 +38,12 @@ namespace gbmath {
 		//int x;
 		//int y;
 
-		inline Point() { x=y=0; }
-		inline Point(const Point& p) { x=p.x; y=p.y; }
-		inline Point(int _x, int _y) { init(_x,_y);  }
+		inline point() { x=y=0; }
+		inline point(const point& p) { x=p.x; y=p.y; }
+		inline point(int _x, int _y) { init(_x,_y);  }
 
 		#ifdef _WINDOWS_
-		inline Point(const POINT& p) { *this = p; }
+		inline point(const POINT& p) { *this = p; }
 		#endif
 
 
@@ -66,31 +67,31 @@ namespace gbmath {
 		#endif
 
 
-		inline Point operator + (const Point& p) const
+		inline point operator + (const point& p) const
 		{
-			return Point( x+p.x , y+p.y );
+			return point( x+p.x , y+p.y );
 		}
 
-		inline Point& operator += (const Point& p)
+		inline point& operator += (const point& p)
 		{
 			x += p.x;
 			y += p.y;
 			return *this;
 		}
 
-		inline Point operator - (const Point& p) const
+		inline point operator - (const point& p) const
 		{
-			return Point( x-p.x , y-p.y );
+			return point( x-p.x , y-p.y );
 		}
 
-		inline Point& operator -= (const Point& p)
+		inline point& operator -= (const point& p)
 		{
 			x -= p.x;
 			y -= p.y;
 			return *this;
 		}
 
-		friend std::ostream& operator << (std::ostream& os, const Point& p)
+		friend std::ostream& operator << (std::ostream& os, const point& p)
 		{
 			os << p.x << " " << p.y ;
 			return os;
@@ -106,10 +107,10 @@ namespace gbmath {
 
 		void operator = (const std::string& str) throw (std::invalid_argument)
 		{
-			std::istringstream ss(str);
-			ss >> x;
-			ss >> y;
-			if( ss.fail() )
+			std::istringstream sstream(str);
+			sstream >> x;
+			sstream >> y;
+			if( sstream.fail() )
 			{
 				throw std::invalid_argument("bad input string");
 			}

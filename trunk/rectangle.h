@@ -121,7 +121,7 @@ namespace gbmath
 			  return false;
 			}
 
-			inline bool check_point(const Point& p) // old name :  checkPoint
+			inline bool check_point(const point& p) // old name :  checkPoint
 			{
 				return check_point( p.x , p.y );
 			}
@@ -157,7 +157,7 @@ namespace gbmath
  #endif
 
 			//! \brief offset coord.
-// 			inline void operator += (const Point& p)
+// 			inline void operator += (const point& p)
 // 			{
 // 				offset (p);
 // 			}
@@ -190,12 +190,12 @@ namespace gbmath
 
 			void operator = (const std::string& str) throw (std::invalid_argument)
 			{
-				std::istringstream ss(str);
-				ss >> left;
-				ss >> top;
-				ss >> width;
-				ss >> height;
-				if( ss.fail() ) 
+				std::istringstream sstream(str);
+				sstream >> left;
+				sstream >> top;
+				sstream >> width;
+				sstream >> height;
+				if( sstream.fail() ) 
 				{
 					throw std::invalid_argument("bad input string");
 				}
