@@ -15,7 +15,7 @@ namespace gbmath
 
   #pragma message("!!need add operatiions  >> << to from string  "  __FILE__ )
 
-
+  #pragma message("!!! need  rename : "  __FILE__  )
 
    //! \brief Сборка из данных трансформации: скалирование(вектор) + поворот(кват.) + позиция(вектор).
    struct TransformData

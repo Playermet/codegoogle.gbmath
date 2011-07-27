@@ -41,7 +41,7 @@ namespace gbmath
 
 #pragma message("!!! warning 4297 !!"  __FILE__  )
 
-	   inline void fromdevice(IDirect3DDevice9* pdevice) throw()
+	   inline void fromdevice(IDirect3DDevice9* pdevice) throw(std::runtime_error)
 	   {
 		   D3DVIEWPORT9 vp;
 		   if FAILED( pdevice->GetViewport(&vp) ) throw std::runtime_error("operation failed");

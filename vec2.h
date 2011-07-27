@@ -54,6 +54,13 @@ namespace gbmath
 					return (x == v.x && y == v.y  );
 				}
 
+
+				// new
+				//friend bool operator == (const vec2& v1, const vec2& v2)
+				//{
+				//	
+				//}
+
 				inline bool  operator != (const vec2 & v) const
 				{
 					return (x != v.x || y != v.y  );
