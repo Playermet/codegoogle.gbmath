@@ -17,6 +17,11 @@
 namespace gbmath
 {
 
+	struct color4_32_s
+	{
+		byte_t r, g, b, a;
+	};
+
 	//template <typename T>
 	struct color4_32 : public color4<byte_t> {
 
