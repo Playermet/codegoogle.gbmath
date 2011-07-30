@@ -137,6 +137,7 @@ namespace gbmath
 
 
 // proj
+#include "orthographic_projection_data.h"
 #include "perspective_projection_data.h"
 #include "related_coord.h"
 #include "viewport.h"
