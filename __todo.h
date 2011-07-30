@@ -9,6 +9,7 @@
  \todo  Тяжелые методы матриц перенести в cpp
  \todo  удалить собственные #ifdef XXXXXX
  \todo  Поправить макрозащиту на типы RECT и POINT
+ \todo добавить камеры: fp, mv, target и из примера D3D9NormalMapping
 
  
 
