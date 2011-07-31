@@ -10,14 +10,24 @@ namespace gmath
 
 	struct orthographic_projection_data {
 	
-		float width, 
+		float width; 
 		float height;
+
 		float zn;
 		float zf;
+
 	
 		orthographic_projection_data()
 		{
 			width = height = zn = zf = 0.0f;
+		}
+
+		orthographic_projection_data(float _width, float _height,	float _zn, float _zf)
+		{
+			width  = _width;
+			height = _height;
+			zn = _zn;
+			zf = _zf;
 		}
 		
 		orthographic_projection_data(const orthographic_projection_data& a)
@@ -38,7 +48,7 @@ namespace gmath
 		operator std::string() const
 		{
 			std::ostringstream ss;
-			ss << a.width << " " << a.height << " " << a.zn << " " << a.zf
+			ss << width << " " << height << " " << zn << " " << zf;
 			return ss.str();
 		}
 

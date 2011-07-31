@@ -150,6 +150,9 @@ namespace gbmath
 #include "vector_context_type_e.h"
 #include "geometry_context.h"
 
+// camera
+#include "temp/devcamera.h"
+
 
 
 #ifdef _MSC_VER
