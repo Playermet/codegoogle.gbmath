@@ -1,16 +1,19 @@
-﻿
+﻿#pragma once
+
 //#include "pch.h"
 //#include "d3d9pch.h"
 //#include "stdafx.h"
 
 //#include <gb/Config.h>
-#include "devcamera.h"
+
 
 #ifdef WIN32
 
 
+#include "_gbmath.h"
 
-#if 1
+
+#if 0
 
    #pragma comment( lib, "dxerr.lib" )
    #pragma comment( lib, "dxguid.lib" )
@@ -71,7 +74,7 @@ double MYUTGetTime()
  
 
 //========================================================================
-BaseCamera::BaseCamera()
+base_camera::base_camera()
 {
 	m_hwnd = 0;
     m_cKeysDown = 0;
@@ -126,7 +129,7 @@ BaseCamera::BaseCamera()
 //========================================================================
 // Client can call this to change the position and direction of camera
 //========================================================================
-void BaseCamera::setViewParams( const vec3& pvEyePt, const vec3& pvLookatPt )
+void base_camera::setViewParams( const vec3& pvEyePt, const vec3& pvLookatPt )
 {
    
 	//if( NULL == pvEyePt || NULL == pvLookatPt )
@@ -160,7 +163,7 @@ void BaseCamera::setViewParams( const vec3& pvEyePt, const vec3& pvLookatPt )
 //========================================================================
 // Calculates the projection matrix based on input params
 //========================================================================
-void BaseCamera::setProjParams( float fFOV, float fAspect, float fNearPlane,
+void base_camera::setProjParams( float fFOV, float fAspect, float fNearPlane,
                                    float fFarPlane )
 {
     // Set attributes for the projection matrix
@@ -179,7 +182,7 @@ void BaseCamera::setProjParams( float fFOV, float fAspect, float fNearPlane,
 //========================================================================
 // Call this from your message proc so this class can handle window messages
 //========================================================================
-LRESULT BaseCamera::handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
+LRESULT base_camera::handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
 {
 	m_hwnd = hWnd;
     UNREFERENCED_PARAMETER( hWnd );
@@ -298,7 +301,7 @@ LRESULT BaseCamera::handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM 
 //========================================================================
 // Figure out the velocity based on keyboard input & drag if any
 //========================================================================
-void BaseCamera::getInput( bool bGetKeyboardInput, bool bGetMouseInput, 
+void base_camera::getInput( bool bGetKeyboardInput, bool bGetMouseInput, 
 						   bool bGetGamepadInput, bool bResetCursorAfterMove )
 {
     m_vKeyboardDirection = vec3(0,0,0);
@@ -395,7 +398,7 @@ void BaseCamera::getInput( bool bGetKeyboardInput, bool bGetMouseInput,
 //========================================================================
 // Figure out the velocity based on keyboard input & drag if any
 //========================================================================
-void BaseCamera::updateVelocity( float fElapsedTime )
+void base_camera::updateVelocity( float fElapsedTime )
 {
     mat44 mRotDelta;
 
@@ -420,7 +423,7 @@ void BaseCamera::updateVelocity( float fElapsedTime )
     {
         // Is there any acceleration this frame?
       //if( D 3DX Vec3LengthSq( vAccel ) > 0 )
-        if( vAccel.lengthSq() > 0 )
+        if( vAccel.length_sq() > 0 )
         {
             // If so, then this means the user has pressed a movement key\
             // so change the velocity immediately to acceleration 
@@ -459,7 +462,7 @@ void BaseCamera::updateVelocity( float fElapsedTime )
 //========================================================================
 // Clamps pV to lie inside m_vMinBoundary & m_vMaxBoundary
 //========================================================================
-void BaseCamera::constrainToBoundary( vec3* pV )
+void base_camera::constrainToBoundary( vec3* pV )
 {
     // Constrain vector to a bounding box 
     pV->x = __max(pV->x, m_vMinBoundary.x);
@@ -477,7 +480,7 @@ void BaseCamera::constrainToBoundary( vec3* pV )
 //========================================================================
 // Maps a windows virtual key to an enum
 //========================================================================
-D3DUtil_CameraKeys BaseCamera::mapKey( UINT nKey )
+D3DUtil_CameraKeys base_camera::mapKey( UINT nKey )
 {
     // This could be upgraded to a method that's user-definable but for 
     // simplicity, we'll use a hardcoded mapping.
@@ -517,7 +520,7 @@ D3DUtil_CameraKeys BaseCamera::mapKey( UINT nKey )
 //========================================================================
 // Reset the camera's position back to the default
 //========================================================================
-void BaseCamera::reset()
+void base_camera::reset()
 {
     setViewParams( m_vDefaultEye, m_vDefaultLookAt );
 }

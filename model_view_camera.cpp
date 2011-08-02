@@ -1,3 +1,4 @@
+#pragma once
 
 #include "_gbmath.h"
 
@@ -8,7 +9,7 @@ namespace gbmath
 
 
 //========================================================================
-ModelViewerCamera::ModelViewerCamera()
+model_view_camera::model_view_camera()
 {
     m_mWorld.reset(); // D 3 D X MatrixIdentity( m_mWorld );
     m_mModelRot.reset(); //  D 3 D X MatrixIdentity( m_mModelRot );
@@ -36,7 +37,7 @@ ModelViewerCamera::ModelViewerCamera()
 // Update the view matrix & the model's world matrix based 
 //       on user input & elapsed time
 //========================================================================
-void ModelViewerCamera::frameMove( float fElapsedTime )
+void model_view_camera::frameMove( float fElapsedTime )
 {
     if( isKeyDown(m_aKeys[CAM_RESET]) )
         reset();
@@ -77,12 +78,12 @@ void ModelViewerCamera::frameMove( float fElapsedTime )
 
    // D 3DX Vec3TransformCoord( vWorldUp, vLocalUp, mCameraRot );
 	 vWorldUp = vLocalUp;
-	 vWorldUp.transformCoord(mCameraRot);
+	 vWorldUp.transform_coord(mCameraRot);
 
 
    // D 3DX Vec3TransformCoord( vWorldAhead, vLocalAhead, mCameraRot );
 		vWorldAhead =   vLocalAhead;
-		vWorldAhead.transformCoord(mCameraRot);
+		vWorldAhead.transform_coord(mCameraRot);
 
 
 
@@ -90,7 +91,7 @@ void ModelViewerCamera::frameMove( float fElapsedTime )
     vec3 vPosDeltaWorld;
     //D 3DX Vec3TransformCoord( vPosDeltaWorld, vPosDelta, mCameraRot );
 		vPosDeltaWorld = vPosDelta;
-		vPosDeltaWorld.transformCoord(mCameraRot);
+		vPosDeltaWorld.transform_coord(mCameraRot);
 
 
 
@@ -172,9 +173,9 @@ void ModelViewerCamera::frameMove( float fElapsedTime )
 }
 
 
-void ModelViewerCamera::setDragRect( RECT &rc )
+void model_view_camera::setDragRect( RECT &rc )
 {
-    BaseCamera::setDragRect( rc );
+    base_camera::setDragRect( rc );
 
     m_WorldArcBall.setOffset( rc.left, rc.top );
     m_ViewArcBall.setOffset( rc.left, rc.top );
@@ -185,9 +186,9 @@ void ModelViewerCamera::setDragRect( RECT &rc )
 //========================================================================
 // Reset the camera's position back to the default
 //========================================================================
-void ModelViewerCamera::reset()
+void model_view_camera::reset()
 {
-    BaseCamera::reset();
+    base_camera::reset();
 
   m_mWorld.reset(); //  D 3 DXMatrixIdentity( m_mWorld );
   m_mModelRot.reset(); //  D 3 DXMatrixIdentity( m_mModelRot );
@@ -203,9 +204,9 @@ void ModelViewerCamera::reset()
 //========================================================================
 // Override for setting the view parameters
 //========================================================================
-void ModelViewerCamera::setViewParams( const vec3& pvEyePt, const vec3& pvLookatPt )
+void model_view_camera::setViewParams( const vec3& pvEyePt, const vec3& pvLookatPt )
 {
-    BaseCamera::setViewParams( pvEyePt, pvLookatPt );
+    base_camera::setViewParams( pvEyePt, pvLookatPt );
 
     // Propogate changes to the member arcball
     Quaternion quat;
@@ -222,7 +223,7 @@ void ModelViewerCamera::setViewParams( const vec3& pvEyePt, const vec3& pvLookat
     // Set the radius according to the distance
     vec3 vEyeToPoint;
     //D 3DXVec3Subtract( vEyeToPoint, pvLookatPt, pvEyePt );
-//#pragma message("ks777::devhelp::ModelViewerCamera::setViewParams  ¬Œ«ÃŒ∆ÕŒ Õ≈œ–¿¬»À‹ÕŒ"   __FILE__)
+//#pragma message("ks777::devhelp::model_view_camera::setViewParams  ¬Œ«ÃŒ∆ÕŒ Õ≈œ–¿¬»À‹ÕŒ"   __FILE__)
 	  vEyeToPoint =  pvEyePt -   pvLookatPt;
 
 	  //D 3DX Vec3Length( vEyeToPoint   );
@@ -237,9 +238,9 @@ void ModelViewerCamera::setViewParams( const vec3& pvEyePt, const vec3& pvLookat
 //========================================================================
 // Call this from your message proc so this class can handle window messages
 //========================================================================
-LRESULT ModelViewerCamera::handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
+LRESULT model_view_camera::handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
 {
-    BaseCamera::handleMessages( hWnd, uMsg, wParam, lParam );
+    base_camera::handleMessages( hWnd, uMsg, wParam, lParam );
 
     if( ( (uMsg == WM_LBUTTONDOWN || uMsg == WM_LBUTTONDBLCLK ) && m_nRotateModelButtonMask & MOUSE_LEFT_BUTTON) ||
         ( (uMsg == WM_MBUTTONDOWN || uMsg == WM_MBUTTONDBLCLK ) && m_nRotateModelButtonMask & MOUSE_MIDDLE_BUTTON) ||

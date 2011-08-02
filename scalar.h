@@ -44,32 +44,32 @@ namespace gbmath
   namespace constan
   {
 
-   	static const float CEPSILON	  =	1.0e-6f;
+   	static const float EPSILON	  =	1.0e-6f;
 
-   	static const float CPI       = 3.1415926536f; ///<   PI
+   	static const float PI       = 3.1415926536f; ///<   PI
    	static const float C1BYPI    = 0.3183098862f; ///<   1/PI
 
-   	static const float C2PI         =  6.283185307f; ///<  	2*PI
-   	static const float CPIDIV2      =  1.570796326f; ///<   PI/2
-   	static const float CPIDIV4      =  0.785398163f; ///<   PI/4
-   	static const float CPIDIV6      =  0.523598776f; ///<   PI/6
+   	static const float PI2         =  6.283185307f; ///<  	2*PI
+   	static const float PI_DIV_2      =  1.570796326f; ///<   PI/2
+   	static const float PI_DIV_4      =  0.785398163f; ///<   PI/4
+   	static const float PI_DIV_6      =  0.523598776f; ///<   PI/6
 
-   	static const float CPIDIV180    =  0.017453292f; ///<   PI/180
+   	static const float PI_DIV_180    =  0.017453292f; ///<   PI/180
    	static const float C180DIVPI    =  57.29577951f; ///<   180/PI
 
    	static const float C3PIDIV4     = 2.35619449f;   ///<   3/4 PI
-   	static const float CINV2PI      = 0.159154943f;  ///<   1/(2PI)
+   	static const float PI2_INV      = 0.159154943f;  ///<   1/(2PI)
    	static const float CINV360      = 0.002777778f;  ///<   1/360
    	static const float C180         = 180.0f;
    	static const float C360         = 360.0f;
-   	static const float CONEHALF     = 0.5f;
-   	static const float CTWO         = 2.0f;
-   	static const float CLN10        = 2.302585093f;
+   	static const float HALF     = 0.5f;
+   	static const float TWO         = 2.0f;
+   	static const float LN10        = 2.302585093f;
 
-   	static const float CSQRT2       = 1.4142135624f; ///< sqrt(2)
-   	static const float CSQRTHALF    = 0.7071067812f; ///< sqrt(1/2)
+   	static const float SQRT_2       = 1.4142135624f; ///< sqrt(2)
+   	static const float SQRT_HALF    = 0.7071067812f; ///< sqrt(1/2)
 
-   	static const float CE           = 2.718281828459f; ///<  e
+   	static const float E           = 2.718281828459f; ///<  e
 
 
   }
@@ -245,7 +245,7 @@ namespace gbmath
 		// Check limit conditions
 		if (x <= -1.0f)
 		{
-			return gbmath::constan::CPI; //   constPi <float>(); // kPi;
+			return gbmath::constan::PI; //   constPi <float>(); // kPi;
 		}
 		if (x >= 1.0f)
 		{
@@ -260,9 +260,9 @@ namespace gbmath
     inline float cotan(const float f) {  return   1.0f / tanf(f); };
 
 	//! \brief Угол в радианах в градусы
-	inline float radiansToDegree(float rad)  { return rad * ( 180.0f / gbmath::constan::CPI ); };
+	inline float radiansToDegree(float rad)  { return rad * ( 180.0f / gbmath::constan::PI ); };
 	//! \brief Угол в градусах в радианы
-	inline float degreeToRadians(float dgr)  { return dgr * ( gbmath::constan::CPI / 180.0f); };
+	inline float degreeToRadians(float dgr)  { return dgr * ( gbmath::constan::PI / 180.0f); };
 
 	//! \brief Нормализация угла поворота angle. Приведение значения в пределах -PI...+PI  .
 	inline float normalize_angle( float angle )

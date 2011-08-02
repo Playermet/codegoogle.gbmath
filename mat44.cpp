@@ -1,3 +1,4 @@
+#pragma once
 
 #include "_gbmath.h"
 
@@ -373,7 +374,7 @@ void mat44::decompose( vec3& scale,  Quaternion& rot, vec3& pos ) const
 
 	for (int i=0; i<3; i++)
 	{
-		if (scale.floats[i] > constan::CEPSILON)
+		if (scale.floats[i] > constan::EPSILON)
 		{
 			m.floats[i][0] /= scale.floats[i];
 			m.floats[i][1] /= scale.floats[i];

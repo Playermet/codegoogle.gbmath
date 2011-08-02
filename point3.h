@@ -109,7 +109,7 @@ namespace gbmath
 			point3& transform(const  mat44& m)
 			{
 			    vec3 v = *this;
-			   v.transformCoord(m);
+			   v.transform_coord(m);
 			   *this = v;
 				return *this;
 			}

@@ -2,6 +2,8 @@
 
 #pragma once
 
+#ifdef WIN32
+
 namespace gbmath
 {
 
@@ -9,10 +11,10 @@ namespace gbmath
 
 /** \brief Камера от первого лица. 
    Использует сообщения окну для чтения клавиатуры: вперёд,назад,влево,вправо,вверх,вниз  */
-class FirstPersonCamera : public BaseCamera {
+class first_person_camera : public base_camera {
 public:
-    FirstPersonCamera();
-	virtual ~FirstPersonCamera() {}
+    first_person_camera();
+	virtual ~first_person_camera() {}
 
 #ifdef _D3D9_H_
 	//! \brief Сделать камеру текущей
@@ -62,3 +64,5 @@ protected:
 
 
 }
+
+#endif 

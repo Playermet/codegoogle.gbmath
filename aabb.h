@@ -252,7 +252,7 @@ namespace gbmath
 
 		for(int c=0; c<8; c++)
 		{
-		cr[c].transformCoord(m);
+		cr[c].transform_coord(m);
 		*this += cr[c];
 		}
 

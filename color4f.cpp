@@ -1,4 +1,4 @@
-
+#pragma once
 
 #include "_gbmath.h"
 //#include "color4_32.h"

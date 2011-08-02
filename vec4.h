@@ -33,20 +33,27 @@ namespace gbmath
 				float floats [4];
 			};
 
-			inline vec4() { x=y=z=w=0.0f; };
+			inline vec4() { x=y=z=w=0.0f; }
 
-			inline vec4(const vec4& v)      { x=v.x;  y=v.y; z=v.z; w=v.w;  };
+			inline vec4(const vec4& v)      { x=v.x;  y=v.y; z=v.z; w=v.w;  }
+
 //			inline vec4(const vec4* v)      { x=v->x;  y=v->y; z=v->z; w=v->w;  };
 
-			inline vec4(const vec3& v, float _w)  { x=v.x;  y=v.y; z=v.z; w=_w;  };
+			inline vec4(const vec3& v, float _w)  { x=v.x;  y=v.y; z=v.z; w=_w;  }
 
 			inline vec4(const vec2& v, float _z, float _w) {x=v.x; y=v.y; z=_z; w=_w; }
 
 			inline vec4(float _x, float _y, float _z, float _w)   { x=_x;   y=_y; z=_z; w=_w;  }
-			inline vec4(int   _x, int   _y, int   _z, int   _w)   { x=(float)_x;   y=(float)_y;  z=(float)_z; w=(float)_w;}
+			//inline vec4(int   _x, int   _y, int   _z, int   _w)   { x=(float)_x;   y=(float)_y;  z=(float)_z; w=(float)_w;}
 
 			//! \brief Присваивание из float-массива
-			inline void operator = (const float* pf) {x=pf[0]; y=pf[1]; z=pf[2]; w=pf[3]; }
+			inline void operator = (const float* pf) 
+			{
+				x = pf[0]; 
+				y = pf[1]; 
+				z = pf[2]; 
+				w = pf[3]; 
+			}
 
 
 			inline bool  operator == (const vec4 &v) const {	return (x == v.x && y == v.y && z == v.z && w == v.w); }

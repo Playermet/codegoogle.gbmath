@@ -19,13 +19,12 @@
 //#include <stdlib.h>
 //#include <cstdio>
 
-#include <istream>
-#include <ostream>
+//#include <istream>
+//#include <ostream>
 #include <iostream>
 #include <sstream>
 
 #include <string>
-
 #include <vector>
 #include <stdexcept>
 
@@ -150,7 +149,9 @@ namespace gbmath
 #include "vector_context_type_e.h"
 #include "geometry_context.h"
 
+
 // camera
+#include "arc_ball.h"
 #include "base_camera.h"
 #include "target_camera.h"
 #include "first_person_camera.h"

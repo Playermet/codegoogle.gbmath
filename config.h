@@ -8,5 +8,10 @@
     #error  DO NOT INCLUDE THIS FILE. USE INCLUDE:   #include <gb/fmath/math.h>
 #endif
 
+// platform
+#ifdef WIN32
+	#include <windows.h>
+#endif 
+
 
 // options
