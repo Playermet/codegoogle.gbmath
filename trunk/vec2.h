@@ -90,7 +90,7 @@ namespace gbmath
 
 
 				inline float operator [] (size_t index) const throw(std::out_of_range)
-				{std::
+				{
 					if(index>=2) throw std::out_of_range("invalid index");
 					const float* pf = &x;
 					return pf[index];
@@ -227,7 +227,11 @@ namespace gbmath
 
 
 				//! \brief  Получить минимальную компоненту
-				inline float min_value() const { if(x<y) return x;   return y; }
+				inline float min_value() const 
+				{ 
+					if(x<y) return x;   return y; 
+				}
+
 				//! \brief  Получить Максимальную компоненту
 				inline float max_value() const { if(x>y) return x;   return y; }
 
@@ -264,10 +268,20 @@ namespace gbmath
 				}
 
 				//! \brief Вернуть минимальный вектор между this и v
-				inline vec2 minimized(const vec2& v) const { vec2 r; r.minimize(*this, v); return r; };
+				inline vec2 minimized(const vec2& v) const 
+				{ 
+					vec2 r = *this; 
+					r.minimize(v); 
+					return r; 
+				}
 
 				//! \brief Вернуть максимальный вектор между this и v
-				inline vec2 maximized(const vec2& v) const { vec2 r; r.maximize(*this, v); return r; };
+				inline vec2 maximized(const vec2& v) const 
+				{ 
+					vec2 r = *this; 
+					r.maximize(v);
+					return r; 
+				}
 
 
 				//! \brief  вычислить мин. абсолютное значение компонент.
@@ -290,12 +304,21 @@ namespace gbmath
 					return res; 
 				}
 
-
+/***********
 				//! \brief  вычисление миним, компоненты
-				inline float min_value() const { if(x<y) return x; return y;	}
-				//! \brief  вычисление. макс компоненты
-				inline float max_value() const { if(x>y) return x; return y;	}
+				inline float min_abs_value() const 
+				{
+					if( abs(x) < abs(y) ) return x; 
+					return y;	
+				}
 
+				//! \brief  вычисление. макс компоненты
+				inline float max_abs_value() const 
+				{ 
+					if( abs(x) > abs(y) ) return x; 
+					return y;	
+				}
+****************/
 
 				//! \brief  Отсечение значений в пределах vmin и vmax
 				inline void clump(const vec2& vmin, const vec2& vmax)

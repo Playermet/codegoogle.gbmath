@@ -20,6 +20,11 @@ namespace gbmath
 	struct color4_32_s
 	{
 		byte_t r, g, b, a;
+
+		inline bool operator == (const color4_32_s arg) const 
+		{
+			return r==arg.r && g==arg.g && b==arg.b && a==arg.a;
+		}
 	};
 
 	//template <typename T>
