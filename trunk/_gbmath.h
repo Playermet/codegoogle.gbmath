@@ -151,8 +151,10 @@ namespace gbmath
 #include "geometry_context.h"
 
 // camera
-#include "temp/devcamera.h"
-
+#include "base_camera.h"
+#include "target_camera.h"
+#include "first_person_camera.h"
+#include "model_view_camera.h"
 
 
 #ifdef _MSC_VER
