@@ -89,16 +89,16 @@ namespace gbmath
 
 
 
-				inline float operator [] (size_t index) const
-				{
-					assert(index<2 && "invalid index");
+				inline float operator [] (size_t index) const throw(std::out_of_range)
+				{std::
+					if(index>=2) throw std::out_of_range("invalid index");
 					const float* pf = &x;
 					return pf[index];
 				}
 
-				inline  float& operator [] (size_t index)
+				inline  float& operator [] (size_t index)throw(std::out_of_range)
 				{
-					assert(index<2 && "invalid index");
+					if(index>=2) throw std::out_of_range("invalid index");
 					float* pf = &x;
 					return *(pf + index);
 				}
@@ -122,6 +122,7 @@ namespace gbmath
 		 y = (float)p.y;
 	 }
 #else
+
 			/*
 #ifdef   __GB_TYPES_H__
 	 void operator = (const POINT& p)
@@ -130,7 +131,8 @@ namespace gbmath
 		 y = (float)p.y;
 	 }
 #endif
-	 */
+*/
+
 #endif
 
 
@@ -140,23 +142,23 @@ namespace gbmath
 				inline vec2& set     (float _x, float _y) {x=_x; y=_y;  return *this; }
 				inline vec2& set_all (float val) { x=val; y=val;        return *this; }
 
-				inline bool isZero(float epsilon) const
+				inline bool is_zero(float epsilon) const
 				{
 					return( abs( x ) <= epsilon ) && ( abs( y ) <= epsilon );
 				}
 
 
 				inline float     length () const  {	return (float)sqrt ( x*x + y*y );	}
-			    inline float     lengthSq() const {	return (x*x + y*y );  }
+			    inline float     length_sq() const {	return (x*x + y*y );  }
 
 				inline float distance(const vec2& point) const
 				{
-					return  sqrt( distanceSq( point ) );
+					return  sqrt( distance_sq( point ) );
 				}
 
-				inline float distanceSq(const vec2& point) const
+				inline float distance_sq(const vec2& point) const
 				{
-					return vec2(*this - point).lengthSq();
+					return vec2(*this - point).length_sq();
 				}
 
 
@@ -164,6 +166,7 @@ namespace gbmath
 				{
 					if( (0.0f==x) && (0.0f==y) ) // < без этого глючит. nan
 						return *this;
+
 					register float fl=length();
 					x/=fl;
 					y/=fl;
@@ -203,7 +206,7 @@ namespace gbmath
 				}
 
 
-				inline float     getMaxLength () const
+				inline float     get_max_absolute () const
 				{
 					if( fabs (x) >= fabs (y) )
 						return x;
@@ -224,17 +227,17 @@ namespace gbmath
 
 
 				//! \brief  Получить минимальную компоненту
-				inline float minVal() const { if(x<y) return x;   return y; }
+				inline float min_value() const { if(x<y) return x;   return y; }
 				//! \brief  Получить Максимальную компоненту
-				inline float maxVal() const { if(x>y) return x;   return y; }
+				inline float max_value() const { if(x>y) return x;   return y; }
 
-				//! \brief  Сравнить два вектора v1 и v2 и присвоить минимальный
-				inline vec2& minimize(const vec2& v1, const vec2& v2)
-				{
-					if (v1.x < v2.x) x = v1.x; else  x = v2.x;
-					if (v1.y < v2.y) y = v1.y; else  y = v2.y;
-					return *this;
-				}
+				////! \brief  Сравнить два вектора v1 и v2 и присвоить минимальный
+				//inline vec2& minimize(const vec2& v1, const vec2& v2)
+				//{
+				//	if (v1.x < v2.x) x = v1.x; else  x = v2.x;
+				//	if (v1.y < v2.y) y = v1.y; else  y = v2.y;
+				//	return *this;
+				//}
 
 				//! \brief  Сравнить вектор v и собственное значение и присвоить минимальный
 				inline vec2& minimize(const vec2& v)
@@ -244,13 +247,13 @@ namespace gbmath
 					return *this;
 				}
 
-				//! \brief  Сравнить два вектора v1 и v2 и присвоить максимальный
-				inline vec2& maximize(const vec2& v1, const vec2& v2)
-				{
-					if (v1.x > v2.x) x = v1.x; else  x = v2.x;
-					if (v1.y > v2.y) y = v1.y; else  y = v2.y;
-					return *this;
-				}
+				////! \brief  Сравнить два вектора v1 и v2 и присвоить максимальный
+				//inline vec2& maximize(const vec2& v1, const vec2& v2)
+				//{
+				//	if (v1.x > v2.x) x = v1.x; else  x = v2.x;
+				//	if (v1.y > v2.y) y = v1.y; else  y = v2.y;
+				//	return *this;
+				//}
 
 				//! \brief  Сравнить вектор v и собственное значение и присвоить максимальный
 				inline vec2& maximize(const vec2& v)
@@ -262,20 +265,36 @@ namespace gbmath
 
 				//! \brief Вернуть минимальный вектор между this и v
 				inline vec2 minimized(const vec2& v) const { vec2 r; r.minimize(*this, v); return r; };
+
 				//! \brief Вернуть максимальный вектор между this и v
 				inline vec2 maximized(const vec2& v) const { vec2 r; r.maximize(*this, v); return r; };
 
 
 				//! \brief  вычислить мин. абсолютное значение компонент.
-				inline float minAbsVal() const { float ax=abs(x); float ay=abs(y); float res=ax; if(ay<res) res=ay; return res; }
+				inline float min_abs_value() const 
+				{ 
+					float ax=abs(x); 
+					float ay=abs(y); 
+					float res=ax; 
+					if(ay<res) res=ay; 
+					return res; 
+				}
+
 				//! \brief  вычислить макс. абсолютное значение компонент
-				inline float maxAbsVal() const { float ax=abs(x); float ay=abs(y); float res=ax;  if(ay>res) res=ay; return res; }
+				inline float max_abs_value() const 
+				{ 
+					float ax=abs(x); 
+					float ay=abs(y); 
+					float res=ax;  
+					if(ay>res) res=ay; 
+					return res; 
+				}
 
 
 				//! \brief  вычисление миним, компоненты
-				inline float minval() const { if(x<y) return x; return y;	}
+				inline float min_value() const { if(x<y) return x; return y;	}
 				//! \brief  вычисление. макс компоненты
-				inline float maxval() const { if(x>y) return x; return y;	}
+				inline float max_value() const { if(x>y) return x; return y;	}
 
 
 				//! \brief  Отсечение значений в пределах vmin и vmax
@@ -296,7 +315,7 @@ namespace gbmath
 
 
 				//!  \brief   Вернёт true если все компоненты положительные.
-				inline bool isPositive() const
+				inline bool is_positive() const
 				{
 					return ( (x>=0.0f) && (y>=0.0f) );
 				}

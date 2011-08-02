@@ -70,7 +70,7 @@ namespace gbmath
 			normal3& transform(const  mat44& m)
 			{
 			    vec3 v = *this;
-			   v.transformNormal(m);
+			   v.transform_normal(m);
 			   _x = v.x;
 			   _y = v.y;
 			   _z = v.z;

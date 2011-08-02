@@ -43,8 +43,8 @@ namespace gbmath
 	//! \brief  Трансформировать луч по матрице m
 	inline void transform(const  mat44& m)
 	{
-	     orig.transformCoord(m);
-	     dir.transformNormal(m);
+	     orig.transform_coord(m);
+	     dir.transform_normal(m);
 	}
 
 
@@ -89,7 +89,7 @@ bool checkIntersectSphere_2 (const sphere& sphere, float* result)
 {
 	 vec3 vect = orig - sphere.center ;
 
-   const float c = vect.lengthSq() -  sphere.radius * sphere.radius;
+   const float c = vect.length_sq() -  sphere.radius * sphere.radius;
    float res = 0.0f;
 
    if(c < 0.0f)
@@ -143,10 +143,10 @@ bool checkIntersectSphere_3( const sphere& sph )
    float d;
   {
 	 //  assert(false);
-	  // inline float distanceSq(const vec3& point) const { return vec3(*this-point).lenghtSq ;  }
+	  // inline float distance_sq(const vec3& point) const { return vec3(*this-point).lenghtSq ;  }
 	//  vec3 vs = sph.center-orig;
-    // d =  vs.lengthSq(); //  sph.center.lengthSq();//  lenghtSq(p); // norm2(c-p);
-	   d = sph.center.distanceSq(orig);
+    // d =  vs.length_sq(); //  sph.center.length_sq();//  lenghtSq(p); // norm2(c-p);
+	   d = sph.center.distance_sq(orig);
   }
 
   // проекция центра сферы на луч

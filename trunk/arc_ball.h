@@ -2,6 +2,8 @@
 
 #pragma once
 
+#ifdef WIN32
+
 namespace gbmath
 {
 
@@ -71,3 +73,5 @@ protected:
 
 
 }
+
+#endif 

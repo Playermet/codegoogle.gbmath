@@ -3,6 +3,8 @@
 #pragma once
 #include "base_camera.h"
 
+#ifdef WIN32
+
 namespace gbmath
 {
 
@@ -13,11 +15,11 @@ namespace gbmath
 
 
 /** \brief Простая модель класс камеры , которая вращается вокруг объекта и вращает объект. */
-class ModelViewerCamera : public BaseCamera
+class model_view_camera : public base_camera
 {
 public:
-    ModelViewerCamera();
-	virtual ~ModelViewerCamera() {}
+    model_view_camera();
+	virtual ~model_view_camera() {}
 
 #ifdef _D3D9_H_
 	//! \brief Сделать камеру текущей
@@ -84,3 +86,6 @@ protected:
 
 
 }
+
+#endif 
+

@@ -1,3 +1,4 @@
+#pragma once
 
 #include "_gbmath.h"
 #include "base_camera.h"
@@ -10,7 +11,7 @@ namespace gbmath
 //========================================================================
 // Constructor
 //========================================================================
-FirstPersonCamera::FirstPersonCamera() :
+first_person_camera::first_person_camera() :
     m_nActiveButtonMask( 0x07 )
 {
     m_bRotateWithoutButtonDown = false;
@@ -22,10 +23,10 @@ FirstPersonCamera::FirstPersonCamera() :
 //========================================================================
 // Update the view matrix based on user input & elapsed time
 //========================================================================
-void FirstPersonCamera::frameMove( float fElapsedTime )
+void first_person_camera::frameMove( float fElapsedTime )
 {
 
-#pragma message("ks777 gb::devhelp::FirstPersonCamera::framemove  опнбепхрэ лернд!  "  __FILE__)
+#pragma message("ks777 gb::devhelp::first_person_camera::framemove  опнбепхрэ лернд!  "  __FILE__)
   //  if( MYUTGetGlobalTimer()->IsStopped() )
 	//{
   //      fElapsedTime = 1.0f / MYUTGetFPS();
@@ -83,11 +84,11 @@ void FirstPersonCamera::frameMove( float fElapsedTime )
 
    // D 3DX Vec3TransformCoord( vWorldUp, vLocalUp, mCameraRot );
 	  vWorldUp = vLocalUp;
-		 vWorldUp.transformCoord(mCameraRot);
+		 vWorldUp.transform_coord(mCameraRot);
 
    // D 3DX Vec3TransformCoord( vWorldAhead, vLocalAhead, mCameraRot );
 	 vWorldAhead = vLocalAhead;
-	  vWorldAhead.transformCoord(mCameraRot);
+	  vWorldAhead.transform_coord(mCameraRot);
 
 
 
@@ -104,7 +105,7 @@ void FirstPersonCamera::frameMove( float fElapsedTime )
 
     //D 3DX Vec3TransformCoord( vPosDeltaWorld, vPosDelta, mCameraRot );
 	 vPosDeltaWorld =   vPosDelta;
-	 vPosDeltaWorld.transformCoord(mCameraRot);
+	 vPosDeltaWorld.transform_coord(mCameraRot);
 
 
     // Move the eye position 
@@ -131,7 +132,7 @@ void FirstPersonCamera::frameMove( float fElapsedTime )
 //========================================================================
 // Enable or disable each of the mouse buttons for rotation drag.
 //========================================================================
-void FirstPersonCamera::setRotateButtons( bool bLeft, bool bMiddle, bool bRight, bool bRotateWithoutButtonDown )
+void first_person_camera::setRotateButtons( bool bLeft, bool bMiddle, bool bRight, bool bRotateWithoutButtonDown )
 {
     m_nActiveButtonMask = ( bLeft ? MOUSE_LEFT_BUTTON : 0 ) |
                           ( bMiddle ? MOUSE_MIDDLE_BUTTON : 0 ) |

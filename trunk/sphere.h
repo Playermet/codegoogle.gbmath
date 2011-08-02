@@ -93,7 +93,7 @@ namespace gbmath
 
 	obj_contains_e BSphereContainsBSphere(const sphere& s) const
 	{
-	   const float d2 = (center - s.center).lengthSq();
+	   const float d2 = (center - s.center).length_sq();
 
 	  if (d2 < scalar::sqr( radius + s.radius))
 	  {

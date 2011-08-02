@@ -1,4 +1,5 @@
-﻿
+﻿#pragma once
+
 #include "_gbmath.h"
 
 #include <stdlib.h>

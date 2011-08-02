@@ -1,5 +1,10 @@
+#pragma once
+
+#ifdef WIN32
 
 #include "_gbmath.h"
+
+
 
 namespace gbmath
 {
@@ -207,3 +212,4 @@ LRESULT arc_ball::handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lP
 
 }
 
+#endif

@@ -31,7 +31,7 @@ namespace gbmath
 				float floats [3];
 			};
 
-			inline vec3() { x=y=z=0.0f; }
+			inline vec3() { x = y = z = 0.0f; }
 
 			inline vec3(const vec3& v)             { x=v.x;   y=v.y;   z=v.z;   }
 			inline vec3(const vec3* v)             { x=v->x;  y=v->y; z=v->z;   }
@@ -39,14 +39,19 @@ namespace gbmath
 			inline vec3(const vec2& v, float _z)   { x=v.x;  y=v.y; z=_z;     }
 
 			inline vec3(float _x, float _y, float _z)   { x=_x;    y=_y;    z=_z;  }
-			inline vec3(int   _x, int   _y, int   _z)   { x=(float)_x;   y=(float)_y;  z=(float)_z; }
+//			inline vec3(int   _x, int   _y, int   _z)   { x=(float)_x;   y=(float)_y;  z=(float)_z; }
 
 			inline vec3(const float* pfArray) { *this = pfArray; }
 
 			//inline vec3(vec4);
 
 			//! \brief Присваивание из float-массива
-			inline void operator = (const float* pf) {x=pf[0]; y=pf[1]; z=pf[2]; }
+			inline void operator = (const float* pf) 
+			{
+				x = pf[0]; 
+				y = pf[1]; 
+				z = pf[2]; 
+			}
 
 			inline bool  operator == (const vec3 &v) const { return (x == v.x && y == v.y && z == v.z ); }
 			inline bool  operator != (const vec3 &v) const { return (x != v.x || y != v.y || z != v.z ); }
@@ -77,16 +82,16 @@ namespace gbmath
 			inline operator        float*()        { return &x; }
 
 
-			inline float operator [] (unsigned int index) const
+			inline float operator [] (unsigned int index) const throw(std::out_of_range)
 			{
-				assert(index<3 && "invalid index");
+				if(index>2) throw std::out_of_range("invalid index");
 				const float* pf = &x;
 				return pf[index];
 			}
 
-			inline  float& operator [] (unsigned int index)
+			inline  float& operator [] (unsigned int index) throw(std::out_of_range)
 			{
-				assert(index<3 && "invalid index");
+				if(index>2) throw std::out_of_range("invalid index");
 				float* pf = &x;
 				return *(pf + index);
 			}
@@ -111,32 +116,66 @@ namespace gbmath
 			void operator = (const point3& pnt);
 
 
-		    inline void setzero() {x=y=z=0.0f; }
-			inline bool empty() const { return ( (x==0.0f) && (y==0.0f) && (z==0.0f) ); }
+		    inline void setzero() { x=y=z=0.0f; }
+			inline bool empty() const 
+			{ 
+				return ( (x==0.0f) && (y==0.0f) && (z==0.0f) ); 
+			}
 
-			inline vec3& set    (float _x, float _y, float _z) { x=_x; y=_y; z=_z; return *this; };
-			inline vec3& set_all(float val) { x=val; y=val; z=val;                 return *this; }
+			inline vec3& set    (float _x, float _y, float _z) 
+			{ 
+				x=_x; 
+				y=_y; 
+				z=_z; 
+				return *this; 
+			}
 
-			inline bool isZero(float epsilon) const
+			inline vec3& set_all(float val) 
+			{ 
+				x=val; y=val; z=val;    
+				return *this; 
+			}
+
+			inline bool is_zero(float epsilon) const
 			{
 				return( abs( x ) <= epsilon ) && ( abs( y ) <= epsilon ) && ( abs( z ) <= epsilon )  ;
 			}
 
-			inline float     length () const {	return (float)sqrt ( x*x + y*y + z*z );	}
-			inline float     lengthSq() const {	 return (x*x + y*y + z*z);  }
+			inline float     length () const 
+			{	
+				return (float)sqrt ( x*x + y*y + z*z );	
+			}
 
-			inline float     dot(const vec3& v) const { return x*v.x + y*v.y + z*v.z; }
+			inline float     length_sq() const 
+			{	 
+				return (x*x + y*y + z*z);  
+			}
 
-			inline vec3& inverse() { x=-x; y=-y; z=-z; return *this; }
-			inline vec3  inverted() const { return vec3 (-x, -y, -z); }
+			inline float     dot(const vec3& v) const 
+			{ 
+				return x*v.x + y*v.y + z*v.z; 
+			}
+
+			inline vec3& inverse() 
+			{ 
+				x = -x; 
+				y = -y; 
+				z = -z; 
+				return *this; 
+			}
+
+			inline vec3  inverted() const 
+			{ 
+				return vec3 (-x, -y, -z); 
+			}
 
 			inline vec3    cross (const vec3 &v) const
 			{
-				      vec3 r;
-			        r.x = y * v.z  -  z * v.y;
-			        r.y = z * v.x  -  x * v.z;
-			        r.z = x * v.y  -  y * v.x;
-					return r;
+				vec3 r;
+				r.x = y * v.z  -  z * v.y;
+				r.y = z * v.x  -  x * v.z;
+				r.z = x * v.y  -  y * v.x;
+				return r;
 			}
 
 			//! \brief  Нормализовать
@@ -153,18 +192,39 @@ namespace gbmath
 			}
 
 			//! \brief  Вернуть нормализованый
-			inline vec3    normalized() const { vec3 r=*this; r.normalize(); return r; }
+			inline vec3    normalized() const 
+			{ 
+				vec3 r = *this; 
+				r.normalize(); 
+				return r; 
+			}
 
 			//! \brief  Вычислить и вернуть расстояние между точками  this и point.
-			inline float distance(const vec3& point)   const { return  sqrt( distanceSq(point) );  }
+			inline float distance(const vec3& point)   const 
+			{ 
+				return  sqrt( distance_sq(point) );  
+			}
+
 			//! \brief  Вычислить и вернуть квадрат расстояния между точками  this и point.
-			inline float distanceSq(const vec3& point) const { return vec3(*this-point).lengthSq() ;  }
+			inline float distance_sq(const vec3& point) const 
+			{ 
+				return vec3( *this - point ).length_sq();  
+			}
 
 
 			//! \brief Получить наибольшее абсолютное из каждой компоненты
-			inline float     getMaxLength () const {   return scalar::max3 ( fabs (x), fabs (y), fabs (z) );   }
+			inline float     get_max_value () const 
+			{   
+				return scalar::max3 ( fabs (x), fabs (y), fabs (z) );   
+			}
 
-			inline vec3&   invert() {x=-x; y=-y; z=-z; return *this; };
+			inline vec3&   invert() 
+			{
+				x = -x; 
+				y = -y; 
+				z = -z; 
+				return *this; 
+			}
 
 			inline vec3    lerp(const vec3& v, const float k) const
 			{
@@ -173,26 +233,25 @@ namespace gbmath
 				r.y = y + (v.y - y) * k;
 				r.z = z + (v.z - z) * k;
 				return r;
-			};
+			}
 
 			//! \brief     получить минимальную компоненту
-			inline float minval() const
+			inline float min_value() const
 			{
 				float ret = x;
 				if (y < ret) ret = y;
 				if (z < ret) ret = z;
 				return ret;
-			};
+			}
 
 			//! \brief     получить максимальную компоненту
-			inline float maxval()  const
+			inline float max_value()  const
 			{
 				float ret = x;
 				if (ret < y) ret = y;
 				if (ret < z) ret = z;
 				return ret;
 			}
-
 
 
 			//* \brief   вычисл. мин. абсолютное из компонент.
@@ -206,6 +265,7 @@ namespace gbmath
 				if(az<res) res=az;
 				return res;
 			}
+
 
 			//* \brief   вычисл. макс. абсолютное из компонент.
 			inline float maxAbsVal() const
@@ -258,9 +318,18 @@ namespace gbmath
 			}
 
 			//! \brief Вернуть минимальный вектор между this и v
-			inline vec3 minimized(const vec3& v) const { vec3 r; r.minimize(*this, v); return r; };
+			inline vec3 minimized(const vec3& v) const 
+			{ 
+				vec3 r; r.minimize(*this, v); 
+				return r; 
+			}
+
 			//! \brief Вернуть максимальный вектор между this и v
-			inline vec3 maximized(const vec3& v) const { vec3 r; r.maximize(*this, v); return r; };
+			inline vec3 maximized(const vec3& v) const 
+			{ 
+				vec3 r; r.maximize(*this, v); 
+				return r; 
+			}
 
 
 
@@ -276,24 +345,29 @@ namespace gbmath
 			//! \brief Вернуть среднюю точку между this и point
 			inline vec3 middle(const vec3& point) const
 			{
-			    vec3 res;
-			      res.x = ( x + point.x ) / 2.0f;
-			      res.y = ( y + point.y ) / 2.0f;
-			      res.z = ( z + point.z ) / 2.0f;
-			         return res;
+				vec3 res;
+				res.x = ( x + point.x ) / 2.0f;
+				res.y = ( y + point.y ) / 2.0f;
+				res.z = ( z + point.z ) / 2.0f;
+				return res;
 			}
 
 			//! \brief  Вернёт true если все компоненты положительные.
-			inline bool isPositive() const {  return ( (x>=0.0f) && (y>=0.0f) && (z>=0.0f) );	}
+			inline bool is_positive() const 
+			{  
+				return ( (x>=0.0f) && (y>=0.0f) && (z>=0.0f) );	
+			}
 
 			//! \brief Тарнсформировать по матрице m   как координату. ПРОВЕРЕНО!
-			vec3&  transformCoord(const mat44& m);
-			//! \brief Тарнсформировать по матрице m   как нормаль. ПРОВЕРЕНО!
-			vec3&  transformNormal(const mat44& m);
+			vec3&  transform_coord(const mat44& m);
 
-			 // TODO:
-			    // void transformCoordArray(float* pfOut, int strideOut, const float* pvInput, int strideInput,  const M44& m, const int num) {...}
-			    // void transformNormalArray(float* pfOut, int strideOut, const float* pvInput, int strideInput,  const M44& m, const int num) {...}
+			//! \brief Тарнсформировать по матрице m   как нормаль. ПРОВЕРЕНО!
+			vec3&  transform_normal(const mat44& m);
+
+
+ 
+    // TODO: void transformCoordArray(float* pfOut, int strideOut, const float* pvInput, int strideInput,  const M44& m, const int num) {...}
+    // TODO: void transformNormalArray(float* pfOut, int strideOut, const float* pvInput, int strideInput,  const M44& m, const int num) {...}
 
 
 			/** \brief  Проекция вектора из виртуального "зазеркалья" на экран.

@@ -1,4 +1,5 @@
 ﻿/** \file 
+
  \brief Камеры для наблюдения, отладки, создания утилит и т.д.
  Выдраны из DXUT с небольшими исправлениями и удалением ненужного.
 
@@ -15,6 +16,8 @@
  <br>
 
 */
+
+// base_camera.h
 
 #pragma once
 
@@ -43,6 +46,8 @@
 namespace gbmath {
  
 
+#pragma message("delete this " __FILE__ )
+
 #define KEY_WAS_DOWN_MASK 0x80
 #define KEY_IS_DOWN_MASK  0x01
 
@@ -52,6 +57,8 @@ namespace gbmath {
 #define MOUSE_WHEEL         0x08
 
 
+#pragma message("delete this " __FILE__ )
+	
 
 enum D3DUtil_CameraKeys
 {
@@ -69,10 +76,10 @@ enum D3DUtil_CameraKeys
   
 
 
-class BaseCamera {
+class base_camera {
 public:
-			  BaseCamera();
-	virtual  ~BaseCamera() {}
+			  base_camera();
+	virtual  ~base_camera() {}
 
 	// //! \brief Сделать камеру текущей
 	//virtual HRESULT makeCurrent(IDirect3DDevice9* pDevice) = 0; 

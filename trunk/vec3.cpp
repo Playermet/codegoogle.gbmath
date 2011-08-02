@@ -1,4 +1,5 @@
-﻿
+﻿#pragma once
+
 #include "_gbmath.h"
 
  
@@ -65,7 +66,7 @@ vec3  vec3::unproject( const ViewportZ& vp,
 
 
 //=============================================================
-vec3&  vec3::transformCoord(const mat44& m)
+vec3&  vec3::transform_coord(const mat44& m)
 {
 	vec4 v;
 	v.x = x;
@@ -83,7 +84,7 @@ vec3&  vec3::transformCoord(const mat44& m)
 };
 
 //=============================================================
-vec3&  vec3::transformNormal(const mat44& m)
+vec3&  vec3::transform_normal(const mat44& m)
 {
 	vec4 v;
 	v.x = x;
