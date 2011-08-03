@@ -1,0 +1,226 @@
+
+<!-- saved from url=(0051)http://www.mvps.org/directx/articles/scalemesh9.htm -->
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Scaling and Centering of ID3DXMesh Geometry in DX9</title>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:Categories msdt:dt="string">D3D IM Articles;DX9 Graphics Articles;Direct3D Articles;Articles</mso:Categories>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+<meta name="Microsoft Theme" content="xzone 011, default">
+<meta name="Microsoft Border" content="tb, default">
+</head>
+
+<body background="./Scaling and Centering of ID3DXMesh Geometry in DX9_files/indtextb.jpg" bgcolor="#FFFFFF" text="#000000" link="#0033CC" vlink="#666633" alink="#CC3333"><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica"><center>
+<h1>
+<img src="./Scaling and Centering of ID3DXMesh Geometry in DX9_files/scalemesh9.htm_cmp_xzone010_bnr.gif" width="600" height="65" border="0" alt="Scaling and Centering of ID3DXMesh Geometry in DX9">
+</h1>
+<p>
+<nobr><a href="http://www.mvps.org/directx/" target="" style="text-decoration: none;">Home</a></nobr>&nbsp;|&nbsp;<nobr><a href="http://www.mvps.org/directx/indexes/dx9gr_articles.htm" target="" style="text-decoration: none;">Up</a></nobr>&nbsp;|&nbsp;<nobr><a href="http://www.mvps.org/directx/search.htm" target="" style="text-decoration: none;">Search</a></nobr>&nbsp;|&nbsp;<nobr><a href="http://www.mvps.org/directx/news/index.htm" target="" style="text-decoration: none;">X-Zone&nbsp;News</a></nobr>&nbsp;|&nbsp;<nobr><a href="http://www.mvps.org/directx/services.htm" target="" style="text-decoration: none;">Services</a></nobr>&nbsp;|&nbsp;<nobr><a href="http://www.mvps.org/directx/support/book_support.htm" target="" style="text-decoration: none;">Book&nbsp;Support</a></nobr>&nbsp;|&nbsp;<nobr><a href="http://www.mvps.org/directx/links.htm" target="" style="text-decoration: none;">Links</a></nobr>&nbsp;|&nbsp;<nobr><a href="http://www.mvps.org/directx/fdbk.htm" target="" style="text-decoration: none;">Feedback</a></nobr>&nbsp;|&nbsp;<nobr><a href="http://www.mvps.org/directx/smalltalk/index.htm" target="" style="text-decoration: none;">Smalltalk&nbsp;MT</a></nobr>&nbsp;|&nbsp;<nobr><a href="http://www.mvps.org/directx/scrapyard/index.html" target="" style="text-decoration: none;">The&nbsp;Scrapyard</a></nobr>&nbsp;|&nbsp;<nobr><a href="http://www.mvps.org/directx/faq/faq.htm" target="" style="text-decoration: none;">FAQ</a></nobr>&nbsp;|&nbsp;<nobr><a href="http://www.mvps.org/directx/indexes/index.htm" target="" style="text-decoration: none;">Technical&nbsp;Articles</a></nobr>
+</p>
+<!--msthemeseparator--><p align="center"><img src="./Scaling and Centering of ID3DXMesh Geometry in DX9_files/indhorsa.gif" width="600" height="10"></p></center>
+<p>&nbsp;</p>
+
+<!--mstheme--></font></td></tr><!--msnavigation--></tbody></table><!--msnavigation--><table dir="ltr" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><!--msnavigation--><td valign="top"><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica"><!--webbot bot="Include" U-Include="arthead.htm" TAG="BODY" startspan -->
+
+</font><div align="center"><font face="Trebuchet MS, Arial, Helvetica">
+  </font><center><font face="Trebuchet MS, Arial, Helvetica">
+  <!--mstheme--></font><table border="0" cellpadding="2">
+    <tbody><tr>
+      <td><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">
+        </font><p align="center"><font face="Trebuchet MS, Arial, Helvetica"><b><font color="#993333" size="4">Written by Robert
+        Dunlop<br>
+        Microsoft DirectX MVP</font></b><!--mstheme--></font></p></td>
+      <td><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica"><font face="Fixedsys" color="#000080"><img border="0" src="./Scaling and Centering of ID3DXMesh Geometry in DX9_files/mvpani.gif" align="center" width="108" height="89"><a name="thetop"></a></font><!--mstheme--></font></td>
+    </tr>
+  </tbody></table><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">
+  </font></center><font face="Trebuchet MS, Arial, Helvetica">
+</font></div><font face="Trebuchet MS, Arial, Helvetica">
+<!--msthemeseparator--><p align="center"><img src="./Scaling and Centering of ID3DXMesh Geometry in DX9_files/indhorsa.gif" width="600" height="10"></p>
+<!--webbot bot="Include" endspan i-checksum="30347" --><p align="center">
+<i><b>Note: This article is an update of an original article written for DirectX 
+8.x, accommodating changes in the D3DXComputeBoundingSphere() function.</b></i><br>
+<i><b><a href="http://www.mvps.org/directx/articles/scalemesh.htm">See Original DirectX 8 version here</a></b></i></p>
+<!--msthemeseparator--><p align="center"><img src="./Scaling and Centering of ID3DXMesh Geometry in DX9_files/indhorsa.gif" width="600" height="10"></p><h2>
+Introduction</h2>
+<p>Frequently I have received requests for functions that will allow a mesh to 
+be rescaled to fit within specific bounds and/or centered at origin, so I 
+decided to take some time to publish source code to accomplish this task.&nbsp; 
+It is often necessary to do this when dealing with arbitrary content such as in 
+a mesh viewer, or as a means to verify the validity of imported meshes that may 
+be arbitrarily scaled or offset from origin.&nbsp; In that context it may also 
+be useful for rescaling mesh geometry so that it can be saved back to a geometry 
+file properly scaled for later use.</p>
+<h2>Normalizing a Mesh</h2>
+<p>Rather than scaling the mesh by a fixed amount, the first function that I am 
+going to show here "normalizes" a mesh - that is, it scales the mesh based on 
+the dimensions of the mesh, so that it will fit inside of a bounding 
+sphere of a specified size.&nbsp; Normalization typically refers to scaling to 
+unit (1.0) dimensions, but in the case of our function we will allow you to 
+specify the final dimensions of the bounding sphere.</p>
+<p>Before we can write our mesh normalization function, we will first need a 
+couple of supporting functions, which will allow us to measure the mesh and to 
+apply scaling and offset.</p>
+<h3>&nbsp;&nbsp;&nbsp; Measuring the Mesh</h3>
+<p>Our first function will allow us to compute the bounding sphere of the mesh, 
+by wrapping the D3DXComputeBoundingSphere() function:</p>
+<!--mstheme--></font><pre><font face="Fixedsys">HRESULT CalcBounds(ID3DXMesh *pMesh, D3DXVECTOR3 *vCenter, float *radius)
+{
+	BYTE *ptr=NULL;
+	HRESULT hr;
+
+	// return failure if no mesh pointer provided
+	if (!pMesh)
+		return D3DERR_INVALIDCALL;
+
+	// get the face count
+	DWORD numVerts=pMesh-&gt;GetNumVertices();
+<a name="fvfsize"></a>
+	// get the FVF flags
+	DWORD fvfSize=D3DXGetFVFVertexSize(pMesh-&gt;GetFVF());<font size="2">  <a href="http://www.mvps.org/directx/articles/scalemesh.htm#getfvf">// See DX8 Version</a></font>
+
+	// lock the vertex buffer
+	if (FAILED(hr=pMesh-&gt;LockVertexBuffer(0,&amp;ptr)))
+
+		// return on failure
+		return hr;
+<a name="calcbound"></a>
+	// compute bounding sphere
+	if (FAILED(hr=D3DXComputeBoundingSphere((D3DXVECTOR3 *) ptr, 
+						numVerts, 
+						fvfSize, <font size="2">  <a href="http://www.mvps.org/directx/articles/scalemesh.htm#calcbound">// See DX8 Version</a></font>
+						vCenter, radius )))
+		// return on failure
+		return hr;
+
+	// unlock the vertex buffer
+	if (FAILED(hr=pMesh-&gt;UnlockVertexBuffer()))
+
+		// return on failure
+		return hr;
+		
+	// return success to caller
+	return S_OK;
+}</font></pre><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">
+<h3>&nbsp;&nbsp;&nbsp; Scaling the Mesh</h3>
+<p>Our next function allows us to scale and offset the vertices of a mesh:</p>
+<!--mstheme--></font><pre><font face="Fixedsys">HRESULT ScaleMesh(ID3DXMesh *pMesh, float scale, D3DXVECTOR3 *offset=NULL)
+{
+	BYTE *ptr=NULL;
+	HRESULT hr;
+	D3DXVECTOR3 vOff;
+
+	// return failure if no mesh pointer set
+	if (!pMesh)
+		return D3DERR_INVALIDCALL;
+
+	// select default or specified offset vector
+	if (offset)
+		vOff=*offset;
+	else
+		vOff=D3DXVECTOR3(0.0f,0.0f,0.0f);
+
+	// get the face count
+	DWORD numVerts=pMesh-&gt;GetNumVertices();
+
+	// get the FVF flags
+	DWORD fvf=pMesh-&gt;GetFVF();
+
+	// calculate vertex size
+	DWORD vertSize=D3DXGetFVFVertexSize(fvf);
+
+	// lock the vertex buffer
+	if (FAILED(hr=pMesh-&gt;LockVertexBuffer(0,&amp;ptr)))
+	
+		// return on failure
+		return hr;
+
+	// loop through the vertices
+	for (DWORD i=0;i&lt;numVerts;i++) {
+
+		// get pointer to location
+		D3DXVECTOR3 *vPtr=(D3DXVECTOR3 *) ptr;
+
+		// scale the vertex
+		*vPtr+=vOff;
+		vPtr-&gt;x*=scale;
+		vPtr-&gt;y*=scale;
+		vPtr-&gt;z*=scale;
+
+		// increment pointer to next vertex
+		ptr+=vertSize;
+	}
+
+	// unlock the vertex buffer
+	if (FAILED(hr=pMesh-&gt;UnlockVertexBuffer()))
+
+		// return on failure
+		return hr;
+		
+	// return success to caller
+	return S_OK;
+}</font></pre><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">
+<h3>&nbsp;&nbsp;&nbsp; Our Normalization Function</h3>
+<p>Finally, we get to our normalization function, which will utilize the two 
+functions we saw above:</p>
+<ol>
+  <li>First, it will find the bounding sphere of the mesh, as a radius and 
+  center.</li>
+  <li>Next, it will calculate a scaling factor based on the radius calculated 
+  and the desired mesh size.</li>
+  <li>If centering of the mesh is requested, the center will be negated for use 
+  as an offset.</li>
+  <li>The scaling function we wrote will then be called with the calculated 
+  scaling factor and offset.</li>
+</ol>
+<!--mstheme--></font><pre><font face="Fixedsys">HRESULT NormalizeMesh(ID3DXMesh *pMesh, float scaleTo=1.0f, BOOL bCenter=TRUE)
+{
+	D3DXVECTOR3 vCenter;
+	float radius;
+	HRESULT hr;
+
+	// calculate bounds of mesh
+	if (FAILED(hr=CalcBounds(pMesh,&amp;vCenter,&amp;radius)))
+		return hr;
+
+	// calculate scaling factor
+	float scale=scaleTo/radius;
+
+	// calculate offset if centering requested
+	D3DXVECTOR3 vOff;
+	if (bCenter) 
+		vOff=-vCenter;
+	else
+		vOff=D3DXVECTOR3(0.0f,0.0f,0.0f);
+
+	// scale and offset mesh
+	return ScaleMesh(pMesh,scale,&amp;vOff);
+}</font></pre><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica"><!--mstheme--></font><pre></pre><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica"><!--mstheme--></font><!--msnavigation--></td></tr><!--msnavigation--></tbody></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica"></font><center><font face="Trebuchet MS, Arial, Helvetica"><!--msthemeseparator--><p align="center"><img src="./Scaling and Centering of ID3DXMesh Geometry in DX9_files/indhorsa.gif" width="600" height="10"></p><!--mstheme--></font><table border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+    <td><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">
+    <p align="center"><b><font size="2">This site, created by DirectX MVP Robert 
+    Dunlop and aided by the work of other volunteers, provides a free on-line 
+    resource for DirectX programmers. </font></b></p>
+    </font><p align="center"><font face="Trebuchet MS, Arial, Helvetica"><b><font size="2">Special thanks to
+    <a href="http://www.mvps.org/" target="_blank">WWW.MVPS.ORG</a>, for 
+    providing a permanent home for this site.</font></b><!--mstheme--></font></p></td>
+    <td><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">
+    <h5>
+    <a target="_blank" title="Click for information on Microsoft MVP program" href="http://support.microsoft.com/support/mvp/">
+    <img border="0" src="./Scaling and Centering of ID3DXMesh Geometry in DX9_files/mvplogo.gif" width="147" height="131"></a></h5>
+    <!--mstheme--></font></td>
+  </tr>
+</tbody></table><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica"><!--msthemeseparator--><p align="center"><img src="./Scaling and Centering of ID3DXMesh Geometry in DX9_files/indhorsa.gif" width="600" height="10"></p>
+<p><small>Visitors Since 1/1/2000: </small>
+<img src="./Scaling and Centering of ID3DXMesh Geometry in DX9_files/saved_resource" alt="Hit Counter"><small><br>
+Last updated: 07/26/05.
+</small></p>
+</font></center><font face="Trebuchet MS, Arial, Helvetica">
+<p>&nbsp;</p>
+
+<!--mstheme--></font></td></tr><!--msnavigation--></tbody></table>
+
+</body></html>
