@@ -1,0 +1,327 @@
+
+<!-- saved from url=(0063)http://www.mvps.org/directx/articles/using_bounding_spheres.htm -->
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<title>Using Bounding Spheres</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:Categories msdt:dt="string">DX8 Graphics Articles;Direct3D Articles;Articles</mso:Categories>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+<meta name="Microsoft Theme" content="xzone 011, default">
+<meta name="Microsoft Border" content="tb, default">
+</head>
+
+<body background="./Using Bounding Spheres_files/indtextb.jpg" bgcolor="#FFFFFF" text="#000000" link="#0033CC" vlink="#666633" alink="#CC3333"><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica"><center>
+<h1>
+<img src="./Using Bounding Spheres_files/using_bounding_spheres.htm_cmp_xzone010_bnr.gif" width="600" height="65" border="0" alt="Using Bounding Spheres">
+</h1>
+<p>
+<nobr><a href="http://www.mvps.org/directx/" target="" style="text-decoration: none;">Home</a></nobr>&nbsp;|&nbsp;<nobr><a href="http://www.mvps.org/directx/indexes/direct3d_articles.htm" target="" style="text-decoration: none;">Up</a></nobr>&nbsp;|&nbsp;<nobr><a href="http://www.mvps.org/directx/search.htm" target="" style="text-decoration: none;">Search</a></nobr>&nbsp;|&nbsp;<nobr><a href="http://www.mvps.org/directx/news/index.htm" target="" style="text-decoration: none;">X-Zone&nbsp;News</a></nobr>&nbsp;|&nbsp;<nobr><a href="http://www.mvps.org/directx/services.htm" target="" style="text-decoration: none;">Services</a></nobr>&nbsp;|&nbsp;<nobr><a href="http://www.mvps.org/directx/support/book_support.htm" target="" style="text-decoration: none;">Book&nbsp;Support</a></nobr>&nbsp;|&nbsp;<nobr><a href="http://www.mvps.org/directx/links.htm" target="" style="text-decoration: none;">Links</a></nobr>&nbsp;|&nbsp;<nobr><a href="http://www.mvps.org/directx/fdbk.htm" target="" style="text-decoration: none;">Feedback</a></nobr>&nbsp;|&nbsp;<nobr><a href="http://www.mvps.org/directx/smalltalk/index.htm" target="" style="text-decoration: none;">Smalltalk&nbsp;MT</a></nobr>&nbsp;|&nbsp;<nobr><a href="http://www.mvps.org/directx/scrapyard/index.html" target="" style="text-decoration: none;">The&nbsp;Scrapyard</a></nobr>&nbsp;|&nbsp;<nobr><a href="http://www.mvps.org/directx/faq/faq.htm" target="" style="text-decoration: none;">FAQ</a></nobr>&nbsp;|&nbsp;<nobr><a href="http://www.mvps.org/directx/indexes/index.htm" target="" style="text-decoration: none;">Technical&nbsp;Articles</a></nobr>
+</p>
+<!--msthemeseparator--><p align="center"><img src="./Using Bounding Spheres_files/indhorsa.gif" width="600" height="10"></p></center>
+<p>&nbsp;</p>
+
+<!--mstheme--></font></td></tr><!--msnavigation--></tbody></table><!--msnavigation--><table dir="ltr" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><!--msnavigation--><td valign="top"><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">
+  </font><div align="center"><font face="Trebuchet MS, Arial, Helvetica">
+    </font><center><font face="Trebuchet MS, Arial, Helvetica">
+  <!--mstheme--></font><table border="0" cellpadding="2" width="606">
+    <tbody><tr>
+      <td align="center" width="480"><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">
+        <p align="center"><i><b><font size="4" color="#993333">Collision
+        Detection, Part 1:<br>
+        Using Bounding Spheres</font></b></i></p>
+        </font><p align="center"><font face="Trebuchet MS, Arial, Helvetica"><b><font color="#993333" size="4">Written by Robert
+        Dunlop<br>
+        Microsoft DirectX MVP<br>
+        </font></b><!--mstheme--></font></p></td>
+    <td align="center" width="108"><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica"><font face="Fixedsys" color="#000080"><img border="0" src="./Using Bounding Spheres_files/mvpani.gif" width="108" height="89"><br>
+      </font><!--mstheme--></font></td>
+    </tr>
+  <tr>
+    <td align="center" width="476"><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">
+      </font><p align="center"><font face="Trebuchet MS, Arial, Helvetica"><font size="2" color="#800080"><b>Note</b><i><br>
+      Code in this
+      article was&nbsp; written for use with DirectX 8 under VC++ 6.0.&nbsp; Some
+      modification may be required for use in other development environments.</i></font><!--mstheme--></font></p></td>
+    <td align="center" width="108"><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica"><!--mstheme--></font></td>
+  </tr>
+  </tbody></table><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">
+    </font></center><font face="Trebuchet MS, Arial, Helvetica">
+  </font></div><font face="Trebuchet MS, Arial, Helvetica">
+<!--msthemeseparator--><p align="center"><img src="./Using Bounding Spheres_files/indhorsa.gif" width="600" height="10"></p>
+<h2>Introduction</h2>
+<p>Checking&nbsp; for collision between two objects can be a very complicated
+task, involving&nbsp; tests between the many faces of each object.&nbsp; To
+perform this task quickly, simplified volumes are often used to represent each
+object, allowing fast tests for collision.&nbsp; These tests are of course not
+as precise, and often they are used as a quick test to determine if further,
+detailed testing is required.</p>
+<p>In this series of articles, we will examine three such bounding volumes:</p>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tbody><tr><td valign="baseline" width="42"><img src="./Using Bounding Spheres_files/indbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">Bounding Spheres <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="./Using Bounding Spheres_files/indbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">Axis Aligned Bounding Boxes <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="./Using Bounding Spheres_files/indbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">Oriented Bounding Boxes<!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></tbody></table><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">
+<p>We'll take a look at the strengths and weaknesses of each, as well as the
+code necessary to implement them.&nbsp; The focus of this series will be limited
+to detecting an intersection.&nbsp; In future articles we will take a further look
+at the physics behind object interaction, how to determine reactions using each
+of these techniques, and how to efficiently test for collisions between a
+collection of objects.</p>
+<p>Now to take a look at the first of these bounding volumes, the bounding
+sphere.</p>
+<h2>What is a Bounding Sphere?</h2>
+<!--mstheme--></font><table cellpadding="2" border="0">
+  <tbody>
+    <tr>
+      <td><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">A bounding sphere is a hypothetical sphere that completely encompasses
+        an object.&nbsp; It is defined by a 3D coordinate representing the
+        center of the sphere, and a scalar radius that defines the maximum
+        distance from the center of the sphere to any point in the object.&nbsp;
+        A definition for a structure to specify a bounding sphere might look
+        something like this:
+          <p>t<font face="Fixedsys">ypedef struct _BOUNDINGSPHERE {<br>
+          &nbsp;&nbsp; D3DXVECTOR3 center;<br>
+          &nbsp;&nbsp; float radius;<br>
+          } BOUNDINGSPHERE, *LPBOUNDINGSPHERE;</font></p>
+      <!--mstheme--></font></td>
+      <td><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica"><img src="./Using Bounding Spheres_files/bound1.gif" border="0" width="240" height="180"><!--mstheme--></font></td>
+    </tr>
+  </tbody>
+</table><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">
+<h2>Defining a Bounding Sphere</h2>
+<p>When defining a bounding sphere, one typically tries to find the tightest fit
+for the bounded object, that is, the smallest radius sphere that all points lie
+within.&nbsp; Depending on the shape of the object, the techniques required for
+the best fit can be complex.&nbsp; For simplicity sake, we'll take a look at a
+fairly simple algorithm that will work decently for most cases.&nbsp; The
+function is a two step process:</p>
+<ol>
+  <li>Find the center.&nbsp; In this case, we'll simply average the coordinates.
+  </li><li>Loop through the coordinates and find the maximum distance from the
+    center.&nbsp; This is the radius.</li>
+</ol>
+<p>To make our function versatile, I've included a stride parameter that will
+allow you to use this function with any structure (i.e. any conventional D3D
+vertex type) as
+long as it starts with three floats representing X, Y, and Z.&nbsp; The function
+accepts the following parameters:</p>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tbody><tr><td valign="baseline" width="42"><img src="./Using Bounding Spheres_files/indbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">A pointer to an array of coordinates <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="./Using Bounding Spheres_files/indbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">The number of points in the array <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="./Using Bounding Spheres_files/indbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">The size of the structure the coordinate is contained in, in bytes <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="./Using Bounding Spheres_files/indbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">A pointer to an existing BOUNDINGSPHERE structure to be filled<!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></tbody></table><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%">&nbsp;</p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">LPBOUNDINGSPHERE
+calcSphere(BYTE *vects,DWORD count,DWORD stride,LPBOUNDINGSPHERE sphere)</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">{</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">&nbsp;&nbsp;&nbsp;
+// find center</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">&nbsp;&nbsp;&nbsp;
+sphere-&gt;center=D3DXVECTOR3(0.0f,0.0f,0.0f);</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">&nbsp;&nbsp;&nbsp;
+BYTE *ptr=vects;</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">&nbsp;&nbsp;&nbsp;
+for (int i=0;i&lt;count;i++) {</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+sphere-&gt;center+=*((LPD3DXVECTOR3) ptr);</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ptr+=stride;</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">&nbsp;&nbsp;&nbsp;
+}</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">&nbsp;&nbsp;&nbsp;
+sphere-&gt;center/=(float)count;</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%">&nbsp;</p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">&nbsp;&nbsp;&nbsp;
+// find farthest point in set</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">&nbsp;&nbsp;&nbsp;
+sphere-&gt;radius=0.0f;</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">&nbsp;&nbsp;&nbsp;
+ptr=vects;</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">&nbsp;&nbsp;&nbsp;
+for (int i=0;i&lt;count;i++) {</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+D3DXVECTOR3 v;</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="Fixedsys">&nbsp;&nbsp;&nbsp;&nbsp;
+v=*((LPD3DXVECTOR3) ptr)-sphere-&gt;center;</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+float distSq=D3DXVec3LengthSq(&amp;v);</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+if (distSq&gt;sphere-&gt;radius)</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+sphere-&gt;radius=distSq;</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ptr+=stride;</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">&nbsp;&nbsp;&nbsp;
+}</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">&nbsp;&nbsp;&nbsp;
+sphere-&gt;radius=sqrtf(sphere-&gt;radius);</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">}</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%">&nbsp;</p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%">Note
+that we get the square of the length, and only take the square root when we have
+found the maximum distance.&nbsp; This is to eliminate the use of a costly
+square root function for each point in the mesh.&nbsp; You will see similar
+optimizations later, including the comparison of the square of a vectors length
+versus the square of the value we wish to compare the length to.&nbsp;
+Multiplication is orders of magnitude faster than finding a square
+root.&nbsp;&nbsp;</p>
+<p>To clarify the use of the stride, let's say we had a mesh that was composed
+of 1024 pre-lit vertices, that is, using the D3DLVERTEX structure.&nbsp; The
+function would be called with the size of the D3DLVERTEX structure as the
+stride, like this:</p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">//
+given "vects" is an array of 1024 D3DVERTEX structures</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">BOUNDINGSPHERE
+sp;</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">calcSphere((BYTE
+*) vects,1024,sizeof(D3DVERTEX),&amp;sp);</font></p>
+<h2>Determining if a Point is in a Sphere</h2>
+<p>Determining whether a given point is within a sphere is quite simple.&nbsp; A
+surface of a sphere, just like a circle, is composed of all those points that
+are a constant distance (the radius) from the center point.&nbsp; If the
+distance from a point to the center of the sphere is greater than the radius,
+while if it is less than the radius, the point falls within the sphere:</p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">BOOL
+pointInSphere(LPD3DXVECTOR3 pt, LPBOUNDINGSPHERE sphere)</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">{</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">&nbsp;&nbsp;&nbsp;
+D3DXVECTOR3 v;</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">&nbsp;&nbsp;&nbsp;
+v=sphere-&gt;center-*pt;</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">&nbsp;&nbsp;&nbsp;
+if (D3DXVec3LengthSq(&amp;v)&gt;sphere-&gt;radius*sphere-&gt;radius)</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+return FALSE;</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">&nbsp;&nbsp;&nbsp;
+return TRUE;</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">}</font></p>
+<h2>Determining if Two Spheres Collide</h2>
+<!--mstheme--></font><table cellpadding="2" border="0">
+  <tbody>
+    <tr>
+      <td><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">Determining if two sphere's collide is pretty simple as well.&nbsp; To
+        gain a quick understanding of this problem, let's take a look at what
+        happens when two spheres are touching.&nbsp; As you can see in the
+        illustration to the right, the radius of each sphere now also defines
+        the distance its center to the opposite sphere's skin.&nbsp; So, given
+        this condition, the distance between the centers would be equal to
+        Radius1 + Radius2.&nbsp; If the distance were greater, the two spheres
+        would not touch.&nbsp; If it were less, the spheres would intersect.<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica"><img src="./Using Bounding Spheres_files/bound2.gif" border="0" width="320" height="156"><!--mstheme--></font></td>
+    </tr>
+  </tbody>
+</table><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">
+<p>Below are two functions that perform this test.&nbsp; The first returns a
+boolean value, returning TRUE if the spheres intersect or FALSE if they do not.&nbsp;&nbsp;</p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">BOOL
+sphereIntersect(LPBOUNDINGSPHERE s1,LPBOUNDINGSPHERE s2)</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">{</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%">&nbsp;&nbsp;&nbsp;<font face="Fixedsys">
+D3DXVECTOR3 v;</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%">&nbsp;&nbsp;&nbsp;<font face="Fixedsys">
+v=s1-&gt;center-s2-&gt;center</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%">&nbsp;&nbsp;&nbsp;<font face="Fixedsys">
+float centDist=s1-&gt;radius+s2-&gt;radius;</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">&nbsp;&nbsp;&nbsp;return
+(D3DXVec3LengthSq(&amp;v)&lt;=centDist*centDist);</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">}</font></p>
+<p>The second function returns a floating point value, which represents the
+distances between the closest points between the two spheres.&nbsp; If the value
+is negative, the spheres intersect, and the value represents the greatest
+distance of overlap.</p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">float
+sphereIntersectDist(LPBOUNDINGSPHERE s1,LPBOUNDINGSPHERE s2)</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">{</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">&nbsp;&nbsp;&nbsp;
+D3DXVECTOR3 v;</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">&nbsp;&nbsp;&nbsp;
+v=s1-&gt;center-s2-&gt;center;</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">&nbsp;&nbsp;&nbsp;
+return (D3DXVec3Length(&amp;v)-(s1-&gt;radius+s2-&gt;radius));</font></p>
+<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; WORD-SPACING: 0px; LINE-HEIGHT: 100%"><font face="Fixedsys">}</font></p>
+<h2>Dealing with Object Motion</h2>
+<p>So, what happens when an object moves?&nbsp; Do we have to completely
+re-calculate the bounding sphere?&nbsp; Fortunately, we do not.&nbsp; Because a
+sphere is symmetrical, there is no change in dimensions as it is moved.&nbsp;
+All that changes is the center point, which we must offset from model space to
+the current position in world space, according to the translation of the object.&nbsp;
+Below is a class that keeps track of the origin in model space, and allows you
+to offset the center as needed:
+</p><p>
+<font face="Fixedsys">class CBoundSphere<br>
+{<br>
+&nbsp;&nbsp;&nbsp; D3DVECTOR origin;<br>
+&nbsp;&nbsp;&nbsp; D3DVECTOR center;<br>
+&nbsp;&nbsp;&nbsp; float radius;<br>
+&nbsp;&nbsp;&nbsp; CBoundSphere(LPD3DXVECTOR3 vOrigin,float fRadius);<br>
+&nbsp;&nbsp;&nbsp; ~CBoundSphere() {};<br>
+&nbsp;&nbsp;&nbsp; void SetTranslation(LPD3DXVECTOR3 vOffset);<br>
+&nbsp;&nbsp;&nbsp; BOOL PointInSphere(LPD3DXVECTOR3 pt);<br>
+&nbsp;&nbsp;&nbsp; BOOL SphereIntersect(CBoundSphere *s);<br>
+&nbsp;&nbsp;&nbsp; float SphereIntersectDist(CBoundSphere *s);<br>
+}</font></p>
+<p><font face="Fixedsys"> CBoundSphere::CBoundSphere(LPD3DXVECTOR3 vOrigin,float fRadius)<br>
+{<br>
+&nbsp;&nbsp;&nbsp; center=origin=*vOrigin;&nbsp;<br>
+&nbsp;&nbsp;&nbsp; radius=fRadius;<br>
+}</font></p>
+<p><font face="Fixedsys">void CBoundSphere::SetTranslation(LPD3DXVECTOR3 vOffset)<br>
+{<br>
+&nbsp;&nbsp;&nbsp; center=origin+*vOffset;<br>
+}</font></p>
+<p><font face="Fixedsys"> BOOL CBoundSphere::PointInSphere(LPD3DXVECTOR3 pt)<br>
+{<br>
+&nbsp;&nbsp;&nbsp; D3DXVECTOR3 v;<br>
+&nbsp;&nbsp;&nbsp; v=center-pt;<br>
+&nbsp;&nbsp;&nbsp; return (D3DXVec3LengthSq(&amp;v)&lt;=radius*radius);<br>
+}</font></p>
+<p><font face="Fixedsys">BOOL CBoundSphere::SphereIntersect(CBoundSphere *s)<br>
+{<br>
+&nbsp;&nbsp;&nbsp; D3DXVECTOR3 v;<br>
+&nbsp;&nbsp;&nbsp; v=center-s-&gt;center;<br>
+&nbsp;&nbsp;&nbsp; float centDist=radius+s-&gt;radius;<br>
+&nbsp;&nbsp;&nbsp; return (D3DXVec3LengthSq(&amp;v) &lt;=centDist*centDist);<br>
+}</font></p>
+<p>
+<font face="Fixedsys"> float CBoundSphere::SphereIntersectDist(CBoundSphere *s)<br>
+{<br>
+&nbsp;&nbsp;&nbsp;
+D3DXVECTOR3 v;<br>
+&nbsp;&nbsp;&nbsp; v=center-s-&gt;center;<br>
+&nbsp;&nbsp;&nbsp;
+return (D3DXVec3Length(&amp;v)-(radius+s-&gt;radius));<br>
+}<br>
+</font></p>
+
+<!--mstheme--></font><!--msnavigation--></td></tr><!--msnavigation--></tbody></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica"></font><center><font face="Trebuchet MS, Arial, Helvetica"><!--msthemeseparator--><p align="center"><img src="./Using Bounding Spheres_files/indhorsa.gif" width="600" height="10"></p><!--mstheme--></font><table border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+    <td><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">
+    <p align="center"><b><font size="2">This site, created by DirectX MVP Robert 
+    Dunlop and aided by the work of other volunteers, provides a free on-line 
+    resource for DirectX programmers. </font></b></p>
+    </font><p align="center"><font face="Trebuchet MS, Arial, Helvetica"><b><font size="2">Special thanks to
+    <a href="http://www.mvps.org/" target="_blank">WWW.MVPS.ORG</a>, for 
+    providing a permanent home for this site.</font></b><!--mstheme--></font></p></td>
+    <td><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">
+    <h5>
+    <a target="_blank" title="Click for information on Microsoft MVP program" href="http://support.microsoft.com/support/mvp/">
+    <img border="0" src="./Using Bounding Spheres_files/mvplogo.gif" width="147" height="131"></a></h5>
+    <!--mstheme--></font></td>
+  </tr>
+</tbody></table><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica"><!--msthemeseparator--><p align="center"><img src="./Using Bounding Spheres_files/indhorsa.gif" width="600" height="10"></p>
+<p><small>Visitors Since 1/1/2000: </small>
+<img src="./Using Bounding Spheres_files/saved_resource" alt="Hit Counter"><small><br>
+Last updated: 07/26/05.
+</small></p>
+</font></center><font face="Trebuchet MS, Arial, Helvetica">
+<p>&nbsp;</p>
+
+<!--mstheme--></font></td></tr><!--msnavigation--></tbody></table>
+
+</body></html>
