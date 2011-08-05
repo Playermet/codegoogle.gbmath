@@ -11,8 +11,13 @@
  
 #define _USE_MATH_DEFINES
 
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdarg.h>
 #include <math.h>
 #include <float.h>
+
 
 #include <limits>
 
@@ -156,6 +161,16 @@ namespace gbmath
 #include "target_camera.h"
 #include "first_person_camera.h"
 #include "model_view_camera.h"
+
+
+
+
+// render math opt
+#define GBMATH_USE_OPENGL_DRAWER
+
+#include "drawer.h"
+
+
 
 
 #ifdef _MSC_VER

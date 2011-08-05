@@ -104,8 +104,15 @@ void model_view_camera::frameMove( float fElapsedTime )
     m_vEye = m_vLookAt - vWorldAhead * m_fRadius;
 
     // Update the view matrix
-    //D 3DXMatrixLookAtLH( m_mView, m_vEye, m_vLookAt, vWorldUp );
-	 m_mView.setViewLookAtLH(m_vEye, m_vLookAt, vWorldUp);
+ 
+		if(CAMERA_LEFT_HANDLE)
+		{
+			m_mView.setViewLookAtLH(m_vEye, m_vLookAt, vWorldUp);
+		}
+		else
+		{
+			m_mView.setViewLookAtRH(m_vEye, m_vLookAt, vWorldUp);
+		}
 
 
     mat44 mInvView;
@@ -212,8 +219,17 @@ void model_view_camera::setViewParams( const vec3& pvEyePt, const vec3& pvLookat
     Quaternion quat;
     mat44 mRotation;
     vec3 vUp(0,1,0);
-    //D 3DXMatrixLookAtLH( mRotation, pvEyePt, pvLookatPt, vUp );
-		 mRotation.setViewLookAtLH(  pvEyePt, pvLookatPt, vUp    );
+  
+
+		if (CAMERA_LEFT_HANDLE)
+		{
+			mRotation.setViewLookAtLH(  pvEyePt, pvLookatPt, vUp    );
+		}
+		else
+		{
+			mRotation.setViewLookAtRH(  pvEyePt, pvLookatPt, vUp    );
+		}
+
 
    // D 3DX QuaternionRotationMatrix( quat, mRotation );
   quat.setRotationMatrix(mRotation);

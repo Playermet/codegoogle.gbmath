@@ -75,12 +75,26 @@ Quaternion arc_ball::quatFromBallPoints(const vec3 &vFrom, const vec3 &vTo)
 {
     vec3 vPart;
 
-    float fDot = vFrom.dot(vTo);//  D 3DX Vec3Dot(vFrom, vTo);
+	   float K_MULT = 1.0f;
+	if(CAMERA_LEFT_HANDLE)
+		{
+		  K_MULT = 1.0f;
+		}
+	else
+		{
+	      K_MULT = - 1.0f;
+		}
+	 
+
+			   /*ksacvet777 не был минус  */ 
+    float fDot = K_MULT *    vFrom.dot(vTo);//  D 3DX Vec3Dot(vFrom, vTo);
 
      // D 3DX Vec3Cross(vPart, vFrom, vTo);
 	   vPart = vFrom.cross(vTo);
 
-    return Quaternion(vPart.x, vPart.y, vPart.z, fDot);
+							  /*ksacvet777 не был минус  */ 
+
+    return Quaternion( K_MULT *  vPart.x,     vPart.y,    vPart.z,         fDot);
 }
 
 
@@ -106,8 +120,8 @@ void arc_ball::onBegin( int nX, int nY )
 void arc_ball::onMove( int nX, int nY )
 {
     if (m_bDrag) 
-    { 
-        m_vCurrentPt = screenToVector( (float)nX, (float)nY );
+    {								 
+        m_vCurrentPt = screenToVector(     (float)nX              ,          (float)nY  );
         m_qNow = m_qDown * quatFromBallPoints( m_vDownPt, m_vCurrentPt );
     }
 }
@@ -126,7 +140,7 @@ void arc_ball::onEnd()
 LRESULT arc_ball::handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
 {
     // Current mouse position
-    int iMouseX = (short)LOWORD(lParam);
+    int iMouseX =    (short)LOWORD(lParam);
     int iMouseY = (short)HIWORD(lParam);
 
 	switch( uMsg )
@@ -134,7 +148,7 @@ LRESULT arc_ball::handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lP
 	case WM_LBUTTONDOWN:
 	case WM_LBUTTONDBLCLK:
 		SetCapture( hWnd );
-		onBegin( iMouseX, iMouseY );
+		onBegin(   iMouseX , iMouseY   );
 		return TRUE;
 
 	case WM_LBUTTONUP:
@@ -173,7 +187,8 @@ LRESULT arc_ball::handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lP
 		else if( (MK_RBUTTON & wParam) || (MK_MBUTTON & wParam) )
 		{
 			// Normalize based on size of window and bounding sphere radius
-			float fDeltaX = ( m_ptLastMouse.x-iMouseX ) * m_fRadiusTranslation / m_nWidth;
+						   	 
+			float fDeltaX = (m_ptLastMouse.x-iMouseX  ) * m_fRadiusTranslation / m_nWidth;
 			float fDeltaY = ( m_ptLastMouse.y-iMouseY ) * m_fRadiusTranslation / m_nHeight;
 
 			if( wParam & MK_RBUTTON )

@@ -28,19 +28,12 @@
 
 #ifdef WIN32 // только для windows
 
+const bool CAMERA_LEFT_HANDLE = false;//   true;
+
 //#include <stdexcept>
 
 #include <windows.h>
 #include <zmouse.h>
-
-//#include <gb/Config.h>
-//#include <gb/base/Types.h>
-//#include <gbmath/_gbmath.h>
- 
-
-//using namespace gb::fmath;
-//using namespace gb::fmath::geom3d;
-
  
 
 namespace gbmath {
