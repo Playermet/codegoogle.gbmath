@@ -25,12 +25,16 @@ public:
 	//! \brief Сделать камеру текущей
 	virtual HRESULT makeCurrent(IDirect3DDevice9* pDevice, bool bNeedSetWorld=true) 
 	{
-	  HRESULT hr =0;
-	  assert(pDevice);
-      if(bNeedSetWorld) hr |= pDevice->SetTransform( D3DTS_WORLD ,      getWorldMatrix()  );
-       hr |= pDevice->SetTransform(D3DTS_VIEW ,        getViewMatrix()   );
-       hr |= pDevice->SetTransform(D3DTS_PROJECTION ,  getProjMatrix()   );
-      return hr;
+		HRESULT hr =0;
+		assert(pDevice);
+		if(bNeedSetWorld)
+		{
+			hr |= pDevice->SetTransform( D3DTS_WORLD ,      getWorldMatrix()  );
+		}
+			  
+		hr |= pDevice->SetTransform(D3DTS_VIEW ,        getViewMatrix()   );
+		hr |= pDevice->SetTransform(D3DTS_PROJECTION ,  getProjMatrix()   );
+		return hr;
 	} 
 #endif
 

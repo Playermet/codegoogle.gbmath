@@ -140,8 +140,18 @@ void base_camera::setViewParams( const vec3& pvEyePt, const vec3& pvLookatPt )
 
     // Calc the view matrix
     vec3 vUp(0,1,0);
-    // D 3DXMatrixLookAtLH( m_mView, pvEyePt, pvLookatPt, vUp );
-	  m_mView.setViewLookAtLH(pvEyePt, pvLookatPt, vUp );
+ 
+	if (CAMERA_LEFT_HANDLE)
+	{
+	 m_mView.setViewLookAtLH(pvEyePt, pvLookatPt, vUp );
+	}
+	else
+	{
+	 m_mView.setViewLookAtRH(pvEyePt, pvLookatPt, vUp );
+	}
+
+
+
 
     mat44 mInvView;
    // D 3DX MatrixInverse( mInvView, NULL, m_mView );
@@ -173,7 +183,17 @@ void base_camera::setProjParams( float fFOV, float fAspect, float fNearPlane,
     m_fFarPlane   = fFarPlane;
 
    // D 3DXMatrixPerspectiveFovLH( m_mProj, fFOV, fAspect, fNearPlane, fFarPlane );
-	          m_mProj.setPerspectiveFovLH( fFOV, fAspect, fNearPlane, fFarPlane  );
+	// m_mProj.setPerspectiveFovLH( fFOV, fAspect, fNearPlane, fFarPlane  );
+
+
+	 if (CAMERA_LEFT_HANDLE)
+	 {
+		 m_mProj.setPerspectiveFovLH( fFOV, fAspect, fNearPlane, fFarPlane  );
+	 }
+	 else
+	 {
+		 m_mProj.setPerspectiveFovRH( fFOV, fAspect, fNearPlane, fFarPlane  );
+	 }
 }
 
 
@@ -198,7 +218,8 @@ LRESULT base_camera::handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM
 			if(wParam == 27)
 			{
 			  int _stop = 0;
-			};
+			}
+
             D3DUtil_CameraKeys mappedKey = mapKey( (UINT)wParam );
             if( mappedKey != CAM_UNKNOWN )
             {
