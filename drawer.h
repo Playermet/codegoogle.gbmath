@@ -32,11 +32,11 @@ namespace gbmath
 			void set_color(float r, float g, float b, float a) { glColor4f(r,g,b,a); }
 			void set_color(const color4f& a) { set_color(a.r, a.g, a.b, a.a); }
 			
-			void set_color_red()   { glColor4f( 1.0f , 0.0f , 0.0f , 1.0f ); }
-			void set_color_green() { glColor4f( 0.0f , 1.0f , 0.0f , 1.0f ); }
-			void set_color_blue()  { glColor4f( 0.0f , 0.0f , 1.0f , 1.0f ); }
-			void set_color_white() { glColor4f( 1.0f , 1.0f , 1.0f , 1.0f ); }
-			void set_color_black() { glColor4f( 0.0f , 0.0f , 0.0f , 1.0f ); }
+			void set_color_red()   { set_color( 1.0f , 0.0f , 0.0f , 1.0f ); }
+			void set_color_green() { set_color( 0.0f , 1.0f , 0.0f , 1.0f ); }
+			void set_color_blue()  { set_color( 0.0f , 0.0f , 1.0f , 1.0f ); }
+			void set_color_white() { set_color( 1.0f , 1.0f , 1.0f , 1.0f ); }
+			void set_color_black() { set_color( 0.0f , 0.0f , 0.0f , 1.0f ); }
 
 			// TODO: pink, yellow , ......
 
@@ -50,7 +50,13 @@ namespace gbmath
 
 			void draw_string(int x, int y, const char* _Format, ... ) ;
 			
-			void draw_rect(const Rectangle& r) ;		
+			void draw_rect(const Rectangle& r) ;	
+
+			void draw_str(int x, int y, const char* _Format, ... );
+			void draw_box(const vec3& min, const vec3& max);
+			void draw_sphere(const vec3& center, const float radius);
+			
+			
 		
 			
 		
