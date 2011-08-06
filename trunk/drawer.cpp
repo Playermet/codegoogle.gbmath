@@ -123,7 +123,25 @@ namespace gbmath
 		}
 		glEnd();	
 	}
+	
+	void drawer::draw_str(int x, int y, const char* _Format, ... )
+	{
+		assert(false);
+	
+	
+	}
+	
+	void drawer::draw_box(const vec3& min, const vec3& max)
+	{
+	assert(false);
+	}
+	
+	void drawer::draw_sphere(const vec3& center, const float radius)
+	{
+	assert(false);
+	}
 
+	
 
 }
 
