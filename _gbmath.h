@@ -165,8 +165,8 @@ namespace gbmath
 
 
 
-// render math opt
-#define GBMATH_USE_OPENGL_DRAWER
+  // render math opt
+  // #define GBMATH_USE_OPENGL_DRAWER
 
 #include "drawer.h"
 

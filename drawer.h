@@ -12,7 +12,7 @@
 
 #ifdef GBMATH_USE_OPENGL_DRAWER
 
-#include <gl\gl.h>
+
 
 namespace gbmath 
 {
@@ -29,8 +29,8 @@ namespace gbmath
 			
 			void mul_world(const mat44& m);
 
-			void set_color(float r, float g, float b, float a) { glColor4f(r,g,b,a); }
-			void set_color(const color4f& a) { set_color(a.r, a.g, a.b, a.a); }
+			void set_color(float r, float g, float b, float a) ;
+			void set_color(const color4f& a) ;
 			
 			void set_color_red()   { set_color( 1.0f , 0.0f , 0.0f , 1.0f ); }
 			void set_color_green() { set_color( 0.0f , 1.0f , 0.0f , 1.0f ); }
@@ -41,7 +41,7 @@ namespace gbmath
 			// TODO: pink, yellow , ......
 
 
-			void set_pointsize(int size) {  glPointSize( (GLfloat) size ); }
+			void set_pointsize(int size) ;
 			
 			void draw_points(const vec3* points, const int num);
 			void draw_lines(const vec3* points, const int num);
@@ -66,5 +66,9 @@ namespace gbmath
 	};
 
 }
+
+#ifdef __gl_h_
+	#error protect include gl header
+#endif 
 
 #endif // #ifdef GBMATH_USE_OPENGL_DRAWER
