@@ -163,10 +163,16 @@ namespace gbmath
 #include "model_view_camera.h"
 
 
+#include "dependence_on_function.h"
 
+ 
 
+// render math opt
+//#define GBMATH_USE_OPENGL_DRAWER
+ 
   // render math opt
   // #define GBMATH_USE_OPENGL_DRAWER
+ 
 
 #include "drawer.h"
 
