@@ -30,11 +30,23 @@ namespace gbmath
 	//template <typename T>
 	struct color4_32 : public color4<byte_t> {
 
-		  inline color4_32() {  r = g = b = a = 0; }
+		  inline color4_32() 
+		  {  
+			  r = g = b = a = 0; 
+		  }
+
+		  inline color4_32(byte_t _r, byte_t _g, byte_t _b, byte_t _a)
+		  {
+			 r = _r;
+			 g = _g;
+			 b = _b;
+			 a = _a;
+		  }
 
 
 		  inline operator int() const
 		  {
+			  assert( sizeof(int) == 4 );
 			  int res =0;
 			  res = (r<<24) | (g<<16) | (b<<8) | (a) ;
 			  return res;
