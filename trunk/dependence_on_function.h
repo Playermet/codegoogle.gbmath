@@ -8,13 +8,7 @@
 namespace gbmath
 {
 
-	struct dependence_on_function
-	{
-		
-	private:
-		e _e;
-		
-	public:
+	struct dependence_on_function {
 	
 		enum e
 		{
@@ -27,8 +21,8 @@ namespace gbmath
 			squared,            ///<  y=x*x; 
 			squared_a_inverse,  ///<  y= 1 - x*x; 
 
-			cubuc,    ///< y=x*x*x;
-			cubuc_a_inverse, ///< 1- x*x*x 
+			cubic,    ///< y=x*x*x;
+			cubic_a_inverse, ///< 1- x*x*x 
 			
 			
 		
@@ -38,77 +32,76 @@ namespace gbmath
 	
 		inline dependence_on_function() { _e = undef; }
 		inline dependence_on_function(const e value) { _e = value; }
-		inline dependence_on_function(const dependence_on_function value) { _e = value._e; }
+		inline dependence_on_function(const dependence_on_function& value) { _e = value._e; }
  		
 		
 		inline void operator = (const e value) { _e = value; }
 		inline operator e() const { return _e; }
 		
 		// TODO: to/ from str <<
+
+		//void operator = (const std::string& str)
+		//{
+		//}
 		
-		
-		static  float formula(float x, const e dof ) 
-		{
-			  float y = 0.0f; /// result
+			
+			static  float formula(float x, const e depend ) 
+			{
+				  float y = 0.0f; /// result
+				  
+				  // clump 0...1
+				  {
+					if(x<0.0f) { x=0.0f; }
+					if(x>1.0f) { x=1.0f; }
+				  }
+
+					 switch(depend) 
+					 {
+						 
+						   case linear: { y = x;  } break;  
+						   case linear_inverse: { y = 1.0f-x; } break;
+						   
+						   case squared: { y=x*x; } break;
+						   case squared_a_inverse: { y = 1.0f-x*x; } break;
+						  
+						   case cubic: { y=x*x*x; } break;
+						   case cubic_a_inverse: { y = 1.0f - x*x*x; } break;  
+						   
+						   /*
+						   case xxx: {  } break;   
+						   case xxx: {  } break;   
+						   case xxx: {  } break; 
+
+						   case xxx: {  } break;   
+						   case xxx: {  } break;   
+						   case xxx: {  } break; 
+
+						   case xxx: {  } break;   
+						   case xxx: {  } break;   
+						   case xxx: {  } break; 
+						   
+						   case xxx: {  } break;   
+						   case xxx: {  } break;   
+						   case xxx: {  } break;    
+						   */
+ 
+						   default: {  }
+
+					 }
+					  
 			  
-			  // clump 0...1
-			  {
-			    if(x<0.0f) { x=0.0f; };
-				if(x>1.0f) { x=1.0f; };
-			  }
+	  
 
-		 switch(dep) 
-		 {
-		 
-		   case linear: { y = x;  } break;  
-		   case linear_inverse: { y = 1.0f-x; } break;
-		   
-		   case squared: { y=x*x; } break;
-		   case squared_a_inverse: { y = 1.0f-x*x; } break;
-		  
-		   case cubuc: { y=x*x*x; } break;
-		   case cubuc_a_inverse: { y = 1.0f - x*x*x; } break;  
-		   
-		   /*
-		   case xxx: {  } break;   
-		   case xxx: {  } break;   
-		   case xxx: {  } break; 
-
-		   case xxx: {  } break;   
-		   case xxx: {  } break;   
-		   case xxx: {  } break; 
-
-		   case xxx: {  } break;   
-		   case xxx: {  } break;   
-		   case xxx: {  } break; 
-		   
-		   case xxx: {  } break;   
-		   case xxx: {  } break;   
-		   case xxx: {  } break;    
-		   */
-		   
-		   case DEP_CUBIC: { y=x*x*x; } break;
-		   
-		   
-		   
-		   default: {   
-		    
-		    };
-		 };
-		  
-  
-  
-
-  return y;
-};
+				return y;
+			};
 
 		
+	private:
+		e _e;		
 		
 
 	};
 
-enum 
-
-
+ 
 
 }
