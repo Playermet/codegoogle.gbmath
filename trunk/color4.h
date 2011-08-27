@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief яяяяяяяя
+ \brief template color4
 
 
 */
@@ -18,6 +18,7 @@
 //#include <stdio.h>
 //#include <stdlib.h>
 
+/*
 #include <float.h>
 #include <math.h>
 #include <string>
@@ -25,6 +26,7 @@
 #include <istream>
 
 #include <assert.h>
+*/
 
  
 namespace gbmath
@@ -248,14 +250,14 @@ namespace gbmath
 		 }
 
 
-		 //! \brief  проверка  каждый компонент ноль
+		 //! \brief  test each component of zero
 		 inline bool empty() const
 		 {
 			 const T _e = T();
 			 return (r == _e) && (g == _e) && (b == _e) && (a == _e);
 		 }
 
-		 //! \brief  занулить каждый компонент.
+		 //! \brief  set to zero each component.
 		 inline void setzero()
 		 {
 			 r = g = b = a = T();
@@ -263,7 +265,7 @@ namespace gbmath
 
 
 
-		 //! \brief    линейная интерполяция между this и color по коэф. k.
+		 //! \brief    linear interpolation between this and the color on k.
 		 inline color4<T> lerp(const color4<T>& color, const T k) const
 		 {
 			 color4<T> res;
@@ -275,7 +277,7 @@ namespace gbmath
 		 }
 
 
-		 //! \brief Масштабирование цвета. Изменение яркости.
+		 //! \brief Scaling of color. Changing the brightness.
 		 inline color4<T>& modulate(const color4<T>& color)
 		 {
 			 r *= color.r;
@@ -285,7 +287,7 @@ namespace gbmath
 			 return *this;
 		 }
 
-		 //! \brief вернутб масштабирование цвета. Изменение яркости.
+		 //! \brief get color scale. Changing the brightness.
 		 inline color4<T> modulated(const color4<T>& color) const
 		 {
 			 color4<T> res;
@@ -296,7 +298,7 @@ namespace gbmath
 			 return *this;
 		 }
 
-		 //! \brief   Негатив.
+ 
 		 inline color4<T>& negative()
 		 {
 			 r = 1 - r;
@@ -306,7 +308,7 @@ namespace gbmath
 			 return *this;
 		 }
 
-		 //! \brief   Негатив.
+		 //! \brief   a negative.
 		 inline color4<T> negatived() const
 		 {
 			 color4<T> res (*this);
@@ -315,7 +317,7 @@ namespace gbmath
 		 }
 
 
-		 //! \brief Отсечение значений в пределах 0.0 ... 1.0
+		 //! \brief Pruning values ​​within 0.0 ... 1.0
 		 inline color4<T>& saturate()
 		 {
 			if(r>1) r=1;   if(r<0) r=0;
@@ -325,7 +327,7 @@ namespace gbmath
 			return *this;
 		 }
 
-		 //! \brief Отсечение значений в пределах 0.0 ... 1.0
+		 //! \brief get clipping values ​​within 0.0 ... 1.0
 		 inline color4<T> saturated() const
 		 {
 			 color4<T> res (*this);
@@ -333,7 +335,7 @@ namespace gbmath
 			 return res;
 		 }
 
-		 //! \brief Установить как средний цвет между this и col .
+		 //! \brief Set as the average color between this and col.
 		 inline color4<T>& average(const color4<T>& c)
 		 {
 			const T _two = (T)2;
@@ -344,7 +346,7 @@ namespace gbmath
 			return *this;
 		 }
 
-		 //! \brief как средний цвет между this и col .
+		 //! \brief  get   as the average color between this and col.
 		 inline color4<T> averaged(const color4<T>& col) const
 		 {
 			 color4<T> res = *this;
@@ -353,7 +355,7 @@ namespace gbmath
 		 }
 
 
-		 //! \brief Сложение только rgb. альфа не изменятеся.
+		 //! \brief Addition of only rgb. alpha does not change.
 		 inline color4<T>& add_rgb(const T k)
 		 {
 			 r += k;
@@ -362,7 +364,7 @@ namespace gbmath
 			 return *this;
 		 }
 
- 		  //! \brief Масштабирование только rgb. альфа не изменятеся.
+ 		  //! \brief scaling of only rgb. alpha does not change.
 		 inline color4<T>& scale_rgb(const T k)
 		 {
 			 r *= k;
@@ -373,7 +375,7 @@ namespace gbmath
 
 
 
-		 //! \brief изменить контраст
+		 //! \brief change contrast
 		 inline color4<T>& adjust_contrast(const T k)
 		 {
 			 const T _half = (T)0.5;
@@ -384,7 +386,7 @@ namespace gbmath
 		 }
 
 
-		 //! \brief получить цвет с изменённым контрастом
+		 //! \brief  get a change contrast
 		 inline color4<T> adjusted_contrast(const T k) const
 		 {
 			 color4<T> res(*this);
@@ -394,7 +396,7 @@ namespace gbmath
 
 
 
-		 //! \brief изменить насыщенность
+		 //! \brief change the saturation
 		 inline color4<T>& adjust_saturation( const T k )
 		 {
 			 const T grey  =  r * (T)0.2125 +  g * (T)0.7154 +  b * (T)0.0721 ;
@@ -411,7 +413,7 @@ namespace gbmath
 			return res;
 		}
 
-		//! \brief Установить белый цвет
+		//! \brief  set as white color
 		inline color4<T>& set_white( const T _a = (T)1 )
 		{
 			r = g = b = (T)1;
@@ -419,7 +421,7 @@ namespace gbmath
 			return *this;
 		}
 
-		//! \brief Установить чёрный цвет
+		//! \brief set as black color
 		inline color4<T>& set_black( const T _a = (T)1 )
 		{
 			r = g = b = (T)0;
@@ -448,11 +450,12 @@ namespace gbmath
 		 }
 
 		#if defined(_MSC_VER)
-		#pragma warning( push )
-		#pragma warning( disable : 4290 )
+			#pragma warning( push )
+			#pragma warning( disable : 4290 )
 		#endif
 
-		 friend std::stringstream &operator >> (std::stringstream &stream, color4<T>& c) throw (std::invalid_argument)
+		 friend std::stringstream &operator >> (std::stringstream &stream, color4<T>& c) 
+															throw (std::invalid_argument)
 		 {
 			stream >> c.r;
 			stream >> c.g;
@@ -469,17 +472,11 @@ namespace gbmath
 
 
 		#if defined(_MSC_VER)
-		#pragma warning( pop )
+			#pragma warning( pop )
 		#endif
 
-
-
-
-
-
+ 
 
 	 };
-
-
-
+ 
 }

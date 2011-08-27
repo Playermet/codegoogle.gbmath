@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief яяяяяяяя
+ \brief Standard four-color float
 
 
 */
@@ -21,7 +21,7 @@ namespace gbmath
 
 
 
-		//!   \brief   Класс  Четырёхкомпонентный стандартный цвет по float .
+		//!   \brief  Standard four-color float .
 		struct color4f : public color4<float> {
 		public:
 			//union

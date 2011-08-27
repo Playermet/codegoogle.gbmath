@@ -38,7 +38,9 @@ void first_person_camera::frameMove( float fElapsedTime )
         reset();
 
     // Get keyboard/mouse/gamepad input
-    getInput( m_bEnablePositionMovement, (m_nActiveButtonMask & m_nCurrentButtonMask) || m_bRotateWithoutButtonDown, true, m_bResetCursorAfterMove );
+    getInput( m_bEnablePositionMovement,
+		(m_nActiveButtonMask & m_nCurrentButtonMask) || m_bRotateWithoutButtonDown, 
+		true, m_bResetCursorAfterMove );
 
     // Get amount of velocity based on the keyboard input and drag (if any)
     updateVelocity( fElapsedTime );
@@ -132,7 +134,9 @@ void first_person_camera::frameMove( float fElapsedTime )
 //========================================================================
 // Enable or disable each of the mouse buttons for rotation drag.
 //========================================================================
-void first_person_camera::setRotateButtons( bool bLeft, bool bMiddle, bool bRight, bool bRotateWithoutButtonDown )
+void first_person_camera::setRotateButtons( bool bLeft, bool bMiddle, 
+										   bool bRight, 
+										   bool bRotateWithoutButtonDown )
 {
     m_nActiveButtonMask = ( bLeft ? MOUSE_LEFT_BUTTON : 0 ) |
                           ( bMiddle ? MOUSE_MIDDLE_BUTTON : 0 ) |

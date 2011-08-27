@@ -1,8 +1,12 @@
-﻿
+﻿/**  \file
+* \brief  Mononhromnoe value
+*
+*
+*/
 
 #pragma once
 
-//#include "../base/Types.h"
+ 
 #include "color3.h"
 #include "color4.h"
 
@@ -14,21 +18,24 @@ namespace gbmath
 {
 
 
-#pragma message("!!! DELETE  uint8_t  "   __FILE__ )
-		typedef    unsigned char   uint8_t;
+ 
 
-
-/** \brief  Мононхромное значение  1 байт . */
+/** \brief  Mononhromnoe value 1 byte . */
 typedef uint8_t   color_mono_8b_t;
 
 
-/** \brief  Мононхромное значение из 2-х байт .  */
+/** \brief  Mononhromnoe value    2  bytes .  */
 struct color_mono16b_s
 {
 	  union
 	  {
-		struct { uint8_t _1, _0 ; };
+		struct 
+		{ 
+			uint8_t    _1, _0 ; 
+		};
+
 		uint8_t bytes[2];
+
 		unsigned short ush;
 	  };
 
@@ -83,6 +90,4 @@ struct color_mono16b_s
 
 
 
-
- 
 }

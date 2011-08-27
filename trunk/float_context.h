@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief яяяяяяяя
+ \brief float type  context .
 
 
 */
@@ -17,7 +17,7 @@ namespace gbmath
 {
 
 
-
+   //! \brief     float type  context .
    class float_context {
    public:
 
@@ -45,9 +45,6 @@ namespace gbmath
 
    };
 
-
-
-
-
+ 
  
 }

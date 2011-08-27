@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief яяяяяяяя
+ \brief vectors of observations.
 
 */
 
@@ -13,14 +13,15 @@ namespace gbmath
 {
 
 
-   //! \brief Сборка векторов вида.
+   //! \brief vectors of observations..
    struct eyedata
    {
-	 vec3   eye_position;  ///<	 Точка позиция наблюдателя.
-	 vec3   eye_at;        ///<   Точка цель наблюдателя.
-	 vec3   eye_up;        ///<   Верх  наблюдателя.
+	 vec3   eye_position;  ///<	  position.
+	 vec3   eye_at;        ///<   target.
+	 vec3   eye_up;        ///<   up.
 
-	 //! \brief  Получить вектор направления наблюдения.
+
+	 //! \brief   get the direction of observation.
 	 vec3 direction() const
 	 {
 		 vec3 res(eye_at-eye_position);
@@ -30,7 +31,9 @@ namespace gbmath
 
 	 void decomposeInverseView(const mat44& mInvView)
 	 {
-		 assert(false);
+
+#pragma message("!!! need code . extract inverse view matrix")
+		 assert(   false &&  "no code");
 	 // eye_position.x = minv._41;
 	 // eye_position.y = minv._42;
 	 // eye_position.z = minv._43;
@@ -42,12 +45,46 @@ namespace gbmath
 
 	 }
 
+	 operator std::string() const
+	 {
+		 std::ostringstream oss;
+		 oss << eye_position;
+		 oss << "    ";
+
+		 oss << eye_at;
+		 oss << "    ";
+
+		 oss << eye_up;
+		 
+		 return oss.str();
+	 }
+
+	 void operator = (const std::string& str) throw (std::runtime_error)
+	 {
+		 std::istringstream iss(str);
+		 iss >> eye_position;
+		 iss >> eye_at;
+		 iss >> eye_up;
+
+		 if( iss.fail() )
+		 {
+			 throw std::runtime_error("bad argument");
+		 }
+	 }
+
+	 friend std::ostream operator << (std::ostream& os, const eyedata& a)
+	 {
+		 os << a.eye_position << "\n";
+		 os << a.eye_at << "\n";
+		 os << a.eye_up << "\n";
+		 return os;
+	 }
+
+
+
+
+
    };
-
-
-
-
-
  
 }
 

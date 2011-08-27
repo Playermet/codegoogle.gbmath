@@ -51,10 +51,21 @@ case float_context_type_e::FPS : { return (float)fps; } break;
 case float_context_type_e::TIMEELAPSED : { return timeElapsed;} break;
 
 
-case float_context_type_e::VIEWPORTWIDTH : { return (float)viewport.width;  } break;
-case float_context_type_e::VIEWPORTHEIGHT : {return (float)viewport.height; } break;
-case float_context_type_e::VIEWPORTWIDTHINVERSE :  { return 1.0f/(float)viewport.width;  } break;
-case float_context_type_e::VIEWPORTHEIGHTINVERSE : { return 1.0f/(float)viewport.height; } break;
+case float_context_type_e::VIEWPORTWIDTH :
+	{ 
+		return (float)viewport.width; 
+	} break;
+
+case float_context_type_e::VIEWPORTHEIGHT : 
+	{
+		return (float)viewport.height; 
+	} break;
+
+case float_context_type_e::VIEWPORTWIDTHINVERSE :  
+	{ return 1.0f/(float)viewport.width;  } break;
+
+case float_context_type_e::VIEWPORTHEIGHTINVERSE : 
+	{ return 1.0f/(float)viewport.height; } break;
 
 case float_context_type_e::FOV : { return projData.fovy; } break;
 

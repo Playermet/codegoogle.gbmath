@@ -1,5 +1,5 @@
 ﻿/** \file
- \brief  Цветовые константы.
+ \brief  Color constants.
 */
 
 #pragma once

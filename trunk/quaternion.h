@@ -444,14 +444,21 @@ namespace gbmath
 			return conjugate(*this) / lengthSq();
 		}
 *******************************/
-
-
-		//  //! \brief  Вывод на консоль
-		//void print() const { printf("%f  %f  %f  %f" , x , y, z, w ); }
+ 
 
 		friend std::ostream &operator << (std::ostream &stream, const Quaternion& q)
 		{
 			stream << q.x << " " << q.y << " " << q.z << " " << q.w;
+			return stream;
+		}
+
+		friend std::istream &operator >> (std::istream &stream,  Quaternion& q)
+		{
+			//std::istringstream ss(str);
+			stream >> q.x;
+			stream >> q.y;
+			stream >> q.z;
+			stream >> q.w;
 			return stream;
 		}
 

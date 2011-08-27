@@ -1,6 +1,5 @@
 ﻿/**  \file
- \brief  яяяяяяяяяяяяя
-*
+ \brief  class cylinder
 *
 *
 */
@@ -18,43 +17,69 @@ namespace gbmath
 
 
 
-   //! \brief Класс цилиндр по точкам координатам центров основания и радиусу
+   //! \brief Class points on the cylinder base center coordinates and radius
    class cilinder {
    public:
-	    vec3  p1;  ///< Первая центральная координата в основании цилиндра.
-	    vec3  p2;  ///< Вторая центральная координата в основании цилиндра.
+	    vec3  p1;  ///< The first coordinate in the center of the cylinder.
+	    vec3  p2;  ///< The second coordinate in the center of the cylinder.
 
-	   float      radius; ///< Радиус цилиндра
+	   float      radius;  ///< radius of the cylinder.
 
-	   cilinder() {}
-	   cilinder(const cilinder& c) { p1=c.p1; p2=c.p2; radius=c.radius;  }
+	   cilinder() 
+	   {
+
+	   }
+
+	   cilinder(const cilinder& c) 
+	   { 
+		   p1 = c.p1; 
+		   p2 = c.p2; 
+		   radius = c.radius;  
+	   }
+
 	   cilinder(const  vec3& _p1, const  vec3& _p2, float _radius)
 	   {
-		   p1=_p1;
-		   p2=_p2;
+		   p1 = _p1;
+		   p2 = _p2;
 		   radius = _radius;
 	   }
 
-
-	   /*
-	   //! \brief Вывод значений на консоль.
-	   void print() const
+	   operator std::string() const
 	   {
-	     printf("\n");
-		 printf("p1= "); p1.print(); printf("\n");
-		 printf("p2= "); p2.print(); printf("\n");
-		 printf("r= %f", radius);    printf("\n");
+		   std::ostringstream ss;
+		   ss << p1;
+		   ss << "  ";
+		   ss << p2;
+		   ss << "  ";
+		   ss << radius;
 	   }
-		  */
 
+	   void operator = (std::string& str)  throw (std::runtime_error)
+	   {
+		   std::istringstream iss(str);
+		   iss >> p1;
+		   iss >> p2;
+		   iss >> radius;
+
+		   if( iss.fail() )
+		   {
+			   throw std::runtime_error("bad argument");
+		   }
+	   }
+
+
+	   friend std::ostream& operator << (std::ostream& os, const cilinder& a)
+	   {
+			os << a.p1;
+			os << "   ";
+			os << a.p2;
+			os << "   ";
+			os << a.radius;
+			return os;
+	   }
 
 
    };
-   //  end class cilinder
-
-
-
-
-
+ 
  
 }

@@ -1,13 +1,19 @@
+/**  \file
+ \brief mathematical dependence of the function
 
+*/
 
 #pragma once
 
 #include <float.h>
 #include <string>
 
+// dependence_on_function.h
+
 namespace gbmath
 {
 
+	//! \brief    mathematical dependence of the function
 	struct dependence_on_function {
 	
 		enum e
@@ -30,70 +36,50 @@ namespace gbmath
 			__UNUSED_ALIGN32 = 0x7f000000
 		};
 	
-		inline dependence_on_function() { _e = undef; }
-		inline dependence_on_function(const e value) { _e = value; }
-		inline dependence_on_function(const dependence_on_function& value) { _e = value._e; }
+		inline dependence_on_function() 
+		{
+			_e = undef; 
+		}
+
+		inline dependence_on_function(const e value) 
+		{
+			_e = value; 
+		}
+
+		inline dependence_on_function(const dependence_on_function& value)
+		{
+			_e = value._e; 
+		}
  		
 		
-		inline void operator = (const e value) { _e = value; }
-		inline operator e() const { return _e; }
+		inline void operator = (const e value) 
+		{ 
+			_e = value; 
+		}
+
+		inline operator e() const 
+		{ 
+			return _e; 
+		}
 		
 		// TODO: to/ from str <<
 
 		//void operator = (const std::string& str)
 		//{
 		//}
+
+		operator std::string() const;
+ 
+		void operator = (const std::string& str);
+
+		friend std::ostream& operator << (std::ostream& os, const dependence_on_function& a)
+		{
+			os << (std::string)a;
+			return os;
+		}
 		
 			
-			static  float formula(float x, const e depend ) 
-			{
-				  float y = 0.0f; /// result
-				  
-				  // clump 0...1
-				  {
-					if(x<0.0f) { x=0.0f; }
-					if(x>1.0f) { x=1.0f; }
-				  }
-
-					 switch(depend) 
-					 {
-						 
-						   case linear: { y = x;  } break;  
-						   case linear_inverse: { y = 1.0f-x; } break;
-						   
-						   case squared: { y=x*x; } break;
-						   case squared_a_inverse: { y = 1.0f-x*x; } break;
-						  
-						   case cubic: { y=x*x*x; } break;
-						   case cubic_a_inverse: { y = 1.0f - x*x*x; } break;  
-						   
-						   /*
-						   case xxx: {  } break;   
-						   case xxx: {  } break;   
-						   case xxx: {  } break; 
-
-						   case xxx: {  } break;   
-						   case xxx: {  } break;   
-						   case xxx: {  } break; 
-
-						   case xxx: {  } break;   
-						   case xxx: {  } break;   
-						   case xxx: {  } break; 
-						   
-						   case xxx: {  } break;   
-						   case xxx: {  } break;   
-						   case xxx: {  } break;    
-						   */
- 
-						   default: {  }
-
-					 }
-					  
-			  
-	  
-
-				return y;
-			};
+		static  float formula(float x, const e depend ) ;
 
 		
 	private:

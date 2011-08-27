@@ -48,8 +48,11 @@ void arc_ball::reset()
 vec3 arc_ball::screenToVector( float fScreenPtX, float fScreenPtY )
 {
     // Scale to screen
-    float x   = -(fScreenPtX - m_Offset.x - m_nWidth/2)  / (m_fRadius*m_nWidth/2);
-    float y   =  (fScreenPtY - m_Offset.y - m_nHeight/2) / (m_fRadius*m_nHeight/2);
+    float x   = -(fScreenPtX - m_Offset.x - m_nWidth/2)  / 
+							(m_fRadius*m_nWidth/2);
+
+    float y   =  (fScreenPtY - m_Offset.y - m_nHeight/2) / 
+							(m_fRadius*m_nHeight/2);
 
     float z   = 0.0f;
     float mag = x*x + y*y;
@@ -76,11 +79,11 @@ Quaternion arc_ball::quatFromBallPoints(const vec3 &vFrom, const vec3 &vTo)
     vec3 vPart;
 
 	   float K_MULT = 1.0f;
-	if(CAMERA_LEFT_HANDLE)
+		if(CAMERA_LEFT_HANDLE)
 		{
 		  K_MULT = 1.0f;
 		}
-	else
+		else
 		{
 	      K_MULT = - 1.0f;
 		}
@@ -94,7 +97,7 @@ Quaternion arc_ball::quatFromBallPoints(const vec3 &vFrom, const vec3 &vTo)
 
 							  /*ksacvet777 не был минус  */ 
 
-    return Quaternion( K_MULT *  vPart.x,     vPart.y,    vPart.z,         fDot);
+    return Quaternion( K_MULT *  vPart.x,  vPart.y,  vPart.z, fDot);
 }
 
 
@@ -121,7 +124,7 @@ void arc_ball::onMove( int nX, int nY )
 {
     if (m_bDrag) 
     {								 
-        m_vCurrentPt = screenToVector(     (float)nX              ,          (float)nY  );
+        m_vCurrentPt = screenToVector(  (float)nX  ,  (float)nY  );
         m_qNow = m_qDown * quatFromBallPoints( m_vDownPt, m_vCurrentPt );
     }
 }
@@ -137,7 +140,8 @@ void arc_ball::onEnd()
 
 
 //=========================================================================
-LRESULT arc_ball::handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
+LRESULT arc_ball::handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam,
+										LPARAM lParam )
 {
     // Current mouse position
     int iMouseX =    (short)LOWORD(lParam);
@@ -194,7 +198,8 @@ LRESULT arc_ball::handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lP
 			if( wParam & MK_RBUTTON )
 			{
 				//D 3DXMatrixTranslation( m_mTranslationDelta, -2 * fDeltaX, 2 * fDeltaY, 0.0f );
-					m_mTranslationDelta.setTranslation       ( -2 * fDeltaX, 2 * fDeltaY, 0.0f );
+					m_mTranslationDelta.setTranslation ( -2 * fDeltaX, 
+													2 * fDeltaY, 0.0f );
 
 				//D 3DXMatrixMultiply( m_mTranslation, m_mTranslation, m_mTranslationDelta );
 				 m_mTranslation =m_mTranslation	* m_mTranslationDelta;
@@ -202,7 +207,8 @@ LRESULT arc_ball::handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lP
 			else  // wParam & MK_MBUTTON
 			{
 				//D 3DXMatrixTranslation( m_mTranslationDelta, 0.0f, 0.0f, 5 * fDeltaY );
-				 m_mTranslationDelta.setTranslation( 0.0f, 0.0f, 5 * fDeltaY  );
+				 m_mTranslationDelta.setTranslation( 0.0f, 0.0f, 
+													5 * fDeltaY  );
 
 				//D 3DXMatrixMultiply( m_mTranslation, m_mTranslation, m_mTranslationDelta );
 				  m_mTranslation = m_mTranslation * m_mTranslationDelta;
@@ -218,13 +224,8 @@ LRESULT arc_ball::handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lP
     return FALSE;
 }
 
-
-
-
-
-
-
+ 
 
 }
 
-#endif
+#endif   // win32

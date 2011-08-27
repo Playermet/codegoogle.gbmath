@@ -1,5 +1,5 @@
-﻿/** \file fmath_forward_decl.h
- \brief Для fmath форвард-декларации.
+﻿/** \file
+ \brief  forward-declaration
 
 
 */
@@ -22,7 +22,8 @@ namespace scalar
 
 
 }
-//---------------------------------------------------------------
+
+//-------------------------------------------------------------------------
 
 // color
 
@@ -59,8 +60,7 @@ struct matrix4x4;
 
 class  Quaternion;
 
-
-//namespace geom2d  {
+ 
 
 struct size2d;
 
@@ -71,11 +71,10 @@ class Circle;
 class line3d;
 class ray3d;
 
-//}
+ 
+//-------------------------------------------------------------------------
 
-//---------------------------------------------------------------
-
-//namespace geom3d {
+ 
 
 struct size3d;
 class normal3;
@@ -97,13 +96,10 @@ class  Cilinder;
 
 struct TransformData;
 
-//}
+ 
 
-
-//---------------------------------------------------------------
-
-
-//namespace proj {
+//-------------------------------------------------------------------------
+ 
 
 struct PerspectiveProjData;
 struct related_coord;
@@ -111,11 +107,11 @@ struct related_coord;
 struct vieport_s;
 class ViewportZ;
 
-// }
+ 
 
-//---------------------------------------------------------------
+//-------------------------------------------------------------------------
 
-//namespace context {
+ 
 
 struct float_context_type_e;
 class float_context;
@@ -124,9 +120,10 @@ struct matrix4x4_context_type_e;
 class geometry_context;
 
 
-//}
+ 
+
+//-------------------------------------------------------------------------
 
 
-//---------------------------------------------------------------
 }
 // end namespace gbmath

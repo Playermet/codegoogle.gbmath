@@ -1,5 +1,5 @@
 ﻿/** \file
- \brief цветовые функции
+ \brief color functions.
 */
 
 #pragma once
@@ -8,9 +8,9 @@
 #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
-//#include "..\base\Types.h"
+ 
 
-///#include "color.h"
+//#include "color.h"
 //#include "color_integer.h"
 //#include "color_def.h"
 
@@ -32,31 +32,31 @@ namespace gbmath
 
 
 //
-//  цветовые макросы
+//  color macros
 //
 
 
-/**  \brief   Построение цвета по байтам. Альфа первая.   */
+//!  \brief   Построение цвета по байтам. Альфа первая.  
 inline unsigned int make_color_argb( byte_t a, byte_t r, byte_t g, byte_t b )
 {
-//#define MAKECOLOR_ARGB(a,r,g,b)
+	//#define MAKECOLOR_ARGB(a,r,g,b)
 	//(( uicolor32_t)((((a)&0xff)<<24)|(((r)&0xff)<<16)|(((g)&0xff)<<8)|((b)&0xff)))
-	assert(sizeof(int) == 4);
- int res =  ( (a&0xff)<<24 ) | ( (r&0xff)<<16 ) | ( (g&0xff)<<8 ) |  (b&0xff);
- return res;
+	assert( sizeof(int) == 4 && "check platform" );
+	int res =  ( (a&0xff)<<24 ) | ( (r&0xff)<<16 ) | ( (g&0xff)<<8 ) |  (b&0xff);
+	return res;
 }
 
 
-/**   \brief  Построение цвета по байтам. Альфа последняя  */
+//!   \brief  Построение цвета по байтам. Альфа последняя  
 inline unsigned int make_color_rgba( byte_t r , byte_t g , byte_t b , byte_t a )
 {
-//#define MAKECOLOR_RGBA(r,g,b,a)
+	//#define MAKECOLOR_RGBA(r,g,b,a)
 	// MAKECOLOR_ARGB(a,r,g,b)
- return make_color_argb(a,r,g,b);
+	return make_color_argb(a,r,g,b);
 }
 
 
-/*
+/*****************************
 / **  \brief   Построение цвета color_rgb24_s  по трём элементам  //  * /
 inline color_rgb24_s  make_rgb(byte_t r, byte_t g, byte_t b)
 {
@@ -65,18 +65,18 @@ inline color_rgb24_s  make_rgb(byte_t r, byte_t g, byte_t b)
    color_rgb24_s res = ( (r&0xff)<<16 ) | ( (g&0xff)<<8 ) | ( b&0xff ) ;
    return res;
 }
- */
+ *****************************/
 
 
-/**  \brief   Построение целочисленого цвета по компонентам float (0.0f ... 1.0f)  */
+//!  \brief   Построение целочисленого цвета по компонентам float (0.0f ... 1.0f) 
 inline unsigned int make_rgba(float r, float g, float b, float a)
 {
-  assert(sizeof(unsigned int) == 4);
-//#define MAKECOLOR_FLOAT_RGBA(r,g,b,a) \
+	assert(sizeof(unsigned int) == 4);
+	//#define MAKECOLOR_FLOAT_RGBA(r,g,b,a) \
 	// MAKECOLOR_RGBA((uint32_t)((r)*255.f),(uint32_t)((g)*255.f),(uint32_t)((b)*255.f),(uint32_t)((a)*255.f))
 	return make_color_rgba(
 		(byte_t)(r*255.f),(byte_t) (g*255.f),	(byte_t)(b*255.f),	(byte_t)(a*255.f)
-		);
+	);
 }
 
 
@@ -84,12 +84,12 @@ inline unsigned int make_rgba(float r, float g, float b, float a)
 
 #ifdef _D3D9_H_
 
-//
-//	 D3DCOLOR   имеет порядок байт:  a r g b
-//
+//----------------------------------------------
+//	 D3DCOLOR   the order of bytes:  a r g b
+//----------------------------------------------
 
 
-//! \brief  Преобразовать стандартный целочисленый D3DCOLOR цвет .
+//! \brief  Convert standard integral color D3DCOLOR .
 inline D3DCOLORVALUE make_d3dcolorvalue( D3DCOLOR col )
 {
 	D3DCOLORVALUE res;
@@ -107,7 +107,8 @@ inline D3DCOLORVALUE make_d3dcolorvalue( D3DCOLOR col )
 #endif    // _D3D9_H_
 
 
-/** \brief  Обмен компонентов R и G . */
+
+//! \brief  exchange of components R и G . 
 inline void colorSwapRG(unsigned int& color)
 {
 	register byte_t n_g = (byte_t)(color >> 16);
@@ -120,7 +121,7 @@ inline void colorSwapRG(unsigned int& color)
 
 
 
-/** \brief  Обмен компонентов R и B . */
+//! \brief  exchange of components R и B . 
 inline void   colorSwapRB(unsigned int& color)
 {
 	register byte_t n_B = (byte_t)(color >> 16);
@@ -133,7 +134,7 @@ inline void   colorSwapRB(unsigned int& color)
 
 
 
-/** \brief Обмен компонентов G и B .  */
+//! \brief exchange of componentsG и B .  
 inline void colorSwapGB(unsigned int&  color)
 {
 	register byte_t _g  = (byte_t) ( color >> 8 );
@@ -146,7 +147,7 @@ inline void colorSwapGB(unsigned int&  color)
 
 
 
-//! \brief  Конвертация 4-х байтового цвета	 порядка RGBA в порядок ARGB
+//! \brief  Converting 4-byte RGBA color order in the order ARGB.
 inline  unsigned int   rgba_to_argb(unsigned  int val )
 {
 	assert( sizeof(unsigned int) == 4 );
@@ -155,7 +156,7 @@ inline  unsigned int   rgba_to_argb(unsigned  int val )
 
 
 
-//! \brief	 Конвертация 4-х байтового  цвета  порядка ARGB в порядок RGBA
+//! \brief	 Converting 4-byte order ARGB color in order RGBA.
 inline unsigned int   argb_to_rgba(unsigned  int val )
 {
 	assert( sizeof(unsigned int) == 4 );
@@ -165,9 +166,9 @@ inline unsigned int   argb_to_rgba(unsigned  int val )
 
 
 
-//
-// Выделение компоненты цвета
-//
+//------------------------------------------------
+// Isolation of the color components
+//------------------------------------------------
 
 
 inline byte_t   colorExtractA( unsigned int color )
@@ -191,9 +192,9 @@ inline byte_t   colorExtractB( unsigned int color )
 }
 
 
-//
-// Выделение компоненты цвета   как float
-//
+//-------------------------------------------------
+//  Isolation of the color component  as float.
+//-------------------------------------------------
 
 
 
@@ -221,37 +222,71 @@ inline float   colorExtractBf( unsigned int color )
 }
 
 
-//
-// Установка компоненты цвета
-//
+//-------------------------------------------------
+// Set the color components
+//-------------------------------------------------
 
 
 
-inline void   colorSetA( unsigned int & col, byte_t a ) { col |= 0xFF000000; col ^= 0xFF000000; col |=(unsigned int)(a << 24); }
-inline void   colorSetR( unsigned int & col, byte_t r ) { col |= 0x00FF0000; col ^= 0x00FF0000; col |=(unsigned int)(r << 16); }
-inline void   colorSetG( unsigned int & col, byte_t g ) { col |= 0x0000FF00; col ^= 0x0000FF00; col |=(unsigned int)(g <<  8); }
-inline void   colorSetB( unsigned int & col, byte_t b ) { col |= 0x000000FF; col ^= 0x000000FF; col |=(unsigned int)(b);       }
+inline void   colorSetA( unsigned int & col, byte_t a ) 
+{ 
+	col |= 0xFF000000; col ^= 0xFF000000; col |=(unsigned int)(a << 24); 
+}
+
+
+inline void   colorSetR( unsigned int & col, byte_t r ) 
+{ 
+	col |= 0x00FF0000; col ^= 0x00FF0000; col |=(unsigned int)(r << 16); 
+}
+
+
+inline void   colorSetG( unsigned int & col, byte_t g ) 
+{ 
+	col |= 0x0000FF00; col ^= 0x0000FF00; col |=(unsigned int)(g <<  8); 
+}
+
+
+inline void   colorSetB( unsigned int & col, byte_t b ) 
+{ 
+	col |= 0x000000FF; col ^= 0x000000FF; col |=(unsigned int)(b);       
+}
 
 
 
 
-//
-// Установка компоненты цвета  по float
-//
+//-------------------------------------------------
+// set the color components    float
+//-------------------------------------------------
 
 
-inline void   colorSetAf( unsigned int& color, float a ) { colorSetA( color, (byte_t)( a * 255.0f ) );  };
-inline void   colorSetRf( unsigned int& color, float r ) { colorSetR( color, (byte_t)( r * 255.0f ) );  };
-inline void   colorSetGf( unsigned int& color, float g ) { colorSetG( color, (byte_t)( g * 255.0f ) );  };
-inline void   colorSetBf( unsigned int& color, float b ) { colorSetB( color, (byte_t)( b * 255.0f ) );  };
+inline void   colorSetAf( unsigned int& color, float a ) 
+{ 
+	colorSetA( color, (byte_t)( a * 255.0f ) );  
+}
+
+inline void   colorSetRf( unsigned int& color, float r ) 
+{ 
+	colorSetR( color, (byte_t)( r * 255.0f ) );  
+}
+
+inline void   colorSetGf( unsigned int& color, float g ) 
+{ 
+	colorSetG( color, (byte_t)( g * 255.0f ) );  
+}
+
+
+inline void   colorSetBf( unsigned int& color, float b ) 
+{ 
+	colorSetB( color, (byte_t)( b * 255.0f ) );  
+}
 
 
 
 
 
-//
-//  Обмен цветовых компонентов.
-//
+//-------------------------------------------------
+//  Exchange of color components.
+//-------------------------------------------------
 
 inline void  colorRgb24_SwapRG( color3_24& color )
 {
@@ -278,7 +313,7 @@ inline void  colorRgb24_SwapGB( color3_24& color )
 }
 
 
-/** \brief Конвертация uicolor32_t в color_rgb24_s.  */
+//! \brief Конвертация uicolor32_t в color_rgb24_s.  
 inline color3_24   color_rgb_fFrom_uicolor (unsigned int    color)
 {
 	color3_24 res;

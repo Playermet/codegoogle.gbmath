@@ -397,6 +397,32 @@ namespace gbmath
 				return stream;
 			}
 
+			friend std::istream &operator >> (std::istream &stream,  vec3& a)
+			{
+				stream >> a.x;
+				stream >> a.y;
+				stream >> a.z;
+				return stream;
+			}
+
+			/*
+			friend std::istream &operator >> (std::istream &stream, vec3& v)
+			{
+			stream >> v.x;
+			stream >> v.y;
+			stream >> v.z;
+			return stream;
+			}   
+			friend std::istringstream &operator >> (std::istringstream &ss, vec3& v)
+			{
+			ss >> v.x;
+			ss >> v.y;
+			ss >> v.z;
+			return ss;
+			}  
+			*/
+
+
 			operator std::string() const
 			{
 				std::ostringstream ss;
@@ -410,24 +436,12 @@ namespace gbmath
 				ss >> x;
 				ss >> y;
 				ss >> z;
-				if( ss.fail() ) throw std::invalid_argument("bad input string");
+				if( ss.fail() )
+				{
+					throw std::invalid_argument("bad input string");
+				}
 			}
 
-			friend std::istream &operator >> (std::istream &stream, vec3& v)
-			{
-				stream >> v.x;
-				stream >> v.y;
-				stream >> v.z;
-				return stream;
-			}
-
-			friend std::istringstream &operator >> (std::istringstream &ss, vec3& v)
-			{
-				ss >> v.x;
-				ss >> v.y;
-				ss >> v.z;
-				return ss;
-			}
 
 
 

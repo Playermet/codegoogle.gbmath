@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief  яяяяяяяяяяяяя
+ \brief  box tree class.  In development
 
 
 */

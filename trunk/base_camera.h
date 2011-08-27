@@ -17,7 +17,7 @@
 
 */
 
-// base_camera.h
+ 
 
 #pragma once
 
@@ -26,20 +26,19 @@
 #endif
 
 
-#ifdef WIN32 // только для windows
+#ifdef WIN32 // // only windows platform
 
-const bool CAMERA_LEFT_HANDLE = false;//   true;
-
-//#include <stdexcept>
-
+const bool CAMERA_LEFT_HANDLE = false;  // true;
+ 
 #include <windows.h>
 #include <zmouse.h>
  
 
-namespace gbmath {
+namespace gbmath 
+{
  
 
-#pragma message("delete this " __FILE__ )
+#pragma message("delete this: KEY_WAS_DOWN_MASK .....    " __FILE__ )
 
 #define KEY_WAS_DOWN_MASK 0x80
 #define KEY_IS_DOWN_MASK  0x01
@@ -50,7 +49,7 @@ namespace gbmath {
 #define MOUSE_WHEEL         0x08
 
 
-#pragma message("delete this " __FILE__ )
+#pragma message("delete this: D3DUtil_CameraKeys" __FILE__ )
 	
 
 enum D3DUtil_CameraKeys
@@ -72,44 +71,135 @@ enum D3DUtil_CameraKeys
 class base_camera {
 public:
 			  base_camera();
-	virtual  ~base_camera() {}
+	virtual  ~base_camera() 
+	{
+
+	}
 
 	// //! \brief Сделать камеру текущей
 	//virtual HRESULT makeCurrent(IDirect3DDevice9* pDevice) = 0; 
 
     // Call these from client and use Get*Matrix() to read new matrices
-    virtual LRESULT handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam );
+    virtual LRESULT handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam, 
+															LPARAM lParam);
     virtual void    frameMove( float fElapsedTime ) = 0;
 
     // Functions to change camera matrices
 
     virtual void reset(); 
-    virtual void setViewParams( const vec3& pvEyePt, const vec3& pvLookatPt );
-    virtual void setProjParams( float fFOV, float fAspect, float fNearPlane, float fFarPlane );
+    virtual void setViewParams( const vec3& pvEyePt, const vec3& pvLookatPt);
+    virtual void setProjParams( float fFOV, float fAspect, 
+									float fNearPlane, float fFarPlane );
 
     // Functions to change behavior
 
-    virtual void setDragRect( RECT &rc ) { m_rcDrag = rc; }
-    void setInvertPitch( bool bInvertPitch ) { m_bInvertPitch = bInvertPitch; }
-    void setDrag( bool bMovementDrag, float fTotalDragTimeToZero = 0.25f ) { m_bMovementDrag = bMovementDrag; m_fTotalDragTimeToZero = fTotalDragTimeToZero; }
-    void setEnableYAxisMovement( bool bEnableYAxisMovement ) { m_bEnableYAxisMovement = bEnableYAxisMovement; }
-    void setEnablePositionMovement( bool bEnablePositionMovement ) { m_bEnablePositionMovement = bEnablePositionMovement; }
-    void setClipToBoundary( bool bClipToBoundary, vec3* pvMinBoundary, vec3* pvMaxBoundary ) { m_bClipToBoundary = bClipToBoundary; if( pvMinBoundary ) m_vMinBoundary = *pvMinBoundary; if( pvMaxBoundary ) m_vMaxBoundary = *pvMaxBoundary; }
-    void setScalers( float fRotationScaler = 0.01f, float fMoveScaler = 5.0f )  { m_fRotationScaler = fRotationScaler; m_fMoveScaler = fMoveScaler; }
-    void setNumberOfFramesToSmoothMouseData( int nFrames ) { if( nFrames > 0 ) m_fFramesToSmoothMouseData = (float)nFrames; }
+    virtual void setDragRect( RECT &rc ) 
+	{ 
+		m_rcDrag = rc; 
+	}
+
+    void setInvertPitch( bool bInvertPitch ) 
+	{ 
+		m_bInvertPitch = bInvertPitch; 
+	}
+
+    void setDrag( bool bMovementDrag, float fTotalDragTimeToZero = 0.25f ) 
+	{ 
+		m_bMovementDrag = bMovementDrag; 
+		m_fTotalDragTimeToZero = fTotalDragTimeToZero; 
+	}
+
+	
+	void setEnableYAxisMovement( bool bEnableYAxisMovement ) 
+	{ 
+		m_bEnableYAxisMovement = bEnableYAxisMovement; 
+	}
+
+	
+	void setEnablePositionMovement( bool bEnablePositionMovement ) 
+	{ 
+		m_bEnablePositionMovement = bEnablePositionMovement; 
+	}
+
+	
+	void setClipToBoundary( bool bClipToBoundary, vec3* pvMinBoundary, 
+										vec3* pvMaxBoundary ) 
+	{
+		m_bClipToBoundary = bClipToBoundary; 
+
+		if( pvMinBoundary ) 
+			m_vMinBoundary = *pvMinBoundary; 
+		
+		if( pvMaxBoundary ) 
+			m_vMaxBoundary = *pvMaxBoundary; 
+	}
+
+	
+	void setScalers( float fRotationScaler = 0.01f, float fMoveScaler = 5.0f )  
+	{ 
+		m_fRotationScaler = fRotationScaler; 
+		m_fMoveScaler = fMoveScaler; 
+	}
+
+	
+	void setNumberOfFramesToSmoothMouseData( int nFrames ) 
+	{ 
+		if( nFrames > 0 ) 
+			m_fFramesToSmoothMouseData = (float)nFrames; 
+	}
 
     // Functions to get state
-    const mat44&  getViewMatrix() const { return m_mView; }
-    const mat44&  getProjMatrix() const { return m_mProj; }
-    const vec3& getEyePoint() const      { return m_vEye; }
-    const vec3& getLookAtPoint() const   { return m_vLookAt; }
-    float getNearClipPlane() const { return m_fNearPlane; }
-    float getFarClipPlane() const { return m_fFarPlane; }
+    const mat44&  getViewMatrix() const 
+	{ 
+		return m_mView; 
+	}
 
-    bool isBeingDragged() const         { return (m_bMouseLButtonDown || m_bMouseMButtonDown || m_bMouseRButtonDown); }
-    bool isMouseLButtonDown() const     { return m_bMouseLButtonDown; } 
-    bool isMouseMButtonDown() const     { return m_bMouseMButtonDown; } 
-    bool isMouseRButtonDown() const     { return m_bMouseRButtonDown; } 
+    const mat44&  getProjMatrix() const 
+	{ 
+		return m_mProj; 
+	}
+
+    const vec3& getEyePoint() const      
+	{ 
+		return m_vEye; 
+	}
+
+    const vec3& getLookAtPoint() const   
+	{ 
+		return m_vLookAt; 
+	}
+
+    float getNearClipPlane() const 
+	{ 
+		return m_fNearPlane; 
+	}
+
+    float getFarClipPlane() const 
+	{ 
+		return m_fFarPlane; 
+	}
+
+
+    bool isBeingDragged() const         
+	{ 
+		return (m_bMouseLButtonDown || m_bMouseMButtonDown ||
+												m_bMouseRButtonDown); 
+	}
+
+    bool isMouseLButtonDown() const     
+	{ 
+		return m_bMouseLButtonDown; 
+	}
+
+    bool isMouseMButtonDown() const     
+	{ 
+		return m_bMouseMButtonDown; 
+	} 
+
+    bool isMouseRButtonDown() const     
+	{ 
+		return m_bMouseRButtonDown; 
+	} 
 
 
 
@@ -118,16 +208,25 @@ protected:
     // >>>>  old  : virtual 
 		static D3DUtil_CameraKeys mapKey( UINT nKey );  
 
-    bool isKeyDown( BYTE key ) const { return( (key & KEY_IS_DOWN_MASK) == KEY_IS_DOWN_MASK ); }
-    bool wasKeyDown( BYTE key ) const { return( (key & KEY_WAS_DOWN_MASK) == KEY_WAS_DOWN_MASK ); }
+    bool isKeyDown( BYTE key ) const 
+	{ 
+		return( (key & KEY_IS_DOWN_MASK) == KEY_IS_DOWN_MASK ); 
+	}
+
+    bool wasKeyDown( BYTE key ) const 
+	{ 
+		return( (key & KEY_WAS_DOWN_MASK) == KEY_WAS_DOWN_MASK ); 
+	}
 
     void constrainToBoundary( vec3* pV );
     void updateVelocity( float fElapsedTime );
-    void getInput( bool bGetKeyboardInput, bool bGetMouseInput, bool bGetGamepadInput, bool bResetCursorAfterMove );
+    void getInput( bool bGetKeyboardInput,  bool bGetMouseInput, 
+											bool bGetGamepadInput, 
+											bool bResetCursorAfterMove);
  
 
-    mat44            m_mView;              ///< View matrix 
-    mat44            m_mProj;              ///< Projection matrix
+    mat44            m_mView; ///< View matrix 
+    mat44            m_mProj; ///< Projection matrix
  
     vec3           m_vGamePadLeftThumb;
     vec3           m_vGamePadRightThumb;
@@ -180,11 +279,10 @@ protected:
 // end class
 
 
-
 //-------------------------------------------------------------------------
  
 }
-// end namespace
+
 
 #endif // #ifdef WIN32
  
