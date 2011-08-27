@@ -1,27 +1,21 @@
 ﻿/** \file
- \brief трёхкомпонентный цвет по RGB
+ \brief template color3
 */
 
 #pragma once
-
-//#include "..\base\Types.h"
-//#include "color_functions.h"
-//#include "color3.h"
-
-
-
+ 
 #ifndef __GBMATH_H__
 #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
-
  
-
 	namespace gbmath
 	{
 
 
+		
 		template <typename T>
+		//! \brief  template color3
 		struct color3
 		{
 			T   r, g, b;

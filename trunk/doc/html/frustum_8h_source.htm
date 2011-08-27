@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00030"></a>00030                         <span class="comment">//   plane_s  bottom;</span>
 <a name="l00031"></a>00031                    <span class="comment">//}; </span>
 <a name="l00032"></a>00032 
-<a name="l00033"></a><a class="code" href="classgbmath_1_1frustum.htm#a6436dc2d750d1c567d16a92124e0d38c">00033</a>                    <a class="code" href="structgbmath_1_1plane__s.htm" title="Проскость.">plane_s</a>  <a class="code" href="classgbmath_1_1frustum.htm#a6436dc2d750d1c567d16a92124e0d38c">planes</a> [6] ;
+<a name="l00033"></a><a class="code" href="classgbmath_1_1frustum.htm#a6436dc2d750d1c567d16a92124e0d38c">00033</a>                    <a class="code" href="structgbmath_1_1plane__s.htm" title="plane in 3d">plane_s</a>  <a class="code" href="classgbmath_1_1frustum.htm#a6436dc2d750d1c567d16a92124e0d38c">planes</a> [6] ;
 <a name="l00034"></a>00034            <span class="comment">//};</span>
 <a name="l00035"></a>00035 
 <a name="l00036"></a><a class="code" href="classgbmath_1_1frustum.htm#a368d3f83b1ea45d27912c6ff16c14bf4">00036</a>            <span class="keyword">inline</span> <a class="code" href="classgbmath_1_1frustum.htm#a368d3f83b1ea45d27912c6ff16c14bf4">frustum</a>() 
@@ -111,32 +111,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00077"></a>00077                         <span class="comment">// back 4</span>
 <a name="l00078"></a>00078                         <span class="comment">// front 5</span>
 <a name="l00079"></a>00079      
-<a name="l00080"></a><a class="code" href="classgbmath_1_1frustum.htm#add09d5cb71add9fd418f511a80c527b6">00080</a>            <span class="keyword">const</span> <a class="code" href="structgbmath_1_1plane__s.htm" title="Проскость.">plane_s</a>&amp; <a class="code" href="classgbmath_1_1frustum.htm#add09d5cb71add9fd418f511a80c527b6">get_left</a>()<span class="keyword"> const</span>
+<a name="l00080"></a><a class="code" href="classgbmath_1_1frustum.htm#add09d5cb71add9fd418f511a80c527b6">00080</a>            <span class="keyword">const</span> <a class="code" href="structgbmath_1_1plane__s.htm" title="plane in 3d">plane_s</a>&amp; <a class="code" href="classgbmath_1_1frustum.htm#add09d5cb71add9fd418f511a80c527b6">get_left</a>()<span class="keyword"> const</span>
 <a name="l00081"></a>00081 <span class="keyword">           </span>{
 <a name="l00082"></a>00082                         <span class="keywordflow">return</span> <a class="code" href="classgbmath_1_1frustum.htm#a6436dc2d750d1c567d16a92124e0d38c">planes</a>[0];
 <a name="l00083"></a>00083            }
 <a name="l00084"></a>00084  
-<a name="l00085"></a><a class="code" href="classgbmath_1_1frustum.htm#a800ad806bd9795dc8f98733083388004">00085</a>            <span class="keyword">const</span> <a class="code" href="structgbmath_1_1plane__s.htm" title="Проскость.">plane_s</a>&amp; <a class="code" href="classgbmath_1_1frustum.htm#a800ad806bd9795dc8f98733083388004">get_right</a>()<span class="keyword"> const</span>
+<a name="l00085"></a><a class="code" href="classgbmath_1_1frustum.htm#a800ad806bd9795dc8f98733083388004">00085</a>            <span class="keyword">const</span> <a class="code" href="structgbmath_1_1plane__s.htm" title="plane in 3d">plane_s</a>&amp; <a class="code" href="classgbmath_1_1frustum.htm#a800ad806bd9795dc8f98733083388004">get_right</a>()<span class="keyword"> const</span>
 <a name="l00086"></a>00086 <span class="keyword">           </span>{
 <a name="l00087"></a>00087                         <span class="keywordflow">return</span> <a class="code" href="classgbmath_1_1frustum.htm#a6436dc2d750d1c567d16a92124e0d38c">planes</a>[1];
 <a name="l00088"></a>00088            }
 <a name="l00089"></a>00089 
-<a name="l00090"></a><a class="code" href="classgbmath_1_1frustum.htm#a7cfe2b8facead7b1616dfd6d7589a8fa">00090</a>            <span class="keyword">const</span> <a class="code" href="structgbmath_1_1plane__s.htm" title="Проскость.">plane_s</a>&amp; <a class="code" href="classgbmath_1_1frustum.htm#a7cfe2b8facead7b1616dfd6d7589a8fa">get_top</a>()<span class="keyword"> const</span>
+<a name="l00090"></a><a class="code" href="classgbmath_1_1frustum.htm#a7cfe2b8facead7b1616dfd6d7589a8fa">00090</a>            <span class="keyword">const</span> <a class="code" href="structgbmath_1_1plane__s.htm" title="plane in 3d">plane_s</a>&amp; <a class="code" href="classgbmath_1_1frustum.htm#a7cfe2b8facead7b1616dfd6d7589a8fa">get_top</a>()<span class="keyword"> const</span>
 <a name="l00091"></a>00091 <span class="keyword">           </span>{
 <a name="l00092"></a>00092                         <span class="keywordflow">return</span> <a class="code" href="classgbmath_1_1frustum.htm#a6436dc2d750d1c567d16a92124e0d38c">planes</a>[2];
 <a name="l00093"></a>00093            }
 <a name="l00094"></a>00094 
-<a name="l00095"></a><a class="code" href="classgbmath_1_1frustum.htm#a3632e0976da5e890515ec467878a4817">00095</a>            <span class="keyword">const</span> <a class="code" href="structgbmath_1_1plane__s.htm" title="Проскость.">plane_s</a>&amp; <a class="code" href="classgbmath_1_1frustum.htm#a3632e0976da5e890515ec467878a4817">get_bottom</a>()<span class="keyword"> const</span>
+<a name="l00095"></a><a class="code" href="classgbmath_1_1frustum.htm#a3632e0976da5e890515ec467878a4817">00095</a>            <span class="keyword">const</span> <a class="code" href="structgbmath_1_1plane__s.htm" title="plane in 3d">plane_s</a>&amp; <a class="code" href="classgbmath_1_1frustum.htm#a3632e0976da5e890515ec467878a4817">get_bottom</a>()<span class="keyword"> const</span>
 <a name="l00096"></a>00096 <span class="keyword">           </span>{
 <a name="l00097"></a>00097                         <span class="keywordflow">return</span> <a class="code" href="classgbmath_1_1frustum.htm#a6436dc2d750d1c567d16a92124e0d38c">planes</a>[3];
 <a name="l00098"></a>00098            }
 <a name="l00099"></a>00099 
-<a name="l00100"></a><a class="code" href="classgbmath_1_1frustum.htm#ab6e8e911dc503f8cc11cb582bcbc51ef">00100</a>            <span class="keyword">const</span> <a class="code" href="structgbmath_1_1plane__s.htm" title="Проскость.">plane_s</a>&amp; <a class="code" href="classgbmath_1_1frustum.htm#ab6e8e911dc503f8cc11cb582bcbc51ef">get_back</a>()<span class="keyword"> const</span>
+<a name="l00100"></a><a class="code" href="classgbmath_1_1frustum.htm#ab6e8e911dc503f8cc11cb582bcbc51ef">00100</a>            <span class="keyword">const</span> <a class="code" href="structgbmath_1_1plane__s.htm" title="plane in 3d">plane_s</a>&amp; <a class="code" href="classgbmath_1_1frustum.htm#ab6e8e911dc503f8cc11cb582bcbc51ef">get_back</a>()<span class="keyword"> const</span>
 <a name="l00101"></a>00101 <span class="keyword">           </span>{
 <a name="l00102"></a>00102                         <span class="keywordflow">return</span> <a class="code" href="classgbmath_1_1frustum.htm#a6436dc2d750d1c567d16a92124e0d38c">planes</a>[4];
 <a name="l00103"></a>00103            }
 <a name="l00104"></a>00104 
-<a name="l00105"></a><a class="code" href="classgbmath_1_1frustum.htm#ab6542530d91f36541f48844dfa9d722d">00105</a>            <span class="keyword">const</span> <a class="code" href="structgbmath_1_1plane__s.htm" title="Проскость.">plane_s</a>&amp; <a class="code" href="classgbmath_1_1frustum.htm#ab6542530d91f36541f48844dfa9d722d">get_front</a>()<span class="keyword"> const</span>
+<a name="l00105"></a><a class="code" href="classgbmath_1_1frustum.htm#ab6542530d91f36541f48844dfa9d722d">00105</a>            <span class="keyword">const</span> <a class="code" href="structgbmath_1_1plane__s.htm" title="plane in 3d">plane_s</a>&amp; <a class="code" href="classgbmath_1_1frustum.htm#ab6542530d91f36541f48844dfa9d722d">get_front</a>()<span class="keyword"> const</span>
 <a name="l00106"></a>00106 <span class="keyword">           </span>{
 <a name="l00107"></a>00107                         <span class="keywordflow">return</span> <a class="code" href="classgbmath_1_1frustum.htm#a6436dc2d750d1c567d16a92124e0d38c">planes</a>[5];
 <a name="l00108"></a>00108            }
@@ -193,7 +193,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Aug 27 16:32:24 2011 for gbmath by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Aug 27 20:46:52 2011 for gbmath by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

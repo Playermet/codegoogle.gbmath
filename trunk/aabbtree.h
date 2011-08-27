@@ -1,9 +1,4 @@
-﻿/**  \file
- \brief  яяяяяяяяяяяяя
-
-
-*/
-
+﻿ 
 #if 0
 
 #pragma once

@@ -63,7 +63,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00017"></a>00017 <span class="comment">//=========================================================================</span>
 <a name="l00018"></a>00018 
 <a name="l00019"></a>00019 <span class="comment">//=========================================================================</span>
-<a name="l00020"></a><a class="code" href="classgbmath_1_1_quaternion.htm#a08abd49fa41bda4037c9230a78e62724">00020</a> <a class="code" href="classgbmath_1_1_quaternion.htm" title="Стандартный кватернион.">Quaternion</a>&amp;  <a class="code" href="classgbmath_1_1_quaternion.htm#a08abd49fa41bda4037c9230a78e62724" title="Построение из матрицы поворота.">Quaternion::setRotationMatrix</a>(<span class="keyword">const</span>  <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a>&amp; m)
+<a name="l00020"></a><a class="code" href="classgbmath_1_1_quaternion.htm#a08abd49fa41bda4037c9230a78e62724">00020</a> <a class="code" href="classgbmath_1_1_quaternion.htm" title="standard quaternion.">Quaternion</a>&amp;  <a class="code" href="classgbmath_1_1_quaternion.htm#a08abd49fa41bda4037c9230a78e62724" title="Построение из матрицы поворота.">Quaternion::setRotationMatrix</a>(<span class="keyword">const</span>  <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a>&amp; m)
 <a name="l00021"></a>00021 {
 <a name="l00022"></a>00022 
 <a name="l00023"></a>00023         <span class="keywordtype">float</span> fTrace = m.<a class="code" href="structgbmath_1_1mat44.htm#abfc90602ae12e59095d384cd61ce970a">floats</a>[0][0] + m.<a class="code" href="structgbmath_1_1mat44.htm#abfc90602ae12e59095d384cd61ce970a">floats</a>[1][1] + m.<a class="code" href="structgbmath_1_1mat44.htm#abfc90602ae12e59095d384cd61ce970a">floats</a>[2][2];
@@ -83,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00037"></a>00037         <span class="keywordflow">else</span>
 <a name="l00038"></a>00038         {
 <a name="l00039"></a>00039                 <span class="keyword">static</span> <span class="keywordtype">size_t</span> s_iNext[3] = { 1, 2, 0 };
-<a name="l00040"></a>00040                 <span class="keywordtype">size_t</span> <a class="code" href="_ray_polygon_8c.htm#a7e98b8a17c0aad30ba64d47b74e2a6c1">i</a> = 0;
+<a name="l00040"></a>00040                 <span class="keywordtype">size_t</span> i = 0;
 <a name="l00041"></a>00041 
 <a name="l00042"></a>00042                 <span class="keywordflow">if</span> (m.<a class="code" href="structgbmath_1_1mat44.htm#abfc90602ae12e59095d384cd61ce970a">floats</a>[1][1] &gt; m.<a class="code" href="structgbmath_1_1mat44.htm#abfc90602ae12e59095d384cd61ce970a">floats</a>[0][0] ) i = 1;
 <a name="l00043"></a>00043                 <span class="keywordflow">if</span> (m.<a class="code" href="structgbmath_1_1mat44.htm#abfc90602ae12e59095d384cd61ce970a">floats</a>[2][2] &gt; m.<a class="code" href="structgbmath_1_1mat44.htm#abfc90602ae12e59095d384cd61ce970a">floats</a>[i][i] ) i = 2;
@@ -105,7 +105,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00059"></a>00059 
 <a name="l00060"></a>00060 
 <a name="l00061"></a>00061 <span class="comment">//=========================================================================</span>
-<a name="l00062"></a><a class="code" href="classgbmath_1_1_quaternion.htm#a9fa6f57f2e920e75bdfc800b4b94ede7">00062</a> <a class="code" href="classgbmath_1_1_quaternion.htm" title="Стандартный кватернион.">Quaternion</a> <a class="code" href="classgbmath_1_1_quaternion.htm#a9fa6f57f2e920e75bdfc800b4b94ede7">Quaternion::slerp</a>( <span class="keyword">const</span> <a class="code" href="classgbmath_1_1_quaternion.htm" title="Стандартный кватернион.">Quaternion</a> &amp;q1, <span class="keywordtype">float</span> t )
+<a name="l00062"></a><a class="code" href="classgbmath_1_1_quaternion.htm#a9fa6f57f2e920e75bdfc800b4b94ede7">00062</a> <a class="code" href="classgbmath_1_1_quaternion.htm" title="standard quaternion.">Quaternion</a> <a class="code" href="classgbmath_1_1_quaternion.htm#a9fa6f57f2e920e75bdfc800b4b94ede7">Quaternion::slerp</a>( <span class="keyword">const</span> <a class="code" href="classgbmath_1_1_quaternion.htm" title="standard quaternion.">Quaternion</a> &amp;q1, <span class="keywordtype">float</span> t )
 <a name="l00063"></a>00063 {
 <a name="l00064"></a>00064 
 <a name="l00065"></a>00065 <span class="comment">//</span>
@@ -192,10 +192,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00147"></a>00147 <span class="comment">//      return result;</span>
 <a name="l00148"></a>00148 <span class="comment">//</span>
 <a name="l00149"></a>00149 
-<a name="l00150"></a>00150         <a class="code" href="classgbmath_1_1_quaternion.htm" title="Стандартный кватернион.">Quaternion</a> res;
+<a name="l00150"></a>00150         <a class="code" href="classgbmath_1_1_quaternion.htm" title="standard quaternion.">Quaternion</a> res;
 <a name="l00151"></a>00151 
 <a name="l00152"></a>00152         <span class="keywordtype">float</span> k0,k1,cosomega = this-&gt;<a class="code" href="classgbmath_1_1_quaternion.htm#a3882c651300845816e1217cba2603365">x</a> * q1.<a class="code" href="classgbmath_1_1_quaternion.htm#a3882c651300845816e1217cba2603365">x</a> + this-&gt;<a class="code" href="classgbmath_1_1_quaternion.htm#a840d387bebcaf33ee8120e27da850b50">y</a> * q1.<a class="code" href="classgbmath_1_1_quaternion.htm#a840d387bebcaf33ee8120e27da850b50">y</a> + this-&gt;<a class="code" href="classgbmath_1_1_quaternion.htm#a59b779f21113c09d454efcec2091c8ba">z</a> * q1.<a class="code" href="classgbmath_1_1_quaternion.htm#a59b779f21113c09d454efcec2091c8ba">z</a> + this-&gt;<a class="code" href="classgbmath_1_1_quaternion.htm#a7fe1a860e7668f2176c694372224c492">w</a> * q1.<a class="code" href="classgbmath_1_1_quaternion.htm#a7fe1a860e7668f2176c694372224c492">w</a>;
-<a name="l00153"></a>00153         <a class="code" href="classgbmath_1_1_quaternion.htm" title="Стандартный кватернион.">Quaternion</a> q;
+<a name="l00153"></a>00153         <a class="code" href="classgbmath_1_1_quaternion.htm" title="standard quaternion.">Quaternion</a> q;
 <a name="l00154"></a>00154         <span class="keywordflow">if</span>(cosomega &lt; 0.0)
 <a name="l00155"></a>00155         {
 <a name="l00156"></a>00156                 cosomega = -cosomega;
@@ -232,7 +232,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00187"></a>00187 };
 <a name="l00188"></a>00188 
 <a name="l00189"></a>00189 <span class="comment">//=======================================================================</span>
-<a name="l00190"></a><a class="code" href="classgbmath_1_1_quaternion.htm#a4b17875d52a506da9c927c50b2a4b82c">00190</a> <a class="code" href="classgbmath_1_1_quaternion.htm" title="Стандартный кватернион.">Quaternion</a> <a class="code" href="classgbmath_1_1_quaternion.htm#a4b17875d52a506da9c927c50b2a4b82c" title="return exponentiation">Quaternion::pow</a>(<span class="keyword">const</span> <a class="code" href="classgbmath_1_1_quaternion.htm" title="Стандартный кватернион.">Quaternion</a> &amp;q, <span class="keywordtype">float</span> exponent)<span class="keyword"> const</span>
+<a name="l00190"></a><a class="code" href="classgbmath_1_1_quaternion.htm#a4b17875d52a506da9c927c50b2a4b82c">00190</a> <a class="code" href="classgbmath_1_1_quaternion.htm" title="standard quaternion.">Quaternion</a> <a class="code" href="classgbmath_1_1_quaternion.htm#a4b17875d52a506da9c927c50b2a4b82c" title="return exponentiation">Quaternion::pow</a>(<span class="keyword">const</span> <a class="code" href="classgbmath_1_1_quaternion.htm" title="standard quaternion.">Quaternion</a> &amp;q, <span class="keywordtype">float</span> exponent)<span class="keyword"> const</span>
 <a name="l00191"></a>00191 <span class="keyword"></span>{
 <a name="l00192"></a>00192 
 <a name="l00193"></a>00193         <span class="comment">// Check for the case of an identity quaternion.</span>
@@ -252,7 +252,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00207"></a>00207 
 <a name="l00208"></a>00208         <span class="comment">// Compute new w value</span>
 <a name="l00209"></a>00209 
-<a name="l00210"></a>00210         <a class="code" href="classgbmath_1_1_quaternion.htm" title="Стандартный кватернион.">Quaternion</a> result;
+<a name="l00210"></a>00210         <a class="code" href="classgbmath_1_1_quaternion.htm" title="standard quaternion.">Quaternion</a> result;
 <a name="l00211"></a>00211         result.<a class="code" href="classgbmath_1_1_quaternion.htm#a7fe1a860e7668f2176c694372224c492">w</a> = cos(newAlpha);
 <a name="l00212"></a>00212 
 <a name="l00213"></a>00213         <span class="comment">// Compute new xyz values</span>
@@ -302,7 +302,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00257"></a>00257 }
 <a name="l00258"></a>00258 
 <a name="l00259"></a>00259 <span class="comment">//=========================================================================</span>
-<a name="l00260"></a><a class="code" href="classgbmath_1_1_quaternion.htm#ae655dc102b620ebe8673bad796e6d382">00260</a> <a class="code" href="classgbmath_1_1_quaternion.htm" title="Стандартный кватернион.">Quaternion</a>&amp;  <a class="code" href="classgbmath_1_1_quaternion.htm#ae655dc102b620ebe8673bad796e6d382">Quaternion::setRotationAxis</a>(<span class="keyword">const</span>  <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a> &amp;axis, <span class="keywordtype">float</span> theta)
+<a name="l00260"></a><a class="code" href="classgbmath_1_1_quaternion.htm#ae655dc102b620ebe8673bad796e6d382">00260</a> <a class="code" href="classgbmath_1_1_quaternion.htm" title="standard quaternion.">Quaternion</a>&amp;  <a class="code" href="classgbmath_1_1_quaternion.htm#ae655dc102b620ebe8673bad796e6d382">Quaternion::setRotationAxis</a>(<span class="keyword">const</span>  <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a> &amp;axis, <span class="keywordtype">float</span> theta)
 <a name="l00261"></a>00261 {
 <a name="l00262"></a>00262 
 <a name="l00263"></a>00263         <span class="comment">// The axis of rotation must be normalized</span>
@@ -338,7 +338,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00293"></a>00293 }
 <a name="l00294"></a>00294 
 <a name="l00295"></a>00295 <span class="comment">//=========================================================================</span>
-<a name="l00296"></a><a class="code" href="classgbmath_1_1_quaternion.htm#a725cba36f6123017327b7a8269456adc">00296</a> <a class="code" href="classgbmath_1_1_quaternion.htm" title="Стандартный кватернион.">Quaternion</a>&amp;  <a class="code" href="classgbmath_1_1_quaternion.htm#ae655dc102b620ebe8673bad796e6d382">Quaternion::setRotationAxis</a>(<span class="keyword">const</span> <a class="code" href="structgbmath_1_1axies__angle.htm" title="The axis of rotation and angle.">axies_angle</a>&amp; aa)
+<a name="l00296"></a><a class="code" href="classgbmath_1_1_quaternion.htm#a725cba36f6123017327b7a8269456adc">00296</a> <a class="code" href="classgbmath_1_1_quaternion.htm" title="standard quaternion.">Quaternion</a>&amp;  <a class="code" href="classgbmath_1_1_quaternion.htm#ae655dc102b620ebe8673bad796e6d382">Quaternion::setRotationAxis</a>(<span class="keyword">const</span> <a class="code" href="structgbmath_1_1axies__angle.htm" title="The axis of rotation and angle.">axies_angle</a>&amp; aa)
 <a name="l00297"></a>00297 {
 <a name="l00298"></a>00298         <span class="keywordflow">return</span> <a class="code" href="classgbmath_1_1_quaternion.htm#ae655dc102b620ebe8673bad796e6d382">setRotationAxis</a>( aa.<a class="code" href="structgbmath_1_1axies__angle.htm#a319f2ec9b8869ef2b875d064794d0359" title="axis of rotation (should be normalized)">axies</a> , aa.<a class="code" href="structgbmath_1_1axies__angle.htm#a2fb6ad4c87854ac8c8aa27885705b9db" title="rotation angle">angle</a> );
 <a name="l00299"></a>00299 }
@@ -371,7 +371,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Aug 27 16:32:25 2011 for gbmath by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Aug 27 20:46:53 2011 for gbmath by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

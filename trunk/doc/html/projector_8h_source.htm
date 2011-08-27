@@ -60,21 +60,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00019"></a>00019 <span class="comment">//      #error need this class ??</span>
 <a name="l00020"></a>00020 
 <a name="l00021"></a>00021 
-<a name="l00023"></a><a class="code" href="classgbmath_1_1projector.htm">00023</a>         <span class="keyword">class  </span><a class="code" href="classgbmath_1_1projector.htm" title="Клас бесконечный прожектор по лучу (точка основания)...">projector</a> {
+<a name="l00023"></a><a class="code" href="classgbmath_1_1projector.htm">00023</a>         <span class="keyword">class  </span><a class="code" href="classgbmath_1_1projector.htm" title="infinite spotlight on the line (point base) and corner spotlight">projector</a> {
 <a name="l00024"></a>00024         <span class="keyword">public</span>:
-<a name="l00025"></a><a class="code" href="classgbmath_1_1projector.htm#a1aefe4009869a003a59ea350a4274747">00025</a>                 <a class="code" href="classgbmath_1_1ray3d.htm" title="Луч в 3-D по позиции и направлению.">ray3d</a> <a class="code" href="classgbmath_1_1projector.htm#a1aefe4009869a003a59ea350a4274747" title="луч (центр и направление прожектора).">ray</a>;   
+<a name="l00025"></a><a class="code" href="classgbmath_1_1projector.htm#a1aefe4009869a003a59ea350a4274747">00025</a>                 <a class="code" href="classgbmath_1_1ray3d.htm" title="ray in 3d space">ray3d</a> <a class="code" href="classgbmath_1_1projector.htm#a1aefe4009869a003a59ea350a4274747" title="луч (центр и направление прожектора).">ray</a>;   
 <a name="l00026"></a><a class="code" href="classgbmath_1_1projector.htm#a3ee82d12e1da09d911a6636eb842efc6">00026</a>                 <span class="keywordtype">float</span> <a class="code" href="classgbmath_1_1projector.htm#a3ee82d12e1da09d911a6636eb842efc6" title="угол конуса.">phi</a>; 
 <a name="l00027"></a>00027 
-<a name="l00028"></a><a class="code" href="classgbmath_1_1projector.htm#a829cb5bf382c0fe83b6b87c3253d5037">00028</a>                 <a class="code" href="classgbmath_1_1projector.htm#a829cb5bf382c0fe83b6b87c3253d5037">projector</a>() {};
-<a name="l00029"></a><a class="code" href="classgbmath_1_1projector.htm#acb741763dcc8fcd6f1eadeae6ca3ed23">00029</a>                 <a class="code" href="classgbmath_1_1projector.htm#acb741763dcc8fcd6f1eadeae6ca3ed23">projector</a>(<span class="keyword">const</span> <a class="code" href="classgbmath_1_1projector.htm" title="Клас бесконечный прожектор по лучу (точка основания)...">projector</a>&amp; pr) {<a class="code" href="classgbmath_1_1projector.htm#a1aefe4009869a003a59ea350a4274747" title="луч (центр и направление прожектора).">ray</a>=pr.<a class="code" href="classgbmath_1_1projector.htm#a1aefe4009869a003a59ea350a4274747" title="луч (центр и направление прожектора).">ray</a>; <a class="code" href="classgbmath_1_1projector.htm#a3ee82d12e1da09d911a6636eb842efc6" title="угол конуса.">phi</a>=pr.<a class="code" href="classgbmath_1_1projector.htm#a3ee82d12e1da09d911a6636eb842efc6" title="угол конуса.">phi</a>;  };
+<a name="l00028"></a><a class="code" href="classgbmath_1_1projector.htm#a829cb5bf382c0fe83b6b87c3253d5037">00028</a>                 <a class="code" href="classgbmath_1_1projector.htm#a829cb5bf382c0fe83b6b87c3253d5037">projector</a>() 
+<a name="l00029"></a>00029                 {
 <a name="l00030"></a>00030 
-<a name="l00031"></a>00031 
-<a name="l00032"></a>00032         }; <span class="comment">// projector</span>
-<a name="l00033"></a>00033 
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035 
-<a name="l00036"></a>00036  
-<a name="l00037"></a>00037 }
+<a name="l00031"></a>00031                 }
+<a name="l00032"></a>00032 
+<a name="l00033"></a><a class="code" href="classgbmath_1_1projector.htm#acb741763dcc8fcd6f1eadeae6ca3ed23">00033</a>                 <a class="code" href="classgbmath_1_1projector.htm#a829cb5bf382c0fe83b6b87c3253d5037">projector</a>(<span class="keyword">const</span> <a class="code" href="classgbmath_1_1projector.htm" title="infinite spotlight on the line (point base) and corner spotlight">projector</a>&amp; pr) 
+<a name="l00034"></a>00034                 {
+<a name="l00035"></a>00035                         <a class="code" href="classgbmath_1_1projector.htm#a1aefe4009869a003a59ea350a4274747" title="луч (центр и направление прожектора).">ray</a> = pr.<a class="code" href="classgbmath_1_1projector.htm#a1aefe4009869a003a59ea350a4274747" title="луч (центр и направление прожектора).">ray</a>; 
+<a name="l00036"></a>00036                         <a class="code" href="classgbmath_1_1projector.htm#a3ee82d12e1da09d911a6636eb842efc6" title="угол конуса.">phi</a> = pr.<a class="code" href="classgbmath_1_1projector.htm#a3ee82d12e1da09d911a6636eb842efc6" title="угол конуса.">phi</a>;  
+<a name="l00037"></a>00037                 }
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040         }; 
+<a name="l00041"></a>00041  
+<a name="l00042"></a>00042  
+<a name="l00043"></a>00043 }
 </pre></div></div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -90,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Aug 27 16:32:25 2011 for gbmath by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Aug 27 20:46:53 2011 for gbmath by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

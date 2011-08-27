@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief ??????
+ \brief The scope of the center point and radius. She Bounding sphere.
 
 
 */

@@ -962,7 +962,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00916"></a>00916 
 <a name="l00917"></a>00917 
 <a name="l00918"></a>00918 <span class="comment">//===============================================</span>
-<a name="l00919"></a><a class="code" href="classgbmath_1_1geometry__context.htm#a53e2632728f78c98518549cd1422f8aa">00919</a> <span class="keyword">const</span> <a class="code" href="structgbmath_1_1perspective__projection__data.htm" title="Сборка из данных перспективной проекции.">perspective_projection_data</a> *<a class="code" href="classgbmath_1_1geometry__context.htm#a53e2632728f78c98518549cd1422f8aa">geometry_context::get_projection_Data</a>()<span class="keyword">const</span>
+<a name="l00919"></a><a class="code" href="classgbmath_1_1geometry__context.htm#a53e2632728f78c98518549cd1422f8aa">00919</a> <span class="keyword">const</span> <a class="code" href="structgbmath_1_1perspective__projection__data.htm" title="This data perspective projection.">perspective_projection_data</a> *<a class="code" href="classgbmath_1_1geometry__context.htm#a53e2632728f78c98518549cd1422f8aa">geometry_context::get_projection_Data</a>()<span class="keyword">const</span>
 <a name="l00920"></a>00920 <span class="keyword"></span>{
 <a name="l00921"></a>00921   <span class="keywordflow">if</span> (<a class="code" href="classgbmath_1_1geometry__context.htm#a65962ac6ffe506eb5766796cbbbf5ec8">m_BoolChangedMatr</a>.<a class="code" href="structgbmath_1_1geometry__context_1_1_bool_changed_main_matrisec.htm#a43a088734b3b0da8c749615950569608">bProjChange</a>)
 <a name="l00922"></a>00922   {
@@ -1322,7 +1322,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01283"></a>01283 {
 <a name="l01284"></a>01284   <span class="keywordtype">int</span>  hr = 0;
 <a name="l01285"></a>01285 
-<a name="l01286"></a>01286   <a class="code" href="structgbmath_1_1perspective__projection__data.htm" title="Сборка из данных перспективной проекции.">perspective_projection_data</a> pd;
+<a name="l01286"></a>01286   <a class="code" href="structgbmath_1_1perspective__projection__data.htm" title="This data perspective projection.">perspective_projection_data</a> pd;
 <a name="l01287"></a>01287 
 <a name="l01288"></a>01288   pd.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2d44450d34e2cb68c0534ddb7b385726">fovy</a> = fFov;
 <a name="l01289"></a>01289   pd.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#a946f5103784e5d00c90b2bcc86cfb817">aspect</a> = fAsp;
@@ -1335,7 +1335,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01296"></a>01296 };
 <a name="l01297"></a>01297 
 <a name="l01298"></a>01298 <span class="comment">//===================================</span>
-<a name="l01299"></a><a class="code" href="classgbmath_1_1geometry__context.htm#a5f49f7ed6f98d9b44ac286266cdb91f5">01299</a> <span class="keywordtype">int</span>  <a class="code" href="classgbmath_1_1geometry__context.htm#a5295d0cf6876f9c8423bf1bbae52f025">geometry_context::setProjectionParams</a>(<span class="keyword">const</span> <a class="code" href="structgbmath_1_1perspective__projection__data.htm" title="Сборка из данных перспективной проекции.">perspective_projection_data</a> *proj)
+<a name="l01299"></a><a class="code" href="classgbmath_1_1geometry__context.htm#a5f49f7ed6f98d9b44ac286266cdb91f5">01299</a> <span class="keywordtype">int</span>  <a class="code" href="classgbmath_1_1geometry__context.htm#a5295d0cf6876f9c8423bf1bbae52f025">geometry_context::setProjectionParams</a>(<span class="keyword">const</span> <a class="code" href="structgbmath_1_1perspective__projection__data.htm" title="This data perspective projection.">perspective_projection_data</a> *proj)
 <a name="l01300"></a>01300 {
 <a name="l01301"></a>01301   <span class="keywordtype">int</span>  hr = 0;
 <a name="l01302"></a>01302   <span class="keywordflow">try</span>
@@ -1364,7 +1364,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01325"></a>01325 
 <a name="l01326"></a>01326   <span class="keywordflow">try</span>
 <a name="l01327"></a>01327   {
-<a name="l01328"></a>01328     <a class="code" href="structgbmath_1_1perspective__projection__data.htm" title="Сборка из данных перспективной проекции.">perspective_projection_data</a> proj =  *<a class="code" href="classgbmath_1_1geometry__context.htm#a53e2632728f78c98518549cd1422f8aa">get_projection_Data</a>();
+<a name="l01328"></a>01328     <a class="code" href="structgbmath_1_1perspective__projection__data.htm" title="This data perspective projection.">perspective_projection_data</a> proj =  *<a class="code" href="classgbmath_1_1geometry__context.htm#a53e2632728f78c98518549cd1422f8aa">get_projection_Data</a>();
 <a name="l01329"></a>01329     proj.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2d44450d34e2cb68c0534ddb7b385726">fovy</a> = fFov;
 <a name="l01330"></a>01330     <a class="code" href="classgbmath_1_1geometry__context.htm#a5295d0cf6876f9c8423bf1bbae52f025">setProjectionParams</a>(&amp;proj);
 <a name="l01331"></a>01331   }
@@ -1385,7 +1385,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01346"></a>01346 
 <a name="l01347"></a>01347   <span class="keywordflow">try</span>
 <a name="l01348"></a>01348   {
-<a name="l01349"></a>01349     <a class="code" href="structgbmath_1_1perspective__projection__data.htm" title="Сборка из данных перспективной проекции.">perspective_projection_data</a> proj =  *<a class="code" href="classgbmath_1_1geometry__context.htm#a53e2632728f78c98518549cd1422f8aa">get_projection_Data</a>();
+<a name="l01349"></a>01349     <a class="code" href="structgbmath_1_1perspective__projection__data.htm" title="This data perspective projection.">perspective_projection_data</a> proj =  *<a class="code" href="classgbmath_1_1geometry__context.htm#a53e2632728f78c98518549cd1422f8aa">get_projection_Data</a>();
 <a name="l01350"></a>01350     proj.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#a946f5103784e5d00c90b2bcc86cfb817">aspect</a> = fAsp;
 <a name="l01351"></a>01351     <a class="code" href="classgbmath_1_1geometry__context.htm#a5295d0cf6876f9c8423bf1bbae52f025">setProjectionParams</a>(&amp;proj);
 <a name="l01352"></a>01352   }
@@ -1407,7 +1407,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01368"></a>01368 
 <a name="l01369"></a>01369   <span class="keywordflow">try</span>
 <a name="l01370"></a>01370   {
-<a name="l01371"></a>01371     <a class="code" href="structgbmath_1_1perspective__projection__data.htm" title="Сборка из данных перспективной проекции.">perspective_projection_data</a> proj =  *<a class="code" href="classgbmath_1_1geometry__context.htm#a53e2632728f78c98518549cd1422f8aa">get_projection_Data</a>();
+<a name="l01371"></a>01371     <a class="code" href="structgbmath_1_1perspective__projection__data.htm" title="This data perspective projection.">perspective_projection_data</a> proj =  *<a class="code" href="classgbmath_1_1geometry__context.htm#a53e2632728f78c98518549cd1422f8aa">get_projection_Data</a>();
 <a name="l01372"></a>01372     proj.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2f7dcc2ac8c2e2a47ccab07d86824ed9">zn</a> = fZNear;
 <a name="l01373"></a>01373     <a class="code" href="classgbmath_1_1geometry__context.htm#a5295d0cf6876f9c8423bf1bbae52f025">setProjectionParams</a>(&amp;proj);
 <a name="l01374"></a>01374   }
@@ -1428,7 +1428,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01389"></a>01389 
 <a name="l01390"></a>01390   <span class="keywordflow">try</span>
 <a name="l01391"></a>01391   {
-<a name="l01392"></a>01392     <a class="code" href="structgbmath_1_1perspective__projection__data.htm" title="Сборка из данных перспективной проекции.">perspective_projection_data</a> proj =  *<a class="code" href="classgbmath_1_1geometry__context.htm#a53e2632728f78c98518549cd1422f8aa">get_projection_Data</a>();
+<a name="l01392"></a>01392     <a class="code" href="structgbmath_1_1perspective__projection__data.htm" title="This data perspective projection.">perspective_projection_data</a> proj =  *<a class="code" href="classgbmath_1_1geometry__context.htm#a53e2632728f78c98518549cd1422f8aa">get_projection_Data</a>();
 <a name="l01393"></a>01393     proj.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#ae07666d6553dcf8958bf94c752833556">zf</a> = fZFar;
 <a name="l01394"></a>01394     <a class="code" href="classgbmath_1_1geometry__context.htm#a5295d0cf6876f9c8423bf1bbae52f025">setProjectionParams</a>(&amp;proj);
 <a name="l01395"></a>01395   }
@@ -1447,7 +1447,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01408"></a>01408 
 <a name="l01409"></a>01409   <span class="keywordflow">try</span>
 <a name="l01410"></a>01410   {
-<a name="l01411"></a>01411     <a class="code" href="structgbmath_1_1perspective__projection__data.htm" title="Сборка из данных перспективной проекции.">perspective_projection_data</a> proj =  *<a class="code" href="classgbmath_1_1geometry__context.htm#a53e2632728f78c98518549cd1422f8aa">get_projection_Data</a>();
+<a name="l01411"></a>01411     <a class="code" href="structgbmath_1_1perspective__projection__data.htm" title="This data perspective projection.">perspective_projection_data</a> proj =  *<a class="code" href="classgbmath_1_1geometry__context.htm#a53e2632728f78c98518549cd1422f8aa">get_projection_Data</a>();
 <a name="l01412"></a>01412     proj.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2f7dcc2ac8c2e2a47ccab07d86824ed9">zn</a> = fZNear;
 <a name="l01413"></a>01413     proj.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#ae07666d6553dcf8958bf94c752833556">zf</a> = fZFar;
 <a name="l01414"></a>01414     <a class="code" href="classgbmath_1_1geometry__context.htm#a5295d0cf6876f9c8423bf1bbae52f025">setProjectionParams</a>(&amp;proj);
@@ -1542,12 +1542,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01503"></a><a class="code" href="classgbmath_1_1geometry__context.htm#aa9d7cbb524e532bd2d84e25483468b3c">01503</a> <a class="code" href="structgbmath_1_1axies__angle.htm" title="The axis of rotation and angle.">axies_angle</a> <a class="code" href="classgbmath_1_1geometry__context.htm#aa9d7cbb524e532bd2d84e25483468b3c">geometry_context::getWorldRotationAxiesAngle</a>()<span class="keyword"> const</span>
 <a name="l01504"></a>01504 <span class="keyword"></span>{
 <a name="l01505"></a>01505         <span class="keyword">const</span> <a class="code" href="structgbmath_1_1_transform_data.htm" title="The assembly of data transformation:">TransformData</a>  *ptd = <a class="code" href="classgbmath_1_1geometry__context.htm#aeb749ca2017610c9a49fbd0fcaf05c7e">getWorldTransformDataPtr</a>();
-<a name="l01506"></a>01506         <a class="code" href="classgbmath_1_1_quaternion.htm" title="Стандартный кватернион.">Quaternion</a> qrot =  ptd-&gt;<a class="code" href="structgbmath_1_1_transform_data.htm#aacf88f91f6726d303a772d65a4884096" title="rotation">qRotation</a>;
+<a name="l01506"></a>01506         <a class="code" href="classgbmath_1_1_quaternion.htm" title="standard quaternion.">Quaternion</a> qrot =  ptd-&gt;<a class="code" href="structgbmath_1_1_transform_data.htm#aacf88f91f6726d303a772d65a4884096" title="rotation">qRotation</a>;
 <a name="l01507"></a>01507         <span class="keywordflow">return</span> qrot.<a class="code" href="classgbmath_1_1_quaternion.htm#a80dccf15808d9a43985d3aa9fdadf672">toAxiesAngle</a>();
 <a name="l01508"></a>01508 };
 <a name="l01509"></a>01509 
 <a name="l01510"></a>01510 <span class="comment">//==========================================</span>
-<a name="l01511"></a><a class="code" href="classgbmath_1_1geometry__context.htm#a52b244a60431550512450f59f07cdafc">01511</a> <a class="code" href="classgbmath_1_1_quaternion.htm" title="Стандартный кватернион.">Quaternion</a> <a class="code" href="classgbmath_1_1geometry__context.htm#a52b244a60431550512450f59f07cdafc">geometry_context::getWorldRotationQuaternion</a>()<span class="keyword">const</span>
+<a name="l01511"></a><a class="code" href="classgbmath_1_1geometry__context.htm#a52b244a60431550512450f59f07cdafc">01511</a> <a class="code" href="classgbmath_1_1_quaternion.htm" title="standard quaternion.">Quaternion</a> <a class="code" href="classgbmath_1_1geometry__context.htm#a52b244a60431550512450f59f07cdafc">geometry_context::getWorldRotationQuaternion</a>()<span class="keyword">const</span>
 <a name="l01512"></a>01512 <span class="keyword"></span>{
 <a name="l01513"></a>01513   <span class="comment">// get const to check calculate</span>
 <a name="l01514"></a>01514   <span class="keyword">const</span> <a class="code" href="structgbmath_1_1_transform_data.htm" title="The assembly of data transformation:">TransformData</a>  *ptr = <a class="code" href="classgbmath_1_1geometry__context.htm#aeb749ca2017610c9a49fbd0fcaf05c7e">getWorldTransformDataPtr</a>();
@@ -1651,7 +1651,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01612"></a><a class="code" href="classgbmath_1_1geometry__context.htm#a90ca5522af3de4f105da7deeeb99c535">01612</a> <span class="keywordtype">int</span>  <a class="code" href="classgbmath_1_1geometry__context.htm#a90ca5522af3de4f105da7deeeb99c535">geometry_context::setWorldRotationYawPitchRoll</a>(<span class="keywordtype">float</span> yaw, <span class="keywordtype">float</span> pitch, <span class="keywordtype">float</span> roll)
 <a name="l01613"></a>01613 {
 <a name="l01614"></a>01614   <span class="keywordtype">int</span>  hr = 0;
-<a name="l01615"></a>01615   <a class="code" href="classgbmath_1_1_quaternion.htm" title="Стандартный кватернион.">Quaternion</a> q;
+<a name="l01615"></a>01615   <a class="code" href="classgbmath_1_1_quaternion.htm" title="standard quaternion.">Quaternion</a> q;
 <a name="l01616"></a>01616 
 <a name="l01617"></a>01617   <span class="comment">//D3DXQuaternionRotationYawPitchRoll(&amp;q, yaw, pitch, roll);</span>
 <a name="l01618"></a>01618    q.<a class="code" href="classgbmath_1_1_quaternion.htm#ae3547e45e6da7cbe5d729e39073eeda5" title="Построить поворотный по углам эллера.">setRotationYawPitchRoll</a>(  yaw, pitch, roll )  ;
@@ -1688,7 +1688,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l01649"></a>01649 <span class="comment">*******************************/</span>
 <a name="l01650"></a>01650 
 <a name="l01651"></a>01651 <span class="comment">//==========================================</span>
-<a name="l01652"></a><a class="code" href="classgbmath_1_1geometry__context.htm#ad5c2a091753838d4908521abce1c12f0">01652</a> <span class="keywordtype">int</span>  <a class="code" href="classgbmath_1_1geometry__context.htm#ad5c2a091753838d4908521abce1c12f0">geometry_context::setWorldRotationQuaternion</a>(<span class="keyword">const</span> <a class="code" href="classgbmath_1_1_quaternion.htm" title="Стандартный кватернион.">Quaternion</a> *q)
+<a name="l01652"></a><a class="code" href="classgbmath_1_1geometry__context.htm#ad5c2a091753838d4908521abce1c12f0">01652</a> <span class="keywordtype">int</span>  <a class="code" href="classgbmath_1_1geometry__context.htm#ad5c2a091753838d4908521abce1c12f0">geometry_context::setWorldRotationQuaternion</a>(<span class="keyword">const</span> <a class="code" href="classgbmath_1_1_quaternion.htm" title="standard quaternion.">Quaternion</a> *q)
 <a name="l01653"></a>01653 {
 <a name="l01654"></a>01654   <span class="keywordtype">int</span>  hr = 0;
 <a name="l01655"></a>01655   <a class="code" href="structgbmath_1_1_transform_data.htm" title="The assembly of data transformation:">TransformData</a>  trd = <a class="code" href="classgbmath_1_1geometry__context.htm#a96180f042b1a28b2646046928011e74f">getWorldTransformData</a>();
@@ -2331,7 +2331,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Aug 27 16:32:24 2011 for gbmath by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Aug 27 20:46:52 2011 for gbmath by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

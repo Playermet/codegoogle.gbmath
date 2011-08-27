@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1mat44.htm">mat44</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a1275449645f2906e9e4cf5b1e54070e6">operator*</a> (const <a class="el" href="structgbmath_1_1mat44.htm">mat44</a> &amp;m) const </td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">OK!  <a href="#a1275449645f2906e9e4cf5b1e54070e6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1vec4.htm">vec4</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a8efd54428c479efb450e6f505a93632e">operator*</a> (const <a class="el" href="structgbmath_1_1vec4.htm">vec4</a> &amp;v) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">OK!  <a href="#a8efd54428c479efb450e6f505a93632e"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">mul vector ( may be a transform ) OK!  <a href="#a8efd54428c479efb450e6f505a93632e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#ad34d317151454522491fdf7e4be62d59">empty</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a0695ccf86ba6da0ecd8827e54e44f676">setzero</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Зануление всех элементов.  <a href="#a0695ccf86ba6da0ecd8827e54e44f676"></a><br/></td></tr>
@@ -100,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1mat44.htm">mat44</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#ac9abc6d30c9f51a8a7b1dfaf3040a7a1">reset</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set Identity.  <a href="#ac9abc6d30c9f51a8a7b1dfaf3040a7a1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1mat44.htm">mat44</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a70e3d2546a6de9bec292e60237efeb54">transpone</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Транспонирование. (Отражение элементов по главной диагонали) ПРОВЕРЕНА!  <a href="#a70e3d2546a6de9bec292e60237efeb54"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Транспонирование. (Отражение элементов по главной диагонали) ПРОВЕРЕНО!  <a href="#a70e3d2546a6de9bec292e60237efeb54"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1mat44.htm">mat44</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#aba9a4eb76a14da524dcc990e982252ec">transponed</a> () const </td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">религиозно-синтаксическое Вычислить и вернуть транспонированое значение .  <a href="#aba9a4eb76a14da524dcc990e982252ec"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1mat44.htm">mat44</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#aa93c68270274250737957462faff74c8">getTransponed</a> () const </td></tr>
@@ -126,11 +126,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1mat44.htm">mat44</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#ac6f7bff3b1b39df9bede56cdc41c74ae">setMirrorZ</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построение матрицы отражения по оси Z.  <a href="#ac6f7bff3b1b39df9bede56cdc41c74ae"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1mat44.htm">mat44</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a211c6babdc8c610008dfb2cec9a9c8e0">setReflection</a> (const <a class="el" href="structgbmath_1_1plane__s.htm">plane_s</a> &amp;plane)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построение матрицы отражения по плоскости plane. ПРОВЕРЕНА!  <a href="#a211c6babdc8c610008dfb2cec9a9c8e0"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построение матрицы отражения по плоскости plane. ПРОВЕРЕНО!  <a href="#a211c6babdc8c610008dfb2cec9a9c8e0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1mat44.htm">mat44</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#acc58f467c3fe9d3c3808d42a455de4b2">setShadow</a> (const <a class="el" href="structgbmath_1_1vec4.htm">vec4</a> &amp;Light, const <a class="el" href="structgbmath_1_1plane__s.htm">plane_s</a> &amp;Plane)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построение теневой матрицы. Рендеринг теней. ПРОВЕРЕНА!  <a href="#acc58f467c3fe9d3c3808d42a455de4b2"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построение теневой матрицы. Рендеринг теней. ПРОВЕРЕНО!  <a href="#acc58f467c3fe9d3c3808d42a455de4b2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1mat44.htm">mat44</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a5df7203cd3d9106715bfc242091ffbb1">setRotationX</a> (const float angle)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построение матрицы поворота по оси X на угол angle . ПРОВЕРЕНА!  <a href="#a5df7203cd3d9106715bfc242091ffbb1"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построение матрицы поворота по оси X на угол angle . ПРОВЕРЕНО!  <a href="#a5df7203cd3d9106715bfc242091ffbb1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1mat44.htm">mat44</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a1041b997935bd7ea12cb314f9368665f">setRotationY</a> (const float angle)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построение матрицы поворота по оси Y на угол angle . ПРОВЕРЕНО!  <a href="#a1041b997935bd7ea12cb314f9368665f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1mat44.htm">mat44</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a0fb92c982377132ba6c9927733cc2305">setRotationZ</a> (const float angle)</td></tr>
@@ -156,25 +156,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1mat44.htm">mat44</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#ac3c20c17fc7453171592e501eddd7803">setWorldTransform</a> (const <a class="el" href="structgbmath_1_1_transform_data.htm">TransformData</a> &amp;t)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построить как матрицу трансформации.  <a href="#ac3c20c17fc7453171592e501eddd7803"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a0516df68593168239097a6e74de10759">setOrthoLH</a> (float w, float h, float zn, float zf)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построение ортографической левосторонней проекционной матрицы. ПРОВЕРЕНА.  <a href="#a0516df68593168239097a6e74de10759"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построение ортографической левосторонней проекционной матрицы. ПРОВЕРЕНО.  <a href="#a0516df68593168239097a6e74de10759"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a8fee025e8ad78ae6f4a949ff51ccf373">setOrthoRH</a> (float w, float h, float zn, float zf)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построение ортографической правосторонней проекционной матрицы. ПРОВЕРЕНА.  <a href="#a8fee025e8ad78ae6f4a949ff51ccf373"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построение ортографической правосторонней проекционной матрицы. ПРОВЕРЕНО.  <a href="#a8fee025e8ad78ae6f4a949ff51ccf373"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a99b367b957c13c853679153f6d1af996">setOrthoOffCenterLH</a> (float minX, float maxX, float minY, float maxY, float zn, float zf)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построение ортографической матрицы ПРОВЕРЕНА.  <a href="#a99b367b957c13c853679153f6d1af996"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построение ортографической матрицы ПРОВЕРЕНО.  <a href="#a99b367b957c13c853679153f6d1af996"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#ac4a24f4c7fe38036eb615d30060226b6">setOrthoOffCenterRH</a> (float minX, float maxX, float minY, float maxY, float zn, float zf)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построение ортографической матрицы ПРОВЕРЕНА.  <a href="#ac4a24f4c7fe38036eb615d30060226b6"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построение ортографической матрицы ПРОВЕРЕНО.  <a href="#ac4a24f4c7fe38036eb615d30060226b6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a9b50c575bd5a266bf61946a013414a22">setPerspectiveFovLH</a> (float fov, float asp, float zn, float zf)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">построение перспективной левосторонней матрицы. ПРОВЕРЕНА.  <a href="#a9b50c575bd5a266bf61946a013414a22"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">построение перспективной левосторонней матрицы. ПРОВЕРЕНО.  <a href="#a9b50c575bd5a266bf61946a013414a22"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a3b8a3e86219b867d970cf7fbbe31628c">setPerspectiveFovRH</a> (float fov, float asp, float zn, float zf)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">построение перспективной правосторонней матрицы. ПРОВЕРЕНА.  <a href="#a3b8a3e86219b867d970cf7fbbe31628c"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">построение перспективной правосторонней матрицы. ПРОВЕРЕНО.  <a href="#a3b8a3e86219b867d970cf7fbbe31628c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#ad4e02c22b0c4f3499310e7e22688326e">setPerspectiveLH</a> (float w, float h, float zn, float zf)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построение перспективной левосторонней матрицы по высоте и ширине .ПРОВЕРЕНА.  <a href="#ad4e02c22b0c4f3499310e7e22688326e"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построение перспективной левосторонней матрицы по высоте и ширине .ПРОВЕРЕНО.  <a href="#ad4e02c22b0c4f3499310e7e22688326e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a51795ea09fbff3ed7677e783247a8c0d">setPerspectiveRH</a> (float w, float h, float zn, float zf)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построение перспективной правосторонней матрицы по высоте и ширине. ПРОВЕРЕНА.  <a href="#a51795ea09fbff3ed7677e783247a8c0d"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построение перспективной правосторонней матрицы по высоте и ширине. ПРОВЕРЕНО.  <a href="#a51795ea09fbff3ed7677e783247a8c0d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a93273d8a93456c81c6f884a955a8b333">setViewLookAtLH</a> (const <a class="el" href="structgbmath_1_1vec3.htm">vec3</a> &amp;eye, const <a class="el" href="structgbmath_1_1vec3.htm">vec3</a> &amp;at, const <a class="el" href="structgbmath_1_1vec3.htm">vec3</a> &amp;up)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построение левосторонней матрицы вида. ПРОВЕРЕНА.  <a href="#a93273d8a93456c81c6f884a955a8b333"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построение левосторонней матрицы вида. ПРОВЕРЕНО.  <a href="#a93273d8a93456c81c6f884a955a8b333"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a49e3dca47267c84017586af61a17ada6">setViewLookAtRH</a> (const <a class="el" href="structgbmath_1_1vec3.htm">vec3</a> &amp;eye, const <a class="el" href="structgbmath_1_1vec3.htm">vec3</a> &amp;at, const <a class="el" href="structgbmath_1_1vec3.htm">vec3</a> &amp;up)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построение правосторонней матрицы вида. ПРОВЕРЕНА.  <a href="#a49e3dca47267c84017586af61a17ada6"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построение правосторонней матрицы вида. ПРОВЕРЕНО.  <a href="#a49e3dca47267c84017586af61a17ada6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#afe4c032d74366de0d8f6cd735ebddf73">setViewDirLH</a> (const <a class="el" href="structgbmath_1_1vec3.htm">vec3</a> &amp;eye, const <a class="el" href="structgbmath_1_1vec3.htm">vec3</a> &amp;dir, const <a class="el" href="structgbmath_1_1vec3.htm">vec3</a> &amp;up)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построение левосторонней матрицы вида по направлению взгляда.  <a href="#afe4c032d74366de0d8f6cd735ebddf73"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#aab9df358e1bb28e19cfd50ecad70df32">setViewDirRH</a> (const <a class="el" href="structgbmath_1_1vec3.htm">vec3</a> &amp;eye, const <a class="el" href="structgbmath_1_1vec3.htm">vec3</a> &amp;dir, const <a class="el" href="structgbmath_1_1vec3.htm">vec3</a> &amp;up)</td></tr>
@@ -701,7 +701,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>OK! </p>
+<p>mul vector ( may be a transform ) OK! </p>
 
 <p>Definition at line <a class="el" href="mat44_8h_source.htm#l00425">425</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
 
@@ -997,7 +997,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>Вывод значений на консоль. </p>
 
-<p>Definition at line <a class="el" href="mat44_8h_source.htm#l01004">1004</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
+<p>Definition at line <a class="el" href="mat44_8h_source.htm#l01005">1005</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
 
 </div>
 </div>
@@ -1172,7 +1172,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Построение ортографической левосторонней проекционной матрицы. ПРОВЕРЕНА. </p>
+<p>Построение ортографической левосторонней проекционной матрицы. ПРОВЕРЕНО. </p>
 
 <p>Definition at line <a class="el" href="mat44_8h_source.htm#l00730">730</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
 
@@ -1227,7 +1227,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Построение ортографической матрицы ПРОВЕРЕНА. </p>
+<p>Построение ортографической матрицы ПРОВЕРЕНО. </p>
 
 <p>Definition at line <a class="el" href="mat44_8h_source.htm#l00759">759</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
 
@@ -1282,7 +1282,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Построение ортографической матрицы ПРОВЕРЕНА. </p>
+<p>Построение ортографической матрицы ПРОВЕРЕНО. </p>
 
 <p>Definition at line <a class="el" href="mat44_8h_source.htm#l00769">769</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
 
@@ -1325,7 +1325,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Построение ортографической правосторонней проекционной матрицы. ПРОВЕРЕНА. </p>
+<p>Построение ортографической правосторонней проекционной матрицы. ПРОВЕРЕНО. </p>
 
 <p>Definition at line <a class="el" href="mat44_8h_source.htm#l00744">744</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
 
@@ -1368,7 +1368,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>построение перспективной левосторонней матрицы. ПРОВЕРЕНА. </p>
+<p>построение перспективной левосторонней матрицы. ПРОВЕРЕНО. </p>
 
 <p>Definition at line <a class="el" href="mat44_8h_source.htm#l00786">786</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
 
@@ -1411,7 +1411,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>построение перспективной правосторонней матрицы. ПРОВЕРЕНА. </p>
+<p>построение перспективной правосторонней матрицы. ПРОВЕРЕНО. </p>
 
 <p>Definition at line <a class="el" href="mat44_8h_source.htm#l00802">802</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
 
@@ -1454,7 +1454,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Построение перспективной левосторонней матрицы по высоте и ширине .ПРОВЕРЕНА. </p>
+<p>Построение перспективной левосторонней матрицы по высоте и ширине .ПРОВЕРЕНО. </p>
 
 <p>Definition at line <a class="el" href="mat44_8h_source.htm#l00822">822</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
 
@@ -1497,7 +1497,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Построение перспективной правосторонней матрицы по высоте и ширине. ПРОВЕРЕНА. </p>
+<p>Построение перспективной правосторонней матрицы по высоте и ширине. ПРОВЕРЕНО. </p>
 
 <p>Definition at line <a class="el" href="mat44_8h_source.htm#l00836">836</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
 
@@ -1519,7 +1519,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Построение матрицы отражения по плоскости plane. ПРОВЕРЕНА! </p>
+<p>Построение матрицы отражения по плоскости plane. ПРОВЕРЕНО! </p>
 
 <p>Definition at line <a class="el" href="mat44_8cpp_source.htm#l00063">63</a> of file <a class="el" href="mat44_8cpp_source.htm">mat44.cpp</a>.</p>
 
@@ -1637,7 +1637,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Построение матрицы поворота по оси X на угол angle . ПРОВЕРЕНА! </p>
+<p>Построение матрицы поворота по оси X на угол angle . ПРОВЕРЕНО! </p>
 
 <p>Definition at line <a class="el" href="mat44_8h_source.htm#l00587">587</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
 
@@ -1837,7 +1837,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Построение теневой матрицы. Рендеринг теней. ПРОВЕРЕНА! </p>
+<p>Построение теневой матрицы. Рендеринг теней. ПРОВЕРЕНО! </p>
 
 <p>Definition at line <a class="el" href="mat44_8cpp_source.htm#l00090">90</a> of file <a class="el" href="mat44_8cpp_source.htm">mat44.cpp</a>.</p>
 
@@ -2044,7 +2044,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Построение левосторонней матрицы вида. ПРОВЕРЕНА. </p>
+<p>Построение левосторонней матрицы вида. ПРОВЕРЕНО. </p>
 
 <p>Definition at line <a class="el" href="mat44_8h_source.htm#l00853">853</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
 
@@ -2081,7 +2081,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Построение правосторонней матрицы вида. ПРОВЕРЕНА. </p>
+<p>Построение правосторонней матрицы вида. ПРОВЕРЕНО. </p>
 
 <p>Definition at line <a class="el" href="mat44_8h_source.htm#l00875">875</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
 
@@ -2145,7 +2145,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Транспонирование. (Отражение элементов по главной диагонали) ПРОВЕРЕНА! </p>
+<p>Транспонирование. (Отражение элементов по главной диагонали) ПРОВЕРЕНО! </p>
 
 <p>Definition at line <a class="el" href="mat44_8h_source.htm#l00466">466</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
 
@@ -2475,7 +2475,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Aug 27 16:32:34 2011 for gbmath by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Aug 27 20:46:55 2011 for gbmath by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

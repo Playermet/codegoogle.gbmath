@@ -1,10 +1,6 @@
 ﻿/**  \file
- \brief  яяяяяяяяя
-
-
-
-
-
+ \brief  circle in two-dimensional space 
+ 
 */
 
 

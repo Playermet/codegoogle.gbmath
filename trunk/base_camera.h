@@ -1,11 +1,11 @@
 ﻿/** \file 
 
- \brief Камеры для наблюдения, отладки, создания утилит и т.д.
- Выдраны из DXUT с небольшими исправлениями и удалением ненужного.
+ \brief   Basic camera to handle window messages windows. <br> <br>
+ 
+Tear of DXUT with minor fixes and removing unnecessary.
 
 
  \todo поправить код-стиль
- 
  \todo Удалить MONITORINFO
 
  <br><br>
@@ -68,6 +68,7 @@ enum D3DUtil_CameraKeys
   
 
 
+//! \brief  Basic camera to handle window messages windows
 class base_camera {
 public:
 			  base_camera();
