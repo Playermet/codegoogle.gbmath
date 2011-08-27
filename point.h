@@ -1,5 +1,5 @@
 ﻿/** \file
-  \brief   simple point. яяяяяяяяяяяяяяя
+  \brief  simple point (integers)
 
 
 */

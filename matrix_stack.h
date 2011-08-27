@@ -1,8 +1,6 @@
 ﻿/** \file
 
-  \brief Стек матриц яяяяяяяя
-
-
+  \brief Stack the matrices
 
   \author ksacvet777
 */
@@ -28,7 +26,7 @@ namespace gbmath
 
 //---------------------------------------------------------------
 
-//! \brief Стек матриц на основе std::stack
+//! \brief The stack of matrices based on std::stack
 class MatrixStackStd {
 public:
 
@@ -199,9 +197,11 @@ public:
 };
 
 
-template<size_t TSIZE>
 
-//! \brief Стек матриц на основе массива
+
+
+template<size_t TSIZE>
+//! \brief The stack of matrices based on the array
 class MatrixStackFixed {
 public:
 	MatrixStackFixed() : m_pos(-1) {}
@@ -295,8 +295,8 @@ private:
 
  
 }
-// end namespace
+
 
 #pragma warning(pop)
 
-// end file
+ 

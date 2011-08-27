@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief ?????? яяяяяяяяяяяяя
+ \brief  point in 2-dimensional space
 
 
 */
@@ -17,11 +17,14 @@ namespace gbmath
 
 
 
+#pragma  message("! delete point2 ???  "  __FILE__ )
 
 
-	//! \brief   Позиция, точка в двухмерном измерении  ВОЗМОЖНО УДАЛИТЬ
+	/** \brief  describes a point/coordinate/position in 3-dimensional space.
+				Level higher than the vector */
 	class point2 {
 	public:
+
 	   float _x;
 	   float _y;
 

@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief ?????? яяяяяяяяяяяяяяя
+ \brief  point in 3-dimensional space
 
 
 */
@@ -18,8 +18,8 @@ namespace gbmath
 
 
 
-		/** \brief Сущность описывает точку/координату/позицию в 3х-мерном пространстве.
-		   Уровень выше, чем вектор */
+	/** \brief describes a point/coordinate/position in 3-dimensional space.
+							Level higher than the vector */
 		class point3 {
 		public:
 			float _x;

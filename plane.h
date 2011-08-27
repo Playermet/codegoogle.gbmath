@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief яяяяяяяя
+ \brief plane in 3d
 
 
 */
@@ -17,7 +17,7 @@ namespace gbmath
 {
 
 
-		//! \brief   Проскость
+		//! \brief   plane in 3d
 		struct plane_s {
 
 			  union

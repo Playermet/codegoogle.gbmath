@@ -1,4 +1,6 @@
-/** \file  */
+/** \file  
+ \brief orthographic projection data
+*/
 
 #ifndef __GBMATH_H__
     #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
@@ -8,6 +10,7 @@
 namespace gmath
 {
 
+	//! \brief  orthographic projection data
 	struct orthographic_projection_data {
 	
 		float width; 

@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief яяяяяяяяя
+ \brief This data perspective projection.
 
 
 */
@@ -18,7 +18,7 @@ namespace gbmath
 
 	#pragma message( "!!!!  rename this  "  __FILE__ )
 
-	  //! \brief  Сборка из данных перспективной проекции.
+	  //! \brief   This data perspective projection.
 	  struct perspective_projection_data
 	  {
 			float fovy;

@@ -1,5 +1,5 @@
 ﻿/**    \file
- \brief  яяяяяяяя
+ \brief  The role of color in the scene
  
  */
 
@@ -18,6 +18,7 @@
 namespace gbmath
 {
  
+	   //!  \brief  The role of color in the scene
 		struct object_color_type_e
 		{
 			enum e
