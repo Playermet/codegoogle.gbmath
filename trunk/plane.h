@@ -240,10 +240,10 @@ namespace gbmath
 			   return abs( dotCoord(point) );
 			}
 
-			friend std::ostream &operator << (std::ostream &stream, const plane_s& p)
+			friend std::ostream& operator << (std::ostream& os, const plane_s& p)
 			{
-				stream << p.a << " " << p.b << " " << p.c << " " << p.d ;
-				return stream;
+				os << p.a << " " << p.b << " " << p.c << " " << p.d ;
+				return os;
 			}
 
 			operator std::string() const

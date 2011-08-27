@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief 2d vector float
+ \brief  vector 2d
 
 
 */
@@ -18,7 +18,7 @@ namespace gbmath
 
 
 
-		/** \brief Базовый 2d-вектор.  Поправить операторы по эпислону */
+		//! \brief 2d-base vector. Corrected by operators epislon
 		struct vec2 {
 
 				union
@@ -32,7 +32,10 @@ namespace gbmath
 					float floats [2];
 				};
 
-			    inline vec2() { x=y=0.0f; }
+			    inline vec2() 
+				{ 
+					x=y=0.0f; 
+				}
 
 			    inline vec2(const vec2& v)      { x=v.x;  y=v.y;  }
 				inline vec2(const vec2* v)      { x=v->x;  y=v->y;    }

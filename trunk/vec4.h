@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief ??????
+ \brief vector 4d
 
 
 */
@@ -19,7 +19,7 @@ namespace gbmath
 
 
 
-		/** \brief Базовый 4d-вектор. Поправить операторы по эпислону   */
+		//! \brief 4d-base vector. Corrected by operators epislon 
 		struct vec4  {
 
 		    union
@@ -33,20 +33,45 @@ namespace gbmath
 				float floats [4];
 			};
 
-			inline vec4() { x=y=z=w=0.0f; }
+			inline vec4() 
+			{ 
+				x = y = z = w = 0.0f; 
+			}
 
-			inline vec4(const vec4& v)      { x=v.x;  y=v.y; z=v.z; w=v.w;  }
+			inline vec4(const vec4& v)      
+			{ 
+				x = v.x;  
+				y = v.y; 
+				z = v.z; 
+				w = v.w;  
+			}
+ 
 
-//			inline vec4(const vec4* v)      { x=v->x;  y=v->y; z=v->z; w=v->w;  };
+			inline vec4(const vec3& v, float _w)  
+			{ 
+				x = v.x;  
+				y = v.y; 
+				z = v.z; 
+				w = _w;  
+			}
 
-			inline vec4(const vec3& v, float _w)  { x=v.x;  y=v.y; z=v.z; w=_w;  }
+			inline vec4(const vec2& v, float _z, float _w) 
+			{
+				x = v.x; 
+				y = v.y; 
+				z = _z; 
+				w = _w; 
+			}
 
-			inline vec4(const vec2& v, float _z, float _w) {x=v.x; y=v.y; z=_z; w=_w; }
-
-			inline vec4(float _x, float _y, float _z, float _w)   { x=_x;   y=_y; z=_z; w=_w;  }
-			//inline vec4(int   _x, int   _y, int   _z, int   _w)   { x=(float)_x;   y=(float)_y;  z=(float)_z; w=(float)_w;}
-
-			//! \brief Присваивание из float-массива
+			inline vec4(float _x, float _y, float _z, float _w)   
+			{ 
+				x = _x;   
+				y = _y; 
+				z = _z; 
+				w = _w;  
+			}
+ 
+			//! \brief  read floats array.
 			inline void operator = (const float* pf) 
 			{
 				x = pf[0]; 
@@ -56,22 +81,104 @@ namespace gbmath
 			}
 
 
-			inline bool  operator == (const vec4 &v) const {	return (x == v.x && y == v.y && z == v.z && w == v.w); }
-			inline bool  operator != (const vec4 &v) const {	return (x != v.x || y != v.y || z != v.z || w != v.w); }
+			inline bool  operator == (const vec4 &v) const
+			{	
+				return (x == v.x && y == v.y && z == v.z && w == v.w); 
+			}
 
-			inline vec4  operator + () const   { 	return *this; }
-			inline vec4  operator - () const { vec4 res;	res.x = -x;	res.y = -y;	res.z = -z;	res.w = -w;	return res; }
+			inline bool  operator != (const vec4 &v) const 
+			{	
+				return (x != v.x || y != v.y || z != v.z || w != v.w); 
+			}
 
-			inline vec4  operator + (const vec4 &v) const {	vec4 res;	res = *this;	res += v;	return res; }
-			inline vec4  operator - (const vec4 &v) const {	vec4 res;	res = *this;	res -= v;	return res; }
-			inline vec4  operator * (float f) const         {	vec4 res;	res = *this;	res.x *= f;	res.y *= f;	res.z *= f;	res.w *= f;	return res; }
-			inline vec4  operator / (float f) const         {	vec4 res;	res = *this;	res.x /= f;	res.y /= f;	res.z /= f;	res.w /= f;	return res; }
+			inline vec4  operator + () const   
+			{ 	
+				return *this; 
+			}
 
-			inline vec4 &  operator += (const vec4 &v) {	x += v.x;	y += v.y;	z += v.z;	w += v.w;	return *this; }
-			inline vec4 &  operator -= (const vec4 &v) {	x -= v.x;	y -= v.y;	z -= v.z;	w -= v.w;	return *this; }
-			inline vec4 &  operator *= (float f)         {	x *= f;	y *= f;	z *= f;	w *= f;	return *this; }
+			inline vec4  operator - () const 
+			{ 
+				vec4 res;	
+				res.x = -x;	
+				res.y = -y;	
+				res.z = -z;	
+				res.w = -w;	
+				return res; 
+			}
 
-			inline vec4 &  operator /= (float f)         {	x /= f;	y /= f;	z /= f;	w /= f;	return *this; }
+			inline vec4  operator + (const vec4 &v) const 
+			{	
+				vec4 res;	
+				res = *this;	
+				res += v;	
+				return res; 
+			}
+
+			inline vec4  operator - (const vec4 &v) const 
+			{	
+				vec4 res;	
+				res = *this;	
+				res -= v;	
+				return res; 
+			}
+
+			inline vec4  operator * (float f) const         
+			{	
+				vec4 res;	
+				res = *this;	
+				res.x *= f;	
+				res.y *= f;	
+				res.z *= f;	
+				res.w *= f;	
+				return res; 
+			}
+
+			inline vec4  operator / (float f) const         
+			{	
+				vec4 res;	
+				res = *this;	
+				res.x /= f;	
+				res.y /= f;	
+				res.z /= f;	
+				res.w /= f;	
+				return res; 
+			}
+
+			inline vec4 &  operator += (const vec4 &v)
+			{	
+				x += v.x;	
+				y += v.y;	
+				z += v.z;	
+				w += v.w;	
+				return *this; 
+			}
+
+			inline vec4 &  operator -= (const vec4 &v) 
+			{	
+				x -= v.x;	
+				y -= v.y;	
+				z -= v.z;	
+				w -= v.w;	
+				return *this; 
+			}
+
+			inline vec4 &  operator *= (float f)         
+			{	
+				x *= f;	
+				y *= f;	
+				z *= f;	
+				w *= f;	
+				return *this; 
+			}
+
+			inline vec4 &  operator /= (float f)         
+			{	
+				x /= f;	
+				y /= f;	
+				z /= f;	
+				w /= f;	
+				return *this; 
+			}
 
 			inline operator  const float*() const  { return &x; }
 			inline operator        float*()        { return &x; }
@@ -102,30 +209,58 @@ namespace gbmath
 		   	inline void operator = (const D3DXVECTOR4& v) {	x=v.x; y=v.y; z=v.z; w=v.w; }
 #endif
 
-			//! \brief Обнулить все компоненты
-		    inline void setzero() {x=y=z=w=0.0f; }
-			//! проверить равны ли все компоненты нулю
-			inline bool empty() const { return ( (x==0.0f) && (y==0.0f) && (z==0.0f) && (w==0.0f) ); }
-
-			inline vec4& set    (float _x, float _y, float _z, float _w) { x=_x; y=_y; z=_z; w=_w; return *this; }
-
-			//! \brief  Все ли компоненты нулевые по эпсилону.
-			inline bool isZero(float epsilon) const
+			//! \brief set zero all 
+		    inline void setzero() 
 			{
-				return( abs( x ) <= epsilon ) && ( abs( y ) <= epsilon ) && ( abs( z ) <= epsilon ) && ( abs( y ) <= epsilon );
+				x = y = z = w = 0.0f; 
 			}
 
-			//! \brief  получить длинну
-			inline float length () const {	return (float)sqrt( x*x + y*y + z*z + w*w );	}
-			//! \brief  получить квадрат длинны
-			inline float lengthSq() const {	 return (x*x + y*y + z*z + w*w);  }
+			//! \brief  to check whether all components are equal to zero
+			inline bool empty() const
+			{ 
+				return ( (x==0.0f) && (y==0.0f) && (z==0.0f) && (w==0.0f) ); 
+			}
 
-			//! \brief   Вернуть скалярное произведение с вектором v
-			inline float   dot (const vec4& v) const { return x*v.x + y*v.y + z*v.z + w*v.w; }
+			inline vec4& set  (float _x, float _y, float _z, float _w) 
+			{ 
+				x=_x; 
+				y=_y; 
+				z=_z; 
+				w=_w; 
+				return *this; 
+			}
+
+			//! \brief  All components are zero on Epsilon.
+			inline bool isZero(float epsilon) const
+			{
+				return( abs( x ) <= epsilon ) && 
+					  ( abs( y ) <= epsilon ) && 
+					  ( abs( z ) <= epsilon ) && 
+					  ( abs( y ) <= epsilon );
+			}
+
+			//! \brief  get vector length
+			inline float length () const 
+			{	
+				return (float)sqrt( x*x + y*y + z*z + w*w );	
+			}
+
+			//! \brief  get a square of the length
+			inline float lengthSq() const 
+			{	 
+				return (x*x + y*y + z*z + w*w); 
+			}
+
+			//! \brief   Return the dot product with vector
+			inline float   dot (const vec4& v) const 
+			{ 
+				return x*v.x + y*v.y + z*v.z + w*v.w; 
+			}
 
 
 #pragma message ("KS777: MATH::VEC4 >> NEED CHECK CROSS METHOD !!!"  __FILE__)
-			//! \brief Получить векторное (перекрестное)  произведение с вектором v.
+
+			//! \brief Get the vector (cross) product of the vector
 			inline vec4  cross ( const vec4 & v) const
 			{
 				  vec4 r;
@@ -137,7 +272,7 @@ namespace gbmath
 			}
 
 
-			// НЕПРАВИЛЬНО !!!!
+			// WRONG!!!      НЕПРАВИЛЬНО !!!!
 			void cross( const vec4& U, const vec4& V, const vec4& W )
 			{
 				assert(false && "bad code !");
@@ -158,9 +293,17 @@ namespace gbmath
 				*this = Out;
 			}
 
-			//! \brief  Инвертировать.
-			inline vec4&   invert() {  x=-x; y=-y; z=-z; w=-w; return *this; };
-			//! \brief  Вернуть инвертированый.
+			//! \brief  invert.
+			inline vec4&   invert() 
+			{  
+				x = -x; 
+				y = -y; 
+				z = -z; 
+				w = -w; 
+				return *this; 
+			}
+
+			//! \brief Return invert.
 			inline vec4    inverted() const
 			{
 				vec4 res = *this;
@@ -168,7 +311,7 @@ namespace gbmath
 				return res;
 			}
 
-			//! \brief  Вернуть вектор по линейной интерполяции между this и v  по коэффициенту k
+			//! \brief  Return the vector of linear interpolation
 			inline vec4    lerp(const vec4& v, const float k)
 			{
 				vec4 r;
@@ -181,7 +324,7 @@ namespace gbmath
 
 
 
-			//! \brief  Получить минимальную компоненту.
+			//! \brief Get the lowest component.
 			inline float minval() const
 			{
 				float res = x;
@@ -191,7 +334,7 @@ namespace gbmath
 				return res;
 			}
 
-			//! \brief Получить максимальную компоненту.
+			//! \brief Get the maximum component.
 			inline float maxval() const
 			{
 				float res = x;
