@@ -33,7 +33,7 @@ aabb sphere::toAabbInside() const
 
 }
 
-//=========================================================================
+//================================================================
 aabb sphere::toAabbOutside() const
 {
     aabb res;
@@ -48,10 +48,28 @@ aabb sphere::toAabbOutside() const
 
   return res;
 
-
-
-
 }
+
+//========================================================
+obj_contains_e sphere::BSphereContainsBSphere(const sphere& s) const
+{
+	   const float d2 = (center - s.center).length_sq();
+
+	  if(  d2 < scalar::sqr( radius + s.radius)  )
+	  {
+			if ( d2 < scalar::sqr(radius-s.radius) )
+				return SC_CONTAINSFULLY;
+
+			else
+				return SC_CONTAINSPARTIALLY;
+	  }
+
+	  // else
+	  //  return SC_NOOVERLAP;
+
+	  return   SC_NOOVERLAP;
+};
+
 
 
 }

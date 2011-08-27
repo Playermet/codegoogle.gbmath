@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief ??????
+ \brief Assembling the transformation
 
 */
 
@@ -19,9 +19,9 @@ namespace gbmath
 	  //   (scaling + rotation (axis and angle) + Position)
    struct TransformData2
    {
-	   vec3        scaling;
-	   axies_angle  rotation;
-	   vec3        translatiion;
+	   vec3            scaling;
+	   axies_angle     rotation;
+	   vec3            translatiion;
 
 
 

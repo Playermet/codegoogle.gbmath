@@ -17,12 +17,12 @@ namespace gbmath
 
 
 
-	//! \brief Сфера по центральной точке и радиусу. Она же Bounding sphere.
+	//! \brief The scope of the center point and radius. She Bounding sphere.
 	class sphere {
 	public:
 
-	   vec3  center;  ///<  центральная координата сферы.
-	  float   radius;  ///<  радиус сферы.
+	   vec3  center;  ///<  center of sphere.
+	  float   radius;  ///<  radius of sphere.
 
 	  inline sphere()
 	  {
@@ -35,6 +35,7 @@ namespace gbmath
 		  center = s.center;
 		  radius = s.radius;
 	  }
+
 	  inline sphere(const  vec3& _center, const float _radius)
 	  {
 		  center = _center;
@@ -57,7 +58,8 @@ namespace gbmath
 	  }
 
 
-	  //! \brief Получить расстояние между краями сфер. Вернёт отрицательное значение если сферы пересекаются.
+	  //! \brief Get the distance between the edges of the spheres.
+				// Returns a negative value if the spheres intersect.
 	  inline float distanceBetweenSpheres(const sphere& s) const
 	  {
 		  const float dist = center.distance(s.center);
@@ -65,14 +67,14 @@ namespace gbmath
 		  return res;
 	  }
 
-	  //! \brief  Получить бокс построеный  внутри сферы.	ПРОВЕРЕНО
+	  //! \brief  Get a box built inside the sphere. TESTED!
 	  aabb toAabbInside() const;
 
-	  //! \brief  Получить бокс построеный по краю сферы. ПРОВЕРЕНО
+	  //! \brief  Get a box built on the edge of the area. TESTED
 	  aabb toAabbOutside() const;
 
 
-	  //! \brief Проверка пересечения сфер  . ПРОВЕРЕНО
+	  //! \brief Проверка  на контакт сфер  . ПРОВЕРЕНО!
 	  inline bool checkIntersectSphere(const sphere& s) const
 	  {
 		  const float dist = center.distance(s.center);
@@ -85,36 +87,18 @@ namespace gbmath
 	  }
 
 
-//bool checkIntersectRay(const Ray& ray) {....}	<- ненадо. Есть у луча
-//bool checkIntersecеSphere(const sphere& sph) {....}   есть
-//bool checkIntersectAABB(const aabb& aabb) {....}
-//bool checkIntersectPlane(const Plane& aabb) {....}
+// TODO: bool checkIntersectRay(const Ray& ray) {....}	<- ненадо. Есть у луча
+// TODO: bool checkIntersecеSphere(const sphere& sph) {....}   есть
+// TODO: bool checkIntersectAABB(const aabb& aabb) {....}
+// TODO: bool checkIntersectPlane(const Plane& aabb) {....}
 
 
-	obj_contains_e BSphereContainsBSphere(const sphere& s) const
-	{
-	   const float d2 = (center - s.center).length_sq();
-
-	  if (d2 < scalar::sqr( radius + s.radius))
-	  {
-			if ( d2 < scalar::sqr(radius-s.radius) )
-			  return SC_CONTAINSFULLY;
-			else
-			  return SC_CONTAINSPARTIALLY;
-	  }
-	  // else
-	  //  return SC_NOOVERLAP;
-
-	  return   SC_NOOVERLAP;
-	};
+	obj_contains_e BSphereContainsBSphere(const sphere& s) const ;
 
 
 
 
 	};
-	// end class
-
-
-
+ 
  
 }

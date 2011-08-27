@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief яяяяяяяяя
+ \brief 2-dimensional size.
 
 */
 
@@ -13,7 +13,7 @@
 namespace gbmath
 {
 
-        /** \brief 2-х мерный размер. */
+        //! \brief 2-dimensional size. 
 		struct size2d {
 
 			union
@@ -28,7 +28,18 @@ namespace gbmath
 				float height;
 			};
 
-			inline operator  vec2 () const {  vec2 r(x,y); return r;  };
+			inline operator  vec2 () const 
+			{  
+				vec2 r(x,y); 
+				return r;  
+			}
+
+			friend std::ostream& operator << (std::ostream& os, 
+							const size2d& a)
+			{
+				os << a.x << " " << a.y;
+				return os;
+			}
 
 
 		};

@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief яяяяяяя
+ \brief The relative screen coordinates.
 
 
 */
@@ -15,16 +15,17 @@ namespace gbmath
 {
 
 
-		//! \brief Относительные экранные координаты.
+		//! \brief The relative screen coordinates.
 		struct related_coord
 		{
 
 			  float x;
 			  float y;
 
-			/** \brief Конвертация абсолютных экранных координат в
-				   относительные экранные координаты,
-				    по размеру экрана (vpWidth и vpHeight)  ПРОВЕРЕНО !  */
+
+			/** \brief   Conversion of absolute screen coordinates, in
+					relative screen coordinates,
+					to fit the screen (vpWidth and vpHeight) TESTED!  OK! */
 			inline void   fromScreenCoord( // ScreenCoord_To_RelatCoord(
 									            const  vec2& vScrCoord,
 									            const int vpWidth, const int vpHeight )
@@ -34,9 +35,9 @@ namespace gbmath
 			}
 
 
-			/** \brief Конвертация относительных  экранных координат в  абсолютные
-				  экранные координаты,
-				  по размеру экрана (vpWidth и vpHeight) ПРОВЕРЕНО !    */
+			/** \briefConversion of relative screen coordinates
+				in absolute screen coordinates,
+				to fit the screen (vpWidth and vpHeight) TESTED!  OK! */
 			inline  vec2  toScreenCoord(const int vpWidth, const int vpHeight ) const
 			{
 				    vec2 res;
@@ -45,8 +46,7 @@ namespace gbmath
 				   return res;
 			}
 
-
 		};
 
- 
 }
+

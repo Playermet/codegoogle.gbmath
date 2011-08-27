@@ -55,9 +55,5 @@ namespace scalar
 //=====================================================================
 
 }
-// end namespace
-}
-// end namespace
  
-
-// end file
+}
