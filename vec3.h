@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief ??????
+ \brief vector 3d
 
 
 */
@@ -17,7 +17,7 @@ namespace gbmath
 
 
 
-		/** \brief Базовый 3d-вектор.  Поправить операторы по эпислону */
+		//! \brief 3d-base vector. Corrected by operators epislon
 		struct vec3  {
 
 		    union
@@ -31,19 +31,45 @@ namespace gbmath
 				float floats [3];
 			};
 
-			inline vec3() { x = y = z = 0.0f; }
+			inline vec3() 
+			{ 
+				x = y = z = 0.0f; 
+			}
 
-			inline vec3(const vec3& v)             { x=v.x;   y=v.y;   z=v.z;   }
-			inline vec3(const vec3* v)             { x=v->x;  y=v->y; z=v->z;   }
+			inline vec3(const vec3& v)             
+			{ 
+				x = v.x;   
+				y = v.y;   
+				z = v.z;   
+			}
 
-			inline vec3(const vec2& v, float _z)   { x=v.x;  y=v.y; z=_z;     }
+			inline vec3(const vec3* v)             
+			{ 
+				x = v->x;  
+				y = v->y; 
+				z = v->z;   
+			}
 
-			inline vec3(float _x, float _y, float _z)   { x=_x;    y=_y;    z=_z;  }
-//			inline vec3(int   _x, int   _y, int   _z)   { x=(float)_x;   y=(float)_y;  z=(float)_z; }
+			inline vec3(const vec2& v, float _z)   
+			{ 
+				x = v.x;  
+				y = v.y; 
+				z = _z;     
+			}
 
-			inline vec3(const float* pfArray) { *this = pfArray; }
+			inline vec3(float _x, float _y, float _z)  
+			{ 
+				x=_x;    
+				y=_y;    
+				z=_z;  
+			}
+ 
 
-			//inline vec3(vec4);
+			inline vec3(const float* pfArray) 
+			{ 
+				*this = pfArray; 
+			}
+ 
 
 			//! \brief Присваивание из float-массива
 			inline void operator = (const float* pf) 
@@ -53,16 +79,34 @@ namespace gbmath
 				z = pf[2]; 
 			}
 
-			inline bool  operator == (const vec3 &v) const { return (x == v.x && y == v.y && z == v.z ); }
-			inline bool  operator != (const vec3 &v) const { return (x != v.x || y != v.y || z != v.z ); }
+			inline bool  operator == (const vec3 &v) const 
+			{ 
+				return (x == v.x && y == v.y && z == v.z ); 
+			}
+
+			inline bool  operator != (const vec3 &v) const
+			{ 
+				return (x != v.x || y != v.y || z != v.z ); 
+			}
 
 			//inline bool  operator <  (const vec3 &v) const {	return (x <  v.x && y <  v.y && z <  v.z ); }
 			//inline bool  operator <= (const vec3 &v) const {	return (x <= v.x && y <= v.y && z <= v.z ); }
 			//inline bool  operator >  (const vec3 &v) const {	return (x >  v.x && y >  v.y && z >  v.z ); }
 			//inline bool  operator >= (const vec3 &v) const {	return (x >= v.x && y >= v.y && z >= v.z ); }
 
-			inline vec3  operator + () const   { 	return *this; }
-			inline vec3  operator - () const{	vec3 res;	res.x = -x;	res.y = -y;	res.z = -z;	return res; }
+			inline vec3  operator + () const   
+			{ 	
+				return *this; 
+			}
+
+			inline vec3  operator - () const 
+			{	
+				vec3 res;	
+				res.x = -x;	
+				res.y = -y;	
+				res.z = -z;	
+				return res; 
+			}
 
 			inline vec3  operator + (const vec3 &v) const {	vec3 res;	res = *this; res += v;	return res; }
 			inline vec3  operator - (const vec3 &v) const {	vec3 res;	res = *this; res -= v;	return res; }
@@ -116,10 +160,14 @@ namespace gbmath
 			void operator = (const point3& pnt);
 
 
-		    inline void setzero() { x=y=z=0.0f; }
+		    inline void setzero() 
+			{ 
+				x = y = z = 0.0f; 
+			}
+
 			inline bool empty() const 
 			{ 
-				return ( (x==0.0f) && (y==0.0f) && (z==0.0f) ); 
+				return (x==0.0f) && (y==0.0f) && (z==0.0f); 
 			}
 
 			inline vec3& set    (float _x, float _y, float _z) 
@@ -130,9 +178,11 @@ namespace gbmath
 				return *this; 
 			}
 
-			inline vec3& set_all(float val) 
+			inline vec3& set_all ( float val ) 
 			{ 
-				x=val; y=val; z=val;    
+				x = val; 
+				y = val; 
+				z = val;    
 				return *this; 
 			}
 
@@ -178,7 +228,7 @@ namespace gbmath
 				return r;
 			}
 
-			//! \brief  Нормализовать
+ 
 			inline vec3&   normalize ()
 			{
 				if( (0.0f==x) && (0.0f==y) && (0.0f==z) ) // < без этого глючит. nan
@@ -191,7 +241,7 @@ namespace gbmath
 				return *this;
 			}
 
-			//! \brief  Вернуть нормализованый
+			//! \brief  a normalized
 			inline vec3    normalized() const 
 			{ 
 				vec3 r = *this; 
@@ -199,13 +249,13 @@ namespace gbmath
 				return r; 
 			}
 
-			//! \brief  Вычислить и вернуть расстояние между точками  this и point.
+			//! \brief  Compute and return the distance between this and point.
 			inline float distance(const vec3& point)   const 
 			{ 
 				return  sqrt( distance_sq(point) );  
 			}
 
-			//! \brief  Вычислить и вернуть квадрат расстояния между точками  this и point.
+			//! \brief  Compute and return the square of the distance between the points and this point.
 			inline float distance_sq(const vec3& point) const 
 			{ 
 				return vec3( *this - point ).length_sq();  

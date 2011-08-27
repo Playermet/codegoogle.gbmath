@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief ?????xxxxяяяяя
+ \brief  Role of vector in the context of
 
 
 
@@ -18,7 +18,7 @@ namespace gbmath
 
 
 
-	  //!  Роль вектора в контексте
+	  //! \brief   Role of vector in the context of
 	  struct vector_context_type_e
 	  {
 		  enum e
@@ -39,7 +39,5 @@ namespace gbmath
 		  static bool fromstr(e& valOut, const char* str);
 
 	  };
-
-
  
 }

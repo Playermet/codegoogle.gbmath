@@ -72,7 +72,7 @@ namespace gbmath
 		 }
 	 }
 
-	 friend std::ostream operator << (std::ostream& os, const eyedata& a)
+	 friend std::ostream& operator << (std::ostream& os, const eyedata& a)
 	 {
 		 os << a.eye_position << "\n";
 		 os << a.eye_at << "\n";

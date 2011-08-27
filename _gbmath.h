@@ -39,6 +39,7 @@
 	#pragma  warning(disable : 4995 4996 4290 4297)
 #endif
 
+//---------------------------------------------------------------------
 
 #include "config.h"
 
@@ -48,10 +49,12 @@ namespace gbmath
 {
 	
 	typedef  unsigned char    byte_t;
-	//typedef  unsigned char   uint8_t;
+
 }
 
 // include lib headers
+
+
 
 #include "point.h"
 #include "rectangle.h"
@@ -79,23 +82,23 @@ namespace gbmath
 #include "vec4.h"
 
 
-/*****************************
-// new vectors  template
-#include "vector2.hpp"
-#include "vector3.hpp"
-#include "vector4.hpp"
-******************************/
+ 
+// // new vectors  template
+//#include "vector2.hpp"
+//#include "vector3.hpp"
+//#include "vector4.hpp"
+ 
 
 
 
-/****************************
-// new matrix template
-#include "matrix.hpp"
-#include "matrix_quad.hpp"
-#include "matrix2x2.hpp"
-#include "matrix3x3.hpp"
-#include "matrix4x4.hpp"
-****************************/
+ 
+//	// new matrix template
+//#include "matrix.hpp"
+//#include "matrix_quad.hpp"
+//#include "matrix2x2.hpp"
+//#include "matrix3x3.hpp"
+//#include "matrix4x4.hpp"
+ 
 
 
 #include "mat22.h"
@@ -104,6 +107,8 @@ namespace gbmath
 
 #include "matrix_stack.h"
 #include "quaternion.h"
+
+
 
 // 2d
 #include "normal2.h"
@@ -114,28 +119,34 @@ namespace gbmath
 #include "circle.h"
 #include "rect.h"
 
+
+
 // 3d
 #include "normal3.h"
 #include "point3.h"
 #include "size3d.h"
+
 #include "obj_contains_e.h"
 #include "plane.h"    
 #include "sphere.h"
 #include "aabb.h"
 #include "oobb.h"
 #include "aabb_tree.h"
+ 
 #include "ray3d.h"
+	 
 #include "axies_angle.h"
 #include "cilinder.h"
 #include "euler_angles.h"
-#include "frustum.h"
-#include "eyedata.h"
+#include "frustum.h"		  
+#include "eyedata.h" 
 #include "line3d.h"
 #include "transformdata_quat.h"
 #include "transformdata_axang.h"
 #include "triangle.h"
 #include "projector.h"
 
+ ///
 
 // proj
 #include "orthographic_projection_data.h"
@@ -162,18 +173,22 @@ namespace gbmath
 // math dependence
 #include "dependence_on_function.h"
 
- 
+
 
 //! render math opt
 //#define GBMATH_USE_OPENGL_DRAWER
  
+
 //! render math opt
 // #define GBMATH_USE_OPENGL_DRAWER
  
 
 #include "drawer.h"
 
+ 
 
+
+//-------------------------------------------------------------
 
 
 #ifdef _MSC_VER
@@ -181,18 +196,18 @@ namespace gbmath
 #endif
 
 
-/*****************************************
-// do include static lib for VC
-#if GB_LIB
-	#ifndef _LIB_GB_FMATH
-		#ifdef _DEBUG
-				#pragma comment( lib , "gb_fmath_d.lib" )
-		#else
-				#pragma comment( lib , "gb_fmath.lib" )
-		#endif
-	#endif
-#endif
-*******************************************/
+ 
+//// do include static lib for VC
+//#if GB_LIB
+//	#ifndef _LIB_GB_FMATH
+//		#ifdef _DEBUG
+//				#pragma comment( lib , "gb_fmath_d.lib" )
+//		#else
+//				#pragma comment( lib , "gb_fmath.lib" )
+//		#endif
+//	#endif
+//#endif
+ 
 
 
 // end file
