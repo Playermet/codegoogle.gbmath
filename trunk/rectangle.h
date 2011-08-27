@@ -1,5 +1,5 @@
  /**   \file
-  \brief  Simple rectangle  яяяяяяяяяяя
+  \brief  integer values rectangle
 
 
  */
@@ -10,6 +10,7 @@
 
 //#include "../Config.h"
 //#include "Types.h"
+
 #include "point.h"
 
 #include <ostream>
@@ -21,14 +22,14 @@ namespace gbmath
 {
 
 
-		//! \brief Прямоугольник
-		// Эта структура превратилась в кучу дерьма
+		//! \brief integer values rectangle
 		struct Rectangle
 		{
-			int left; //< позиция по X.
-			int top;  //< позиция по Y.
-			int width;  //< ширина.
-			int height; //< высота.
+			int  left; //< position X.
+			int  top;  //< position Y.
+
+			int  width;  //< rect width.
+			int  height; //< rect height.
 
 			Rectangle()
 			{
@@ -88,8 +89,10 @@ namespace gbmath
 			{
 				if (width < other.width)
 					return true;
+
 				if (width > other.width)
 					return false;
+
 				return height < other.height;
 			}
 
@@ -114,25 +117,29 @@ namespace gbmath
 			}
 #endif
 
-			// \brief Проверка нахождения точки в прямоугольнике.  // old name: checkPoint
+			// \brief Verification of finding a point in the rectangle. 
 			inline bool check_point(int x, int y) const
 			{
 			  if( (x>left) && (x<left+width) && (y>top) && (y<top+height) ) return true;
 			  return false;
 			}
 
-			inline bool check_point(const point& p) // old name :  checkPoint
+			// \brief Verification of finding a point in the rectangle. 
+			inline bool check_point(const point& p)  
 			{
 				return check_point( p.x , p.y );
 			}
 
 #ifdef _WINDOWS_
-			inline bool check_point(const POINT& p)  // old name :  checkPoint
+
+			// \brief Verification of finding a point in the rectangle. 
+			inline bool check_point(const POINT& p) 
 			{
 				return check_point( p.x , p.y );
 			}
 #endif
 
+			//!  \brief   move rectangle
 			inline void offset(int x, int y)
 			{
 				left += x;
@@ -140,6 +147,8 @@ namespace gbmath
 			}
 
 #ifdef _WINDOWS_
+
+			//!  \brief   move rectangle
 			inline void offset(const POINT& p)
 			{
 				left  += p.x;
@@ -148,6 +157,7 @@ namespace gbmath
 #endif
 
 #ifdef _WINDOWS_
+
 			//! \brief offset coord.
 			inline void operator += (const POINT& p)
 			{
@@ -156,15 +166,17 @@ namespace gbmath
 
  #endif
 
+			/***********************
 			//! \brief offset coord.
-// 			inline void operator += (const point& p)
-// 			{
-// 				offset (p);
-// 			}
-
+  			inline void operator += (const point& p)
+  			{
+  				offset (p);
+  			}
+			************************/
 
 #ifdef _WINDOWS_
-			//! \brief  Получить центральную координату.
+
+			//! \brief  Get a central coordinate.
 			inline POINT center() const
 			{
 				POINT res = { (left+width)/2 , (top+height)/2 };
@@ -174,9 +186,13 @@ namespace gbmath
 
 
 
-			friend std::ostream& operator << (std::ostream& os, const Rectangle& r)
+			friend std::ostream& operator << (std::ostream& os, 
+										const Rectangle& r)
 			{
-				os << r.left << " " << r.top << " " << r.width << " " << r.height;
+				os << r.left << " " 
+					<< r.top << " " 
+					<< r.width << " " 
+					<< r.height;
 				return os;
 			}
 
@@ -188,19 +204,22 @@ namespace gbmath
 				return ss.str();
 			}
 
-			void operator = (const std::string& str) throw (std::invalid_argument)
+			void operator = (const std::string& str) 
+											throw (std::invalid_argument)
 			{
 				std::istringstream sstream(str);
+
 				sstream >> left;
 				sstream >> top;
 				sstream >> width;
 				sstream >> height;
+
 				if( sstream.fail() ) 
 				{
 					throw std::invalid_argument("bad input string");
 				}
-			}
 
+			}
 
 
 		};

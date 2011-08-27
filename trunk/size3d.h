@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief яяяяяяяяя
+ \brief 3-dimensional size.
 
 */
 
@@ -12,7 +12,7 @@
  
 namespace gbmath
 {
-		/** \brief 3-х мерный размер */
+		//! \brief 3-dimensional size.
 		struct size3d {
 
 			union
@@ -33,7 +33,16 @@ namespace gbmath
 				float depth;
 			};
 
-			inline operator  vec3() const { return  vec3(x,y,z); }
+			inline operator  vec3() const 
+			{ 
+				return  vec3(x,y,z); 
+			}
+
+			friend std::ostream& operator << (std::ostream& os, const size3d& a)
+			{
+				os << a.x << " " << a.y << " " << a.z;
+				return os;
+			}
 
 
 		};
