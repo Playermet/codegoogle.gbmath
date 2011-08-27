@@ -19,7 +19,7 @@ namespace gbmath
 //	#error need this class ??
 
 
-	//!  \brief Клас infinite spotlight on the line (point base) and corner spotlight
+	//!  \brief   infinite spotlight on the line (point base) and corner spotlight
 	class  projector {
 	public:
 		ray3d ray;   ///< луч (центр и направление прожектора)

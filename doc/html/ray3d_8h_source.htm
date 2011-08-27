@@ -57,13 +57,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00022"></a>00022 {
 <a name="l00023"></a>00023 
 <a name="l00024"></a>00024 
-<a name="l00026"></a><a class="code" href="classgbmath_1_1ray3d.htm">00026</a>         <span class="keyword">class </span><a class="code" href="classgbmath_1_1ray3d.htm" title="Луч в 3-D по позиции и направлению.">ray3d</a> {
+<a name="l00026"></a><a class="code" href="classgbmath_1_1ray3d.htm">00026</a>         <span class="keyword">class </span><a class="code" href="classgbmath_1_1ray3d.htm" title="ray in 3d space">ray3d</a> {
 <a name="l00027"></a>00027         <span class="keyword">public</span>:
 <a name="l00028"></a><a class="code" href="classgbmath_1_1ray3d.htm#a97752bf61a9b54152708cf1976c07115">00028</a>             <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>   <a class="code" href="classgbmath_1_1ray3d.htm#a97752bf61a9b54152708cf1976c07115" title="точка центр луча (позиция).">orig</a>; 
 <a name="l00029"></a><a class="code" href="classgbmath_1_1ray3d.htm#a1dad3371200a316e8678061da93bf62c">00029</a>             <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>   <a class="code" href="classgbmath_1_1ray3d.htm#a1dad3371200a316e8678061da93bf62c" title="направление луча. Должен быть нормализован.">dir</a>;  
 <a name="l00030"></a>00030 
 <a name="l00031"></a><a class="code" href="classgbmath_1_1ray3d.htm#aae686a61a04b9affef13dab06c6078b2">00031</a>            <span class="keyword">inline</span> <a class="code" href="classgbmath_1_1ray3d.htm#aae686a61a04b9affef13dab06c6078b2">ray3d</a>() {}
-<a name="l00032"></a><a class="code" href="classgbmath_1_1ray3d.htm#a390f4e89ee639d44d5e86142346d43e8">00032</a>            <span class="keyword">inline</span> <a class="code" href="classgbmath_1_1ray3d.htm#a390f4e89ee639d44d5e86142346d43e8">ray3d</a>(<span class="keyword">const</span> <a class="code" href="classgbmath_1_1ray3d.htm" title="Луч в 3-D по позиции и направлению.">ray3d</a>&amp; r) {<a class="code" href="classgbmath_1_1ray3d.htm#a97752bf61a9b54152708cf1976c07115" title="точка центр луча (позиция).">orig</a>=r.<a class="code" href="classgbmath_1_1ray3d.htm#a97752bf61a9b54152708cf1976c07115" title="точка центр луча (позиция).">orig</a>; <a class="code" href="classgbmath_1_1ray3d.htm#a1dad3371200a316e8678061da93bf62c" title="направление луча. Должен быть нормализован.">dir</a>=r.<a class="code" href="classgbmath_1_1ray3d.htm#a1dad3371200a316e8678061da93bf62c" title="направление луча. Должен быть нормализован.">dir</a>; }
+<a name="l00032"></a><a class="code" href="classgbmath_1_1ray3d.htm#a390f4e89ee639d44d5e86142346d43e8">00032</a>            <span class="keyword">inline</span> <a class="code" href="classgbmath_1_1ray3d.htm#a390f4e89ee639d44d5e86142346d43e8">ray3d</a>(<span class="keyword">const</span> <a class="code" href="classgbmath_1_1ray3d.htm" title="ray in 3d space">ray3d</a>&amp; r) {<a class="code" href="classgbmath_1_1ray3d.htm#a97752bf61a9b54152708cf1976c07115" title="точка центр луча (позиция).">orig</a>=r.<a class="code" href="classgbmath_1_1ray3d.htm#a97752bf61a9b54152708cf1976c07115" title="точка центр луча (позиция).">orig</a>; <a class="code" href="classgbmath_1_1ray3d.htm#a1dad3371200a316e8678061da93bf62c" title="направление луча. Должен быть нормализован.">dir</a>=r.<a class="code" href="classgbmath_1_1ray3d.htm#a1dad3371200a316e8678061da93bf62c" title="направление луча. Должен быть нормализован.">dir</a>; }
 <a name="l00033"></a>00033 
 <a name="l00034"></a>00034            <span class="comment">// возможно нужно убрать параметр bNeedNormalizeDir</span>
 <a name="l00035"></a><a class="code" href="classgbmath_1_1ray3d.htm#a514c2bddee1512ff9eed1cca11606e3c">00035</a>            <span class="keyword">inline</span> <a class="code" href="classgbmath_1_1ray3d.htm#aae686a61a04b9affef13dab06c6078b2">ray3d</a>(<span class="keyword">const</span>  <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>&amp; _orig, <span class="keyword">const</span>  <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>&amp; _dir, <span class="keywordtype">bool</span> bNeedNormalizeDir=<span class="keyword">true</span>)
@@ -340,7 +340,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00309"></a>00309 
 <a name="l00310"></a>00310 <span class="comment">// http://www.gamecoder.ru/2011/04/3d-3d.html</span>
 <a name="l00311"></a>00311 
-<a name="l00312"></a><a class="code" href="classgbmath_1_1ray3d.htm#a6589cd2393534894ffe78a49304a6128">00312</a> <span class="keywordtype">bool</span> <a class="code" href="classgbmath_1_1ray3d.htm#a6589cd2393534894ffe78a49304a6128">checkIntersectPlane</a>( <span class="keyword">const</span> <a class="code" href="structgbmath_1_1plane__s.htm" title="Проскость.">plane_s</a>&amp; plane , <span class="keywordtype">float</span>* pfOutResult=NULL)<span class="keyword"> const</span>
+<a name="l00312"></a><a class="code" href="classgbmath_1_1ray3d.htm#a6589cd2393534894ffe78a49304a6128">00312</a> <span class="keywordtype">bool</span> <a class="code" href="classgbmath_1_1ray3d.htm#a6589cd2393534894ffe78a49304a6128">checkIntersectPlane</a>( <span class="keyword">const</span> <a class="code" href="structgbmath_1_1plane__s.htm" title="plane in 3d">plane_s</a>&amp; plane , <span class="keywordtype">float</span>* pfOutResult=NULL)<span class="keyword"> const</span>
 <a name="l00313"></a>00313 <span class="keyword"></span>{
 <a name="l00314"></a>00314         <span class="keyword">const</span>  <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a> plNrml = plane.<a class="code" href="structgbmath_1_1plane__s.htm#af0f6fbb2bd21ca5a0644eea51ea7d107" title="Вернуть нормаль плоскости.">normal</a>();
 <a name="l00315"></a>00315    <span class="keyword">const</span> <span class="keywordtype">float</span> alpha = plNrml.<a class="code" href="structgbmath_1_1vec3.htm#a4f2a1ebac341810c42a6c277760b134b">dot</a>(<a class="code" href="classgbmath_1_1ray3d.htm#a1dad3371200a316e8678061da93bf62c" title="направление луча. Должен быть нормализован.">dir</a>); <span class="comment">//    dotProduct(plane.normal, dir);</span>
@@ -368,7 +368,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00337"></a>00337 
 <a name="l00338"></a>00338 <span class="comment">// http://www.gamespp.com/algorithms/collisionDetectionTutorial02.html</span>
 <a name="l00339"></a>00339 <span class="comment">// find the distance between a ray and a plane.</span>
-<a name="l00340"></a><a class="code" href="classgbmath_1_1ray3d.htm#aeeef1c1186bfe39dae5ae94e970b53e1">00340</a> <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="classgbmath_1_1ray3d.htm#aeeef1c1186bfe39dae5ae94e970b53e1">distanceToPlane</a>( <a class="code" href="structgbmath_1_1plane__s.htm" title="Проскость.">plane_s</a>&amp; plane )<span class="keyword">   const</span>
+<a name="l00340"></a><a class="code" href="classgbmath_1_1ray3d.htm#aeeef1c1186bfe39dae5ae94e970b53e1">00340</a> <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="classgbmath_1_1ray3d.htm#aeeef1c1186bfe39dae5ae94e970b53e1">distanceToPlane</a>( <a class="code" href="structgbmath_1_1plane__s.htm" title="plane in 3d">plane_s</a>&amp; plane )<span class="keyword">   const</span>
 <a name="l00341"></a>00341 <span class="keyword"></span>{
 <a name="l00342"></a>00342 
 <a name="l00343"></a>00343         <span class="keyword">const</span>  <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a> vRayOrigin = <a class="code" href="classgbmath_1_1ray3d.htm#a97752bf61a9b54152708cf1976c07115" title="точка центр луча (позиция).">orig</a>;
@@ -425,7 +425,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Aug 27 16:32:26 2011 for gbmath by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Aug 27 20:46:53 2011 for gbmath by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

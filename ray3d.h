@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief  яяяяяяяяяяяяяяяя
+ \brief  ray in 3d space
 
 
   \todo Сделать перечечения: луч, сфера, бокс, плоскость,
@@ -22,7 +22,7 @@ namespace gbmath
 {
 
 
-	//! \brief Луч в 3-D по позиции и направлению
+	//! \brief  ray in 3d space
 	class ray3d {
 	public:
 	    vec3   orig; ///< точка центр луча (позиция)

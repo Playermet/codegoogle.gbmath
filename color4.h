@@ -10,29 +10,12 @@
 #ifndef __GBMATH_H__
 #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
-
-//#include "..\base\Types.h"
-//#include "color_functions.h"
-//#include "color3.h"
-
-//#include <stdio.h>
-//#include <stdlib.h>
-
-/*
-#include <float.h>
-#include <math.h>
-#include <string>
-#include <sstream>
-#include <istream>
-
-#include <assert.h>
-*/
-
+ 
  
 namespace gbmath
 {
 
-
+	//! \brief  template color4
 	 template <typename T>
 	 struct color4
 	 {

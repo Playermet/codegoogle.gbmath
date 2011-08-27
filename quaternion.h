@@ -1,5 +1,5 @@
 /** \file
- \brief  Стандартный кватернион . яяяяяяяяяяяяяяяяяяя
+ \brief   standard quaternion
 
 
 */
@@ -20,7 +20,7 @@ namespace gbmath
 //----------------------------------------------------------------------
 
 
-	//! \brief Стандартный  кватернион.
+	//! \brief standard quaternion.
 	class Quaternion   {
 	public:
 

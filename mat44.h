@@ -421,7 +421,7 @@ namespace gbmath
 			mat44 operator * ( const mat44& m ) const;
 			 
 
-			//!      OK!  
+			//!    mul vector ( may be a transform )   OK!  
 			inline vec4 operator * ( const vec4& v ) const
 			{
 				vec4 r;
@@ -462,7 +462,7 @@ namespace gbmath
 				return *this; 
 			}
 
-			//! \brief Транспонирование. (Отражение элементов по главной диагонали)  ПРОВЕРЕНА!
+			//! \brief Транспонирование. (Отражение элементов по главной диагонали)  ПРОВЕРЕНО!
 			inline mat44& transpone()
 			{
 				   register float f;
@@ -576,14 +576,14 @@ namespace gbmath
 				return *this;
 			}
 
-		    //! \brief Построение матрицы отражения по плоскости plane.   ПРОВЕРЕНА!
+		    //! \brief Построение матрицы отражения по плоскости plane.   ПРОВЕРЕНО!
 			mat44& setReflection(const plane_s& plane );
 
 
-			//! \brief  Построение теневой матрицы.  Рендеринг теней.   ПРОВЕРЕНА!
+			//! \brief  Построение теневой матрицы.  Рендеринг теней.   ПРОВЕРЕНО!
 			mat44&  setShadow(const vec4& Light, const plane_s&Plane );
 
-			//! \brief Построение матрицы поворота по оси X на угол angle . ПРОВЕРЕНА!
+			//! \brief Построение матрицы поворота по оси X на угол angle . ПРОВЕРЕНО!
 			inline mat44&  setRotationX( const float angle )
 			{
 				setIdentity();
@@ -726,7 +726,7 @@ namespace gbmath
 			mat44& setWorldTransform(const TransformData& t);
 
 
-			//! \brief Построение ортографической левосторонней проекционной матрицы. ПРОВЕРЕНА.
+			//! \brief Построение ортографической левосторонней проекционной матрицы. ПРОВЕРЕНО.
 			inline void setOrthoLH(float w, float h, float zn, float zf)
 			{
 				_11=2.0f/w;    _12=0.0f;       _13=0.0f;           _14=0.0f;
@@ -740,7 +740,7 @@ namespace gbmath
 				// 0    0   -zn/(zf-zn)  1
 			}
 
-			//! \brief Построение ортографической правосторонней проекционной матрицы. ПРОВЕРЕНА.
+			//! \brief Построение ортографической правосторонней проекционной матрицы. ПРОВЕРЕНО.
 			inline void setOrthoRH(float w, float h, float zn, float zf)
 			{
 				_11=2.0f/w;     _12=0.0f;    _13=0.0f;          _14=0.0f;
@@ -755,7 +755,7 @@ namespace gbmath
 			}
 
 
-			//! \brief Построение ортографической матрицы   ПРОВЕРЕНА
+			//! \brief Построение ортографической матрицы   ПРОВЕРЕНО
 			inline void setOrthoOffCenterLH(float minX, float maxX, float minY, float maxY, float zn, float zf)
 			{
 				_11 = 2.0f/(maxX-minX);         _12 = 0.0f,                     _13 = 0.0f,            _14 = 0.0f;
@@ -765,7 +765,7 @@ namespace gbmath
 			}
 
 
-			//! \brief Построение ортографической матрицы  ПРОВЕРЕНА
+			//! \brief Построение ортографической матрицы  ПРОВЕРЕНО
 			inline void setOrthoOffCenterRH(float minX, float maxX, float minY, float maxY, float zn, float zf)
 			{
 				_11=2.0f/(maxX-minX);        _12=0.0f;                     _13=0.0f;            _14=0.0f;
@@ -782,7 +782,7 @@ namespace gbmath
 
 			//-------------------------------------------------------------
 
-			//! \brief построение перспективной левосторонней матрицы. ПРОВЕРЕНА.
+			//! \brief построение перспективной левосторонней матрицы. ПРОВЕРЕНО.
 			void setPerspectiveFovLH(float fov, float asp, float zn, float zf)
 			{
 				const float yScale =   gbmath::scalar::cotan(fov/2.0f); //yScale = cot(fovY/2)
@@ -798,7 +798,7 @@ namespace gbmath
 				_41 = 0.0f;     _42 = 0.0f;    _43 = -zn*zf/(zf-zn);   _44 = 0.0f;
 			}
 
-			//! \brief построение перспективной правосторонней матрицы. ПРОВЕРЕНА.
+			//! \brief построение перспективной правосторонней матрицы. ПРОВЕРЕНО.
 			void setPerspectiveFovRH(float fov, float asp, float zn, float zf)
 			{
 			 const float yScale =   gbmath::scalar::cotan(fov/2.0f);
@@ -818,7 +818,7 @@ namespace gbmath
 			}
 
 
-			//! \brief Построение перспективной левосторонней матрицы по высоте и ширине .ПРОВЕРЕНА.
+			//! \brief Построение перспективной левосторонней матрицы по высоте и ширине .ПРОВЕРЕНО.
 			void setPerspectiveLH(float w, float h, float zn, float zf)
 			{
 				// 2*zn/w  0       0              0
@@ -832,7 +832,7 @@ namespace gbmath
 				_41 = 0.0f,       _42 = 0.0f,        _43 = zn*zf/(zn-zf);  _44 = 0.0f;
 			}
 
-			//! \brief Построение перспективной правосторонней матрицы по высоте и ширине. ПРОВЕРЕНА.
+			//! \brief Построение перспективной правосторонней матрицы по высоте и ширине. ПРОВЕРЕНО.
 			void setPerspectiveRH(float w, float h, float zn, float zf)
 			{
 				// 2*zn/w  0       0              0
@@ -849,7 +849,7 @@ namespace gbmath
 
 			//-------------------------------------------------------------
 
-			/** \brief Построение левосторонней матрицы вида. ПРОВЕРЕНА.  */
+			/** \brief Построение левосторонней матрицы вида. ПРОВЕРЕНО.  */
 			void setViewLookAtLH(const vec3& eye, const vec3& at, const vec3& up)
 			{
             vec3  zaxis = (at - eye);  zaxis.normalize();
@@ -871,7 +871,7 @@ namespace gbmath
 			}
 
 
-			/** \brief Построение правосторонней матрицы вида. ПРОВЕРЕНА.  */
+			/** \brief Построение правосторонней матрицы вида. ПРОВЕРЕНО.  */
 			void setViewLookAtRH(const vec3& eye, const vec3& at, const vec3& up)
 			{
             vec3  zaxis = (eye - at);  zaxis.normalize();
@@ -999,6 +999,7 @@ namespace gbmath
 #endif // _D3D9_H_
 
 
+			#pragma message("!!!  need << >>  for mat44   " __FILE__ )
 
 				//! \brief Вывод значений на консоль
 			   inline void print() const
@@ -1010,6 +1011,8 @@ namespace gbmath
 					   _41, _42, _43, _44
 					   );
 			   }
+			   
+			   
 
 
 		};

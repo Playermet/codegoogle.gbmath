@@ -16,7 +16,7 @@ namespace gbmath
 {
 
  
-	//! \brif   object oriented bounding box
+	//! \brief   object oriented bounding box
 	class oobb {
 	public:
 

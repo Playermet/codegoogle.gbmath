@@ -97,23 +97,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00051"></a>00051 }
 <a name="l00052"></a>00052 
 <a name="l00053"></a>00053 <span class="comment">//========================================================</span>
-<a name="l00054"></a><a class="code" href="classgbmath_1_1sphere.htm#aeebc5c779e647e019c887b8993561758">00054</a> <a class="code" href="namespacegbmath.htm#a52378c6698d1142d3539c0424773a59e" title="описание состояния пространственого пересачения...">obj_contains_e</a> <a class="code" href="classgbmath_1_1sphere.htm#aeebc5c779e647e019c887b8993561758">sphere::BSphereContainsBSphere</a>(<span class="keyword">const</span> <a class="code" href="classgbmath_1_1sphere.htm" title="The scope of the center point and radius. She Bounding sphere.">sphere</a>&amp; s)<span class="keyword"> const</span>
+<a name="l00054"></a><a class="code" href="classgbmath_1_1sphere.htm#aeebc5c779e647e019c887b8993561758">00054</a> <a class="code" href="namespacegbmath.htm#a52378c6698d1142d3539c0424773a59e" title="description of spatial objects crossing">obj_contains_e</a> <a class="code" href="classgbmath_1_1sphere.htm#aeebc5c779e647e019c887b8993561758">sphere::BSphereContainsBSphere</a>(<span class="keyword">const</span> <a class="code" href="classgbmath_1_1sphere.htm" title="The scope of the center point and radius. She Bounding sphere.">sphere</a>&amp; s)<span class="keyword"> const</span>
 <a name="l00055"></a>00055 <span class="keyword"></span>{
 <a name="l00056"></a>00056            <span class="keyword">const</span> <span class="keywordtype">float</span> d2 = (<a class="code" href="classgbmath_1_1sphere.htm#a77fc8034e9af445efa9b69843d671595" title="center of sphere.">center</a> - s.<a class="code" href="classgbmath_1_1sphere.htm#a77fc8034e9af445efa9b69843d671595" title="center of sphere.">center</a>).length_sq();
 <a name="l00057"></a>00057 
 <a name="l00058"></a>00058           <span class="keywordflow">if</span>(  d2 &lt; <a class="code" href="namespacegbmath_1_1scalar.htm#a4c33c2f07dd7ff4cc887df0fff1735bc" title="Квадрат.">scalar::sqr</a>( <a class="code" href="classgbmath_1_1sphere.htm#abcbf635769e57912ba6473161b0a13b5" title="radius of sphere.">radius</a> + s.<a class="code" href="classgbmath_1_1sphere.htm#abcbf635769e57912ba6473161b0a13b5" title="radius of sphere.">radius</a>)  )
 <a name="l00059"></a>00059           {
 <a name="l00060"></a>00060                         <span class="keywordflow">if</span> ( d2 &lt; <a class="code" href="namespacegbmath_1_1scalar.htm#a4c33c2f07dd7ff4cc887df0fff1735bc" title="Квадрат.">scalar::sqr</a>(<a class="code" href="classgbmath_1_1sphere.htm#abcbf635769e57912ba6473161b0a13b5" title="radius of sphere.">radius</a>-s.<a class="code" href="classgbmath_1_1sphere.htm#abcbf635769e57912ba6473161b0a13b5" title="radius of sphere.">radius</a>) )
-<a name="l00061"></a>00061                                 <span class="keywordflow">return</span> <a class="code" href="namespacegbmath.htm#a52378c6698d1142d3539c0424773a59ea5aa9a335d04365a4e90473e64c7a632f" title="объект полностью расположен в другом.">SC_CONTAINSFULLY</a>;
+<a name="l00061"></a>00061                                 <span class="keywordflow">return</span> <a class="code" href="namespacegbmath.htm#a52378c6698d1142d3539c0424773a59ea5aa9a335d04365a4e90473e64c7a632f" title="the object is fully located in another">SC_CONTAINSFULLY</a>;
 <a name="l00062"></a>00062 
 <a name="l00063"></a>00063                         <span class="keywordflow">else</span>
-<a name="l00064"></a>00064                                 <span class="keywordflow">return</span> <a class="code" href="namespacegbmath.htm#a52378c6698d1142d3539c0424773a59ea2e40db5041883c0d1eb081c798f462d9" title="объект частично содержится в другом.">SC_CONTAINSPARTIALLY</a>;
+<a name="l00064"></a>00064                                 <span class="keywordflow">return</span> <a class="code" href="namespacegbmath.htm#a52378c6698d1142d3539c0424773a59ea2e40db5041883c0d1eb081c798f462d9" title="object is partially contained in the other">SC_CONTAINSPARTIALLY</a>;
 <a name="l00065"></a>00065           }
 <a name="l00066"></a>00066 
 <a name="l00067"></a>00067           <span class="comment">// else</span>
 <a name="l00068"></a>00068           <span class="comment">//  return SC_NOOVERLAP;</span>
 <a name="l00069"></a>00069 
-<a name="l00070"></a>00070           <span class="keywordflow">return</span>   <a class="code" href="namespacegbmath.htm#a52378c6698d1142d3539c0424773a59eab2bc72120069d6a31f80a16a621e4e39" title="объект не касается другого объекта.">SC_NOOVERLAP</a>;
+<a name="l00070"></a>00070           <span class="keywordflow">return</span>   <a class="code" href="namespacegbmath.htm#a52378c6698d1142d3539c0424773a59eab2bc72120069d6a31f80a16a621e4e39" title="object does not apply to another object">SC_NOOVERLAP</a>;
 <a name="l00071"></a>00071 };
 <a name="l00072"></a>00072 
 <a name="l00073"></a>00073 
@@ -134,7 +134,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Aug 27 16:32:26 2011 for gbmath by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Aug 27 20:46:53 2011 for gbmath by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

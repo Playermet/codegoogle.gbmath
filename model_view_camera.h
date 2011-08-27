@@ -1,4 +1,8 @@
-/** \file  */
+/** \file  
+ \brief A simple model of camera class that rotates around the object and the object rotates.
+ 
+
+*/
 
 #pragma once
 #include "base_camera.h"
@@ -14,7 +18,7 @@ namespace gbmath
 
 
 
-/** \brief Простая модель класс камеры , которая вращается вокруг объекта и вращает объект. */
+//! \brief A simple model of camera class that rotates around the object and the object rotates.
 class model_view_camera : public base_camera
 {
 public:

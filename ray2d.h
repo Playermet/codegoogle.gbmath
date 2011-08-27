@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief   яяяяяяяяяяяя
+ \brief   ray in 2d space
 
 
 */
@@ -19,7 +19,7 @@ namespace gbmath
 
 
 
-		/** \brief Луч в 2d  по позиции  (исходной точке)  и  направлению  */
+		//! \brief  ray in 2d space 
 		class ray2d {
 		public:
 			 vec2   orig; ///< точка центр луча

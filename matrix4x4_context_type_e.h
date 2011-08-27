@@ -1,8 +1,5 @@
 ﻿/**  \file
- \brief яяяяяяяяя
-
-
-
+  \brief The role of matrix in the context of
 
 */
 
@@ -19,12 +16,12 @@ namespace gbmath
 #pragma message("!!!!  попробовать переделат в класс энумератор  "  __FILE__ )
 
 
-	  //!  \brief Роль матрицы в контексте
+	  //!  \brief The role of matrix in the context of
 	  struct matrix4x4_context_type_e
 	  {
 		  enum e
 		  {
-			  UNDEFINED  = 0,   ///< тип НЕ ОПРЕДЕЛЁН.
+			  UNDEFINED  = 0,   ///<  undefined role .
 
 
 			  VIEWPROJECTION,
@@ -63,6 +60,4 @@ namespace gbmath
 		  static bool fromstr(e& valOut, const char* str);
 	  };
 
-
- 
 }

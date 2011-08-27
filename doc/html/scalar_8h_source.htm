@@ -176,9 +176,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00140"></a>00140 
 <a name="l00141"></a>00141 
 <a name="l00142"></a>00142                 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
-<a name="l00144"></a><a class="code" href="namespacegbmath_1_1scalar.htm#a8f8bcd65f9a358ed5ef30b71e386aa4a">00144</a>                 <span class="keyword">inline</span> T <a class="code" href="namespacegbmath_1_1scalar.htm#a8f8bcd65f9a358ed5ef30b71e386aa4a" title="Calculate the linear interpolation.">lerp</a>( <span class="keywordtype">float</span> alpha, <span class="keyword">const</span> T&amp; <a class="code" href="_ray_polygon_8c.htm#ae01982559d80ba419f20c21fc741a535">v0</a>, <span class="keyword">const</span> T&amp; v1 ) <span class="keywordflow">throw</span>()
+<a name="l00144"></a><a class="code" href="namespacegbmath_1_1scalar.htm#a8f8bcd65f9a358ed5ef30b71e386aa4a">00144</a>                 <span class="keyword">inline</span> T <a class="code" href="namespacegbmath_1_1scalar.htm#a8f8bcd65f9a358ed5ef30b71e386aa4a" title="Calculate the linear interpolation.">lerp</a>( <span class="keywordtype">float</span> alpha, <span class="keyword">const</span> T&amp; v0, <span class="keyword">const</span> T&amp; v1 ) <span class="keywordflow">throw</span>()
 <a name="l00145"></a>00145                 {
-<a name="l00146"></a>00146                         <span class="keywordflow">return</span>( (T)(<a class="code" href="_ray_polygon_8c.htm#ae01982559d80ba419f20c21fc741a535">v0</a> + alpha * ( v1 - <a class="code" href="_ray_polygon_8c.htm#ae01982559d80ba419f20c21fc741a535">v0</a> )) );
+<a name="l00146"></a>00146                         <span class="keywordflow">return</span>( (T)(v0 + alpha * ( v1 - v0 )) );
 <a name="l00147"></a>00147                 }
 <a name="l00148"></a>00148 
 <a name="l00149"></a>00149 
@@ -192,9 +192,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00158"></a>00158                 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
 <a name="l00160"></a><a class="code" href="namespacegbmath_1_1scalar.htm#a2a409b9ea0e94d6a55342f35a3b2495c">00160</a>                 <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespacegbmath_1_1scalar.htm#a2a409b9ea0e94d6a55342f35a3b2495c" title="fill the buffer dest value val number num.">fill</a>( T * dest, <span class="keyword">const</span> T val, <span class="keyword">const</span> <span class="keywordtype">int</span> num ) <span class="keywordflow">throw</span>()
 <a name="l00161"></a>00161                 {
-<a name="l00162"></a>00162                         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="_ray_polygon_8c.htm#a7e98b8a17c0aad30ba64d47b74e2a6c1">i</a> = 0; <a class="code" href="_ray_polygon_8c.htm#a7e98b8a17c0aad30ba64d47b74e2a6c1">i</a> &lt; num; <a class="code" href="_ray_polygon_8c.htm#a7e98b8a17c0aad30ba64d47b74e2a6c1">i</a>++)
+<a name="l00162"></a>00162                         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num; i++)
 <a name="l00163"></a>00163                         {
-<a name="l00164"></a>00164                                 dest[<a class="code" href="_ray_polygon_8c.htm#a7e98b8a17c0aad30ba64d47b74e2a6c1">i</a>] = val;
+<a name="l00164"></a>00164                                 dest[i] = val;
 <a name="l00165"></a>00165                         }
 <a name="l00166"></a>00166                 }
 <a name="l00167"></a>00167 
@@ -294,7 +294,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00279"></a>00279                 <span class="keywordflow">return</span>   1.0f / tanf(f); 
 <a name="l00280"></a>00280         }
 <a name="l00281"></a>00281 
-<a name="l00283"></a><a class="code" href="namespacegbmath_1_1scalar.htm#a746bb42327223fc612290d7b2c453256">00283</a>         <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="namespacegbmath_1_1scalar.htm#a746bb42327223fc612290d7b2c453256" title="Angle in radians to degrees.">radiansToDegree</a>(<span class="keywordtype">float</span> <a class="code" href="_bound_sphere_8c.htm#ab6c28cf69c9a69a01e7ea6a37c85ba92">rad</a>) 
+<a name="l00283"></a><a class="code" href="namespacegbmath_1_1scalar.htm#a746bb42327223fc612290d7b2c453256">00283</a>         <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="namespacegbmath_1_1scalar.htm#a746bb42327223fc612290d7b2c453256" title="Angle in radians to degrees.">radiansToDegree</a>(<span class="keywordtype">float</span> rad) 
 <a name="l00284"></a>00284         { 
 <a name="l00285"></a>00285                 <span class="keywordflow">return</span> rad * ( 180.0f / <a class="code" href="namespacegbmath_1_1constan.htm#adc97d79b13e6cb0eafad99a8bfef01d5" title="PI.">gbmath::constan::PI</a> ); 
 <a name="l00286"></a>00286         }
@@ -396,7 +396,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Aug 27 16:32:26 2011 for gbmath by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Aug 27 20:46:53 2011 for gbmath by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>
