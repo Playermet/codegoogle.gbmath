@@ -119,6 +119,44 @@ mat44&  mat44::setShadow(const vec4& Light, const plane_s& Plane )
      return *this;
 };
 
+//=============================================
+bool mat44::empty() const
+{
+	static const mat44 _ZERO(0.0f);
+	if( memcmp( &_ZERO._11 , &_11 , sizeof(mat44) ) == 0 )
+		return true;
+
+	return false;
+}
+
+//=========================================================================
+mat44 mat44::operator * ( const mat44& m ) const
+{
+	mat44 r;
+
+	r._11 = floats[0][0] * m.floats[0][0] + floats[0][1] * m.floats[1][0] + floats[0][2] * m.floats[2][0] + floats[0][3] * m.floats[3][0];
+	r._12 = floats[0][0] * m.floats[0][1] + floats[0][1] * m.floats[1][1] + floats[0][2] * m.floats[2][1] + floats[0][3] * m.floats[3][1];
+	r._13 = floats[0][0] * m.floats[0][2] + floats[0][1] * m.floats[1][2] + floats[0][2] * m.floats[2][2] + floats[0][3] * m.floats[3][2];
+	r._14 = floats[0][0] * m.floats[0][3] + floats[0][1] * m.floats[1][3] + floats[0][2] * m.floats[2][3] + floats[0][3] * m.floats[3][3];
+
+	r._21 = floats[1][0] * m.floats[0][0] + floats[1][1] * m.floats[1][0] + floats[1][2] * m.floats[2][0] + floats[1][3] * m.floats[3][0];
+	r._22 = floats[1][0] * m.floats[0][1] + floats[1][1] * m.floats[1][1] + floats[1][2] * m.floats[2][1] + floats[1][3] * m.floats[3][1];
+	r._23 = floats[1][0] * m.floats[0][2] + floats[1][1] * m.floats[1][2] + floats[1][2] * m.floats[2][2] + floats[1][3] * m.floats[3][2];
+	r._24 = floats[1][0] * m.floats[0][3] + floats[1][1] * m.floats[1][3] + floats[1][2] * m.floats[2][3] + floats[1][3] * m.floats[3][3];
+
+	r._31 = floats[2][0] * m.floats[0][0] + floats[2][1] * m.floats[1][0] + floats[2][2] * m.floats[2][0] + floats[2][3] * m.floats[3][0];
+	r._32 = floats[2][0] * m.floats[0][1] + floats[2][1] * m.floats[1][1] + floats[2][2] * m.floats[2][1] + floats[2][3] * m.floats[3][1];
+	r._33 = floats[2][0] * m.floats[0][2] + floats[2][1] * m.floats[1][2] + floats[2][2] * m.floats[2][2] + floats[2][3] * m.floats[3][2];
+	r._34 = floats[2][0] * m.floats[0][3] + floats[2][1] * m.floats[1][3] + floats[2][2] * m.floats[2][3] + floats[2][3] * m.floats[3][3];
+
+	r._41 = floats[3][0] * m.floats[0][0] + floats[3][1] * m.floats[1][0] + floats[3][2] * m.floats[2][0] + floats[3][3] * m.floats[3][0];
+	r._42 = floats[3][0] * m.floats[0][1] + floats[3][1] * m.floats[1][1] + floats[3][2] * m.floats[2][1] + floats[3][3] * m.floats[3][1];
+	r._43 = floats[3][0] * m.floats[0][2] + floats[3][1] * m.floats[1][2] + floats[3][2] * m.floats[2][2] + floats[3][3] * m.floats[3][2];
+	r._44 = floats[3][0] * m.floats[0][3] + floats[3][1] * m.floats[1][3] + floats[3][2] * m.floats[2][3] + floats[3][3] * m.floats[3][3];
+
+	return  r;
+}
+
 
 
 //=========================================================================

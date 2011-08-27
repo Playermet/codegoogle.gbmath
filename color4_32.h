@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief яяяяяяяя
+ \brief Standard four-color int
 
 
 */
@@ -17,6 +17,7 @@
 namespace gbmath
 {
 
+	//! \brief  Standard four-color int  (for union)
 	struct color4_32_s
 	{
 		byte_t r, g, b, a;
@@ -25,9 +26,13 @@ namespace gbmath
 		{
 			return r==arg.r && g==arg.g && b==arg.b && a==arg.a;
 		}
+
+
 	};
 
 	//template <typename T>
+
+	//! \brief  Standard four-color int
 	struct color4_32 : public color4<byte_t> {
 
 		  inline color4_32() 

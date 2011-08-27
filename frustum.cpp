@@ -146,7 +146,7 @@ bool frustum::checkAABB(const aabb& aabb) const
 
 		return true;
 
-	} // for
+	}
 
 	return false;
 };

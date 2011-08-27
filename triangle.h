@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief ??????
+ \brief Triangle by three points
 
 
 */
@@ -14,15 +14,19 @@
 namespace gbmath
 {
 
-		//! \brief Треугольник по трём точкам .
+		//! \brief Triangle by three points.
 		class triangle {
 		public:
-			 vec3   p1; ///< первая точка(вершина) треугольника
-			 vec3   p2; ///< вторая точка(вершина) треугольника
-			 vec3   p3; ///< третья точка(вершина) треугольника
+			 vec3   p1; ///< the first  point (vertex) triangular
+			 vec3   p2; ///< the second point (vertex) triangular
+			 vec3   p3; ///< the third  point (vertex) triangular
 
 
-			inline triangle() {}
+			inline triangle() 
+			{
+
+			}
+
 			inline triangle(const triangle& t)
 			{
 				*this = t;
@@ -40,7 +44,7 @@ namespace gbmath
 				p1=_p1;	p2=_p2;	p3=_p3;
 			}
 
-			/** \brief Вычислить и вернуть среднюю точку треугольника */
+			//! \brief Compute and return the middle point of the triangle
 			inline  vec3 middle_point() const
 			{
 				vec3 res;
@@ -50,7 +54,7 @@ namespace gbmath
 				return res;
 			}
 
-			//! \brief Вычислить и вернуть плоскость по точкам треугольника
+			//! \brief Compute and return the plane to the points of the triangle
 			plane_s get_plane() const
 			{
 				plane_s plane;
@@ -60,13 +64,15 @@ namespace gbmath
 
 
 			#if ( defined(GB_OPENGL) && defined(__GL_H__)   )
-			//! \brief Вывод вершин по OpenGL  по старинке.
+
+			//! \brief rendering via OpenGL
 			inline void glVertex()
 			{
 				glVertex3f(p1.x, p1.y, p1.z);
 				glVertex3f(p2.x, p2.y, p2.z);
 				glVertex3f(p3.x, p3.y, p3.z);
 			}
+
 			#endif
 
 
@@ -86,27 +92,18 @@ namespace gbmath
 
 			void operator = (const std::string& str) throw (std::invalid_argument)
 			{
-				assert(false);
-				//std::istringstream ss(str);
-				//ss >> p1 ;
-				//ss >> p2 ;
-				//ss >> p3 ;
-				//if( ss.fail() ) throw std::invalid_argument("bad input string");
-				/*
-				std::string res;
-				res += p1;
-				res += " ";
-				res += p2;
-				res += " ";
-				res += p3;
-				return res;
-				*/
+				std::istringstream ss(str);
+				ss >> p1 ;
+				ss >> p2 ;
+				ss >> p3 ;
+
+				if( ss.fail() )
+				{
+					throw std::invalid_argument("bad input string");
+				}
+
 			}
-
-
-
-
-
+ 
 		};
  
 }

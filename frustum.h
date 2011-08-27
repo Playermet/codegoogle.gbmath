@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief яяяяяяяя
+ \brief frustum
 
 
 */
@@ -13,12 +13,13 @@
 namespace gbmath
 {
 
-   //! \brief Стандартная пирамида видимости
+   //! \brief   frustum. Standard frustum
    class frustum  {
    public:
 
 	   union {
-		   struct {
+		   struct 
+		   {
 			   plane_s  front;
 			   plane_s  back;
 			   plane_s  left;
@@ -30,44 +31,37 @@ namespace gbmath
 		   plane_s  planes[6] ;
 	   };
 
-	   inline frustum() {}
-	   inline frustum(const frustum& f) { *this=f; }
+	   inline frustum() 
+	   {
+
+	   }
+
+	   inline frustum(const frustum& f) 
+	   { 
+		   *this = f; 
+	   }
 
 
-	   /** \brief Выполнить построение из матричного произведения view * proj */
+	   //! \briefBuild the matrix product of the view * proj 
 	   void make(const  mat44& mViewProj);
 
-	   /** \brief Выполнить построение из матриц   view и proj */
+	   //! \brief Build the matrix product of the view and proj 
 	   void make(const  mat44& mView, const  mat44& mProj)
 	   {
 		    mat44 mViewProj = mView * mProj;
 		   make(mViewProj);
 	   }
 
-       //! \brief Проверка попадания точки в пирамиду
+       //! \brief Verification of the point of the pyramid
 	   bool checkPoint(const  vec3& point) const;
 
-       //! \brief Проверка попадания сферы в пирамиду
+       //! \brief Hit Testing in the scope of the pyramid
 	   bool checkSphere(const sphere& sphere)  const;
 
-	   //! \brief Проверка попадания бокса в пирамиду
+	   //! \brief Hit Testing in the pyramid box
        bool checkAABB(const aabb& aabb) const;
 
-
-
-	 //  #pragma message("delete  print()  "   __FILE__ )
-
-  //   //! \brief Отладочный вывод на консоль
-  //   inline void print() const
-	 //{
-		// printf("\n");
-		// printf("front=");  front.print();  printf("\n");
-		// printf("back=");   back.print();   printf("\n");
-		// printf("left= ");  left.print();   printf("\n");
-		// printf("right=");  right.print();  printf("\n");
-		// printf("top=");    top.print();    printf("\n");
-		// printf("bottom="); bottom.print(); printf("\n");
- 	// }
+ 
 
 	 friend std::ostream &operator << ( std::ostream &stream, const frustum& fr )
 	 {

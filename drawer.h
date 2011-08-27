@@ -1,5 +1,5 @@
 /**   \file
- \brief   render math objects throoth OPenGL
+ \brief   Drawing of mathematical objects through OpenGL .
 
 */
 
@@ -10,18 +10,23 @@
     #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
-#ifdef GBMATH_USE_OPENGL_DRAWER
 
+#ifdef GBMATH_USE_OPENGL_DRAWER
 
 
 namespace gbmath 
 {
 
+	//!  \brief  Drawing of mathematical objects through OpenGL .
 	class drawer {
 	public:
 	
 		drawer();
-		~drawer() {}	
+
+		~drawer() 
+		{
+
+		}	
 			
 			void set_transform_matrix_world (const mat44&);
 			void set_transform_matrix_view  (const mat44&);	
@@ -38,7 +43,7 @@ namespace gbmath
 			void set_color_white() { set_color( 1.0f , 1.0f , 1.0f , 1.0f ); }
 			void set_color_black() { set_color( 0.0f , 0.0f , 0.0f , 1.0f ); }
 
-			// TODO: pink, yellow , ......
+			  TODO: pink, yellow , ......
 
 
 			void set_pointsize(int size) ;

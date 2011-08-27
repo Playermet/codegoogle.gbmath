@@ -1,8 +1,8 @@
 ﻿/**  \file
- \brief   яяяяячччччч
+ \brief   Geometric context
 
 
- * \todo УБрать FAILED SUCC и все виндовские макросы.
+ * \todo  Need delete FAILED SUCC   and all windows macros
  * \todo Подружить с не windows ....
 
 */
@@ -21,20 +21,28 @@ namespace gbmath
 
 
 
-		//! \brief Геометрический контекст.
+		//! \brief Geometric context. Preparation of derivatives of vectors and matrices.
 		class geometry_context  {
 		public:
-		             geometry_context() {}
-		   virtual  ~geometry_context() {}
+
+				geometry_context() 
+				{
+
+				}
+
+				virtual  ~geometry_context() 
+				{
+
+				}
 
 
 		  long  setMatrices(const  mat44 *mWorld,
 						    const  mat44 *mView,
 						    const  mat44 *mProj );
 
-		  /** \brief Для перекрытия пользователем.  При изменении матриц.
-					 Если матрица не меняется тогда параметр NULL.
-					 возвращает результат установки матрицы.  */
+		  /** \brief To cover the user. If you change the matrix.
+				If the matrix does not change then the argument is NULL.
+				returns a result set of a matrix. */
 		  virtual long onNewMatrices(const  mat44 *mWorld,
 									 const  mat44 *mView,
 									 const  mat44 *mProj )
@@ -97,7 +105,6 @@ namespace gbmath
 		  const mat44 *get_matrix_WorldViewTranspone()const;
 		  const mat44 *get_matrix_WorldViewInverse()const;
 		  const mat44 *get_matrix_WorldViewInverseTranspone()const;
-
 
 
 		  const vec3 *get_vector3_VewPos()const;
@@ -173,7 +180,7 @@ namespace gbmath
 
 
 
-		   eyedata getViewParams()const;
+		    eyedata getViewParams()const;
 		    const eyedata *getViewParamsPtr()const;
 
 
@@ -214,7 +221,9 @@ namespace gbmath
 		    int  setWorldPositionVec(const vec3 *pos) ;
 
 		    int  setWorldRotationYawPitchRoll(float yaw, float pitch, float roll) ;
+
 		//    int  setWorldRotationVal(float axX, float axY, float axZ, float angle) ;
+
 		    int  setWorldRotationQuaternion(const Quaternion *q) ;
 		    int  setWorldRotationAxiesAngle(const vec3 *vAx, float angle) ;
 
@@ -232,7 +241,7 @@ namespace gbmath
 			}
 
 
-			/*
+			/************************************
 		    UINT get_matrix_WorldStackSize()const
 		  {
 		    return (UINT)m_MatrixStackWorld.size();
@@ -245,7 +254,7 @@ namespace gbmath
 		  {
 		    return (UINT)m_MatrixStackProj.size();
 		  };
-		     */
+		     ************************************/
 
 
 			//gbmath::perspective_projection_data
@@ -257,14 +266,14 @@ namespace gbmath
 		private:
 			typedef unsigned long BOOLFLAG;
 
-		  //  /** \brief Сборка для класса MatricesContext */
+		  //! \brief    Building for the class  
 		  struct matrixStore_s
 		  {
 		    mat44 matrix;
-		    BOOLFLAG bChangeFlag;
+		    BOOLFLAG bChangeFlag;  ///<  change or not  a matrix
 		  };
 
-		  //    /** \brief Структура Вспомогательная сборка матриц для класса MatricesContext */
+		  //! \brief  Auxiliary matrices for the assembly of class   
 		  struct MatricesStore
 		  {
 		    matrixStore_s
@@ -295,18 +304,18 @@ namespace gbmath
 
 
 
-		  //     /** \brief Вспомогательная структура для класса MatricesContext  */
+		  //!  \brief Auxiliary 
 		  struct BoolChangedMainMatrisec
 		  {
-		    BOOLFLAG bViewChange, bWorldChange, bProjChange;
+				BOOLFLAG bViewChange, bWorldChange, bProjChange;
 		  };
 
 
-		    mat44 m_mWorld, m_mView, m_mProj; ///< основные матрицы
+		    mat44 m_mWorld, m_mView, m_mProj; ///< The main three matrices
 
 
-		  mutable mat44 m_temp;
-		  mutable mat44 m_temp2; ///< для временных вычислений
+		  mutable mat44 m_temp;	 ///<  for temp
+		  mutable mat44 m_temp2; ///<  for temp
 
 		  mutable MatricesStore m_matr;
 		  mutable BoolChangedMainMatrisec m_BoolChangedMatr;
@@ -318,25 +327,24 @@ namespace gbmath
 
 		  mutable vec4 m_vec4Temp;
 
-		  //*  показывает изменился ли вектор MouseCoordCameraUnproject
+		  //*  indicates whether the vector has changed  
 		  mutable bool m_bMouseCoordCameraUnproject_change;
-		  //* последний пересчитаный вектор MouseCoordCameraUnproject
+
+		  //* rus: последний пересчитаный вектор MouseCoordCameraUnproject
 		  mutable vec3 m_vec3_MouseCoordCameraUnproject;
 
-		  //* изменилимь ли данные проекции
+		  //* rus: изменилимь ли данные проекции
 		  mutable BOOLFLAG m_bChangeProjectionData;
 		  //* данные проекции
 		  mutable perspective_projection_data m_PerspectiveProjData;
 
-		  //* изменились ли вью параметры
+		  //*    rus:  изменились ли вью параметры
 		  mutable BOOLFLAG m_bIsParameter_EyeData_changed;
 
-		  //* вью параметры
+ 
 		  mutable eyedata m_EyeData;
 
-		 // fmathEyeData
-
-
+ 
 			/******************************
 		  mutable CFixedMatrixStack m_MatrixStackWorld;
 		  mutable CFixedMatrixStack m_MatrixStackView;
@@ -346,15 +354,13 @@ namespace gbmath
 		  mutable bool m_bTransfDataChange;
 		  mutable TransformData  m_TransformData;
 
-		  // временно исключено !
+		  // temporarily excluded!
 		 // mutable Quaternion m_qRotation;
 
 
 		};
 		// end class
 
-
-
-
+ 
 
 }

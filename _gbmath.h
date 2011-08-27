@@ -1,5 +1,5 @@
 ﻿/** \file
-* \brief MAIN HEADER.
+* \brief MAIN INCLUDE HEADER.
 *
 *
 */
@@ -18,17 +18,10 @@
 #include <math.h>
 #include <float.h>
 
-
 #include <limits>
 
-//#include <stdlib.h>
-//#include <cstdio>
-
-//#include <istream>
-//#include <ostream>
 #include <iostream>
 #include <sstream>
-
 #include <string>
 #include <vector>
 #include <stdexcept>
@@ -47,14 +40,18 @@
 #endif
 
 
-
 #include "config.h"
+
+// base types
 
 namespace gbmath
 {
-	// base types
+	
 	typedef  unsigned char    byte_t;
+	//typedef  unsigned char   uint8_t;
 }
+
+// include lib headers
 
 #include "point.h"
 #include "rectangle.h"
@@ -82,23 +79,23 @@ namespace gbmath
 #include "vec4.h"
 
 
-/*
+/*****************************
 // new vectors  template
 #include "vector2.hpp"
 #include "vector3.hpp"
 #include "vector4.hpp"
-*/
+******************************/
 
 
 
-/*
+/****************************
 // new matrix template
 #include "matrix.hpp"
 #include "matrix_quad.hpp"
 #include "matrix2x2.hpp"
 #include "matrix3x3.hpp"
 #include "matrix4x4.hpp"
-*/
+****************************/
 
 
 #include "mat22.h"
@@ -162,16 +159,16 @@ namespace gbmath
 #include "first_person_camera.h"
 #include "model_view_camera.h"
 
-
+// math dependence
 #include "dependence_on_function.h"
 
  
 
-// render math opt
+//! render math opt
 //#define GBMATH_USE_OPENGL_DRAWER
  
-  // render math opt
-  // #define GBMATH_USE_OPENGL_DRAWER
+//! render math opt
+// #define GBMATH_USE_OPENGL_DRAWER
  
 
 #include "drawer.h"
@@ -183,18 +180,19 @@ namespace gbmath
 	#pragma  warning(pop)
 #endif
 
-//
-//// do include static lib for VC
-//#if GB_LIB
-//	#ifndef _LIB_GB_FMATH
-//		#ifdef _DEBUG
-//				#pragma comment( lib , "gb_fmath_d.lib" )
-//		#else
-//				#pragma comment( lib , "gb_fmath.lib" )
-//		#endif
-//	#endif
-//#endif
-//
+
+/*****************************************
+// do include static lib for VC
+#if GB_LIB
+	#ifndef _LIB_GB_FMATH
+		#ifdef _DEBUG
+				#pragma comment( lib , "gb_fmath_d.lib" )
+		#else
+				#pragma comment( lib , "gb_fmath.lib" )
+		#endif
+	#endif
+#endif
+*******************************************/
 
 
 // end file

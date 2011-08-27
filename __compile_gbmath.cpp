@@ -38,5 +38,8 @@
  #include "vec3.cpp"
  #include "vector2.cpp"
  #include "vector4.cpp"
+#include "triangle.cpp"
+
+#include "dependence_on_function.cpp"
 
  #include "drawer.cpp" 

@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief яяяяяяяяяяяяяя
+ \brief  standard float 3x3 matrix .
 
 
 */
@@ -19,13 +19,14 @@ namespace gbmath
 
 
 
-		//! \brief Матрица 3x3
+		//! \brief matrix 3x3
 		struct mat33
 		{
 
 			union
 			{
-				struct {
+				struct 
+				{
 
 				   float _11,  _12,  _13,
 				         _21,  _22,  _23,
@@ -38,8 +39,13 @@ namespace gbmath
 			};
 
 
-			inline mat33() {};
-			inline mat33(const mat33& m) { *this = m; };
+			inline mat33() {}
+
+			inline mat33(const mat33& m)
+			{ 
+				*this = m; 
+			}
+
 			inline mat33( float _11_, float _12_, float _13_,
 				            float _21_, float _22_, float _23_,
 				            float _31_, float _32_, float _33_ ) :
@@ -48,10 +54,13 @@ namespace gbmath
 								_21( _21_ ), _22( _22_ ), _23( _23_ ),
 								_31( _31_ ), _32( _32_ ), _33( _33_ ) {}
 
-			inline mat33(const float* pfArray) { *this = pfArray; }
+			inline mat33(const float* pfArray) 
+			{ 
+				*this = pfArray; 
+			}
 
-			inline operator  const float*() const  { return &_11; };
-			inline operator        float*()        { return &_11; };
+			inline operator  const float*() const  { return &_11; }
+			inline operator        float*()        { return &_11; }
 
 			inline mat33&  operator =  ( const mat22& m)
 			{
@@ -60,7 +69,7 @@ namespace gbmath
 				floats [1][0] = m.floats [1][0];
 				floats [1][1] = m.floats [1][1];
 				return *this;
-			};
+			}
 
 			inline void operator = (const float* pfArray)
 			{
@@ -71,7 +80,7 @@ namespace gbmath
 
 			mat33& operator = ( float a );
 
-		    /**  \brief Обращение знака всех элементов матрицы	*/
+		    //!  \brief Contacting mark all the elements of	
 	        inline mat33 operator - () const
 		    {
 			   mat33 r = *this;
@@ -96,14 +105,14 @@ namespace gbmath
 
 			vec3   operator * ( const vec3& v ) const;
 
-			/**	 \brief Доступ к строкам матрицы по индексу. ПРОВЕРИТЬ !! */
+			//!	 \brief Access to the rows of the index. NEED_CHECK!!
 	        inline const vec3 operator [] ( unsigned int index ) const
 	        {
 		       assert( index <= 2 );
 		       return reinterpret_cast<const vec3*>(this)[index];
 	        }
 
-			/**	 \brief Преобразование в матрицу 2x2 */
+			//!	 \brief Conversion to 2x2 matrix
 			inline operator mat22()
 			{
 				return mat22( _11, _12,
@@ -117,10 +126,13 @@ namespace gbmath
 					&& _31==0.0f && _32==0.0f && _33==0.0f;
 			}
 
-			//! \brief  Занулить все элементы
-			inline void setzero() { _11=_12=_13=_21=_22=_23=_31=_32=_33=0.0f; }
+			//! \brief   set all to zero
+			inline void setzero() 
+			{ 
+				_11=_12=_13=_21=_22=_23=_31=_32=_33=0.0f; 
+			}
 
-			//! \brief Сбросить в идентичную
+			//! \brief  reset. set to identity.
 			inline void setIdentity()
 			{
 				_11=1.0f; _12=0.0f; _13=0.0f;
@@ -135,10 +147,13 @@ namespace gbmath
 					   floats[2][0] == 0.0f && floats[2][1] == 0.0f && floats[2][2] == 1.0f ;
 			}
 
-			//! \brief Сбросить в идентичную
-			inline void reset() { setIdentity(); }
+			//! \brief reset. set to identity.  same as setIdentity.
+			inline void reset() 
+			{ 
+				setIdentity(); 
+			}
 
-			 //! \brief  Транспонировать матрицу
+			 //! \brief  transpose the matrix
 			inline mat33&   transpone()
 			{
 				 register float t;
@@ -148,7 +163,7 @@ namespace gbmath
 				  return *this;
 			}
 
-			//! \brief    Вернуть транспонированую матрицу
+			//! \brief    return transposed the matrix
 			inline mat33 getTransponed() const
 			{
 				mat33 res = *this;
@@ -176,7 +191,7 @@ namespace gbmath
 			mat33&  setMirrorZ();
 
 
-			//! \brief  Вывод значений на консоль
+			/***************************************
 			inline void print() const
 			{
 			 printf("%f  %f  %f  \n%f  %f  %f  \n%f  %f  %f",
@@ -184,20 +199,29 @@ namespace gbmath
 				 _21, _22, _23,
 				 _31, _32, _33 );
 			}
+			***********************************************/
+
+ 
+			friend std::ostream& operator << (std::ostream& os, const mat33& a)
+			{
+				os << a._11 << " " << a._12 << " " << a._13 << "\n";
+				os << a._21 << " " << a._22 << " " << a._23 << "\n";
+				os << a._31 << " " << a._32 << " " << a._33 << "\n";
+				return os;
+			}
+ 
 
 
 		};
 
 
 
-
-
-static const mat33     MATRIX33_IDENTITY =  mat33
-(
-  1.0f,  0.0f,  0.0f,
-  0.0f,  1.0f,  0.0f,
-  0.0f,  0.0f,  1.0f
-);
+			static const mat33     MATRIX33_IDENTITY =  mat33
+			(
+			  1.0f,  0.0f,  0.0f,
+			  0.0f,  1.0f,  0.0f,
+			  0.0f,  0.0f,  1.0f
+			);
 
 
 

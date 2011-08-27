@@ -1,8 +1,11 @@
-/** \file  */
+/** \file  
+  \brief class To rotate the camera
+
+*/
 
 #pragma once
 
-#ifdef WIN32
+#ifdef WIN32  // only for windows p;atform
 
 namespace gbmath
 {
@@ -14,9 +17,24 @@ public:
 
     // Functions to change behavior
     void reset(); 
-    void setTranslationRadius( float fRadiusTranslation ) { m_fRadiusTranslation = fRadiusTranslation; }
-    void setWindow( INT nWidth, INT nHeight, float fRadius = 0.9f ) { m_nWidth = nWidth; m_nHeight = nHeight; m_fRadius = fRadius; m_vCenter = vec2(m_nWidth/2.0f,m_nHeight/2.0f); }
-    void setOffset( INT nX, INT nY ) { m_Offset.x = nX; m_Offset.y = nY; }
+    void setTranslationRadius( float fRadiusTranslation ) 
+	{ 
+		m_fRadiusTranslation = fRadiusTranslation; 
+	}
+
+	void setWindow( INT nWidth, INT nHeight, float fRadius = 0.9f ) 
+	{ 
+		m_nWidth = nWidth; 
+		m_nHeight = nHeight; 
+		m_fRadius = fRadius; 
+		m_vCenter = vec2(m_nWidth/2.0f,m_nHeight/2.0f); 
+	}
+
+    void setOffset( INT nX, INT nY ) 
+	{ 
+		m_Offset.x = nX; 
+		m_Offset.y = nY; 
+	}
 
     //! \brief  Call these from client and use GetRotationMatrix() to read new rotation matrix
     void onBegin( int nX, int nY );  // start the rotation (pass current mouse position)
@@ -34,14 +52,33 @@ public:
 		  return m_mRotation;
 	}
 
-    const mat44& getTranslationMatrix() const          { return m_mTranslation; }
-    const mat44& getTranslationDeltaMatrix() const     { return m_mTranslationDelta; }
+    const mat44& getTranslationMatrix() const          
+	{ 
+		return m_mTranslation; 
+	}
 
-    bool        isBeingDragged() const                      { return m_bDrag; }
-    Quaternion getQuatNow() const                       { return m_qNow; }
-    void        setQuatNow( Quaternion q ) { m_qNow = q; }
+	const mat44& getTranslationDeltaMatrix() const     
+	{ 
+		return m_mTranslationDelta; 
+	}
 
-    static Quaternion quatFromBallPoints( const vec3 &vFrom, const vec3 &vTo );
+    bool        isBeingDragged() const 
+	{ 
+		return m_bDrag; 
+	}
+
+    Quaternion getQuatNow() const  
+	{ 
+		return m_qNow; 
+	}
+
+    void        setQuatNow( Quaternion q ) 
+	{ 
+		m_qNow = q; 
+	}
+
+    static Quaternion quatFromBallPoints( const vec3 &vFrom, 
+												const vec3 &vTo );
 
 
 protected:
@@ -67,11 +104,6 @@ protected:
     vec3    screenToVector( float fScreenPtX, float fScreenPtY );
 };
 
-
-
-
-
-
 }
 
-#endif 
+#endif  // win32

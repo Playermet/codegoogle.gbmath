@@ -7,10 +7,7 @@ namespace gbmath
 {
 
 
-
-
-
-
+ 
 
 }
 

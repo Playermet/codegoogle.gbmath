@@ -15,12 +15,33 @@ namespace gbmath
 {
  
 
-   //! \brief  Сборка трансформации , но для повотора импользуется ось и угол.
+   //! \brief Assembling the transformation 
+	  //   (scaling + rotation (axis and angle) + Position)
    struct TransformData2
    {
 	   vec3        scaling;
 	   axies_angle  rotation;
 	   vec3        translatiion;
+
+
+
+#pragma message("!!NEED operators   "   __FILE__ )
+
+	   friend std::ostream& operator << (std::ostream& os, 
+											const TransformData2& a)
+	   {
+			os << a.scaling;
+			os << "\n";
+
+			os << a.rotation;
+			os << "\n";
+
+			os << a.translatiion;
+			os << "\n";
+
+			return os;
+	   }
+
    };
 
 

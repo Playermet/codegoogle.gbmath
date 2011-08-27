@@ -1,5 +1,5 @@
 ﻿/**  \file
-* \brief ??????
+* \brief Data transformation (rotation by quaternion).
 *
 */
 
@@ -13,16 +13,60 @@
 namespace gbmath
 {
 
-  #pragma message("!!need add operatiions  >> << to from string  "  __FILE__ )
+
 
   #pragma message("!!! need  rename : "  __FILE__  )
 
-   //! \brief Сборка из данных трансформации: скалирование(вектор) + поворот(кват.) + позиция(вектор).
+   //! \brief The assembly of data transformation: 
+					// scaling (vector) + rotation (quaternion) + position (vector).
+
+	// Data transformation (rotation by quaternion).
    struct TransformData
    {
-	    vec3         vScaling;      ///< масштабирование
-	    Quaternion   qRotation;     ///< вращение
-	    vec3         vTranslation;  ///<  позиция
+	    vec3         vScaling;      ///< scaling
+	    Quaternion   qRotation;     ///< rotation
+	    vec3         vTranslation;  ///<  position
+ 
+
+		void operator = (const std::string& str)   throw (std::runtime_error)
+		{
+			std::stringstream ss(str);
+			ss >> vScaling;
+			ss >> qRotation;
+			ss >> vTranslation;
+
+			if( ss.fail() )
+			{
+				throw std::runtime_error("bad argument");
+			}
+		}
+
+		operator std::string() const
+		{
+			std::ostringstream ss ;
+			ss << vScaling.x << " " << vScaling.y << " " << vScaling.z;
+		    ss << "   ";
+
+			ss << qRotation << " " << qRotation << " " << qRotation;
+			ss << "   ";
+
+			ss << vTranslation;
+
+			return ss.str();
+		}
+
+		friend std::ostream& operator << (std::ostream& os, const TransformData& a)
+		{
+			os << a.vScaling;	 // a.
+			os << "  ";
+			os << a.qRotation;
+			os << "  ";
+			os << a.vTranslation;
+			return os;
+		}
+
+
+
    };
 
 

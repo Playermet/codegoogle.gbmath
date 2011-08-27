@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief яяяяяяяя
+ \brief context types
 
 
 */
@@ -20,12 +20,12 @@ namespace gbmath
 
 #pragma message("ks777: gbmath::context  ПРОВЕРЯТЬ И ДОБАВЛЯТЬ ПО СЕМАНТИКАМ RENDER MONKEY  "  __FILE__)
 
-      //!  семантика параметра типа  float
+      //! \brief    semantics of a parameter of type float
       struct float_context_type_e
       {
 	      enum e
 		  {
-		  UNDEFINED  =  0,   ///< не определено !
+		  UNDEFINED  =  0,   ///<  no defined !
 
 
 
@@ -122,15 +122,6 @@ namespace gbmath
 
 
 	  };
-
-
-
-
-
-
-
-
-
-
+ 
 
 }

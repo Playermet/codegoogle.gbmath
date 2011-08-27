@@ -1,18 +1,14 @@
-﻿#pragma once
+﻿
 
-//#include "pch.h"
-//#include "d3d9pch.h"
-//#include "stdafx.h"
-
-//#include <gb/Config.h>
+#pragma once
 
 
-#ifdef WIN32
+#ifdef WIN32 // only windows platform
 
 
 #include "_gbmath.h"
 
-
+///////////////////////////////////////////////
 #if 0
 
    #pragma comment( lib, "dxerr.lib" )
@@ -32,45 +28,16 @@
    #pragma comment( lib, "winmm.lib" )
    #pragma comment( lib, "comctl32.lib" )
 
-#endif
+#endif   // #if
+////////////////////////////////////////////////
 
 #include "assert.h"
 
 //======================================================
 
-namespace gbmath {
- 
-
-/*****************************************
-HMONITOR MYUTMonitorFromWindow( HWND hWnd, DWORD dwFlags )
+namespace gbmath 
 {
-
- assert(false && "no valid function" );
-  return 0;
-};
-
-    typedef struct tagMYMONITORINFO
-    {
-        DWORD   cbSize;
-        RECT    rcMonitor;
-        RECT    rcWork;
-        DWORD   dwFlags;
-    } MYMONITORINFO, *LPMYMONITORINFO; // MONITORINFO
-
-
-BOOL  MYUTGetMonitorInfo( HMONITOR hMonitor, LPMYMONITORINFO lpMonitorInfo )
-{
- 	assert(false && "no valid function" );
- return  FALSE;
-};
  
-double MYUTGetTime() 
-{  
-	assert(false && "no valid function" );
-    return 0.0;
-};
-********************************************************/
-
  
 
 //========================================================================
@@ -129,7 +96,7 @@ base_camera::base_camera()
 //========================================================================
 // Client can call this to change the position and direction of camera
 //========================================================================
-void base_camera::setViewParams( const vec3& pvEyePt, const vec3& pvLookatPt )
+void base_camera::setViewParams( const vec3& pvEyePt, const vec3& pvLookatPt)
 {
    
 	//if( NULL == pvEyePt || NULL == pvLookatPt )
@@ -173,8 +140,8 @@ void base_camera::setViewParams( const vec3& pvEyePt, const vec3& pvLookatPt )
 //========================================================================
 // Calculates the projection matrix based on input params
 //========================================================================
-void base_camera::setProjParams( float fFOV, float fAspect, float fNearPlane,
-                                   float fFarPlane )
+void base_camera::setProjParams( float fFOV, float fAspect, 
+								float fNearPlane,  float fFarPlane )
 {
     // Set attributes for the projection matrix
     m_fFOV        = fFOV;
@@ -188,11 +155,11 @@ void base_camera::setProjParams( float fFOV, float fAspect, float fNearPlane,
 
 	 if (CAMERA_LEFT_HANDLE)
 	 {
-		 m_mProj.setPerspectiveFovLH( fFOV, fAspect, fNearPlane, fFarPlane  );
+		 m_mProj.setPerspectiveFovLH( fFOV, fAspect, fNearPlane, fFarPlane);
 	 }
 	 else
 	 {
-		 m_mProj.setPerspectiveFovRH( fFOV, fAspect, fNearPlane, fFarPlane  );
+		 m_mProj.setPerspectiveFovRH( fFOV, fAspect, fNearPlane, fFarPlane);
 	 }
 }
 
@@ -202,7 +169,8 @@ void base_camera::setProjParams( float fFOV, float fAspect, float fNearPlane,
 //========================================================================
 // Call this from your message proc so this class can handle window messages
 //========================================================================
-LRESULT base_camera::handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
+LRESULT base_camera::handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam, 
+												LPARAM lParam )
 {
 	m_hwnd = hWnd;
     UNREFERENCED_PARAMETER( hWnd );
@@ -257,11 +225,19 @@ LRESULT base_camera::handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM
 
             // Update member var state
             if( ( uMsg == WM_LBUTTONDOWN || uMsg == WM_LBUTTONDBLCLK ) && PtInRect( &m_rcDrag, ptCursor ) )
-                { m_bMouseLButtonDown = true; m_nCurrentButtonMask |= MOUSE_LEFT_BUTTON; }
-            if( ( uMsg == WM_MBUTTONDOWN || uMsg == WM_MBUTTONDBLCLK ) && PtInRect( &m_rcDrag, ptCursor ) )
-                { m_bMouseMButtonDown = true; m_nCurrentButtonMask |= MOUSE_MIDDLE_BUTTON; }
-            if( ( uMsg == WM_RBUTTONDOWN || uMsg == WM_RBUTTONDBLCLK ) && PtInRect( &m_rcDrag, ptCursor ) )
-                { m_bMouseRButtonDown = true; m_nCurrentButtonMask |= MOUSE_RIGHT_BUTTON; }
+            { 
+				m_bMouseLButtonDown = true; m_nCurrentButtonMask |= MOUSE_LEFT_BUTTON; 
+			}
+
+			if( ( uMsg == WM_MBUTTONDOWN || uMsg == WM_MBUTTONDBLCLK ) && PtInRect( &m_rcDrag, ptCursor ) )
+			{ 
+				m_bMouseMButtonDown = true; m_nCurrentButtonMask |= MOUSE_MIDDLE_BUTTON; 
+			}
+
+			if( ( uMsg == WM_RBUTTONDOWN || uMsg == WM_RBUTTONDBLCLK ) && PtInRect( &m_rcDrag, ptCursor ) )
+			{ 
+				m_bMouseRButtonDown = true; m_nCurrentButtonMask |= MOUSE_RIGHT_BUTTON; 
+			}
 
             // Capture the mouse, so if the mouse button is 
             // released outside the window, we'll get the WM_LBUTTONUP message
@@ -275,9 +251,21 @@ LRESULT base_camera::handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM
         case WM_LBUTTONUP:   
         {
             // Update member var state
-            if( uMsg == WM_LBUTTONUP ) { m_bMouseLButtonDown = false; m_nCurrentButtonMask &= ~MOUSE_LEFT_BUTTON; }
-            if( uMsg == WM_MBUTTONUP ) { m_bMouseMButtonDown = false; m_nCurrentButtonMask &= ~MOUSE_MIDDLE_BUTTON; }
-            if( uMsg == WM_RBUTTONUP ) { m_bMouseRButtonDown = false; m_nCurrentButtonMask &= ~MOUSE_RIGHT_BUTTON; }
+            if( uMsg == WM_LBUTTONUP ) 
+			{ 
+				m_bMouseLButtonDown = false; m_nCurrentButtonMask &= ~MOUSE_LEFT_BUTTON; 
+			}
+
+            if( uMsg == WM_MBUTTONUP ) 
+			{ 
+				m_bMouseMButtonDown = false; m_nCurrentButtonMask &= ~MOUSE_MIDDLE_BUTTON; 
+			}
+
+            if( uMsg == WM_RBUTTONUP ) 
+			{ 
+				m_bMouseRButtonDown = false; m_nCurrentButtonMask &= ~MOUSE_RIGHT_BUTTON; 
+			}
+
 
             // Release the capture if no mouse buttons down
             if( !m_bMouseLButtonDown  && 
@@ -550,6 +538,6 @@ void base_camera::reset()
 
 
  
-}// end namespace
+}
 
 #endif // #ifdef WIN32

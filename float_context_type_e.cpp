@@ -1,10 +1,7 @@
 ﻿#pragma once
 
 #include "_gbmath.h"
-
-
-//using namespace fmath;
-
+ 
 
 namespace gbmath
 {
@@ -19,16 +16,13 @@ namespace gbmath
 			str[c] = curr;
 		}
 	}
-
-
-
-
-
+ 
 
 //=============================================================
 std::string  float_context_type_e::tostr(const float_context_type_e::e val)
 {
 
+#pragma message("!!! no code   "   __FILE__   )
  assert(false);
 
  std::string res;

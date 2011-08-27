@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief яяяяяяяя
+ \brief Ehler angles. Angles of rotation along all three axes.
 
 
 */
@@ -16,9 +16,9 @@
 namespace gbmath
 {
 
-	#pragma message("NEED RENAME  "   __FILE__ )
+ 
 
-	/** \brief  Углы Элера. Сборка углов поворота по всем трём осям. */
+	//! \brief  Ehler angles. Angles of rotation along all three axes.
 	class euler_angles {
 	public:
 		float yaw;    ///<   Yaw around the y-axis, in radians.
@@ -37,11 +37,11 @@ namespace gbmath
 			roll  = ea.roll;
 		}
 
-		inline euler_angles(float fYaw, float fPitch, float fRoll)
+		inline euler_angles(float _yaw, float _pitch, float _roll)
 		{
-			yaw   = fYaw;
-			pitch = fPitch;
-			roll  = fRoll;
+			yaw   = _yaw;
+			pitch = _pitch;
+			roll  = _roll;
 		}
 
 
@@ -64,7 +64,10 @@ namespace gbmath
 			ss >> yaw;
 			ss >> pitch;
 			ss >> roll;
-			if( ss.fail() ) throw std::invalid_argument("bad input string");
+			if( ss.fail() )
+			{
+				throw std::invalid_argument("bad input string");
+			}
 		}
 
 

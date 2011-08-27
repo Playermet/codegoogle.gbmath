@@ -1,6 +1,5 @@
 ﻿/**  \file
- \brief  яяяяяяяяяяяяя
-*
+ \brief  (deprecated) class box3d 
 *
 *
 */
@@ -14,21 +13,20 @@
 namespace gbmath
 {
 
-struct box3d {
+	//! \brief  (deprecated) class box3d .
+	struct box3d {
 
 
-	float width,   height,  deph;
-
-
-
-	box3d() {}
+		float width,   height,  deph;
 
 
 
+		box3d() 
+		{
+		   width = height = deph = 0.0f;
+		}
+ 
 
-
-
-
-};
+	};
 
 }

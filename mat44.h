@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief яяяяяяяяяяяя
+ \brief  standard float 4x4 matrix .
 
 
 */
@@ -19,7 +19,7 @@ namespace gbmath
 
 
 
-		//! \brief Матрица 4x4.
+		//! \brief matrix 4x4.
 		struct mat44
 		{
 			union
@@ -41,7 +41,7 @@ namespace gbmath
 
 			inline mat44() {}
 
-			//! \brief Сбросить в идентичную и заполнить главную диагональ значением a (обычно 1.0f)
+			//! \brief Reset in an identical and complete the main diagonal value of a (usually 1.0f)
 			inline mat44(float a)
 			{
 			   setIdentity();
@@ -51,7 +51,10 @@ namespace gbmath
 			   _44=a;
 			}
 
-			inline mat44(const mat44& m) { *this = m; }
+			inline mat44(const mat44& m) 
+			{ 
+				*this = m; 
+			}
 
 			inline mat44( float _11_, float _12_, float _13_, float _14_,
 	                      float _21_, float _22_, float _23_, float _24_,
@@ -61,6 +64,7 @@ namespace gbmath
 				_21( _21_ ), _22( _22_ ), _23( _23_ ), _24( _24_ ),
 				_31( _31_ ), _32( _32_ ), _33( _33_ ), _34( _34_ ),
 				_41( _41_ ), _42( _42_ ), _43( _43_ ), _44( _44_ )  {}
+
 
 			inline mat44(const float* pfArray)
 			{
@@ -85,6 +89,7 @@ namespace gbmath
 				  res.m[c][j] = floats[c][j];
 				 }
 			   }
+
 			   return res;
 			}
 
@@ -174,7 +179,7 @@ namespace gbmath
 
 
 
-			/**    \brief Строгое сравнение    */
+			//!  \brief Строгое сравнение   
 			inline bool operator == ( const mat44& m ) const
 			{
 			 return ( ( _11 == m._11) &&
@@ -202,7 +207,7 @@ namespace gbmath
 
 
 
-			/**     \brief Строгое сравнение с отрицанием     */
+			//!   \brief Строгое сравнение с отрицанием   
 			inline bool operator != ( const mat44& m ) const
 			{
 		      return ( ( _11 != m._11) ||
@@ -224,12 +229,10 @@ namespace gbmath
 					   ( _42 != m._42) ||
 					   ( _43 != m._43) ||
 					   ( _44 != m._44) );
-			};
+			}
 
 
-
-
-			/**   \brief Инверсия знака компонентов  */
+			//!   \brief   The sign of the components 
 			inline mat44 operator - () const
 			{
 				mat44 r;
@@ -259,7 +262,7 @@ namespace gbmath
 
 
 
-			/**   \brief Поэлементное сложение матриц  */
+			//!   \brief  Elementwise addition of matrices 
 			inline mat44 operator + ( const mat44& m ) const
 			{
 				mat44 r;
@@ -287,7 +290,7 @@ namespace gbmath
 				return r;
 			}
 
-			/**   \brief Поэлементное вычитание матриц  */
+			//!   \brief Elementwise subtraction of matricesматриц  
 			inline mat44 operator - ( const mat44& m ) const
 			{
 				mat44 r;
@@ -316,7 +319,7 @@ namespace gbmath
 			}
 
 
-			/**   \brief Умножение всех элементов матрицы на скаляр   */
+			//!   \brief Multiply all elements of the matrix by a scalar 
 			inline mat44 operator * (  float f ) const
 			{
 				mat44 r;
@@ -346,7 +349,7 @@ namespace gbmath
 
 
 
-			/**  \brief Деление всех элементов матрицы на скаляр  */
+			//!  \brief Divide all elements of the matrix by a scalar
 			inline mat44 operator / ( float f ) const
 			{
 				mat44 r;
@@ -375,10 +378,33 @@ namespace gbmath
 			}
 
 
-			inline mat44&     operator += (const mat44& m) { mat44 t=*this + m; *this=t; return *this;  }
-			inline mat44&     operator -= (const mat44& m) { mat44 t=*this - m; *this=t; return *this;  }
-			inline mat44&     operator *= (float f)          { mat44 t=*this * f; *this=t; return *this;  }
-			inline mat44&     operator /= (float f)          { mat44 t=*this / f; *this=t; return *this;  }
+			inline mat44&     operator += (const mat44& m) 
+			{ 
+				mat44 t=*this + m; 
+				*this=t; 
+				return *this;  
+			}
+
+			inline mat44&     operator -= (const mat44& m) 
+			{ 
+				mat44 t=*this - m; 
+				*this=t; 
+				return *this;  
+			}
+
+			inline mat44&     operator *= (float f)          
+			{ 
+				mat44 t=*this * f; 
+				*this=t; 
+				return *this;  
+			}
+
+			inline mat44&     operator /= (float f)          
+			{
+				mat44 t=*this / f; 
+				*this=t; 
+				return *this;  
+			}
 
 
 
@@ -391,36 +417,11 @@ namespace gbmath
 			}
 
 
-			// ПРОВЕРЕНО !
-			inline mat44 operator * ( const mat44& m ) const
-			{
-				mat44 r;
+			//!  OK!  
+			mat44 operator * ( const mat44& m ) const;
+			 
 
-			 r._11 = floats[0][0] * m.floats[0][0] + floats[0][1] * m.floats[1][0] + floats[0][2] * m.floats[2][0] + floats[0][3] * m.floats[3][0];
-			 r._12 = floats[0][0] * m.floats[0][1] + floats[0][1] * m.floats[1][1] + floats[0][2] * m.floats[2][1] + floats[0][3] * m.floats[3][1];
-			 r._13 = floats[0][0] * m.floats[0][2] + floats[0][1] * m.floats[1][2] + floats[0][2] * m.floats[2][2] + floats[0][3] * m.floats[3][2];
-			 r._14 = floats[0][0] * m.floats[0][3] + floats[0][1] * m.floats[1][3] + floats[0][2] * m.floats[2][3] + floats[0][3] * m.floats[3][3];
-
-			 r._21 = floats[1][0] * m.floats[0][0] + floats[1][1] * m.floats[1][0] + floats[1][2] * m.floats[2][0] + floats[1][3] * m.floats[3][0];
-			 r._22 = floats[1][0] * m.floats[0][1] + floats[1][1] * m.floats[1][1] + floats[1][2] * m.floats[2][1] + floats[1][3] * m.floats[3][1];
-			 r._23 = floats[1][0] * m.floats[0][2] + floats[1][1] * m.floats[1][2] + floats[1][2] * m.floats[2][2] + floats[1][3] * m.floats[3][2];
-			 r._24 = floats[1][0] * m.floats[0][3] + floats[1][1] * m.floats[1][3] + floats[1][2] * m.floats[2][3] + floats[1][3] * m.floats[3][3];
-
-			 r._31 = floats[2][0] * m.floats[0][0] + floats[2][1] * m.floats[1][0] + floats[2][2] * m.floats[2][0] + floats[2][3] * m.floats[3][0];
-			 r._32 = floats[2][0] * m.floats[0][1] + floats[2][1] * m.floats[1][1] + floats[2][2] * m.floats[2][1] + floats[2][3] * m.floats[3][1];
-			 r._33 = floats[2][0] * m.floats[0][2] + floats[2][1] * m.floats[1][2] + floats[2][2] * m.floats[2][2] + floats[2][3] * m.floats[3][2];
-			 r._34 = floats[2][0] * m.floats[0][3] + floats[2][1] * m.floats[1][3] + floats[2][2] * m.floats[2][3] + floats[2][3] * m.floats[3][3];
-
-			 r._41 = floats[3][0] * m.floats[0][0] + floats[3][1] * m.floats[1][0] + floats[3][2] * m.floats[2][0] + floats[3][3] * m.floats[3][0];
-			 r._42 = floats[3][0] * m.floats[0][1] + floats[3][1] * m.floats[1][1] + floats[3][2] * m.floats[2][1] + floats[3][3] * m.floats[3][1];
-			 r._43 = floats[3][0] * m.floats[0][2] + floats[3][1] * m.floats[1][2] + floats[3][2] * m.floats[2][2] + floats[3][3] * m.floats[3][2];
-			 r._44 = floats[3][0] * m.floats[0][3] + floats[3][1] * m.floats[1][3] + floats[3][2] * m.floats[2][3] + floats[3][3] * m.floats[3][3];
-
-				return  r;
-			}
-
-
-			/**    \brief Умножение вектора на матрицу .  ПРОВЕРЕНО!  */
+			//!      OK!  
 			inline vec4 operator * ( const vec4& v ) const
 			{
 				vec4 r;
@@ -431,18 +432,12 @@ namespace gbmath
 				  return r;
 			}
 
-			bool empty() const
-			{
-		      static const mat44 _ZERO(0.0f);
-			  if( memcmp( &_ZERO._11 , &_11 , sizeof(mat44) ) == 0 )
-				      return true;
-			  return false;
-			}
+			bool empty() const ;
 
 			//! \brief Зануление всех элементов.
 			inline void       setzero() { memset(&_11, 0, sizeof(mat44)  ); }
 
-			//! \brief Установить в идентичную
+			//! \brief    Set Identity.
 			inline mat44&   setIdentity()
 			{
 				_11=1.0f; _12=0.0f; _13=0.0f; _14=0.0f;
@@ -460,8 +455,12 @@ namespace gbmath
 					floats[3][0] == 0.0f && floats[3][1] == 0.0f && floats[3][2] == 0.0f && floats[3][3] == 1.0f;
 			}
 
-			//! \brief Установить в идентичную
-			inline mat44& reset() { setIdentity(); return *this; }
+			//! \brief     Set Identity.
+			inline mat44& reset() 
+			{ 
+				setIdentity(); 
+				return *this; 
+			}
 
 			//! \brief Транспонирование. (Отражение элементов по главной диагонали)  ПРОВЕРЕНА!
 			inline mat44& transpone()
@@ -484,10 +483,15 @@ namespace gbmath
 				return res;
 			}
 
-			/** \brief Вычислить и вернуть транспонированое значение .  */
-			inline mat44 getTransponed() const { mat44 r=*this; r.transpone(); return r; };
+			//! \brief Вычислить и вернуть транспонированое значение . 
+			inline mat44 getTransponed() const 
+			{ 
+				mat44 r=*this; 
+				r.transpone(); 
+				return r; 
+			}
 
-			/** \brief Вычислить и вернуть определитель.  */
+			//! \brief Вычислить и вернуть определитель. 
 			inline float determinant()  const
 			{
 				 return
@@ -499,7 +503,7 @@ namespace gbmath
 					( _13 *  _24 -  _14 *  _23) * ( _31 *  _42 -  _32 *  _41);
 			};
 
-			/** \brief Инверсия. Бросает исключение если инверсия невозможна. ПРОВЕРЕНА. */
+			//! \brief Инверсия. Бросает исключение если инверсия невозможна. OK. 
 			mat44&  invert () throw();
 
 			//! \brief Вернуть инвертированую

@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief  яяяяяяяяяяяяя
+ \brief  (deprecated) class box2d .
 
 */
 
@@ -12,19 +12,23 @@ namespace gbmath
 {
 
 
+	//! \brief  (deprecated) class box2d .
+	struct box2d 
+	{
 
-struct box2d {
+		float width;  
+		float height;
 
-	float width,   height;
-
-	box2d() { width = height; }
-
-
-
-
+		box2d() 
+		{ 
+			width = height = 0.0f; 
+		}
 
 
 
-};
+
+
+
+	};
 
 }

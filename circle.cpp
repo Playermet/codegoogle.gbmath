@@ -6,11 +6,8 @@
 namespace gbmath
 {
 
-
-
-
-
-
+ 
 }
+
 
  

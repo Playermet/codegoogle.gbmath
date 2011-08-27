@@ -1,5 +1,5 @@
 ﻿/** \file
- \brief TODO  doc
+ \brief TODO  doc (RUS)
 
  \todo  delete all print()
  \todo add all operators >> << to from string

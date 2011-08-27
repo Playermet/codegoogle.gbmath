@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief  яяяяяяяяяяяяя
+ \brief  Axis Aligned Bounding Box
 
 
 */
@@ -18,36 +18,50 @@ namespace gbmath
 #pragma message("!!!! rename aabb  "   __FILE__ )
 
 
-	// много инфы по боксу   http://www.devmaster.net/forums/showthread.php?t=10324
+	// many rus info aabox  
+	 // http://www.devmaster.net/forums/showthread.php?t=10324
 
-	//! \brief Бокс по мин. и макс. координатам. Axis Aligned Bounding Box.
+	//! \brief Axis Aligned Bounding Box  by min and max points.
 	class aabb {
 	public:
-	vec3   min; ///< минимальная точка бокса
-	vec3   max; ///< максимальная точка бокса
+	vec3   min; ///< min box point
+	vec3   max; ///< max box pointбокса
 
-		//! углы бокса
+		//! box corners
 		struct corners 
 		{
 			vec3 points [8];
 
 			inline  vec3& operator [] (unsigned int index)
 			{
-				assert(index<8 && "invelid index");
+				assert(index<8 && "invalid index");
 				return points[index];
 			}
 
 			inline  vec3 operator [] (unsigned int index)   const
 			{
-				assert(index<8 && "invelid index");
+				assert(index<8 && "invalid index");
 				return points[index];
 			}
 
 		};
 
-	inline aabb() {}
-	inline aabb(const aabb& aabb) {min=aabb.min; max=aabb.max; }
-	inline aabb(const  vec3& _min, const  vec3& _max) { min=_min; max=_max; }
+	inline aabb() 
+	{
+
+	}
+
+	inline aabb(const aabb& aabb) 
+	{
+		min = aabb.min; 
+		max = aabb.max; 
+	}
+
+	inline aabb(const  vec3& _min, const  vec3& _max) 
+	{ 
+		min = _min; 
+		max = _max; 
+	}
 
 	inline void setzero()
 	{
@@ -55,13 +69,16 @@ namespace gbmath
 		max.setzero();
 	}
 
-	inline bool operator == (const aabb& aabb) { return (min == aabb.min) && (max == aabb.max); }
+	inline bool operator == (const aabb& aabb) 
+	{ 
+		return (min == aabb.min) && (max == aabb.max); 
+	}
 
 
-	//! \brief Вернуть объединённый с боксом
+	//! \brief Return combined with boxing
 	inline aabb operator + (const aabb& _aabb) const
 	{
-#pragma message("!!!!!НАДО ПРОВЕРИТЬ ПОСЛЕ РЕФРАКТОРИНГА     "  __FILE__ )
+	#pragma message("!!! NEED CHECK CODE AFTER REFRACT   "  __FILE__ )
 		aabb res = *this;
 		if (_aabb.min.x < res.min.x)   res.min.x = _aabb.min.x;
 		if (_aabb.min.y < res.min.y)   res.min.y = _aabb.min.y;
@@ -73,7 +90,7 @@ namespace gbmath
 		return res;
 	}
 
-	//! \brief Вернуть объединённый с точкой
+	//! \brief Return combined with a point
 	inline aabb operator + (const  vec3& pnt) const
 	{
 		aabb res = *this;
@@ -87,7 +104,7 @@ namespace gbmath
 		return res;
 	}
 
-	//! \brief Объединить с боксом
+	//! \brief  Merge with another box
 	inline aabb& operator += (const aabb& _aabb)
 	{
 		if (_aabb.min.x < min.x)  min.x=_aabb.min.x;
@@ -100,21 +117,21 @@ namespace gbmath
 		return *this;
 	}
 
-	//! \brief Объединить с точкой pnt
+	//! \brief Merge point
 	inline aabb& operator += (const  vec3& pnt)
 	{
 		includePoint(pnt);
 		return *this;
 	}
 
-	//! \brief  Построить по точкам  ПРОВЕРИТЬ
+	//! \brief  Construct by point.  NEED_CHECK!!!
 	inline void make(const  vec3& p1, const  vec3& p2)
 	{
 		min = p1.minimized(p2);
 		max = p1.maximized(p2);
 	}
 
-	//! \brief  Построить по точкам
+	//! \brief  Construct by point.
 	inline void make(float p1_x, float p1_y, float p1_z,
 					 float p2_x, float p2_y, float p2_z)
 	{
@@ -122,7 +139,7 @@ namespace gbmath
 	}
 
 
-	//! \brief Извлечь углы бокса в cOut
+	//! \brief extract the coordinates of the corners of boxing 
 	inline void extractCorners(corners& cOut) const
 	{
 		cOut[0] =  vec3(  min.x,  min.y,  min.z );
@@ -136,7 +153,7 @@ namespace gbmath
 	}
 
 
-	//! \brief Получить центр бокса
+	//! \brief get box center coord.
 	vec3 center() const
 	{
 		vec3 res;
@@ -146,7 +163,7 @@ namespace gbmath
 		return res;
 	}
 
-	//! \brief  Включить координату pnt в бокс
+	//! \brief  Including the coordinates of pnt in boxing
 	aabb& includePoint(const  vec3& pnt)
 	{
 		if (pnt.x < min.x) min.x = pnt.x;
@@ -159,7 +176,7 @@ namespace gbmath
 		return *this;
 	}
 
-	//! \brief Привести координаты coord в пределах бокса и вернуть результат
+	//! \brief cut coordinate coord within boxing and return the result
 	vec3 clumpCoord(const  vec3& coord) const
 	{
 		vec3 r = coord;
@@ -176,14 +193,25 @@ namespace gbmath
 		return r;
 	}
 
-	//! \brief  Размер по X
-	inline float size_x() const { return max.x - min.x; }
-	//! \brief  Размер по Y
-	inline float size_y() const { return max.y - min.y; }
-	//! \brief  Размер по Z
-	inline float size_z() const { return max.z - min.z; }
+	//! \brief  get size  X
+	inline float size_x() const 
+	{ 
+		return max.x - min.x; 
+	}
 
-	//! \brief Получить 3d-размер бокса
+	//! \brief  get size  Y
+	inline float size_y() const 
+	{ 
+		return max.y - min.y; 
+	}
+
+	//! \brief get size Z
+	inline float size_z() const 
+	{ 
+		return max.z - min.z; 
+	}
+
+	//! \brief Get 3d-box size
 	inline size3d size() const
 	{
 		size3d res;
@@ -193,9 +221,11 @@ namespace gbmath
 		return res;
 	}
 
-	//! \brief Получить объём
-	inline float volume() const { return size_x() * size_y() * size_z(); }
-
+	//! \brief get volume
+	inline float volume() const 
+	{ 
+		return size_x() * size_y() * size_z(); 
+	}
 
 
 	inline plane_s  plane_positive_x() const
@@ -241,7 +271,7 @@ namespace gbmath
 
 
 
-	//! \brief  Трансформировать по матрице m . Получить выровненые вершины.
+	//! \brief  Transform the matrix m. Get aligned corners.
 	aabb& transform(const  mat44& m)
 	{
 		corners cr;
@@ -252,8 +282,8 @@ namespace gbmath
 
 		for(int c=0; c<8; c++)
 		{
-		cr[c].transform_coord(m);
-		*this += cr[c];
+			cr[c].transform_coord(m);
+			*this += cr[c];
 		}
 
 		return *this;
@@ -261,14 +291,14 @@ namespace gbmath
 
 
 
-	//! \brief  Сдвинуть.
+	//! \brief  move.
 	inline void offset(const  vec3& v)
 	{
 		min += v;
 		max += v;
 	}
 
-	//! \brief Объединить с боксом
+	//! \brief Combine with Box
 	inline aabb& includeAabb( const aabb& aabb)
 	{
 		if (aabb.min.x <   min.x)     min.x=aabb.min.x;
@@ -291,7 +321,7 @@ namespace gbmath
 		return res;
 	}
 
-	//! \brief Проверка точки на нахождение в боксе.   ПРОВЕРЕНО!
+	//! \brief Check points for being in a box.   OK!
 	inline bool checkContainPoint(const  vec3& p )
 	{
 		return      (p.x <= this->max.x) && (p.x >= this->min.x)
@@ -299,15 +329,15 @@ namespace gbmath
 		&& (p.z <= this->max.z) && (p.z >= this->min.z);
 	}
 
-
+	//!  check Intersect Plane    NEED_CHECK!!!
 	bool checkIntersectPlane(const plane_s& pl) const;
 
-	//bool checkIntersectRay(const Ray& ray) {....}
-	//bool checkIntersecеSphere(const sphere& sph) {....}
-	//bool checkIntersectAABB_ex(Plane& outContactPlane, const aabb& aabb) {....}
+	//todo: bool checkIntersectRay(const Ray& ray) {....}
+	//todo: bool checkIntersecеSphere(const sphere& sph) {....}
+	//todo: bool checkIntersectAABB_ex(Plane& outContactPlane, const aabb& aabb) {....}
 
 
-	//* времянка. Проверка пересечения боксов.
+	//* TEMP. Check boxes to the touch..
 	bool checkIntersectAABB(const aabb& b) const
 	{
 		if( (max.x < b.min.x) || (min.x > b.max.x) ) return false;
@@ -318,6 +348,8 @@ namespace gbmath
 
 
 	// http://www.devmaster.net/forums/showthread.php?t=10324   #5
+
+	//   Check boxes to the touch..
 	bool checkIntersectAABB_2(aabb& aabb) const
 	{
 		return
@@ -327,10 +359,8 @@ namespace gbmath
 	}
 
 
-
-
-	//function AABBContainsAABB(const mainAABB, testAABB : TAABB) : TSpaceContains;
-
+ 
+	//  Check boxes to the touch..  
 	obj_contains_e checkContainsAabb( const aabb& box ) const
 	{
 		if
@@ -349,13 +379,13 @@ namespace gbmath
 			(box.max.x<= max.x) &&
 			(box.max.y<= max.y) &&
 			(box.max.z<= max.z) )
-			return SC_CONTAINSFULLY;
+				return SC_CONTAINSFULLY;
 			else
 			{
-			return SC_CONTAINSPARTIALLY;
-			};
+				return SC_CONTAINSPARTIALLY;
+			}
 		}
-		else
+		//else
 		return  SC_NOOVERLAP;
 	};
 
@@ -364,13 +394,12 @@ namespace gbmath
 	{
 		aabb b = s.toAabbOutside();
 		return checkContainsAabb(b);
-	};
+	}
 
 
 
 	};
 	// end class
-
-
+ 
 
 }

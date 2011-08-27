@@ -6,7 +6,7 @@
 namespace gbmath
 {
 
-
+	// constants ...
 
 		static const char* CSTR_VIEWPROJECTION = "VIEWPROJECTION";
 		static const char* CSTR_VIEWPROJECTIONINVERSE = "VIEWPROJECTIONINVERSE";
