@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief яяяяяяяя
+ \brief object oriented bounding box
 
 
 */
@@ -16,7 +16,7 @@ namespace gbmath
 {
 
  
-
+	//! \brif   object oriented bounding box
 	class oobb {
 	public:
 

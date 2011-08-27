@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief яяяяяяяяяяяяяяяяя
+ \brief description of spatial objects crossing
 
 
 */
@@ -18,16 +18,13 @@ namespace gbmath
 
 	#pragma message ("!!! need rename  " __FILE__  )
 
-		//! \brief описание состояния пространственого  пересачения объектов
+		//! \brief  description of spatial objects crossing
 		enum  obj_contains_e
 		{
-			SC_NOOVERLAP, ///<   объект не касается другого объекта
-			SC_CONTAINSFULLY, ///<   объект  полностью расположен  в другом
-			SC_CONTAINSPARTIALLY  ///< объект частично содержится в другом
+			SC_NOOVERLAP, ///<   object does not apply to another object
+			SC_CONTAINSFULLY, ///<   the object is fully located in another
+			SC_CONTAINSPARTIALLY  ///< object is partially contained in the other
 		};
-
-
-
 
  
 }

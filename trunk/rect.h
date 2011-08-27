@@ -1,5 +1,5 @@
 ﻿/**  \file
- \brief яяяяяя
+ \brief Rectangle on the minimum and maximum coordinate.
 
 
 */
@@ -19,21 +19,23 @@ namespace gbmath
 #pragma message("!!!  #error  need rename class  (aabr or rect)"  __FILE__ )
 #pragma message("!!!  #error  need  set vec2 min  and vec2 max   "  __FILE__ )
 
-		//! Прямоугольник по мин. и макс координате
+		//! \brief  Rectangle on the minimum and maximum coordinate.
 		class Rect {
 		public:
-			/*
+
+			/************************************
 			float x1; ///< кооордината x  верхнего левого угла .
 			float y1; ///< координата  y  верхнего левого угла .
 
 			float x2; ///< кооордината x  нижнего правого  угла .
 			float y2; ///< координата  y  нижнего правого  угла .
-			  */
+			  ************************************/
+
 			vec2 min;
 			vec2 max;
 
 
-			//! \brief Углы прямоугольника
+			//! \brief The corners of the rectangle
 			struct Corners
 			{
 				 vec2 points[4];
@@ -72,6 +74,7 @@ namespace gbmath
 			}
 
 #if ( defined(_WINDOWS_)  )
+
 			Rect(const POINT p1, const POINT p2)
 			{
 				//x1=(float)p1.x;
@@ -87,7 +90,9 @@ namespace gbmath
 			{  
 				*this = rec; 
 			}
+
 #endif
+
 
 //#ifdef __GB__BASE__RECTANGLE_H__
 
@@ -97,16 +102,6 @@ namespace gbmath
 			}
 //#endif
 
-			 /*
-			inline void set(int nx1, int ny1, int nx2, int ny2)         
-			{ 
-				x1=(float)nx1;   
-				y1=(float)ny1;
-
-				x2=(float)nx2;   
-				y2=(float)ny2; 
-			}
-			*/
 
 			inline void set(float _x1, float _y1, float _x2, float _y2) 
 			{ 
@@ -191,22 +186,25 @@ namespace gbmath
 
 
 
-			//! \brief Занулить
+			//! \brief set to zero all
 			inline void setzero() 
 			{ 
 				//x1=y1=x2=y2=0.0; 
 				min = max = vec2( 0.0f , 0.0f );
 			}
-			//! \brief  проверка всех компонентов на ноль
+			//! \brief  check of all components to zero
 			inline bool is_zero() const // old:  empty 
 			{ 
 				//return  (x1==0.0f) && (y1==0.0f) && (x2==0.0f) && (y2==0.0f) ;
 				//const vec2 _zero = vec2( 0.0f , 0.0f );
 				//return min == max == _zero;
-				return  min.x == 0.0f && min.y == 0.0f && max.x == 0.0f && max.y == 0.0f;
+				return  min.x == 
+					0.0f && min.y == 
+					0.0f && max.x == 
+					0.0f && max.y == 0.0f;
 			}
 
-			//! \brief Сдвиг координат. Движение прямоугольника
+			//! \brief The shift of origin. The motion of the rectangle
 			inline void translate(float x, float y)	
 			{ 
 				//x1+=x; 
@@ -220,7 +218,7 @@ namespace gbmath
 				max.y += y;
 			}
 
-			//! \brief Сдвиг координат. Движение прямоугольника на значение val
+			//! \brief  The shift of origin. The motion of the rectangle
 			inline void translate(const  vec2& val) 
 			{ 
 				//x1+=val.x; y1+=val.y;	x2+=val.x; y2+=val.y; 
@@ -229,7 +227,7 @@ namespace gbmath
 
 #if ( defined(_WINDOWS_) )
 
-			/** \brief Движение координат на указаное значение */
+			//! \brief The shift of origin. The motion of the rectangle
 			inline void translate(const POINT& p)
 			{
 				translate( (float)p.x, (float)p.y );
@@ -238,18 +236,19 @@ namespace gbmath
 #endif
 
 
-			//! \brief Получение ширины прямоугольника
+			//! \brief Getting the width of the rectangle
 			inline float get_width()  const 
 			{ 
 				return max.x - min.x; 
 			} 
 
-			//! \brief Получение высоты прямоуголника
+			//! \brief Getting the height of the rectangle
 			inline float get_height() const 
 			{ 
 				return max.y - min.y; 
 			}
 
+			//! \brief    get rectangle 2d size
 			inline size2d get_size() const 
 			{
 				size2d res;
@@ -257,7 +256,7 @@ namespace gbmath
 				res.height = max.y - min.y;
 			}
 
-		/*	//! \brief Получить/установить первичную координату прямоугольника
+		/*	//! \brief Get / set the initial coordinate of the rectangle
 			inline  vec2  minCoord() const 
 			{  
 				vec2 res(x1, y1); 
@@ -281,7 +280,7 @@ namespace gbmath
 				return res;
 			}
 
-			inline void         maxCoord( vec2& coord)
+			inline void  maxCoord( vec2& coord)
 			{
 				x2=coord.x;
 				y2=coord.y;
@@ -292,7 +291,7 @@ namespace gbmath
 
 			// TODO void move(const Normal2& normal, float distance) { }
 
-			//! \brief  Извлечь все 4 вершины прямоугольника.
+			//! \brief  Extract all the four vertices of the rectangle.
 			void extract_corners(Corners& _outCorners) const
 			{
 				//_outCorners.points[0] =  vec2(x1, y1);
@@ -308,8 +307,8 @@ namespace gbmath
 
 
 
-			/** \brief Установить новую позицию по верхнему левому краю прямоугольника.
-			      Размеры сохраняются. */
+			/** \brief Ставить новую позицию по верхнему левому краю прямоугольника.
+			Размеры не изменяются. */
 			inline void set_position_topleft(float x, float y)
 			{
 				float w = get_width();
@@ -329,8 +328,8 @@ namespace gbmath
 
 			#if ( defined(_WINDOWS_) )
 
-			/** \brief Установить новую позицию по верхнему левому краю прямоугольника.
-			        Размеры сохраняются. */
+			/** \brief new position at the top left edge of the rectangle.
+						The dimensions are not changed. */
 			inline void set_position_topleft(const POINT& pnt)
 			{
 				set_position_topleft( (float)pnt.x , (float)pnt.y );
@@ -339,7 +338,8 @@ namespace gbmath
 			#endif
 
 
-			/** \brief Получить точку координату верхнего левого угла прямоугольника. */
+			/** \brief  Get the point coordinate of the upper-left
+							corner of the rectangle.  */
 			inline point get_position_topleft() const
 			{
 				point res;
@@ -349,27 +349,27 @@ namespace gbmath
 			}
 
 
+	  /** \brief Установить новую ширину. 
+	  Координата левого вернего угла не меняется. */
+	  inline void set_width(float fWidth)   
+	  { 
+		  max.x = min.x + fWidth;  
+	  }
 
+	  /** \brief Установить новую высоту. 
+	  Координата левого вернего угла не меняется. */
+	  inline void set_height(float fHeight) 
+	  { 
+		  max.y = min.y + fHeight; 
+	  }
 
-
-  /** \brief Установить новую ширину. Координата левого вернего угла не меняется. */
-  inline void set_width(float fWidth)   
-  { 
-	  max.x = min.x + fWidth;  
-  }
-
-  /** \brief Установить новую высоту. Координата левого вернего угла не меняется. */
-  inline void set_height(float fHeight) 
-  { 
-	  max.y = min.y + fHeight; 
-  }
-
-  /** \brief Установить новую ширину и высоту. Координата левого вернего угла не меняется. */
-  inline void set_width_height(float fWidth, float fHeight)
-  {
-		max.x = min.x + fWidth;
-		max.y = min.y + fHeight;
-  }
+	  /** \brief Установить новую ширину и высоту. 
+	  Координата левого вернего угла не меняется. */
+	  inline void set_width_height(float fWidth, float fHeight)
+	  {
+			max.x = min.x + fWidth;
+			max.y = min.y + fHeight;
+	  }
 
 
 //#if defined(_WINDOWS_)
