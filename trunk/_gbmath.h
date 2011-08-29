@@ -149,6 +149,7 @@ namespace gbmath
  ///
 
 // proj
+#include "clip_values.h"
 #include "orthographic_projection_data.h"
 #include "perspective_projection_data.h"
 #include "related_coord.h"
