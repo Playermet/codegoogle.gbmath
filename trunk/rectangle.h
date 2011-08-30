@@ -44,14 +44,20 @@ namespace gbmath
 				top = left = 0;
 			}
 
-			Rectangle(const Rectangle &other)
+			Rectangle(const Rectangle& a)
 			{
-				init(other);
+				left = a.left;
+				top = a.top;
+				width = a.width;
+				height = a.height;
 			}
 
-			Rectangle(int x, int y, int w, int h)
+			Rectangle(int _x, int _y, int _w, int _h)
 			{
-				void init(int x, int y, int w, int h);
+				left = _x;
+				top =  _y;
+				width = _w;
+				height = _h;
 			}
 
 #ifdef _WINDOWS_
@@ -94,6 +100,17 @@ namespace gbmath
 					return false;
 
 				return height < other.height;
+			}
+
+			inline bool  operator == (const Rectangle& a) const
+			{
+				return left==a.left && top==a.top &&
+					width==a.width && height && a.height;
+			}
+
+			inline bool  operator != (const Rectangle& a) const
+			{
+				return !(*this == a);
 			}
 
 #ifdef _WINDOWS_
