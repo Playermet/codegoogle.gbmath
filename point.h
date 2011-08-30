@@ -34,20 +34,34 @@ namespace gbmath {
 			int y;
 			int top;
 		};
-
-		//int x;
-		//int y;
-
-		inline point() { x=y=0; }
-		inline point(const point& p) { x=p.x; y=p.y; }
-		inline point(int _x, int _y) { init(_x,_y);  }
+ 
+ 
+		inline point() 
+		{ 
+			x = y = 0; 
+		}
+		
+		inline point(const point& p) 
+		{ 
+			x = p.x; 
+			y = p.y; 
+		}
+		
+		inline point(int _x, int _y) 
+		{ 
+			init(_x,_y);  
+		}
 
 		#ifdef _WINDOWS_
 		inline point(const POINT& p) { *this = p; }
 		#endif
 
 
-		inline void init(int _x, int _y) { x=_x; y=_y; }
+		inline void init(int _x, int _y) 
+		{ 
+			x=_x; 
+			y=_y; 
+		}
 
 
 		#ifdef _WINDOWS_
@@ -65,6 +79,16 @@ namespace gbmath {
 		}
 
 		#endif
+		
+		inline bool operator == (const point& a) const
+		{
+			return x==a.x && y==a.y;
+		}
+		
+		inline bool operator != (const point& a) const
+		{
+			return !( *this == a );
+		}		
 
 
 		inline point operator + (const point& p) const
