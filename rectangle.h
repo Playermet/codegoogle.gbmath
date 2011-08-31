@@ -25,11 +25,11 @@ namespace gbmath
 		//! \brief integer values rectangle
 		struct Rectangle
 		{
-			int  left; //< position X.
-			int  top;  //< position Y.
+			int  left; ///< position X.
+			int  top;  ///< position Y.
 
-			int  width;  //< rect width.
-			int  height; //< rect height.
+			int  width;  ///< rect width.
+			int  height; ///< rect height.
 
 			Rectangle()
 			{
@@ -134,14 +134,14 @@ namespace gbmath
 			}
 #endif
 
-			// \brief Verification of finding a point in the rectangle. 
+			//! \brief Verification of finding a point in the rectangle. 
 			inline bool check_point(int x, int y) const
 			{
 			  if( (x>left) && (x<left+width) && (y>top) && (y<top+height) ) return true;
 			  return false;
 			}
 
-			// \brief Verification of finding a point in the rectangle. 
+			//! \brief Verification of finding a point in the rectangle. 
 			inline bool check_point(const point& p)  
 			{
 				return check_point( p.x , p.y );
@@ -149,7 +149,7 @@ namespace gbmath
 
 #ifdef _WINDOWS_
 
-			// \brief Verification of finding a point in the rectangle. 
+			//! \brief Verification of finding a point in the rectangle. 
 			inline bool check_point(const POINT& p) 
 			{
 				return check_point( p.x , p.y );
@@ -171,45 +171,28 @@ namespace gbmath
 				left  += p.x;
 				top   += p.y;
 			}
-#endif
-
-#ifdef _WINDOWS_
-
+ 
 			//! \brief offset coord.
 			inline void operator += (const POINT& p)
 			{
 				offset (p);
 			}
-
- #endif
-
-			/***********************
-			//! \brief offset coord.
-  			inline void operator += (const point& p)
-  			{
-  				offset (p);
-  			}
-			************************/
-
-#ifdef _WINDOWS_
-
+ 
 			//! \brief  Get a central coordinate.
 			inline POINT center() const
 			{
 				POINT res = { (left+width)/2 , (top+height)/2 };
 				return res;
 			}
-#endif
+			
+#endif // _WINDOWS_
 
 
 
 			friend std::ostream& operator << (std::ostream& os, 
 										const Rectangle& r)
 			{
-				os << r.left << " " 
-					<< r.top << " " 
-					<< r.width << " " 
-					<< r.height;
+				os << r.left << " " << r.top << " " << r.width << " " << r.height;
 				return os;
 			}
 
@@ -236,6 +219,25 @@ namespace gbmath
 					throw std::invalid_argument("bad input string");
 				}
 
+			}
+			
+			//! \brief  contains the whole rectangle?
+			bool is_contains_whole_rectangle(const Rectangle& r) const
+			{
+				//
+				if( (r.left > left) && (r.top > top) )
+				{
+					if( 
+						( (left + width) > (r.left + r.width)  ) 
+						&& 
+						( (top + height) > (r.top  + r.height) ) 
+					  )
+					{
+						return true;
+					}
+				}
+				
+				return false;
 			}
 
 
