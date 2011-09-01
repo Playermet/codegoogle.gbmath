@@ -91,11 +91,22 @@ namespace gbmath
 			/** \brief Построение цвета  из целочисленого 4-x  байтового цвета.  */
 			void operator =  (const color4_32 val) ;
 
-			/** \brief Установить белый цвет  */
 
-			inline color4f& set_white(float _a=1.0f) {r=g=b=1.0f; a=_a;  return *this; }
-			/** \brief Установить чёрный цвет  */
-			inline color4f& set_black(float _a=1.0f) {r=g=b=0.0f; a=_a;  return *this; }
+			//! \brief set as white color
+			inline color4f& set_white(float _a=1.0f) 
+			{
+				r = g = b = 1.0f; 
+				a = _a;  
+				return *this; 
+			}
+
+			//! \brief  set as black color
+			inline color4f& set_black(float _a=1.0f) 
+			{
+				r = g = b = 0.0f; 
+				a = _a;  
+				return *this; 
+			}
 
 			operator color4_32() const ;
 
