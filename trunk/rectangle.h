@@ -86,9 +86,16 @@ namespace gbmath
 				init(rc.left, rc.top, rc.width, rc.height);
 			}
 
+			//! \brief  set all to zero
 			void set_zero()
 			{
 				left = top = width = height = 0;
+			}
+
+			//! \breif   is all zero ?
+			bool empty() const
+			{
+				return left == top == width == height == 0;
 			}
 
 			bool operator < (const Rectangle &other) const
