@@ -48,7 +48,8 @@ namespace gbmath
 
 	inline aabb() 
 	{
-
+		min.setzero();
+		max.setzero();
 	}
 
 	inline aabb(const aabb& aabb) 
