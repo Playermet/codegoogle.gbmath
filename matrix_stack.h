@@ -17,7 +17,7 @@
 #pragma warning(push)
 #pragma warning(disable : 4290)
 
-#pragma message(" create self exception   "  __FILE__  )
+
 
  
 
@@ -216,7 +216,7 @@ public:
 		return (m_pos<0);
 	}
 
-#pragma message("KS777: ПРВОЕРИТЬ МЕТОД  full()  "  __FILE__ )
+
 
 	inline bool full() const
 	{

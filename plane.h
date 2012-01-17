@@ -11,7 +11,7 @@
 #endif
 
 
-#pragma message("!! need rename plane_s  "  __FILE__ )
+
  
 namespace gbmath
 {

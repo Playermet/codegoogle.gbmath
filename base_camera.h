@@ -38,7 +38,7 @@ namespace gbmath
 {
  
 
-#pragma message("delete this: KEY_WAS_DOWN_MASK .....    " __FILE__ )
+
 
 #define KEY_WAS_DOWN_MASK 0x80
 #define KEY_IS_DOWN_MASK  0x01
@@ -49,10 +49,10 @@ namespace gbmath
 #define MOUSE_WHEEL         0x08
 
 
-#pragma message("delete this: D3DUtil_CameraKeys" __FILE__ )
-	
 
-enum D3DUtil_CameraKeys
+	
+ 
+enum CameraKeys
 {
     CAM_STRAFE_LEFT = 0,
     CAM_STRAFE_RIGHT,
@@ -65,6 +65,7 @@ enum D3DUtil_CameraKeys
     CAM_MAX_KEYS,
     CAM_UNKNOWN = 0xFF
 };
+ 
   
 
 
@@ -205,9 +206,13 @@ public:
 
 
 protected:
-    // Functions to map a WM_KEYDOWN key to a D3DUtil_CameraKeys enum
+
+
+    // Functions to map a WM_KEYDOWN key to a CameraKeys enum
     // >>>>  old  : virtual 
-		static D3DUtil_CameraKeys mapKey( UINT nKey );  
+
+		static CameraKeys mapKey( UINT nKey );  
+
 
     bool isKeyDown( BYTE key ) const 
 	{ 

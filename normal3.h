@@ -26,7 +26,7 @@ Higher level than a vector. Always normalized. */
 
 			inline void __normalize()
 			{
-#pragma message("ks777: need insert code check zero " __FILE__)
+          // #pragma message("ks777: need insert code check zero " __FILE__)
 				register float len = sqrt ( _x*_x + _y*_y + _z*_z );
 				_x/=len;
 				_y/=len;

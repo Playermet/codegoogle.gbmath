@@ -39,7 +39,7 @@ namespace gbmath
 
 	   }
 
-#pragma message("!!! warning 4297 !!"  __FILE__  )
+
 
 	   inline void fromdevice(IDirect3DDevice9* pdevice) 
 								throw(std::runtime_error)
@@ -89,7 +89,7 @@ namespace gbmath
 			return (D3DVIEWPORT9&)*this;
 	   }
 
-#pragma message("!!! DELETE THIS: to_d3d9Viewport   "  __FILE__)
+
 
 	   //! \briefAssign the coordinates, width and height
 	   inline void to_d3d9Viewport(D3DVIEWPORT9& vpInOut) const

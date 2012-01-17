@@ -9,7 +9,7 @@
     #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
-#pragma message ("!!! NEDD operators >> << to/from string "  __FILE__ )
+
  
 namespace gbmath
 {
@@ -25,7 +25,7 @@ namespace gbmath
 
 
 
-#pragma message("!!NEED operators   "   __FILE__ )
+
 
 	   friend std::ostream& operator << (std::ostream& os, 
 											const TransformData2& a)

@@ -15,10 +15,7 @@
 namespace gbmath
 {
 
-
-#pragma message("!!!  #error  need rename class  (aabr or rect)"  __FILE__ )
-#pragma message("!!!  #error  need  set vec2 min  and vec2 max   "  __FILE__ )
-
+ 
 		//! \brief  Rectangle on the minimum and maximum coordinate.
 		class Rect {
 		public:

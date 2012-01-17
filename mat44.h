@@ -896,7 +896,7 @@ namespace gbmath
 			/** \brief Построение левосторонней матрицы вида  по направлению взгляда */
 			inline  void setViewDirLH(const vec3& eye, const vec3& dir, const vec3& up)
 			{
-                #pragma message ("KS777 MATH::MAT44  need check setViewDirLH" __FILE__ )
+                
 
 				vec3 dirn = dir.normalized();
 				const float flen = eye.length();
@@ -910,7 +910,7 @@ namespace gbmath
 			/** \brief Построение правосторонней матрицы вида  по направлению взгляда */
 			inline  void setViewDirRH(const vec3& eye, const vec3& dir, const vec3& up)
 			{
-				#pragma message ("KS777 MATH::MAT44 warn  need check setViewDirRH" __FILE__ )
+				
 
 				vec3 to = dir.normalized();
 				const float flen = eye.length();
@@ -998,19 +998,98 @@ namespace gbmath
 
 #endif // _D3D9_H_
 
+ 
+ 
+			   //inline void print() const
+			   //{
+				  // printf("\n%f   %f   %f   %f  \n%f   %f   %f   %f  \n%f   %f   %f   %f  \n%f   %f   %f   %f  \n  ",
+					 //  _11, _12, _13, _14,
+					 //  _21, _22, _23, _24,
+					 //  _31, _32, _33, _34,
+					 //  _41, _42, _43, _44
+					 //  );
+			   //}
 
-			#pragma message("!!!  need << >>  for mat44   " __FILE__ )
 
-				//! \brief Вывод значений на консоль
-			   inline void print() const
+			   friend std::ostream &operator << (std::ostream &stream, const mat44& m)
 			   {
-				   printf("\n%f   %f   %f   %f  \n%f   %f   %f   %f  \n%f   %f   %f   %f  \n%f   %f   %f   %f  \n  ",
-					   _11, _12, _13, _14,
-					   _21, _22, _23, _24,
-					   _31, _32, _33, _34,
-					   _41, _42, _43, _44
-					   );
+				   stream
+					   << m._11 << " " << m._12 << " " << m._13 << " " << m._14 << "\n" 
+					   << m._21 << " " << m._22 << " " << m._23 << " " << m._24 << "\n"					   
+					   << m._31 << " " << m._32 << " " << m._33 << " " << m._34 << "\n"
+					   << m._41 << " " << m._42 << " " << m._43 << " " << m._44 << "\n" ;
+
+				   return stream;
 			   }
+
+			friend std::istream &operator >> (std::istream &stream, mat44& m)
+			{
+				stream >> m._11;
+				stream >> m._12;
+				stream >> m._13;
+				stream >> m._14;
+
+				stream >> m._21;
+				stream >> m._22;
+				stream >> m._23;
+				stream >> m._24;
+
+				stream >> m._31;
+				stream >> m._32;
+				stream >> m._33;
+				stream >> m._34;
+
+				stream >> m._41;
+				stream >> m._42;
+				stream >> m._43;
+				stream >> m._44;
+
+				return stream;
+			}
+
+
+
+			operator std::string() const
+			{
+				std::ostringstream ss;
+
+				ss << _11 << " " << _12 << " " << _13 << " " << _14 << "    "   <<
+				_21 << " " << _22 << " " << _23 << " " << _24 << "    "	<<
+				_31 << " " << _32 << " " << _33 << " " << _34 << "    "	<<
+				_41 << " " << _42 << " " << _43 << " " << _44  ;
+
+				return ss.str();
+			}
+
+			void operator = (const std::string& str) throw (std::invalid_argument)
+			{
+				std::istringstream ss(str);
+
+				ss >> _11;
+				ss >> _12;
+				ss >> _13;
+				ss >> _14;
+
+				ss >> _21;
+				ss >> _22;
+				ss >> _23;
+				ss >> _24;
+
+				ss >> _31;
+				ss >> _32;
+				ss >> _33;
+				ss >> _34;
+
+				ss >> _41;
+				ss >> _42;
+				ss >> _43;
+				ss >> _44;
+
+				if( ss.fail() ) 
+					throw std::invalid_argument("bad input string");
+			}
+
+
 			   
 			   
 

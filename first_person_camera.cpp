@@ -26,7 +26,7 @@ first_person_camera::first_person_camera() :
 void first_person_camera::frameMove( float fElapsedTime )
 {
 
-#pragma message("ks777 gb::devhelp::first_person_camera::framemove  опнбепхрэ лернд!  "  __FILE__)
+
   //  if( MYUTGetGlobalTimer()->IsStopped() )
 	//{
   //      fElapsedTime = 1.0f / MYUTGetFPS();

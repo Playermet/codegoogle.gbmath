@@ -258,7 +258,7 @@ namespace gbmath
 			}
 
 
-#pragma message ("KS777: MATH::VEC4 >> NEED CHECK CROSS METHOD !!!"  __FILE__)
+
 
 			//! \brief Get the vector (cross) product of the vector
 			inline vec4  cross ( const vec4 & v) const

@@ -110,7 +110,7 @@ namespace gbmath
 
 			operator color4_32() const ;
 
-#pragma message ( "!!TEMP COMMENTED "  __FILE__ )
+//#pragma message ( "!!TEMP COMMENTED "  __FILE__ )
 			/******************
 			inline void  operator = (const color_rgba_s& color)
 			{
@@ -133,7 +133,7 @@ namespace gbmath
 			***************/
 
 
-#pragma message ( "!!TEMP COMMENTED "  __FILE__ )
+//#pragma message ( "!!TEMP COMMENTED "  __FILE__ )
 			// inline void  operator = (const color_rgb24_s color)
 			// {
 			//	  r=((float)color.r) / 255.0f;
@@ -141,7 +141,7 @@ namespace gbmath
 			//	  b=((float)color.b) / 255.0f;
 			// };
 
-#pragma  message (  "!!TEMP COMMENTED "  __FILE__    )
+//#pragma  message (  "!!TEMP COMMENTED "  __FILE__    )
 			/* inline  operator color_rgb24_s() const
 			{
 			color_rgb24_s res;

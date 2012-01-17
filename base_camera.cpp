@@ -180,7 +180,7 @@ LRESULT base_camera::handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam,
     {
         case WM_KEYDOWN:
         {
-            // Map this key to a D3DUtil_CameraKeys enum and update the
+            // Map this key to a CameraKeys enum and update the
             // state of m_aKeys[] by adding the KEY_WAS_DOWN_MASK|KEY_IS_DOWN_MASK mask
             // only if the key is not down
 			if(wParam == 27)
@@ -188,7 +188,7 @@ LRESULT base_camera::handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam,
 			  int _stop = 0;
 			}
 
-            D3DUtil_CameraKeys mappedKey = mapKey( (UINT)wParam );
+            CameraKeys mappedKey = mapKey( (UINT)wParam );
             if( mappedKey != CAM_UNKNOWN )
             {
                 if( FALSE == isKeyDown(m_aKeys[mappedKey]) )
@@ -202,9 +202,9 @@ LRESULT base_camera::handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam,
 
         case WM_KEYUP:
         {
-            // Map this key to a D3DUtil_CameraKeys enum and update the
+            // Map this key to a CameraKeys enum and update the
             // state of m_aKeys[] by removing the KEY_IS_DOWN_MASK mask.
-            D3DUtil_CameraKeys mappedKey = mapKey( (UINT)wParam );
+            CameraKeys mappedKey = mapKey( (UINT)wParam );
             if( mappedKey != CAM_UNKNOWN && (DWORD)mappedKey < 8 )
             {
                 m_aKeys[ mappedKey ] &= ~KEY_IS_DOWN_MASK;
@@ -489,7 +489,7 @@ void base_camera::constrainToBoundary( vec3* pV )
 //========================================================================
 // Maps a windows virtual key to an enum
 //========================================================================
-D3DUtil_CameraKeys base_camera::mapKey( UINT nKey )
+CameraKeys base_camera::mapKey( UINT nKey )
 {
     // This could be upgraded to a method that's user-definable but for 
     // simplicity, we'll use a hardcoded mapping.
