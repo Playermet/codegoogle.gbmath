@@ -29,14 +29,16 @@ namespace gbmath
 		 return res;
 	 }
 
-	 void decomposeInverseView(const mat44& mInvView)
+	 void decomposeInverseView(const mat44& mInverseView)
 	 {
 
-#pragma message("!!! need code . extract inverse view matrix")
-		 assert(   false &&  "no code");
-	 // eye_position.x = minv._41;
-	 // eye_position.y = minv._42;
-	 // eye_position.z = minv._43;
+#pragma message(" eyedata::decomposeInverseView  need code . extract inverse view matrix")
+		// assert(   false &&  "no code");
+	  eye_position.x = mInverseView._41;
+	  eye_position.y = mInverseView._42;
+	  eye_position.z = mInverseView._43;
+
+	  assert(false);
 
      // dir = *( (vec3*)&minv._31);
 

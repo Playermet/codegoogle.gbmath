@@ -15,7 +15,7 @@ namespace gbmath
 {
 
 
-#pragma message("!!!! rename aabb  "   __FILE__ )
+
 
 
 	// many rus info aabox  
@@ -79,7 +79,7 @@ namespace gbmath
 	//! \brief Return combined with boxing
 	inline aabb operator + (const aabb& _aabb) const
 	{
-	#pragma message("!!! NEED CHECK CODE AFTER REFRACT   "  __FILE__ )
+	
 		aabb res = *this;
 		if (_aabb.min.x < res.min.x)   res.min.x = _aabb.min.x;
 		if (_aabb.min.y < res.min.y)   res.min.y = _aabb.min.y;

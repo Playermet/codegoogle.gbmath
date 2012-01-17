@@ -11,7 +11,7 @@
 #endif
 
 
-#pragma message("!!!! NEED RENAME QUAT  "  __FILE__  )
+
 
 
 namespace gbmath

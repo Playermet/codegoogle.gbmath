@@ -15,7 +15,7 @@ namespace gbmath
 
 
 
-  #pragma message("!!! need  rename : "  __FILE__  )
+
 
    //! \brief The assembly of data transformation: 
 					// scaling (vector) + rotation (quaternion) + position (vector).

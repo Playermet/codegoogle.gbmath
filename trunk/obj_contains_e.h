@@ -16,7 +16,7 @@ namespace gbmath
 {
 
 
-	#pragma message ("!!! need rename  " __FILE__  )
+	
 
 		//! \brief  description of spatial objects crossing
 		enum  obj_contains_e

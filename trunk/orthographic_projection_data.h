@@ -7,7 +7,7 @@
 #endif
 
 
-namespace gmath
+namespace gbmath
 {
 
 	//! \brief  orthographic projection data

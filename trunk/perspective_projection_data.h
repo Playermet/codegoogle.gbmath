@@ -16,7 +16,7 @@ namespace gbmath
 {
 
 
-	#pragma message( "!!!!  rename this  "  __FILE__ )
+	
 
 	  //! \brief   This data perspective projection.
 	  struct perspective_projection_data

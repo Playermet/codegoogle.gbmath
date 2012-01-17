@@ -262,7 +262,7 @@ Quaternion&  Quaternion::setRotationAxis(const  vec3 &axis, float theta)
 
 	// The axis of rotation must be normalized
 
-#pragma message("KS777: MATH::QUAT::setRotationAboutAxisAngle >> NEED CHECK !!"   __FILE__ )
+
 	// assert( fabs(vectorMag(axis) - 1.0f) < 0.01f );
 
 	// Compute the half angle and its sin

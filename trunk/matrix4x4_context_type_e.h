@@ -13,8 +13,7 @@
 namespace gbmath
 {
 
-#pragma message("!!!!  попробовать переделат в класс энумератор  "  __FILE__ )
-
+ 
 
 	  //!  \brief The role of matrix in the context of
 	  struct matrix4x4_context_type_e

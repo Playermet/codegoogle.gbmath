@@ -15,11 +15,7 @@
 namespace gbmath
 {
 
-
-
-#pragma  message("! delete point2 ???  "  __FILE__ )
-
-
+ 
 	/** \brief  describes a point/coordinate/position in 3-dimensional space.
 				Level higher than the vector */
 	class point2 {

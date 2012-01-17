@@ -738,7 +738,7 @@ void geometry_context::__checkViewVectors()const
   if (m_matr.mViewInverse.bChangeFlag)
   {
     get_matrix_ViewInverse();
-    #pragma message ("ПРОВЕРИТЬ ПОЛУЧЕНИЕ ВЕКТОРОВ  ВИДА ИЗ ИНВЕРСНОЙ ВИДОВОЙ МАТРИЦЫ ")
+
     m_VewPos = *((vec3*) &m_matr.mViewInverse.matrix._41);
     m_ViewDir = *((vec3*) &m_matr.mViewInverse.matrix._31);
     m_ViewUp = *((vec3*) &m_matr.mViewInverse.matrix._21);
@@ -781,7 +781,7 @@ const vec4 *geometry_context::get_vector4_ViewUp()const
 //====================================================================
 const vec3 *geometry_context::get_vector3_ViewSide()const
 {
-  #pragma message ("ПРОВЕРИТЬ ПОЛУЧЕНИЕ БОКОВОГО ВЕКТОРА ВИДА")
+
  // D3DXVec3Cross(&m_vec3Temp, &m_ViewDir, &m_ViewUp);
   m_vec3Temp =	m_ViewDir.cross( m_ViewUp );
 
@@ -1165,7 +1165,8 @@ eyedata geometry_context::getViewParams()const
 //=======================================================
 const eyedata *geometry_context::getViewParamsPtr()const
 {
-  #pragma message ("ПОГОНЯТЬ В ОТЛАДКЕ ЭТОТ МЕТОД")
+	assert(false);
+#pragma message ( "geometry_context::getViewParamsPtr :: ПОГОНЯТЬ В ОТЛАДКЕ ЭТОТ МЕТОД  "  __FILE__ )
 
 
   const mat44 *pmViewInv = get_matrix_ViewInverse();
@@ -1437,7 +1438,7 @@ const TransformData  *geometry_context::getWorldTransformDataPtr()const
   if (m_bTransfDataChange)
   {
 
-    #pragma message("NEED CHECK IMPLEMENTATION" __FILE__ )
+
 
     const mat44 *mw = get_matrix_World();
 
@@ -1508,14 +1509,12 @@ axies_angle geometry_context::getWorldRotationAxiesAngle() const
 };
 
 //==========================================
-Quaternion geometry_context::getWorldRotationQuaternion()const
+Quaternion geometry_context::getWorldRotationQuaternion() const
 {
   // get const to check calculate
   const TransformData  *ptr = getWorldTransformDataPtr();
-
-  #pragma message("NEED CHECK CODE IMPLEMENTATION" __FILE__ )
-
-#pragma message("ks777: Need check code !!  "  __FILE__ )
+ 
+    #pragma message("ks777   Quaternion geometry_context::getWorldRotationQuaternion() const  Need check code    "  __FILE__ )
   assert(false);
 	return ptr->qRotation;
 
@@ -1576,7 +1575,7 @@ int  geometry_context::setWorldTransformData(const TransformData  *pTr)
 
   hr |= setMatrices(&mworld, NULL, NULL);
 
-#pragma message("ks777::context  NEED CHECK IMPLEMENTATION  " __FILE__ )
+
 
   return hr;
 };
@@ -1685,7 +1684,7 @@ trd.qRotation = *q;
   m_bTransfDataChange = true;
 
 
-  #pragma message(">> NEED CHECK IMPLEMENTATION" __FILE__ )
+
 
   return hr;
 };
@@ -1772,13 +1771,13 @@ int  geometry_context::setWorldScalingTranslation(float fScale, float x, float y
 
   return hr;
 };
-
-#pragma message("ks777: NEED DELETE MAIN()  " __FILE__ )
-int main()
-{
-	return 0;
-}
-
+//
+//#pragma message("ks777: NEED DELETE MAIN()  " __FILE__ )
+//int main()
+//{
+//	return 0;
+//}
+//
 
 //=========================================================================
 
