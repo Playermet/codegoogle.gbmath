@@ -28,7 +28,7 @@ Tear of DXUT with minor fixes and removing unnecessary.
 
 #ifdef WIN32 // // only windows platform
 
-const bool CAMERA_LEFT_HANDLE = false;  // true;
+const bool CAMERA_LEFT_HANDLE = true;
  
 #include <windows.h>
 #include <zmouse.h>
