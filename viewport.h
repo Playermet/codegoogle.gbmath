@@ -28,6 +28,13 @@ namespace gbmath
 	   unsigned int  width;  ///< viewport width.
 	   unsigned int  height; ///< viewport height.
 
+
+			vieport_s()
+			{
+				x=y=0;
+				width=height=0;
+			}
+
 #ifdef _D3D9_H_
 	   inline void operator =  (const D3DVIEWPORT9& vp)
 	   {
@@ -60,8 +67,15 @@ namespace gbmath
 	 class ViewportZ : public vieport_s  {
 	  public:
 
-	      float minZ;
-	      float maxZ;
+			  float minZ;
+			  float maxZ;
+
+
+			ViewportZ()
+			{
+				minZ = maxZ = 0;
+			}
+
 
 #ifdef _D3D9_H_
 	   inline ViewportZ (const D3DVIEWPORT9& vp) 
