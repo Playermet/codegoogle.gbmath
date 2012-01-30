@@ -41,7 +41,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul>
       <li><a href="files.htm"><span>File&nbsp;List</span></a></li>
-      <li><a href="globals.htm"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
 <h1>vec3.cpp</h1><a href="vec3_8cpp.htm">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 ﻿#pragma once
@@ -93,7 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00047"></a>00047 <span class="keyword"></span>
 <a name="l00048"></a>00048 <span class="keyword"></span>
 <a name="l00049"></a>00049 <span class="keyword"></span>{
-<a name="l00050"></a>00050          <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a> <a class="code" href="mat44_8cpp.htm#a00f0004c81699d6f9b957e4df490a04f">MAT</a> = World * View *  Proj;
+<a name="l00050"></a>00050          <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a> MAT = World * View *  Proj;
 <a name="l00051"></a>00051          MAT.<a class="code" href="structgbmath_1_1mat44.htm#a0e50c0a1e9b4686083957369e9fdb0ef" title="Инверсия. Бросает исключение если инверсия невозможна...">invert</a>();
 <a name="l00052"></a>00052 
 <a name="l00053"></a>00053         <a class="code" href="structgbmath_1_1vec4.htm" title="4d-base vector. Corrected by operators epislon">vec4</a> a;
@@ -156,7 +155,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -165,7 +164,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Aug 27 20:46:53 2011 for gbmath by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Mon Jan 30 15:53:21 2012 for gbmath by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

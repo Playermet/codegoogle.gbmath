@@ -76,10 +76,17 @@ Inheritance diagram for gbmath::color4f:</div>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1color4f.htm#abbd49896711f6867e66f808ae2ef5328">operator=</a> (const <a class="el" href="structgbmath_1_1color4__32.htm">color4_32</a> val)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построение цвета из целочисленого 4-x байтового цвета.  <a href="#abbd49896711f6867e66f808ae2ef5328"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1color4f.htm">color4f</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1color4f.htm#a29dd195f65786d806122128425de8cfa">set_white</a> (float _a=1.0f)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Установить белый цвет.  <a href="#a29dd195f65786d806122128425de8cfa"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">set as white color  <a href="#a29dd195f65786d806122128425de8cfa"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1color4f.htm">color4f</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1color4f.htm#a9b432a4da80820da0ce99467d42d4a64">set_black</a> (float _a=1.0f)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Установить чёрный цвет.  <a href="#a9b432a4da80820da0ce99467d42d4a64"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">set as black color  <a href="#a9b432a4da80820da0ce99467d42d4a64"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1color4f.htm#a84973b5498957b8ab224723d95c2c60a">operator color4_32</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1color4f.htm#a6f012deea117281f17b2c084e26e3039">operator=</a> (const D3DCOLORVALUE &amp;val)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">сложение.  <a href="#a6f012deea117281f17b2c084e26e3039"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1color4f.htm#abb757b87baa3fdf48f299800ff4c987b">operator const D3DCOLORVALUE *</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1color4f.htm#a7cd9598c3c9a442caf1921e92f68035b">operator D3DCOLORVALUE</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1color4f.htm#a7415c03d38c537eda46914985b203344">operator=</a> (const D3DXCOLOR &amp;c)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1color4f.htm#aea2659acb63b7edcc2efcfa93ab25f2c">operator const D3DXCOLOR *</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1color4f.htm#a5ffe74f0a057ea57802f7be43661730c">operator D3DXCOLOR</a> () const </td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Standard four-color float . </p>
@@ -221,6 +228,125 @@ Inheritance diagram for gbmath::color4f:</div>
 
 </div>
 </div>
+<a class="anchor" id="abb757b87baa3fdf48f299800ff4c987b"></a><!-- doxytag: member="gbmath::color4f::operator const D3DCOLORVALUE *" ref="abb757b87baa3fdf48f299800ff4c987b" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gbmath::color4f::operator const D3DCOLORVALUE * </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00521">521</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aea2659acb63b7edcc2efcfa93ab25f2c"></a><!-- doxytag: member="gbmath::color4f::operator const D3DXCOLOR *" ref="aea2659acb63b7edcc2efcfa93ab25f2c" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gbmath::color4f::operator const D3DXCOLOR * </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00527">527</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7cd9598c3c9a442caf1921e92f68035b"></a><!-- doxytag: member="gbmath::color4f::operator D3DCOLORVALUE" ref="a7cd9598c3c9a442caf1921e92f68035b" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gbmath::color4f::operator D3DCOLORVALUE </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00522">522</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5ffe74f0a057ea57802f7be43661730c"></a><!-- doxytag: member="gbmath::color4f::operator D3DXCOLOR" ref="a5ffe74f0a057ea57802f7be43661730c" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gbmath::color4f::operator D3DXCOLOR </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00528">528</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7415c03d38c537eda46914985b203344"></a><!-- doxytag: member="gbmath::color4f::operator=" ref="a7415c03d38c537eda46914985b203344" args="(const D3DXCOLOR &amp;c)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gbmath::color4f::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const D3DXCOLOR &amp;&nbsp;</td>
+          <td class="paramname"> <em>c</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00526">526</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6f012deea117281f17b2c084e26e3039"></a><!-- doxytag: member="gbmath::color4f::operator=" ref="a6f012deea117281f17b2c084e26e3039" args="(const D3DCOLORVALUE &amp;val)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gbmath::color4f::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const D3DCOLORVALUE &amp;&nbsp;</td>
+          <td class="paramname"> <em>val</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>сложение. </p>
+<p>сложение только rgb. альфа не изменятеся. Вычитание Вычитание только rgb. альфа не изменятеся. Масштабирование inline <a class="el" href="structgbmath_1_1color4f.htm" title="Standard four-color float .">color4f</a>&amp; scale(float s) { r*=s; g*=s; b*=s; a*=s; return *this; }; установить по c1 и c2 по линейной интерполяции. установить: линейная интерполяция между this и color. изменить насыщенность . Альфа игнорируется. изменить насыщенность Масштабирование цвета. Изменение яркости. Негатив. Установить негативный. получить негативный цвет изменить контраст получить цвет с изменённым контрастом Отсечение значений в пределах 0.0 ... 1.0 Получить сатурированый цвет из this . Установить как средний цвет между this и col . Установить как средний цвет между c1 и с2 . Получить как средний цвет между this и col . Конвертация в строку. Разделитель: пробел Чтение значений из строки разд. пробелами </p>
+
+<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00520">520</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="abbd49896711f6867e66f808ae2ef5328"></a><!-- doxytag: member="gbmath::color4f::operator=" ref="abbd49896711f6867e66f808ae2ef5328" args="(const color4_32 val)" -->
 <div class="memitem">
 <div class="memproto">
@@ -259,11 +385,11 @@ Inheritance diagram for gbmath::color4f:</div>
 </div>
 <div class="memdoc">
 
-<p>Установить чёрный цвет. </p>
+<p>set as black color </p>
 
 <p>Reimplemented from <a class="el" href="structgbmath_1_1color4.htm#abc696e4417beceda9003ef254bd616d6">gbmath::color4&lt; float &gt;</a>.</p>
 
-<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00098">98</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
+<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00104">104</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
 
 </div>
 </div>
@@ -283,7 +409,7 @@ Inheritance diagram for gbmath::color4f:</div>
 </div>
 <div class="memdoc">
 
-<p>Установить белый цвет. </p>
+<p>set as white color </p>
 
 <p>Reimplemented from <a class="el" href="structgbmath_1_1color4.htm#a783ed92bbf19b677bd233b4dd5c60313">gbmath::color4&lt; float &gt;</a>.</p>
 
@@ -301,7 +427,7 @@ Inheritance diagram for gbmath::color4f:</div>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -310,7 +436,7 @@ Inheritance diagram for gbmath::color4f:</div>
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Aug 27 20:46:55 2011 for gbmath by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Mon Jan 30 15:53:23 2012 for gbmath by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

@@ -41,7 +41,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul>
       <li><a href="files.htm"><span>File&nbsp;List</span></a></li>
-      <li><a href="globals.htm"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
 <h1>vec2.h</h1><a href="vec2_8h.htm">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 ﻿
@@ -148,17 +147,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00109"></a>00109 
 <a name="l00110"></a>00110 <span class="preprocessor">#ifdef __D3DX9MATH_H__</span>
 <a name="l00111"></a>00111 <span class="preprocessor"></span>
-<a name="l00112"></a>00112                         <span class="keyword">inline</span> operator const D3DXVECTOR2*()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (D3DXVECTOR2*)&amp;<a class="code" href="structgbmath_1_1vec2.htm#a86ff75c64d87662abfee8c35c5a343d0">x</a>; }
-<a name="l00113"></a>00113                         <span class="keyword">inline</span> operator   D3DXVECTOR2*()   { <span class="keywordflow">return</span> (D3DXVECTOR2*)&amp;<a class="code" href="structgbmath_1_1vec2.htm#a86ff75c64d87662abfee8c35c5a343d0">x</a>; }
-<a name="l00114"></a>00114                         <span class="keyword">inline</span> operator   D3DXVECTOR2()<span class="keyword"> const  </span>{ <span class="keywordflow">return</span> D3DXVECTOR2(<a class="code" href="structgbmath_1_1vec2.htm#a86ff75c64d87662abfee8c35c5a343d0">x</a>,<a class="code" href="structgbmath_1_1vec2.htm#a9212649e2705d2216739fc89763f00b6">y</a>); }
+<a name="l00112"></a><a class="code" href="structgbmath_1_1vec2.htm#ac474198f98b2fbd34065ca1ca03096e3">00112</a>                         <span class="keyword">inline</span> <a class="code" href="structgbmath_1_1vec2.htm#ac474198f98b2fbd34065ca1ca03096e3">operator const D3DXVECTOR2*</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (D3DXVECTOR2*)&amp;<a class="code" href="structgbmath_1_1vec2.htm#a86ff75c64d87662abfee8c35c5a343d0">x</a>; }
+<a name="l00113"></a><a class="code" href="structgbmath_1_1vec2.htm#a6a688cc1bbc1c93aaed75c104bea5f8b">00113</a>                         <span class="keyword">inline</span> operator   D3DXVECTOR2*()   { <span class="keywordflow">return</span> (D3DXVECTOR2*)&amp;<a class="code" href="structgbmath_1_1vec2.htm#a86ff75c64d87662abfee8c35c5a343d0">x</a>; }
+<a name="l00114"></a><a class="code" href="structgbmath_1_1vec2.htm#a0b6fa3d018936c42c4a889fc09796c8d">00114</a>                         <span class="keyword">inline</span> operator   D3DXVECTOR2()<span class="keyword"> const  </span>{ <span class="keywordflow">return</span> D3DXVECTOR2(<a class="code" href="structgbmath_1_1vec2.htm#a86ff75c64d87662abfee8c35c5a343d0">x</a>,<a class="code" href="structgbmath_1_1vec2.htm#a9212649e2705d2216739fc89763f00b6">y</a>); }
 <a name="l00115"></a>00115 
-<a name="l00116"></a>00116                         <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="structgbmath_1_1vec2.htm#ac96c57d47781f11164e7bdeb64d64b52" title="Присваивание из float-массива.">operator = </a>(<span class="keyword">const</span> D3DXVECTOR2&amp; v) { <a class="code" href="structgbmath_1_1vec2.htm#a86ff75c64d87662abfee8c35c5a343d0">x</a>=v.x; <a class="code" href="structgbmath_1_1vec2.htm#a9212649e2705d2216739fc89763f00b6">y</a>=v.y; }
+<a name="l00116"></a><a class="code" href="structgbmath_1_1vec2.htm#ad2fb50377ecb7c2565485bd782e1ee3c">00116</a>                         <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="structgbmath_1_1vec2.htm#ac96c57d47781f11164e7bdeb64d64b52" title="Присваивание из float-массива.">operator = </a>(<span class="keyword">const</span> D3DXVECTOR2&amp; v) { <a class="code" href="structgbmath_1_1vec2.htm#a86ff75c64d87662abfee8c35c5a343d0">x</a>=v.x; <a class="code" href="structgbmath_1_1vec2.htm#a9212649e2705d2216739fc89763f00b6">y</a>=v.y; }
 <a name="l00117"></a>00117 <span class="preprocessor">#endif</span>
 <a name="l00118"></a>00118 <span class="preprocessor"></span>
 <a name="l00119"></a>00119 
 <a name="l00120"></a>00120 
 <a name="l00121"></a>00121 <span class="preprocessor">#if  defined(_WINDOWS_) &amp;&amp; defined(WIN32)</span>
-<a name="l00122"></a>00122 <span class="preprocessor"></span>         <span class="keywordtype">void</span> <a class="code" href="structgbmath_1_1vec2.htm#ac96c57d47781f11164e7bdeb64d64b52" title="Присваивание из float-массива.">operator = </a>(<span class="keyword">const</span> POINT&amp; p)
+<a name="l00122"></a><a class="code" href="structgbmath_1_1vec2.htm#a087d41ec33ba779b03ff7cb044d7b8b7">00122</a> <span class="preprocessor"></span>         <span class="keywordtype">void</span> <a class="code" href="structgbmath_1_1vec2.htm#ac96c57d47781f11164e7bdeb64d64b52" title="Присваивание из float-массива.">operator = </a>(<span class="keyword">const</span> POINT&amp; p)
 <a name="l00123"></a>00123          {
 <a name="l00124"></a>00124                  <a class="code" href="structgbmath_1_1vec2.htm#a86ff75c64d87662abfee8c35c5a343d0">x</a> = (float)p.x;
 <a name="l00125"></a>00125                  <a class="code" href="structgbmath_1_1vec2.htm#a9212649e2705d2216739fc89763f00b6">y</a> = (<span class="keywordtype">float</span>)p.y;
@@ -451,7 +450,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -460,7 +459,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Aug 27 20:46:53 2011 for gbmath by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Mon Jan 30 15:53:21 2012 for gbmath by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

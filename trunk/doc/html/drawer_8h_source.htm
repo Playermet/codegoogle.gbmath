@@ -41,7 +41,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul>
       <li><a href="files.htm"><span>File&nbsp;List</span></a></li>
-      <li><a href="globals.htm"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
 <h1>drawer.h</h1><a href="drawer_8h.htm">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
@@ -58,56 +57,56 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00017"></a>00017 <span class="keyword">namespace </span>gbmath 
 <a name="l00018"></a>00018 {
 <a name="l00019"></a>00019 
-<a name="l00021"></a>00021         <span class="keyword">class </span>drawer {
+<a name="l00021"></a><a class="code" href="classgbmath_1_1drawer.htm">00021</a>         <span class="keyword">class </span><a class="code" href="classgbmath_1_1drawer.htm" title="Drawing of mathematical objects through OpenGL .">drawer</a> {
 <a name="l00022"></a>00022         <span class="keyword">public</span>:
 <a name="l00023"></a>00023         
-<a name="l00024"></a>00024                 drawer();
+<a name="l00024"></a>00024                 <a class="code" href="classgbmath_1_1drawer.htm#ac2e1664b62bf038af98ab640bede2c04">drawer</a>();
 <a name="l00025"></a>00025 
-<a name="l00026"></a>00026                 ~drawer() 
+<a name="l00026"></a><a class="code" href="classgbmath_1_1drawer.htm#a5c9c36dee0c09eb25d482aaf60871339">00026</a>                 <a class="code" href="classgbmath_1_1drawer.htm#a5c9c36dee0c09eb25d482aaf60871339">~drawer</a>() 
 <a name="l00027"></a>00027                 {
 <a name="l00028"></a>00028 
 <a name="l00029"></a>00029                 }       
 <a name="l00030"></a>00030                         
-<a name="l00031"></a>00031                         <span class="keywordtype">void</span> set_transform_matrix_world (<span class="keyword">const</span> mat44&amp;);
-<a name="l00032"></a>00032                         <span class="keywordtype">void</span> set_transform_matrix_view  (<span class="keyword">const</span> mat44&amp;); 
-<a name="l00033"></a>00033                         <span class="keywordtype">void</span> set_transform_matrix_proj  (<span class="keyword">const</span> mat44&amp;);
+<a name="l00031"></a>00031                         <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1drawer.htm#ad7d72e14fc468a31fd7c674bf09b7698">set_transform_matrix_world</a> (<span class="keyword">const</span> <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a>&amp;);
+<a name="l00032"></a>00032                         <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1drawer.htm#afd354328663c961c403d5ad8f94ae6a9">set_transform_matrix_view</a>  (<span class="keyword">const</span> <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a>&amp;); 
+<a name="l00033"></a>00033                         <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1drawer.htm#af9f347bc1e1d48a8f19a1e70716c7577">set_transform_matrix_proj</a>  (<span class="keyword">const</span> <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a>&amp;);
 <a name="l00034"></a>00034                         
-<a name="l00035"></a>00035                         <span class="keywordtype">void</span> mul_world(<span class="keyword">const</span> mat44&amp; m);
+<a name="l00035"></a>00035                         <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1drawer.htm#aeecad552abfa38d96f69afc7b8ff7795">mul_world</a>(<span class="keyword">const</span> <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a>&amp; m);
 <a name="l00036"></a>00036 
-<a name="l00037"></a>00037                         <span class="keywordtype">void</span> set_color(<span class="keywordtype">float</span> r, <span class="keywordtype">float</span> g, <span class="keywordtype">float</span> b, <span class="keywordtype">float</span> a) ;
-<a name="l00038"></a>00038                         <span class="keywordtype">void</span> set_color(<span class="keyword">const</span> color4f&amp; a) ;
+<a name="l00037"></a>00037                         <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1drawer.htm#ab03576262a314120e32d922637758244">set_color</a>(<span class="keywordtype">float</span> r, <span class="keywordtype">float</span> g, <span class="keywordtype">float</span> b, <span class="keywordtype">float</span> a) ;
+<a name="l00038"></a>00038                         <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1drawer.htm#ab03576262a314120e32d922637758244">set_color</a>(<span class="keyword">const</span> <a class="code" href="structgbmath_1_1color4f.htm" title="Standard four-color float .">color4f</a>&amp; a) ;
 <a name="l00039"></a>00039                         
-<a name="l00040"></a>00040                         <span class="keywordtype">void</span> set_color_red()   { set_color( 1.0f , 0.0f , 0.0f , 1.0f ); }
-<a name="l00041"></a>00041                         <span class="keywordtype">void</span> set_color_green() { set_color( 0.0f , 1.0f , 0.0f , 1.0f ); }
-<a name="l00042"></a>00042                         <span class="keywordtype">void</span> set_color_blue()  { set_color( 0.0f , 0.0f , 1.0f , 1.0f ); }
-<a name="l00043"></a>00043                         <span class="keywordtype">void</span> set_color_white() { set_color( 1.0f , 1.0f , 1.0f , 1.0f ); }
-<a name="l00044"></a>00044                         <span class="keywordtype">void</span> set_color_black() { set_color( 0.0f , 0.0f , 0.0f , 1.0f ); }
+<a name="l00040"></a><a class="code" href="classgbmath_1_1drawer.htm#af006902f7b5a1715473492fd20eb7abf">00040</a>                         <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1drawer.htm#af006902f7b5a1715473492fd20eb7abf">set_color_red</a>()   { <a class="code" href="classgbmath_1_1drawer.htm#ab03576262a314120e32d922637758244">set_color</a>( 1.0f , 0.0f , 0.0f , 1.0f ); }
+<a name="l00041"></a><a class="code" href="classgbmath_1_1drawer.htm#a9e761ce2a2151e03e4f7d6e868a692d3">00041</a>                         <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1drawer.htm#a9e761ce2a2151e03e4f7d6e868a692d3">set_color_green</a>() { <a class="code" href="classgbmath_1_1drawer.htm#ab03576262a314120e32d922637758244">set_color</a>( 0.0f , 1.0f , 0.0f , 1.0f ); }
+<a name="l00042"></a><a class="code" href="classgbmath_1_1drawer.htm#adef4276f4a1229587d1792b2dc8395e6">00042</a>                         <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1drawer.htm#adef4276f4a1229587d1792b2dc8395e6">set_color_blue</a>()  { <a class="code" href="classgbmath_1_1drawer.htm#ab03576262a314120e32d922637758244">set_color</a>( 0.0f , 0.0f , 1.0f , 1.0f ); }
+<a name="l00043"></a><a class="code" href="classgbmath_1_1drawer.htm#a1ef7caade9efa19e1fb53b5860112efe">00043</a>                         <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1drawer.htm#a1ef7caade9efa19e1fb53b5860112efe">set_color_white</a>() { <a class="code" href="classgbmath_1_1drawer.htm#ab03576262a314120e32d922637758244">set_color</a>( 1.0f , 1.0f , 1.0f , 1.0f ); }
+<a name="l00044"></a><a class="code" href="classgbmath_1_1drawer.htm#acd3811a5d5bc6fc5f8103d887373addd">00044</a>                         <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1drawer.htm#acd3811a5d5bc6fc5f8103d887373addd">set_color_black</a>() { <a class="code" href="classgbmath_1_1drawer.htm#ab03576262a314120e32d922637758244">set_color</a>( 0.0f , 0.0f , 0.0f , 1.0f ); }
 <a name="l00045"></a>00045 
-<a name="l00046"></a>00046                           TODO: pink, yellow , ......
+<a name="l00046"></a><a class="code" href="classgbmath_1_1drawer.htm#aa823acfc3b4784e97c4a6c5d593eaa92">00046</a>                           TODO: pink, <a class="code" href="classgbmath_1_1drawer.htm#aa823acfc3b4784e97c4a6c5d593eaa92">yellow</a> , ......
 <a name="l00047"></a>00047 
 <a name="l00048"></a>00048 
-<a name="l00049"></a>00049                         <span class="keywordtype">void</span> set_pointsize(<span class="keywordtype">int</span> size) ;
+<a name="l00049"></a>00049                         <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1drawer.htm#a89a0957997248853fcf5d3015a9762b2">set_pointsize</a>(<span class="keywordtype">int</span> size) ;
 <a name="l00050"></a>00050                         
-<a name="l00051"></a>00051                         <span class="keywordtype">void</span> draw_points(<span class="keyword">const</span> vec3* points, <span class="keyword">const</span> <span class="keywordtype">int</span> num);
-<a name="l00052"></a>00052                         <span class="keywordtype">void</span> draw_lines(<span class="keyword">const</span> vec3* points, <span class="keyword">const</span> <span class="keywordtype">int</span> num);
+<a name="l00051"></a>00051                         <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1drawer.htm#a53df97c714c9e9933bb941a8fc406006">draw_points</a>(<span class="keyword">const</span> <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>* points, <span class="keyword">const</span> <span class="keywordtype">int</span> num);
+<a name="l00052"></a>00052                         <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1drawer.htm#a40594b17012888a4d920318ccf3eec62">draw_lines</a>(<span class="keyword">const</span> <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>* points, <span class="keyword">const</span> <span class="keywordtype">int</span> num);
 <a name="l00053"></a>00053 
-<a name="l00054"></a>00054                         <span class="keywordtype">void</span> draw_line(<span class="keyword">const</span> vec3&amp; p1, <span class="keyword">const</span> vec3&amp; p2);
+<a name="l00054"></a>00054                         <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1drawer.htm#a62030c43f601fa9b3aac0d2a52bd3bb2">draw_line</a>(<span class="keyword">const</span> <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>&amp; p1, <span class="keyword">const</span> <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>&amp; p2);
 <a name="l00055"></a>00055 
-<a name="l00056"></a>00056                         <span class="keywordtype">void</span> draw_string(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keyword">const</span> <span class="keywordtype">char</span>* _Format, ... ) ;
+<a name="l00056"></a>00056                         <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1drawer.htm#a4ed9630a143e1b313c541d40248ce984">draw_string</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keyword">const</span> <span class="keywordtype">char</span>* _Format, ... ) ;
 <a name="l00057"></a>00057                         
-<a name="l00058"></a>00058                         <span class="keywordtype">void</span> draw_rect(<span class="keyword">const</span> Rectangle&amp; r) ;    
+<a name="l00058"></a>00058                         <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1drawer.htm#a48ed4c360999de6ae6dbe6ed292dd7ff">draw_rect</a>(<span class="keyword">const</span> <a class="code" href="structgbmath_1_1_rectangle.htm" title="integer values rectangle">Rectangle</a>&amp; r) ;    
 <a name="l00059"></a>00059 
-<a name="l00060"></a>00060                         <span class="keywordtype">void</span> draw_str(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keyword">const</span> <span class="keywordtype">char</span>* _Format, ... );
-<a name="l00061"></a>00061                         <span class="keywordtype">void</span> draw_box(<span class="keyword">const</span> vec3&amp; min, <span class="keyword">const</span> vec3&amp; max);
-<a name="l00062"></a>00062                         <span class="keywordtype">void</span> draw_sphere(<span class="keyword">const</span> vec3&amp; center, <span class="keyword">const</span> <span class="keywordtype">float</span> radius);
+<a name="l00060"></a>00060                         <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1drawer.htm#a209942ddd77c1d23098ab046f0ee18cf">draw_str</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keyword">const</span> <span class="keywordtype">char</span>* _Format, ... );
+<a name="l00061"></a>00061                         <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1drawer.htm#abd7b8a2ee22ad045eadadf129ef6f686">draw_box</a>(<span class="keyword">const</span> <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>&amp; min, <span class="keyword">const</span> <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>&amp; max);
+<a name="l00062"></a>00062                         <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1drawer.htm#a6d0fc4b08cafc3b40967b0578a76b23c">draw_sphere</a>(<span class="keyword">const</span> <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>&amp; center, <span class="keyword">const</span> <span class="keywordtype">float</span> radius);
 <a name="l00063"></a>00063                         
 <a name="l00064"></a>00064                         
 <a name="l00065"></a>00065                 
 <a name="l00066"></a>00066                         
 <a name="l00067"></a>00067                 
 <a name="l00068"></a>00068                 <span class="keyword">private</span>:
-<a name="l00069"></a>00069                         mat44 m_world;
-<a name="l00070"></a>00070                         mat44 m_view;
+<a name="l00069"></a><a class="code" href="classgbmath_1_1drawer.htm#a5330fb83bfca58fb2108c4dc0df90cd7">00069</a>                         <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a> <a class="code" href="classgbmath_1_1drawer.htm#a5330fb83bfca58fb2108c4dc0df90cd7">m_world</a>;
+<a name="l00070"></a><a class="code" href="classgbmath_1_1drawer.htm#a2e4a2df3c1e506ec78bb2dfc7fb27320">00070</a>                         <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a> <a class="code" href="classgbmath_1_1drawer.htm#a2e4a2df3c1e506ec78bb2dfc7fb27320">m_view</a>;
 <a name="l00071"></a>00071         };
 <a name="l00072"></a>00072 
 <a name="l00073"></a>00073 }
@@ -123,7 +122,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -132,7 +131,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Aug 27 20:46:52 2011 for gbmath by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Mon Jan 30 15:53:19 2012 for gbmath by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

@@ -8,6 +8,9 @@ namespace gbmath
 
 	// constants ...
 
+	namespace detail_const
+	{
+
 		static const char* CSTR_VIEWPROJECTION = "VIEWPROJECTION";
 		static const char* CSTR_VIEWPROJECTIONINVERSE = "VIEWPROJECTIONINVERSE";
 		static const char* CSTR_VIEWPROJECTIONINVERSETRANSPONE = "VIEWPROJECTIONINVERSETRANSPONE";
@@ -34,7 +37,7 @@ namespace gbmath
 		static const char* CSTR_WORLDVIEWINVERSETRANSPONE = "WORLDVIEWINVERSETRANSPONE";
 
 
-
+}
 
 
 //=========================================================================
@@ -1786,6 +1789,9 @@ int  geometry_context::setWorldScalingTranslation(float fScale, float x, float y
 //=================================================================
 std::string  matrix4x4_context_type_e::tostr(const matrix4x4_context_type_e::e val)
 {
+
+   using namespace detail_const;
+
 	std::string res;
 
 
@@ -1959,7 +1965,10 @@ bool  matrix4x4_context_type_e::fromstr(
 							    const char* strArg
 								)
 {
+	using namespace detail_const;
+
 	assert(strArg);
+
 	std::string str =   strArg;
 	for(size_t c=0; c<str.length(); c++)
 	{

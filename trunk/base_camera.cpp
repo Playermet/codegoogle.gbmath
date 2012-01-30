@@ -41,7 +41,7 @@ namespace gbmath
  
 
 //========================================================================
-base_camera::base_camera()
+	base_camera::base_camera(bool cameraLeftHandle) : m_bcameraLeftHandle(cameraLeftHandle)
 {
 	m_hwnd = 0;
     m_cKeysDown = 0;
@@ -108,7 +108,7 @@ void base_camera::setViewParams( const vec3& pvEyePt, const vec3& pvLookatPt)
     // Calc the view matrix
     vec3 vUp(0,1,0);
  
-	if (CAMERA_LEFT_HANDLE)
+	if (m_bcameraLeftHandle)	   
 	{
 	 m_mView.setViewLookAtLH(pvEyePt, pvLookatPt, vUp );
 	}
@@ -153,7 +153,7 @@ void base_camera::setProjParams( float fFOV, float fAspect,
 	// m_mProj.setPerspectiveFovLH( fFOV, fAspect, fNearPlane, fFarPlane  );
 
 
-	 if (CAMERA_LEFT_HANDLE)
+	 if (m_bcameraLeftHandle)
 	 {
 		 m_mProj.setPerspectiveFovLH( fFOV, fAspect, fNearPlane, fFarPlane);
 	 }

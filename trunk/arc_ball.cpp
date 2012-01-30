@@ -12,7 +12,7 @@ namespace gbmath
 
 
 //=========================================================================
-arc_ball::arc_ball()
+arc_ball::arc_ball(bool cameraLeftHandle) : m_bArcBallLeftHandle(cameraLeftHandle)
 {
     reset();
     m_vDownPt = vec3(0,0,0);
@@ -74,12 +74,13 @@ vec3 arc_ball::screenToVector( float fScreenPtX, float fScreenPtY )
 
 
 //=========================================================================
-Quaternion arc_ball::quatFromBallPoints(const vec3 &vFrom, const vec3 &vTo)
+Quaternion arc_ball::quatFromBallPoints(const vec3 &vFrom, const vec3 &vTo, bool leftHandle)
 {
     vec3 vPart;
 
 	   float K_MULT = 1.0f;
-		if(CAMERA_LEFT_HANDLE)
+
+		if(leftHandle)  
 		{
 		  K_MULT = 1.0f;
 		}

@@ -28,7 +28,7 @@ Tear of DXUT with minor fixes and removing unnecessary.
 
 #ifdef WIN32 // // only windows platform
 
-const bool CAMERA_LEFT_HANDLE = true;
+//const bool CAMERA_LEFT_HANDLE = true;
  
 #include <windows.h>
 #include <zmouse.h>
@@ -72,7 +72,7 @@ enum CameraKeys
 //! \brief  Basic camera to handle window messages windows
 class base_camera {
 public:
-			  base_camera();
+			  base_camera(bool cameraLeftHandle=true);
 	virtual  ~base_camera() 
 	{
 
@@ -230,6 +230,7 @@ protected:
 											bool bGetGamepadInput, 
 											bool bResetCursorAfterMove);
  
+	const bool     m_bcameraLeftHandle;
 
     mat44            m_mView; ///< View matrix 
     mat44            m_mProj; ///< Projection matrix

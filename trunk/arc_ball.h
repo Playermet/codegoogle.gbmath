@@ -13,7 +13,7 @@ namespace gbmath
 
 class arc_ball  {
 public:
-    arc_ball();
+    arc_ball(bool cameraLeftHandle=true);
 
     // Functions to change behavior
     void reset(); 
@@ -78,10 +78,14 @@ public:
 	}
 
     static Quaternion quatFromBallPoints( const vec3 &vFrom, 
-												const vec3 &vTo );
+												const vec3 &vTo, bool leftHandle=true );
 
 
 protected:
+
+	const bool m_bArcBallLeftHandle;
+
+
     mat44  m_mRotation;         ///< Matrix for arc ball's orientation
     mat44  m_mTranslation;      ///< Matrix for arc ball's position
     mat44  m_mTranslationDelta; ///< Matrix for arc ball's position

@@ -11,7 +11,7 @@
 #endif
 
 
-#ifdef GBMATH_USE_OPENGL_DRAWER
+#if GBMATH_USE_OPENGL_DRAWER
 
 
 namespace gbmath 
@@ -43,7 +43,7 @@ namespace gbmath
 			void set_color_white() { set_color( 1.0f , 1.0f , 1.0f , 1.0f ); }
 			void set_color_black() { set_color( 0.0f , 0.0f , 0.0f , 1.0f ); }
 
-			  TODO: pink, yellow , ......
+			//  TODO: pink, yellow , ......
 
 
 			void set_pointsize(int size) ;
@@ -72,8 +72,10 @@ namespace gbmath
 
 }
 
+/*
 #ifdef __gl_h_
 	#error protect include gl header
 #endif 
+*/
 
 #endif // #ifdef GBMATH_USE_OPENGL_DRAWER

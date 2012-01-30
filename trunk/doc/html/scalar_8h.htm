@@ -41,7 +41,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul>
       <li><a href="files.htm"><span>File&nbsp;List</span></a></li>
-      <li><a href="globals.htm"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
 </div>
@@ -100,6 +99,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Отсечение значения в пределах между минимумом и максимумом включительно.  <a href="#a0a45e2f088c51c9da299f823b088d15c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegbmath_1_1scalar.htm#a7bb171728d757d6772d3a398b84fe002">gbmath::scalar::sincos</a> (const float a, float &amp;outSin, float &amp;outCos)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sine and cosine.  <a href="#a7bb171728d757d6772d3a398b84fe002"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegbmath_1_1scalar.htm#afaedfc972df033b238577ac67444c3ed">gbmath::scalar::sincosAsm</a> (float a, float &amp;s, float &amp;c)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ассемблерный способ получить синус и косинус.  <a href="#afaedfc972df033b238577ac67444c3ed"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegbmath_1_1scalar.htm#a1402127afa7e907ac2466778f6331e66">gbmath::scalar::arccot</a> (float f)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calculate the arc cotangent.  <a href="#a1402127afa7e907ac2466778f6331e66"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegbmath_1_1scalar.htm#ac1e8b236cdc4fe4824eea979052ec1e1">gbmath::scalar::arctg</a> (float y, float x)</td></tr>
@@ -118,6 +119,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Linear interpolation.  <a href="#a0a297404eafa1d5e5cec2a18390605d3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegbmath_1_1scalar.htm#a2b5aa61e53f899d578b577e41ef3242b">gbmath::scalar::round</a> (float f)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">rounding .  <a href="#a2b5aa61e53f899d578b577e41ef3242b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegbmath_1_1scalar.htm#a0de178dfbf28edac4aedccf18486a2d8">gbmath::scalar::roundAsm</a> (float a)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">rounding asm .  <a href="#a0de178dfbf28edac4aedccf18486a2d8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegbmath_1_1scalar.htm#a9992e9897eed646bd6d1ff69e558aef6">gbmath::scalar::max3</a> (float a, float b, float c)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get an average of 3 values.  <a href="#a9992e9897eed646bd6d1ff69e558aef6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegbmath_1_1scalar.htm#abb531b140c3423b565da23292c419068">gbmath::scalar::aver_a</a> (const float *pf, const unsigned int num)</td></tr>
@@ -172,7 +175,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -181,7 +184,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Aug 27 20:46:54 2011 for gbmath by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Mon Jan 30 15:53:22 2012 for gbmath by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

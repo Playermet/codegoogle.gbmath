@@ -18,6 +18,8 @@
  {
 
    //template <typename TUserType>
+
+ //! \brief  box tree
    class aabb_tree {
    public:
 
