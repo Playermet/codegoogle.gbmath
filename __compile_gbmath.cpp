@@ -45,3 +45,5 @@
 #include "dependence_on_function.cpp"
 
  #include "drawer.cpp" 
+ #include "visualize_application.cpp" 
+

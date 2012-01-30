@@ -86,6 +86,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Отсечение значения в пределах между минимумом и максимумом включительно.  <a href="#a0a45e2f088c51c9da299f823b088d15c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegbmath_1_1scalar.htm#a7bb171728d757d6772d3a398b84fe002">sincos</a> (const float a, float &amp;outSin, float &amp;outCos)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sine and cosine.  <a href="#a7bb171728d757d6772d3a398b84fe002"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegbmath_1_1scalar.htm#afaedfc972df033b238577ac67444c3ed">sincosAsm</a> (float a, float &amp;s, float &amp;c)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ассемблерный способ получить синус и косинус.  <a href="#afaedfc972df033b238577ac67444c3ed"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegbmath_1_1scalar.htm#a1402127afa7e907ac2466778f6331e66">arccot</a> (float f)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calculate the arc cotangent.  <a href="#a1402127afa7e907ac2466778f6331e66"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegbmath_1_1scalar.htm#ac1e8b236cdc4fe4824eea979052ec1e1">arctg</a> (float y, float x)</td></tr>
@@ -104,6 +106,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Linear interpolation.  <a href="#a0a297404eafa1d5e5cec2a18390605d3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegbmath_1_1scalar.htm#a2b5aa61e53f899d578b577e41ef3242b">round</a> (float f)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">rounding .  <a href="#a2b5aa61e53f899d578b577e41ef3242b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegbmath_1_1scalar.htm#a0de178dfbf28edac4aedccf18486a2d8">roundAsm</a> (float a)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">rounding asm .  <a href="#a0de178dfbf28edac4aedccf18486a2d8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegbmath_1_1scalar.htm#a9992e9897eed646bd6d1ff69e558aef6">max3</a> (float a, float b, float c)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get an average of 3 values.  <a href="#a9992e9897eed646bd6d1ff69e558aef6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegbmath_1_1scalar.htm#abb531b140c3423b565da23292c419068">aver_a</a> (const float *pf, const unsigned int num)</td></tr>
@@ -685,6 +689,28 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a0de178dfbf28edac4aedccf18486a2d8"></a><!-- doxytag: member="gbmath::scalar::roundAsm" ref="a0de178dfbf28edac4aedccf18486a2d8" args="(float a)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int gbmath::scalar::roundAsm </td>
+          <td>(</td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>a</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>rounding asm . </p>
+
+<p>Definition at line <a class="el" href="scalar_8h_source.htm#l00320">320</a> of file <a class="el" href="scalar_8h_source.htm">scalar.h</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a33c8bf545ba86ec1ee2e4a703fca4529"></a><!-- doxytag: member="gbmath::scalar::safeAcos" ref="a33c8bf545ba86ec1ee2e4a703fca4529" args="(float x)" -->
 <div class="memitem">
 <div class="memproto">
@@ -794,6 +820,43 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="afaedfc972df033b238577ac67444c3ed"></a><!-- doxytag: member="gbmath::scalar::sincosAsm" ref="afaedfc972df033b238577ac67444c3ed" args="(float a, float &amp;s, float &amp;c)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gbmath::scalar::sincosAsm </td>
+          <td>(</td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float &amp;&nbsp;</td>
+          <td class="paramname"> <em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float &amp;&nbsp;</td>
+          <td class="paramname"> <em>c</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ассемблерный способ получить синус и косинус. </p>
+
+<p>Definition at line <a class="el" href="scalar_8h_source.htm#l00224">224</a> of file <a class="el" href="scalar_8h_source.htm">scalar.h</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a4c33c2f07dd7ff4cc887df0fff1735bc"></a><!-- doxytag: member="gbmath::scalar::sqr" ref="a4c33c2f07dd7ff4cc887df0fff1735bc" args="(float a)" -->
 <div class="memitem">
 <div class="memproto">
@@ -822,7 +885,7 @@ template&lt;typename T &gt; </div>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -831,7 +894,7 @@ template&lt;typename T &gt; </div>
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Aug 27 20:46:56 2011 for gbmath by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Mon Jan 30 15:53:25 2012 for gbmath by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

@@ -67,6 +67,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a2390988208cd0e23663e3901f192899e">mat44</a> (const float *pfArray)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a21fde0f18d5fa7b17f5376414d04e702">operator const float *</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#aaa3848ec86f338e4ccad1623c01fe5cd">operator float *</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a7a54cdc54d0bad510de06559d47dfcfa">operator D3DMATRIX *</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a0bab75077b307e84d84b6045af404d6f">operator const D3DMATRIX *</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#ae90a744c50d58719ab7484638e0c773d">operator const D3DMATRIX</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a81b50009ae2e93b1c257783ab80a106d">operator=</a> (const D3DMATRIX &amp;m)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#ae3817ac9c0a8067dcc9bbafcc392ae63">operator D3DXMATRIX *</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#aca9b4bb5b182bf854700c26a661bb7d4">operator const D3DXMATRIX *</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a6d0392117f428344f16b4902a8ce0374">operator const D3DXMATRIX</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a35199bc7386c09decc3b7b17a7342c1b">operator=</a> (const D3DXMATRIX &amp;m)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a57f385d46626b19fd68afcf64d8e7c33">operator=</a> (const float *pfArray)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a9ded356a1e1d05654801f58bed403a17">operator==</a> (const <a class="el" href="structgbmath_1_1mat44.htm">mat44</a> &amp;m) const </td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Строгое сравнение.  <a href="#a9ded356a1e1d05654801f58bed403a17"></a><br/></td></tr>
@@ -179,8 +187,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построение левосторонней матрицы вида по направлению взгляда.  <a href="#afe4c032d74366de0d8f6cd735ebddf73"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#aab9df358e1bb28e19cfd50ecad70df32">setViewDirRH</a> (const <a class="el" href="structgbmath_1_1vec3.htm">vec3</a> &amp;eye, const <a class="el" href="structgbmath_1_1vec3.htm">vec3</a> &amp;dir, const <a class="el" href="structgbmath_1_1vec3.htm">vec3</a> &amp;up)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построение правосторонней матрицы вида по направлению взгляда.  <a href="#aab9df358e1bb28e19cfd50ecad70df32"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#ae8bd735498e6e705d0fce59d5d0dc7f7">print</a> () const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Вывод значений на консоль.  <a href="#ae8bd735498e6e705d0fce59d5d0dc7f7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a5249334ebaa6d827f7e9ee882b9a383b">glMul</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Старый способ перемножения матрицы с текущей в OpenGL.  <a href="#a5249334ebaa6d827f7e9ee882b9a383b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#aa3ca8172c5b070b0cc25bbf65ff712b6">glLoad</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Старый способ загрузки матрицы в OpenGL.  <a href="#aa3ca8172c5b070b0cc25bbf65ff712b6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a2319d7f50ec58635b7aec6f5b7313498">glGetProjection</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Загрузить из контекста OpenGL проекционную матрицу.  <a href="#a2319d7f50ec58635b7aec6f5b7313498"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a7264aee90ec5348cdcfa18381238360b">glGetModelView</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Загрузить из контекста OpenGL модель-видовую (WORLD X VIEW) матрицу.  <a href="#a7264aee90ec5348cdcfa18381238360b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">HRESULT&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#afee4ce4c1d0a0fa5ad8c185fda178fc2">makeDevice9TransfView</a> (IDirect3DDevice9 *pdevice) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Установить матрицу в устройство d3d9 как матрицу ВИДА.  <a href="#afee4ce4c1d0a0fa5ad8c185fda178fc2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">HRESULT&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a784abc5e2abe452d5c0ee7b299d4e713">makeDevice9TransfProj</a> (IDirect3DDevice9 *pdevice) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Установить матрицу в устройство d3d9 как матрицу ПРОЕКЦИИ.  <a href="#a784abc5e2abe452d5c0ee7b299d4e713"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">HRESULT&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#ab2fb2415ce0e572bafe14a60742b7e29">makeDevice9TransfWorld</a> (IDirect3DDevice9 *pdevice)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Установить матрицу в устройство d3d9 как матрицу ТРАНСФОРМАЦИИ.  <a href="#ab2fb2415ce0e572bafe14a60742b7e29"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">HRESULT&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#ae67193a7a85fd047e1e7a957cb10c8bf">makeDevice9Transf</a> (IDirect3DDevice9 *pdevice, D3DTRANSFORMSTATETYPE trType) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Установить матрицу в девайс как матрицу трансформации по данному типу trType.  <a href="#ae67193a7a85fd047e1e7a957cb10c8bf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">HRESULT&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a950783e25969a6b4fe5e0d1fc7384d46">readDevice9TransfView</a> (IDirect3DDevice9 *pdevice)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Получить из устройства d3d9 матрицу ВИДА.  <a href="#a950783e25969a6b4fe5e0d1fc7384d46"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">HRESULT&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a75b36e921a151bb5d020d9046c0fd918">readDevice9TransfProj</a> (IDirect3DDevice9 *pdevice)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Получить из устройства устройства d3d9 матрицу ПРОЕКЦИИ.  <a href="#a75b36e921a151bb5d020d9046c0fd918"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">HRESULT&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a1b518daa17916cb35ea849fe664fe81a">readDevice9TransfWorld</a> (IDirect3DDevice9 *pdevice)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Получить из устройства устройства d3d9 матрицу ТРАНСФОРМАЦИИ.  <a href="#a1b518daa17916cb35ea849fe664fe81a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a0f30f1a2d91083b4de7362b721ef5e54">operator std::string</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#af96ec8a94e7b17161fbd51d66e084e25">operator=</a> (const std::string &amp;str)  throw (std::invalid_argument)</td></tr>
 <tr><td colspan="2"><h2>Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" >union {</td></tr>
 <tr><td class="memItemLeft" >&nbsp;&nbsp;&nbsp;struct {</td></tr>
@@ -204,6 +234,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="memItemLeft" >&nbsp;&nbsp;&nbsp;float&nbsp;&nbsp;&nbsp;<a class="el" href="structgbmath_1_1mat44.htm#abfc90602ae12e59095d384cd61ce970a">floats</a> [4][4]</td></tr>
 <tr><td class="memItemLeft" >&nbsp;&nbsp;&nbsp;float&nbsp;&nbsp;&nbsp;<a class="el" href="structgbmath_1_1mat44.htm#a1baa9623e65264b9f18da9cd38ced6a0">array</a> [16]</td></tr>
 <tr><td class="memItemLeft" valign="top">};&nbsp;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr><td colspan="2"><h2>Friends</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a30512ab0af2644910aa68a14dfc12d22">operator&lt;&lt;</a> (std::ostream &amp;stream, const <a class="el" href="structgbmath_1_1mat44.htm">mat44</a> &amp;m)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::istream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1mat44.htm#a8dc94df6c96aa8af3f6c8c2fe850fc13">operator&gt;&gt;</a> (std::istream &amp;stream, <a class="el" href="structgbmath_1_1mat44.htm">mat44</a> &amp;m)</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>matrix 4x4. </p>
@@ -564,6 +597,90 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 </div>
 </div>
+<a class="anchor" id="a7264aee90ec5348cdcfa18381238360b"></a><!-- doxytag: member="gbmath::mat44::glGetModelView" ref="a7264aee90ec5348cdcfa18381238360b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gbmath::mat44::glGetModelView </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Загрузить из контекста OpenGL модель-видовую (WORLD X VIEW) матрицу. </p>
+
+<p>Definition at line <a class="el" href="mat44_8h_source.htm#l00942">942</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2319d7f50ec58635b7aec6f5b7313498"></a><!-- doxytag: member="gbmath::mat44::glGetProjection" ref="a2319d7f50ec58635b7aec6f5b7313498" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gbmath::mat44::glGetProjection </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Загрузить из контекста OpenGL проекционную матрицу. </p>
+
+<p>Definition at line <a class="el" href="mat44_8h_source.htm#l00936">936</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa3ca8172c5b070b0cc25bbf65ff712b6"></a><!-- doxytag: member="gbmath::mat44::glLoad" ref="aa3ca8172c5b070b0cc25bbf65ff712b6" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gbmath::mat44::glLoad </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Старый способ загрузки матрицы в OpenGL. </p>
+
+<p>Definition at line <a class="el" href="mat44_8h_source.htm#l00933">933</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5249334ebaa6d827f7e9ee882b9a383b"></a><!-- doxytag: member="gbmath::mat44::glMul" ref="a5249334ebaa6d827f7e9ee882b9a383b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gbmath::mat44::glMul </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Старый способ перемножения матрицы с текущей в OpenGL. </p>
+
+<p>Definition at line <a class="el" href="mat44_8h_source.htm#l00930">930</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a0e50c0a1e9b4686083957369e9fdb0ef"></a><!-- doxytag: member="gbmath::mat44::invert" ref="a0e50c0a1e9b4686083957369e9fdb0ef" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -625,6 +742,179 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 </div>
 </div>
+<a class="anchor" id="ae67193a7a85fd047e1e7a957cb10c8bf"></a><!-- doxytag: member="gbmath::mat44::makeDevice9Transf" ref="ae67193a7a85fd047e1e7a957cb10c8bf" args="(IDirect3DDevice9 *pdevice, D3DTRANSFORMSTATETYPE trType) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT gbmath::mat44::makeDevice9Transf </td>
+          <td>(</td>
+          <td class="paramtype">IDirect3DDevice9 *&nbsp;</td>
+          <td class="paramname"> <em>pdevice</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">D3DTRANSFORMSTATETYPE&nbsp;</td>
+          <td class="paramname"> <em>trType</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Установить матрицу в девайс как матрицу трансформации по данному типу trType. </p>
+
+<p>Definition at line <a class="el" href="mat44_8h_source.htm#l00971">971</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a784abc5e2abe452d5c0ee7b299d4e713"></a><!-- doxytag: member="gbmath::mat44::makeDevice9TransfProj" ref="a784abc5e2abe452d5c0ee7b299d4e713" args="(IDirect3DDevice9 *pdevice) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT gbmath::mat44::makeDevice9TransfProj </td>
+          <td>(</td>
+          <td class="paramtype">IDirect3DDevice9 *&nbsp;</td>
+          <td class="paramname"> <em>pdevice</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Установить матрицу в устройство d3d9 как матрицу ПРОЕКЦИИ. </p>
+
+<p>Definition at line <a class="el" href="mat44_8h_source.htm#l00959">959</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afee4ce4c1d0a0fa5ad8c185fda178fc2"></a><!-- doxytag: member="gbmath::mat44::makeDevice9TransfView" ref="afee4ce4c1d0a0fa5ad8c185fda178fc2" args="(IDirect3DDevice9 *pdevice) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT gbmath::mat44::makeDevice9TransfView </td>
+          <td>(</td>
+          <td class="paramtype">IDirect3DDevice9 *&nbsp;</td>
+          <td class="paramname"> <em>pdevice</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Установить матрицу в устройство d3d9 как матрицу ВИДА. </p>
+
+<p>Definition at line <a class="el" href="mat44_8h_source.htm#l00953">953</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab2fb2415ce0e572bafe14a60742b7e29"></a><!-- doxytag: member="gbmath::mat44::makeDevice9TransfWorld" ref="ab2fb2415ce0e572bafe14a60742b7e29" args="(IDirect3DDevice9 *pdevice)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT gbmath::mat44::makeDevice9TransfWorld </td>
+          <td>(</td>
+          <td class="paramtype">IDirect3DDevice9 *&nbsp;</td>
+          <td class="paramname"> <em>pdevice</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Установить матрицу в устройство d3d9 как матрицу ТРАНСФОРМАЦИИ. </p>
+
+<p>Definition at line <a class="el" href="mat44_8h_source.htm#l00965">965</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae90a744c50d58719ab7484638e0c773d"></a><!-- doxytag: member="gbmath::mat44::operator const D3DMATRIX" ref="ae90a744c50d58719ab7484638e0c773d" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gbmath::mat44::operator const D3DMATRIX </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="mat44_8h_source.htm#l00082">82</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0bab75077b307e84d84b6045af404d6f"></a><!-- doxytag: member="gbmath::mat44::operator const D3DMATRIX *" ref="a0bab75077b307e84d84b6045af404d6f" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gbmath::mat44::operator const D3DMATRIX * </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="mat44_8h_source.htm#l00081">81</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6d0392117f428344f16b4902a8ce0374"></a><!-- doxytag: member="gbmath::mat44::operator const D3DXMATRIX" ref="a6d0392117f428344f16b4902a8ce0374" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gbmath::mat44::operator const D3DXMATRIX </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="mat44_8h_source.htm#l00127">127</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aca9b4bb5b182bf854700c26a661bb7d4"></a><!-- doxytag: member="gbmath::mat44::operator const D3DXMATRIX *" ref="aca9b4bb5b182bf854700c26a661bb7d4" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gbmath::mat44::operator const D3DXMATRIX * </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="mat44_8h_source.htm#l00126">126</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a21fde0f18d5fa7b17f5376414d04e702"></a><!-- doxytag: member="gbmath::mat44::operator const float *" ref="a21fde0f18d5fa7b17f5376414d04e702" args="() const " -->
 <div class="memitem">
 <div class="memproto">
@@ -644,6 +934,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 </div>
 </div>
+<a class="anchor" id="a7a54cdc54d0bad510de06559d47dfcfa"></a><!-- doxytag: member="gbmath::mat44::operator D3DMATRIX *" ref="a7a54cdc54d0bad510de06559d47dfcfa" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gbmath::mat44::operator D3DMATRIX * </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="mat44_8h_source.htm#l00080">80</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae3817ac9c0a8067dcc9bbafcc392ae63"></a><!-- doxytag: member="gbmath::mat44::operator D3DXMATRIX *" ref="ae3817ac9c0a8067dcc9bbafcc392ae63" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gbmath::mat44::operator D3DXMATRIX * </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="mat44_8h_source.htm#l00125">125</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="aaa3848ec86f338e4ccad1623c01fe5cd"></a><!-- doxytag: member="gbmath::mat44::operator float *" ref="aaa3848ec86f338e4ccad1623c01fe5cd" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -660,6 +988,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="mat44_8h_source.htm#l00076">76</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0f30f1a2d91083b4de7362b721ef5e54"></a><!-- doxytag: member="gbmath::mat44::operator std::string" ref="a0f30f1a2d91083b4de7362b721ef5e54" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gbmath::mat44::operator std::string </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="mat44_8h_source.htm#l01052">1052</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
 
 </div>
 </div>
@@ -938,6 +1285,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 </div>
 </div>
+<a class="anchor" id="af96ec8a94e7b17161fbd51d66e084e25"></a><!-- doxytag: member="gbmath::mat44::operator=" ref="af96ec8a94e7b17161fbd51d66e084e25" args="(const std::string &amp;str)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gbmath::mat44::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>str</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (std::invalid_argument)<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="mat44_8h_source.htm#l01064">1064</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a57f385d46626b19fd68afcf64d8e7c33"></a><!-- doxytag: member="gbmath::mat44::operator=" ref="a57f385d46626b19fd68afcf64d8e7c33" args="(const float *pfArray)" -->
 <div class="memitem">
 <div class="memproto">
@@ -955,6 +1322,46 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="mat44_8h_source.htm#l00156">156</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a35199bc7386c09decc3b7b17a7342c1b"></a><!-- doxytag: member="gbmath::mat44::operator=" ref="a35199bc7386c09decc3b7b17a7342c1b" args="(const D3DXMATRIX &amp;m)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gbmath::mat44::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const D3DXMATRIX &amp;&nbsp;</td>
+          <td class="paramname"> <em>m</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="mat44_8h_source.htm#l00140">140</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a81b50009ae2e93b1c257783ab80a106d"></a><!-- doxytag: member="gbmath::mat44::operator=" ref="a81b50009ae2e93b1c257783ab80a106d" args="(const D3DMATRIX &amp;m)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gbmath::mat44::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const D3DMATRIX &amp;&nbsp;</td>
+          <td class="paramname"> <em>m</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="mat44_8h_source.htm#l00097">97</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
 
 </div>
 </div>
@@ -980,24 +1387,69 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 </div>
 </div>
-<a class="anchor" id="ae8bd735498e6e705d0fce59d5d0dc7f7"></a><!-- doxytag: member="gbmath::mat44::print" ref="ae8bd735498e6e705d0fce59d5d0dc7f7" args="() const " -->
+<a class="anchor" id="a75b36e921a151bb5d020d9046c0fd918"></a><!-- doxytag: member="gbmath::mat44::readDevice9TransfProj" ref="a75b36e921a151bb5d020d9046c0fd918" args="(IDirect3DDevice9 *pdevice)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void gbmath::mat44::print </td>
+          <td class="memname">HRESULT gbmath::mat44::readDevice9TransfProj </td>
           <td>(</td>
-          <td class="paramname"></td>
+          <td class="paramtype">IDirect3DDevice9 *&nbsp;</td>
+          <td class="paramname"> <em>pdevice</em></td>
           <td>&nbsp;)&nbsp;</td>
-          <td> const<code> [inline]</code></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Вывод значений на консоль. </p>
+<p>Получить из устройства устройства d3d9 матрицу ПРОЕКЦИИ. </p>
 
-<p>Definition at line <a class="el" href="mat44_8h_source.htm#l01005">1005</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
+<p>Definition at line <a class="el" href="mat44_8h_source.htm#l00986">986</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a950783e25969a6b4fe5e0d1fc7384d46"></a><!-- doxytag: member="gbmath::mat44::readDevice9TransfView" ref="a950783e25969a6b4fe5e0d1fc7384d46" args="(IDirect3DDevice9 *pdevice)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT gbmath::mat44::readDevice9TransfView </td>
+          <td>(</td>
+          <td class="paramtype">IDirect3DDevice9 *&nbsp;</td>
+          <td class="paramname"> <em>pdevice</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Получить из устройства d3d9 матрицу ВИДА. </p>
+
+<p>Definition at line <a class="el" href="mat44_8h_source.htm#l00980">980</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1b518daa17916cb35ea849fe664fe81a"></a><!-- doxytag: member="gbmath::mat44::readDevice9TransfWorld" ref="a1b518daa17916cb35ea849fe664fe81a" args="(IDirect3DDevice9 *pdevice)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT gbmath::mat44::readDevice9TransfWorld </td>
+          <td>(</td>
+          <td class="paramtype">IDirect3DDevice9 *&nbsp;</td>
+          <td class="paramname"> <em>pdevice</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Получить из устройства устройства d3d9 матрицу ТРАНСФОРМАЦИИ. </p>
+
+<p>Definition at line <a class="el" href="mat44_8h_source.htm#l00992">992</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
 
 </div>
 </div>
@@ -2172,6 +2624,65 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 </div>
 </div>
+<hr/><h2>Friends And Related Function Documentation</h2>
+<a class="anchor" id="a30512ab0af2644910aa68a14dfc12d22"></a><!-- doxytag: member="gbmath::mat44::operator&lt;&lt;" ref="a30512ab0af2644910aa68a14dfc12d22" args="(std::ostream &amp;stream, const mat44 &amp;m)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&nbsp;</td>
+          <td class="paramname"> <em>stream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structgbmath_1_1mat44.htm">mat44</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>m</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="mat44_8h_source.htm#l01014">1014</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8dc94df6c96aa8af3f6c8c2fe850fc13"></a><!-- doxytag: member="gbmath::mat44::operator&gt;&gt;" ref="a8dc94df6c96aa8af3f6c8c2fe850fc13" args="(std::istream &amp;stream, mat44 &amp;m)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::istream&amp; operator&gt;&gt; </td>
+          <td>(</td>
+          <td class="paramtype">std::istream &amp;&nbsp;</td>
+          <td class="paramname"> <em>stream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgbmath_1_1mat44.htm">mat44</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>m</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="mat44_8h_source.htm#l01025">1025</a> of file <a class="el" href="mat44_8h_source.htm">mat44.h</a>.</p>
+
+</div>
+</div>
 <hr/><h2>Member Data Documentation</h2>
 <a class="anchor" id="ab862d92af5a4a7ccc9994766dd98d31d"></a><!-- doxytag: member="gbmath::mat44::@13" ref="ab862d92af5a4a7ccc9994766dd98d31d" args="" -->
 <div class="memitem">
@@ -2466,7 +2977,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -2475,7 +2986,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Aug 27 20:46:55 2011 for gbmath by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Mon Jan 30 15:53:24 2012 for gbmath by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

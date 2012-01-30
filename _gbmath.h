@@ -15,6 +15,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdarg.h>
+
 #include <math.h>
 #include <float.h>
 
@@ -176,17 +177,18 @@ namespace gbmath
 
 
 
-//! render math opt
-//#define GBMATH_USE_OPENGL_DRAWER
  
 
 //! render math opt
-// #define GBMATH_USE_OPENGL_DRAWER
+ #define  GBMATH_USE_OPENGL_DRAWER    1 
  
 
 #include "drawer.h"
 
- 
+ #define  GBMATH_USE_VISUALIZE_APPLICATION     1
+
+#include "visualize_application.h"
+
 
 
 //-------------------------------------------------------------

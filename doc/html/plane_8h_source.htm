@@ -41,7 +41,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul>
       <li><a href="files.htm"><span>File&nbsp;List</span></a></li>
-      <li><a href="globals.htm"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
 <h1>plane.h</h1><a href="plane_8h.htm">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 ﻿
@@ -52,8 +51,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00011"></a>00011 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00012"></a>00012 <span class="preprocessor"></span>
 <a name="l00013"></a>00013 
-<a name="l00014"></a>00014 <span class="preprocessor">#pragma message(&quot;!! need rename plane_s  &quot;  __FILE__ )</span>
-<a name="l00015"></a>00015 <span class="preprocessor"></span> 
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015  
 <a name="l00016"></a>00016 <span class="keyword">namespace </span>gbmath
 <a name="l00017"></a>00017 {
 <a name="l00018"></a>00018 
@@ -159,10 +158,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00120"></a><a class="code" href="structgbmath_1_1plane__s.htm#a72514f555ce23d4ed387810b5e9293e2">00120</a>                    <span class="keyword">inline</span> <a class="code" href="structgbmath_1_1plane__s.htm#a72514f555ce23d4ed387810b5e9293e2">operator const  float*</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> &amp;<a class="code" href="structgbmath_1_1plane__s.htm#a4aaccd5889da75e7709147e4073dbe63">a</a>; };
 <a name="l00121"></a>00121 
 <a name="l00122"></a>00122 <span class="preprocessor">        #ifdef __D3DX9MATH_H__</span>
-<a name="l00123"></a>00123 <span class="preprocessor"></span>                <span class="keyword">inline</span> operator       D3DXPLANE*()       { <span class="keywordflow">return</span> (D3DXPLANE*)&amp;<a class="code" href="structgbmath_1_1plane__s.htm#a4aaccd5889da75e7709147e4073dbe63">a</a>; }
-<a name="l00124"></a>00124                 <span class="keyword">inline</span> operator const D3DXPLANE*()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (D3DXPLANE*)&amp;<a class="code" href="structgbmath_1_1plane__s.htm#a4aaccd5889da75e7709147e4073dbe63">a</a>; }
-<a name="l00125"></a>00125                 <span class="keyword">inline</span> operator D3DXPLANE () { <span class="keywordflow">return</span> D3DXPLANE(<a class="code" href="structgbmath_1_1plane__s.htm#a4aaccd5889da75e7709147e4073dbe63">a</a>,<a class="code" href="structgbmath_1_1plane__s.htm#a7d5f9da13b581ba03a99a6b37c68724c">b</a>,<a class="code" href="structgbmath_1_1plane__s.htm#a6962e88edd85b1867cc60b7ece9c51ef">c</a>,<a class="code" href="structgbmath_1_1plane__s.htm#a6e8a5a04c1ed7f04ceadc93aa69d141c">d</a>); }
-<a name="l00126"></a>00126                 <span class="keyword">inline</span>  <span class="keywordtype">void</span> <a class="code" href="structgbmath_1_1plane__s.htm#aee82ddb344ce713cae30c5c270c3de23" title="Присваивание из float-массива.">operator = </a>(<span class="keyword">const</span> D3DXPLANE&amp; p) {<a class="code" href="structgbmath_1_1plane__s.htm#a4aaccd5889da75e7709147e4073dbe63">a</a>=p.a; <a class="code" href="structgbmath_1_1plane__s.htm#a7d5f9da13b581ba03a99a6b37c68724c">b</a>=p.b; <a class="code" href="structgbmath_1_1plane__s.htm#a6962e88edd85b1867cc60b7ece9c51ef">c</a>=p.c; <a class="code" href="structgbmath_1_1plane__s.htm#a6e8a5a04c1ed7f04ceadc93aa69d141c">d</a>=p.d; }
+<a name="l00123"></a><a class="code" href="structgbmath_1_1plane__s.htm#a871263841facbab7260aa5c7d68a9b4e">00123</a> <span class="preprocessor"></span>                <span class="keyword">inline</span> operator       D3DXPLANE*()       { <span class="keywordflow">return</span> (D3DXPLANE*)&amp;<a class="code" href="structgbmath_1_1plane__s.htm#a4aaccd5889da75e7709147e4073dbe63">a</a>; }
+<a name="l00124"></a><a class="code" href="structgbmath_1_1plane__s.htm#a7c0b75831afdbedecf4e3442e5a01003">00124</a>                 <span class="keyword">inline</span> <a class="code" href="structgbmath_1_1plane__s.htm#a7c0b75831afdbedecf4e3442e5a01003">operator const D3DXPLANE*</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (D3DXPLANE*)&amp;<a class="code" href="structgbmath_1_1plane__s.htm#a4aaccd5889da75e7709147e4073dbe63">a</a>; }
+<a name="l00125"></a><a class="code" href="structgbmath_1_1plane__s.htm#af8f92dd70e4c3911035616d3047c3cc6">00125</a>                 <span class="keyword">inline</span> <a class="code" href="structgbmath_1_1plane__s.htm#af8f92dd70e4c3911035616d3047c3cc6">operator D3DXPLANE </a>() { <span class="keywordflow">return</span> D3DXPLANE(<a class="code" href="structgbmath_1_1plane__s.htm#a4aaccd5889da75e7709147e4073dbe63">a</a>,<a class="code" href="structgbmath_1_1plane__s.htm#a7d5f9da13b581ba03a99a6b37c68724c">b</a>,<a class="code" href="structgbmath_1_1plane__s.htm#a6962e88edd85b1867cc60b7ece9c51ef">c</a>,<a class="code" href="structgbmath_1_1plane__s.htm#a6e8a5a04c1ed7f04ceadc93aa69d141c">d</a>); }
+<a name="l00126"></a><a class="code" href="structgbmath_1_1plane__s.htm#ac7e567f093e12f30747fe22c1542452e">00126</a>                 <span class="keyword">inline</span>  <span class="keywordtype">void</span> <a class="code" href="structgbmath_1_1plane__s.htm#aee82ddb344ce713cae30c5c270c3de23" title="Присваивание из float-массива.">operator = </a>(<span class="keyword">const</span> D3DXPLANE&amp; p) {<a class="code" href="structgbmath_1_1plane__s.htm#a4aaccd5889da75e7709147e4073dbe63">a</a>=p.a; <a class="code" href="structgbmath_1_1plane__s.htm#a7d5f9da13b581ba03a99a6b37c68724c">b</a>=p.b; <a class="code" href="structgbmath_1_1plane__s.htm#a6962e88edd85b1867cc60b7ece9c51ef">c</a>=p.c; <a class="code" href="structgbmath_1_1plane__s.htm#a6e8a5a04c1ed7f04ceadc93aa69d141c">d</a>=p.d; }
 <a name="l00127"></a>00127 
 <a name="l00128"></a>00128 <span class="preprocessor">        #endif</span>
 <a name="l00129"></a>00129 <span class="preprocessor"></span>
@@ -305,7 +304,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -314,7 +313,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Aug 27 20:46:53 2011 for gbmath by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Mon Jan 30 15:53:20 2012 for gbmath by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

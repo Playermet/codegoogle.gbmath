@@ -68,6 +68,10 @@ Inheritance diagram for gbmath::vieport_s:</div>
 
 <p><a href="structgbmath_1_1vieport__s-members.htm">List of all members.</a></p>
 <table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vieport__s.htm#ae31f9ed75f1d3d2159bbb7d70aa5131b">vieport_s</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vieport__s.htm#acfdabd08aaea5dd49dea87aa9172d2c7">operator=</a> (const D3DVIEWPORT9 &amp;vp)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vieport__s.htm#af3d993b52c3e4d49d69cc4cdc4be232d">fromdevice</a> (IDirect3DDevice9 *pdevice)  throw (std::runtime_error)</td></tr>
 <tr><td colspan="2"><h2>Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vieport__s.htm#a0a64eff7e576e7be07e41ce7b594822f">x</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">coordinate of the X (horizontal)  <a href="#a0a64eff7e576e7be07e41ce7b594822f"></a><br/></td></tr>
@@ -82,6 +86,69 @@ Inheritance diagram for gbmath::vieport_s:</div>
 <p>Viewport. Output area in the coordinate and size. </p>
 
 <p>Definition at line <a class="el" href="viewport_8h_source.htm#l00023">23</a> of file <a class="el" href="viewport_8h_source.htm">viewport.h</a>.</p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ae31f9ed75f1d3d2159bbb7d70aa5131b"></a><!-- doxytag: member="gbmath::vieport_s::vieport_s" ref="ae31f9ed75f1d3d2159bbb7d70aa5131b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gbmath::vieport_s::vieport_s </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="viewport_8h_source.htm#l00032">32</a> of file <a class="el" href="viewport_8h_source.htm">viewport.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="af3d993b52c3e4d49d69cc4cdc4be232d"></a><!-- doxytag: member="gbmath::vieport_s::fromdevice" ref="af3d993b52c3e4d49d69cc4cdc4be232d" args="(IDirect3DDevice9 *pdevice)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gbmath::vieport_s::fromdevice </td>
+          <td>(</td>
+          <td class="paramtype">IDirect3DDevice9 *&nbsp;</td>
+          <td class="paramname"> <em>pdevice</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (std::runtime_error)<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="viewport_8h_source.htm#l00051">51</a> of file <a class="el" href="viewport_8h_source.htm">viewport.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acfdabd08aaea5dd49dea87aa9172d2c7"></a><!-- doxytag: member="gbmath::vieport_s::operator=" ref="acfdabd08aaea5dd49dea87aa9172d2c7" args="(const D3DVIEWPORT9 &amp;vp)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gbmath::vieport_s::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const D3DVIEWPORT9 &amp;&nbsp;</td>
+          <td class="paramname"> <em>vp</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classgbmath_1_1_viewport_z.htm#a1d258a3aa6f316d9b946e884416be10d">gbmath::ViewportZ</a>.</p>
+
+<p>Definition at line <a class="el" href="viewport_8h_source.htm#l00039">39</a> of file <a class="el" href="viewport_8h_source.htm">viewport.h</a>.</p>
+
+</div>
+</div>
 <hr/><h2>Member Data Documentation</h2>
 <a class="anchor" id="adb8465c0dfba12ee1bfc26dc853f33a1"></a><!-- doxytag: member="gbmath::vieport_s::height" ref="adb8465c0dfba12ee1bfc26dc853f33a1" args="" -->
 <div class="memitem">
@@ -160,7 +227,7 @@ Inheritance diagram for gbmath::vieport_s:</div>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -169,7 +236,7 @@ Inheritance diagram for gbmath::vieport_s:</div>
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Aug 27 20:46:56 2011 for gbmath by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Mon Jan 30 15:53:25 2012 for gbmath by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

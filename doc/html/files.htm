@@ -41,7 +41,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul>
       <li class="current"><a href="files.htm"><span>File&nbsp;List</span></a></li>
-      <li><a href="globals.htm"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
 </div>
@@ -69,6 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <tr><td class="indexkey"><a class="el" href="cilinder_8h.htm">cilinder.h</a> <a href="cilinder_8h_source.htm">[code]</a></td><td class="indexvalue">Class cylinder </td></tr>
   <tr><td class="indexkey"><a class="el" href="circle_8cpp.htm">circle.cpp</a> <a href="circle_8cpp_source.htm">[code]</a></td><td class="indexvalue"></td></tr>
   <tr><td class="indexkey"><a class="el" href="circle_8h.htm">circle.h</a> <a href="circle_8h_source.htm">[code]</a></td><td class="indexvalue">Circle in two-dimensional space </td></tr>
+  <tr><td class="indexkey"><a class="el" href="clip__values_8h.htm">clip_values.h</a> <a href="clip__values_8h_source.htm">[code]</a></td><td class="indexvalue">Standard float 4x4 matrix </td></tr>
   <tr><td class="indexkey"><a class="el" href="color3_8cpp.htm">color3.cpp</a> <a href="color3_8cpp_source.htm">[code]</a></td><td class="indexvalue"></td></tr>
   <tr><td class="indexkey"><a class="el" href="color3_8h.htm">color3.h</a> <a href="color3_8h_source.htm">[code]</a></td><td class="indexvalue">Template color3 </td></tr>
   <tr><td class="indexkey"><a class="el" href="color3__24_8h.htm">color3_24.h</a> <a href="color3__24_8h_source.htm">[code]</a></td><td class="indexvalue">Three-standard color byte </td></tr>
@@ -162,6 +162,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <tr><td class="indexkey"><a class="el" href="vector4_8cpp.htm">vector4.cpp</a> <a href="vector4_8cpp_source.htm">[code]</a></td><td class="indexvalue"></td></tr>
   <tr><td class="indexkey"><a class="el" href="vector__context__type__e_8h.htm">vector_context_type_e.h</a> <a href="vector__context__type__e_8h_source.htm">[code]</a></td><td class="indexvalue">Role of vector in the context of </td></tr>
   <tr><td class="indexkey"><a class="el" href="viewport_8h.htm">viewport.h</a> <a href="viewport_8h_source.htm">[code]</a></td><td class="indexvalue">Viewport. Output area in the coordinate and size </td></tr>
+  <tr><td class="indexkey"><a class="el" href="warnings_8h.htm">warnings.h</a> <a href="warnings_8h_source.htm">[code]</a></td><td class="indexvalue">Warnings </td></tr>
 </table>
 </div>
 <!--- window showing the filter options -->
@@ -169,7 +170,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -178,7 +179,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Aug 27 20:46:57 2011 for gbmath by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Mon Jan 30 15:53:25 2012 for gbmath by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

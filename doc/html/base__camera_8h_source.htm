@@ -41,7 +41,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul>
       <li><a href="files.htm"><span>File&nbsp;List</span></a></li>
-      <li><a href="globals.htm"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
 <h1>base_camera.h</h1><a href="base__camera_8h.htm">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 ﻿
@@ -54,7 +53,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00028"></a>00028 
 <a name="l00029"></a>00029 <span class="preprocessor">#ifdef WIN32 // // only windows platform</span>
 <a name="l00030"></a>00030 <span class="preprocessor"></span>
-<a name="l00031"></a>00031 <span class="keyword">const</span> <span class="keywordtype">bool</span> CAMERA_LEFT_HANDLE = <span class="keyword">false</span>;  <span class="comment">// true;</span>
+<a name="l00031"></a>00031 <span class="comment">//const bool CAMERA_LEFT_HANDLE = true;</span>
 <a name="l00032"></a>00032  
 <a name="l00033"></a>00033 <span class="preprocessor">#include &lt;windows.h&gt;</span>
 <a name="l00034"></a>00034 <span class="preprocessor">#include &lt;zmouse.h&gt;</span>
@@ -64,8 +63,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00038"></a>00038 {
 <a name="l00039"></a>00039  
 <a name="l00040"></a>00040 
-<a name="l00041"></a>00041 <span class="preprocessor">#pragma message(&quot;delete this: KEY_WAS_DOWN_MASK .....    &quot; __FILE__ )</span>
-<a name="l00042"></a>00042 <span class="preprocessor"></span>
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042 
 <a name="l00043"></a>00043 <span class="preprocessor">#define KEY_WAS_DOWN_MASK 0x80</span>
 <a name="l00044"></a>00044 <span class="preprocessor"></span><span class="preprocessor">#define KEY_IS_DOWN_MASK  0x01</span>
 <a name="l00045"></a>00045 <span class="preprocessor"></span>
@@ -75,250 +74,256 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00049"></a>00049 <span class="preprocessor"></span><span class="preprocessor">#define MOUSE_WHEEL         0x08</span>
 <a name="l00050"></a>00050 <span class="preprocessor"></span>
 <a name="l00051"></a>00051 
-<a name="l00052"></a>00052 <span class="preprocessor">#pragma message(&quot;delete this: D3DUtil_CameraKeys&quot; __FILE__ )</span>
-<a name="l00053"></a>00053 <span class="preprocessor"></span>        
-<a name="l00054"></a>00054 
-<a name="l00055"></a>00055 <span class="keyword">enum</span> D3DUtil_CameraKeys
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053         
+<a name="l00054"></a>00054  
+<a name="l00055"></a><a class="code" href="namespacegbmath.htm#ae406450c9f59f3c29cc3984161e35baa">00055</a> <span class="keyword">enum</span> <a class="code" href="namespacegbmath.htm#ae406450c9f59f3c29cc3984161e35baa">CameraKeys</a>
 <a name="l00056"></a>00056 {
-<a name="l00057"></a>00057     CAM_STRAFE_LEFT = 0,
-<a name="l00058"></a>00058     CAM_STRAFE_RIGHT,
-<a name="l00059"></a>00059     CAM_MOVE_FORWARD,
-<a name="l00060"></a>00060     CAM_MOVE_BACKWARD,
-<a name="l00061"></a>00061     CAM_MOVE_UP,
-<a name="l00062"></a>00062     CAM_MOVE_DOWN,
-<a name="l00063"></a>00063     CAM_RESET,
-<a name="l00064"></a>00064     CAM_CONTROLDOWN,
-<a name="l00065"></a>00065     CAM_MAX_KEYS,
-<a name="l00066"></a>00066     CAM_UNKNOWN = 0xFF
+<a name="l00057"></a><a class="code" href="namespacegbmath.htm#ae406450c9f59f3c29cc3984161e35baaab7d231fbc07f517a34d9870b5cb48f81">00057</a>     <a class="code" href="namespacegbmath.htm#ae406450c9f59f3c29cc3984161e35baaab7d231fbc07f517a34d9870b5cb48f81">CAM_STRAFE_LEFT</a> = 0,
+<a name="l00058"></a><a class="code" href="namespacegbmath.htm#ae406450c9f59f3c29cc3984161e35baaaaccc9a322e2e5512409622f01a886f6b">00058</a>     <a class="code" href="namespacegbmath.htm#ae406450c9f59f3c29cc3984161e35baaaaccc9a322e2e5512409622f01a886f6b">CAM_STRAFE_RIGHT</a>,
+<a name="l00059"></a><a class="code" href="namespacegbmath.htm#ae406450c9f59f3c29cc3984161e35baaa69cb50f3ac4486184c77a847c8c068c9">00059</a>     <a class="code" href="namespacegbmath.htm#ae406450c9f59f3c29cc3984161e35baaa69cb50f3ac4486184c77a847c8c068c9">CAM_MOVE_FORWARD</a>,
+<a name="l00060"></a><a class="code" href="namespacegbmath.htm#ae406450c9f59f3c29cc3984161e35baaa42d2fa2dfaff42eff4301b4d9662aa9f">00060</a>     <a class="code" href="namespacegbmath.htm#ae406450c9f59f3c29cc3984161e35baaa42d2fa2dfaff42eff4301b4d9662aa9f">CAM_MOVE_BACKWARD</a>,
+<a name="l00061"></a><a class="code" href="namespacegbmath.htm#ae406450c9f59f3c29cc3984161e35baaa71c1ee0cb362deeb44665bc64195f13b">00061</a>     <a class="code" href="namespacegbmath.htm#ae406450c9f59f3c29cc3984161e35baaa71c1ee0cb362deeb44665bc64195f13b">CAM_MOVE_UP</a>,
+<a name="l00062"></a><a class="code" href="namespacegbmath.htm#ae406450c9f59f3c29cc3984161e35baaadc74270c53d158084a7fb8195e9192a7">00062</a>     <a class="code" href="namespacegbmath.htm#ae406450c9f59f3c29cc3984161e35baaadc74270c53d158084a7fb8195e9192a7">CAM_MOVE_DOWN</a>,
+<a name="l00063"></a><a class="code" href="namespacegbmath.htm#ae406450c9f59f3c29cc3984161e35baaa75b15acaf736e2898d99e0b816b47702">00063</a>     <a class="code" href="namespacegbmath.htm#ae406450c9f59f3c29cc3984161e35baaa75b15acaf736e2898d99e0b816b47702">CAM_RESET</a>,
+<a name="l00064"></a><a class="code" href="namespacegbmath.htm#ae406450c9f59f3c29cc3984161e35baaa923629868e024d05d851bea04125d34f">00064</a>     <a class="code" href="namespacegbmath.htm#ae406450c9f59f3c29cc3984161e35baaa923629868e024d05d851bea04125d34f">CAM_CONTROLDOWN</a>,
+<a name="l00065"></a><a class="code" href="namespacegbmath.htm#ae406450c9f59f3c29cc3984161e35baaa0c2540ecad9775e13c3a369eb2b0f524">00065</a>     <a class="code" href="namespacegbmath.htm#ae406450c9f59f3c29cc3984161e35baaa0c2540ecad9775e13c3a369eb2b0f524">CAM_MAX_KEYS</a>,
+<a name="l00066"></a><a class="code" href="namespacegbmath.htm#ae406450c9f59f3c29cc3984161e35baaa146b6d5f6cac6bbd63b33f5cf424d604">00066</a>     <a class="code" href="namespacegbmath.htm#ae406450c9f59f3c29cc3984161e35baaa146b6d5f6cac6bbd63b33f5cf424d604">CAM_UNKNOWN</a> = 0xFF
 <a name="l00067"></a>00067 };
-<a name="l00068"></a>00068   
-<a name="l00069"></a>00069 
+<a name="l00068"></a>00068  
+<a name="l00069"></a>00069   
 <a name="l00070"></a>00070 
-<a name="l00072"></a>00072 <span class="keyword">class </span>base_camera {
-<a name="l00073"></a>00073 <span class="keyword">public</span>:
-<a name="l00074"></a>00074                           base_camera();
-<a name="l00075"></a>00075         <span class="keyword">virtual</span>  ~base_camera() 
-<a name="l00076"></a>00076         {
-<a name="l00077"></a>00077 
-<a name="l00078"></a>00078         }
-<a name="l00079"></a>00079 
-<a name="l00080"></a>00080         <span class="comment">// //! \brief Сделать камеру текущей</span>
-<a name="l00081"></a>00081         <span class="comment">//virtual HRESULT makeCurrent(IDirect3DDevice9* pDevice) = 0; </span>
-<a name="l00082"></a>00082 
-<a name="l00083"></a>00083     <span class="comment">// Call these from client and use Get*Matrix() to read new matrices</span>
-<a name="l00084"></a>00084     <span class="keyword">virtual</span> LRESULT handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam, 
-<a name="l00085"></a>00085                                                                                                                         LPARAM lParam);
-<a name="l00086"></a>00086     <span class="keyword">virtual</span> <span class="keywordtype">void</span>    frameMove( <span class="keywordtype">float</span> fElapsedTime ) = 0;
-<a name="l00087"></a>00087 
-<a name="l00088"></a>00088     <span class="comment">// Functions to change camera matrices</span>
-<a name="l00089"></a>00089 
-<a name="l00090"></a>00090     <span class="keyword">virtual</span> <span class="keywordtype">void</span> reset(); 
-<a name="l00091"></a>00091     <span class="keyword">virtual</span> <span class="keywordtype">void</span> setViewParams( <span class="keyword">const</span> vec3&amp; pvEyePt, <span class="keyword">const</span> vec3&amp; pvLookatPt);
-<a name="l00092"></a>00092     <span class="keyword">virtual</span> <span class="keywordtype">void</span> setProjParams( <span class="keywordtype">float</span> fFOV, <span class="keywordtype">float</span> fAspect, 
-<a name="l00093"></a>00093                                                                         <span class="keywordtype">float</span> fNearPlane, <span class="keywordtype">float</span> fFarPlane );
-<a name="l00094"></a>00094 
-<a name="l00095"></a>00095     <span class="comment">// Functions to change behavior</span>
-<a name="l00096"></a>00096 
-<a name="l00097"></a>00097     <span class="keyword">virtual</span> <span class="keywordtype">void</span> setDragRect( RECT &amp;rc ) 
-<a name="l00098"></a>00098         { 
-<a name="l00099"></a>00099                 m_rcDrag = rc; 
-<a name="l00100"></a>00100         }
-<a name="l00101"></a>00101 
-<a name="l00102"></a>00102     <span class="keywordtype">void</span> setInvertPitch( <span class="keywordtype">bool</span> bInvertPitch ) 
-<a name="l00103"></a>00103         { 
-<a name="l00104"></a>00104                 m_bInvertPitch = bInvertPitch; 
-<a name="l00105"></a>00105         }
-<a name="l00106"></a>00106 
-<a name="l00107"></a>00107     <span class="keywordtype">void</span> setDrag( <span class="keywordtype">bool</span> bMovementDrag, <span class="keywordtype">float</span> fTotalDragTimeToZero = 0.25f ) 
-<a name="l00108"></a>00108         { 
-<a name="l00109"></a>00109                 m_bMovementDrag = bMovementDrag; 
-<a name="l00110"></a>00110                 m_fTotalDragTimeToZero = fTotalDragTimeToZero; 
-<a name="l00111"></a>00111         }
-<a name="l00112"></a>00112 
-<a name="l00113"></a>00113         
-<a name="l00114"></a>00114         <span class="keywordtype">void</span> setEnableYAxisMovement( <span class="keywordtype">bool</span> bEnableYAxisMovement ) 
-<a name="l00115"></a>00115         { 
-<a name="l00116"></a>00116                 m_bEnableYAxisMovement = bEnableYAxisMovement; 
-<a name="l00117"></a>00117         }
-<a name="l00118"></a>00118 
-<a name="l00119"></a>00119         
-<a name="l00120"></a>00120         <span class="keywordtype">void</span> setEnablePositionMovement( <span class="keywordtype">bool</span> bEnablePositionMovement ) 
-<a name="l00121"></a>00121         { 
-<a name="l00122"></a>00122                 m_bEnablePositionMovement = bEnablePositionMovement; 
-<a name="l00123"></a>00123         }
-<a name="l00124"></a>00124 
-<a name="l00125"></a>00125         
-<a name="l00126"></a>00126         <span class="keywordtype">void</span> setClipToBoundary( <span class="keywordtype">bool</span> bClipToBoundary, vec3* pvMinBoundary, 
-<a name="l00127"></a>00127                                                                                 vec3* pvMaxBoundary ) 
-<a name="l00128"></a>00128         {
-<a name="l00129"></a>00129                 m_bClipToBoundary = bClipToBoundary; 
-<a name="l00130"></a>00130 
-<a name="l00131"></a>00131                 <span class="keywordflow">if</span>( pvMinBoundary ) 
-<a name="l00132"></a>00132                         m_vMinBoundary = *pvMinBoundary; 
-<a name="l00133"></a>00133                 
-<a name="l00134"></a>00134                 <span class="keywordflow">if</span>( pvMaxBoundary ) 
-<a name="l00135"></a>00135                         m_vMaxBoundary = *pvMaxBoundary; 
-<a name="l00136"></a>00136         }
-<a name="l00137"></a>00137 
-<a name="l00138"></a>00138         
-<a name="l00139"></a>00139         <span class="keywordtype">void</span> setScalers( <span class="keywordtype">float</span> fRotationScaler = 0.01f, <span class="keywordtype">float</span> fMoveScaler = 5.0f )  
-<a name="l00140"></a>00140         { 
-<a name="l00141"></a>00141                 m_fRotationScaler = fRotationScaler; 
-<a name="l00142"></a>00142                 m_fMoveScaler = fMoveScaler; 
-<a name="l00143"></a>00143         }
-<a name="l00144"></a>00144 
-<a name="l00145"></a>00145         
-<a name="l00146"></a>00146         <span class="keywordtype">void</span> setNumberOfFramesToSmoothMouseData( <span class="keywordtype">int</span> nFrames ) 
-<a name="l00147"></a>00147         { 
-<a name="l00148"></a>00148                 <span class="keywordflow">if</span>( nFrames &gt; 0 ) 
-<a name="l00149"></a>00149                         m_fFramesToSmoothMouseData = (float)nFrames; 
-<a name="l00150"></a>00150         }
-<a name="l00151"></a>00151 
-<a name="l00152"></a>00152     <span class="comment">// Functions to get state</span>
-<a name="l00153"></a>00153     <span class="keyword">const</span> mat44&amp;  getViewMatrix()<span class="keyword"> const </span>
-<a name="l00154"></a>00154 <span class="keyword">        </span>{ 
-<a name="l00155"></a>00155                 <span class="keywordflow">return</span> m_mView; 
-<a name="l00156"></a>00156         }
-<a name="l00157"></a>00157 
-<a name="l00158"></a>00158     <span class="keyword">const</span> mat44&amp;  getProjMatrix()<span class="keyword"> const </span>
-<a name="l00159"></a>00159 <span class="keyword">        </span>{ 
-<a name="l00160"></a>00160                 <span class="keywordflow">return</span> m_mProj; 
-<a name="l00161"></a>00161         }
-<a name="l00162"></a>00162 
-<a name="l00163"></a>00163     <span class="keyword">const</span> vec3&amp; getEyePoint()<span class="keyword"> const      </span>
-<a name="l00164"></a>00164 <span class="keyword">        </span>{ 
-<a name="l00165"></a>00165                 <span class="keywordflow">return</span> m_vEye; 
-<a name="l00166"></a>00166         }
-<a name="l00167"></a>00167 
-<a name="l00168"></a>00168     <span class="keyword">const</span> vec3&amp; getLookAtPoint()<span class="keyword"> const   </span>
-<a name="l00169"></a>00169 <span class="keyword">        </span>{ 
-<a name="l00170"></a>00170                 <span class="keywordflow">return</span> m_vLookAt; 
-<a name="l00171"></a>00171         }
-<a name="l00172"></a>00172 
-<a name="l00173"></a>00173     <span class="keywordtype">float</span> getNearClipPlane()<span class="keyword"> const </span>
-<a name="l00174"></a>00174 <span class="keyword">        </span>{ 
-<a name="l00175"></a>00175                 <span class="keywordflow">return</span> m_fNearPlane; 
-<a name="l00176"></a>00176         }
-<a name="l00177"></a>00177 
-<a name="l00178"></a>00178     <span class="keywordtype">float</span> getFarClipPlane()<span class="keyword"> const </span>
-<a name="l00179"></a>00179 <span class="keyword">        </span>{ 
-<a name="l00180"></a>00180                 <span class="keywordflow">return</span> m_fFarPlane; 
-<a name="l00181"></a>00181         }
-<a name="l00182"></a>00182 
+<a name="l00071"></a>00071 
+<a name="l00073"></a><a class="code" href="classgbmath_1_1base__camera.htm">00073</a> <span class="keyword">class </span><a class="code" href="classgbmath_1_1base__camera.htm" title="Basic camera to handle window messages windows.">base_camera</a> {
+<a name="l00074"></a>00074 <span class="keyword">public</span>:
+<a name="l00075"></a>00075                           <a class="code" href="classgbmath_1_1base__camera.htm#ab7987fda6dc6d963ec0f9c0017a358c6">base_camera</a>(<span class="keywordtype">bool</span> cameraLeftHandle=<span class="keyword">true</span>);
+<a name="l00076"></a><a class="code" href="classgbmath_1_1base__camera.htm#a227af82e4ef222711fb2ca52235592fa">00076</a>         <span class="keyword">virtual</span>  <a class="code" href="classgbmath_1_1base__camera.htm#a227af82e4ef222711fb2ca52235592fa">~base_camera</a>() 
+<a name="l00077"></a>00077         {
+<a name="l00078"></a>00078 
+<a name="l00079"></a>00079         }
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081         <span class="comment">// //! \brief Сделать камеру текущей</span>
+<a name="l00082"></a>00082         <span class="comment">//virtual HRESULT makeCurrent(IDirect3DDevice9* pDevice) = 0; </span>
+<a name="l00083"></a>00083 
+<a name="l00084"></a>00084     <span class="comment">// Call these from client and use Get*Matrix() to read new matrices</span>
+<a name="l00085"></a>00085     <span class="keyword">virtual</span> LRESULT <a class="code" href="classgbmath_1_1base__camera.htm#a266d186981b5fb6e8a42ad817a068aad">handleMessages</a>( HWND hWnd, UINT uMsg, WPARAM wParam, 
+<a name="l00086"></a>00086                                                                                                                         LPARAM lParam);
+<a name="l00087"></a>00087     <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="classgbmath_1_1base__camera.htm#a6c04047f4e595c9b51ff32c97cf1c3c6">frameMove</a>( <span class="keywordtype">float</span> fElapsedTime ) = 0;
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089     <span class="comment">// Functions to change camera matrices</span>
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1base__camera.htm#ac5e3ca370aa960d1f3d1f96bb7f74d96">reset</a>(); 
+<a name="l00092"></a>00092     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1base__camera.htm#a0f77a409d4d55c583e0d294a8cc53f2c">setViewParams</a>( <span class="keyword">const</span> <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>&amp; pvEyePt, <span class="keyword">const</span> <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>&amp; pvLookatPt);
+<a name="l00093"></a>00093     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1base__camera.htm#a66a5be61a4eeab58de9aa59b882f3154">setProjParams</a>( <span class="keywordtype">float</span> fFOV, <span class="keywordtype">float</span> fAspect, 
+<a name="l00094"></a>00094                                                                         <span class="keywordtype">float</span> fNearPlane, <span class="keywordtype">float</span> fFarPlane );
+<a name="l00095"></a>00095 
+<a name="l00096"></a>00096     <span class="comment">// Functions to change behavior</span>
+<a name="l00097"></a>00097 
+<a name="l00098"></a><a class="code" href="classgbmath_1_1base__camera.htm#a91b8e77a00e58906845ee698c68c69a5">00098</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1base__camera.htm#a91b8e77a00e58906845ee698c68c69a5">setDragRect</a>( RECT &amp;rc ) 
+<a name="l00099"></a>00099         { 
+<a name="l00100"></a>00100                 <a class="code" href="classgbmath_1_1base__camera.htm#a87de2d179a5260616044a4b9ec156b84" title="Rectangle within which a drag can be initiated.">m_rcDrag</a> = rc; 
+<a name="l00101"></a>00101         }
+<a name="l00102"></a>00102 
+<a name="l00103"></a><a class="code" href="classgbmath_1_1base__camera.htm#ada57e014913e701b18d7fc6eedb9e983">00103</a>     <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1base__camera.htm#ada57e014913e701b18d7fc6eedb9e983">setInvertPitch</a>( <span class="keywordtype">bool</span> bInvertPitch ) 
+<a name="l00104"></a>00104         { 
+<a name="l00105"></a>00105                 <a class="code" href="classgbmath_1_1base__camera.htm#a7ea61743c37a374ab7ab49f5e0a2592f" title="Invert the pitch axis.">m_bInvertPitch</a> = bInvertPitch; 
+<a name="l00106"></a>00106         }
+<a name="l00107"></a>00107 
+<a name="l00108"></a><a class="code" href="classgbmath_1_1base__camera.htm#ae2113ebce5832a329d082d136d201b7a">00108</a>     <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1base__camera.htm#ae2113ebce5832a329d082d136d201b7a">setDrag</a>( <span class="keywordtype">bool</span> bMovementDrag, <span class="keywordtype">float</span> fTotalDragTimeToZero = 0.25f ) 
+<a name="l00109"></a>00109         { 
+<a name="l00110"></a>00110                 <a class="code" href="classgbmath_1_1base__camera.htm#a3f6ddfbc0272635a987cf9b775fe83bf" title="If true, then camera movement will slow to a stop otherwise movement is instant.">m_bMovementDrag</a> = bMovementDrag; 
+<a name="l00111"></a>00111                 <a class="code" href="classgbmath_1_1base__camera.htm#adb7e0eef7c6c32c02fe0e7da1cdde520" title="Time it takes for velocity to go from full to 0.">m_fTotalDragTimeToZero</a> = fTotalDragTimeToZero; 
+<a name="l00112"></a>00112         }
+<a name="l00113"></a>00113 
+<a name="l00114"></a>00114         
+<a name="l00115"></a><a class="code" href="classgbmath_1_1base__camera.htm#a28e7aa3d65616043b801653e962db981">00115</a>         <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1base__camera.htm#a28e7aa3d65616043b801653e962db981">setEnableYAxisMovement</a>( <span class="keywordtype">bool</span> bEnableYAxisMovement ) 
+<a name="l00116"></a>00116         { 
+<a name="l00117"></a>00117                 <a class="code" href="classgbmath_1_1base__camera.htm#a7338847ca3f5475b1db11925e6f0fff3" title="If true, then camera can move in the y-axis.">m_bEnableYAxisMovement</a> = bEnableYAxisMovement; 
+<a name="l00118"></a>00118         }
+<a name="l00119"></a>00119 
+<a name="l00120"></a>00120         
+<a name="l00121"></a><a class="code" href="classgbmath_1_1base__camera.htm#ab81118b0f9fe74ce1b081e15cac109f9">00121</a>         <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1base__camera.htm#ab81118b0f9fe74ce1b081e15cac109f9">setEnablePositionMovement</a>( <span class="keywordtype">bool</span> bEnablePositionMovement ) 
+<a name="l00122"></a>00122         { 
+<a name="l00123"></a>00123                 <a class="code" href="classgbmath_1_1base__camera.htm#a95b7bd0c76e36a22429447ef2a7054b6" title="If true, then the user can translate the camera/model.">m_bEnablePositionMovement</a> = bEnablePositionMovement; 
+<a name="l00124"></a>00124         }
+<a name="l00125"></a>00125 
+<a name="l00126"></a>00126         
+<a name="l00127"></a><a class="code" href="classgbmath_1_1base__camera.htm#aa144950ce35d9785e79e3bfb84d25672">00127</a>         <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1base__camera.htm#aa144950ce35d9785e79e3bfb84d25672">setClipToBoundary</a>( <span class="keywordtype">bool</span> bClipToBoundary, <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>* pvMinBoundary, 
+<a name="l00128"></a>00128                                                                                 <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>* pvMaxBoundary ) 
+<a name="l00129"></a>00129         {
+<a name="l00130"></a>00130                 <a class="code" href="classgbmath_1_1base__camera.htm#aab2da273edf396b0f73729ff7a4b6540" title="If true, then the camera will be clipped to the boundary.">m_bClipToBoundary</a> = bClipToBoundary; 
+<a name="l00131"></a>00131 
+<a name="l00132"></a>00132                 <span class="keywordflow">if</span>( pvMinBoundary ) 
+<a name="l00133"></a>00133                         <a class="code" href="classgbmath_1_1base__camera.htm#adc1f46ca093c8a985c957f650b347ea3" title="Min point in clip boundary.">m_vMinBoundary</a> = *pvMinBoundary; 
+<a name="l00134"></a>00134                 
+<a name="l00135"></a>00135                 <span class="keywordflow">if</span>( pvMaxBoundary ) 
+<a name="l00136"></a>00136                         <a class="code" href="classgbmath_1_1base__camera.htm#a53b5e108a6c60d43f75c8594fd46fea1" title="Max point in clip boundary.">m_vMaxBoundary</a> = *pvMaxBoundary; 
+<a name="l00137"></a>00137         }
+<a name="l00138"></a>00138 
+<a name="l00139"></a>00139         
+<a name="l00140"></a><a class="code" href="classgbmath_1_1base__camera.htm#a3d35c03f86191cedd95b1610f578b741">00140</a>         <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1base__camera.htm#a3d35c03f86191cedd95b1610f578b741">setScalers</a>( <span class="keywordtype">float</span> fRotationScaler = 0.01f, <span class="keywordtype">float</span> fMoveScaler = 5.0f )  
+<a name="l00141"></a>00141         { 
+<a name="l00142"></a>00142                 <a class="code" href="classgbmath_1_1base__camera.htm#aba9d2e9a17ae89b686a300eb6f63d885" title="Scaler for rotation.">m_fRotationScaler</a> = fRotationScaler; 
+<a name="l00143"></a>00143                 <a class="code" href="classgbmath_1_1base__camera.htm#af264c5c91ba821ca6750c6bf786a92d6" title="Scaler for movement.">m_fMoveScaler</a> = fMoveScaler; 
+<a name="l00144"></a>00144         }
+<a name="l00145"></a>00145 
+<a name="l00146"></a>00146         
+<a name="l00147"></a><a class="code" href="classgbmath_1_1base__camera.htm#a4916e94c1969d42cda1716eb624c5892">00147</a>         <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1base__camera.htm#a4916e94c1969d42cda1716eb624c5892">setNumberOfFramesToSmoothMouseData</a>( <span class="keywordtype">int</span> nFrames ) 
+<a name="l00148"></a>00148         { 
+<a name="l00149"></a>00149                 <span class="keywordflow">if</span>( nFrames &gt; 0 ) 
+<a name="l00150"></a>00150                         <a class="code" href="classgbmath_1_1base__camera.htm#a8dcf83e33d3c7d5968eece72bec5ac44" title="Number of frames to smooth mouse data over.">m_fFramesToSmoothMouseData</a> = (float)nFrames; 
+<a name="l00151"></a>00151         }
+<a name="l00152"></a>00152 
+<a name="l00153"></a>00153     <span class="comment">// Functions to get state</span>
+<a name="l00154"></a><a class="code" href="classgbmath_1_1base__camera.htm#ab1baa856be0be6a0dc6568e19d4b607a">00154</a>     <span class="keyword">const</span> <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a>&amp;  <a class="code" href="classgbmath_1_1base__camera.htm#ab1baa856be0be6a0dc6568e19d4b607a">getViewMatrix</a>()<span class="keyword"> const </span>
+<a name="l00155"></a>00155 <span class="keyword">        </span>{ 
+<a name="l00156"></a>00156                 <span class="keywordflow">return</span> <a class="code" href="classgbmath_1_1base__camera.htm#af2f74cefd4322a10bcd785e5b2d12999" title="View matrix.">m_mView</a>; 
+<a name="l00157"></a>00157         }
+<a name="l00158"></a>00158 
+<a name="l00159"></a><a class="code" href="classgbmath_1_1base__camera.htm#a2108e979ef2b0e7f60dbf375ee3db895">00159</a>     <span class="keyword">const</span> <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a>&amp;  <a class="code" href="classgbmath_1_1base__camera.htm#a2108e979ef2b0e7f60dbf375ee3db895">getProjMatrix</a>()<span class="keyword"> const </span>
+<a name="l00160"></a>00160 <span class="keyword">        </span>{ 
+<a name="l00161"></a>00161                 <span class="keywordflow">return</span> <a class="code" href="classgbmath_1_1base__camera.htm#afa1d88cbbe9d5e9b453daa146302de72" title="Projection matrix.">m_mProj</a>; 
+<a name="l00162"></a>00162         }
+<a name="l00163"></a>00163 
+<a name="l00164"></a><a class="code" href="classgbmath_1_1base__camera.htm#af150eccebed8ab4451ff82106b454149">00164</a>     <span class="keyword">const</span> <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>&amp; <a class="code" href="classgbmath_1_1base__camera.htm#af150eccebed8ab4451ff82106b454149">getEyePoint</a>()<span class="keyword"> const      </span>
+<a name="l00165"></a>00165 <span class="keyword">        </span>{ 
+<a name="l00166"></a>00166                 <span class="keywordflow">return</span> <a class="code" href="classgbmath_1_1base__camera.htm#a3402041a0c7684c8d07fb351b810c815" title="Camera eye position.">m_vEye</a>; 
+<a name="l00167"></a>00167         }
+<a name="l00168"></a>00168 
+<a name="l00169"></a><a class="code" href="classgbmath_1_1base__camera.htm#a82aa9a4b18c51ad5c878fd42b249b30e">00169</a>     <span class="keyword">const</span> <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>&amp; <a class="code" href="classgbmath_1_1base__camera.htm#a82aa9a4b18c51ad5c878fd42b249b30e">getLookAtPoint</a>()<span class="keyword"> const   </span>
+<a name="l00170"></a>00170 <span class="keyword">        </span>{ 
+<a name="l00171"></a>00171                 <span class="keywordflow">return</span> <a class="code" href="classgbmath_1_1base__camera.htm#a8c3cb34c834141d899e9592e744336af" title="LookAt position.">m_vLookAt</a>; 
+<a name="l00172"></a>00172         }
+<a name="l00173"></a>00173 
+<a name="l00174"></a><a class="code" href="classgbmath_1_1base__camera.htm#a831ccf455c61cfd222f7055024a1eeb0">00174</a>     <span class="keywordtype">float</span> <a class="code" href="classgbmath_1_1base__camera.htm#a831ccf455c61cfd222f7055024a1eeb0">getNearClipPlane</a>()<span class="keyword"> const </span>
+<a name="l00175"></a>00175 <span class="keyword">        </span>{ 
+<a name="l00176"></a>00176                 <span class="keywordflow">return</span> <a class="code" href="classgbmath_1_1base__camera.htm#a50b027f79fe6688b892ab777898c16ec" title="Near plane.">m_fNearPlane</a>; 
+<a name="l00177"></a>00177         }
+<a name="l00178"></a>00178 
+<a name="l00179"></a><a class="code" href="classgbmath_1_1base__camera.htm#a5f9ea9a265e699cbf2b970b0ebb866e2">00179</a>     <span class="keywordtype">float</span> <a class="code" href="classgbmath_1_1base__camera.htm#a5f9ea9a265e699cbf2b970b0ebb866e2">getFarClipPlane</a>()<span class="keyword"> const </span>
+<a name="l00180"></a>00180 <span class="keyword">        </span>{ 
+<a name="l00181"></a>00181                 <span class="keywordflow">return</span> <a class="code" href="classgbmath_1_1base__camera.htm#aef9562f8436b6b6bb039b7d151b190f9" title="Far plane.">m_fFarPlane</a>; 
+<a name="l00182"></a>00182         }
 <a name="l00183"></a>00183 
-<a name="l00184"></a>00184     <span class="keywordtype">bool</span> isBeingDragged()<span class="keyword"> const         </span>
-<a name="l00185"></a>00185 <span class="keyword">        </span>{ 
-<a name="l00186"></a>00186                 <span class="keywordflow">return</span> (m_bMouseLButtonDown || m_bMouseMButtonDown ||
-<a name="l00187"></a>00187                                                                                                 m_bMouseRButtonDown); 
-<a name="l00188"></a>00188         }
-<a name="l00189"></a>00189 
-<a name="l00190"></a>00190     <span class="keywordtype">bool</span> isMouseLButtonDown()<span class="keyword"> const     </span>
-<a name="l00191"></a>00191 <span class="keyword">        </span>{ 
-<a name="l00192"></a>00192                 <span class="keywordflow">return</span> m_bMouseLButtonDown; 
-<a name="l00193"></a>00193         }
-<a name="l00194"></a>00194 
-<a name="l00195"></a>00195     <span class="keywordtype">bool</span> isMouseMButtonDown()<span class="keyword"> const     </span>
-<a name="l00196"></a>00196 <span class="keyword">        </span>{ 
-<a name="l00197"></a>00197                 <span class="keywordflow">return</span> m_bMouseMButtonDown; 
-<a name="l00198"></a>00198         } 
-<a name="l00199"></a>00199 
-<a name="l00200"></a>00200     <span class="keywordtype">bool</span> isMouseRButtonDown()<span class="keyword"> const     </span>
-<a name="l00201"></a>00201 <span class="keyword">        </span>{ 
-<a name="l00202"></a>00202                 <span class="keywordflow">return</span> m_bMouseRButtonDown; 
-<a name="l00203"></a>00203         } 
-<a name="l00204"></a>00204 
+<a name="l00184"></a>00184 
+<a name="l00185"></a><a class="code" href="classgbmath_1_1base__camera.htm#ab6ca6967865c77e7cc9a4a826c98ac38">00185</a>     <span class="keywordtype">bool</span> <a class="code" href="classgbmath_1_1base__camera.htm#ab6ca6967865c77e7cc9a4a826c98ac38">isBeingDragged</a>()<span class="keyword"> const         </span>
+<a name="l00186"></a>00186 <span class="keyword">        </span>{ 
+<a name="l00187"></a>00187                 <span class="keywordflow">return</span> (<a class="code" href="classgbmath_1_1base__camera.htm#a2a3e775741c1f2403bc1d7ce05502596" title="True if left button is down.">m_bMouseLButtonDown</a> || <a class="code" href="classgbmath_1_1base__camera.htm#a92c26f1ae8ceb0614bc30bd377a0f3b7" title="True if middle button is down.">m_bMouseMButtonDown</a> ||
+<a name="l00188"></a>00188                                                                                                 <a class="code" href="classgbmath_1_1base__camera.htm#ad5e8b83eef2b3bb07d633132e24aa90f" title="True if right button is down.">m_bMouseRButtonDown</a>); 
+<a name="l00189"></a>00189         }
+<a name="l00190"></a>00190 
+<a name="l00191"></a><a class="code" href="classgbmath_1_1base__camera.htm#ac7e25e79a7dfbc935bb7a74ab8e67f5d">00191</a>     <span class="keywordtype">bool</span> <a class="code" href="classgbmath_1_1base__camera.htm#ac7e25e79a7dfbc935bb7a74ab8e67f5d">isMouseLButtonDown</a>()<span class="keyword"> const     </span>
+<a name="l00192"></a>00192 <span class="keyword">        </span>{ 
+<a name="l00193"></a>00193                 <span class="keywordflow">return</span> <a class="code" href="classgbmath_1_1base__camera.htm#a2a3e775741c1f2403bc1d7ce05502596" title="True if left button is down.">m_bMouseLButtonDown</a>; 
+<a name="l00194"></a>00194         }
+<a name="l00195"></a>00195 
+<a name="l00196"></a><a class="code" href="classgbmath_1_1base__camera.htm#ae5db3837be6db5b63afaf5c7f2b7dce1">00196</a>     <span class="keywordtype">bool</span> <a class="code" href="classgbmath_1_1base__camera.htm#ae5db3837be6db5b63afaf5c7f2b7dce1">isMouseMButtonDown</a>()<span class="keyword"> const     </span>
+<a name="l00197"></a>00197 <span class="keyword">        </span>{ 
+<a name="l00198"></a>00198                 <span class="keywordflow">return</span> <a class="code" href="classgbmath_1_1base__camera.htm#a92c26f1ae8ceb0614bc30bd377a0f3b7" title="True if middle button is down.">m_bMouseMButtonDown</a>; 
+<a name="l00199"></a>00199         } 
+<a name="l00200"></a>00200 
+<a name="l00201"></a><a class="code" href="classgbmath_1_1base__camera.htm#a37e296f8d90f77c56a3b21120ea44375">00201</a>     <span class="keywordtype">bool</span> <a class="code" href="classgbmath_1_1base__camera.htm#a37e296f8d90f77c56a3b21120ea44375">isMouseRButtonDown</a>()<span class="keyword"> const     </span>
+<a name="l00202"></a>00202 <span class="keyword">        </span>{ 
+<a name="l00203"></a>00203                 <span class="keywordflow">return</span> <a class="code" href="classgbmath_1_1base__camera.htm#ad5e8b83eef2b3bb07d633132e24aa90f" title="True if right button is down.">m_bMouseRButtonDown</a>; 
+<a name="l00204"></a>00204         } 
 <a name="l00205"></a>00205 
 <a name="l00206"></a>00206 
-<a name="l00207"></a>00207 <span class="keyword">protected</span>:
-<a name="l00208"></a>00208     <span class="comment">// Functions to map a WM_KEYDOWN key to a D3DUtil_CameraKeys enum</span>
-<a name="l00209"></a>00209     <span class="comment">// &gt;&gt;&gt;&gt;  old  : virtual </span>
-<a name="l00210"></a>00210                 <span class="keyword">static</span> D3DUtil_CameraKeys mapKey( UINT nKey );  
-<a name="l00211"></a>00211 
-<a name="l00212"></a>00212     <span class="keywordtype">bool</span> isKeyDown( BYTE key )<span class="keyword"> const </span>
-<a name="l00213"></a>00213 <span class="keyword">        </span>{ 
-<a name="l00214"></a>00214                 <span class="keywordflow">return</span>( (key &amp; KEY_IS_DOWN_MASK) == KEY_IS_DOWN_MASK ); 
-<a name="l00215"></a>00215         }
+<a name="l00207"></a>00207 
+<a name="l00208"></a>00208 <span class="keyword">protected</span>:
+<a name="l00209"></a>00209 
+<a name="l00210"></a>00210 
+<a name="l00211"></a>00211     <span class="comment">// Functions to map a WM_KEYDOWN key to a CameraKeys enum</span>
+<a name="l00212"></a>00212     <span class="comment">// &gt;&gt;&gt;&gt;  old  : virtual </span>
+<a name="l00213"></a>00213 
+<a name="l00214"></a>00214                 <span class="keyword">static</span> <a class="code" href="namespacegbmath.htm#ae406450c9f59f3c29cc3984161e35baa">CameraKeys</a> <a class="code" href="classgbmath_1_1base__camera.htm#afe4ca0a55ca81927b70de2bcb5fcc479">mapKey</a>( UINT nKey );  
+<a name="l00215"></a>00215 
 <a name="l00216"></a>00216 
-<a name="l00217"></a>00217     <span class="keywordtype">bool</span> wasKeyDown( BYTE key )<span class="keyword"> const </span>
+<a name="l00217"></a><a class="code" href="classgbmath_1_1base__camera.htm#abf9fa3313ad7f5316280dd6070e86c61">00217</a>     <span class="keywordtype">bool</span> <a class="code" href="classgbmath_1_1base__camera.htm#abf9fa3313ad7f5316280dd6070e86c61">isKeyDown</a>( BYTE key )<span class="keyword"> const </span>
 <a name="l00218"></a>00218 <span class="keyword">        </span>{ 
-<a name="l00219"></a>00219                 <span class="keywordflow">return</span>( (key &amp; KEY_WAS_DOWN_MASK) == KEY_WAS_DOWN_MASK ); 
+<a name="l00219"></a>00219                 <span class="keywordflow">return</span>( (key &amp; KEY_IS_DOWN_MASK) == KEY_IS_DOWN_MASK ); 
 <a name="l00220"></a>00220         }
 <a name="l00221"></a>00221 
-<a name="l00222"></a>00222     <span class="keywordtype">void</span> constrainToBoundary( vec3* pV );
-<a name="l00223"></a>00223     <span class="keywordtype">void</span> updateVelocity( <span class="keywordtype">float</span> fElapsedTime );
-<a name="l00224"></a>00224     <span class="keywordtype">void</span> getInput( <span class="keywordtype">bool</span> bGetKeyboardInput,  <span class="keywordtype">bool</span> bGetMouseInput, 
-<a name="l00225"></a>00225                                                                                         <span class="keywordtype">bool</span> bGetGamepadInput, 
-<a name="l00226"></a>00226                                                                                         <span class="keywordtype">bool</span> bResetCursorAfterMove);
-<a name="l00227"></a>00227  
-<a name="l00228"></a>00228 
-<a name="l00229"></a>00229     mat44            m_mView; 
-<a name="l00230"></a>00230     mat44            m_mProj; 
-<a name="l00231"></a>00231  
-<a name="l00232"></a>00232     vec3           m_vGamePadLeftThumb;
-<a name="l00233"></a>00233     vec3           m_vGamePadRightThumb;
-<a name="l00234"></a>00234  
-<a name="l00235"></a>00235     <span class="keywordtype">int</span>                   m_cKeysDown;            
-<a name="l00236"></a>00236     BYTE                  m_aKeys[CAM_MAX_KEYS];  
-<a name="l00237"></a>00237     vec3           m_vKeyboardDirection;   
-<a name="l00238"></a>00238     POINT                 m_ptLastMousePosition;  
-<a name="l00239"></a>00239     <span class="keywordtype">bool</span>                  m_bMouseLButtonDown;    
-<a name="l00240"></a>00240     <span class="keywordtype">bool</span>                  m_bMouseMButtonDown;    
-<a name="l00241"></a>00241     <span class="keywordtype">bool</span>                  m_bMouseRButtonDown;    
-<a name="l00242"></a>00242     <span class="keywordtype">int</span>                   m_nCurrentButtonMask;   
-<a name="l00243"></a>00243     <span class="keywordtype">int</span>                   m_nMouseWheelDelta;     
-<a name="l00244"></a>00244     vec2           m_vMouseDelta;          
-<a name="l00245"></a>00245     <span class="keywordtype">float</span>                 m_fFramesToSmoothMouseData; 
-<a name="l00246"></a>00246 
-<a name="l00247"></a>00247     vec3           m_vDefaultEye;          
-<a name="l00248"></a>00248     vec3           m_vDefaultLookAt;       
-<a name="l00249"></a>00249     vec3           m_vEye;                 
-<a name="l00250"></a>00250     vec3           m_vLookAt;              
-<a name="l00251"></a>00251     <span class="keywordtype">float</span>                 m_fCameraYawAngle;      
-<a name="l00252"></a>00252     <span class="keywordtype">float</span>                 m_fCameraPitchAngle;    
-<a name="l00253"></a>00253 
-<a name="l00254"></a>00254     RECT                  m_rcDrag;               
-<a name="l00255"></a>00255     vec3           m_vVelocity;            
-<a name="l00256"></a>00256     <span class="keywordtype">bool</span>                  m_bMovementDrag;        
-<a name="l00257"></a>00257     vec3           m_vVelocityDrag;        
-<a name="l00258"></a>00258     <span class="keywordtype">float</span>                 m_fDragTimer;           
-<a name="l00259"></a>00259     <span class="keywordtype">float</span>                 m_fTotalDragTimeToZero; 
-<a name="l00260"></a>00260     vec2           m_vRotVelocity;         
-<a name="l00261"></a>00261 
-<a name="l00262"></a>00262     <span class="keywordtype">float</span>                 m_fFOV;                 
-<a name="l00263"></a>00263     <span class="keywordtype">float</span>                 m_fAspect;              
-<a name="l00264"></a>00264     <span class="keywordtype">float</span>                 m_fNearPlane;           
-<a name="l00265"></a>00265     <span class="keywordtype">float</span>                 m_fFarPlane;            
-<a name="l00266"></a>00266 
-<a name="l00267"></a>00267     <span class="keywordtype">float</span>                 m_fRotationScaler;      
-<a name="l00268"></a>00268     <span class="keywordtype">float</span>                 m_fMoveScaler;          
-<a name="l00269"></a>00269 
-<a name="l00270"></a>00270     <span class="keywordtype">bool</span>                  m_bInvertPitch;         
-<a name="l00271"></a>00271     <span class="keywordtype">bool</span>                  m_bEnablePositionMovement; 
-<a name="l00272"></a>00272     <span class="keywordtype">bool</span>                  m_bEnableYAxisMovement; 
-<a name="l00273"></a>00273 
-<a name="l00274"></a>00274     <span class="keywordtype">bool</span>                  m_bClipToBoundary;      
-<a name="l00275"></a>00275     vec3           m_vMinBoundary;         
-<a name="l00276"></a>00276     vec3           m_vMaxBoundary;         
-<a name="l00277"></a>00277 
-<a name="l00278"></a>00278         HWND m_hwnd;
-<a name="l00279"></a>00279 };
-<a name="l00280"></a>00280 <span class="comment">// end class</span>
-<a name="l00281"></a>00281 
-<a name="l00282"></a>00282 
-<a name="l00283"></a>00283 <span class="comment">//-------------------------------------------------------------------------</span>
-<a name="l00284"></a>00284  
-<a name="l00285"></a>00285 }
-<a name="l00286"></a>00286 
+<a name="l00222"></a><a class="code" href="classgbmath_1_1base__camera.htm#acc5dc83837d522b36aea9ebfa8a871e5">00222</a>     <span class="keywordtype">bool</span> <a class="code" href="classgbmath_1_1base__camera.htm#acc5dc83837d522b36aea9ebfa8a871e5">wasKeyDown</a>( BYTE key )<span class="keyword"> const </span>
+<a name="l00223"></a>00223 <span class="keyword">        </span>{ 
+<a name="l00224"></a>00224                 <span class="keywordflow">return</span>( (key &amp; KEY_WAS_DOWN_MASK) == KEY_WAS_DOWN_MASK ); 
+<a name="l00225"></a>00225         }
+<a name="l00226"></a>00226 
+<a name="l00227"></a>00227     <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1base__camera.htm#ae51de5ae028f5ba8a3242c1fa86e0bd9">constrainToBoundary</a>( <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>* pV );
+<a name="l00228"></a>00228     <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1base__camera.htm#af823bf9bc69fb7eadee85a2b4e17b08d">updateVelocity</a>( <span class="keywordtype">float</span> fElapsedTime );
+<a name="l00229"></a>00229     <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1base__camera.htm#a3331d522be12fe661facb53b2b0f9292">getInput</a>( <span class="keywordtype">bool</span> bGetKeyboardInput,  <span class="keywordtype">bool</span> bGetMouseInput, 
+<a name="l00230"></a>00230                                                                                         <span class="keywordtype">bool</span> bGetGamepadInput, 
+<a name="l00231"></a>00231                                                                                         <span class="keywordtype">bool</span> bResetCursorAfterMove);
+<a name="l00232"></a>00232  
+<a name="l00233"></a><a class="code" href="classgbmath_1_1base__camera.htm#ae5b615e5f57bccc20b4fe2b6448dd6de">00233</a>         <span class="keyword">const</span> <span class="keywordtype">bool</span>     <a class="code" href="classgbmath_1_1base__camera.htm#ae5b615e5f57bccc20b4fe2b6448dd6de">m_bcameraLeftHandle</a>;
+<a name="l00234"></a>00234 
+<a name="l00235"></a><a class="code" href="classgbmath_1_1base__camera.htm#af2f74cefd4322a10bcd785e5b2d12999">00235</a>     <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a>            <a class="code" href="classgbmath_1_1base__camera.htm#af2f74cefd4322a10bcd785e5b2d12999" title="View matrix.">m_mView</a>; 
+<a name="l00236"></a><a class="code" href="classgbmath_1_1base__camera.htm#afa1d88cbbe9d5e9b453daa146302de72">00236</a>     <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a>            <a class="code" href="classgbmath_1_1base__camera.htm#afa1d88cbbe9d5e9b453daa146302de72" title="Projection matrix.">m_mProj</a>; 
+<a name="l00237"></a>00237  
+<a name="l00238"></a><a class="code" href="classgbmath_1_1base__camera.htm#ada94b737147af3fd3cd04d46335a5c64">00238</a>     <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>           <a class="code" href="classgbmath_1_1base__camera.htm#ada94b737147af3fd3cd04d46335a5c64">m_vGamePadLeftThumb</a>;
+<a name="l00239"></a><a class="code" href="classgbmath_1_1base__camera.htm#adce85edeb0d9332f8ddf25baa71d94e7">00239</a>     <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>           <a class="code" href="classgbmath_1_1base__camera.htm#adce85edeb0d9332f8ddf25baa71d94e7">m_vGamePadRightThumb</a>;
+<a name="l00240"></a>00240  
+<a name="l00241"></a><a class="code" href="classgbmath_1_1base__camera.htm#a6af2149f94acf2c9a151777a32ef72c8">00241</a>     <span class="keywordtype">int</span>                   <a class="code" href="classgbmath_1_1base__camera.htm#a6af2149f94acf2c9a151777a32ef72c8" title="Number of camera keys that are down.">m_cKeysDown</a>;            
+<a name="l00242"></a><a class="code" href="classgbmath_1_1base__camera.htm#a9ebe23052bc7279b2ade8bcf4f194c44">00242</a>     BYTE                  <a class="code" href="classgbmath_1_1base__camera.htm#a9ebe23052bc7279b2ade8bcf4f194c44" title="State of input - KEY_WAS_DOWN_MASK|KEY_IS_DOWN_MASK.">m_aKeys</a>[<a class="code" href="namespacegbmath.htm#ae406450c9f59f3c29cc3984161e35baaa0c2540ecad9775e13c3a369eb2b0f524">CAM_MAX_KEYS</a>];  
+<a name="l00243"></a><a class="code" href="classgbmath_1_1base__camera.htm#a065c9db8b9611d974af7a9cb88547aa2">00243</a>     <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>           <a class="code" href="classgbmath_1_1base__camera.htm#a065c9db8b9611d974af7a9cb88547aa2" title="Direction vector of keyboard input.">m_vKeyboardDirection</a>;   
+<a name="l00244"></a><a class="code" href="classgbmath_1_1base__camera.htm#a4700f8110d4e4c26d6fb7b08e921cb82">00244</a>     POINT                 <a class="code" href="classgbmath_1_1base__camera.htm#a4700f8110d4e4c26d6fb7b08e921cb82" title="Last absolute position of mouse cursor.">m_ptLastMousePosition</a>;  
+<a name="l00245"></a><a class="code" href="classgbmath_1_1base__camera.htm#a2a3e775741c1f2403bc1d7ce05502596">00245</a>     <span class="keywordtype">bool</span>                  <a class="code" href="classgbmath_1_1base__camera.htm#a2a3e775741c1f2403bc1d7ce05502596" title="True if left button is down.">m_bMouseLButtonDown</a>;    
+<a name="l00246"></a><a class="code" href="classgbmath_1_1base__camera.htm#a92c26f1ae8ceb0614bc30bd377a0f3b7">00246</a>     <span class="keywordtype">bool</span>                  <a class="code" href="classgbmath_1_1base__camera.htm#a92c26f1ae8ceb0614bc30bd377a0f3b7" title="True if middle button is down.">m_bMouseMButtonDown</a>;    
+<a name="l00247"></a><a class="code" href="classgbmath_1_1base__camera.htm#ad5e8b83eef2b3bb07d633132e24aa90f">00247</a>     <span class="keywordtype">bool</span>                  <a class="code" href="classgbmath_1_1base__camera.htm#ad5e8b83eef2b3bb07d633132e24aa90f" title="True if right button is down.">m_bMouseRButtonDown</a>;    
+<a name="l00248"></a><a class="code" href="classgbmath_1_1base__camera.htm#aea280e158e484398712f988fa2789c04">00248</a>     <span class="keywordtype">int</span>                   <a class="code" href="classgbmath_1_1base__camera.htm#aea280e158e484398712f988fa2789c04" title="mask of which buttons are down">m_nCurrentButtonMask</a>;   
+<a name="l00249"></a><a class="code" href="classgbmath_1_1base__camera.htm#a9900717f0106c2c77b2435394eee896c">00249</a>     <span class="keywordtype">int</span>                   <a class="code" href="classgbmath_1_1base__camera.htm#a9900717f0106c2c77b2435394eee896c" title="Amount of middle wheel scroll (+/-).">m_nMouseWheelDelta</a>;     
+<a name="l00250"></a><a class="code" href="classgbmath_1_1base__camera.htm#a453c7edce080d75fded4e148005103cf">00250</a>     <a class="code" href="structgbmath_1_1vec2.htm" title="2d-base vector. Corrected by operators epislon">vec2</a>           <a class="code" href="classgbmath_1_1base__camera.htm#a453c7edce080d75fded4e148005103cf" title="Mouse relative delta smoothed over a few frames.">m_vMouseDelta</a>;          
+<a name="l00251"></a><a class="code" href="classgbmath_1_1base__camera.htm#a8dcf83e33d3c7d5968eece72bec5ac44">00251</a>     <span class="keywordtype">float</span>                 <a class="code" href="classgbmath_1_1base__camera.htm#a8dcf83e33d3c7d5968eece72bec5ac44" title="Number of frames to smooth mouse data over.">m_fFramesToSmoothMouseData</a>; 
+<a name="l00252"></a>00252 
+<a name="l00253"></a><a class="code" href="classgbmath_1_1base__camera.htm#a8db92c4d9d7623df0db4dbf18a97ae2f">00253</a>     <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>           <a class="code" href="classgbmath_1_1base__camera.htm#a8db92c4d9d7623df0db4dbf18a97ae2f" title="Default camera eye position.">m_vDefaultEye</a>;          
+<a name="l00254"></a><a class="code" href="classgbmath_1_1base__camera.htm#a33af2409928060da5614264954d0873b">00254</a>     <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>           <a class="code" href="classgbmath_1_1base__camera.htm#a33af2409928060da5614264954d0873b" title="Default LookAt position.">m_vDefaultLookAt</a>;       
+<a name="l00255"></a><a class="code" href="classgbmath_1_1base__camera.htm#a3402041a0c7684c8d07fb351b810c815">00255</a>     <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>           <a class="code" href="classgbmath_1_1base__camera.htm#a3402041a0c7684c8d07fb351b810c815" title="Camera eye position.">m_vEye</a>;                 
+<a name="l00256"></a><a class="code" href="classgbmath_1_1base__camera.htm#a8c3cb34c834141d899e9592e744336af">00256</a>     <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>           <a class="code" href="classgbmath_1_1base__camera.htm#a8c3cb34c834141d899e9592e744336af" title="LookAt position.">m_vLookAt</a>;              
+<a name="l00257"></a><a class="code" href="classgbmath_1_1base__camera.htm#a129f2c68cfcc571b04a4dabe1f335c9b">00257</a>     <span class="keywordtype">float</span>                 <a class="code" href="classgbmath_1_1base__camera.htm#a129f2c68cfcc571b04a4dabe1f335c9b" title="Yaw angle of camera.">m_fCameraYawAngle</a>;      
+<a name="l00258"></a><a class="code" href="classgbmath_1_1base__camera.htm#ac0ff2cb9c563377e63b80070870d6537">00258</a>     <span class="keywordtype">float</span>                 <a class="code" href="classgbmath_1_1base__camera.htm#ac0ff2cb9c563377e63b80070870d6537" title="Pitch angle of camera.">m_fCameraPitchAngle</a>;    
+<a name="l00259"></a>00259 
+<a name="l00260"></a><a class="code" href="classgbmath_1_1base__camera.htm#a87de2d179a5260616044a4b9ec156b84">00260</a>     RECT                  <a class="code" href="classgbmath_1_1base__camera.htm#a87de2d179a5260616044a4b9ec156b84" title="Rectangle within which a drag can be initiated.">m_rcDrag</a>;               
+<a name="l00261"></a><a class="code" href="classgbmath_1_1base__camera.htm#aba20fc8ce1cc25677d9ead18cbcddf9e">00261</a>     <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>           <a class="code" href="classgbmath_1_1base__camera.htm#aba20fc8ce1cc25677d9ead18cbcddf9e" title="Velocity of camera.">m_vVelocity</a>;            
+<a name="l00262"></a><a class="code" href="classgbmath_1_1base__camera.htm#a3f6ddfbc0272635a987cf9b775fe83bf">00262</a>     <span class="keywordtype">bool</span>                  <a class="code" href="classgbmath_1_1base__camera.htm#a3f6ddfbc0272635a987cf9b775fe83bf" title="If true, then camera movement will slow to a stop otherwise movement is instant.">m_bMovementDrag</a>;        
+<a name="l00263"></a><a class="code" href="classgbmath_1_1base__camera.htm#ac85d4f4dcc7f14e4b9b4a8f4eb0ccab5">00263</a>     <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>           <a class="code" href="classgbmath_1_1base__camera.htm#ac85d4f4dcc7f14e4b9b4a8f4eb0ccab5" title="Velocity drag force.">m_vVelocityDrag</a>;        
+<a name="l00264"></a><a class="code" href="classgbmath_1_1base__camera.htm#a1d5b06e7b96961dc163e53d9c34965c0">00264</a>     <span class="keywordtype">float</span>                 <a class="code" href="classgbmath_1_1base__camera.htm#a1d5b06e7b96961dc163e53d9c34965c0" title="Countdown timer to apply drag.">m_fDragTimer</a>;           
+<a name="l00265"></a><a class="code" href="classgbmath_1_1base__camera.htm#adb7e0eef7c6c32c02fe0e7da1cdde520">00265</a>     <span class="keywordtype">float</span>                 <a class="code" href="classgbmath_1_1base__camera.htm#adb7e0eef7c6c32c02fe0e7da1cdde520" title="Time it takes for velocity to go from full to 0.">m_fTotalDragTimeToZero</a>; 
+<a name="l00266"></a><a class="code" href="classgbmath_1_1base__camera.htm#a235d760d258f8e8af6fd42e5352f284a">00266</a>     <a class="code" href="structgbmath_1_1vec2.htm" title="2d-base vector. Corrected by operators epislon">vec2</a>           <a class="code" href="classgbmath_1_1base__camera.htm#a235d760d258f8e8af6fd42e5352f284a" title="Velocity of camera.">m_vRotVelocity</a>;         
+<a name="l00267"></a>00267 
+<a name="l00268"></a><a class="code" href="classgbmath_1_1base__camera.htm#ae06595c99c7243145cb8a8e3b2a6170a">00268</a>     <span class="keywordtype">float</span>                 <a class="code" href="classgbmath_1_1base__camera.htm#ae06595c99c7243145cb8a8e3b2a6170a" title="Field of view.">m_fFOV</a>;                 
+<a name="l00269"></a><a class="code" href="classgbmath_1_1base__camera.htm#a02d42b8cf8fb3df37c5ab75b92b918d4">00269</a>     <span class="keywordtype">float</span>                 <a class="code" href="classgbmath_1_1base__camera.htm#a02d42b8cf8fb3df37c5ab75b92b918d4" title="Aspect ratio.">m_fAspect</a>;              
+<a name="l00270"></a><a class="code" href="classgbmath_1_1base__camera.htm#a50b027f79fe6688b892ab777898c16ec">00270</a>     <span class="keywordtype">float</span>                 <a class="code" href="classgbmath_1_1base__camera.htm#a50b027f79fe6688b892ab777898c16ec" title="Near plane.">m_fNearPlane</a>;           
+<a name="l00271"></a><a class="code" href="classgbmath_1_1base__camera.htm#aef9562f8436b6b6bb039b7d151b190f9">00271</a>     <span class="keywordtype">float</span>                 <a class="code" href="classgbmath_1_1base__camera.htm#aef9562f8436b6b6bb039b7d151b190f9" title="Far plane.">m_fFarPlane</a>;            
+<a name="l00272"></a>00272 
+<a name="l00273"></a><a class="code" href="classgbmath_1_1base__camera.htm#aba9d2e9a17ae89b686a300eb6f63d885">00273</a>     <span class="keywordtype">float</span>                 <a class="code" href="classgbmath_1_1base__camera.htm#aba9d2e9a17ae89b686a300eb6f63d885" title="Scaler for rotation.">m_fRotationScaler</a>;      
+<a name="l00274"></a><a class="code" href="classgbmath_1_1base__camera.htm#af264c5c91ba821ca6750c6bf786a92d6">00274</a>     <span class="keywordtype">float</span>                 <a class="code" href="classgbmath_1_1base__camera.htm#af264c5c91ba821ca6750c6bf786a92d6" title="Scaler for movement.">m_fMoveScaler</a>;          
+<a name="l00275"></a>00275 
+<a name="l00276"></a><a class="code" href="classgbmath_1_1base__camera.htm#a7ea61743c37a374ab7ab49f5e0a2592f">00276</a>     <span class="keywordtype">bool</span>                  <a class="code" href="classgbmath_1_1base__camera.htm#a7ea61743c37a374ab7ab49f5e0a2592f" title="Invert the pitch axis.">m_bInvertPitch</a>;         
+<a name="l00277"></a><a class="code" href="classgbmath_1_1base__camera.htm#a95b7bd0c76e36a22429447ef2a7054b6">00277</a>     <span class="keywordtype">bool</span>                  <a class="code" href="classgbmath_1_1base__camera.htm#a95b7bd0c76e36a22429447ef2a7054b6" title="If true, then the user can translate the camera/model.">m_bEnablePositionMovement</a>; 
+<a name="l00278"></a><a class="code" href="classgbmath_1_1base__camera.htm#a7338847ca3f5475b1db11925e6f0fff3">00278</a>     <span class="keywordtype">bool</span>                  <a class="code" href="classgbmath_1_1base__camera.htm#a7338847ca3f5475b1db11925e6f0fff3" title="If true, then camera can move in the y-axis.">m_bEnableYAxisMovement</a>; 
+<a name="l00279"></a>00279 
+<a name="l00280"></a><a class="code" href="classgbmath_1_1base__camera.htm#aab2da273edf396b0f73729ff7a4b6540">00280</a>     <span class="keywordtype">bool</span>                  <a class="code" href="classgbmath_1_1base__camera.htm#aab2da273edf396b0f73729ff7a4b6540" title="If true, then the camera will be clipped to the boundary.">m_bClipToBoundary</a>;      
+<a name="l00281"></a><a class="code" href="classgbmath_1_1base__camera.htm#adc1f46ca093c8a985c957f650b347ea3">00281</a>     <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>           <a class="code" href="classgbmath_1_1base__camera.htm#adc1f46ca093c8a985c957f650b347ea3" title="Min point in clip boundary.">m_vMinBoundary</a>;         
+<a name="l00282"></a><a class="code" href="classgbmath_1_1base__camera.htm#a53b5e108a6c60d43f75c8594fd46fea1">00282</a>     <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>           <a class="code" href="classgbmath_1_1base__camera.htm#a53b5e108a6c60d43f75c8594fd46fea1" title="Max point in clip boundary.">m_vMaxBoundary</a>;         
+<a name="l00283"></a>00283 
+<a name="l00284"></a><a class="code" href="classgbmath_1_1base__camera.htm#a5f8b67b8873603625ef1cf4ee6cee9b5">00284</a>         HWND <a class="code" href="classgbmath_1_1base__camera.htm#a5f8b67b8873603625ef1cf4ee6cee9b5">m_hwnd</a>;
+<a name="l00285"></a>00285 };
+<a name="l00286"></a>00286 <span class="comment">// end class</span>
 <a name="l00287"></a>00287 
-<a name="l00288"></a>00288 <span class="preprocessor">#endif // #ifdef WIN32</span>
-<a name="l00289"></a>00289 <span class="preprocessor"></span> 
+<a name="l00288"></a>00288 
+<a name="l00289"></a>00289 <span class="comment">//-------------------------------------------------------------------------</span>
+<a name="l00290"></a>00290  
+<a name="l00291"></a>00291 }
+<a name="l00292"></a>00292 
+<a name="l00293"></a>00293 
+<a name="l00294"></a>00294 <span class="preprocessor">#endif // #ifdef WIN32</span>
+<a name="l00295"></a>00295 <span class="preprocessor"></span> 
 </pre></div></div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -327,7 +332,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Aug 27 20:46:51 2011 for gbmath by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Mon Jan 30 15:53:19 2012 for gbmath by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

@@ -41,7 +41,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul>
       <li><a href="files.htm"><span>File&nbsp;List</span></a></li>
-      <li><a href="globals.htm"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
 <h1>model_view_camera.cpp</h1><a href="model__view__camera_8cpp.htm">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#pragma once</span>
@@ -55,25 +54,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00009"></a>00009 
 <a name="l00010"></a>00010 
 <a name="l00011"></a>00011 <span class="comment">//========================================================================</span>
-<a name="l00012"></a>00012 model_view_camera::model_view_camera()
+<a name="l00012"></a><a class="code" href="classgbmath_1_1model__view__camera.htm#a78a523f5db724afc0eeba1d7704a4bae">00012</a> <a class="code" href="classgbmath_1_1model__view__camera.htm#a78a523f5db724afc0eeba1d7704a4bae">model_view_camera::model_view_camera</a>()
 <a name="l00013"></a>00013 {
-<a name="l00014"></a>00014     m_mWorld.reset(); <span class="comment">// D 3 D X MatrixIdentity( m_mWorld );</span>
-<a name="l00015"></a>00015     m_mModelRot.reset(); <span class="comment">//  D 3 D X MatrixIdentity( m_mModelRot );</span>
-<a name="l00016"></a>00016     m_mModelLastRot.reset(); <span class="comment">// D 3 D X MatrixIdentity( m_mModelLastRot );    </span>
-<a name="l00017"></a>00017     m_mCameraRotLast.reset(); <span class="comment">// D 3 D X MatrixIdentity( m_mCameraRotLast );    </span>
-<a name="l00018"></a>00018     m_vModelCenter = vec3(0,0,0);
-<a name="l00019"></a>00019     m_fRadius    = 5.0f;
-<a name="l00020"></a>00020     m_fDefaultRadius = 5.0f;
-<a name="l00021"></a>00021     m_fMinRadius = 1.0f;
-<a name="l00022"></a>00022     m_fMaxRadius = FLT_MAX;
-<a name="l00023"></a>00023     m_bLimitPitch = <span class="keyword">false</span>;
-<a name="l00024"></a>00024     m_bEnablePositionMovement = <span class="keyword">false</span>;
-<a name="l00025"></a>00025     m_bAttachCameraToModel = <span class="keyword">false</span>;
+<a name="l00014"></a>00014     <a class="code" href="classgbmath_1_1model__view__camera.htm#a5bdf97bb0c68a63e0cb33919bc3a2582">m_mWorld</a>.<a class="code" href="structgbmath_1_1mat44.htm#ac9abc6d30c9f51a8a7b1dfaf3040a7a1" title="Set Identity.">reset</a>(); <span class="comment">// D 3 D X MatrixIdentity( m_mWorld );</span>
+<a name="l00015"></a>00015     <a class="code" href="classgbmath_1_1model__view__camera.htm#ac317b739b504861892f2b4a7d3c51aa2">m_mModelRot</a>.<a class="code" href="structgbmath_1_1mat44.htm#ac9abc6d30c9f51a8a7b1dfaf3040a7a1" title="Set Identity.">reset</a>(); <span class="comment">//  D 3 D X MatrixIdentity( m_mModelRot );</span>
+<a name="l00016"></a>00016     <a class="code" href="classgbmath_1_1model__view__camera.htm#a6c3bbd7d8d5e312782f5624502f98519">m_mModelLastRot</a>.<a class="code" href="structgbmath_1_1mat44.htm#ac9abc6d30c9f51a8a7b1dfaf3040a7a1" title="Set Identity.">reset</a>(); <span class="comment">// D 3 D X MatrixIdentity( m_mModelLastRot );    </span>
+<a name="l00017"></a>00017     <a class="code" href="classgbmath_1_1model__view__camera.htm#addb6f97182126b09c7181ba2120fd907">m_mCameraRotLast</a>.<a class="code" href="structgbmath_1_1mat44.htm#ac9abc6d30c9f51a8a7b1dfaf3040a7a1" title="Set Identity.">reset</a>(); <span class="comment">// D 3 D X MatrixIdentity( m_mCameraRotLast );    </span>
+<a name="l00018"></a>00018     <a class="code" href="classgbmath_1_1model__view__camera.htm#adb1f9086e9d8cdff5a8944dbcc1579c8">m_vModelCenter</a> = <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>(0,0,0);
+<a name="l00019"></a>00019     <a class="code" href="classgbmath_1_1model__view__camera.htm#aa045dfa9ef0b531fc2362bbc22f77bbd">m_fRadius</a>    = 5.0f;
+<a name="l00020"></a>00020     <a class="code" href="classgbmath_1_1model__view__camera.htm#a617d7c458af0dcb8c2198f92b5eb7054">m_fDefaultRadius</a> = 5.0f;
+<a name="l00021"></a>00021     <a class="code" href="classgbmath_1_1model__view__camera.htm#a06a7413bf2aef3798444f26a3268fb3b">m_fMinRadius</a> = 1.0f;
+<a name="l00022"></a>00022     <a class="code" href="classgbmath_1_1model__view__camera.htm#aa0b2d04d77d5044072044372e9add93a">m_fMaxRadius</a> = FLT_MAX;
+<a name="l00023"></a>00023     <a class="code" href="classgbmath_1_1model__view__camera.htm#a0740ac53a81b826bc1c170e6f07447cd">m_bLimitPitch</a> = <span class="keyword">false</span>;
+<a name="l00024"></a>00024     <a class="code" href="classgbmath_1_1base__camera.htm#a95b7bd0c76e36a22429447ef2a7054b6" title="If true, then the user can translate the camera/model.">m_bEnablePositionMovement</a> = <span class="keyword">false</span>;
+<a name="l00025"></a>00025     <a class="code" href="classgbmath_1_1model__view__camera.htm#a27c6ac534c8b458493af113449d8e63e">m_bAttachCameraToModel</a> = <span class="keyword">false</span>;
 <a name="l00026"></a>00026 
-<a name="l00027"></a>00027     m_nRotateModelButtonMask  = MOUSE_LEFT_BUTTON;
-<a name="l00028"></a>00028     m_nZoomButtonMask         = MOUSE_WHEEL;
-<a name="l00029"></a>00029     m_nRotateCameraButtonMask = MOUSE_RIGHT_BUTTON;
-<a name="l00030"></a>00030     m_bDragSinceLastUpdate    = <span class="keyword">true</span>;
+<a name="l00027"></a>00027     <a class="code" href="classgbmath_1_1model__view__camera.htm#afe6eed629886dbc8bc39be95795e1030">m_nRotateModelButtonMask</a>  = MOUSE_LEFT_BUTTON;
+<a name="l00028"></a>00028     <a class="code" href="classgbmath_1_1model__view__camera.htm#ad565ab9ebc8d40ac4b485a3253b3bc3c">m_nZoomButtonMask</a>         = MOUSE_WHEEL;
+<a name="l00029"></a>00029     <a class="code" href="classgbmath_1_1model__view__camera.htm#afc62587f67b2a1a2a4b34e435d6172c2">m_nRotateCameraButtonMask</a> = MOUSE_RIGHT_BUTTON;
+<a name="l00030"></a>00030     <a class="code" href="classgbmath_1_1model__view__camera.htm#a0c8062c7cf9b6fbe0e51323b29d3b000">m_bDragSinceLastUpdate</a>    = <span class="keyword">true</span>;
 <a name="l00031"></a>00031 }
 <a name="l00032"></a>00032 
 <a name="l00033"></a>00033 
@@ -83,216 +82,216 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00037"></a>00037 <span class="comment">// Update the view matrix &amp; the model&#39;s world matrix based </span>
 <a name="l00038"></a>00038 <span class="comment">//       on user input &amp; elapsed time</span>
 <a name="l00039"></a>00039 <span class="comment">//========================================================================</span>
-<a name="l00040"></a>00040 <span class="keywordtype">void</span> model_view_camera::frameMove( <span class="keywordtype">float</span> fElapsedTime )
+<a name="l00040"></a><a class="code" href="classgbmath_1_1model__view__camera.htm#acf7ec3cee8e19fd0c29415471f183d88">00040</a> <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1model__view__camera.htm#acf7ec3cee8e19fd0c29415471f183d88">model_view_camera::frameMove</a>( <span class="keywordtype">float</span> fElapsedTime )
 <a name="l00041"></a>00041 {
-<a name="l00042"></a>00042     <span class="keywordflow">if</span>( isKeyDown(m_aKeys[CAM_RESET]) )
-<a name="l00043"></a>00043         reset();
+<a name="l00042"></a>00042     <span class="keywordflow">if</span>( <a class="code" href="classgbmath_1_1base__camera.htm#abf9fa3313ad7f5316280dd6070e86c61">isKeyDown</a>(<a class="code" href="classgbmath_1_1base__camera.htm#a9ebe23052bc7279b2ade8bcf4f194c44" title="State of input - KEY_WAS_DOWN_MASK|KEY_IS_DOWN_MASK.">m_aKeys</a>[<a class="code" href="namespacegbmath.htm#ae406450c9f59f3c29cc3984161e35baaa75b15acaf736e2898d99e0b816b47702">CAM_RESET</a>]) )
+<a name="l00043"></a>00043         <a class="code" href="classgbmath_1_1model__view__camera.htm#aa8b645e6fcad82c14be2352509a1cc3c">reset</a>();
 <a name="l00044"></a>00044 
 <a name="l00045"></a>00045     <span class="comment">// If no dragged has happend since last time FrameMove is called,</span>
 <a name="l00046"></a>00046     <span class="comment">// and no camera key is held down, then no need to handle again.</span>
-<a name="l00047"></a>00047     <span class="keywordflow">if</span>( !m_bDragSinceLastUpdate &amp;&amp; 0 == m_cKeysDown )
+<a name="l00047"></a>00047     <span class="keywordflow">if</span>( !<a class="code" href="classgbmath_1_1model__view__camera.htm#a0c8062c7cf9b6fbe0e51323b29d3b000">m_bDragSinceLastUpdate</a> &amp;&amp; 0 == <a class="code" href="classgbmath_1_1base__camera.htm#a6af2149f94acf2c9a151777a32ef72c8" title="Number of camera keys that are down.">m_cKeysDown</a> )
 <a name="l00048"></a>00048         <span class="keywordflow">return</span>;
-<a name="l00049"></a>00049     m_bDragSinceLastUpdate = <span class="keyword">false</span>;
+<a name="l00049"></a>00049     <a class="code" href="classgbmath_1_1model__view__camera.htm#a0c8062c7cf9b6fbe0e51323b29d3b000">m_bDragSinceLastUpdate</a> = <span class="keyword">false</span>;
 <a name="l00050"></a>00050 
 <a name="l00051"></a>00051     <span class="comment">// Get keyboard/mouse/gamepad input</span>
-<a name="l00052"></a>00052     getInput( m_bEnablePositionMovement, m_nCurrentButtonMask != 0, <span class="keyword">true</span>, <span class="keyword">false</span> );
+<a name="l00052"></a>00052     <a class="code" href="classgbmath_1_1base__camera.htm#a3331d522be12fe661facb53b2b0f9292">getInput</a>( <a class="code" href="classgbmath_1_1base__camera.htm#a95b7bd0c76e36a22429447ef2a7054b6" title="If true, then the user can translate the camera/model.">m_bEnablePositionMovement</a>, <a class="code" href="classgbmath_1_1base__camera.htm#aea280e158e484398712f988fa2789c04" title="mask of which buttons are down">m_nCurrentButtonMask</a> != 0, <span class="keyword">true</span>, <span class="keyword">false</span> );
 <a name="l00053"></a>00053 
 <a name="l00054"></a>00054     <span class="comment">// Get amount of velocity based on the keyboard input and drag (if any)</span>
-<a name="l00055"></a>00055     updateVelocity( fElapsedTime );
+<a name="l00055"></a>00055     <a class="code" href="classgbmath_1_1base__camera.htm#af823bf9bc69fb7eadee85a2b4e17b08d">updateVelocity</a>( fElapsedTime );
 <a name="l00056"></a>00056 
 <a name="l00057"></a>00057     <span class="comment">// Simple euler method to calculate position delta</span>
-<a name="l00058"></a>00058     vec3 vPosDelta = m_vVelocity * fElapsedTime;
+<a name="l00058"></a>00058     <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a> vPosDelta = <a class="code" href="classgbmath_1_1base__camera.htm#aba20fc8ce1cc25677d9ead18cbcddf9e" title="Velocity of camera.">m_vVelocity</a> * fElapsedTime;
 <a name="l00059"></a>00059 
 <a name="l00060"></a>00060     <span class="comment">// Change the radius from the camera to the model based on wheel scrolling</span>
-<a name="l00061"></a>00061     <span class="keywordflow">if</span>( m_nMouseWheelDelta &amp;&amp; m_nZoomButtonMask == MOUSE_WHEEL )
-<a name="l00062"></a>00062         m_fRadius -= m_nMouseWheelDelta * m_fRadius * 0.1f;
-<a name="l00063"></a>00063     m_fRadius = __min( m_fMaxRadius, m_fRadius );
-<a name="l00064"></a>00064     m_fRadius = __max( m_fMinRadius, m_fRadius );
-<a name="l00065"></a>00065     m_nMouseWheelDelta = 0;
+<a name="l00061"></a>00061     <span class="keywordflow">if</span>( <a class="code" href="classgbmath_1_1base__camera.htm#a9900717f0106c2c77b2435394eee896c" title="Amount of middle wheel scroll (+/-).">m_nMouseWheelDelta</a> &amp;&amp; <a class="code" href="classgbmath_1_1model__view__camera.htm#ad565ab9ebc8d40ac4b485a3253b3bc3c">m_nZoomButtonMask</a> == MOUSE_WHEEL )
+<a name="l00062"></a>00062         <a class="code" href="classgbmath_1_1model__view__camera.htm#aa045dfa9ef0b531fc2362bbc22f77bbd">m_fRadius</a> -= <a class="code" href="classgbmath_1_1base__camera.htm#a9900717f0106c2c77b2435394eee896c" title="Amount of middle wheel scroll (+/-).">m_nMouseWheelDelta</a> * <a class="code" href="classgbmath_1_1model__view__camera.htm#aa045dfa9ef0b531fc2362bbc22f77bbd">m_fRadius</a> * 0.1f;
+<a name="l00063"></a>00063     <a class="code" href="classgbmath_1_1model__view__camera.htm#aa045dfa9ef0b531fc2362bbc22f77bbd">m_fRadius</a> = __min( <a class="code" href="classgbmath_1_1model__view__camera.htm#aa0b2d04d77d5044072044372e9add93a">m_fMaxRadius</a>, <a class="code" href="classgbmath_1_1model__view__camera.htm#aa045dfa9ef0b531fc2362bbc22f77bbd">m_fRadius</a> );
+<a name="l00064"></a>00064     <a class="code" href="classgbmath_1_1model__view__camera.htm#aa045dfa9ef0b531fc2362bbc22f77bbd">m_fRadius</a> = __max( <a class="code" href="classgbmath_1_1model__view__camera.htm#a06a7413bf2aef3798444f26a3268fb3b">m_fMinRadius</a>, <a class="code" href="classgbmath_1_1model__view__camera.htm#aa045dfa9ef0b531fc2362bbc22f77bbd">m_fRadius</a> );
+<a name="l00065"></a>00065     <a class="code" href="classgbmath_1_1base__camera.htm#a9900717f0106c2c77b2435394eee896c" title="Amount of middle wheel scroll (+/-).">m_nMouseWheelDelta</a> = 0;
 <a name="l00066"></a>00066 
 <a name="l00067"></a>00067     <span class="comment">// Get the inverse of the arcball&#39;s rotation matrix</span>
-<a name="l00068"></a>00068     mat44 mCameraRot;
+<a name="l00068"></a>00068     <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a> mCameraRot;
 <a name="l00069"></a>00069     <span class="comment">//D 3DXMatrixInverse( mCameraRot, NULL, m_ViewArcBall.getRotationMatrix() );</span>
-<a name="l00070"></a>00070          mCameraRot = m_ViewArcBall.getRotationMatrix().inverted();
+<a name="l00070"></a>00070          mCameraRot = <a class="code" href="classgbmath_1_1model__view__camera.htm#ae1b7763b72db034c9abd20f8423dc44a">m_ViewArcBall</a>.<a class="code" href="classgbmath_1_1arc__ball.htm#a9ba968111d251603db6119ac0be85800">getRotationMatrix</a>().<a class="code" href="structgbmath_1_1mat44.htm#a60f422b63e1e77d2b2487a1a18d123cf" title="Вернуть инвертированую.">inverted</a>();
 <a name="l00071"></a>00071 
 <a name="l00072"></a>00072 
 <a name="l00073"></a>00073     <span class="comment">// Transform vectors based on camera&#39;s rotation matrix</span>
-<a name="l00074"></a>00074     vec3 vWorldUp, vWorldAhead;
-<a name="l00075"></a>00075     vec3 vLocalUp    = vec3(0,1,0);
-<a name="l00076"></a>00076     vec3 vLocalAhead = vec3(0,0,1);
+<a name="l00074"></a>00074     <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a> vWorldUp, vWorldAhead;
+<a name="l00075"></a>00075     <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a> vLocalUp    = <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>(0,1,0);
+<a name="l00076"></a>00076     <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a> vLocalAhead = <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>(0,0,1);
 <a name="l00077"></a>00077 
 <a name="l00078"></a>00078 
 <a name="l00079"></a>00079    <span class="comment">// D 3DX Vec3TransformCoord( vWorldUp, vLocalUp, mCameraRot );</span>
 <a name="l00080"></a>00080          vWorldUp = vLocalUp;
-<a name="l00081"></a>00081          vWorldUp.transform_coord(mCameraRot);
+<a name="l00081"></a>00081          vWorldUp.<a class="code" href="structgbmath_1_1vec3.htm#a3d16520be0b3736dd38e533985e08ab2" title="Тарнсформировать по матрице m как координату...">transform_coord</a>(mCameraRot);
 <a name="l00082"></a>00082 
 <a name="l00083"></a>00083 
 <a name="l00084"></a>00084    <span class="comment">// D 3DX Vec3TransformCoord( vWorldAhead, vLocalAhead, mCameraRot );</span>
 <a name="l00085"></a>00085                 vWorldAhead =   vLocalAhead;
-<a name="l00086"></a>00086                 vWorldAhead.transform_coord(mCameraRot);
+<a name="l00086"></a>00086                 vWorldAhead.<a class="code" href="structgbmath_1_1vec3.htm#a3d16520be0b3736dd38e533985e08ab2" title="Тарнсформировать по матрице m как координату...">transform_coord</a>(mCameraRot);
 <a name="l00087"></a>00087 
 <a name="l00088"></a>00088 
 <a name="l00089"></a>00089 
 <a name="l00090"></a>00090     <span class="comment">// Transform the position delta by the camera&#39;s rotation </span>
-<a name="l00091"></a>00091     vec3 vPosDeltaWorld;
+<a name="l00091"></a>00091     <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a> vPosDeltaWorld;
 <a name="l00092"></a>00092     <span class="comment">//D 3DX Vec3TransformCoord( vPosDeltaWorld, vPosDelta, mCameraRot );</span>
 <a name="l00093"></a>00093                 vPosDeltaWorld = vPosDelta;
-<a name="l00094"></a>00094                 vPosDeltaWorld.transform_coord(mCameraRot);
+<a name="l00094"></a>00094                 vPosDeltaWorld.<a class="code" href="structgbmath_1_1vec3.htm#a3d16520be0b3736dd38e533985e08ab2" title="Тарнсформировать по матрице m как координату...">transform_coord</a>(mCameraRot);
 <a name="l00095"></a>00095 
 <a name="l00096"></a>00096 
 <a name="l00097"></a>00097 
 <a name="l00098"></a>00098     <span class="comment">// Move the lookAt position </span>
-<a name="l00099"></a>00099     m_vLookAt += vPosDeltaWorld;
-<a name="l00100"></a>00100     <span class="keywordflow">if</span>( m_bClipToBoundary )
-<a name="l00101"></a>00101         constrainToBoundary( &amp;m_vLookAt );
+<a name="l00099"></a>00099     <a class="code" href="classgbmath_1_1base__camera.htm#a8c3cb34c834141d899e9592e744336af" title="LookAt position.">m_vLookAt</a> += vPosDeltaWorld;
+<a name="l00100"></a>00100     <span class="keywordflow">if</span>( <a class="code" href="classgbmath_1_1base__camera.htm#aab2da273edf396b0f73729ff7a4b6540" title="If true, then the camera will be clipped to the boundary.">m_bClipToBoundary</a> )
+<a name="l00101"></a>00101         <a class="code" href="classgbmath_1_1base__camera.htm#ae51de5ae028f5ba8a3242c1fa86e0bd9">constrainToBoundary</a>( &amp;<a class="code" href="classgbmath_1_1base__camera.htm#a8c3cb34c834141d899e9592e744336af" title="LookAt position.">m_vLookAt</a> );
 <a name="l00102"></a>00102 
 <a name="l00103"></a>00103     <span class="comment">// Update the eye point based on a radius away from the lookAt position</span>
-<a name="l00104"></a>00104     m_vEye = m_vLookAt - vWorldAhead * m_fRadius;
+<a name="l00104"></a>00104     <a class="code" href="classgbmath_1_1base__camera.htm#a3402041a0c7684c8d07fb351b810c815" title="Camera eye position.">m_vEye</a> = <a class="code" href="classgbmath_1_1base__camera.htm#a8c3cb34c834141d899e9592e744336af" title="LookAt position.">m_vLookAt</a> - vWorldAhead * <a class="code" href="classgbmath_1_1model__view__camera.htm#aa045dfa9ef0b531fc2362bbc22f77bbd">m_fRadius</a>;
 <a name="l00105"></a>00105 
 <a name="l00106"></a>00106     <span class="comment">// Update the view matrix</span>
 <a name="l00107"></a>00107  
-<a name="l00108"></a>00108                 <span class="keywordflow">if</span>(CAMERA_LEFT_HANDLE)
+<a name="l00108"></a>00108                 <span class="keywordflow">if</span>(<a class="code" href="classgbmath_1_1base__camera.htm#ae5b615e5f57bccc20b4fe2b6448dd6de">m_bcameraLeftHandle</a>)
 <a name="l00109"></a>00109                 {
-<a name="l00110"></a>00110                         m_mView.setViewLookAtLH(m_vEye, m_vLookAt, vWorldUp);
+<a name="l00110"></a>00110                         <a class="code" href="classgbmath_1_1base__camera.htm#af2f74cefd4322a10bcd785e5b2d12999" title="View matrix.">m_mView</a>.<a class="code" href="structgbmath_1_1mat44.htm#a93273d8a93456c81c6f884a955a8b333" title="Построение левосторонней матрицы вида. ПРОВЕ�...">setViewLookAtLH</a>(<a class="code" href="classgbmath_1_1base__camera.htm#a3402041a0c7684c8d07fb351b810c815" title="Camera eye position.">m_vEye</a>, <a class="code" href="classgbmath_1_1base__camera.htm#a8c3cb34c834141d899e9592e744336af" title="LookAt position.">m_vLookAt</a>, vWorldUp);
 <a name="l00111"></a>00111                 }
 <a name="l00112"></a>00112                 <span class="keywordflow">else</span>
 <a name="l00113"></a>00113                 {
-<a name="l00114"></a>00114                         m_mView.setViewLookAtRH(m_vEye, m_vLookAt, vWorldUp);
+<a name="l00114"></a>00114                         <a class="code" href="classgbmath_1_1base__camera.htm#af2f74cefd4322a10bcd785e5b2d12999" title="View matrix.">m_mView</a>.<a class="code" href="structgbmath_1_1mat44.htm#a49e3dca47267c84017586af61a17ada6" title="Построение правосторонней матрицы вида. ПРОВЕ�...">setViewLookAtRH</a>(<a class="code" href="classgbmath_1_1base__camera.htm#a3402041a0c7684c8d07fb351b810c815" title="Camera eye position.">m_vEye</a>, <a class="code" href="classgbmath_1_1base__camera.htm#a8c3cb34c834141d899e9592e744336af" title="LookAt position.">m_vLookAt</a>, vWorldUp);
 <a name="l00115"></a>00115                 }
 <a name="l00116"></a>00116 
 <a name="l00117"></a>00117 
-<a name="l00118"></a>00118     mat44 mInvView;
+<a name="l00118"></a>00118     <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a> mInvView;
 <a name="l00119"></a>00119     <span class="comment">//D 3DXMatrixInverse( mInvView, NULL, m_mView );</span>
-<a name="l00120"></a>00120                 mInvView = m_mView.inverted();
+<a name="l00120"></a>00120                 mInvView = <a class="code" href="classgbmath_1_1base__camera.htm#af2f74cefd4322a10bcd785e5b2d12999" title="View matrix.">m_mView</a>.<a class="code" href="structgbmath_1_1mat44.htm#a60f422b63e1e77d2b2487a1a18d123cf" title="Вернуть инвертированую.">inverted</a>();
 <a name="l00121"></a>00121 
-<a name="l00122"></a>00122     mInvView._41 = mInvView._42 = mInvView._43 = 0;
+<a name="l00122"></a>00122     mInvView.<a class="code" href="structgbmath_1_1mat44.htm#a455efa123492579000a3f1ab054d86af">_41</a> = mInvView.<a class="code" href="structgbmath_1_1mat44.htm#a2701cfe76461e9722ac37cc8afac457e">_42</a> = mInvView.<a class="code" href="structgbmath_1_1mat44.htm#a47300a3aa5bb132868de2a94fe79d6e3">_43</a> = 0;
 <a name="l00123"></a>00123 
 <a name="l00124"></a>00124 
-<a name="l00125"></a>00125     mat44 mModelLastRotInv;
+<a name="l00125"></a>00125     <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a> mModelLastRotInv;
 <a name="l00126"></a>00126     <span class="comment">//D 3DXMatrixInverse(mModelLastRotInv, NULL, m_mModelLastRot);</span>
-<a name="l00127"></a>00127                 mModelLastRotInv =      m_mModelLastRot.inverted();
+<a name="l00127"></a>00127                 mModelLastRotInv =      <a class="code" href="classgbmath_1_1model__view__camera.htm#a6c3bbd7d8d5e312782f5624502f98519">m_mModelLastRot</a>.<a class="code" href="structgbmath_1_1mat44.htm#a60f422b63e1e77d2b2487a1a18d123cf" title="Вернуть инвертированую.">inverted</a>();
 <a name="l00128"></a>00128 
 <a name="l00129"></a>00129     <span class="comment">// Accumulate the delta of the arcball&#39;s rotation in view space.</span>
 <a name="l00130"></a>00130     <span class="comment">// Note that per-frame delta rotations could be problematic over long periods of time.</span>
-<a name="l00131"></a>00131     mat44 mModelRot;
-<a name="l00132"></a>00132     mModelRot = m_WorldArcBall.getRotationMatrix();
-<a name="l00133"></a>00133     m_mModelRot *= m_mView * mModelLastRotInv * mModelRot * mInvView;
+<a name="l00131"></a>00131     <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a> mModelRot;
+<a name="l00132"></a>00132     mModelRot = <a class="code" href="classgbmath_1_1model__view__camera.htm#a9e98a87898db8430838d7663771bcbb7">m_WorldArcBall</a>.<a class="code" href="classgbmath_1_1arc__ball.htm#a9ba968111d251603db6119ac0be85800">getRotationMatrix</a>();
+<a name="l00133"></a>00133     <a class="code" href="classgbmath_1_1model__view__camera.htm#ac317b739b504861892f2b4a7d3c51aa2">m_mModelRot</a> *= <a class="code" href="classgbmath_1_1base__camera.htm#af2f74cefd4322a10bcd785e5b2d12999" title="View matrix.">m_mView</a> * mModelLastRotInv * mModelRot * mInvView;
 <a name="l00134"></a>00134 
-<a name="l00135"></a>00135     <span class="keywordflow">if</span>( m_ViewArcBall.isBeingDragged() &amp;&amp; m_bAttachCameraToModel &amp;&amp; !isKeyDown(m_aKeys[CAM_CONTROLDOWN]) )
+<a name="l00135"></a>00135     <span class="keywordflow">if</span>( <a class="code" href="classgbmath_1_1model__view__camera.htm#ae1b7763b72db034c9abd20f8423dc44a">m_ViewArcBall</a>.<a class="code" href="classgbmath_1_1arc__ball.htm#adf208dad433c24739c3ac55605bedd66">isBeingDragged</a>() &amp;&amp; <a class="code" href="classgbmath_1_1model__view__camera.htm#a27c6ac534c8b458493af113449d8e63e">m_bAttachCameraToModel</a> &amp;&amp; !<a class="code" href="classgbmath_1_1base__camera.htm#abf9fa3313ad7f5316280dd6070e86c61">isKeyDown</a>(<a class="code" href="classgbmath_1_1base__camera.htm#a9ebe23052bc7279b2ade8bcf4f194c44" title="State of input - KEY_WAS_DOWN_MASK|KEY_IS_DOWN_MASK.">m_aKeys</a>[<a class="code" href="namespacegbmath.htm#ae406450c9f59f3c29cc3984161e35baaa923629868e024d05d851bea04125d34f">CAM_CONTROLDOWN</a>]) )
 <a name="l00136"></a>00136     {
 <a name="l00137"></a>00137 
 <a name="l00138"></a>00138         <span class="comment">// Attach camera to model by inverse of the model rotation</span>
-<a name="l00139"></a>00139         mat44 mCameraLastRotInv;
+<a name="l00139"></a>00139         <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a> mCameraLastRotInv;
 <a name="l00140"></a>00140         <span class="comment">//D 3DXMatrixInverse(mCameraLastRotInv, NULL, m_mCameraRotLast);</span>
-<a name="l00141"></a>00141                   mCameraLastRotInv = m_mCameraRotLast.inverted();
+<a name="l00141"></a>00141                   mCameraLastRotInv = <a class="code" href="classgbmath_1_1model__view__camera.htm#addb6f97182126b09c7181ba2120fd907">m_mCameraRotLast</a>.<a class="code" href="structgbmath_1_1mat44.htm#a60f422b63e1e77d2b2487a1a18d123cf" title="Вернуть инвертированую.">inverted</a>();
 <a name="l00142"></a>00142 
-<a name="l00143"></a>00143         mat44 mCameraRotDelta = mCameraLastRotInv * mCameraRot; <span class="comment">// local to world matrix</span>
-<a name="l00144"></a>00144         m_mModelRot *= mCameraRotDelta;
+<a name="l00143"></a>00143         <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a> mCameraRotDelta = mCameraLastRotInv * mCameraRot; <span class="comment">// local to world matrix</span>
+<a name="l00144"></a>00144         <a class="code" href="classgbmath_1_1model__view__camera.htm#ac317b739b504861892f2b4a7d3c51aa2">m_mModelRot</a> *= mCameraRotDelta;
 <a name="l00145"></a>00145     }
-<a name="l00146"></a>00146     m_mCameraRotLast = mCameraRot; 
+<a name="l00146"></a>00146     <a class="code" href="classgbmath_1_1model__view__camera.htm#addb6f97182126b09c7181ba2120fd907">m_mCameraRotLast</a> = mCameraRot; 
 <a name="l00147"></a>00147 
-<a name="l00148"></a>00148     m_mModelLastRot = mModelRot;
+<a name="l00148"></a>00148     <a class="code" href="classgbmath_1_1model__view__camera.htm#a6c3bbd7d8d5e312782f5624502f98519">m_mModelLastRot</a> = mModelRot;
 <a name="l00149"></a>00149 
 <a name="l00150"></a>00150     <span class="comment">// Since we&#39;re accumulating delta rotations, we need to orthonormalize </span>
 <a name="l00151"></a>00151     <span class="comment">// the matrix to prevent eventual matrix skew</span>
-<a name="l00152"></a>00152     vec3* pXBasis = (vec3*) &amp;m_mModelRot._11;
-<a name="l00153"></a>00153     vec3* pYBasis = (vec3*) &amp;m_mModelRot._21;
-<a name="l00154"></a>00154     vec3* pZBasis = (vec3*) &amp;m_mModelRot._31;
+<a name="l00152"></a>00152     <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>* pXBasis = (<a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>*) &amp;<a class="code" href="classgbmath_1_1model__view__camera.htm#ac317b739b504861892f2b4a7d3c51aa2">m_mModelRot</a>.<a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a>;
+<a name="l00153"></a>00153     <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>* pYBasis = (<a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>*) &amp;<a class="code" href="classgbmath_1_1model__view__camera.htm#ac317b739b504861892f2b4a7d3c51aa2">m_mModelRot</a>.<a class="code" href="structgbmath_1_1mat44.htm#ae3126d9cf5d065ee9d24b3de96a5f17f">_21</a>;
+<a name="l00154"></a>00154     <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>* pZBasis = (<a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>*) &amp;<a class="code" href="classgbmath_1_1model__view__camera.htm#ac317b739b504861892f2b4a7d3c51aa2">m_mModelRot</a>.<a class="code" href="structgbmath_1_1mat44.htm#aabf304b5ece7ff9d2a006ca0467a3b27">_31</a>;
 <a name="l00155"></a>00155 
 <a name="l00156"></a>00156     <span class="comment">//D 3DX Vec3Normalize( *pXBasis, *pXBasis );</span>
-<a name="l00157"></a>00157          pXBasis-&gt;normalize();
+<a name="l00157"></a>00157          pXBasis-&gt;<a class="code" href="structgbmath_1_1vec3.htm#a3206299b452ccb51fb816a29e8db7739">normalize</a>();
 <a name="l00158"></a>00158 
 <a name="l00159"></a>00159 <span class="comment">//    D 3DX Vec3Cross( *pYBasis, *pZBasis, *pXBasis );</span>
-<a name="l00160"></a>00160          *pYBasis = pZBasis-&gt;cross(*pXBasis);
+<a name="l00160"></a>00160          *pYBasis = pZBasis-&gt;<a class="code" href="structgbmath_1_1vec3.htm#a676f91144861b0fbf851b9fa83a4cd49">cross</a>(*pXBasis);
 <a name="l00161"></a>00161 
 <a name="l00162"></a>00162     <span class="comment">// D 3DX Vec3Normalize( *pYBasis, *pYBasis );</span>
-<a name="l00163"></a>00163           pYBasis-&gt;normalize();
+<a name="l00163"></a>00163           pYBasis-&gt;<a class="code" href="structgbmath_1_1vec3.htm#a3206299b452ccb51fb816a29e8db7739">normalize</a>();
 <a name="l00164"></a>00164 
 <a name="l00165"></a>00165   <span class="comment">//  D 3DX Vec3Cross( *pZBasis, *pXBasis, *pYBasis );</span>
-<a name="l00166"></a>00166     *pZBasis = pXBasis-&gt;cross(  *pYBasis  );
+<a name="l00166"></a>00166     *pZBasis = pXBasis-&gt;<a class="code" href="structgbmath_1_1vec3.htm#a676f91144861b0fbf851b9fa83a4cd49">cross</a>(  *pYBasis  );
 <a name="l00167"></a>00167 
 <a name="l00168"></a>00168 
 <a name="l00169"></a>00169     <span class="comment">// Translate the rotation matrix to the same position as the lookAt position</span>
-<a name="l00170"></a>00170     m_mModelRot._41 = m_vLookAt.x;
-<a name="l00171"></a>00171     m_mModelRot._42 = m_vLookAt.y;
-<a name="l00172"></a>00172     m_mModelRot._43 = m_vLookAt.z;
+<a name="l00170"></a>00170     <a class="code" href="classgbmath_1_1model__view__camera.htm#ac317b739b504861892f2b4a7d3c51aa2">m_mModelRot</a>.<a class="code" href="structgbmath_1_1mat44.htm#a455efa123492579000a3f1ab054d86af">_41</a> = <a class="code" href="classgbmath_1_1base__camera.htm#a8c3cb34c834141d899e9592e744336af" title="LookAt position.">m_vLookAt</a>.<a class="code" href="structgbmath_1_1vec3.htm#a5fb2cf8734338da1ad7b4251a3bde292">x</a>;
+<a name="l00171"></a>00171     <a class="code" href="classgbmath_1_1model__view__camera.htm#ac317b739b504861892f2b4a7d3c51aa2">m_mModelRot</a>.<a class="code" href="structgbmath_1_1mat44.htm#a2701cfe76461e9722ac37cc8afac457e">_42</a> = <a class="code" href="classgbmath_1_1base__camera.htm#a8c3cb34c834141d899e9592e744336af" title="LookAt position.">m_vLookAt</a>.<a class="code" href="structgbmath_1_1vec3.htm#aa096d36a3c46c4224f0195f70eb580ec">y</a>;
+<a name="l00172"></a>00172     <a class="code" href="classgbmath_1_1model__view__camera.htm#ac317b739b504861892f2b4a7d3c51aa2">m_mModelRot</a>.<a class="code" href="structgbmath_1_1mat44.htm#a47300a3aa5bb132868de2a94fe79d6e3">_43</a> = <a class="code" href="classgbmath_1_1base__camera.htm#a8c3cb34c834141d899e9592e744336af" title="LookAt position.">m_vLookAt</a>.<a class="code" href="structgbmath_1_1vec3.htm#a546e6c38e7c49102f064d130ed3475ee">z</a>;
 <a name="l00173"></a>00173 
 <a name="l00174"></a>00174     <span class="comment">// Translate world matrix so its at the center of the model</span>
-<a name="l00175"></a>00175     mat44 mTrans;
+<a name="l00175"></a>00175     <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a> mTrans;
 <a name="l00176"></a>00176     <span class="comment">//D 3DXMatrixTranslation( mTrans, -m_vModelCenter.x, -m_vModelCenter.y, -m_vModelCenter.z );</span>
-<a name="l00177"></a>00177          mTrans.setTranslation( -m_vModelCenter.x, -m_vModelCenter.y, -m_vModelCenter.z   );
+<a name="l00177"></a>00177          mTrans.<a class="code" href="structgbmath_1_1mat44.htm#af8e1759531d7a78d1c73c314d6afffbf" title="Построение матрицы сдвига (позиции) . ПРОВЕРЕНО!...">setTranslation</a>( -<a class="code" href="classgbmath_1_1model__view__camera.htm#adb1f9086e9d8cdff5a8944dbcc1579c8">m_vModelCenter</a>.<a class="code" href="structgbmath_1_1vec3.htm#a5fb2cf8734338da1ad7b4251a3bde292">x</a>, -<a class="code" href="classgbmath_1_1model__view__camera.htm#adb1f9086e9d8cdff5a8944dbcc1579c8">m_vModelCenter</a>.<a class="code" href="structgbmath_1_1vec3.htm#aa096d36a3c46c4224f0195f70eb580ec">y</a>, -<a class="code" href="classgbmath_1_1model__view__camera.htm#adb1f9086e9d8cdff5a8944dbcc1579c8">m_vModelCenter</a>.<a class="code" href="structgbmath_1_1vec3.htm#a546e6c38e7c49102f064d130ed3475ee">z</a>   );
 <a name="l00178"></a>00178 
-<a name="l00179"></a>00179     m_mWorld = mTrans * m_mModelRot;
+<a name="l00179"></a>00179     <a class="code" href="classgbmath_1_1model__view__camera.htm#a5bdf97bb0c68a63e0cb33919bc3a2582">m_mWorld</a> = mTrans * <a class="code" href="classgbmath_1_1model__view__camera.htm#ac317b739b504861892f2b4a7d3c51aa2">m_mModelRot</a>;
 <a name="l00180"></a>00180 }
 <a name="l00181"></a>00181 
 <a name="l00182"></a>00182 
-<a name="l00183"></a>00183 <span class="keywordtype">void</span> model_view_camera::setDragRect( RECT &amp;rc )
+<a name="l00183"></a><a class="code" href="classgbmath_1_1model__view__camera.htm#adaebb8a712cc2ab8ec96bb0389732f8e">00183</a> <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1model__view__camera.htm#adaebb8a712cc2ab8ec96bb0389732f8e">model_view_camera::setDragRect</a>( RECT &amp;rc )
 <a name="l00184"></a>00184 {
-<a name="l00185"></a>00185     base_camera::setDragRect( rc );
+<a name="l00185"></a>00185     <a class="code" href="classgbmath_1_1model__view__camera.htm#adaebb8a712cc2ab8ec96bb0389732f8e">base_camera::setDragRect</a>( rc );
 <a name="l00186"></a>00186 
-<a name="l00187"></a>00187     m_WorldArcBall.setOffset( rc.left, rc.top );
-<a name="l00188"></a>00188     m_ViewArcBall.setOffset( rc.left, rc.top );
-<a name="l00189"></a>00189     setWindow( rc.right - rc.left, rc.bottom - rc.top );
+<a name="l00187"></a>00187     <a class="code" href="classgbmath_1_1model__view__camera.htm#a9e98a87898db8430838d7663771bcbb7">m_WorldArcBall</a>.<a class="code" href="classgbmath_1_1arc__ball.htm#aff415370075ad8e898da0e10d3d0a2cc">setOffset</a>( rc.left, rc.top );
+<a name="l00188"></a>00188     <a class="code" href="classgbmath_1_1model__view__camera.htm#ae1b7763b72db034c9abd20f8423dc44a">m_ViewArcBall</a>.<a class="code" href="classgbmath_1_1arc__ball.htm#aff415370075ad8e898da0e10d3d0a2cc">setOffset</a>( rc.left, rc.top );
+<a name="l00189"></a>00189     <a class="code" href="classgbmath_1_1model__view__camera.htm#a99fba53404c020efd4d663e454a795f6">setWindow</a>( rc.right - rc.left, rc.bottom - rc.top );
 <a name="l00190"></a>00190 }
 <a name="l00191"></a>00191 
 <a name="l00192"></a>00192 
 <a name="l00193"></a>00193 <span class="comment">//========================================================================</span>
 <a name="l00194"></a>00194 <span class="comment">// Reset the camera&#39;s position back to the default</span>
 <a name="l00195"></a>00195 <span class="comment">//========================================================================</span>
-<a name="l00196"></a>00196 <span class="keywordtype">void</span> model_view_camera::reset()
+<a name="l00196"></a><a class="code" href="classgbmath_1_1model__view__camera.htm#aa8b645e6fcad82c14be2352509a1cc3c">00196</a> <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1model__view__camera.htm#aa8b645e6fcad82c14be2352509a1cc3c">model_view_camera::reset</a>()
 <a name="l00197"></a>00197 {
-<a name="l00198"></a>00198     base_camera::reset();
+<a name="l00198"></a>00198     <a class="code" href="classgbmath_1_1model__view__camera.htm#aa8b645e6fcad82c14be2352509a1cc3c">base_camera::reset</a>();
 <a name="l00199"></a>00199 
-<a name="l00200"></a>00200   m_mWorld.reset(); <span class="comment">//  D 3 DXMatrixIdentity( m_mWorld );</span>
-<a name="l00201"></a>00201   m_mModelRot.reset(); <span class="comment">//  D 3 DXMatrixIdentity( m_mModelRot );</span>
-<a name="l00202"></a>00202   m_mModelLastRot.reset(); <span class="comment">//  D 3 DXMatrixIdentity( m_mModelLastRot );    </span>
-<a name="l00203"></a>00203   m_mCameraRotLast.reset(); <span class="comment">//  D 3 DXMatrixIdentity( m_mCameraRotLast );    </span>
+<a name="l00200"></a>00200   <a class="code" href="classgbmath_1_1model__view__camera.htm#a5bdf97bb0c68a63e0cb33919bc3a2582">m_mWorld</a>.<a class="code" href="structgbmath_1_1mat44.htm#ac9abc6d30c9f51a8a7b1dfaf3040a7a1" title="Set Identity.">reset</a>(); <span class="comment">//  D 3 DXMatrixIdentity( m_mWorld );</span>
+<a name="l00201"></a>00201   <a class="code" href="classgbmath_1_1model__view__camera.htm#ac317b739b504861892f2b4a7d3c51aa2">m_mModelRot</a>.<a class="code" href="structgbmath_1_1mat44.htm#ac9abc6d30c9f51a8a7b1dfaf3040a7a1" title="Set Identity.">reset</a>(); <span class="comment">//  D 3 DXMatrixIdentity( m_mModelRot );</span>
+<a name="l00202"></a>00202   <a class="code" href="classgbmath_1_1model__view__camera.htm#a6c3bbd7d8d5e312782f5624502f98519">m_mModelLastRot</a>.<a class="code" href="structgbmath_1_1mat44.htm#ac9abc6d30c9f51a8a7b1dfaf3040a7a1" title="Set Identity.">reset</a>(); <span class="comment">//  D 3 DXMatrixIdentity( m_mModelLastRot );    </span>
+<a name="l00203"></a>00203   <a class="code" href="classgbmath_1_1model__view__camera.htm#addb6f97182126b09c7181ba2120fd907">m_mCameraRotLast</a>.<a class="code" href="structgbmath_1_1mat44.htm#ac9abc6d30c9f51a8a7b1dfaf3040a7a1" title="Set Identity.">reset</a>(); <span class="comment">//  D 3 DXMatrixIdentity( m_mCameraRotLast );    </span>
 <a name="l00204"></a>00204 
-<a name="l00205"></a>00205     m_fRadius = m_fDefaultRadius;
-<a name="l00206"></a>00206     m_WorldArcBall.reset();
-<a name="l00207"></a>00207     m_ViewArcBall.reset();
+<a name="l00205"></a>00205     <a class="code" href="classgbmath_1_1model__view__camera.htm#aa045dfa9ef0b531fc2362bbc22f77bbd">m_fRadius</a> = <a class="code" href="classgbmath_1_1model__view__camera.htm#a617d7c458af0dcb8c2198f92b5eb7054">m_fDefaultRadius</a>;
+<a name="l00206"></a>00206     <a class="code" href="classgbmath_1_1model__view__camera.htm#a9e98a87898db8430838d7663771bcbb7">m_WorldArcBall</a>.<a class="code" href="classgbmath_1_1arc__ball.htm#aa299d5831aed409d5a6ae4df2fc5c39c">reset</a>();
+<a name="l00207"></a>00207     <a class="code" href="classgbmath_1_1model__view__camera.htm#ae1b7763b72db034c9abd20f8423dc44a">m_ViewArcBall</a>.<a class="code" href="classgbmath_1_1arc__ball.htm#aa299d5831aed409d5a6ae4df2fc5c39c">reset</a>();
 <a name="l00208"></a>00208 }
 <a name="l00209"></a>00209 
 <a name="l00210"></a>00210 
 <a name="l00211"></a>00211 <span class="comment">//========================================================================</span>
 <a name="l00212"></a>00212 <span class="comment">// Override for setting the view parameters</span>
 <a name="l00213"></a>00213 <span class="comment">//========================================================================</span>
-<a name="l00214"></a>00214 <span class="keywordtype">void</span> model_view_camera::setViewParams( <span class="keyword">const</span> vec3&amp; pvEyePt, <span class="keyword">const</span> vec3&amp; pvLookatPt )
+<a name="l00214"></a><a class="code" href="classgbmath_1_1model__view__camera.htm#ab70bfbf9a34476b2fa20fbeecea9f039">00214</a> <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1model__view__camera.htm#ab70bfbf9a34476b2fa20fbeecea9f039">model_view_camera::setViewParams</a>( <span class="keyword">const</span> <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>&amp; pvEyePt, <span class="keyword">const</span> <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>&amp; pvLookatPt )
 <a name="l00215"></a>00215 {
-<a name="l00216"></a>00216     base_camera::setViewParams( pvEyePt, pvLookatPt );
+<a name="l00216"></a>00216     <a class="code" href="classgbmath_1_1model__view__camera.htm#ab70bfbf9a34476b2fa20fbeecea9f039">base_camera::setViewParams</a>( pvEyePt, pvLookatPt );
 <a name="l00217"></a>00217 
 <a name="l00218"></a>00218     <span class="comment">// Propogate changes to the member arcball</span>
-<a name="l00219"></a>00219     Quaternion quat;
-<a name="l00220"></a>00220     mat44 mRotation;
-<a name="l00221"></a>00221     vec3 vUp(0,1,0);
+<a name="l00219"></a>00219     <a class="code" href="classgbmath_1_1_quaternion.htm" title="standard quaternion.">Quaternion</a> quat;
+<a name="l00220"></a>00220     <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a> mRotation;
+<a name="l00221"></a>00221     <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a> vUp(0,1,0);
 <a name="l00222"></a>00222   
 <a name="l00223"></a>00223 
-<a name="l00224"></a>00224                 <span class="keywordflow">if</span> (CAMERA_LEFT_HANDLE)
+<a name="l00224"></a>00224                 <span class="keywordflow">if</span> (<a class="code" href="classgbmath_1_1base__camera.htm#ae5b615e5f57bccc20b4fe2b6448dd6de">m_bcameraLeftHandle</a>)
 <a name="l00225"></a>00225                 {
-<a name="l00226"></a>00226                         mRotation.setViewLookAtLH(  pvEyePt, pvLookatPt, vUp    );
+<a name="l00226"></a>00226                         mRotation.<a class="code" href="structgbmath_1_1mat44.htm#a93273d8a93456c81c6f884a955a8b333" title="Построение левосторонней матрицы вида. ПРОВЕ�...">setViewLookAtLH</a>(  pvEyePt, pvLookatPt, vUp    );
 <a name="l00227"></a>00227                 }
 <a name="l00228"></a>00228                 <span class="keywordflow">else</span>
 <a name="l00229"></a>00229                 {
-<a name="l00230"></a>00230                         mRotation.setViewLookAtRH(  pvEyePt, pvLookatPt, vUp    );
+<a name="l00230"></a>00230                         mRotation.<a class="code" href="structgbmath_1_1mat44.htm#a49e3dca47267c84017586af61a17ada6" title="Построение правосторонней матрицы вида. ПРОВЕ�...">setViewLookAtRH</a>(  pvEyePt, pvLookatPt, vUp    );
 <a name="l00231"></a>00231                 }
 <a name="l00232"></a>00232 
 <a name="l00233"></a>00233 
 <a name="l00234"></a>00234    <span class="comment">// D 3DX QuaternionRotationMatrix( quat, mRotation );</span>
-<a name="l00235"></a>00235   quat.setRotationMatrix(mRotation);
+<a name="l00235"></a>00235   quat.<a class="code" href="classgbmath_1_1_quaternion.htm#a08abd49fa41bda4037c9230a78e62724" title="Построение из матрицы поворота.">setRotationMatrix</a>(mRotation);
 <a name="l00236"></a>00236 
-<a name="l00237"></a>00237     m_ViewArcBall.setQuatNow( quat );
+<a name="l00237"></a>00237     <a class="code" href="classgbmath_1_1model__view__camera.htm#ae1b7763b72db034c9abd20f8423dc44a">m_ViewArcBall</a>.<a class="code" href="classgbmath_1_1arc__ball.htm#ac54a2e8add982b7d5afe97a56355d7b4">setQuatNow</a>( quat );
 <a name="l00238"></a>00238 
 <a name="l00239"></a>00239     <span class="comment">// Set the radius according to the distance</span>
-<a name="l00240"></a>00240     vec3 vEyeToPoint;
+<a name="l00240"></a>00240     <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a> vEyeToPoint;
 <a name="l00241"></a>00241     <span class="comment">//D 3DXVec3Subtract( vEyeToPoint, pvLookatPt, pvEyePt );</span>
 <a name="l00242"></a>00242 <span class="comment">//#pragma message(&quot;ks777::devhelp::model_view_camera::setViewParams  �������� �����������&quot;   __FILE__)</span>
 <a name="l00243"></a>00243           vEyeToPoint =  pvEyePt -   pvLookatPt;
 <a name="l00244"></a>00244 
 <a name="l00245"></a>00245           <span class="comment">//D 3DX Vec3Length( vEyeToPoint   );</span>
-<a name="l00246"></a>00246     setRadius( vEyeToPoint.length()  );   
+<a name="l00246"></a>00246     <a class="code" href="classgbmath_1_1model__view__camera.htm#a8e01272d4fedcf57f9902fdb67e7e3c5">setRadius</a>( vEyeToPoint.<a class="code" href="structgbmath_1_1vec3.htm#a30effe274e32c5af662df9477221982d">length</a>()  );   
 <a name="l00247"></a>00247 
 <a name="l00248"></a>00248     <span class="comment">// View information changed. FrameMove should be called.</span>
-<a name="l00249"></a>00249     m_bDragSinceLastUpdate = <span class="keyword">true</span>;
+<a name="l00249"></a>00249     <a class="code" href="classgbmath_1_1model__view__camera.htm#a0c8062c7cf9b6fbe0e51323b29d3b000">m_bDragSinceLastUpdate</a> = <span class="keyword">true</span>;
 <a name="l00250"></a>00250 }
 <a name="l00251"></a>00251 
 <a name="l00252"></a>00252 
@@ -300,66 +299,66 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00254"></a>00254 <span class="comment">//========================================================================</span>
 <a name="l00255"></a>00255 <span class="comment">// Call this from your message proc so this class can handle window messages</span>
 <a name="l00256"></a>00256 <span class="comment">//========================================================================</span>
-<a name="l00257"></a>00257 LRESULT model_view_camera::handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
+<a name="l00257"></a><a class="code" href="classgbmath_1_1model__view__camera.htm#a5eac3fa8dfe946e1805abb8bf4287510">00257</a> LRESULT <a class="code" href="classgbmath_1_1model__view__camera.htm#a5eac3fa8dfe946e1805abb8bf4287510">model_view_camera::handleMessages</a>( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
 <a name="l00258"></a>00258 {
-<a name="l00259"></a>00259     base_camera::handleMessages( hWnd, uMsg, wParam, lParam );
+<a name="l00259"></a>00259     <a class="code" href="classgbmath_1_1model__view__camera.htm#a5eac3fa8dfe946e1805abb8bf4287510">base_camera::handleMessages</a>( hWnd, uMsg, wParam, lParam );
 <a name="l00260"></a>00260 
-<a name="l00261"></a>00261     <span class="keywordflow">if</span>( ( (uMsg == WM_LBUTTONDOWN || uMsg == WM_LBUTTONDBLCLK ) &amp;&amp; m_nRotateModelButtonMask &amp; MOUSE_LEFT_BUTTON) ||
-<a name="l00262"></a>00262         ( (uMsg == WM_MBUTTONDOWN || uMsg == WM_MBUTTONDBLCLK ) &amp;&amp; m_nRotateModelButtonMask &amp; MOUSE_MIDDLE_BUTTON) ||
-<a name="l00263"></a>00263         ( (uMsg == WM_RBUTTONDOWN || uMsg == WM_RBUTTONDBLCLK ) &amp;&amp; m_nRotateModelButtonMask &amp; MOUSE_RIGHT_BUTTON) )
+<a name="l00261"></a>00261     <span class="keywordflow">if</span>( ( (uMsg == WM_LBUTTONDOWN || uMsg == WM_LBUTTONDBLCLK ) &amp;&amp; <a class="code" href="classgbmath_1_1model__view__camera.htm#afe6eed629886dbc8bc39be95795e1030">m_nRotateModelButtonMask</a> &amp; MOUSE_LEFT_BUTTON) ||
+<a name="l00262"></a>00262         ( (uMsg == WM_MBUTTONDOWN || uMsg == WM_MBUTTONDBLCLK ) &amp;&amp; <a class="code" href="classgbmath_1_1model__view__camera.htm#afe6eed629886dbc8bc39be95795e1030">m_nRotateModelButtonMask</a> &amp; MOUSE_MIDDLE_BUTTON) ||
+<a name="l00263"></a>00263         ( (uMsg == WM_RBUTTONDOWN || uMsg == WM_RBUTTONDBLCLK ) &amp;&amp; <a class="code" href="classgbmath_1_1model__view__camera.htm#afe6eed629886dbc8bc39be95795e1030">m_nRotateModelButtonMask</a> &amp; MOUSE_RIGHT_BUTTON) )
 <a name="l00264"></a>00264     {
 <a name="l00265"></a>00265         <span class="keywordtype">int</span> iMouseX = (short)LOWORD(lParam);
 <a name="l00266"></a>00266         <span class="keywordtype">int</span> iMouseY = (short)HIWORD(lParam);
-<a name="l00267"></a>00267         m_WorldArcBall.onBegin( iMouseX, iMouseY );
+<a name="l00267"></a>00267         <a class="code" href="classgbmath_1_1model__view__camera.htm#a9e98a87898db8430838d7663771bcbb7">m_WorldArcBall</a>.<a class="code" href="classgbmath_1_1arc__ball.htm#a10706f3b05577331b29efd4eed387d04" title="Call these from client and use GetRotationMatrix() to read new rotation matrix.">onBegin</a>( iMouseX, iMouseY );
 <a name="l00268"></a>00268     }
 <a name="l00269"></a>00269 
-<a name="l00270"></a>00270     <span class="keywordflow">if</span>( ( (uMsg == WM_LBUTTONDOWN || uMsg == WM_LBUTTONDBLCLK ) &amp;&amp; m_nRotateCameraButtonMask &amp; MOUSE_LEFT_BUTTON) ||
-<a name="l00271"></a>00271         ( (uMsg == WM_MBUTTONDOWN || uMsg == WM_MBUTTONDBLCLK ) &amp;&amp; m_nRotateCameraButtonMask &amp; MOUSE_MIDDLE_BUTTON) ||
-<a name="l00272"></a>00272         ( (uMsg == WM_RBUTTONDOWN || uMsg == WM_RBUTTONDBLCLK ) &amp;&amp; m_nRotateCameraButtonMask &amp; MOUSE_RIGHT_BUTTON) )
+<a name="l00270"></a>00270     <span class="keywordflow">if</span>( ( (uMsg == WM_LBUTTONDOWN || uMsg == WM_LBUTTONDBLCLK ) &amp;&amp; <a class="code" href="classgbmath_1_1model__view__camera.htm#afc62587f67b2a1a2a4b34e435d6172c2">m_nRotateCameraButtonMask</a> &amp; MOUSE_LEFT_BUTTON) ||
+<a name="l00271"></a>00271         ( (uMsg == WM_MBUTTONDOWN || uMsg == WM_MBUTTONDBLCLK ) &amp;&amp; <a class="code" href="classgbmath_1_1model__view__camera.htm#afc62587f67b2a1a2a4b34e435d6172c2">m_nRotateCameraButtonMask</a> &amp; MOUSE_MIDDLE_BUTTON) ||
+<a name="l00272"></a>00272         ( (uMsg == WM_RBUTTONDOWN || uMsg == WM_RBUTTONDBLCLK ) &amp;&amp; <a class="code" href="classgbmath_1_1model__view__camera.htm#afc62587f67b2a1a2a4b34e435d6172c2">m_nRotateCameraButtonMask</a> &amp; MOUSE_RIGHT_BUTTON) )
 <a name="l00273"></a>00273     {
 <a name="l00274"></a>00274         <span class="keywordtype">int</span> iMouseX = (short)LOWORD(lParam);
 <a name="l00275"></a>00275         <span class="keywordtype">int</span> iMouseY = (short)HIWORD(lParam);
-<a name="l00276"></a>00276         m_ViewArcBall.onBegin( iMouseX, iMouseY );
+<a name="l00276"></a>00276         <a class="code" href="classgbmath_1_1model__view__camera.htm#ae1b7763b72db034c9abd20f8423dc44a">m_ViewArcBall</a>.<a class="code" href="classgbmath_1_1arc__ball.htm#a10706f3b05577331b29efd4eed387d04" title="Call these from client and use GetRotationMatrix() to read new rotation matrix.">onBegin</a>( iMouseX, iMouseY );
 <a name="l00277"></a>00277     }
 <a name="l00278"></a>00278 
 <a name="l00279"></a>00279     <span class="keywordflow">if</span>( uMsg == WM_MOUSEMOVE )
 <a name="l00280"></a>00280     {
 <a name="l00281"></a>00281         <span class="keywordtype">int</span> iMouseX = (short)LOWORD(lParam);
 <a name="l00282"></a>00282         <span class="keywordtype">int</span> iMouseY = (short)HIWORD(lParam);
-<a name="l00283"></a>00283         m_WorldArcBall.onMove( iMouseX, iMouseY );
-<a name="l00284"></a>00284         m_ViewArcBall.onMove( iMouseX, iMouseY );
+<a name="l00283"></a>00283         <a class="code" href="classgbmath_1_1model__view__camera.htm#a9e98a87898db8430838d7663771bcbb7">m_WorldArcBall</a>.<a class="code" href="classgbmath_1_1arc__ball.htm#a7a05d0ae8778c12ec8dd064b14eba8e1">onMove</a>( iMouseX, iMouseY );
+<a name="l00284"></a>00284         <a class="code" href="classgbmath_1_1model__view__camera.htm#ae1b7763b72db034c9abd20f8423dc44a">m_ViewArcBall</a>.<a class="code" href="classgbmath_1_1arc__ball.htm#a7a05d0ae8778c12ec8dd064b14eba8e1">onMove</a>( iMouseX, iMouseY );
 <a name="l00285"></a>00285     }
 <a name="l00286"></a>00286 
-<a name="l00287"></a>00287     <span class="keywordflow">if</span>( (uMsg == WM_LBUTTONUP &amp;&amp; m_nRotateModelButtonMask &amp; MOUSE_LEFT_BUTTON) ||
-<a name="l00288"></a>00288         (uMsg == WM_MBUTTONUP &amp;&amp; m_nRotateModelButtonMask &amp; MOUSE_MIDDLE_BUTTON) ||
-<a name="l00289"></a>00289         (uMsg == WM_RBUTTONUP &amp;&amp; m_nRotateModelButtonMask &amp; MOUSE_RIGHT_BUTTON) )
+<a name="l00287"></a>00287     <span class="keywordflow">if</span>( (uMsg == WM_LBUTTONUP &amp;&amp; <a class="code" href="classgbmath_1_1model__view__camera.htm#afe6eed629886dbc8bc39be95795e1030">m_nRotateModelButtonMask</a> &amp; MOUSE_LEFT_BUTTON) ||
+<a name="l00288"></a>00288         (uMsg == WM_MBUTTONUP &amp;&amp; <a class="code" href="classgbmath_1_1model__view__camera.htm#afe6eed629886dbc8bc39be95795e1030">m_nRotateModelButtonMask</a> &amp; MOUSE_MIDDLE_BUTTON) ||
+<a name="l00289"></a>00289         (uMsg == WM_RBUTTONUP &amp;&amp; <a class="code" href="classgbmath_1_1model__view__camera.htm#afe6eed629886dbc8bc39be95795e1030">m_nRotateModelButtonMask</a> &amp; MOUSE_RIGHT_BUTTON) )
 <a name="l00290"></a>00290     {
-<a name="l00291"></a>00291         m_WorldArcBall.onEnd();
+<a name="l00291"></a>00291         <a class="code" href="classgbmath_1_1model__view__camera.htm#a9e98a87898db8430838d7663771bcbb7">m_WorldArcBall</a>.<a class="code" href="classgbmath_1_1arc__ball.htm#ad773b07f41e6b9a1fefca6166edad4ad">onEnd</a>();
 <a name="l00292"></a>00292     }
 <a name="l00293"></a>00293 
-<a name="l00294"></a>00294     <span class="keywordflow">if</span>( (uMsg == WM_LBUTTONUP &amp;&amp; m_nRotateCameraButtonMask &amp; MOUSE_LEFT_BUTTON) ||
-<a name="l00295"></a>00295         (uMsg == WM_MBUTTONUP &amp;&amp; m_nRotateCameraButtonMask &amp; MOUSE_MIDDLE_BUTTON) ||
-<a name="l00296"></a>00296         (uMsg == WM_RBUTTONUP &amp;&amp; m_nRotateCameraButtonMask &amp; MOUSE_RIGHT_BUTTON) )
+<a name="l00294"></a>00294     <span class="keywordflow">if</span>( (uMsg == WM_LBUTTONUP &amp;&amp; <a class="code" href="classgbmath_1_1model__view__camera.htm#afc62587f67b2a1a2a4b34e435d6172c2">m_nRotateCameraButtonMask</a> &amp; MOUSE_LEFT_BUTTON) ||
+<a name="l00295"></a>00295         (uMsg == WM_MBUTTONUP &amp;&amp; <a class="code" href="classgbmath_1_1model__view__camera.htm#afc62587f67b2a1a2a4b34e435d6172c2">m_nRotateCameraButtonMask</a> &amp; MOUSE_MIDDLE_BUTTON) ||
+<a name="l00296"></a>00296         (uMsg == WM_RBUTTONUP &amp;&amp; <a class="code" href="classgbmath_1_1model__view__camera.htm#afc62587f67b2a1a2a4b34e435d6172c2">m_nRotateCameraButtonMask</a> &amp; MOUSE_RIGHT_BUTTON) )
 <a name="l00297"></a>00297     {
-<a name="l00298"></a>00298         m_ViewArcBall.onEnd();
+<a name="l00298"></a>00298         <a class="code" href="classgbmath_1_1model__view__camera.htm#ae1b7763b72db034c9abd20f8423dc44a">m_ViewArcBall</a>.<a class="code" href="classgbmath_1_1arc__ball.htm#ad773b07f41e6b9a1fefca6166edad4ad">onEnd</a>();
 <a name="l00299"></a>00299     }
 <a name="l00300"></a>00300 
 <a name="l00301"></a>00301     <span class="keywordflow">if</span>( uMsg == WM_CAPTURECHANGED )
 <a name="l00302"></a>00302     {
 <a name="l00303"></a>00303         <span class="keywordflow">if</span>( (HWND)lParam != hWnd )
 <a name="l00304"></a>00304         {
-<a name="l00305"></a>00305             <span class="keywordflow">if</span>( (m_nRotateModelButtonMask &amp; MOUSE_LEFT_BUTTON) ||
-<a name="l00306"></a>00306                 (m_nRotateModelButtonMask &amp; MOUSE_MIDDLE_BUTTON) ||
-<a name="l00307"></a>00307                 (m_nRotateModelButtonMask &amp; MOUSE_RIGHT_BUTTON) )
+<a name="l00305"></a>00305             <span class="keywordflow">if</span>( (<a class="code" href="classgbmath_1_1model__view__camera.htm#afe6eed629886dbc8bc39be95795e1030">m_nRotateModelButtonMask</a> &amp; MOUSE_LEFT_BUTTON) ||
+<a name="l00306"></a>00306                 (<a class="code" href="classgbmath_1_1model__view__camera.htm#afe6eed629886dbc8bc39be95795e1030">m_nRotateModelButtonMask</a> &amp; MOUSE_MIDDLE_BUTTON) ||
+<a name="l00307"></a>00307                 (<a class="code" href="classgbmath_1_1model__view__camera.htm#afe6eed629886dbc8bc39be95795e1030">m_nRotateModelButtonMask</a> &amp; MOUSE_RIGHT_BUTTON) )
 <a name="l00308"></a>00308             {
-<a name="l00309"></a>00309                 m_WorldArcBall.onEnd();
+<a name="l00309"></a>00309                 <a class="code" href="classgbmath_1_1model__view__camera.htm#a9e98a87898db8430838d7663771bcbb7">m_WorldArcBall</a>.<a class="code" href="classgbmath_1_1arc__ball.htm#ad773b07f41e6b9a1fefca6166edad4ad">onEnd</a>();
 <a name="l00310"></a>00310             }
 <a name="l00311"></a>00311         
-<a name="l00312"></a>00312             <span class="keywordflow">if</span>( (m_nRotateCameraButtonMask &amp; MOUSE_LEFT_BUTTON) ||
-<a name="l00313"></a>00313                 (m_nRotateCameraButtonMask &amp; MOUSE_MIDDLE_BUTTON) ||
-<a name="l00314"></a>00314                 (m_nRotateCameraButtonMask &amp; MOUSE_RIGHT_BUTTON) )
+<a name="l00312"></a>00312             <span class="keywordflow">if</span>( (<a class="code" href="classgbmath_1_1model__view__camera.htm#afc62587f67b2a1a2a4b34e435d6172c2">m_nRotateCameraButtonMask</a> &amp; MOUSE_LEFT_BUTTON) ||
+<a name="l00313"></a>00313                 (<a class="code" href="classgbmath_1_1model__view__camera.htm#afc62587f67b2a1a2a4b34e435d6172c2">m_nRotateCameraButtonMask</a> &amp; MOUSE_MIDDLE_BUTTON) ||
+<a name="l00314"></a>00314                 (<a class="code" href="classgbmath_1_1model__view__camera.htm#afc62587f67b2a1a2a4b34e435d6172c2">m_nRotateCameraButtonMask</a> &amp; MOUSE_RIGHT_BUTTON) )
 <a name="l00315"></a>00315             {
-<a name="l00316"></a>00316                 m_ViewArcBall.onEnd();
+<a name="l00316"></a>00316                 <a class="code" href="classgbmath_1_1model__view__camera.htm#ae1b7763b72db034c9abd20f8423dc44a">m_ViewArcBall</a>.<a class="code" href="classgbmath_1_1arc__ball.htm#ad773b07f41e6b9a1fefca6166edad4ad">onEnd</a>();
 <a name="l00317"></a>00317             }
 <a name="l00318"></a>00318         }
 <a name="l00319"></a>00319     }
@@ -376,7 +375,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00330"></a>00330         uMsg == WM_MOUSEWHEEL ||
 <a name="l00331"></a>00331         uMsg == WM_MOUSEMOVE )
 <a name="l00332"></a>00332     {
-<a name="l00333"></a>00333         m_bDragSinceLastUpdate = <span class="keyword">true</span>;
+<a name="l00333"></a>00333         <a class="code" href="classgbmath_1_1model__view__camera.htm#a0c8062c7cf9b6fbe0e51323b29d3b000">m_bDragSinceLastUpdate</a> = <span class="keyword">true</span>;
 <a name="l00334"></a>00334     }
 <a name="l00335"></a>00335 
 <a name="l00336"></a>00336     <span class="keywordflow">return</span> FALSE;
@@ -393,7 +392,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -402,7 +401,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Aug 27 20:46:52 2011 for gbmath by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Mon Jan 30 15:53:20 2012 for gbmath by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

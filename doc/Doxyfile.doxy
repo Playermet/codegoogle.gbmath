@@ -653,7 +653,8 @@ EXCLUDE                = . \
                          ../ext_doc \
                          ../Lesson01_opengl \
                          ../note \
-                         ../vc_obj
+                         ../vc_obj \
+                         ../.svn
 
 # The EXCLUDE_SYMLINKS tag can be used select whether or not files or 
 # directories that are symbolic links (a Unix filesystem feature) are excluded 

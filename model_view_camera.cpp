@@ -105,7 +105,7 @@ void model_view_camera::frameMove( float fElapsedTime )
 
     // Update the view matrix
  
-		if(CAMERA_LEFT_HANDLE)
+		if(m_bcameraLeftHandle)
 		{
 			m_mView.setViewLookAtLH(m_vEye, m_vLookAt, vWorldUp);
 		}
@@ -221,7 +221,7 @@ void model_view_camera::setViewParams( const vec3& pvEyePt, const vec3& pvLookat
     vec3 vUp(0,1,0);
   
 
-		if (CAMERA_LEFT_HANDLE)
+		if (m_bcameraLeftHandle)
 		{
 			mRotation.setViewLookAtLH(  pvEyePt, pvLookatPt, vUp    );
 		}

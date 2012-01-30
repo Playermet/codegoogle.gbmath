@@ -41,7 +41,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul>
       <li><a href="files.htm"><span>File&nbsp;List</span></a></li>
-      <li><a href="globals.htm"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
 <h1>mat44.h</h1><a href="mat44_8h.htm">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 ﻿
@@ -116,9 +115,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00077"></a>00077 
 <a name="l00078"></a>00078 <span class="preprocessor">#ifdef _D3D9_H_</span>
 <a name="l00079"></a>00079 <span class="preprocessor"></span>
-<a name="l00080"></a>00080                         <span class="keyword">inline</span> operator D3DMATRIX*()   { <span class="keywordflow">return</span> (D3DMATRIX*)&amp;<a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a>; }
-<a name="l00081"></a>00081                         <span class="keyword">inline</span> operator const D3DMATRIX*()<span class="keyword"> const  </span>{ <span class="keywordflow">return</span> (D3DMATRIX*)&amp;<a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a>; }
-<a name="l00082"></a>00082                         <span class="keyword">inline</span> operator const D3DMATRIX()<span class="keyword"> const</span>
+<a name="l00080"></a><a class="code" href="structgbmath_1_1mat44.htm#a7a54cdc54d0bad510de06559d47dfcfa">00080</a>                         <span class="keyword">inline</span> <a class="code" href="structgbmath_1_1mat44.htm#a7a54cdc54d0bad510de06559d47dfcfa">operator D3DMATRIX*</a>()   { <span class="keywordflow">return</span> (D3DMATRIX*)&amp;<a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a>; }
+<a name="l00081"></a><a class="code" href="structgbmath_1_1mat44.htm#a0bab75077b307e84d84b6045af404d6f">00081</a>                         <span class="keyword">inline</span> <a class="code" href="structgbmath_1_1mat44.htm#a0bab75077b307e84d84b6045af404d6f">operator const D3DMATRIX*</a>()<span class="keyword"> const  </span>{ <span class="keywordflow">return</span> (D3DMATRIX*)&amp;<a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a>; }
+<a name="l00082"></a><a class="code" href="structgbmath_1_1mat44.htm#ae90a744c50d58719ab7484638e0c773d">00082</a>                         <span class="keyword">inline</span> <a class="code" href="structgbmath_1_1mat44.htm#ae90a744c50d58719ab7484638e0c773d">operator const D3DMATRIX</a>()<span class="keyword"> const</span>
 <a name="l00083"></a>00083 <span class="keyword">                        </span>{
 <a name="l00084"></a>00084                            D3DMATRIX res;
 <a name="l00085"></a>00085                            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c=0;c&lt;4; c++)
@@ -133,7 +132,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00094"></a>00094                         }
 <a name="l00095"></a>00095 
 <a name="l00096"></a>00096 
-<a name="l00097"></a>00097                         <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="structgbmath_1_1mat44.htm#a57f385d46626b19fd68afcf64d8e7c33">operator = </a>(<span class="keyword">const</span> D3DMATRIX&amp; m)
+<a name="l00097"></a><a class="code" href="structgbmath_1_1mat44.htm#a81b50009ae2e93b1c257783ab80a106d">00097</a>                         <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="structgbmath_1_1mat44.htm#a81b50009ae2e93b1c257783ab80a106d">operator = </a>(<span class="keyword">const</span> D3DMATRIX&amp; m)
 <a name="l00098"></a>00098                         {
 <a name="l00099"></a>00099                                 <a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a> = m._11;
 <a name="l00100"></a>00100                                 <a class="code" href="structgbmath_1_1mat44.htm#ae487a7a18dc991d17b5de87334728e6c">_12</a> = m._12;
@@ -161,9 +160,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00122"></a>00122 
 <a name="l00123"></a>00123 
 <a name="l00124"></a>00124 <span class="preprocessor">#ifdef __D3DX9MATH_H__</span>
-<a name="l00125"></a>00125 <span class="preprocessor"></span>                        <span class="keyword">inline</span> operator D3DXMATRIX*()   { <span class="keywordflow">return</span> (D3DXMATRIX*)&amp;<a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a>; }
-<a name="l00126"></a>00126                         <span class="keyword">inline</span> operator const D3DXMATRIX*()<span class="keyword"> const  </span>{ <span class="keywordflow">return</span> (D3DXMATRIX*)&amp;<a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a>; }
-<a name="l00127"></a>00127                         <span class="keyword">inline</span> operator const D3DXMATRIX()<span class="keyword"> const</span>
+<a name="l00125"></a><a class="code" href="structgbmath_1_1mat44.htm#ae3817ac9c0a8067dcc9bbafcc392ae63">00125</a> <span class="preprocessor"></span>                        <span class="keyword">inline</span> <a class="code" href="structgbmath_1_1mat44.htm#ae3817ac9c0a8067dcc9bbafcc392ae63">operator D3DXMATRIX*</a>()   { <span class="keywordflow">return</span> (D3DXMATRIX*)&amp;<a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a>; }
+<a name="l00126"></a><a class="code" href="structgbmath_1_1mat44.htm#aca9b4bb5b182bf854700c26a661bb7d4">00126</a>                         <span class="keyword">inline</span> <a class="code" href="structgbmath_1_1mat44.htm#aca9b4bb5b182bf854700c26a661bb7d4">operator const D3DXMATRIX*</a>()<span class="keyword"> const  </span>{ <span class="keywordflow">return</span> (D3DXMATRIX*)&amp;<a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a>; }
+<a name="l00127"></a><a class="code" href="structgbmath_1_1mat44.htm#a6d0392117f428344f16b4902a8ce0374">00127</a>                         <span class="keyword">inline</span> <a class="code" href="structgbmath_1_1mat44.htm#a6d0392117f428344f16b4902a8ce0374">operator const D3DXMATRIX</a>()<span class="keyword"> const</span>
 <a name="l00128"></a>00128 <span class="keyword">                        </span>{
 <a name="l00129"></a>00129                            D3DXMATRIX res;
 <a name="l00130"></a>00130                            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c=0;c&lt;4; c++)
@@ -176,7 +175,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00137"></a>00137                            <span class="keywordflow">return</span> res;
 <a name="l00138"></a>00138                         }
 <a name="l00139"></a>00139 
-<a name="l00140"></a>00140                         <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="structgbmath_1_1mat44.htm#a57f385d46626b19fd68afcf64d8e7c33">operator = </a>(<span class="keyword">const</span> D3DXMATRIX&amp; m)
+<a name="l00140"></a><a class="code" href="structgbmath_1_1mat44.htm#a35199bc7386c09decc3b7b17a7342c1b">00140</a>                         <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="structgbmath_1_1mat44.htm#a81b50009ae2e93b1c257783ab80a106d">operator = </a>(<span class="keyword">const</span> D3DXMATRIX&amp; m)
 <a name="l00141"></a>00141                         {
 <a name="l00142"></a>00142                            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c=0;c&lt;4; c++)
 <a name="l00143"></a>00143                            {
@@ -192,7 +191,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00153"></a>00153 <span class="preprocessor">#endif // __D3DX9MATH_H__</span>
 <a name="l00154"></a>00154 <span class="preprocessor"></span>
 <a name="l00155"></a>00155 
-<a name="l00156"></a><a class="code" href="structgbmath_1_1mat44.htm#a57f385d46626b19fd68afcf64d8e7c33">00156</a>                         <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="structgbmath_1_1mat44.htm#a57f385d46626b19fd68afcf64d8e7c33">operator  = </a>(<span class="keyword">const</span> <span class="keywordtype">float</span>* pfArray)
+<a name="l00156"></a><a class="code" href="structgbmath_1_1mat44.htm#a57f385d46626b19fd68afcf64d8e7c33">00156</a>                         <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="structgbmath_1_1mat44.htm#a81b50009ae2e93b1c257783ab80a106d">operator  = </a>(<span class="keyword">const</span> <span class="keywordtype">float</span>* pfArray)
 <a name="l00157"></a>00157                         {
 <a name="l00158"></a>00158                                 <a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a> = pfArray[ 0];
 <a name="l00159"></a>00159                                 <a class="code" href="structgbmath_1_1mat44.htm#ae487a7a18dc991d17b5de87334728e6c">_12</a> = pfArray[ 1];
@@ -886,8 +885,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00895"></a>00895 
 <a name="l00897"></a><a class="code" href="structgbmath_1_1mat44.htm#afe4c032d74366de0d8f6cd735ebddf73">00897</a>                         <span class="keyword">inline</span>  <span class="keywordtype">void</span> <a class="code" href="structgbmath_1_1mat44.htm#afe4c032d74366de0d8f6cd735ebddf73" title="Построение левосторонней матрицы вида по направлению...">setViewDirLH</a>(<span class="keyword">const</span> <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>&amp; eye, <span class="keyword">const</span> <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>&amp; dir, <span class="keyword">const</span> <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>&amp; up)
 <a name="l00898"></a>00898                         {
-<a name="l00899"></a>00899 <span class="preprocessor">                #pragma message (&quot;KS777 MATH::MAT44  need check setViewDirLH&quot; __FILE__ )</span>
-<a name="l00900"></a>00900 <span class="preprocessor"></span>
+<a name="l00899"></a>00899                 
+<a name="l00900"></a>00900 
 <a name="l00901"></a>00901                                 <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a> dirn = dir.<a class="code" href="structgbmath_1_1vec3.htm#a6328ece15cb87465dce7d15b9c8bdc6b" title="a normalized">normalized</a>();
 <a name="l00902"></a>00902                                 <span class="keyword">const</span> <span class="keywordtype">float</span> flen = eye.<a class="code" href="structgbmath_1_1vec3.htm#a30effe274e32c5af662df9477221982d">length</a>();
 <a name="l00903"></a>00903                                 dirn.<a class="code" href="structgbmath_1_1vec3.htm#a5fb2cf8734338da1ad7b4251a3bde292">x</a> += flen;
@@ -899,8 +898,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00909"></a>00909 
 <a name="l00911"></a><a class="code" href="structgbmath_1_1mat44.htm#aab9df358e1bb28e19cfd50ecad70df32">00911</a>                         <span class="keyword">inline</span>  <span class="keywordtype">void</span> <a class="code" href="structgbmath_1_1mat44.htm#aab9df358e1bb28e19cfd50ecad70df32" title="Построение правосторонней матрицы вида по направлени�...">setViewDirRH</a>(<span class="keyword">const</span> <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>&amp; eye, <span class="keyword">const</span> <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>&amp; dir, <span class="keyword">const</span> <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a>&amp; up)
 <a name="l00912"></a>00912                         {
-<a name="l00913"></a>00913 <span class="preprocessor">                                #pragma message (&quot;KS777 MATH::MAT44 warn  need check setViewDirRH&quot; __FILE__ )</span>
-<a name="l00914"></a>00914 <span class="preprocessor"></span>
+<a name="l00913"></a>00913                                 
+<a name="l00914"></a>00914 
 <a name="l00915"></a>00915                                 <a class="code" href="structgbmath_1_1vec3.htm" title="3d-base vector. Corrected by operators epislon">vec3</a> to = dir.<a class="code" href="structgbmath_1_1vec3.htm#a6328ece15cb87465dce7d15b9c8bdc6b" title="a normalized">normalized</a>();
 <a name="l00916"></a>00916                                 <span class="keyword">const</span> <span class="keywordtype">float</span> flen = eye.<a class="code" href="structgbmath_1_1vec3.htm#a30effe274e32c5af662df9477221982d">length</a>();
 <a name="l00917"></a>00917                                 to.<a class="code" href="structgbmath_1_1vec3.htm#a5fb2cf8734338da1ad7b4251a3bde292">x</a> += flen;
@@ -915,16 +914,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00926"></a>00926 
 <a name="l00927"></a>00927 <span class="preprocessor">#if ( defined GB_OPENGL  &amp;&amp; defined __GL_H__ )</span>
 <a name="l00928"></a>00928 <span class="preprocessor"></span>
-<a name="l00930"></a>00930                         <span class="keyword">inline</span> <span class="keywordtype">void</span> glMul()  { glMultMatrixf( (GLfloat*)&amp;<a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a>  ); }
+<a name="l00930"></a><a class="code" href="structgbmath_1_1mat44.htm#a5249334ebaa6d827f7e9ee882b9a383b">00930</a>                         <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="structgbmath_1_1mat44.htm#a5249334ebaa6d827f7e9ee882b9a383b" title="Старый способ перемножения матрицы с текущей...">glMul</a>()  { glMultMatrixf( (GLfloat*)&amp;<a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a>  ); }
 <a name="l00931"></a>00931 
-<a name="l00933"></a>00933                         <span class="keyword">inline</span> <span class="keywordtype">void</span> glLoad() { glLoadMatrixf( (GLfloat*)&amp;<a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a>  ); }
+<a name="l00933"></a><a class="code" href="structgbmath_1_1mat44.htm#aa3ca8172c5b070b0cc25bbf65ff712b6">00933</a>                         <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="structgbmath_1_1mat44.htm#aa3ca8172c5b070b0cc25bbf65ff712b6" title="Старый способ загрузки матрицы в OpenGL.">glLoad</a>() { glLoadMatrixf( (GLfloat*)&amp;<a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a>  ); }
 <a name="l00934"></a>00934 
-<a name="l00936"></a>00936                         <span class="keyword">inline</span> <span class="keywordtype">void</span> glGetProjection()
+<a name="l00936"></a><a class="code" href="structgbmath_1_1mat44.htm#a2319d7f50ec58635b7aec6f5b7313498">00936</a>                         <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="structgbmath_1_1mat44.htm#a2319d7f50ec58635b7aec6f5b7313498" title="Загрузить из контекста OpenGL проекционную матрицу...">glGetProjection</a>()
 <a name="l00937"></a>00937                         {
 <a name="l00938"></a>00938                                 glGetFloatv(GL_PROJECTION_MATRIX, &amp;<a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a>);
 <a name="l00939"></a>00939                         }
 <a name="l00940"></a>00940 
-<a name="l00942"></a>00942                         <span class="keyword">inline</span> <span class="keywordtype">void</span> glGetModelView()
+<a name="l00942"></a><a class="code" href="structgbmath_1_1mat44.htm#a7264aee90ec5348cdcfa18381238360b">00942</a>                         <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="structgbmath_1_1mat44.htm#a7264aee90ec5348cdcfa18381238360b" title="Загрузить из контекста OpenGL модель-видовую (WORLD...">glGetModelView</a>()
 <a name="l00943"></a>00943                         {
 <a name="l00944"></a>00944                                 glGetFloatv(GL_MODELVIEW_MATRIX, &amp;<a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a>);
 <a name="l00945"></a>00945                         }
@@ -934,22 +933,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00949"></a>00949 
 <a name="l00950"></a>00950 <span class="preprocessor">#ifdef _D3D9_H_  // d3d9 device methods</span>
 <a name="l00951"></a>00951 <span class="preprocessor"></span>
-<a name="l00953"></a>00953                            <span class="keyword">inline</span> HRESULT makeDevice9TransfView(IDirect3DDevice9* pdevice)<span class="keyword"> const</span>
+<a name="l00953"></a><a class="code" href="structgbmath_1_1mat44.htm#afee4ce4c1d0a0fa5ad8c185fda178fc2">00953</a>                            <span class="keyword">inline</span> HRESULT <a class="code" href="structgbmath_1_1mat44.htm#afee4ce4c1d0a0fa5ad8c185fda178fc2" title="Установить матрицу в устройство d3d9 как матрицу...">makeDevice9TransfView</a>(IDirect3DDevice9* pdevice)<span class="keyword"> const</span>
 <a name="l00954"></a>00954 <span class="keyword">                           </span>{
 <a name="l00955"></a>00955                                    <span class="keywordflow">return</span> pdevice-&gt;SetTransform(D3DTS_VIEW, (D3DMATRIX*)&amp;<a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a> );
 <a name="l00956"></a>00956                            }
 <a name="l00957"></a>00957 
-<a name="l00959"></a>00959                            <span class="keyword">inline</span> HRESULT makeDevice9TransfProj(IDirect3DDevice9* pdevice)<span class="keyword"> const</span>
+<a name="l00959"></a><a class="code" href="structgbmath_1_1mat44.htm#a784abc5e2abe452d5c0ee7b299d4e713">00959</a>                            <span class="keyword">inline</span> HRESULT <a class="code" href="structgbmath_1_1mat44.htm#a784abc5e2abe452d5c0ee7b299d4e713" title="Установить матрицу в устройство d3d9 как матрицу...">makeDevice9TransfProj</a>(IDirect3DDevice9* pdevice)<span class="keyword"> const</span>
 <a name="l00960"></a>00960 <span class="keyword">                           </span>{
 <a name="l00961"></a>00961                                    <span class="keywordflow">return</span> pdevice-&gt;SetTransform(D3DTS_PROJECTION, (D3DMATRIX*)&amp;<a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a> );
 <a name="l00962"></a>00962                            }
 <a name="l00963"></a>00963 
-<a name="l00965"></a>00965                            <span class="keyword">inline</span> HRESULT makeDevice9TransfWorld(IDirect3DDevice9* pdevice)
+<a name="l00965"></a><a class="code" href="structgbmath_1_1mat44.htm#ab2fb2415ce0e572bafe14a60742b7e29">00965</a>                            <span class="keyword">inline</span> HRESULT <a class="code" href="structgbmath_1_1mat44.htm#ab2fb2415ce0e572bafe14a60742b7e29" title="Установить матрицу в устройство d3d9 как матрицу...">makeDevice9TransfWorld</a>(IDirect3DDevice9* pdevice)
 <a name="l00966"></a>00966                            {
 <a name="l00967"></a>00967                                    <span class="keywordflow">return</span> pdevice-&gt;SetTransform(D3DTS_WORLD, (D3DMATRIX*)&amp;<a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a> );
 <a name="l00968"></a>00968                            }
 <a name="l00969"></a>00969 
-<a name="l00971"></a>00971                            <span class="keyword">inline</span> HRESULT makeDevice9Transf(IDirect3DDevice9* pdevice, D3DTRANSFORMSTATETYPE trType )<span class="keyword"> const</span>
+<a name="l00971"></a><a class="code" href="structgbmath_1_1mat44.htm#ae67193a7a85fd047e1e7a957cb10c8bf">00971</a>                            <span class="keyword">inline</span> HRESULT <a class="code" href="structgbmath_1_1mat44.htm#ae67193a7a85fd047e1e7a957cb10c8bf" title="Установить матрицу в девайс как матрицу трансформации...">makeDevice9Transf</a>(IDirect3DDevice9* pdevice, D3DTRANSFORMSTATETYPE trType )<span class="keyword"> const</span>
 <a name="l00972"></a>00972 <span class="keyword">                           </span>{
 <a name="l00973"></a>00973                                    <span class="keywordflow">return</span> pdevice-&gt;SetTransform( trType, (D3DMATRIX*)&amp;<a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a> );
 <a name="l00974"></a>00974                            }
@@ -957,17 +956,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00976"></a>00976 
 <a name="l00977"></a>00977 
 <a name="l00978"></a>00978 
-<a name="l00980"></a>00980                            <span class="keyword">inline</span> HRESULT readDevice9TransfView(IDirect3DDevice9* pdevice)
+<a name="l00980"></a><a class="code" href="structgbmath_1_1mat44.htm#a950783e25969a6b4fe5e0d1fc7384d46">00980</a>                            <span class="keyword">inline</span> HRESULT <a class="code" href="structgbmath_1_1mat44.htm#a950783e25969a6b4fe5e0d1fc7384d46" title="Получить из устройства d3d9 матрицу ВИДА.">readDevice9TransfView</a>(IDirect3DDevice9* pdevice)
 <a name="l00981"></a>00981                            {
 <a name="l00982"></a>00982                                    <span class="keywordflow">return</span> pdevice-&gt;GetTransform(D3DTS_VIEW, (D3DMATRIX*)&amp;<a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a> );
 <a name="l00983"></a>00983                            }
 <a name="l00984"></a>00984 
-<a name="l00986"></a>00986                            <span class="keyword">inline</span> HRESULT readDevice9TransfProj(IDirect3DDevice9* pdevice)
+<a name="l00986"></a><a class="code" href="structgbmath_1_1mat44.htm#a75b36e921a151bb5d020d9046c0fd918">00986</a>                            <span class="keyword">inline</span> HRESULT <a class="code" href="structgbmath_1_1mat44.htm#a75b36e921a151bb5d020d9046c0fd918" title="Получить из устройства устройства d3d9 матрицу...">readDevice9TransfProj</a>(IDirect3DDevice9* pdevice)
 <a name="l00987"></a>00987                            {
 <a name="l00988"></a>00988                                    <span class="keywordflow">return</span> pdevice-&gt;GetTransform(D3DTS_PROJECTION, (D3DMATRIX*)&amp;<a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a> );
 <a name="l00989"></a>00989                            }
 <a name="l00990"></a>00990 
-<a name="l00992"></a>00992                            <span class="keyword">inline</span> HRESULT readDevice9TransfWorld(IDirect3DDevice9* pdevice)
+<a name="l00992"></a><a class="code" href="structgbmath_1_1mat44.htm#a1b518daa17916cb35ea849fe664fe81a">00992</a>                            <span class="keyword">inline</span> HRESULT <a class="code" href="structgbmath_1_1mat44.htm#a1b518daa17916cb35ea849fe664fe81a" title="Получить из устройства устройства d3d9 матрицу...">readDevice9TransfWorld</a>(IDirect3DDevice9* pdevice)
 <a name="l00993"></a>00993                            {
 <a name="l00994"></a>00994                                    <span class="keywordflow">return</span> pdevice-&gt;GetTransform(D3DTS_WORLD, (D3DMATRIX*)&amp;<a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a> );
 <a name="l00995"></a>00995                            }
@@ -976,50 +975,130 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00998"></a>00998 
 <a name="l00999"></a>00999 <span class="preprocessor">#endif // _D3D9_H_</span>
 <a name="l01000"></a>01000 <span class="preprocessor"></span>
-<a name="l01001"></a>01001 
-<a name="l01002"></a>01002 <span class="preprocessor">                        #pragma message(&quot;!!!  need &lt;&lt; &gt;&gt;  for mat44   &quot; __FILE__ )</span>
-<a name="l01003"></a>01003 <span class="preprocessor"></span>
-<a name="l01005"></a><a class="code" href="structgbmath_1_1mat44.htm#ae8bd735498e6e705d0fce59d5d0dc7f7">01005</a>                            <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="structgbmath_1_1mat44.htm#ae8bd735498e6e705d0fce59d5d0dc7f7" title="Вывод значений на консоль.">print</a>()<span class="keyword"> const</span>
-<a name="l01006"></a>01006 <span class="keyword">                           </span>{
-<a name="l01007"></a>01007                                    printf(<span class="stringliteral">&quot;\n%f   %f   %f   %f  \n%f   %f   %f   %f  \n%f   %f   %f   %f  \n%f   %f   %f   %f  \n  &quot;</span>,
-<a name="l01008"></a>01008                                            <a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a>, <a class="code" href="structgbmath_1_1mat44.htm#ae487a7a18dc991d17b5de87334728e6c">_12</a>, <a class="code" href="structgbmath_1_1mat44.htm#abc27402f91ffb83ab0eb46bf591db261">_13</a>, <a class="code" href="structgbmath_1_1mat44.htm#a1263c82107dce40f62bbf223d4a2fe58">_14</a>,
-<a name="l01009"></a>01009                                            <a class="code" href="structgbmath_1_1mat44.htm#ae3126d9cf5d065ee9d24b3de96a5f17f">_21</a>, <a class="code" href="structgbmath_1_1mat44.htm#a51a6825aacf2e40c7f4c1774d4105d9a">_22</a>, <a class="code" href="structgbmath_1_1mat44.htm#a2e13ed94b2f1c06f590005498e834c41">_23</a>, <a class="code" href="structgbmath_1_1mat44.htm#a02e896a0d8bb375f430fc387ff773248">_24</a>,
-<a name="l01010"></a>01010                                            <a class="code" href="structgbmath_1_1mat44.htm#aabf304b5ece7ff9d2a006ca0467a3b27">_31</a>, <a class="code" href="structgbmath_1_1mat44.htm#aa725b6a8854a3dea9cad3e393a42200a">_32</a>, <a class="code" href="structgbmath_1_1mat44.htm#a5808bf751702b406781bf8d6e2a82408">_33</a>, <a class="code" href="structgbmath_1_1mat44.htm#a0be86c8b892139d6fcd141a78d9bf02f">_34</a>,
-<a name="l01011"></a>01011                                            <a class="code" href="structgbmath_1_1mat44.htm#a455efa123492579000a3f1ab054d86af">_41</a>, <a class="code" href="structgbmath_1_1mat44.htm#a2701cfe76461e9722ac37cc8afac457e">_42</a>, <a class="code" href="structgbmath_1_1mat44.htm#a47300a3aa5bb132868de2a94fe79d6e3">_43</a>, <a class="code" href="structgbmath_1_1mat44.htm#a0bf5358db28c4ccfe5d366b31b3a297f">_44</a>
-<a name="l01012"></a>01012                                            );
-<a name="l01013"></a>01013                            }
-<a name="l01014"></a>01014                            
-<a name="l01015"></a>01015                            
-<a name="l01016"></a>01016 
-<a name="l01017"></a>01017 
-<a name="l01018"></a>01018                 };
-<a name="l01019"></a>01019 
-<a name="l01020"></a>01020 
+<a name="l01001"></a>01001  
+<a name="l01002"></a>01002  
+<a name="l01003"></a>01003                            <span class="comment">//inline void print() const</span>
+<a name="l01004"></a>01004                            <span class="comment">//{</span>
+<a name="l01005"></a>01005                                   <span class="comment">// printf(&quot;\n%f   %f   %f   %f  \n%f   %f   %f   %f  \n%f   %f   %f   %f  \n%f   %f   %f   %f  \n  &quot;,</span>
+<a name="l01006"></a>01006                                          <span class="comment">//  _11, _12, _13, _14,</span>
+<a name="l01007"></a>01007                                          <span class="comment">//  _21, _22, _23, _24,</span>
+<a name="l01008"></a>01008                                          <span class="comment">//  _31, _32, _33, _34,</span>
+<a name="l01009"></a>01009                                          <span class="comment">//  _41, _42, _43, _44</span>
+<a name="l01010"></a>01010                                          <span class="comment">//  );</span>
+<a name="l01011"></a>01011                            <span class="comment">//}</span>
+<a name="l01012"></a>01012 
+<a name="l01013"></a>01013 
+<a name="l01014"></a><a class="code" href="structgbmath_1_1mat44.htm#a30512ab0af2644910aa68a14dfc12d22">01014</a>                            <span class="keyword">friend</span> std::ostream &amp;<a class="code" href="structgbmath_1_1mat44.htm#a30512ab0af2644910aa68a14dfc12d22">operator &lt;&lt; </a>(std::ostream &amp;stream, <span class="keyword">const</span> <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a>&amp; m)
+<a name="l01015"></a>01015                            {
+<a name="l01016"></a>01016                                    stream
+<a name="l01017"></a>01017                                            &lt;&lt; m.<a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; m.<a class="code" href="structgbmath_1_1mat44.htm#ae487a7a18dc991d17b5de87334728e6c">_12</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; m.<a class="code" href="structgbmath_1_1mat44.htm#abc27402f91ffb83ab0eb46bf591db261">_13</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; m.<a class="code" href="structgbmath_1_1mat44.htm#a1263c82107dce40f62bbf223d4a2fe58">_14</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span> 
+<a name="l01018"></a>01018                                            &lt;&lt; m.<a class="code" href="structgbmath_1_1mat44.htm#ae3126d9cf5d065ee9d24b3de96a5f17f">_21</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; m.<a class="code" href="structgbmath_1_1mat44.htm#a51a6825aacf2e40c7f4c1774d4105d9a">_22</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; m.<a class="code" href="structgbmath_1_1mat44.htm#a2e13ed94b2f1c06f590005498e834c41">_23</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; m.<a class="code" href="structgbmath_1_1mat44.htm#a02e896a0d8bb375f430fc387ff773248">_24</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>                                        
+<a name="l01019"></a>01019                                            &lt;&lt; m.<a class="code" href="structgbmath_1_1mat44.htm#aabf304b5ece7ff9d2a006ca0467a3b27">_31</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; m.<a class="code" href="structgbmath_1_1mat44.htm#aa725b6a8854a3dea9cad3e393a42200a">_32</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; m.<a class="code" href="structgbmath_1_1mat44.htm#a5808bf751702b406781bf8d6e2a82408">_33</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; m.<a class="code" href="structgbmath_1_1mat44.htm#a0be86c8b892139d6fcd141a78d9bf02f">_34</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>
+<a name="l01020"></a>01020                                            &lt;&lt; m.<a class="code" href="structgbmath_1_1mat44.htm#a455efa123492579000a3f1ab054d86af">_41</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; m.<a class="code" href="structgbmath_1_1mat44.htm#a2701cfe76461e9722ac37cc8afac457e">_42</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; m.<a class="code" href="structgbmath_1_1mat44.htm#a47300a3aa5bb132868de2a94fe79d6e3">_43</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; m.<a class="code" href="structgbmath_1_1mat44.htm#a0bf5358db28c4ccfe5d366b31b3a297f">_44</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span> ;
 <a name="l01021"></a>01021 
-<a name="l01022"></a>01022 
-<a name="l01023"></a>01023 
+<a name="l01022"></a>01022                                    <span class="keywordflow">return</span> stream;
+<a name="l01023"></a>01023                            }
 <a name="l01024"></a>01024 
-<a name="l01025"></a><a class="code" href="namespacegbmath.htm#a10ab0af2176bd1932f69c761a15f769b">01025</a>                         <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a>     <a class="code" href="namespacegbmath.htm#a10ab0af2176bd1932f69c761a15f769b">MATRIX44_IDENTITY</a> =  <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a>
-<a name="l01026"></a>01026                         (
-<a name="l01027"></a>01027                           1.0f,  0.0f,  0.0f,  0.0f,
-<a name="l01028"></a>01028                           0.0f,  1.0f,  0.0f,  0.0f,
-<a name="l01029"></a>01029                           0.0f,  0.0f,  1.0f,  0.0f,
-<a name="l01030"></a>01030                           0.0f,  0.0f,  0.0f,  1.0f
-<a name="l01031"></a>01031                         );
-<a name="l01032"></a>01032 
-<a name="l01033"></a>01033 
-<a name="l01034"></a>01034 
-<a name="l01035"></a>01035 
+<a name="l01025"></a><a class="code" href="structgbmath_1_1mat44.htm#a8dc94df6c96aa8af3f6c8c2fe850fc13">01025</a>                         <span class="keyword">friend</span> std::istream &amp;<a class="code" href="structgbmath_1_1mat44.htm#a8dc94df6c96aa8af3f6c8c2fe850fc13">operator &gt;&gt; </a>(std::istream &amp;stream, <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a>&amp; m)
+<a name="l01026"></a>01026                         {
+<a name="l01027"></a>01027                                 stream &gt;&gt; m.<a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a>;
+<a name="l01028"></a>01028                                 stream &gt;&gt; m.<a class="code" href="structgbmath_1_1mat44.htm#ae487a7a18dc991d17b5de87334728e6c">_12</a>;
+<a name="l01029"></a>01029                                 stream &gt;&gt; m.<a class="code" href="structgbmath_1_1mat44.htm#abc27402f91ffb83ab0eb46bf591db261">_13</a>;
+<a name="l01030"></a>01030                                 stream &gt;&gt; m.<a class="code" href="structgbmath_1_1mat44.htm#a1263c82107dce40f62bbf223d4a2fe58">_14</a>;
+<a name="l01031"></a>01031 
+<a name="l01032"></a>01032                                 stream &gt;&gt; m.<a class="code" href="structgbmath_1_1mat44.htm#ae3126d9cf5d065ee9d24b3de96a5f17f">_21</a>;
+<a name="l01033"></a>01033                                 stream &gt;&gt; m.<a class="code" href="structgbmath_1_1mat44.htm#a51a6825aacf2e40c7f4c1774d4105d9a">_22</a>;
+<a name="l01034"></a>01034                                 stream &gt;&gt; m.<a class="code" href="structgbmath_1_1mat44.htm#a2e13ed94b2f1c06f590005498e834c41">_23</a>;
+<a name="l01035"></a>01035                                 stream &gt;&gt; m.<a class="code" href="structgbmath_1_1mat44.htm#a02e896a0d8bb375f430fc387ff773248">_24</a>;
 <a name="l01036"></a>01036 
-<a name="l01037"></a>01037 
-<a name="l01038"></a>01038 }
+<a name="l01037"></a>01037                                 stream &gt;&gt; m.<a class="code" href="structgbmath_1_1mat44.htm#aabf304b5ece7ff9d2a006ca0467a3b27">_31</a>;
+<a name="l01038"></a>01038                                 stream &gt;&gt; m.<a class="code" href="structgbmath_1_1mat44.htm#aa725b6a8854a3dea9cad3e393a42200a">_32</a>;
+<a name="l01039"></a>01039                                 stream &gt;&gt; m.<a class="code" href="structgbmath_1_1mat44.htm#a5808bf751702b406781bf8d6e2a82408">_33</a>;
+<a name="l01040"></a>01040                                 stream &gt;&gt; m.<a class="code" href="structgbmath_1_1mat44.htm#a0be86c8b892139d6fcd141a78d9bf02f">_34</a>;
+<a name="l01041"></a>01041 
+<a name="l01042"></a>01042                                 stream &gt;&gt; m.<a class="code" href="structgbmath_1_1mat44.htm#a455efa123492579000a3f1ab054d86af">_41</a>;
+<a name="l01043"></a>01043                                 stream &gt;&gt; m.<a class="code" href="structgbmath_1_1mat44.htm#a2701cfe76461e9722ac37cc8afac457e">_42</a>;
+<a name="l01044"></a>01044                                 stream &gt;&gt; m.<a class="code" href="structgbmath_1_1mat44.htm#a47300a3aa5bb132868de2a94fe79d6e3">_43</a>;
+<a name="l01045"></a>01045                                 stream &gt;&gt; m.<a class="code" href="structgbmath_1_1mat44.htm#a0bf5358db28c4ccfe5d366b31b3a297f">_44</a>;
+<a name="l01046"></a>01046 
+<a name="l01047"></a>01047                                 <span class="keywordflow">return</span> stream;
+<a name="l01048"></a>01048                         }
+<a name="l01049"></a>01049 
+<a name="l01050"></a>01050 
+<a name="l01051"></a>01051 
+<a name="l01052"></a><a class="code" href="structgbmath_1_1mat44.htm#a0f30f1a2d91083b4de7362b721ef5e54">01052</a>                         <a class="code" href="structgbmath_1_1mat44.htm#a0f30f1a2d91083b4de7362b721ef5e54">operator std::string</a>()<span class="keyword"> const</span>
+<a name="l01053"></a>01053 <span class="keyword">                        </span>{
+<a name="l01054"></a>01054                                 std::ostringstream ss;
+<a name="l01055"></a>01055 
+<a name="l01056"></a>01056                                 ss &lt;&lt; <a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="structgbmath_1_1mat44.htm#ae487a7a18dc991d17b5de87334728e6c">_12</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="structgbmath_1_1mat44.htm#abc27402f91ffb83ab0eb46bf591db261">_13</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="structgbmath_1_1mat44.htm#a1263c82107dce40f62bbf223d4a2fe58">_14</a> &lt;&lt; <span class="stringliteral">&quot;    &quot;</span>   &lt;&lt;
+<a name="l01057"></a>01057                                 <a class="code" href="structgbmath_1_1mat44.htm#ae3126d9cf5d065ee9d24b3de96a5f17f">_21</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="structgbmath_1_1mat44.htm#a51a6825aacf2e40c7f4c1774d4105d9a">_22</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="structgbmath_1_1mat44.htm#a2e13ed94b2f1c06f590005498e834c41">_23</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="structgbmath_1_1mat44.htm#a02e896a0d8bb375f430fc387ff773248">_24</a> &lt;&lt; <span class="stringliteral">&quot;    &quot;</span> &lt;&lt;
+<a name="l01058"></a>01058                                 <a class="code" href="structgbmath_1_1mat44.htm#aabf304b5ece7ff9d2a006ca0467a3b27">_31</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="structgbmath_1_1mat44.htm#aa725b6a8854a3dea9cad3e393a42200a">_32</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="structgbmath_1_1mat44.htm#a5808bf751702b406781bf8d6e2a82408">_33</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="structgbmath_1_1mat44.htm#a0be86c8b892139d6fcd141a78d9bf02f">_34</a> &lt;&lt; <span class="stringliteral">&quot;    &quot;</span> &lt;&lt;
+<a name="l01059"></a>01059                                 <a class="code" href="structgbmath_1_1mat44.htm#a455efa123492579000a3f1ab054d86af">_41</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="structgbmath_1_1mat44.htm#a2701cfe76461e9722ac37cc8afac457e">_42</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="structgbmath_1_1mat44.htm#a47300a3aa5bb132868de2a94fe79d6e3">_43</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="structgbmath_1_1mat44.htm#a0bf5358db28c4ccfe5d366b31b3a297f">_44</a>  ;
+<a name="l01060"></a>01060 
+<a name="l01061"></a>01061                                 <span class="keywordflow">return</span> ss.str();
+<a name="l01062"></a>01062                         }
+<a name="l01063"></a>01063 
+<a name="l01064"></a><a class="code" href="structgbmath_1_1mat44.htm#af96ec8a94e7b17161fbd51d66e084e25">01064</a>                         <span class="keywordtype">void</span> operator = (<span class="keyword">const</span> std::string&amp; str) <span class="keywordflow">throw</span> (std::invalid_argument)
+<a name="l01065"></a>01065                         {
+<a name="l01066"></a>01066                                 std::istringstream ss(str);
+<a name="l01067"></a>01067 
+<a name="l01068"></a>01068                                 ss &gt;&gt; _11;
+<a name="l01069"></a>01069                                 ss &gt;&gt; _12;
+<a name="l01070"></a>01070                                 ss &gt;&gt; _13;
+<a name="l01071"></a>01071                                 ss &gt;&gt; _14;
+<a name="l01072"></a>01072 
+<a name="l01073"></a>01073                                 ss &gt;&gt; _21;
+<a name="l01074"></a>01074                                 ss &gt;&gt; _22;
+<a name="l01075"></a>01075                                 ss &gt;&gt; _23;
+<a name="l01076"></a>01076                                 ss &gt;&gt; _24;
+<a name="l01077"></a>01077 
+<a name="l01078"></a>01078                                 ss &gt;&gt; _31;
+<a name="l01079"></a>01079                                 ss &gt;&gt; _32;
+<a name="l01080"></a>01080                                 ss &gt;&gt; _33;
+<a name="l01081"></a>01081                                 ss &gt;&gt; _34;
+<a name="l01082"></a>01082 
+<a name="l01083"></a>01083                                 ss &gt;&gt; _41;
+<a name="l01084"></a>01084                                 ss &gt;&gt; _42;
+<a name="l01085"></a>01085                                 ss &gt;&gt; _43;
+<a name="l01086"></a>01086                                 ss &gt;&gt; _44;
+<a name="l01087"></a>01087 
+<a name="l01088"></a>01088                                 <span class="keywordflow">if</span>( ss.fail() ) 
+<a name="l01089"></a>01089                                         <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;bad input string&quot;</span>);
+<a name="l01090"></a>01090                         }
+<a name="l01091"></a>01091 
+<a name="l01092"></a>01092 
+<a name="l01093"></a>01093                            
+<a name="l01094"></a>01094                            
+<a name="l01095"></a>01095 
+<a name="l01096"></a>01096 
+<a name="l01097"></a>01097                 };
+<a name="l01098"></a>01098 
+<a name="l01099"></a>01099 
+<a name="l01100"></a>01100 
+<a name="l01101"></a>01101 
+<a name="l01102"></a>01102 
+<a name="l01103"></a>01103 
+<a name="l01104"></a><a class="code" href="namespacegbmath.htm#a10ab0af2176bd1932f69c761a15f769b">01104</a>                         <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a>     <a class="code" href="namespacegbmath.htm#a10ab0af2176bd1932f69c761a15f769b">MATRIX44_IDENTITY</a> =  <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a>
+<a name="l01105"></a>01105                         (
+<a name="l01106"></a>01106                           1.0f,  0.0f,  0.0f,  0.0f,
+<a name="l01107"></a>01107                           0.0f,  1.0f,  0.0f,  0.0f,
+<a name="l01108"></a>01108                           0.0f,  0.0f,  1.0f,  0.0f,
+<a name="l01109"></a>01109                           0.0f,  0.0f,  0.0f,  1.0f
+<a name="l01110"></a>01110                         );
+<a name="l01111"></a>01111 
+<a name="l01112"></a>01112 
+<a name="l01113"></a>01113 
+<a name="l01114"></a>01114 
+<a name="l01115"></a>01115 
+<a name="l01116"></a>01116 
+<a name="l01117"></a>01117 }
 </pre></div></div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -1028,7 +1107,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Aug 27 20:46:52 2011 for gbmath by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Mon Jan 30 15:53:20 2012 for gbmath by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>
