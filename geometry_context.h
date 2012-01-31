@@ -118,8 +118,8 @@ namespace gbmath
 		  const vec4 *get_vector4_ViewSide()const;
 
 
-		  const mat44 *get_matrix_by_context_type(const matrix4x4_context_type_e::e) const;
-		  const vec4 *get_vector4_by_context_type(const vector_context_type_e::e) const;
+		  const mat44 *get_matrix_by_context_type(const matrix4x4_context_type_e::e) const  throw(int);
+		  const vec4 *get_vector4_by_context_type(const vector_context_type_e::e) const  	throw(int);
 
 
 		//  const vec3 *get_vector3_Unproject(const  ViewportZ *vp, const  POINT *pntCoord)const;

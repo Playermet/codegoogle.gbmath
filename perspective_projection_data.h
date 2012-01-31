@@ -26,6 +26,32 @@ namespace gbmath
 			float zn;
 			float zf;
 
+
+			perspective_projection_data()
+			{
+				fovy = aspect = zn = zf = 0.0f;
+			}
+
+			perspective_projection_data(float _fovy, float _aspect, float _zn, float _zf)
+			{
+				fovy   = _fovy;
+				aspect = _aspect;
+				zn     = _zn;
+				zf     = _zf;
+			}
+
+			perspective_projection_data(const perspective_projection_data& a)
+			{
+				fovy   = a.fovy;
+				aspect = a.aspect;
+				zn     = a.zn;
+				zf     = a.zf;		
+			}
+
+
+
+
+
 			//! \brief Извлечь проекционные данные из левосторонней перспективной матрицы .
 			inline void extractProjPerspectLH(const mat44& mPerspectProjLH)
 			{
@@ -84,11 +110,6 @@ namespace gbmath
 
 
 
-
-
-
 	  };
 
-
- 
 }

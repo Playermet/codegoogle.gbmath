@@ -516,7 +516,7 @@ const mat44 *geometry_context::get_matrix_WorldViewInverseTranspone()const
 
 //=====================================================================
 const vec4* geometry_context::get_vector4_by_context_type(
-	     const vector_context_type_e::e val) const
+	     const vector_context_type_e::e val) const	throw(int)
 {
   switch(val)
   {
@@ -552,14 +552,14 @@ const vec4* geometry_context::get_vector4_by_context_type(
 	  }
   }
 
+  printf("value: %u \n", val );
   assert(false && " not found ! ");
   return NULL;
 };
 
 //====================================================================
 const mat44 * geometry_context::get_matrix_by_context_type(
-				const matrix4x4_context_type_e::e  val
-				) const
+				const matrix4x4_context_type_e::e  val ) const  	throw(int)
 {
   switch(val)
   {
@@ -729,9 +729,12 @@ const mat44 * geometry_context::get_matrix_by_context_type(
 	  }
   }
 
+		#ifdef _DEBUG
+		  printf("unknown enum value:  %i  \n", (int)val );
+		#endif 
 
 	// not found !!
-  assert(false && "matrix not found");
+	assert(false && "matrix not found");
 	return NULL;
 }
 

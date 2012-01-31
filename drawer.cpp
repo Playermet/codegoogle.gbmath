@@ -3,9 +3,9 @@
 #include "_gbmath.h"
 
 
-#ifdef GBMATH_USE_OPENGL_DRAWER
+#if GBMATH_USE_OPENGL_DRAWER
 
-#include "drawer.h"
+//#include "drawer.h"
 #include <gl\gl.h>
 
 namespace gbmath
@@ -165,5 +165,5 @@ namespace gbmath
 
 }
 
-#endif 
+#endif // GBMATH_USE_OPENGL_DRAWER
 

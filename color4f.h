@@ -88,6 +88,45 @@ namespace gbmath
 			 ************************/
 
 
+
+			inline unsigned int to_uint32_rgba() const
+			{ 
+
+				unsigned int nr = ( ((unsigned int)( r*255.0f )<<24) | 0x00ffffff );
+				nr ^= 0x00ffffff;
+
+				unsigned int ng = ( ((unsigned int)( g*255.0f )<<16) | 0xff00ffff );
+				ng ^= 0xff00ffff;
+
+				unsigned int nb = ( ((unsigned int)( b*255.0f )<< 8) | 0xffff00ff );
+				nb ^= 0xffff00ff;
+
+				unsigned int na = ( ((unsigned int)( a*255.0f )    ) | 0xffffff00 );
+				na ^= 0xffffff00;
+
+				return nr | ng | nb | na ;
+			}
+
+
+			inline unsigned int to_uint32_argb() const   
+			{
+				unsigned int nr = ( ((unsigned int)( a*255.0f )<<24) | 0x00ffffff );
+				nr ^= 0x00ffffff;
+
+				unsigned int ng = ( ((unsigned int)( r*255.0f )<<16) | 0xff00ffff );
+				ng ^= 0xff00ffff;
+
+				unsigned int nb = ( ((unsigned int)( g*255.0f )<< 8) | 0xffff00ff );
+				nb ^= 0xffff00ff;
+
+				unsigned int na = ( ((unsigned int)( b*255.0f )    ) | 0xffffff00 );
+				na ^= 0xffffff00;
+
+				return nr | ng | nb | na ;
+			}
+
+
+
 			/** \brief Построение цвета  из целочисленого 4-x  байтового цвета.  */
 			void operator =  (const color4_32 val) ;
 
