@@ -39,6 +39,20 @@ namespace gbmath
 					}
 					break;
 
+
+				case LIGHTSOURCECOLOR:
+					{
+						res = "LIGHTSOURCECOLOR";
+					}
+					break;
+
+
+				case LIGHTMAPCOLOR:
+					{
+						res = "LIGHTMAPCOLOR";
+					}
+					break;
+
 				default:
 					{
 					}
@@ -82,9 +96,50 @@ namespace gbmath
 					return true;
 				}
 
+				if("LIGHTSOURCECOLOR" == s)
+				{
+					outval =  LIGHTSOURCECOLOR;
+					return true;
+				}
+
+
+				if("LIGHTMAPCOLOR" == s)
+				{
+					outval =  LIGHTMAPCOLOR;
+					return true;
+				}
+ 
+
 			  return false;
 			}
 
 
+	//==============================================
+
+
+	const color4f*  object_color::getByType(
+				const object_color_type_e::e value) const 
+	{
+
+		switch(value)
+		{
+		case   object_color_type_e::AMBIENT: { return &Ambien; } break;
+		case   object_color_type_e::DIFFUSE: { return &Diffuse; } break;
+		case   object_color_type_e::SPECULAR: { return &Specular; } break;
+		case   object_color_type_e::EMISSIVE: { return &Emissive; } break;
+		case   object_color_type_e::LIGHTSOURCECOLOR: { return &LightSourceSolor; } break;
+		case   object_color_type_e::LIGHTMAPCOLOR:    { return &LightmapColor; } break;
+ 
+
+		default:
+			{
+				printf("Value: %u\n" , (unsigned int)value );
+				printf("not found \n");
+			}
+		}
+
+
+
+	}
  
 }

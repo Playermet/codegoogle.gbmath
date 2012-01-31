@@ -180,14 +180,15 @@ namespace gbmath
  
 
 //! render math opt
- #define  GBMATH_USE_OPENGL_DRAWER    1 
+#define  GBMATH_USE_OPENGL_DRAWER    0 
  
-
 #include "drawer.h"
 
- #define  GBMATH_USE_VISUALIZE_APPLICATION     1
+
+#define  GBMATH_USE_VISUALIZE_APPLICATION    0
 
 #include "visualize_application.h"
+
 
 
 

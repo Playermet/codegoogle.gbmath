@@ -25,11 +25,12 @@ namespace gbmath
 			{
 				UNDEFINED = 0,  ///< не определено
 
-
 				AMBIENT, 
 				DIFFUSE,
 				SPECULAR,
 				EMISSIVE,
+ 				LIGHTSOURCECOLOR,
+				LIGHTMAPCOLOR,
 
 
 				UNUSED_DACLARED_LAST, ///< не используется . Декларировать последним
@@ -45,5 +46,26 @@ namespace gbmath
 		};	 
 	 
 	 
+
+		struct object_color
+		{
+
+
+				color4f  Ambien; 
+				color4f  Diffuse;
+				color4f  Specular;
+				color4f  Emissive;
+				color4f  LightSourceSolor;
+				color4f  LightmapColor;
+
+
+				object_color() 
+				{
+
+				}
+ 
+				const color4f*   getByType(const object_color_type_e::e value) const ;
+
+		};
  
 }
