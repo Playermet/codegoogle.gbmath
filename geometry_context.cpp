@@ -3,6 +3,13 @@
 #include "_gbmath.h"
 
 
+
+#pragma warning(push)
+#pragma warning( disable : 4290 )
+
+
+
+
 namespace gbmath
 {
 
@@ -514,6 +521,73 @@ const mat44 *geometry_context::get_matrix_WorldViewInverseTranspone()const
   return  &m_matr.mWorldViewInverseTranspone.matrix;
 };
 
+
+//=====================================================================
+const vec3* geometry_context::get_vector3_by_context_type(
+				const vector_context_type_e::e value) const  throw(int)
+{
+ 
+
+	//const vector_context_type_e::e val = (const vector_context_type_e::e)value;
+ 
+
+	switch(value)
+	{
+
+	case vector_context_type_e::VIEWDIRECTION :
+		{
+		   return get_vector3_ViewDir();
+		}
+		break;
+
+	case vector_context_type_e::VIEWPOSITION :
+		{
+			return get_vector3_VewPos();
+		}
+		break;
+
+
+	case vector_context_type_e::VIEWUP :
+		{
+			return get_vector3_ViewUp();
+		}
+		break;
+
+
+	case vector_context_type_e::VIEWSIDE :
+		{
+			return get_vector3_ViewSide();
+		}
+		break;
+
+
+	case vector_context_type_e::MouseCoordCameraUnproject :
+		{
+			//	return get_mo
+			assert(false);
+		}
+		break;
+
+ 
+
+
+	default:
+		{
+
+		}
+	}
+
+ 
+
+	printf("Value%s\n",  (int)value );
+	assert(  false && "  ");
+
+
+	throw(  (int)value );
+
+	return NULL;
+}
+
 //=====================================================================
 const vec4* geometry_context::get_vector4_by_context_type(
 	     const vector_context_type_e::e val) const	throw(int)
@@ -555,7 +629,7 @@ const vec4* geometry_context::get_vector4_by_context_type(
   printf("value: %u \n", val );
   assert(false && " not found ! ");
   return NULL;
-};
+}
 
 //====================================================================
 const mat44 * geometry_context::get_matrix_by_context_type(
@@ -2258,33 +2332,45 @@ bool   vector_context_type_e::fromstr(vector_context_type_e::e& valOut, const ch
 
 
 
-	if( ("VIEWPOSITION" == str) || ("VIEW_POSITION" == str) || ("VIEWPOS" == str))
+	if( ("VIEWPOSITION" == str) || ("VIEW_POSITION" == str) || ("VIEWPOS" == str)  ||
+		  ("EYEPOSITION" == str) || ("EYEPOS" == str) 
+		)
 	{
 		valOut = VIEWPOSITION;
 		return true;
 	}
 
-	if( ("VIEWDIRECTION" == str) || ("VIEW_DIRECTION" == str) || ("VIEWDIR" == str)  )
+	if( ("VIEWDIRECTION" == str) || ("VIEW_DIRECTION" == str) || ("VIEWDIR" == str) ||
+		  ("EYEDIRECTION" == str) || ("EYEDIR" == str)
+		)
 	{
 		valOut = VIEWDIRECTION;
 		return true;
 	}
 
-	if("VIEWUP" == str)
+	if( ("VIEWUP" == str) || ("EYEUP" == str)  )
 	{
 		valOut = VIEWUP;
 		return true;
 	}
 
-	if("VIEWSIDE" == str)
+	if(  ("VIEWSIDE" == str)  || ("EYESIDE" == str) )
 	{
 		valOut = VIEWSIDE;
 		return true;
 	}
 
 
+	printf("Value %s not found \n" , strarg );
+	assert(  false   &&  "Value not found" );
+
+
   return false;
-};
+}
 
 
 }
+
+
+#pragma warning(push)
+

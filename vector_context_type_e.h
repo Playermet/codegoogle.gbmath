@@ -31,6 +31,10 @@ namespace gbmath
 			  VIEWUP,
 			  VIEWSIDE,
 
+			  MouseCoordCameraUnproject,
+
+
+
 			  UNUSED_DECLARED_LAST,
 			  UNUSED_FORCE32 = 0x7f000000
 		  };
