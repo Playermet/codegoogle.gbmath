@@ -160,8 +160,11 @@ namespace gbmath
 // context
 #include "float_context_type_e.h"
 #include "float_context.h"
+
 #include "matrix4x4_context_type_e.h"
+
 #include "vector_context_type_e.h"
+
 #include "geometry_context.h"
 
 
