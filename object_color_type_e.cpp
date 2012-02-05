@@ -139,7 +139,8 @@ namespace gbmath
 		}
 
 
-
+		assert( false && " bad input value " );
+	   return NULL;
 	}
  
 }
