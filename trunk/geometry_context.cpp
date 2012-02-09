@@ -79,6 +79,8 @@ long  geometry_context::setMatrices(const mat44 *mWorld, const mat44 *mView, con
     m_matr.mWorldViewInverseTranspone.bChangeFlag =  1 ;
 
 
+	m_sMatrSetCounters.countSetWorldMatrix++;
+
   } // if(mWorld)
 
   if (mView)
@@ -106,6 +108,9 @@ long  geometry_context::setMatrices(const mat44 *mWorld, const mat44 *mView, con
     m_matr.mWorldViewInverse.bChangeFlag =  1 ;
     m_matr.mWorldViewInverseTranspone.bChangeFlag =  1 ;
 
+
+	m_sMatrSetCounters.countSetViewMatrix++;
+
   } // if(mView)
 
 
@@ -130,6 +135,9 @@ long  geometry_context::setMatrices(const mat44 *mWorld, const mat44 *mView, con
     m_matr.mWorldViewProjectionInverse.bChangeFlag =  1 ;
     m_matr.mWorldViewProjectionInverseTranspone.bChangeFlag =  1 ;
 
+
+
+	m_sMatrSetCounters.countSetProjMatrix++;
 
   } // if(mProj)
 

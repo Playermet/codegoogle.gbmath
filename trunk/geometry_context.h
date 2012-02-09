@@ -23,6 +23,22 @@ namespace gbmath
 
 		//! \brief Geometric context. Preparation of derivatives of vectors and matrices.
 		class geometry_context  {
+		protected:
+
+			/** \brief To cover the user. If you change the matrix.
+			If the matrix does not change then the argument is NULL.
+			returns a result set of a matrix. */
+			virtual long onNewMatrices(
+								const  mat44 *mWorld,
+								const  mat44 *mView,
+								const  mat44 *mProj )
+			{
+				return 0;
+			}
+
+
+
+
 		public:
 
 				geometry_context() 
@@ -46,15 +62,7 @@ namespace gbmath
 						    const  mat44 *mView,
 						    const  mat44 *mProj );
 
-		  /** \brief To cover the user. If you change the matrix.
-				If the matrix does not change then the argument is NULL.
-				returns a result set of a matrix. */
-		  virtual long onNewMatrices(const  mat44 *mWorld,
-									 const  mat44 *mView,
-									 const  mat44 *mProj )
-		  {
-		     return 0;
-		  }
+
 
 			inline long  set_matrix_World(const mat44 *m)
 			{
@@ -258,11 +266,32 @@ namespace gbmath
 		    return (UINT)m_MatrixStackProj.size();
 		  };
 		     ************************************/
+ 
+
+			inline unsigned int GetCountSetWorldMatrix() const 
+			{
+				return m_sMatrSetCounters.countSetWorldMatrix;
+			}
+
+			inline unsigned int GetCountSetViewMatrix() const 
+			{
+				return m_sMatrSetCounters.countSetViewMatrix;
+			}
+
+			inline unsigned int GetCountSetProjMatrix() const 
+			{
+				return m_sMatrSetCounters.countSetProjMatrix;
+			}
 
 
-			//gbmath::perspective_projection_data
+			void ResetCountersSetMatrix()
+			{
+				m_sMatrSetCounters.reset();
+			}
+
 
 		protected:
+
 		   void __checkViewVectors() const;
 
 
@@ -359,6 +388,30 @@ namespace gbmath
 
 		  // temporarily excluded!
 		 // mutable Quaternion m_qRotation;
+
+
+		  struct sMatrSetCounters
+		  {
+			  unsigned int countSetWorldMatrix;
+			  unsigned int countSetViewMatrix;
+			  unsigned int countSetProjMatrix;
+
+			  void reset()
+			  {
+				  countSetWorldMatrix = 0;
+				  countSetViewMatrix  = 0;
+				  countSetProjMatrix  = 0;
+			  }
+
+
+			  sMatrSetCounters()
+			  {
+				  reset();
+			  }
+
+		  };
+
+		  sMatrSetCounters  m_sMatrSetCounters;
 
 
 		};

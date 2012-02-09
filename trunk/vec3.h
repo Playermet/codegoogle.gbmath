@@ -222,22 +222,22 @@ namespace gbmath
 			inline vec3    cross (const vec3 &v) const
 			{
 				vec3 r;
-				r.x = y * v.z  -  z * v.y;
-				r.y = z * v.x  -  x * v.z;
-				r.z = x * v.y  -  y * v.x;
+				r.x = y * v.z - z * v.y;
+				r.y = z * v.x - x * v.z;
+				r.z = x * v.y - y * v.x;
 				return r;
 			}
 
  
 			inline vec3&   normalize ()
 			{
-				if( (0.0f==x) && (0.0f==y) && (0.0f==z) ) // < без этого глючит. nan
+				if( (0.0f == x) && (0.0f == y) && (0.0f == z) ) // < без этого глючит. nan
 					   return *this;
 
 				register float fl=length();
-				x/=fl;
-				y/=fl;
-				z/=fl;
+				x /= fl;
+				y /= fl;
+				z /= fl;
 				return *this;
 			}
 
@@ -498,14 +498,7 @@ namespace gbmath
 
 
 		}; // end vec3
-
-
-
-
-	//	#error operator << and >> need
-
-
-
+ 
 
  
 }
