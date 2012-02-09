@@ -49,6 +49,19 @@ namespace gbmath
 			}
 
 
+			inline mat44 makePerspectiveMatrixLH() const 
+			{
+				mat44 res;
+				res.setPerspectiveFovLH(fovy, aspect, zn, zf);
+				return res;
+			}
+
+			inline mat44 makePerspectiveMatrixRH() const 
+			{
+				mat44 res;
+				res.setPerspectiveFovRH(fovy, aspect, zn, zf);
+				return res;
+			}
 
 
 
@@ -60,6 +73,12 @@ namespace gbmath
 				zn = -mPerspectProjLH._43/mPerspectProjLH._33;
 				zf =  mPerspectProjLH._43/(1.0f-mPerspectProjLH._33);
 			}
+
+ 			inline void extractProjPerspectRH(const mat44& mPerspectProjLH)
+			{
+				assert(  false  &&  " none code ");
+			}
+
 
 
 			friend std::ostream &operator << (std::ostream &stream, const perspective_projection_data& a)
