@@ -42,6 +42,8 @@
  #include "vector4.cpp"
 #include "triangle.cpp"
 
+#include "valueserver.cpp"
+
 #include "dependence_on_function.cpp"
 
  #include "drawer.cpp" 
