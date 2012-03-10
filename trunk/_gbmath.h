@@ -158,6 +158,7 @@ namespace gbmath
 
 
 // context
+#include "valueserver.h"
 #include "float_context_type_e.h"
 #include "float_context.h"
 
