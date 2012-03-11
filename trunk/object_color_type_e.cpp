@@ -130,17 +130,19 @@ namespace gbmath
 		case   object_color_type_e::LIGHTSOURCECOLOR: { return &LightSourceSolor; } break;
 		case   object_color_type_e::LIGHTMAPCOLOR:    { return &LightmapColor; } break;
  
+ 
 
-		default:
-			{
-				printf("Value: %u\n" , (unsigned int)value );
-				printf("not found \n");
-			}
+			default:
+				{
+					printf("Value: %u\n" , (unsigned int)value );
+					printf("not found \n");
+				}
 		}
-
+ 
 
 		assert( false && " bad input value " );
 	   return NULL;
 	}
+ 
  
 }
