@@ -70,7 +70,7 @@ namespace gbmath
 			{
 				*this = pfArray;
 			}
-
+ 
 
 			inline operator  const float*() const  { return &_11; }
 			inline operator        float*()        { return &_11; }
