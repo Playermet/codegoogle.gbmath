@@ -125,6 +125,11 @@ namespace gbmath
 				return nr | ng | nb | na ;
 			}
 
+			inline unsigned int to_uint32_as_d3d9color() const 
+			{
+				return to_uint32_argb();
+			}
+
 
 
 			/** \brief Построение цвета  из целочисленого 4-x  байтового цвета.  */
