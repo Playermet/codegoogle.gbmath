@@ -13,38 +13,7 @@
 namespace gbmath
 {
 
-	// constants ...
-
-	namespace detail_const
-	{
-
-		static const char* CSTR_VIEWPROJECTION = "VIEWPROJECTION";
-		static const char* CSTR_VIEWPROJECTIONINVERSE = "VIEWPROJECTIONINVERSE";
-		static const char* CSTR_VIEWPROJECTIONINVERSETRANSPONE = "VIEWPROJECTIONINVERSETRANSPONE";
-		static const char* CSTR_VIEWPROJECTIONTRANSPONE = "VIEWPROJECTIONTRANSPONE";
-		static const char* CSTR_VIEW = "VIEW";
-		static const char* CSTR_VIEWTRANSPONE = "VIEWTRANSPONE";
-		static const char* CSTR_VIEWINVERSE = "VIEWINVERSE";
-		static const char* CSTR_VIEWINVERSETRANSPONE = "VIEWINVERSETRANSPONE";
-		static const char* CSTR_PROJECTION = "PROJECTION";
-		static const char* CSTR_PROJECTIONINVERSE = "PROJECTIONINVERSE";
-		static const char* CSTR_PROJECTIONTRANSPONE = "PROJECTIONTRANSPONE";
-		static const char* CSTR_PROJECTIONINVERSETRANSPONE = "PROJECTIONINVERSETRANSPONE";
-		static const char* CSTR_WORLDVIEWPROJECTION = "WORLDVIEWPROJECTION";
-		static const char* CSTR_WORLDVIEWPROJECTIONTRANSPONE = "WORLDVIEWPROJECTIONTRANSPONE";
-		static const char* CSTR_WORLDVIEWPROJECTIONINVERSE = "WORLDVIEWPROJECTIONINVERSE";
-		static const char* CSTR_WORLDVIEWPROJECTIONINVERSETRANSPONE = "WORLDVIEWPROJECTIONINVERSETRANSPONE";
-		static const char* CSTR_WORLD = "WORLD";
-		static const char* CSTR_WORLDTRANSPONE = "WORLDTRANSPONE";
-		static const char* CSTR_WORLDINVERSE = "WORLDINVERSE";
-		static const char* CSTR_WORLDINVERSETRANSPONE = "WORLDINVERSETRANSPONE";
-		static const char* CSTR_WORLDVIEW = "WORLDVIEW";
-		static const char* CSTR_WORLDVIEWTRANSPONE = "WORLDVIEWTRANSPONE";
-		static const char* CSTR_WORLDVIEWINVERSE = "WORLDVIEWINVERSE";
-		static const char* CSTR_WORLDVIEWINVERSETRANSPONE = "WORLDVIEWINVERSETRANSPONE";
-
-
-}
+ 
 
 
 //=========================================================================
@@ -2043,338 +2012,250 @@ std::string  matrix4x4_context_type_e::tostr(const matrix4x4_context_type_e::e v
 
 	return res;
 }
+//
+////=================================================================
+//bool  matrix4x4_context_type_e::fromstr(
+//								matrix4x4_context_type_e::e& valOut,
+//							    const char* strArg
+//								)
+//{
+//	using namespace detail_const;
+//
+//	assert(strArg);
+//
+//	std::string str =   strArg;
+//	for(size_t c=0; c<str.length(); c++)
+//	{
+//		str[c] = toupper(str[c]);
+//	}
+//
+//
+//	if( (str == CSTR_VIEWPROJECTION)||(str=="VIEWPROJ")||(str=="VP")||(str=="VIEWPROJECTION") )
+//	{
+//		valOut = matrix4x4_context_type_e::VIEWPROJECTION;
+//		return true;
+//	}
+//
+//	if( (str==CSTR_VIEWPROJECTIONINVERSE)||(str=="VIEWPROJINV")||(str=="VPI")||(str=="VIEWPROJECTIONINVERSE") )
+//	{
+//		valOut = matrix4x4_context_type_e::VIEWPROJECTIONINVERSE;
+//		return true;
+//	}
+//
+//	if( (str == CSTR_VIEWPROJECTIONINVERSETRANSPONE) ||
+//		(str=="CSTR_VIEWPROJINVTRANSP") || (str=="VPIT") || (str=="VIEWPROJECTIONINVERSETRANSPONE") )
+//	{
+//		valOut = matrix4x4_context_type_e::VIEWPROJECTIONINVERSETRANSPONE;
+//		return true;
+//	}
+//
+//
+//
+//
+//
+//	// VIEWPROJECTIONTRANSPONE
+//
+//	if( (str == CSTR_VIEWPROJECTIONTRANSPONE) || (str=="VIEWPROJTRANSP")
+//		|| (str=="VPT") || (str=="VIEWPROJECTIONTRANSPONE") )
+//	{
+//		valOut = matrix4x4_context_type_e::VIEWPROJECTIONTRANSPONE;
+//		return true;
+//	}
+//
+//
+//	if( str == CSTR_VIEW )
+//	{
+//		valOut = matrix4x4_context_type_e::VIEW;
+//		return true;
+//	}
+//
+//	if( (str == CSTR_VIEWTRANSPONE) || (str=="VIEWTRANSP") || (str=="VT")||(str=="VIEWTRANSPONE") )
+//	{
+//		valOut = matrix4x4_context_type_e::VIEWTRANSPONE;
+//		return true;
+//	}
+//
+//	//	VIEWINVERSE
+//
+//	if( (str == CSTR_VIEWINVERSE) || (str=="VIEWINV") || (str=="VI") )
+//	{
+//		valOut = matrix4x4_context_type_e::VIEWINVERSE;
+//		return true;
+//	}
+//
+//
+//
+//
+//
+//
+//	// VIEWINVERSETRANSPONE
+//
+//	if( (str == CSTR_VIEWINVERSETRANSPONE) || ( str == "VIEWINVTRANSP" )
+//		|| (str=="VIT"))
+//	{
+//		valOut = matrix4x4_context_type_e::VIEWINVERSETRANSPONE;
+//		return true;
+//	}
+//
+//
+//	if( (str == CSTR_PROJECTION) || ( str == "PROJ" ) )
+//	{
+//		valOut = matrix4x4_context_type_e::PROJECTION;
+//		return true;
+//	}
+//
+//
+//
+//
+//	if((str==CSTR_PROJECTIONINVERSE)||(str=="PROJINV")||(str=="PI") )
+//	{
+//		valOut = matrix4x4_context_type_e::PROJECTIONINVERSE;
+//		return true;
+//	}
+//
+//
+//
+//
+//	if( (str==CSTR_PROJECTIONTRANSPONE)||(str=="PROJTRANSP")||(str=="PT") )
+//	{
+//		valOut = matrix4x4_context_type_e::PROJECTIONTRANSPONE;
+//		return true;
+//	}
+//
+//
+//	if( (str==CSTR_PROJECTIONINVERSETRANSPONE) || (str=="CSTR_PROJINVTRANSP")
+//		|| (str=="PIT") )
+//	{
+//		valOut = matrix4x4_context_type_e::PROJECTIONINVERSETRANSPONE;
+//		return true;
+//	}
+//
+//	if( (str == CSTR_WORLDVIEWPROJECTION)||(str=="WORLDVIEWPROJ")||(str=="WVP") )
+//	{
+//		valOut = matrix4x4_context_type_e::WORLDVIEWPROJECTION;
+//		return true;
+//	}
+//
+//
+//	if( (str==CSTR_WORLDVIEWPROJECTIONTRANSPONE)||(str=="WORLDVIEWPROJTRANSP")
+//		|| (str=="WVPT") )
+//	{
+//		valOut = matrix4x4_context_type_e::WORLDVIEWPROJECTIONTRANSPONE;
+//		return true;
+//	}
+//
+//
+//
+//
+//	if( (str==CSTR_WORLDVIEWPROJECTIONINVERSE) || (str=="WORLDVIEWPROJINV")
+//		|| (str=="WVPI") )
+//	{
+//		valOut = matrix4x4_context_type_e::WORLDVIEWPROJECTIONINVERSE;
+//		return true;
+//	}
+//
+//
+//	// WORLDVIEWPROJECTIONINVERSETRANSPONE
+//
+//	if( (str == CSTR_WORLDVIEWPROJECTIONINVERSETRANSPONE)
+//		|| (str == "WORLDVIEWPROJINVTRANSP" )
+//		|| (str=="WVPIT") )
+//	{
+//		valOut = matrix4x4_context_type_e::WORLDVIEWPROJECTIONINVERSETRANSPONE;
+//		return true;
+//	}
+//
+//
+//
+//
+//
+//	if( str == CSTR_WORLD )
+//	{
+//		valOut = matrix4x4_context_type_e::WORLD;
+//		return true;
+//	}
+//
+//
+//
+//
+//	if( (str == CSTR_WORLDTRANSPONE) || (str == "WORLDTRANSP")||(str=="WT") )
+//	{
+//		valOut = matrix4x4_context_type_e::WORLDTRANSPONE;
+//		return true;
+//	}
+//
+//
+//
+//
+//
+//	if( (str==CSTR_WORLDINVERSE)||(str=="WORLDINV")||(str=="WI") )
+//	{
+//		valOut = matrix4x4_context_type_e::WORLDINVERSE;
+//		return true;
+//	}
+//
+//
+//
+//	// WORLDINVERSETRANSPONE
+//
+//
+//	if( (str==CSTR_WORLDINVERSETRANSPONE)||(str=="WORLDINVTRANSP")||(str=="WIT") )
+//	{
+//		valOut = matrix4x4_context_type_e::WORLDINVERSETRANSPONE;
+//		return true;
+//	}
+//
+//
+//
+//
+//	if( (str==CSTR_WORLDVIEW)||(str=="WV") )
+//	{
+//		valOut = matrix4x4_context_type_e::WORLDVIEW;
+//		return true;
+//	}
+//
+//
+//	if( (str==CSTR_WORLDVIEWTRANSPONE)||(str == "WORLDVIEWTRANSP")||(str=="WVT") )
+//	{
+//		valOut = matrix4x4_context_type_e::WORLDVIEWTRANSPONE;
+//		return true;
+//	}
+//
+//
+//
+//	if( (str==CSTR_WORLDVIEWINVERSE)||(str=="WORLDVIEWINV")||(str=="WVI") )
+//	{
+//		valOut = matrix4x4_context_type_e::WORLDVIEWINVERSE;
+//		return true;
+//	}
+//
+//
+//	//  WORLDVIEWINVERSETRANSPONE
+//
+//	if( str == CSTR_WORLDVIEWINVERSETRANSPONE )
+//	{
+//		valOut = matrix4x4_context_type_e::WORLDVIEWINVERSETRANSPONE;
+//		return true;
+//	}
+//
+//	if( str == "WORLDVIEWINVTRANSP" )
+//	{
+//		valOut = matrix4x4_context_type_e::WORLDVIEWINVERSETRANSPONE;
+//		return true;
+//	}
+//
+//	if(str=="WVIT")
+//	{
+//		valOut = matrix4x4_context_type_e::WORLDVIEWINVERSETRANSPONE;
+//		return true;
+//	}
+//
+//
+//
+//	return false;
+//}
 
-//=================================================================
-bool  matrix4x4_context_type_e::fromstr(
-								matrix4x4_context_type_e::e& valOut,
-							    const char* strArg
-								)
-{
-	using namespace detail_const;
 
-	assert(strArg);
-
-	std::string str =   strArg;
-	for(size_t c=0; c<str.length(); c++)
-	{
-		str[c] = toupper(str[c]);
-	}
-
-
-	if( (str == CSTR_VIEWPROJECTION)||(str=="VIEWPROJ")||(str=="VP")||(str=="VIEWPROJECTION") )
-	{
-		valOut = matrix4x4_context_type_e::VIEWPROJECTION;
-		return true;
-	}
-
-	if( (str==CSTR_VIEWPROJECTIONINVERSE)||(str=="VIEWPROJINV")||(str=="VPI")||(str=="VIEWPROJECTIONINVERSE") )
-	{
-		valOut = matrix4x4_context_type_e::VIEWPROJECTIONINVERSE;
-		return true;
-	}
-
-	if( (str == CSTR_VIEWPROJECTIONINVERSETRANSPONE) ||
-		(str=="CSTR_VIEWPROJINVTRANSP") || (str=="VPIT") || (str=="VIEWPROJECTIONINVERSETRANSPONE") )
-	{
-		valOut = matrix4x4_context_type_e::VIEWPROJECTIONINVERSETRANSPONE;
-		return true;
-	}
-
-
-
-
-
-	// VIEWPROJECTIONTRANSPONE
-
-	if( (str == CSTR_VIEWPROJECTIONTRANSPONE) || (str=="VIEWPROJTRANSP")
-		|| (str=="VPT") || (str=="VIEWPROJECTIONTRANSPONE") )
-	{
-		valOut = matrix4x4_context_type_e::VIEWPROJECTIONTRANSPONE;
-		return true;
-	}
-
-
-	if( str == CSTR_VIEW )
-	{
-		valOut = matrix4x4_context_type_e::VIEW;
-		return true;
-	}
-
-	if( (str == CSTR_VIEWTRANSPONE) || (str=="VIEWTRANSP") || (str=="VT")||(str=="VIEWTRANSPONE") )
-	{
-		valOut = matrix4x4_context_type_e::VIEWTRANSPONE;
-		return true;
-	}
-
-	//	VIEWINVERSE
-
-	if( (str == CSTR_VIEWINVERSE) || (str=="VIEWINV") || (str=="VI") )
-	{
-		valOut = matrix4x4_context_type_e::VIEWINVERSE;
-		return true;
-	}
-
-
-
-
-
-
-	// VIEWINVERSETRANSPONE
-
-	if( (str == CSTR_VIEWINVERSETRANSPONE) || ( str == "VIEWINVTRANSP" )
-		|| (str=="VIT"))
-	{
-		valOut = matrix4x4_context_type_e::VIEWINVERSETRANSPONE;
-		return true;
-	}
-
-
-	if( (str == CSTR_PROJECTION) || ( str == "PROJ" ) )
-	{
-		valOut = matrix4x4_context_type_e::PROJECTION;
-		return true;
-	}
-
-
-
-
-	if((str==CSTR_PROJECTIONINVERSE)||(str=="PROJINV")||(str=="PI") )
-	{
-		valOut = matrix4x4_context_type_e::PROJECTIONINVERSE;
-		return true;
-	}
-
-
-
-
-	if( (str==CSTR_PROJECTIONTRANSPONE)||(str=="PROJTRANSP")||(str=="PT") )
-	{
-		valOut = matrix4x4_context_type_e::PROJECTIONTRANSPONE;
-		return true;
-	}
-
-
-	if( (str==CSTR_PROJECTIONINVERSETRANSPONE) || (str=="CSTR_PROJINVTRANSP")
-		|| (str=="PIT") )
-	{
-		valOut = matrix4x4_context_type_e::PROJECTIONINVERSETRANSPONE;
-		return true;
-	}
-
-	if( (str == CSTR_WORLDVIEWPROJECTION)||(str=="WORLDVIEWPROJ")||(str=="WVP") )
-	{
-		valOut = matrix4x4_context_type_e::WORLDVIEWPROJECTION;
-		return true;
-	}
-
-
-	if( (str==CSTR_WORLDVIEWPROJECTIONTRANSPONE)||(str=="WORLDVIEWPROJTRANSP")
-		|| (str=="WVPT") )
-	{
-		valOut = matrix4x4_context_type_e::WORLDVIEWPROJECTIONTRANSPONE;
-		return true;
-	}
-
-
-
-
-	if( (str==CSTR_WORLDVIEWPROJECTIONINVERSE) || (str=="WORLDVIEWPROJINV")
-		|| (str=="WVPI") )
-	{
-		valOut = matrix4x4_context_type_e::WORLDVIEWPROJECTIONINVERSE;
-		return true;
-	}
-
-
-	// WORLDVIEWPROJECTIONINVERSETRANSPONE
-
-	if( (str == CSTR_WORLDVIEWPROJECTIONINVERSETRANSPONE)
-		|| (str == "WORLDVIEWPROJINVTRANSP" )
-		|| (str=="WVPIT") )
-	{
-		valOut = matrix4x4_context_type_e::WORLDVIEWPROJECTIONINVERSETRANSPONE;
-		return true;
-	}
-
-
-
-
-
-	if( str == CSTR_WORLD )
-	{
-		valOut = matrix4x4_context_type_e::WORLD;
-		return true;
-	}
-
-
-
-
-	if( (str == CSTR_WORLDTRANSPONE) || (str == "WORLDTRANSP")||(str=="WT") )
-	{
-		valOut = matrix4x4_context_type_e::WORLDTRANSPONE;
-		return true;
-	}
-
-
-
-
-
-	if( (str==CSTR_WORLDINVERSE)||(str=="WORLDINV")||(str=="WI") )
-	{
-		valOut = matrix4x4_context_type_e::WORLDINVERSE;
-		return true;
-	}
-
-
-
-	// WORLDINVERSETRANSPONE
-
-
-	if( (str==CSTR_WORLDINVERSETRANSPONE)||(str=="WORLDINVTRANSP")||(str=="WIT") )
-	{
-		valOut = matrix4x4_context_type_e::WORLDINVERSETRANSPONE;
-		return true;
-	}
-
-
-
-
-	if( (str==CSTR_WORLDVIEW)||(str=="WV") )
-	{
-		valOut = matrix4x4_context_type_e::WORLDVIEW;
-		return true;
-	}
-
-
-	if( (str==CSTR_WORLDVIEWTRANSPONE)||(str == "WORLDVIEWTRANSP")||(str=="WVT") )
-	{
-		valOut = matrix4x4_context_type_e::WORLDVIEWTRANSPONE;
-		return true;
-	}
-
-
-
-	if( (str==CSTR_WORLDVIEWINVERSE)||(str=="WORLDVIEWINV")||(str=="WVI") )
-	{
-		valOut = matrix4x4_context_type_e::WORLDVIEWINVERSE;
-		return true;
-	}
-
-
-	//  WORLDVIEWINVERSETRANSPONE
-
-	if( str == CSTR_WORLDVIEWINVERSETRANSPONE )
-	{
-		valOut = matrix4x4_context_type_e::WORLDVIEWINVERSETRANSPONE;
-		return true;
-	}
-
-	if( str == "WORLDVIEWINVTRANSP" )
-	{
-		valOut = matrix4x4_context_type_e::WORLDVIEWINVERSETRANSPONE;
-		return true;
-	}
-
-	if(str=="WVIT")
-	{
-		valOut = matrix4x4_context_type_e::WORLDVIEWINVERSETRANSPONE;
-		return true;
-	}
-
-
-
-	return false;
-}
-
-//=================================================================
-std::string   vector_context_type_e::tostr(const vector_context_type_e::e val)
-{
-	std::string res;
-   switch(val)
-   {
-
-   case VIEWPOSITION:
-	   {
-	   res = "VIEWPOSITION";
-	   }
-	   break;
-
-   case VIEWDIRECTION:
-	   {
-	   res = "VIEWDIRECTION";
-	   }
-	   break;
-
-   case VIEWUP:
-	   {
-	   res = "VIEWUP";
-	   }
-	   break;
-
-   case VIEWSIDE:
-	   {
-		res = "VIEWSIDE";
-	   }
-	   break;
-
-   default:
-	   {
-
-	   }
-   }
-
-  return res;
-};
-
-//=================================================================
-bool   vector_context_type_e::fromstr(vector_context_type_e::e& valOut, const char* strarg)
-{
-
-	std::string str = strarg;
-
-	//__str_touper(str);
-	for(size_t c=0; c<str.length(); c++ )
-	{
-		str[c] = toupper( str[c] );
-	}
-
-
-
-	if( ("VIEWPOSITION" == str) || ("VIEW_POSITION" == str) || ("VIEWPOS" == str)  ||
-		  ("EYEPOSITION" == str) || ("EYEPOS" == str) 
-		)
-	{
-		valOut = VIEWPOSITION;
-		return true;
-	}
-
-	if( ("VIEWDIRECTION" == str) || ("VIEW_DIRECTION" == str) || ("VIEWDIR" == str) ||
-		  ("EYEDIRECTION" == str) || ("EYEDIR" == str)
-		)
-	{
-		valOut = VIEWDIRECTION;
-		return true;
-	}
-
-	if( ("VIEWUP" == str) || ("EYEUP" == str)  )
-	{
-		valOut = VIEWUP;
-		return true;
-	}
-
-	if(  ("VIEWSIDE" == str)  || ("EYESIDE" == str) )
-	{
-		valOut = VIEWSIDE;
-		return true;
-	}
-
-
-	printf("Value %s not found \n" , strarg );
-	assert(  false   &&  "Value not found" );
-
-
-  return false;
-}
 
 
 }

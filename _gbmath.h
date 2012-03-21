@@ -53,6 +53,37 @@ namespace gbmath
 
 }
 
+// new 
+
+namespace gbmath
+{
+
+	struct axies_e
+	{
+		enum e
+		{
+			undefined = 0,
+			
+			ax,
+			ay,
+			az,
+			
+			__UNUSED_DECLLAST,
+			__UNUSED_FORCE32 = 0x7f000000
+		
+		};
+		
+		e value;
+	
+	
+	
+	};
+
+
+}
+
+
+
 // include lib headers
 
 
