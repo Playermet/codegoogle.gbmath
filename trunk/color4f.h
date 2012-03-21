@@ -573,6 +573,22 @@ namespace gbmath
 #endif
 
 
+
+			inline operator std::string() const
+			{
+				char temp[128];
+				sprintf(temp,"%f %f %f %f",r,g,b,a);
+				return std::string( temp );
+			}
+
+			inline void operator = (const std::string& a) throw (std::runtime_error)
+			{
+				int scres = sscanf( a.c_str() , "%f %f %f %f", &r, &g, &b, &a );
+				if(scres != 4)   throw std::runtime_error("bad argument");
+			}
+
+
+
 		};
 		// end class color4f
 
