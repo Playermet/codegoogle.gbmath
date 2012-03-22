@@ -1438,7 +1438,7 @@ int  geometry_context::setProjectionZNear(float fZNear)
 
 
   return hr;
-};
+}
 
 //===================================================
 int  geometry_context::setProjectionZFar(float fZFar)
@@ -1478,14 +1478,14 @@ int  geometry_context::setProjectionZNearZFar(float fZNear, float fZFar)
   };
 
   return hr;
-};
+}
 
 //==========================================
 TransformData  geometry_context::getWorldTransformData()const
 {
   TransformData  res =  *getWorldTransformDataPtr();
   return res;
-};
+}
 
 
 //==========================================
@@ -1545,7 +1545,7 @@ const TransformData  *geometry_context::getWorldTransformDataPtr()const
 
 
   return  &m_TransformData;
-};
+}
 
 //==========================================
 vec3 geometry_context::getWorldScaling()const
@@ -1555,7 +1555,7 @@ vec3 geometry_context::getWorldScaling()const
 
   return res;
 
-};
+}
 
 //==========================================
 axies_angle geometry_context::getWorldRotationAxiesAngle() const
@@ -1563,7 +1563,7 @@ axies_angle geometry_context::getWorldRotationAxiesAngle() const
 	const TransformData  *ptd = getWorldTransformDataPtr();
 	Quaternion qrot =  ptd->qRotation;
 	return qrot.toAxiesAngle();
-};
+}
 
 //==========================================
 Quaternion geometry_context::getWorldRotationQuaternion() const
@@ -1577,7 +1577,7 @@ Quaternion geometry_context::getWorldRotationQuaternion() const
 
   // OLD
   //return m_qRotation;
-};
+}
 
 //==========================================
 vec3 geometry_context::getWorldPosition()const
@@ -1587,7 +1587,7 @@ vec3 geometry_context::getWorldPosition()const
 
   return ptd->vTranslation;
 
-};
+}
 
 
 //==========================================
@@ -1635,7 +1635,7 @@ int  geometry_context::setWorldTransformData(const TransformData  *pTr)
 
 
   return hr;
-};
+}
 
 //==========================================
 int  geometry_context::setWorldPositionVal(float x, float y, float z)
@@ -1651,7 +1651,7 @@ int  geometry_context::setWorldPositionVal(float x, float y, float z)
   hr |= setWorldTransformData(&trd);
 
   return hr;
-};
+}
 
 //==========================================
 int  geometry_context::setWorldPositionVec(const vec3 *pos)
@@ -1661,7 +1661,7 @@ int  geometry_context::setWorldPositionVec(const vec3 *pos)
   hr |= setWorldPositionVal(vpos.x, vpos.y, vpos.z);
 
   return hr;
-};
+}
 
 
 //==========================================
@@ -1676,7 +1676,7 @@ int  geometry_context::setWorldRotationYawPitchRoll(float yaw, float pitch, floa
   hr |= setWorldRotationQuaternion(&q);
 
   return hr;
-};
+}
 
 /********************************
 int  geometry_context::setWorldRotationVal(float axX, float axY, float axZ, float angle)
@@ -1701,7 +1701,7 @@ int  geometry_context::setWorldRotationVal(float axX, float axY, float axZ, floa
   hr |= setWorldTransformData(&trd);
 
   return hr;
-};
+}
 *******************************/
 
 //==========================================
@@ -1744,7 +1744,7 @@ trd.qRotation = *q;
 
 
   return hr;
-};
+}
 
 //=========================================================================
 int  geometry_context::setWorldRotationAxiesAngle(const vec3 *vAx, float angle )
@@ -1765,7 +1765,7 @@ int  geometry_context::setWorldRotationAxiesAngle(const vec3 *vAx, float angle )
   hr |= setWorldTransformData(&trd);
 
   return hr;
-};
+}
 
 
 //=========================================================================
@@ -1775,7 +1775,7 @@ int  geometry_context::setWorldScaling(float val)
   hr |= setWorldScaling(val, val, val);
 
   return hr;
-};
+}
 
 //=========================================================================
 int  geometry_context::setWorldScaling(float x, float y, float z)
@@ -1790,7 +1790,7 @@ int  geometry_context::setWorldScaling(float x, float y, float z)
 
 	hr |= setWorldTransformData(&tr);
 	return hr;
-};
+}
 
 //=========================================================================
 int  geometry_context::setWorldScalingVec(const vec3 *vSc)
@@ -1800,7 +1800,7 @@ int  geometry_context::setWorldScalingVec(const vec3 *vSc)
   hr |= setWorldScaling(scale.x, scale.y, scale.z);
 
   return hr;
-};
+}
 
 //=========================================================================
 int  geometry_context::setWorldScalingTranslation(float fScale, const vec3 *vTrnsl)
@@ -1812,7 +1812,7 @@ int  geometry_context::setWorldScalingTranslation(float fScale, const vec3 *vTrn
   hr |= setWorldTransformData(&tr);
 
   return hr;
-};
+}
 
 //=========================================================================
 int  geometry_context::setWorldScalingTranslation(float fScale, float x, float y, float z)
@@ -1827,7 +1827,8 @@ int  geometry_context::setWorldScalingTranslation(float fScale, float x, float y
   hr |= setWorldScalingTranslation(fScale, &vtr);
 
   return hr;
-};
+}
+
 //
 //#pragma message("ks777: NEED DELETE MAIN()  " __FILE__ )
 //int main()
@@ -1836,15 +1837,16 @@ int  geometry_context::setWorldScalingTranslation(float fScale, float x, float y
 //}
 //
 
-//=========================================================================
+ 
 
 
 
+/*
 //=================================================================
 std::string  matrix4x4_context_type_e::tostr(const matrix4x4_context_type_e::e val)
 {
 
-   using namespace detail_const;
+//   using namespace detail_const;
 
 	std::string res;
 
@@ -2012,6 +2014,10 @@ std::string  matrix4x4_context_type_e::tostr(const matrix4x4_context_type_e::e v
 
 	return res;
 }
+*/
+
+
+
 //
 ////=================================================================
 //bool  matrix4x4_context_type_e::fromstr(
