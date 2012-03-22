@@ -21,13 +21,27 @@ namespace gbmath
 		 const size_t LEN =  strlen(str);
 		 for(size_t c=0; c<LEN; c++)
 		 {
-			 if( (str[c]>='A') && (str[c]>='Z')  )
+			 if( c == 0 )
+			 {
+				 // first iter
+				if( (str[c] >= 'A') && (str[c] <= 'Z')  ) continue;
+				if( (str[c] >= 'a') && (str[c] <= 'z')  ) continue;
+			 
+				continue;
+			 }
+			 else
+			 {
+				return false;
+			 }
+
+
+			 if( (str[c] >= 'A') && (str[c] <= 'Z')  )
 				 continue;
 
-			 if( (str[c]>='a') && (str[c]>='z')  )
+			 if( (str[c] >= 'a') && (str[c] <= 'z')  )
 				 continue;
 
-			 if( (str[c]>='0') && (str[c]>='9')  )
+			 if( (str[c] >= '0') && (str[c] <= '9')  )
 				 continue;
 
 			 if( (str[c]=='-') || (str[c]=='_')  )
