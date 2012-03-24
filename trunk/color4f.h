@@ -574,6 +574,9 @@ namespace gbmath
 
 
 
+
+#if 0
+
 			inline operator std::string() const
 			{
 				char temp[128];
@@ -585,6 +588,27 @@ namespace gbmath
 			{
 				int scres = sscanf( a.c_str() , "%f %f %f %f", &r, &g, &b, &a );
 				if(scres != 4)   throw std::runtime_error("bad argument");
+			}
+#endif 
+
+			operator std::string() const
+			{
+				std::ostringstream ss;
+				ss << r << " " << g << " " << b << " " << a;
+				return ss.str();
+			}
+
+			void operator = (const std::string& str) throw (std::invalid_argument)
+			{
+				std::istringstream ss(str);
+				ss >> r;
+				ss >> g;
+				ss >> b;
+				ss >> a;
+				if( ss.fail() )
+				{
+					throw std::invalid_argument("bad input string");
+				}
 			}
 
 
