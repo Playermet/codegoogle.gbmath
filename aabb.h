@@ -64,6 +64,14 @@ namespace gbmath
 		max = _max; 
 	}
 
+	inline bool empty() const 
+	{
+		if(!min.empty()) return false;
+		if(!max.empty()) return false;
+
+		return true;
+	}
+
 	inline void setzero()
 	{
 		min.setzero();
