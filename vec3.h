@@ -157,6 +157,11 @@ namespace gbmath
 		   	inline void operator = (const D3DXVECTOR3& v) {	x=v.x; y=v.y; z=v.z; }
 #endif // #ifdef __D3DX9MATH_H__
 
+need cast and assign  physX
+
+
+
+
 			void operator = (const point3& pnt);
 
 
