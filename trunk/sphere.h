@@ -57,6 +57,11 @@ namespace gbmath
 		  radius = fRadius;
 	  }
 
+	  inline bool empty() const 
+	  {
+		  return ( center.empty() ) && ( radius == 0.0f ); 
+	  }
+
 
 	  //! \brief Get the distance between the edges of the spheres.
 				// Returns a negative value if the spheres intersect.
