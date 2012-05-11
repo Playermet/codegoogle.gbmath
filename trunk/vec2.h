@@ -126,10 +126,7 @@ namespace gbmath
 	 }
 #else
 
-
-need a cast to from and asign box2d lib
-
-
+ 
 
 
 			/*
