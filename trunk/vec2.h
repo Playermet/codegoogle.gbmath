@@ -44,6 +44,17 @@ namespace gbmath
 
 
 				inline vec2(const float* pfArray) { *this = pfArray; }
+				
+				#ifdef B2_MATH_H
+				
+				inline vec2(const b2Vec2& a)
+				{
+					x = (float)a.x;
+					y = (float)a.y;
+				}
+				
+				
+				#endif 
 
 				//! \brief Присваивание из float-массива
 				inline void operator = (const float* pf)
@@ -126,6 +137,25 @@ namespace gbmath
 	 }
 #else
 
+
+#ifdef B2_MATH_H
+
+	inline void operator = (const b2Vec2& a)
+	{
+		x = (float)a.x;
+		y = (float)a.y;
+	}
+	
+	inline operator  b2Vec2 () const 
+	{
+		b2Vec2 res;
+		res.x = (float32)x;
+		res.y = (float32)y;
+		return res;
+	}
+
+
+#endif 
  
 
 
