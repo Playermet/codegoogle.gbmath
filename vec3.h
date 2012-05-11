@@ -69,6 +69,32 @@ namespace gbmath
 			{ 
 				*this = pfArray; 
 			}
+
+
+			// physX cats
+#ifdef NX_FOUNDATION_NXVEC3
+
+			inline vec3(const NxVec3 & a)
+			{
+				x = (float)a.x;
+				y = (float)a.y;
+				z = (float)a.z;
+			}
+
+
+#endif  // #ifdef NX_FOUNDATION_NXVEC3
+
+
+#ifdef B2_MATH_H
+
+	inline vec3 (const b2Vec3& a)
+	{
+		x = (float)a.x;
+		y = (float)a.y;
+		z = (float)a.z;
+	}
+
+#endif 
  
 
 			//! \brief Присваивание из float-массива
@@ -159,6 +185,52 @@ namespace gbmath
 
  
 
+// physX cats
+#ifdef NX_FOUNDATION_NXVEC3
+
+
+			inline void operator = (const NxVec3 & a)
+			{
+				x = (float)a.x;
+				y = (float)a.y;
+				z = (float)a.z;
+			}
+
+			inline operator NxVec3 () const
+			{
+				NxVec3 res;
+				res.x = (NxReal)x;
+				res.y = (NxReal)y;
+				res.z = (NxReal)z;
+				return res;
+			}
+ 
+
+#endif  // #ifdef NX_FOUNDATION_NXVEC3
+
+#ifdef B2_MATH_H
+
+	inline void operator = (const b2Vec3& a)
+	{
+		x = (float)a.x;
+		y = (float)a.y;
+		z = (float)a.z;
+	}
+	
+	inline operator  b2Vec3 () const 
+	{
+		b2Vec2 res;
+		res.x = (float32)x;
+		res.y = (float32)y;
+		res.z = (float32)z;
+		return res;
+	}
+
+
+#endif 
+
+
+ 
 			void operator = (const point3& pnt);
 
 
