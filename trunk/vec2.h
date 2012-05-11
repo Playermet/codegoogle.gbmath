@@ -126,6 +126,12 @@ namespace gbmath
 	 }
 #else
 
+
+need a cast to from and asign box2d lib
+
+
+
+
 			/*
 #ifdef   __GB_TYPES_H__
 	 void operator = (const POINT& p)
