@@ -125,9 +125,50 @@ namespace gbmath
 				return nr | ng | nb | na ;
 			}
 
+			void from_uint32_argb(unsigned int val)
+			{
+				{
+					unsigned int temp = val | 0x00ffffff;
+					temp ^= 0x00ffffff;
+					temp = temp >> 24;
+					a = ((float)temp) / 255.0f ;
+				}
+
+				{
+					unsigned int temp = val | 0xff00ffff;
+					temp ^= 0xff00ffff;
+					temp = temp >> 16;
+					r = ((float)temp) / 255.0f ;
+				}
+
+
+				{
+					unsigned int temp = val | 0xffff00ff;
+					temp ^= 0xffff00ff;
+					temp = temp >> 8;
+					g = ((float)temp) / 255.0f ;
+				}				
+
+				{
+					unsigned int temp = val | 0xffffff00;
+					temp ^= 0xffffff00;
+					temp = temp >> 0;
+					b = ((float)temp) / 255.0f ;
+				}
+ 
+			}
+
+
+
 			inline unsigned int to_uint32_as_d3d9color() const 
 			{
 				return to_uint32_argb();
+			}
+
+
+			inline void from_uint32_as_d3d9color(unsigned int val) 
+			{
+				from_uint32_argb( val );
 			}
 
 
