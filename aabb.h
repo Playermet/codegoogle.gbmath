@@ -41,14 +41,14 @@ namespace gbmath
 			inline  vec3 operator [] (unsigned int index)   const
 			{
 				assert(index<8 && "invalid index");
-				return points[index];
+				return points[index];  
 			}
 
 		};
 
 	inline aabb() 
 	{
-		min.setzero();
+		min.setzero();	
 		max.setzero();
 	}
 

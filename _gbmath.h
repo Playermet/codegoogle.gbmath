@@ -58,6 +58,7 @@ namespace gbmath
 namespace gbmath
 {
 
+	//! \brief axies data enum x y z 
 	struct axies_e
 	{
 		enum e
@@ -75,13 +76,74 @@ namespace gbmath
 		
 		e value;
 	
+		//
+
+		axies_e()
+		{
+			value = undefined;
+		}
+
+		axies_e(const e val)
+		{
+			value = val;
+		}
+
+		axies_e(const axies_e& val)
+		{
+			value = val.value;
+		}
+
+		void operator = (const e val)
+		{
+			value = val;
+		}
 	
+
+
+
+
 	
 	};
 
 
 }
 
+
+// math const
+
+namespace gbmath
+{
+
+
+	static const float EPSILON	  =	1.0e-6f;
+
+	static const float PI       = 3.1415926536f; ///<   PI
+	static const float C1BYPI    = 0.3183098862f; ///<   1/PI
+
+	static const float PI2         =  6.283185307f; ///<  	2*PI
+	static const float PI_DIV_2      =  1.570796326f; ///<   PI/2
+	static const float PI_DIV_4      =  0.785398163f; ///<   PI/4
+	static const float PI_DIV_6      =  0.523598776f; ///<   PI/6
+
+	static const float PI_DIV_180    =  0.017453292f; ///<   PI/180
+	static const float C180DIVPI    =  57.29577951f; ///<   180/PI
+
+	static const float C3PIDIV4     = 2.35619449f;   ///<   3/4 PI
+	static const float PI2_INV      = 0.159154943f;  ///<   1/(2PI)
+	static const float CINV360      = 0.002777778f;  ///<   1/360
+	static const float C180         = 180.0f;
+	static const float C360         = 360.0f;
+	static const float HALF     = 0.5f;
+	static const float TWO         = 2.0f;
+	static const float LN10        = 2.302585093f;
+
+	static const float SQRT_2       = 1.4142135624f; ///< sqrt(2)
+	static const float SQRT_HALF    = 0.7071067812f; ///< sqrt(1/2)
+
+	static const float E           = 2.718281828459f; ///<  e
+
+
+}
 
 
 // include lib headers
