@@ -35,7 +35,7 @@ namespace gbmath
 {
  
 
-  //! \brief    fmath  constants .
+  //! \brief  (DEPRECATED)  fmath  constants  .
   namespace constan
   {
 
