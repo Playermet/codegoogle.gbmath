@@ -249,12 +249,9 @@ namespace gbmath
 #include "perspective_projection_data.h"
 #include "related_coord.h"
 #include "viewport.h"
-
-
-// context
+ 
 #include "valueserver.h"
-#include "float_context_type_e.h"
-#include "float_context.h"
+ 
 
 #include "matrix4x4_context_type_e.h"
 
