@@ -1222,8 +1222,8 @@ eyedata geometry_context::getViewParams()const
 //=======================================================
 const eyedata *geometry_context::getViewParamsPtr()const
 {
-	assert(false);
-#pragma message ( "geometry_context::getViewParamsPtr :: ПОГОНЯТЬ В ОТЛАДКЕ ЭТОТ МЕТОД  "  __FILE__ )
+	assert(false  && "  need a debug step");
+ 
 
 
   const mat44 *pmViewInv = get_matrix_ViewInverse();
@@ -1237,8 +1237,8 @@ const eyedata *geometry_context::getViewParamsPtr()const
    // vec3 vViewDir = *((vec3*) &m_matr.mViewInverse.matrix._31);
    // m_EyeData.eye_up = *((Normal3*) &m_matr.mViewInverse.matrix._21);
 
-    #pragma message("ks777  ПРОВЕРИТЬ !!!!  " __FILE__)
-      assert(false&&"NEED CKECK!! ");
+ 
+      assert(false &&" NEED CHECK!! ");
    // float fDistToCenter = vViewDir.length();  // D3DXVec3Length(&vViewDir);
 
 	/**
@@ -1571,8 +1571,8 @@ Quaternion geometry_context::getWorldRotationQuaternion() const
   // get const to check calculate
   const TransformData  *ptr = getWorldTransformDataPtr();
  
-    #pragma message("ks777   Quaternion geometry_context::getWorldRotationQuaternion() const  Need check code    "  __FILE__ )
-  assert(false);
+ 
+  assert(false && "  need a check ");
 	return ptr->qRotation;
 
   // OLD
