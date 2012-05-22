@@ -22,7 +22,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="namespaces.htm"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.htm"><span>Classes</span></a></li>
       <li><a href="files.htm"><span>Files</span></a></li>
-      <li><a href="dirs.htm"><span>Directories</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <img id="MSearchSelect" src="search/search.png"
@@ -238,6 +237,9 @@ Here is a list of all class members with links to the classes they belong to:
 <li>get_topleft()
 : <a class="el" href="classgbmath_1_1_rect.htm#af8d6f87a9ba745a232c8ffb92d537e67">gbmath::Rect</a>
 </li>
+<li>get_vector3_by_context_type()
+: <a class="el" href="classgbmath_1_1geometry__context.htm#a59719ee7dd56b6a36fa2d08fdf4ae982">gbmath::geometry_context</a>
+</li>
 <li>get_vector3_VewPos()
 : <a class="el" href="classgbmath_1_1geometry__context.htm#a86d3a7c32492fd52abd7ecd3185b5320">gbmath::geometry_context</a>
 </li>
@@ -268,15 +270,30 @@ Here is a list of all class members with links to the classes they belong to:
 <li>get_width()
 : <a class="el" href="classgbmath_1_1_rect.htm#a7b6c821375b118050869c89086766b19">gbmath::Rect</a>
 </li>
+<li>getByType()
+: <a class="el" href="structgbmath_1_1object__color.htm#a43d8b01a973bbd4cdf190ff99fdf9a02">gbmath::object_color</a>
+</li>
 <li>getColumn()
 : <a class="el" href="structgbmath_1_1mat44.htm#a7fa0da9a60543fb427c1f9ac8ce7b373">gbmath::mat44</a>
 </li>
+<li>GetCountSetProjMatrix()
+: <a class="el" href="classgbmath_1_1geometry__context.htm#a0803e46b5f4784ceb9819ca152d30fde">gbmath::geometry_context</a>
+</li>
+<li>GetCountSetViewMatrix()
+: <a class="el" href="classgbmath_1_1geometry__context.htm#accf1c86da57aac84f474d933a393f336">gbmath::geometry_context</a>
+</li>
+<li>GetCountSetWorldMatrix()
+: <a class="el" href="classgbmath_1_1geometry__context.htm#a379d650136090f64b6b9c064c9043f5d">gbmath::geometry_context</a>
+</li>
 <li>getEyePoint()
-: <a class="el" href="classgbmath_1_1first__person__camera.htm#a6ba9090a4c40477153bc790e0ba56088">gbmath::first_person_camera</a>
-, <a class="el" href="classgbmath_1_1base__camera.htm#af150eccebed8ab4451ff82106b454149">gbmath::base_camera</a>
+: <a class="el" href="classgbmath_1_1base__camera.htm#af150eccebed8ab4451ff82106b454149">gbmath::base_camera</a>
+, <a class="el" href="classgbmath_1_1first__person__camera.htm#a6ba9090a4c40477153bc790e0ba56088">gbmath::first_person_camera</a>
 </li>
 <li>getFarClipPlane()
 : <a class="el" href="classgbmath_1_1base__camera.htm#a5f9ea9a265e699cbf2b970b0ebb866e2">gbmath::base_camera</a>
+</li>
+<li>getFloatValue()
+: <a class="el" href="classgbmath_1_1value_server.htm#a3d2c2deff896cd4017fdfa7ce7dfd224">gbmath::valueServer</a>
 </li>
 <li>getInput()
 : <a class="el" href="classgbmath_1_1base__camera.htm#a3331d522be12fe661facb53b2b0f9292">gbmath::base_camera</a>
@@ -286,6 +303,12 @@ Here is a list of all class members with links to the classes they belong to:
 </li>
 <li>getLookAtPoint()
 : <a class="el" href="classgbmath_1_1base__camera.htm#a82aa9a4b18c51ad5c878fd42b249b30e">gbmath::base_camera</a>
+</li>
+<li>getMatrix33Value()
+: <a class="el" href="classgbmath_1_1value_server.htm#ad10104ebbafb29b4fa63c38237c1c124">gbmath::valueServer</a>
+</li>
+<li>getMatrix44Value()
+: <a class="el" href="classgbmath_1_1value_server.htm#ab7a037c512a6c7f6e1d7fe6a43bf567d">gbmath::valueServer</a>
 </li>
 <li>getNearClipPlane()
 : <a class="el" href="classgbmath_1_1base__camera.htm#a831ccf455c61cfd222f7055024a1eeb0">gbmath::base_camera</a>
@@ -325,13 +348,18 @@ Here is a list of all class members with links to the classes they belong to:
 : <a class="el" href="structgbmath_1_1mat44.htm#aa93c68270274250737957462faff74c8">gbmath::mat44</a>
 , <a class="el" href="structgbmath_1_1mat33.htm#a1052788e40ede69fd6193f7d87989e94">gbmath::mat33</a>
 </li>
-<li>getValue_by_context_type()
-: <a class="el" href="classgbmath_1_1float__context.htm#aa71b5482b46ae427f94847df5720d622">gbmath::float_context</a>
+<li>getVector2Value()
+: <a class="el" href="classgbmath_1_1value_server.htm#ac57834cdac8ceba3bb01fe2a5c74f4ce">gbmath::valueServer</a>
+</li>
+<li>getVector3Value()
+: <a class="el" href="classgbmath_1_1value_server.htm#adda8ff49ea4e8b85a3e0d91c17296ae5">gbmath::valueServer</a>
+</li>
+<li>getVector4Value()
+: <a class="el" href="classgbmath_1_1value_server.htm#a5705e5fe55350ce79eb39e98b9bfaaa8">gbmath::valueServer</a>
 </li>
 <li>getViewMatrix()
-: <a class="el" href="classgbmath_1_1_target_camera.htm#a8463450831422155bd495e6c16d11e7a">gbmath::TargetCamera</a>
+: <a class="el" href="classgbmath_1_1_target_camera.htm#aa05558ddeafac9fc04e1a485b0597476">gbmath::TargetCamera</a>
 , <a class="el" href="classgbmath_1_1base__camera.htm#ab1baa856be0be6a0dc6568e19d4b607a">gbmath::base_camera</a>
-, <a class="el" href="classgbmath_1_1_target_camera.htm#aa05558ddeafac9fc04e1a485b0597476">gbmath::TargetCamera</a>
 </li>
 <li>getViewParams()
 : <a class="el" href="classgbmath_1_1geometry__context.htm#ae302ef9e7af27edb811e4dcdd5b152c7">gbmath::geometry_context</a>
@@ -343,8 +371,8 @@ Here is a list of all class members with links to the classes they belong to:
 : <a class="el" href="classgbmath_1_1first__person__camera.htm#a28b7f2d130ea009f09c9081760b1ccc3">gbmath::first_person_camera</a>
 </li>
 <li>getWorldMatrix()
-: <a class="el" href="classgbmath_1_1model__view__camera.htm#a83668bdb27729df9d116381a5bd6caa8">gbmath::model_view_camera</a>
-, <a class="el" href="classgbmath_1_1first__person__camera.htm#a7960fe2b5b42d27e7862ffe6c1054220">gbmath::first_person_camera</a>
+: <a class="el" href="classgbmath_1_1first__person__camera.htm#acf0f3bbe6e0d66cf4d622f9b38a0e265">gbmath::first_person_camera</a>
+, <a class="el" href="classgbmath_1_1model__view__camera.htm#a83668bdb27729df9d116381a5bd6caa8">gbmath::model_view_camera</a>
 </li>
 <li>getWorldPosition()
 : <a class="el" href="classgbmath_1_1geometry__context.htm#aaacc28d3926406b9e42d33063e0a0036">gbmath::geometry_context</a>
@@ -402,7 +430,7 @@ Here is a list of all class members with links to the classes they belong to:
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Mon Jan 30 15:53:22 2012 for gbmath by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Tue May 22 10:25:55 2012 for gbmath by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

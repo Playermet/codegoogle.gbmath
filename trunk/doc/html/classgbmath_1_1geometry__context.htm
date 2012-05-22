@@ -22,7 +22,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="namespaces.htm"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.htm"><span>Classes</span></a></li>
       <li><a href="files.htm"><span>Files</span></a></li>
-      <li><a href="dirs.htm"><span>Directories</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <img id="MSearchSelect" src="search/search.png"
@@ -65,12 +64,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Auxiliary matrices for the assembly of class.  <a href="structgbmath_1_1geometry__context_1_1_matrices_store.htm#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1geometry__context_1_1matrix_store__s.htm">matrixStore_s</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Building for the class.  <a href="structgbmath_1_1geometry__context_1_1matrix_store__s.htm#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1geometry__context_1_1s_matr_set_counters.htm">sMatrSetCounters</a></td></tr>
 <tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#a7aad2d695426d0f346da0bfecf7ba432">geometry_context</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#add53733d357e155669c1d2b3a03bddef">~geometry_context</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structgbmath_1_1mat44.htm">mat44</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#a36dfadf6f12c7079ec414533d53e0190">get_matrix_by_context_type</a> (const <a class="el" href="structgbmath_1_1matrix4x4__context__type__e.htm#af5c2327857e1054f56ebc0e04b5c236f">matrix4x4_context_type_e::e</a>) const   throw (int)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structgbmath_1_1vec3.htm">vec3</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#a59719ee7dd56b6a36fa2d08fdf4ae982">get_vector3_by_context_type</a> (const <a class="el" href="structgbmath_1_1vector__context__type__e.htm#a8b6c43531b8ff9dd350490b95c7cd756">vector_context_type_e::e</a>) const   throw (int)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structgbmath_1_1vec4.htm">vec4</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#a8cb0ad9b4784d4422d85260128306a08">get_vector4_by_context_type</a> (const <a class="el" href="structgbmath_1_1vector__context__type__e.htm#a8b6c43531b8ff9dd350490b95c7cd756">vector_context_type_e::e</a>) const   throw (int)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">long&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#a3000d0773151d01402ce03348f752af8">setMatrices</a> (const <a class="el" href="structgbmath_1_1mat44.htm">mat44</a> *mWorld, const <a class="el" href="structgbmath_1_1mat44.htm">mat44</a> *mView, const <a class="el" href="structgbmath_1_1mat44.htm">mat44</a> *mProj)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual long&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#a7b852982ee865df79ddabbc60e62a5ee">onNewMatrices</a> (const <a class="el" href="structgbmath_1_1mat44.htm">mat44</a> *mWorld, const <a class="el" href="structgbmath_1_1mat44.htm">mat44</a> *mView, const <a class="el" href="structgbmath_1_1mat44.htm">mat44</a> *mProj)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">To cover the user. If you change the matrix. If the matrix does not change then the argument is NULL. returns a result set of a matrix.  <a href="#a7b852982ee865df79ddabbc60e62a5ee"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">long&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#a51661048c2a56582cb4b937044dde201">set_matrix_World</a> (const <a class="el" href="structgbmath_1_1mat44.htm">mat44</a> *m)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">long&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#a5f678377951bc1c807592da71e66d1ae">set_matrix_View</a> (const <a class="el" href="structgbmath_1_1mat44.htm">mat44</a> *m)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">long&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#ad8d56bea27ff4b20f60c366e423f0ec0">set_matrix_Proj</a> (const <a class="el" href="structgbmath_1_1mat44.htm">mat44</a> *m)</td></tr>
@@ -106,8 +107,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structgbmath_1_1vec4.htm">vec4</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#a96b064eb7fabce8fdea3a7e816956005">get_vector4_ViewDir</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structgbmath_1_1vec4.htm">vec4</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#aed54f5f904066cc1ddaa41f279da5f06">get_vector4_ViewUp</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structgbmath_1_1vec4.htm">vec4</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#a1c5be3f4ff601d6bede0c0fcd050ebf6">get_vector4_ViewSide</a> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structgbmath_1_1mat44.htm">mat44</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#a36dfadf6f12c7079ec414533d53e0190">get_matrix_by_context_type</a> (const <a class="el" href="structgbmath_1_1matrix4x4__context__type__e.htm#af5c2327857e1054f56ebc0e04b5c236f">matrix4x4_context_type_e::e</a>) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structgbmath_1_1vec4.htm">vec4</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#a8cb0ad9b4784d4422d85260128306a08">get_vector4_by_context_type</a> (const <a class="el" href="structgbmath_1_1vector__context__type__e.htm#a8b6c43531b8ff9dd350490b95c7cd756">vector_context_type_e::e</a>) const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structgbmath_1_1perspective__projection__data.htm">perspective_projection_data</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#a53e2632728f78c98518549cd1422f8aa">get_projection_Data</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#a630522f4609710e865eb1175d1010f9f">get_projection_Fov</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#ac0902fdbce0a61bce0b7081cf862893c">get_projection_Aspect</a> () const </td></tr>
@@ -145,7 +144,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#ab0fef7e217a8441e6f0a398c55331c4d">setWorldScalingTranslation</a> (float fScale, const <a class="el" href="structgbmath_1_1vec3.htm">vec3</a> *vTrnsl)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#a67b3113d35998d48bed704beddf1ef16">setWorldScalingTranslation</a> (float fScale, float x, float y, float z)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#a197d95d21c9e8983bcd03ff73f7a80d5">setWorldIdentity</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#a379d650136090f64b6b9c064c9043f5d">GetCountSetWorldMatrix</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#accf1c86da57aac84f474d933a393f336">GetCountSetViewMatrix</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#a0803e46b5f4784ceb9819ca152d30fde">GetCountSetProjMatrix</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#a979334c9c2d527f0fdf631ad4fbf69e5">ResetCountersSetMatrix</a> ()</td></tr>
 <tr><td colspan="2"><h2>Protected Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual long&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#a7b852982ee865df79ddabbc60e62a5ee">onNewMatrices</a> (const <a class="el" href="structgbmath_1_1mat44.htm">mat44</a> *mWorld, const <a class="el" href="structgbmath_1_1mat44.htm">mat44</a> *mView, const <a class="el" href="structgbmath_1_1mat44.htm">mat44</a> *mProj)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">To cover the user. If you change the matrix. If the matrix does not change then the argument is NULL. returns a result set of a matrix.  <a href="#a7b852982ee865df79ddabbc60e62a5ee"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#ad65938ddcdc926b0c87d7866f533bb96">__checkViewVectors</a> () const </td></tr>
 <tr><td colspan="2"><h2>Private Types</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef unsigned long&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#a6bb050595cc4e7247b260716235d09c4">BOOLFLAG</a></td></tr>
@@ -173,11 +178,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1eyedata.htm">eyedata</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#a3050b2a54e8cb7eae3765897d75a8b55">m_EyeData</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#aee4f0aaef8982707d906c261f68b901a">m_bTransfDataChange</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1_transform_data.htm">TransformData</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#ab65ce7100c5fe9c2a694f84636068128">m_TransformData</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1geometry__context_1_1s_matr_set_counters.htm">sMatrSetCounters</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1geometry__context.htm#a85eaa93e7757e64bfde7f928053bc435">m_sMatrSetCounters</a></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Geometric context. Preparation of derivatives of vectors and matrices. </p>
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00025">25</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00027">27</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 <hr/><h2>Member Typedef Documentation</h2>
 <a class="anchor" id="a6bb050595cc4e7247b260716235d09c4"></a><!-- doxytag: member="gbmath::geometry_context::BOOLFLAG" ref="a6bb050595cc4e7247b260716235d09c4" args="" -->
 <div class="memitem">
@@ -190,7 +196,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00267">267</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00301">301</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -210,7 +216,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00028">28</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00046">46</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -229,7 +235,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00033">33</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00051">51</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -249,7 +255,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00739">739</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00793">793</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -263,13 +269,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
           <td class="paramtype">const <a class="el" href="structgbmath_1_1matrix4x4__context__type__e.htm#af5c2327857e1054f56ebc0e04b5c236f">matrix4x4_context_type_e::e</a>&nbsp;</td>
           <td class="paramname"> <em>val</em></td>
           <td>&nbsp;)&nbsp;</td>
-          <td> const</td>
+          <td> const  throw (int)</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00560">560</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00612">612</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -288,7 +294,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00079">79</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00095">95</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -307,7 +313,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00278">278</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00262">262</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -326,7 +332,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00306">306</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00290">290</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -345,7 +351,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00292">292</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00276">276</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -364,7 +370,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00074">74</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00090">90</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -383,7 +389,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00248">248</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00232">232</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -402,7 +408,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00262">262</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00246">246</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -421,7 +427,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00166">166</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00150">150</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -440,7 +446,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00180">180</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00164">164</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -459,7 +465,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00197">197</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00181">181</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -478,7 +484,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00218">218</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00202">202</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -497,7 +503,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00234">234</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00218">218</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -516,7 +522,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00069">69</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00085">85</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -535,7 +541,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00416">416</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00400">400</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -554,7 +560,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00430">430</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00414">414</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -573,7 +579,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00402">402</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00386">386</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -592,7 +598,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00447">447</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00431">431</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -611,7 +617,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00481">481</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00465">465</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -630,7 +636,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00498">498</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00482">482</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -649,7 +655,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00322">322</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00306">306</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -668,7 +674,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00358">358</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00342">342</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -687,7 +693,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00378">378</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00362">362</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -706,7 +712,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00339">339</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00323">323</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -725,7 +731,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00461">461</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00445">445</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -744,7 +750,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00138">138</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00151">151</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -763,7 +769,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00922">922</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00976">976</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -782,7 +788,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00132">132</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00145">145</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -801,7 +807,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00150">150</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00163">163</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -820,7 +826,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00144">144</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00157">157</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a59719ee7dd56b6a36fa2d08fdf4ae982"></a><!-- doxytag: member="gbmath::geometry_context::get_vector3_by_context_type" ref="a59719ee7dd56b6a36fa2d08fdf4ae982" args="(const vector_context_type_e::e) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structgbmath_1_1vec3.htm">vec3</a> * gbmath::geometry_context::get_vector3_by_context_type </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structgbmath_1_1vector__context__type__e.htm#a8b6c43531b8ff9dd350490b95c7cd756">vector_context_type_e::e</a>&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const  throw (int)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00503">503</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -839,7 +865,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00904">904</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00958">958</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -858,7 +884,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00909">909</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00963">963</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -877,7 +903,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00785">785</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00839">839</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -896,7 +922,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00914">914</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00968">968</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -910,13 +936,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
           <td class="paramtype">const <a class="el" href="structgbmath_1_1vector__context__type__e.htm#a8b6c43531b8ff9dd350490b95c7cd756">vector_context_type_e::e</a>&nbsp;</td>
           <td class="paramname"> <em>val</em></td>
           <td>&nbsp;)&nbsp;</td>
-          <td> const</td>
+          <td> const  throw (int)</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00518">518</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00569">569</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -935,7 +961,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00763">763</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00817">817</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -954,7 +980,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00752">752</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00806">806</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -973,7 +999,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00796">796</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00850">850</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -992,7 +1018,64 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00774">774</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00828">828</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0803e46b5f4784ceb9819ca152d30fde"></a><!-- doxytag: member="gbmath::geometry_context::GetCountSetProjMatrix" ref="a0803e46b5f4784ceb9819ca152d30fde" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int gbmath::geometry_context::GetCountSetProjMatrix </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00283">283</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="accf1c86da57aac84f474d933a393f336"></a><!-- doxytag: member="gbmath::geometry_context::GetCountSetViewMatrix" ref="accf1c86da57aac84f474d933a393f336" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int gbmath::geometry_context::GetCountSetViewMatrix </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00278">278</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a379d650136090f64b6b9c064c9043f5d"></a><!-- doxytag: member="gbmath::geometry_context::GetCountSetWorldMatrix" ref="a379d650136090f64b6b9c064c9043f5d" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int gbmath::geometry_context::GetCountSetWorldMatrix </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00273">273</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -1011,7 +1094,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01162">1162</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01216">1216</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1033,7 +1116,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p><p>m_EyeData.eye_up = m_EyeData.eye_position; m_EyeData.eye_up.x() += fDistToCenter; m_EyeData.eye_up.y() += fDistToCenter; m_EyeData.eye_up.z() += fDistToCenter;</p>
 </p>
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01169">1169</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01223">1223</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1052,7 +1135,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01529">1529</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01583">1583</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1071,7 +1154,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01507">1507</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01561">1561</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1090,7 +1173,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01515">1515</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01569">1569</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1109,7 +1192,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01497">1497</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01551">1551</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1128,7 +1211,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01430">1430</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01484">1484</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1147,7 +1230,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01438">1438</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01492">1492</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1176,7 +1259,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [inline, virtual]</code></td>
+          <td></td><td></td><td><code> [inline, protected, virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -1184,7 +1267,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>To cover the user. If you change the matrix. If the matrix does not change then the argument is NULL. returns a result set of a matrix. </p>
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00046">46</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00033">33</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a979334c9c2d527f0fdf631ad4fbf69e5"></a><!-- doxytag: member="gbmath::geometry_context::ResetCountersSetMatrix" ref="a979334c9c2d527f0fdf631ad4fbf69e5" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gbmath::geometry_context::ResetCountersSetMatrix </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00289">289</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -1204,7 +1306,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00063">63</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00079">79</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -1224,7 +1326,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00058">58</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00074">74</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -1244,7 +1346,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00053">53</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00069">69</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -1279,7 +1381,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00050">50</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l00026">26</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1299,7 +1401,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01346">1346</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01400">1400</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1319,7 +1421,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01326">1326</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01380">1380</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1339,7 +1441,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01303">1303</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01357">1357</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1380,7 +1482,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01286">1286</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01340">1340</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1400,7 +1502,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01390">1390</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01444">1444</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1420,7 +1522,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01369">1369</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01423">1423</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1449,7 +1551,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01409">1409</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01463">1463</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1469,7 +1571,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01257">1257</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01311">1311</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1489,7 +1591,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01245">1245</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01299">1299</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1509,7 +1611,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01227">1227</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01281">1281</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1544,7 +1646,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01206">1206</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01260">1260</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1564,7 +1666,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01269">1269</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01323">1323</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1583,7 +1685,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00237">237</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00250">250</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -1618,7 +1720,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01587">1587</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01641">1641</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1638,7 +1740,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01603">1603</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01657">1657</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1667,7 +1769,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01696">1696</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01750">1750</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1687,7 +1789,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01654">1654</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01708">1708</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1722,7 +1824,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01614">1614</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01668">1668</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1757,7 +1859,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01727">1727</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01781">1781</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1777,7 +1879,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01718">1718</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01772">1772</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1818,7 +1920,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01764">1764</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01818">1818</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1847,7 +1949,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01752">1752</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01806">1806</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1867,7 +1969,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01742">1742</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01796">1796</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1887,7 +1989,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01540">1540</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8cpp_source.htm#l01594">1594</a> of file <a class="el" href="geometry__context_8cpp_source.htm">geometry_context.cpp</a>.</p>
 
 </div>
 </div>
@@ -1903,7 +2005,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00337">337</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00371">371</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -1918,7 +2020,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00342">342</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00376">376</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -1933,7 +2035,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00331">331</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00365">365</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -1948,7 +2050,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00321">321</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00355">355</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -1963,7 +2065,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00354">354</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00388">388</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -1978,7 +2080,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00345">345</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00379">379</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -1993,7 +2095,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00320">320</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00354">354</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -2010,7 +2112,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>The main three matrices. </p>
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00314">314</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00348">348</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -2025,7 +2127,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00314">314</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00348">348</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -2040,7 +2142,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00314">314</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00348">348</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -2055,7 +2157,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00339">339</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00373">373</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a85eaa93e7757e64bfde7f928053bc435"></a><!-- doxytag: member="gbmath::geometry_context::m_sMatrSetCounters" ref="a85eaa93e7757e64bfde7f928053bc435" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structgbmath_1_1geometry__context_1_1s_matr_set_counters.htm">sMatrSetCounters</a> <a class="el" href="classgbmath_1_1geometry__context.htm#a85eaa93e7757e64bfde7f928053bc435">gbmath::geometry_context::m_sMatrSetCounters</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00416">416</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -2072,7 +2189,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>for temp </p>
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00317">317</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00351">351</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -2089,7 +2206,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>for temp </p>
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00318">318</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00352">352</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -2104,7 +2221,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00355">355</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00389">389</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -2119,7 +2236,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00334">334</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00368">368</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -2134,7 +2251,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00326">326</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00360">360</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -2149,7 +2266,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00328">328</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00362">362</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -2164,7 +2281,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00323">323</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00357">357</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -2179,7 +2296,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00324">324</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00358">358</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -2194,7 +2311,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00325">325</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
+<p>Definition at line <a class="el" href="geometry__context_8h_source.htm#l00359">359</a> of file <a class="el" href="geometry__context_8h_source.htm">geometry_context.h</a>.</p>
 
 </div>
 </div>
@@ -2217,7 +2334,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Mon Jan 30 15:53:23 2012 for gbmath by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Tue May 22 10:25:56 2012 for gbmath by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>
