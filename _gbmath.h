@@ -166,8 +166,9 @@ namespace gbmath
 #include "color4_32.h"
 #include "object_color_type_e.h"
 #include "color_functions.h"
-#include "color_const/color_const.h"
 
+//#include "color_const/color_const.h"
+#include "color_const.h"
 
 
 
