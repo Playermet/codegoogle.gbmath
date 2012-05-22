@@ -22,7 +22,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="namespaces.htm"><span>Namespaces</span></a></li>
       <li><a href="annotated.htm"><span>Classes</span></a></li>
       <li class="current"><a href="files.htm"><span>Files</span></a></li>
-      <li><a href="dirs.htm"><span>Directories</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <img id="MSearchSelect" src="search/search.png"
@@ -64,72 +63,113 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00025"></a><a class="code" href="structgbmath_1_1perspective__projection__data.htm#a946f5103784e5d00c90b2bcc86cfb817">00025</a>                         <span class="keywordtype">float</span> <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a946f5103784e5d00c90b2bcc86cfb817">aspect</a>;
 <a name="l00026"></a><a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2f7dcc2ac8c2e2a47ccab07d86824ed9">00026</a>                         <span class="keywordtype">float</span> <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2f7dcc2ac8c2e2a47ccab07d86824ed9">zn</a>;
 <a name="l00027"></a><a class="code" href="structgbmath_1_1perspective__projection__data.htm#ae07666d6553dcf8958bf94c752833556">00027</a>                         <span class="keywordtype">float</span> <a class="code" href="structgbmath_1_1perspective__projection__data.htm#ae07666d6553dcf8958bf94c752833556">zf</a>;
-<a name="l00028"></a>00028 
-<a name="l00030"></a><a class="code" href="structgbmath_1_1perspective__projection__data.htm#a15125a9d200fa82c964ba76ff4d7e2ed">00030</a>                         <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a15125a9d200fa82c964ba76ff4d7e2ed" title="Извлечь проекционные данные из левосторонней...">extractProjPerspectLH</a>(<span class="keyword">const</span> <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a>&amp; mPerspectProjLH)
+<a name="l00028"></a>00028  
+<a name="l00029"></a>00029 
+<a name="l00030"></a><a class="code" href="structgbmath_1_1perspective__projection__data.htm#a43186b85b812ef28f421740a4a5768c4">00030</a>                         <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a43186b85b812ef28f421740a4a5768c4">perspective_projection_data</a>()
 <a name="l00031"></a>00031                         {
-<a name="l00032"></a>00032                                 <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a946f5103784e5d00c90b2bcc86cfb817">aspect</a> = mPerspectProjLH.<a class="code" href="structgbmath_1_1mat44.htm#a51a6825aacf2e40c7f4c1774d4105d9a">_22</a>/mPerspectProjLH.<a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a>;
-<a name="l00033"></a>00033                                 <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2d44450d34e2cb68c0534ddb7b385726">fovy</a>   = 2.0f  * atan(1.0f/mPerspectProjLH.<a class="code" href="structgbmath_1_1mat44.htm#a51a6825aacf2e40c7f4c1774d4105d9a">_22</a>);
-<a name="l00034"></a>00034                                 <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2f7dcc2ac8c2e2a47ccab07d86824ed9">zn</a> = -mPerspectProjLH.<a class="code" href="structgbmath_1_1mat44.htm#a47300a3aa5bb132868de2a94fe79d6e3">_43</a>/mPerspectProjLH.<a class="code" href="structgbmath_1_1mat44.htm#a5808bf751702b406781bf8d6e2a82408">_33</a>;
-<a name="l00035"></a>00035                                 <a class="code" href="structgbmath_1_1perspective__projection__data.htm#ae07666d6553dcf8958bf94c752833556">zf</a> =  mPerspectProjLH.<a class="code" href="structgbmath_1_1mat44.htm#a47300a3aa5bb132868de2a94fe79d6e3">_43</a>/(1.0f-mPerspectProjLH.<a class="code" href="structgbmath_1_1mat44.htm#a5808bf751702b406781bf8d6e2a82408">_33</a>);
-<a name="l00036"></a>00036                         }
-<a name="l00037"></a>00037 
-<a name="l00038"></a>00038 
-<a name="l00039"></a><a class="code" href="structgbmath_1_1perspective__projection__data.htm#af924bc1896a2418538ef61547c220837">00039</a>                         <span class="keyword">friend</span> std::ostream &amp;<a class="code" href="structgbmath_1_1perspective__projection__data.htm#af924bc1896a2418538ef61547c220837">operator &lt;&lt; </a>(std::ostream &amp;stream, <span class="keyword">const</span> <a class="code" href="structgbmath_1_1perspective__projection__data.htm" title="This data perspective projection.">perspective_projection_data</a>&amp; a)
-<a name="l00040"></a>00040                         {
-<a name="l00041"></a>00041                                 stream &lt;&lt; a.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2d44450d34e2cb68c0534ddb7b385726">fovy</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; a.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#a946f5103784e5d00c90b2bcc86cfb817">aspect</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; a.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2f7dcc2ac8c2e2a47ccab07d86824ed9">zn</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; a.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#ae07666d6553dcf8958bf94c752833556">zf</a> ;
-<a name="l00042"></a>00042                                 <span class="keywordflow">return</span> stream;
-<a name="l00043"></a>00043                         }
-<a name="l00044"></a>00044 
-<a name="l00045"></a><a class="code" href="structgbmath_1_1perspective__projection__data.htm#a20a4993c10b48e15de3ce6360b534122">00045</a>                         <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a20a4993c10b48e15de3ce6360b534122">operator std::string</a>()<span class="keyword"> const</span>
-<a name="l00046"></a>00046 <span class="keyword">                        </span>{
-<a name="l00047"></a>00047                                 std::ostringstream ss;
-<a name="l00048"></a>00048                                 ss &lt;&lt; <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2d44450d34e2cb68c0534ddb7b385726">fovy</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a946f5103784e5d00c90b2bcc86cfb817">aspect</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2f7dcc2ac8c2e2a47ccab07d86824ed9">zn</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="structgbmath_1_1perspective__projection__data.htm#ae07666d6553dcf8958bf94c752833556">zf</a> ;
-<a name="l00049"></a>00049                                 <span class="keywordflow">return</span> ss.str();
-<a name="l00050"></a>00050                         }
-<a name="l00051"></a>00051 
-<a name="l00052"></a><a class="code" href="structgbmath_1_1perspective__projection__data.htm#aef6eaed91e535d2d3f6837d572c786f8">00052</a>                         <span class="keywordtype">void</span> operator = (<span class="keyword">const</span> std::string&amp; str) <span class="keywordflow">throw</span> (std::invalid_argument)
-<a name="l00053"></a>00053                         {
-<a name="l00054"></a>00054                                 std::istringstream ss(str);
-<a name="l00055"></a>00055                                 ss &gt;&gt; fovy;
-<a name="l00056"></a>00056                                 ss &gt;&gt; aspect;
-<a name="l00057"></a>00057                                 ss &gt;&gt; zn;
-<a name="l00058"></a>00058                                 ss &gt;&gt; zf;
-<a name="l00059"></a>00059                                 <span class="keywordflow">if</span>( ss.fail() )
-<a name="l00060"></a>00060                                         <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;bad input string&quot;</span>);
-<a name="l00061"></a>00061                         }
-<a name="l00062"></a>00062 
-<a name="l00063"></a>00063 
-<a name="l00064"></a><a class="code" href="structgbmath_1_1perspective__projection__data.htm#a71a3acb30a0898ee36e5a42731a68090">00064</a>                         <span class="keyword">friend</span> std::istream &amp;operator &gt;&gt; (std::istream &amp;stream, <a class="code" href="structgbmath_1_1perspective__projection__data.htm" title="This data perspective projection.">perspective_projection_data</a>&amp; a)
-<a name="l00065"></a>00065                         {
-<a name="l00066"></a>00066                                 stream &gt;&gt; a.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2d44450d34e2cb68c0534ddb7b385726">fovy</a>;
-<a name="l00067"></a>00067                                 stream &gt;&gt; a.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#a946f5103784e5d00c90b2bcc86cfb817">aspect</a>;
-<a name="l00068"></a>00068                                 stream &gt;&gt; a.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2f7dcc2ac8c2e2a47ccab07d86824ed9">zn</a>;
-<a name="l00069"></a>00069                                 stream &gt;&gt; a.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#ae07666d6553dcf8958bf94c752833556">zf</a>;
-<a name="l00070"></a>00070                                 <span class="keywordflow">return</span> stream;
-<a name="l00071"></a>00071                         }
-<a name="l00072"></a>00072 
-<a name="l00073"></a>00073 
-<a name="l00074"></a><a class="code" href="structgbmath_1_1perspective__projection__data.htm#a0d9549ea2c0ed05f86797a013f1db3b9">00074</a>                         <span class="keyword">friend</span> std::istringstream &amp;operator &gt;&gt; (std::istringstream &amp;ss, <a class="code" href="structgbmath_1_1perspective__projection__data.htm" title="This data perspective projection.">perspective_projection_data</a>&amp; a)
-<a name="l00075"></a>00075                         {
-<a name="l00076"></a>00076                                 ss &gt;&gt; a.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2d44450d34e2cb68c0534ddb7b385726">fovy</a>;
-<a name="l00077"></a>00077                                 ss &gt;&gt; a.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#a946f5103784e5d00c90b2bcc86cfb817">aspect</a>;
-<a name="l00078"></a>00078                                 ss &gt;&gt; a.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2f7dcc2ac8c2e2a47ccab07d86824ed9">zn</a>;
-<a name="l00079"></a>00079                                 ss &gt;&gt; a.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#ae07666d6553dcf8958bf94c752833556">zf</a>;
-<a name="l00080"></a>00080                                 <span class="keywordflow">return</span> ss;
+<a name="l00032"></a>00032                                 <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2d44450d34e2cb68c0534ddb7b385726">fovy</a> = <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a946f5103784e5d00c90b2bcc86cfb817">aspect</a> = <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2f7dcc2ac8c2e2a47ccab07d86824ed9">zn</a> = <a class="code" href="structgbmath_1_1perspective__projection__data.htm#ae07666d6553dcf8958bf94c752833556">zf</a> = 0.0f;
+<a name="l00033"></a>00033                         }
+<a name="l00034"></a>00034 
+<a name="l00035"></a><a class="code" href="structgbmath_1_1perspective__projection__data.htm#ac30e967e8c63b41d340bc8232a483112">00035</a>                         <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a43186b85b812ef28f421740a4a5768c4">perspective_projection_data</a>(<span class="keywordtype">float</span> _fovy, <span class="keywordtype">float</span> _aspect, <span class="keywordtype">float</span> _zn, <span class="keywordtype">float</span> _zf)
+<a name="l00036"></a>00036                         {
+<a name="l00037"></a>00037                                 <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2d44450d34e2cb68c0534ddb7b385726">fovy</a>   = _fovy;
+<a name="l00038"></a>00038                                 <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a946f5103784e5d00c90b2bcc86cfb817">aspect</a> = _aspect;
+<a name="l00039"></a>00039                                 <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2f7dcc2ac8c2e2a47ccab07d86824ed9">zn</a>     = _zn;
+<a name="l00040"></a>00040                                 <a class="code" href="structgbmath_1_1perspective__projection__data.htm#ae07666d6553dcf8958bf94c752833556">zf</a>     = _zf;
+<a name="l00041"></a>00041                         }
+<a name="l00042"></a>00042 
+<a name="l00043"></a><a class="code" href="structgbmath_1_1perspective__projection__data.htm#afaf40480347f809da49c945f92ab6b8e">00043</a>                         <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a43186b85b812ef28f421740a4a5768c4">perspective_projection_data</a>(<span class="keyword">const</span> <a class="code" href="structgbmath_1_1perspective__projection__data.htm" title="This data perspective projection.">perspective_projection_data</a>&amp; a)
+<a name="l00044"></a>00044                         {
+<a name="l00045"></a>00045                                 <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2d44450d34e2cb68c0534ddb7b385726">fovy</a>   = a.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2d44450d34e2cb68c0534ddb7b385726">fovy</a>;
+<a name="l00046"></a>00046                                 <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a946f5103784e5d00c90b2bcc86cfb817">aspect</a> = a.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#a946f5103784e5d00c90b2bcc86cfb817">aspect</a>;
+<a name="l00047"></a>00047                                 <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2f7dcc2ac8c2e2a47ccab07d86824ed9">zn</a>     = a.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2f7dcc2ac8c2e2a47ccab07d86824ed9">zn</a>;
+<a name="l00048"></a>00048                                 <a class="code" href="structgbmath_1_1perspective__projection__data.htm#ae07666d6553dcf8958bf94c752833556">zf</a>     = a.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#ae07666d6553dcf8958bf94c752833556">zf</a>;          
+<a name="l00049"></a>00049                         }
+<a name="l00050"></a>00050  
+<a name="l00051"></a>00051  
+<a name="l00052"></a>00052 
+<a name="l00053"></a><a class="code" href="structgbmath_1_1perspective__projection__data.htm#a7522bcf159425a7669f178ddb2d89b2f">00053</a>                         <span class="keyword">inline</span> <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a> <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a7522bcf159425a7669f178ddb2d89b2f">makePerspectiveMatrixLH</a>()<span class="keyword"> const </span>
+<a name="l00054"></a>00054 <span class="keyword">                        </span>{
+<a name="l00055"></a>00055                                 <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a> res;
+<a name="l00056"></a>00056                                 res.<a class="code" href="structgbmath_1_1mat44.htm#a9b50c575bd5a266bf61946a013414a22" title="построение перспективной левосторонней матрицы...">setPerspectiveFovLH</a>(<a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2d44450d34e2cb68c0534ddb7b385726">fovy</a>, <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a946f5103784e5d00c90b2bcc86cfb817">aspect</a>, <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2f7dcc2ac8c2e2a47ccab07d86824ed9">zn</a>, <a class="code" href="structgbmath_1_1perspective__projection__data.htm#ae07666d6553dcf8958bf94c752833556">zf</a>);
+<a name="l00057"></a>00057                                 <span class="keywordflow">return</span> res;
+<a name="l00058"></a>00058                         }
+<a name="l00059"></a>00059 
+<a name="l00060"></a><a class="code" href="structgbmath_1_1perspective__projection__data.htm#ae7801bcae27e2befc914907a013a179a">00060</a>                         <span class="keyword">inline</span> <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a> <a class="code" href="structgbmath_1_1perspective__projection__data.htm#ae7801bcae27e2befc914907a013a179a">makePerspectiveMatrixRH</a>()<span class="keyword"> const </span>
+<a name="l00061"></a>00061 <span class="keyword">                        </span>{
+<a name="l00062"></a>00062                                 <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a> res;
+<a name="l00063"></a>00063                                 res.<a class="code" href="structgbmath_1_1mat44.htm#a3b8a3e86219b867d970cf7fbbe31628c" title="построение перспективной правосторонней матрицы...">setPerspectiveFovRH</a>(<a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2d44450d34e2cb68c0534ddb7b385726">fovy</a>, <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a946f5103784e5d00c90b2bcc86cfb817">aspect</a>, <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2f7dcc2ac8c2e2a47ccab07d86824ed9">zn</a>, <a class="code" href="structgbmath_1_1perspective__projection__data.htm#ae07666d6553dcf8958bf94c752833556">zf</a>);
+<a name="l00064"></a>00064                                 <span class="keywordflow">return</span> res;
+<a name="l00065"></a>00065                         }
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068  
+<a name="l00070"></a><a class="code" href="structgbmath_1_1perspective__projection__data.htm#a15125a9d200fa82c964ba76ff4d7e2ed">00070</a>                         <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a15125a9d200fa82c964ba76ff4d7e2ed" title="Извлечь проекционные данные из левосторонней...">extractProjPerspectLH</a>(<span class="keyword">const</span> <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a>&amp; mPerspectProjLH)
+<a name="l00071"></a>00071                         {
+<a name="l00072"></a>00072                                 <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a946f5103784e5d00c90b2bcc86cfb817">aspect</a> = mPerspectProjLH.<a class="code" href="structgbmath_1_1mat44.htm#a51a6825aacf2e40c7f4c1774d4105d9a">_22</a>/mPerspectProjLH.<a class="code" href="structgbmath_1_1mat44.htm#af3e99cb3e2fa6aeb124b9f27964f2003">_11</a>;
+<a name="l00073"></a>00073                                 <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2d44450d34e2cb68c0534ddb7b385726">fovy</a>   = 2.0f  * atan(1.0f/mPerspectProjLH.<a class="code" href="structgbmath_1_1mat44.htm#a51a6825aacf2e40c7f4c1774d4105d9a">_22</a>);
+<a name="l00074"></a>00074                                 <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2f7dcc2ac8c2e2a47ccab07d86824ed9">zn</a> = -mPerspectProjLH.<a class="code" href="structgbmath_1_1mat44.htm#a47300a3aa5bb132868de2a94fe79d6e3">_43</a>/mPerspectProjLH.<a class="code" href="structgbmath_1_1mat44.htm#a5808bf751702b406781bf8d6e2a82408">_33</a>;
+<a name="l00075"></a>00075                                 <a class="code" href="structgbmath_1_1perspective__projection__data.htm#ae07666d6553dcf8958bf94c752833556">zf</a> =  mPerspectProjLH.<a class="code" href="structgbmath_1_1mat44.htm#a47300a3aa5bb132868de2a94fe79d6e3">_43</a>/(1.0f-mPerspectProjLH.<a class="code" href="structgbmath_1_1mat44.htm#a5808bf751702b406781bf8d6e2a82408">_33</a>);
+<a name="l00076"></a>00076                         }
+<a name="l00077"></a>00077 
+<a name="l00078"></a><a class="code" href="structgbmath_1_1perspective__projection__data.htm#a199f44f698b0a548357df469828fd16f">00078</a>                         <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a199f44f698b0a548357df469828fd16f">extractProjPerspectRH</a>(<span class="keyword">const</span> <a class="code" href="structgbmath_1_1mat44.htm" title="matrix 4x4.">mat44</a>&amp; mPerspectProjLH)
+<a name="l00079"></a>00079                         {
+<a name="l00080"></a>00080                                 assert(  <span class="keyword">false</span>  &amp;&amp;  <span class="stringliteral">&quot; none code &quot;</span>);
 <a name="l00081"></a>00081                         }
 <a name="l00082"></a>00082 
 <a name="l00083"></a>00083 
 <a name="l00084"></a>00084 
-<a name="l00085"></a>00085 
-<a name="l00086"></a>00086 
-<a name="l00087"></a>00087 
-<a name="l00088"></a>00088 
-<a name="l00089"></a>00089 
-<a name="l00090"></a>00090           };
-<a name="l00091"></a>00091 
-<a name="l00092"></a>00092 
-<a name="l00093"></a>00093  
-<a name="l00094"></a>00094 }
+<a name="l00085"></a><a class="code" href="structgbmath_1_1perspective__projection__data.htm#af924bc1896a2418538ef61547c220837">00085</a>                         <span class="keyword">friend</span> std::ostream &amp;<a class="code" href="structgbmath_1_1perspective__projection__data.htm#af924bc1896a2418538ef61547c220837">operator &lt;&lt; </a>(std::ostream &amp;stream, <span class="keyword">const</span> <a class="code" href="structgbmath_1_1perspective__projection__data.htm" title="This data perspective projection.">perspective_projection_data</a>&amp; a)
+<a name="l00086"></a>00086                         {
+<a name="l00087"></a>00087                                 stream &lt;&lt; a.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2d44450d34e2cb68c0534ddb7b385726">fovy</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; a.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#a946f5103784e5d00c90b2bcc86cfb817">aspect</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; a.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2f7dcc2ac8c2e2a47ccab07d86824ed9">zn</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; a.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#ae07666d6553dcf8958bf94c752833556">zf</a> ;
+<a name="l00088"></a>00088                                 <span class="keywordflow">return</span> stream;
+<a name="l00089"></a>00089                         }
+<a name="l00090"></a>00090 
+<a name="l00091"></a><a class="code" href="structgbmath_1_1perspective__projection__data.htm#a20a4993c10b48e15de3ce6360b534122">00091</a>                         <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a20a4993c10b48e15de3ce6360b534122">operator std::string</a>()<span class="keyword"> const</span>
+<a name="l00092"></a>00092 <span class="keyword">                        </span>{
+<a name="l00093"></a>00093                                 std::ostringstream ss;
+<a name="l00094"></a>00094                                 ss &lt;&lt; <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2d44450d34e2cb68c0534ddb7b385726">fovy</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a946f5103784e5d00c90b2bcc86cfb817">aspect</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2f7dcc2ac8c2e2a47ccab07d86824ed9">zn</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="structgbmath_1_1perspective__projection__data.htm#ae07666d6553dcf8958bf94c752833556">zf</a> ;
+<a name="l00095"></a>00095                                 <span class="keywordflow">return</span> ss.str();
+<a name="l00096"></a>00096                         }
+<a name="l00097"></a>00097 
+<a name="l00098"></a><a class="code" href="structgbmath_1_1perspective__projection__data.htm#aef6eaed91e535d2d3f6837d572c786f8">00098</a>                         <span class="keywordtype">void</span> operator = (<span class="keyword">const</span> std::string&amp; str) <span class="keywordflow">throw</span> (std::invalid_argument)
+<a name="l00099"></a>00099                         {
+<a name="l00100"></a>00100                                 std::istringstream ss(str);
+<a name="l00101"></a>00101                                 ss &gt;&gt; fovy;
+<a name="l00102"></a>00102                                 ss &gt;&gt; aspect;
+<a name="l00103"></a>00103                                 ss &gt;&gt; zn;
+<a name="l00104"></a>00104                                 ss &gt;&gt; zf;
+<a name="l00105"></a>00105                                 <span class="keywordflow">if</span>( ss.fail() )
+<a name="l00106"></a>00106                                         <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;bad input string&quot;</span>);
+<a name="l00107"></a>00107                         }
+<a name="l00108"></a>00108 
+<a name="l00109"></a>00109 
+<a name="l00110"></a><a class="code" href="structgbmath_1_1perspective__projection__data.htm#a71a3acb30a0898ee36e5a42731a68090">00110</a>                         <span class="keyword">friend</span> std::istream &amp;operator &gt;&gt; (std::istream &amp;stream, <a class="code" href="structgbmath_1_1perspective__projection__data.htm" title="This data perspective projection.">perspective_projection_data</a>&amp; a)
+<a name="l00111"></a>00111                         {
+<a name="l00112"></a>00112                                 stream &gt;&gt; a.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2d44450d34e2cb68c0534ddb7b385726">fovy</a>;
+<a name="l00113"></a>00113                                 stream &gt;&gt; a.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#a946f5103784e5d00c90b2bcc86cfb817">aspect</a>;
+<a name="l00114"></a>00114                                 stream &gt;&gt; a.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2f7dcc2ac8c2e2a47ccab07d86824ed9">zn</a>;
+<a name="l00115"></a>00115                                 stream &gt;&gt; a.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#ae07666d6553dcf8958bf94c752833556">zf</a>;
+<a name="l00116"></a>00116                                 <span class="keywordflow">return</span> stream;
+<a name="l00117"></a>00117                         }
+<a name="l00118"></a>00118 
+<a name="l00119"></a>00119 
+<a name="l00120"></a><a class="code" href="structgbmath_1_1perspective__projection__data.htm#a0d9549ea2c0ed05f86797a013f1db3b9">00120</a>                         <span class="keyword">friend</span> std::istringstream &amp;operator &gt;&gt; (std::istringstream &amp;ss, <a class="code" href="structgbmath_1_1perspective__projection__data.htm" title="This data perspective projection.">perspective_projection_data</a>&amp; a)
+<a name="l00121"></a>00121                         {
+<a name="l00122"></a>00122                                 ss &gt;&gt; a.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2d44450d34e2cb68c0534ddb7b385726">fovy</a>;
+<a name="l00123"></a>00123                                 ss &gt;&gt; a.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#a946f5103784e5d00c90b2bcc86cfb817">aspect</a>;
+<a name="l00124"></a>00124                                 ss &gt;&gt; a.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#a2f7dcc2ac8c2e2a47ccab07d86824ed9">zn</a>;
+<a name="l00125"></a>00125                                 ss &gt;&gt; a.<a class="code" href="structgbmath_1_1perspective__projection__data.htm#ae07666d6553dcf8958bf94c752833556">zf</a>;
+<a name="l00126"></a>00126                                 <span class="keywordflow">return</span> ss;
+<a name="l00127"></a>00127                         }
+<a name="l00128"></a>00128 
+<a name="l00129"></a>00129 
+<a name="l00130"></a>00130 
+<a name="l00131"></a>00131 
+<a name="l00132"></a>00132 
+<a name="l00133"></a>00133           };
+<a name="l00134"></a>00134 
+<a name="l00135"></a>00135 }
 </pre></div></div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -145,7 +185,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Mon Jan 30 15:53:20 2012 for gbmath by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Tue May 22 10:25:54 2012 for gbmath by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

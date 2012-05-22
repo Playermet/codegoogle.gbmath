@@ -22,7 +22,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="namespaces.htm"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.htm"><span>Classes</span></a></li>
       <li><a href="files.htm"><span>Files</span></a></li>
-      <li><a href="dirs.htm"><span>Directories</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <img id="MSearchSelect" src="search/search.png"
@@ -70,6 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_vars_0x68.htm#index_h"><span>h</span></a></li>
       <li><a href="functions_vars_0x6c.htm#index_l"><span>l</span></a></li>
       <li class="current"><a href="functions_vars_0x6d.htm#index_m"><span>m</span></a></li>
+      <li><a href="functions_vars_0x6e.htm#index_n"><span>n</span></a></li>
       <li><a href="functions_vars_0x6f.htm#index_o"><span>o</span></a></li>
       <li><a href="functions_vars_0x70.htm#index_p"><span>p</span></a></li>
       <li><a href="functions_vars_0x71.htm#index_q"><span>q</span></a></li>
@@ -191,6 +191,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>m_fFramesToSmoothMouseData
 : <a class="el" href="classgbmath_1_1base__camera.htm#a8dcf83e33d3c7d5968eece72bec5ac44">gbmath::base_camera</a>
 </li>
+<li>m_FloatValues
+: <a class="el" href="classgbmath_1_1value_server.htm#aae5faff7d8ea442df3253ff7b16cebe2">gbmath::valueServer</a>
+</li>
 <li>m_fMaxRadius
 : <a class="el" href="classgbmath_1_1model__view__camera.htm#aa0b2d04d77d5044072044372e9add93a">gbmath::model_view_camera</a>
 </li>
@@ -221,6 +224,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>m_matr
 : <a class="el" href="classgbmath_1_1geometry__context.htm#aa606d91ca63be624e76c37cfb8e99257">gbmath::geometry_context</a>
+</li>
+<li>m_Matrix33Values
+: <a class="el" href="classgbmath_1_1value_server.htm#a5f072c54c623401d2a7077e08e9ba9a5">gbmath::valueServer</a>
+</li>
+<li>m_Matrix44Values
+: <a class="el" href="classgbmath_1_1value_server.htm#ab76581200d6ce913f8653153a65bf62f">gbmath::valueServer</a>
 </li>
 <li>m_mCameraRotLast
 : <a class="el" href="classgbmath_1_1model__view__camera.htm#addb6f97182126b09c7181ba2120fd907">gbmath::model_view_camera</a>
@@ -259,6 +268,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>m_nActiveButtonMask
 : <a class="el" href="classgbmath_1_1first__person__camera.htm#a3ace6b6163121fd10902d4a817d1aa3f">gbmath::first_person_camera</a>
+</li>
+<li>m_name
+: <a class="el" href="classgbmath_1_1detail_1_1value__name.htm#aa8dd60e8574792275289fbb1db72431e">gbmath::detail::value_name</a>
 </li>
 <li>m_nCurrentButtonMask
 : <a class="el" href="classgbmath_1_1base__camera.htm#aea280e158e484398712f988fa2789c04">gbmath::base_camera</a>
@@ -308,6 +320,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>m_rcDrag
 : <a class="el" href="classgbmath_1_1base__camera.htm#a87de2d179a5260616044a4b9ec156b84">gbmath::base_camera</a>
 </li>
+<li>m_sMatrSetCounters
+: <a class="el" href="classgbmath_1_1geometry__context.htm#a85eaa93e7757e64bfde7f928053bc435">gbmath::geometry_context</a>
+</li>
 <li>m_stack
 : <a class="el" href="classgbmath_1_1_matrix_stack_std.htm#a1ff7119e4a75eb308faac83962710bc2">gbmath::MatrixStackStd</a>
 </li>
@@ -343,6 +358,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>m_vec4Temp
 : <a class="el" href="classgbmath_1_1geometry__context.htm#ae5cc619dc8b4fa210953543caa4a089a">gbmath::geometry_context</a>
+</li>
+<li>m_Vector2Values
+: <a class="el" href="classgbmath_1_1value_server.htm#a5dde6fbd1233b90bb2a00555f8aab228">gbmath::valueServer</a>
+</li>
+<li>m_Vector3Values
+: <a class="el" href="classgbmath_1_1value_server.htm#ae0c1121e85acda1074a801797f2c59e9">gbmath::valueServer</a>
+</li>
+<li>m_Vector4Values
+: <a class="el" href="classgbmath_1_1value_server.htm#a1b38b461f0d0f465f0a858dbc556176f">gbmath::valueServer</a>
 </li>
 <li>m_VewPos
 : <a class="el" href="classgbmath_1_1geometry__context.htm#ae2731303f75824611bf6b70a10d56940">gbmath::geometry_context</a>
@@ -411,8 +435,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="structgbmath_1_1geometry__context_1_1matrix_store__s.htm#a5f85e709573f7b6b5f483531a772f2a9">gbmath::geometry_context::matrixStore_s</a>
 </li>
 <li>max
-: <a class="el" href="classgbmath_1_1aabb.htm#a739cbaa1eef4c6f6d4018ed566fa9d5c">gbmath::aabb</a>
-, <a class="el" href="classgbmath_1_1_rect.htm#ad77ebf0b2d9748f14d3aa249a5c24995">gbmath::Rect</a>
+: <a class="el" href="classgbmath_1_1_rect.htm#ad77ebf0b2d9748f14d3aa249a5c24995">gbmath::Rect</a>
+, <a class="el" href="classgbmath_1_1aabb.htm#a739cbaa1eef4c6f6d4018ed566fa9d5c">gbmath::aabb</a>
 </li>
 <li>maxZ
 : <a class="el" href="classgbmath_1_1_viewport_z.htm#a235bfdfd54febc086d4dc6245ba343e3">gbmath::ViewportZ</a>
@@ -423,12 +447,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>minZ
 : <a class="el" href="classgbmath_1_1_viewport_z.htm#ad3f2d892ccb80652a0e030751de21f3a">gbmath::ViewportZ</a>
-</li>
-<li>modelBoundingSphereRadius
-: <a class="el" href="classgbmath_1_1float__context.htm#a1e14a2a8b17bf61ef611b729124ac822">gbmath::float_context</a>
-</li>
-<li>mouseData
-: <a class="el" href="classgbmath_1_1float__context.htm#addcb52a0b6a67b33e146c72691688e1a">gbmath::float_context</a>
 </li>
 <li>mProjectionInverse
 : <a class="el" href="structgbmath_1_1geometry__context_1_1_matrices_store.htm#a1de838b0d111bb4095506c02e514fc7f">gbmath::geometry_context::MatricesStore</a>
@@ -509,7 +527,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Mon Jan 30 15:53:22 2012 for gbmath by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Tue May 22 10:25:55 2012 for gbmath by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

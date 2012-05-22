@@ -22,7 +22,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="namespaces.htm"><span>Namespaces</span></a></li>
       <li><a href="annotated.htm"><span>Classes</span></a></li>
       <li class="current"><a href="files.htm"><span>Files</span></a></li>
-      <li><a href="dirs.htm"><span>Directories</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <img id="MSearchSelect" src="search/search.png"
@@ -51,7 +50,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00011"></a>00011 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00012"></a>00012 <span class="preprocessor"></span>
 <a name="l00013"></a>00013 
-<a name="l00014"></a>00014 <span class="preprocessor">#ifdef GBMATH_USE_OPENGL_DRAWER</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#if GBMATH_USE_OPENGL_DRAWER</span>
 <a name="l00015"></a>00015 <span class="preprocessor"></span>
 <a name="l00016"></a>00016 
 <a name="l00017"></a>00017 <span class="keyword">namespace </span>gbmath 
@@ -82,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00043"></a><a class="code" href="classgbmath_1_1drawer.htm#a1ef7caade9efa19e1fb53b5860112efe">00043</a>                         <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1drawer.htm#a1ef7caade9efa19e1fb53b5860112efe">set_color_white</a>() { <a class="code" href="classgbmath_1_1drawer.htm#ab03576262a314120e32d922637758244">set_color</a>( 1.0f , 1.0f , 1.0f , 1.0f ); }
 <a name="l00044"></a><a class="code" href="classgbmath_1_1drawer.htm#acd3811a5d5bc6fc5f8103d887373addd">00044</a>                         <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1drawer.htm#acd3811a5d5bc6fc5f8103d887373addd">set_color_black</a>() { <a class="code" href="classgbmath_1_1drawer.htm#ab03576262a314120e32d922637758244">set_color</a>( 0.0f , 0.0f , 0.0f , 1.0f ); }
 <a name="l00045"></a>00045 
-<a name="l00046"></a><a class="code" href="classgbmath_1_1drawer.htm#aa823acfc3b4784e97c4a6c5d593eaa92">00046</a>                           TODO: pink, <a class="code" href="classgbmath_1_1drawer.htm#aa823acfc3b4784e97c4a6c5d593eaa92">yellow</a> , ......
+<a name="l00046"></a>00046                         <span class="comment">//  TODO: pink, yellow , ......</span>
 <a name="l00047"></a>00047 
 <a name="l00048"></a>00048 
 <a name="l00049"></a>00049                         <span class="keywordtype">void</span> <a class="code" href="classgbmath_1_1drawer.htm#a89a0957997248853fcf5d3015a9762b2">set_pointsize</a>(<span class="keywordtype">int</span> size) ;
@@ -111,11 +110,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00072"></a>00072 
 <a name="l00073"></a>00073 }
 <a name="l00074"></a>00074 
-<a name="l00075"></a>00075 <span class="preprocessor">#ifdef __gl_h_</span>
-<a name="l00076"></a>00076 <span class="preprocessor"></span><span class="preprocessor">        #error protect include gl header</span>
-<a name="l00077"></a>00077 <span class="preprocessor"></span><span class="preprocessor">#endif </span>
-<a name="l00078"></a>00078 <span class="preprocessor"></span>
-<a name="l00079"></a>00079 <span class="preprocessor">#endif // #ifdef GBMATH_USE_OPENGL_DRAWER</span>
+<a name="l00075"></a>00075 <span class="comment">/*</span>
+<a name="l00076"></a>00076 <span class="comment">#ifdef __gl_h_</span>
+<a name="l00077"></a>00077 <span class="comment">        #error protect include gl header</span>
+<a name="l00078"></a>00078 <span class="comment">#endif </span>
+<a name="l00079"></a>00079 <span class="comment">*/</span>
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081 <span class="preprocessor">#endif // #ifdef GBMATH_USE_OPENGL_DRAWER</span>
 </pre></div></div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -131,7 +132,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Mon Jan 30 15:53:19 2012 for gbmath by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Tue May 22 10:25:53 2012 for gbmath by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

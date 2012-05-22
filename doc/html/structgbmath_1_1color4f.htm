@@ -22,7 +22,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="namespaces.htm"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.htm"><span>Classes</span></a></li>
       <li><a href="files.htm"><span>Files</span></a></li>
-      <li><a href="dirs.htm"><span>Directories</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <img id="MSearchSelect" src="search/search.png"
@@ -73,6 +72,11 @@ Inheritance diagram for gbmath::color4f:</div>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1color4f.htm#ae19edaee3c296336ed0386fb30d67782">color4f</a> (const <a class="el" href="structgbmath_1_1color4f.htm">color4f</a> &amp;col)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1color4f.htm#a9bccec9bd9b364a6eafeb9bab282c89a">color4f</a> (float _r, float _g, float _b)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1color4f.htm#a48bef41e1b46e004c934917e4ce01cc6">color4f</a> (float _r, float _g, float _b, float _a)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1color4f.htm#ad2acb8cc68a2361093e8b700fc27e594">to_uint32_rgba</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1color4f.htm#ac763a9004863f64dbfe3a57f0179aabb">to_uint32_argb</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1color4f.htm#a153c0397a04346026dd5eba28f52cf31">from_uint32_argb</a> (unsigned int val)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1color4f.htm#a8ee13722fe5af9da93838d1427fa1d17">to_uint32_as_d3d9color</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1color4f.htm#a975845748b5e6337ceb78c34effb4934">from_uint32_as_d3d9color</a> (unsigned int val)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1color4f.htm#abbd49896711f6867e66f808ae2ef5328">operator=</a> (const <a class="el" href="structgbmath_1_1color4__32.htm">color4_32</a> val)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Построение цвета из целочисленого 4-x байтового цвета.  <a href="#abbd49896711f6867e66f808ae2ef5328"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1color4f.htm">color4f</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1color4f.htm#a29dd195f65786d806122128425de8cfa">set_white</a> (float _a=1.0f)</td></tr>
@@ -87,6 +91,10 @@ Inheritance diagram for gbmath::color4f:</div>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1color4f.htm#a7415c03d38c537eda46914985b203344">operator=</a> (const D3DXCOLOR &amp;c)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1color4f.htm#aea2659acb63b7edcc2efcfa93ab25f2c">operator const D3DXCOLOR *</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1color4f.htm#a5ffe74f0a057ea57802f7be43661730c">operator D3DXCOLOR</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1color4f.htm#a9542862038b860f93be43c47fddc1355">operator std::string</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1color4f.htm#a3972d98a1dd7ed057da4accfc86375d7">operator=</a> (const std::string &amp;<a class="el" href="structgbmath_1_1color4.htm#a7a23c5a5b4fac4d035a129c48829e3f4">a</a>)  throw (std::runtime_error)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1color4f.htm#a9542862038b860f93be43c47fddc1355">operator std::string</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1color4f.htm#a05eb120542e8006cc7f60ec484343a0f">operator=</a> (const std::string &amp;str)  throw (std::invalid_argument)</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Standard four-color float . </p>
@@ -209,6 +217,46 @@ Inheritance diagram for gbmath::color4f:</div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a153c0397a04346026dd5eba28f52cf31"></a><!-- doxytag: member="gbmath::color4f::from_uint32_argb" ref="a153c0397a04346026dd5eba28f52cf31" args="(unsigned int val)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gbmath::color4f::from_uint32_argb </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>val</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00128">128</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a975845748b5e6337ceb78c34effb4934"></a><!-- doxytag: member="gbmath::color4f::from_uint32_as_d3d9color" ref="a975845748b5e6337ceb78c34effb4934" args="(unsigned int val)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gbmath::color4f::from_uint32_as_d3d9color </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>val</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00169">169</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a84973b5498957b8ab224723d95c2c60a"></a><!-- doxytag: member="gbmath::color4f::operator color4_32" ref="a84973b5498957b8ab224723d95c2c60a" args="() const " -->
 <div class="memitem">
 <div class="memproto">
@@ -243,7 +291,7 @@ Inheritance diagram for gbmath::color4f:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00521">521</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
+<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00606">606</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
 
 </div>
 </div>
@@ -262,7 +310,7 @@ Inheritance diagram for gbmath::color4f:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00527">527</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
+<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00612">612</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
 
 </div>
 </div>
@@ -281,7 +329,7 @@ Inheritance diagram for gbmath::color4f:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00522">522</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
+<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00607">607</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
 
 </div>
 </div>
@@ -300,7 +348,85 @@ Inheritance diagram for gbmath::color4f:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00528">528</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
+<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00613">613</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9542862038b860f93be43c47fddc1355"></a><!-- doxytag: member="gbmath::color4f::operator std::string" ref="a9542862038b860f93be43c47fddc1355" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gbmath::color4f::operator std::string </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00635">635</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9542862038b860f93be43c47fddc1355"></a><!-- doxytag: member="gbmath::color4f::operator std::string" ref="a9542862038b860f93be43c47fddc1355" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gbmath::color4f::operator std::string </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00621">621</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a05eb120542e8006cc7f60ec484343a0f"></a><!-- doxytag: member="gbmath::color4f::operator=" ref="a05eb120542e8006cc7f60ec484343a0f" args="(const std::string &amp;str)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gbmath::color4f::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>str</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (std::invalid_argument)<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00642">642</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3972d98a1dd7ed057da4accfc86375d7"></a><!-- doxytag: member="gbmath::color4f::operator=" ref="a3972d98a1dd7ed057da4accfc86375d7" args="(const std::string &amp;a)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gbmath::color4f::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>a</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (std::runtime_error)<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00628">628</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
 
 </div>
 </div>
@@ -320,7 +446,7 @@ Inheritance diagram for gbmath::color4f:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00526">526</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
+<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00611">611</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
 
 </div>
 </div>
@@ -343,7 +469,7 @@ Inheritance diagram for gbmath::color4f:</div>
 <p>сложение. </p>
 <p>сложение только rgb. альфа не изменятеся. Вычитание Вычитание только rgb. альфа не изменятеся. Масштабирование inline <a class="el" href="structgbmath_1_1color4f.htm" title="Standard four-color float .">color4f</a>&amp; scale(float s) { r*=s; g*=s; b*=s; a*=s; return *this; }; установить по c1 и c2 по линейной интерполяции. установить: линейная интерполяция между this и color. изменить насыщенность . Альфа игнорируется. изменить насыщенность Масштабирование цвета. Изменение яркости. Негатив. Установить негативный. получить негативный цвет изменить контраст получить цвет с изменённым контрастом Отсечение значений в пределах 0.0 ... 1.0 Получить сатурированый цвет из this . Установить как средний цвет между this и col . Установить как средний цвет между c1 и с2 . Получить как средний цвет между this и col . Конвертация в строку. Разделитель: пробел Чтение значений из строки разд. пробелами </p>
 
-<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00520">520</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
+<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00605">605</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
 
 </div>
 </div>
@@ -389,7 +515,7 @@ Inheritance diagram for gbmath::color4f:</div>
 
 <p>Reimplemented from <a class="el" href="structgbmath_1_1color4.htm#abc696e4417beceda9003ef254bd616d6">gbmath::color4&lt; float &gt;</a>.</p>
 
-<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00104">104</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
+<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00189">189</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
 
 </div>
 </div>
@@ -413,7 +539,64 @@ Inheritance diagram for gbmath::color4f:</div>
 
 <p>Reimplemented from <a class="el" href="structgbmath_1_1color4.htm#a783ed92bbf19b677bd233b4dd5c60313">gbmath::color4&lt; float &gt;</a>.</p>
 
-<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00096">96</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
+<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00181">181</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac763a9004863f64dbfe3a57f0179aabb"></a><!-- doxytag: member="gbmath::color4f::to_uint32_argb" ref="ac763a9004863f64dbfe3a57f0179aabb" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int gbmath::color4f::to_uint32_argb </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00111">111</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8ee13722fe5af9da93838d1427fa1d17"></a><!-- doxytag: member="gbmath::color4f::to_uint32_as_d3d9color" ref="a8ee13722fe5af9da93838d1427fa1d17" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int gbmath::color4f::to_uint32_as_d3d9color </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00163">163</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad2acb8cc68a2361093e8b700fc27e594"></a><!-- doxytag: member="gbmath::color4f::to_uint32_rgba" ref="ad2acb8cc68a2361093e8b700fc27e594" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int gbmath::color4f::to_uint32_rgba </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="color4f_8h_source.htm#l00092">92</a> of file <a class="el" href="color4f_8h_source.htm">color4f.h</a>.</p>
 
 </div>
 </div>
@@ -436,7 +619,7 @@ Inheritance diagram for gbmath::color4f:</div>
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Mon Jan 30 15:53:23 2012 for gbmath by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Tue May 22 10:25:56 2012 for gbmath by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

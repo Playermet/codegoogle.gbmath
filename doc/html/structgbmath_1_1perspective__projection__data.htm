@@ -22,7 +22,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="namespaces.htm"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.htm"><span>Classes</span></a></li>
       <li><a href="files.htm"><span>Files</span></a></li>
-      <li><a href="dirs.htm"><span>Directories</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <img id="MSearchSelect" src="search/search.png"
@@ -59,8 +58,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p><a href="structgbmath_1_1perspective__projection__data-members.htm">List of all members.</a></p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1perspective__projection__data.htm#a43186b85b812ef28f421740a4a5768c4">perspective_projection_data</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1perspective__projection__data.htm#ac30e967e8c63b41d340bc8232a483112">perspective_projection_data</a> (float _fovy, float _aspect, float _zn, float _zf)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1perspective__projection__data.htm#afaf40480347f809da49c945f92ab6b8e">perspective_projection_data</a> (const <a class="el" href="structgbmath_1_1perspective__projection__data.htm">perspective_projection_data</a> &amp;a)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1mat44.htm">mat44</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1perspective__projection__data.htm#a7522bcf159425a7669f178ddb2d89b2f">makePerspectiveMatrixLH</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1mat44.htm">mat44</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1perspective__projection__data.htm#ae7801bcae27e2befc914907a013a179a">makePerspectiveMatrixRH</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1perspective__projection__data.htm#a15125a9d200fa82c964ba76ff4d7e2ed">extractProjPerspectLH</a> (const <a class="el" href="structgbmath_1_1mat44.htm">mat44</a> &amp;mPerspectProjLH)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Извлечь проекционные данные из левосторонней перспективной матрицы .  <a href="#a15125a9d200fa82c964ba76ff4d7e2ed"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1perspective__projection__data.htm#a199f44f698b0a548357df469828fd16f">extractProjPerspectRH</a> (const <a class="el" href="structgbmath_1_1mat44.htm">mat44</a> &amp;mPerspectProjLH)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1perspective__projection__data.htm#a20a4993c10b48e15de3ce6360b534122">operator std::string</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1perspective__projection__data.htm#aef6eaed91e535d2d3f6837d572c786f8">operator=</a> (const std::string &amp;str)  throw (std::invalid_argument)</td></tr>
 <tr><td colspan="2"><h2>Public Attributes</h2></td></tr>
@@ -77,6 +82,87 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>This data perspective projection. </p>
 
 <p>Definition at line <a class="el" href="perspective__projection__data_8h_source.htm#l00022">22</a> of file <a class="el" href="perspective__projection__data_8h_source.htm">perspective_projection_data.h</a>.</p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a43186b85b812ef28f421740a4a5768c4"></a><!-- doxytag: member="gbmath::perspective_projection_data::perspective_projection_data" ref="a43186b85b812ef28f421740a4a5768c4" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gbmath::perspective_projection_data::perspective_projection_data </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="perspective__projection__data_8h_source.htm#l00030">30</a> of file <a class="el" href="perspective__projection__data_8h_source.htm">perspective_projection_data.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac30e967e8c63b41d340bc8232a483112"></a><!-- doxytag: member="gbmath::perspective_projection_data::perspective_projection_data" ref="ac30e967e8c63b41d340bc8232a483112" args="(float _fovy, float _aspect, float _zn, float _zf)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gbmath::perspective_projection_data::perspective_projection_data </td>
+          <td>(</td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>_fovy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>_aspect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>_zn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>_zf</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="perspective__projection__data_8h_source.htm#l00035">35</a> of file <a class="el" href="perspective__projection__data_8h_source.htm">perspective_projection_data.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afaf40480347f809da49c945f92ab6b8e"></a><!-- doxytag: member="gbmath::perspective_projection_data::perspective_projection_data" ref="afaf40480347f809da49c945f92ab6b8e" args="(const perspective_projection_data &amp;a)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gbmath::perspective_projection_data::perspective_projection_data </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structgbmath_1_1perspective__projection__data.htm">perspective_projection_data</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>a</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="perspective__projection__data_8h_source.htm#l00043">43</a> of file <a class="el" href="perspective__projection__data_8h_source.htm">perspective_projection_data.h</a>.</p>
+
+</div>
+</div>
 <hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a15125a9d200fa82c964ba76ff4d7e2ed"></a><!-- doxytag: member="gbmath::perspective_projection_data::extractProjPerspectLH" ref="a15125a9d200fa82c964ba76ff4d7e2ed" args="(const mat44 &amp;mPerspectProjLH)" -->
 <div class="memitem">
@@ -96,7 +182,65 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>Извлечь проекционные данные из левосторонней перспективной матрицы . </p>
 
-<p>Definition at line <a class="el" href="perspective__projection__data_8h_source.htm#l00030">30</a> of file <a class="el" href="perspective__projection__data_8h_source.htm">perspective_projection_data.h</a>.</p>
+<p>Definition at line <a class="el" href="perspective__projection__data_8h_source.htm#l00070">70</a> of file <a class="el" href="perspective__projection__data_8h_source.htm">perspective_projection_data.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a199f44f698b0a548357df469828fd16f"></a><!-- doxytag: member="gbmath::perspective_projection_data::extractProjPerspectRH" ref="a199f44f698b0a548357df469828fd16f" args="(const mat44 &amp;mPerspectProjLH)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gbmath::perspective_projection_data::extractProjPerspectRH </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structgbmath_1_1mat44.htm">mat44</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>mPerspectProjLH</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="perspective__projection__data_8h_source.htm#l00078">78</a> of file <a class="el" href="perspective__projection__data_8h_source.htm">perspective_projection_data.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7522bcf159425a7669f178ddb2d89b2f"></a><!-- doxytag: member="gbmath::perspective_projection_data::makePerspectiveMatrixLH" ref="a7522bcf159425a7669f178ddb2d89b2f" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structgbmath_1_1mat44.htm">mat44</a> gbmath::perspective_projection_data::makePerspectiveMatrixLH </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="perspective__projection__data_8h_source.htm#l00053">53</a> of file <a class="el" href="perspective__projection__data_8h_source.htm">perspective_projection_data.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae7801bcae27e2befc914907a013a179a"></a><!-- doxytag: member="gbmath::perspective_projection_data::makePerspectiveMatrixRH" ref="ae7801bcae27e2befc914907a013a179a" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structgbmath_1_1mat44.htm">mat44</a> gbmath::perspective_projection_data::makePerspectiveMatrixRH </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="perspective__projection__data_8h_source.htm#l00060">60</a> of file <a class="el" href="perspective__projection__data_8h_source.htm">perspective_projection_data.h</a>.</p>
 
 </div>
 </div>
@@ -115,7 +259,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="perspective__projection__data_8h_source.htm#l00045">45</a> of file <a class="el" href="perspective__projection__data_8h_source.htm">perspective_projection_data.h</a>.</p>
+<p>Definition at line <a class="el" href="perspective__projection__data_8h_source.htm#l00091">91</a> of file <a class="el" href="perspective__projection__data_8h_source.htm">perspective_projection_data.h</a>.</p>
 
 </div>
 </div>
@@ -135,7 +279,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="perspective__projection__data_8h_source.htm#l00052">52</a> of file <a class="el" href="perspective__projection__data_8h_source.htm">perspective_projection_data.h</a>.</p>
+<p>Definition at line <a class="el" href="perspective__projection__data_8h_source.htm#l00098">98</a> of file <a class="el" href="perspective__projection__data_8h_source.htm">perspective_projection_data.h</a>.</p>
 
 </div>
 </div>
@@ -165,7 +309,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="perspective__projection__data_8h_source.htm#l00039">39</a> of file <a class="el" href="perspective__projection__data_8h_source.htm">perspective_projection_data.h</a>.</p>
+<p>Definition at line <a class="el" href="perspective__projection__data_8h_source.htm#l00085">85</a> of file <a class="el" href="perspective__projection__data_8h_source.htm">perspective_projection_data.h</a>.</p>
 
 </div>
 </div>
@@ -194,7 +338,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="perspective__projection__data_8h_source.htm#l00074">74</a> of file <a class="el" href="perspective__projection__data_8h_source.htm">perspective_projection_data.h</a>.</p>
+<p>Definition at line <a class="el" href="perspective__projection__data_8h_source.htm#l00120">120</a> of file <a class="el" href="perspective__projection__data_8h_source.htm">perspective_projection_data.h</a>.</p>
 
 </div>
 </div>
@@ -223,7 +367,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="perspective__projection__data_8h_source.htm#l00064">64</a> of file <a class="el" href="perspective__projection__data_8h_source.htm">perspective_projection_data.h</a>.</p>
+<p>Definition at line <a class="el" href="perspective__projection__data_8h_source.htm#l00110">110</a> of file <a class="el" href="perspective__projection__data_8h_source.htm">perspective_projection_data.h</a>.</p>
 
 </div>
 </div>
@@ -306,7 +450,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Mon Jan 30 15:53:24 2012 for gbmath by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Tue May 22 10:25:57 2012 for gbmath by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

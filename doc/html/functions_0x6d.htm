@@ -22,7 +22,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="namespaces.htm"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.htm"><span>Classes</span></a></li>
       <li><a href="files.htm"><span>Files</span></a></li>
-      <li><a href="dirs.htm"><span>Directories</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <img id="MSearchSelect" src="search/search.png"
@@ -194,6 +193,9 @@ Here is a list of all class members with links to the classes they belong to:
 <li>m_fFramesToSmoothMouseData
 : <a class="el" href="classgbmath_1_1base__camera.htm#a8dcf83e33d3c7d5968eece72bec5ac44">gbmath::base_camera</a>
 </li>
+<li>m_FloatValues
+: <a class="el" href="classgbmath_1_1value_server.htm#aae5faff7d8ea442df3253ff7b16cebe2">gbmath::valueServer</a>
+</li>
 <li>m_fMaxRadius
 : <a class="el" href="classgbmath_1_1model__view__camera.htm#aa0b2d04d77d5044072044372e9add93a">gbmath::model_view_camera</a>
 </li>
@@ -224,6 +226,12 @@ Here is a list of all class members with links to the classes they belong to:
 </li>
 <li>m_matr
 : <a class="el" href="classgbmath_1_1geometry__context.htm#aa606d91ca63be624e76c37cfb8e99257">gbmath::geometry_context</a>
+</li>
+<li>m_Matrix33Values
+: <a class="el" href="classgbmath_1_1value_server.htm#a5f072c54c623401d2a7077e08e9ba9a5">gbmath::valueServer</a>
+</li>
+<li>m_Matrix44Values
+: <a class="el" href="classgbmath_1_1value_server.htm#ab76581200d6ce913f8653153a65bf62f">gbmath::valueServer</a>
 </li>
 <li>m_mCameraRotLast
 : <a class="el" href="classgbmath_1_1model__view__camera.htm#addb6f97182126b09c7181ba2120fd907">gbmath::model_view_camera</a>
@@ -262,6 +270,9 @@ Here is a list of all class members with links to the classes they belong to:
 </li>
 <li>m_nActiveButtonMask
 : <a class="el" href="classgbmath_1_1first__person__camera.htm#a3ace6b6163121fd10902d4a817d1aa3f">gbmath::first_person_camera</a>
+</li>
+<li>m_name
+: <a class="el" href="classgbmath_1_1detail_1_1value__name.htm#aa8dd60e8574792275289fbb1db72431e">gbmath::detail::value_name</a>
 </li>
 <li>m_nCurrentButtonMask
 : <a class="el" href="classgbmath_1_1base__camera.htm#aea280e158e484398712f988fa2789c04">gbmath::base_camera</a>
@@ -311,6 +322,9 @@ Here is a list of all class members with links to the classes they belong to:
 <li>m_rcDrag
 : <a class="el" href="classgbmath_1_1base__camera.htm#a87de2d179a5260616044a4b9ec156b84">gbmath::base_camera</a>
 </li>
+<li>m_sMatrSetCounters
+: <a class="el" href="classgbmath_1_1geometry__context.htm#a85eaa93e7757e64bfde7f928053bc435">gbmath::geometry_context</a>
+</li>
 <li>m_stack
 : <a class="el" href="classgbmath_1_1_matrix_stack_std.htm#a1ff7119e4a75eb308faac83962710bc2">gbmath::MatrixStackStd</a>
 </li>
@@ -346,6 +360,15 @@ Here is a list of all class members with links to the classes they belong to:
 </li>
 <li>m_vec4Temp
 : <a class="el" href="classgbmath_1_1geometry__context.htm#ae5cc619dc8b4fa210953543caa4a089a">gbmath::geometry_context</a>
+</li>
+<li>m_Vector2Values
+: <a class="el" href="classgbmath_1_1value_server.htm#a5dde6fbd1233b90bb2a00555f8aab228">gbmath::valueServer</a>
+</li>
+<li>m_Vector3Values
+: <a class="el" href="classgbmath_1_1value_server.htm#ae0c1121e85acda1074a801797f2c59e9">gbmath::valueServer</a>
+</li>
+<li>m_Vector4Values
+: <a class="el" href="classgbmath_1_1value_server.htm#a1b38b461f0d0f465f0a858dbc556176f">gbmath::valueServer</a>
 </li>
 <li>m_VewPos
 : <a class="el" href="classgbmath_1_1geometry__context.htm#ae2731303f75824611bf6b70a10d56940">gbmath::geometry_context</a>
@@ -411,9 +434,9 @@ Here is a list of all class members with links to the classes they belong to:
 : <a class="el" href="classgbmath_1_1model__view__camera.htm#a9e98a87898db8430838d7663771bcbb7">gbmath::model_view_camera</a>
 </li>
 <li>make()
-: <a class="el" href="classgbmath_1_1aabb.htm#a90fe79a869e0e4f26300fd1ed0de3ad8">gbmath::aabb</a>
+: <a class="el" href="structgbmath_1_1plane__s.htm#a39f5d8dbd37f25ef219476be68a23baa">gbmath::plane_s</a>
+, <a class="el" href="classgbmath_1_1aabb.htm#a90fe79a869e0e4f26300fd1ed0de3ad8">gbmath::aabb</a>
 , <a class="el" href="classgbmath_1_1frustum.htm#a480d3add013b9a2c846f9af2f143d712">gbmath::frustum</a>
-, <a class="el" href="structgbmath_1_1plane__s.htm#a39f5d8dbd37f25ef219476be68a23baa">gbmath::plane_s</a>
 </li>
 <li>make_from_point_normal()
 : <a class="el" href="structgbmath_1_1plane__s.htm#a2adfe984d416e80b0e2d7dac34d670c1">gbmath::plane_s</a>
@@ -437,17 +460,23 @@ Here is a list of all class members with links to the classes they belong to:
 <li>makeDevice9TransfWorld()
 : <a class="el" href="structgbmath_1_1mat44.htm#ab2fb2415ce0e572bafe14a60742b7e29">gbmath::mat44</a>
 </li>
+<li>makePerspectiveMatrixLH()
+: <a class="el" href="structgbmath_1_1perspective__projection__data.htm#a7522bcf159425a7669f178ddb2d89b2f">gbmath::perspective_projection_data</a>
+</li>
+<li>makePerspectiveMatrixRH()
+: <a class="el" href="structgbmath_1_1perspective__projection__data.htm#ae7801bcae27e2befc914907a013a179a">gbmath::perspective_projection_data</a>
+</li>
 <li>mapKey()
 : <a class="el" href="classgbmath_1_1base__camera.htm#afe4ca0a55ca81927b70de2bcb5fcc479">gbmath::base_camera</a>
 </li>
 <li>mat22()
-: <a class="el" href="structgbmath_1_1mat22.htm#ab248ea0397c7286036843608be719278">gbmath::mat22</a>
+: <a class="el" href="structgbmath_1_1mat22.htm#a3ce69b9dec3da7fbd6613e19ee35fa16">gbmath::mat22</a>
 </li>
 <li>mat33()
-: <a class="el" href="structgbmath_1_1mat33.htm#abc8f0cdb92c8151b832a16fb39e1b48b">gbmath::mat33</a>
+: <a class="el" href="structgbmath_1_1mat33.htm#a8a6a2e38cf0ec9cedfb196e475d09fe8">gbmath::mat33</a>
 </li>
 <li>mat44()
-: <a class="el" href="structgbmath_1_1mat44.htm#a0c9f40580e5d9858d3fdf32af0f60a10">gbmath::mat44</a>
+: <a class="el" href="structgbmath_1_1mat44.htm#a2390988208cd0e23663e3901f192899e">gbmath::mat44</a>
 </li>
 <li>matrix
 : <a class="el" href="structgbmath_1_1geometry__context_1_1matrix_store__s.htm#a5f85e709573f7b6b5f483531a772f2a9">gbmath::geometry_context::matrixStore_s</a>
@@ -474,13 +503,13 @@ Here is a list of all class members with links to the classes they belong to:
 , <a class="el" href="structgbmath_1_1vec4.htm#a81bc41f5945f9f29fe4b4d605513eeb1">gbmath::vec4</a>
 </li>
 <li>maximize()
-: <a class="el" href="structgbmath_1_1vec3.htm#a5b11cde92004d8b7df2b5560970a537e">gbmath::vec3</a>
+: <a class="el" href="structgbmath_1_1vec3.htm#add038f3fe4814cf40f7a1a77374cde62">gbmath::vec3</a>
 , <a class="el" href="structgbmath_1_1vec2.htm#ac0c2299fa0a0757b0665524cec7c983c">gbmath::vec2</a>
-, <a class="el" href="structgbmath_1_1vec3.htm#add038f3fe4814cf40f7a1a77374cde62">gbmath::vec3</a>
+, <a class="el" href="structgbmath_1_1vec3.htm#a5b11cde92004d8b7df2b5560970a537e">gbmath::vec3</a>
 </li>
 <li>maximized()
-: <a class="el" href="structgbmath_1_1vec3.htm#a097fdfa9fae7c050da0a53f84f53d033">gbmath::vec3</a>
-, <a class="el" href="structgbmath_1_1vec2.htm#a3b2867cf7516c0d37ccfd31bc69ebda8">gbmath::vec2</a>
+: <a class="el" href="structgbmath_1_1vec2.htm#a3b2867cf7516c0d37ccfd31bc69ebda8">gbmath::vec2</a>
+, <a class="el" href="structgbmath_1_1vec3.htm#a097fdfa9fae7c050da0a53f84f53d033">gbmath::vec3</a>
 </li>
 <li>maxval()
 : <a class="el" href="structgbmath_1_1vec4.htm#acebed427f57feee108e0fdcc9570f354">gbmath::vec4</a>
@@ -495,28 +524,24 @@ Here is a list of all class members with links to the classes they belong to:
 <li>middle_point()
 : <a class="el" href="classgbmath_1_1triangle.htm#a3b72cbdb11f18af584ade8ff44a3406e">gbmath::triangle</a>
 </li>
-<li>MIDDLEMOUSEBUTTON
-: <a class="el" href="structgbmath_1_1float__context__type__e.htm#a831b8c3e02c1c25af17b817c1f44ce4ba3db3bbd9c19cb9afff5d7821cab9e86f">gbmath::float_context_type_e</a>
-</li>
 <li>min
-: <a class="el" href="classgbmath_1_1_rect.htm#ad38e91fafd641688846d5c70a923e6d2">gbmath::Rect</a>
-, <a class="el" href="classgbmath_1_1aabb.htm#a8d9ee7f37938613852e9bad91560fadf">gbmath::aabb</a>
+: <a class="el" href="classgbmath_1_1aabb.htm#a8d9ee7f37938613852e9bad91560fadf">gbmath::aabb</a>
+, <a class="el" href="classgbmath_1_1_rect.htm#ad38e91fafd641688846d5c70a923e6d2">gbmath::Rect</a>
 </li>
 <li>min_abs_value()
 : <a class="el" href="structgbmath_1_1vec2.htm#ac01fd1821c8936c2a3a6ceab0fb4d8b5">gbmath::vec2</a>
 </li>
 <li>min_value()
-: <a class="el" href="structgbmath_1_1vec2.htm#addd3d6a5d80c11fcf6183b656069420f">gbmath::vec2</a>
-, <a class="el" href="structgbmath_1_1vec3.htm#a2daeb0a99d3d6a0b1012abeacd425be7">gbmath::vec3</a>
+: <a class="el" href="structgbmath_1_1vec3.htm#a2daeb0a99d3d6a0b1012abeacd425be7">gbmath::vec3</a>
+, <a class="el" href="structgbmath_1_1vec2.htm#addd3d6a5d80c11fcf6183b656069420f">gbmath::vec2</a>
 </li>
 <li>minAbsVal()
-: <a class="el" href="structgbmath_1_1vec3.htm#a216ed424b7fcf809ac621762f27a6c0b">gbmath::vec3</a>
-, <a class="el" href="structgbmath_1_1vec4.htm#a12214ae81e10d309b1b5059b5258a480">gbmath::vec4</a>
+: <a class="el" href="structgbmath_1_1vec4.htm#a12214ae81e10d309b1b5059b5258a480">gbmath::vec4</a>
+, <a class="el" href="structgbmath_1_1vec3.htm#a216ed424b7fcf809ac621762f27a6c0b">gbmath::vec3</a>
 </li>
 <li>minimize()
-: <a class="el" href="structgbmath_1_1vec3.htm#acd6ef826ba37e8e42414432b505c1123">gbmath::vec3</a>
+: <a class="el" href="structgbmath_1_1vec3.htm#ae8a120366ddc8c5a9eecb8088e119b45">gbmath::vec3</a>
 , <a class="el" href="structgbmath_1_1vec2.htm#a73dbc9301aaf92586aeadc732375e3d0">gbmath::vec2</a>
-, <a class="el" href="structgbmath_1_1vec3.htm#ae8a120366ddc8c5a9eecb8088e119b45">gbmath::vec3</a>
 </li>
 <li>minimized()
 : <a class="el" href="structgbmath_1_1vec3.htm#ab8fdef7c17cdc0efa4cd0d8c02a46c3a">gbmath::vec3</a>
@@ -531,34 +556,16 @@ Here is a list of all class members with links to the classes they belong to:
 <li>model_view_camera()
 : <a class="el" href="classgbmath_1_1model__view__camera.htm#a78a523f5db724afc0eeba1d7704a4bae">gbmath::model_view_camera</a>
 </li>
-<li>modelBoundingSphereRadius
-: <a class="el" href="classgbmath_1_1float__context.htm#a1e14a2a8b17bf61ef611b729124ac822">gbmath::float_context</a>
-</li>
-<li>MODELBOUNDINGSPHERERADIUS
-: <a class="el" href="structgbmath_1_1float__context__type__e.htm#a831b8c3e02c1c25af17b817c1f44ce4bafdd58f08a6331ec7a9afd08552429815">gbmath::float_context_type_e</a>
-</li>
 <li>modulate()
-: <a class="el" href="structgbmath_1_1color4.htm#a602f6bc3f6d741a3593a5b0aea976ae4">gbmath::color4&lt; T &gt;</a>
-, <a class="el" href="structgbmath_1_1color3.htm#a49f344e8cdc958e026e742ba8455f540">gbmath::color3&lt; T &gt;</a>
+: <a class="el" href="structgbmath_1_1color3.htm#a49f344e8cdc958e026e742ba8455f540">gbmath::color3&lt; T &gt;</a>
+, <a class="el" href="structgbmath_1_1color4.htm#a602f6bc3f6d741a3593a5b0aea976ae4">gbmath::color4&lt; T &gt;</a>
 </li>
 <li>modulated()
-: <a class="el" href="structgbmath_1_1color4.htm#a5074d5c1553f3f2809ea4b2fbff7fa35">gbmath::color4&lt; T &gt;</a>
-, <a class="el" href="structgbmath_1_1color3.htm#a2776f30654b796160a27c5193bc65ce2">gbmath::color3&lt; T &gt;</a>
+: <a class="el" href="structgbmath_1_1color3.htm#a2776f30654b796160a27c5193bc65ce2">gbmath::color3&lt; T &gt;</a>
+, <a class="el" href="structgbmath_1_1color4.htm#a5074d5c1553f3f2809ea4b2fbff7fa35">gbmath::color4&lt; T &gt;</a>
 </li>
-<li>MOUSECOORDINATEX
-: <a class="el" href="structgbmath_1_1float__context__type__e.htm#a831b8c3e02c1c25af17b817c1f44ce4baefe43f8af282cd516a65cabee99dec87">gbmath::float_context_type_e</a>
-</li>
-<li>MOUSECOORDINATEXNDC
-: <a class="el" href="structgbmath_1_1float__context__type__e.htm#a831b8c3e02c1c25af17b817c1f44ce4ba7f303e91dfaf530d5faef8b87f3e547e">gbmath::float_context_type_e</a>
-</li>
-<li>MOUSECOORDINATEY
-: <a class="el" href="structgbmath_1_1float__context__type__e.htm#a831b8c3e02c1c25af17b817c1f44ce4ba89ca0cf4ff7b92590d9824eeb6e38a7d">gbmath::float_context_type_e</a>
-</li>
-<li>MOUSECOORDINATEYNDC
-: <a class="el" href="structgbmath_1_1float__context__type__e.htm#a831b8c3e02c1c25af17b817c1f44ce4baf674e0b867c671730a06ca0c6e6bc03d">gbmath::float_context_type_e</a>
-</li>
-<li>mouseData
-: <a class="el" href="classgbmath_1_1float__context.htm#addcb52a0b6a67b33e146c72691688e1a">gbmath::float_context</a>
+<li>MouseCoordCameraUnproject
+: <a class="el" href="structgbmath_1_1vector__context__type__e.htm#a8b6c43531b8ff9dd350490b95c7cd756a81b33c2108c317eb4f03dfb8d6a60fca">gbmath::vector_context_type_e</a>
 </li>
 <li>moveAlongNormal()
 : <a class="el" href="classgbmath_1_1point3.htm#a832d7d88b46d07d56242151ac34a2cc9">gbmath::point3</a>
@@ -655,7 +662,7 @@ Here is a list of all class members with links to the classes they belong to:
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Mon Jan 30 15:53:22 2012 for gbmath by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Tue May 22 10:25:55 2012 for gbmath by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>
