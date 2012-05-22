@@ -9,13 +9,7 @@
 #endif
 
 
-
-#if  1
-
-//#include "..\fmath.h"
-//#include "..\color.h"
-//#include "..\color_integer.h"
-//#include "..\color4f.h"
+ 
 
 
 
@@ -301,5 +295,4 @@ static const     unsigned int      CUICOLOR_YELLOWGREEN      = 0xFF9ACD32;
  }
 
 
-
-#endif
+ 
