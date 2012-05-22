@@ -31,8 +31,8 @@ namespace gbmath
 
 	 void decomposeInverseView(const mat44& mInverseView)
 	 {
-
-#pragma message(" eyedata::decomposeInverseView  need code . extract inverse view matrix")
+	  assert(  false && " need check code  decomposeInverseView");
+ 
 		// assert(   false &&  "no code");
 	  eye_position.x = mInverseView._41;
 	  eye_position.y = mInverseView._42;

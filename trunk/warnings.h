@@ -101,16 +101,47 @@
 	#pragma message(" transformdata_axang.h   :: NEED operators   "   __FILE__ )
 	      <br><br>
 
+		  const eyedata *geometry_context::getViewParamsPtr()const
+ 
+		  assert(false);
+		  #pragma message ( "geometry_context::getViewParamsPtr :: ПОГОНЯТЬ В ОТЛАДКЕ ЭТОТ МЕТОД  "  __FILE__ )
 
 
 		   <br><br>
+		   void decomposeInverseView(const mat44& mInverseView)
+		   #pragma message(" eyedata::decomposeInverseView  need code . extract inverse view matrix")
+
+
 		   <br><br>
+	   const eyedata *geometry_context::getViewParamsPtr()const
+	   NEED CHECK CODE
+
+
 		   <br><br>
-		   <br><br>
+
+		   Quaternion geometry_context::getWorldRotationQuaternion() const
+		   // get const to check calculate
+		   const TransformData  *ptr = getWorldTransformDataPtr();
+
+		   #pragma message("ks777   Quaternion geometry_context::getWorldRotationQuaternion() const  Need check code    "  __FILE__ )
+		   assert(false && "  need a check ");
+
 		   <br><br>
 
 
 
+		   <br><br>
+
+
+		   <br><br>
+
+
+
+		   <br><br>
+
+
+
+		   <br><br>
 
 
 */
