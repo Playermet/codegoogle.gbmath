@@ -175,35 +175,13 @@ namespace gbmath
 #include "vec2.h"
 #include "vec3.h"
 #include "vec4.h"
-
-
  
-// // new vectors  template
-//#include "vector2.hpp"
-//#include "vector3.hpp"
-//#include "vector4.hpp"
- 
-
-
-
- 
-//	// new matrix template
-//#include "matrix.hpp"
-//#include "matrix_quad.hpp"
-//#include "matrix2x2.hpp"
-//#include "matrix3x3.hpp"
-//#include "matrix4x4.hpp"
- 
-
-
 #include "mat22.h"
 #include "mat33.h"
 #include "mat44.h"
 
 #include "matrix_stack.h"
 #include "quaternion.h"
-
-
 
 // 2d
 #include "normal2.h"
@@ -213,8 +191,6 @@ namespace gbmath
 #include "line2d.h"
 #include "circle.h"
 #include "rect.h"
-
-
 
 // 3d
 #include "normal3.h"
@@ -241,8 +217,6 @@ namespace gbmath
 #include "triangle.h"
 #include "projector.h"
 
- ///
-
 // proj
 #include "clip_values.h"
 #include "orthographic_projection_data.h"
@@ -252,13 +226,9 @@ namespace gbmath
  
 #include "valueserver.h"
  
-
 #include "matrix4x4_context_type_e.h"
-
 #include "vector_context_type_e.h"
-
 #include "geometry_context.h"
-
 
 // camera
 #include "arc_ball.h"
@@ -271,16 +241,16 @@ namespace gbmath
 #include "dependence_on_function.h"
 
 
-
+//-------------------------------------------------------------------
  
 
 //! render math opt
-#define  GBMATH_USE_OPENGL_DRAWER    0 
+//#define  GBMATH_USE_OPENGL_DRAWER    0 
  
 #include "drawer.h"
 
 
-#define  GBMATH_USE_VISUALIZE_APPLICATION    0
+//#define  GBMATH_USE_VISUALIZE_APPLICATION    0
 
 #include "visualize_application.h"
 

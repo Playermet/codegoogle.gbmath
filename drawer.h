@@ -11,7 +11,10 @@
 #endif
 
 
-#if GBMATH_USE_OPENGL_DRAWER
+#ifdef GBMATH_USE_OPENGL_DRAWER
+
+
+#include <gl/gl.h>
 
 
 namespace gbmath 
@@ -34,19 +37,42 @@ namespace gbmath
 			
 			void mul_world(const mat44& m);
 
-			void set_color(float r, float g, float b, float a) ;
-			void set_color(const color4f& a) ;
+ 
+ 
+
+
+			void drawer::set_color(float r, float g, float b, float a) 
+			{ 
+				glColor4f(r,g,b,a); 
+			}
+
+			void drawer::set_color(const color4f& a) 
+			{ 
+				set_color(a.r, a.g, a.b, a.a); 
+			}
+
+			void drawer::set_pointsize(int size) 
+			{  
+				glPointSize( (GLfloat) size ); 
+			}
+
+
 			
 			void set_color_red()   { set_color( 1.0f , 0.0f , 0.0f , 1.0f ); }
-			void set_color_green() { set_color( 0.0f , 1.0f , 0.0f , 1.0f ); }
+			void set_color_green() { set_color( 0.0f , 0.6f , 0.0f , 1.0f ); }
 			void set_color_blue()  { set_color( 0.0f , 0.0f , 1.0f , 1.0f ); }
 			void set_color_white() { set_color( 1.0f , 1.0f , 1.0f , 1.0f ); }
 			void set_color_black() { set_color( 0.0f , 0.0f , 0.0f , 1.0f ); }
 
-			//  TODO: pink, yellow , ......
+			void set_color_gray()    { set_color( 0.752941f,  0.752941f,  0.752941f,  1.0f ); }
+			void set_color_coral()   { set_color( 1.0f,       0.498039f,  0.0f,       1.0f ); }
+			void set_color_aqua()    { set_color(  0.0f,       1.0f,       1.0f,      1.0f ); }
+			void set_color_yellow()  { set_color( 1.0f,      1.0f,       0.0f,        1.0f ); }
+			void set_color_fuchsia() { set_color( 1.0f,       0.0f,       1.0f,       1.0f ); }
+			void set_color_lime()    { set_color( 0.0f,       1.0f,       0.0f,       1.0f ); }
+			void set_color_brown()   { set_color( 0.647059f,  0.164706f,  0.164706f,  1.0f ); }
 
-
-			void set_pointsize(int size) ;
+ 
 			
 			void draw_points(const vec3* points, const int num);
 			void draw_lines(const vec3* points, const int num);
@@ -71,11 +97,6 @@ namespace gbmath
 	};
 
 }
-
-/*
-#ifdef __gl_h_
-	#error protect include gl header
-#endif 
-*/
+ 
 
 #endif // #ifdef GBMATH_USE_OPENGL_DRAWER

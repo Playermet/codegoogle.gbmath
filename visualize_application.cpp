@@ -2,8 +2,9 @@
 #include "_gbmath.h"
 
 #ifdef WIN32
-#if GBMATH_USE_VISUALIZE_APPLICATION
+#ifdef GBMATH_USE_VISUALIZE_APPLICATION
 
+#include "visualize_application.h"
 
 #pragma warning( push )
 #pragma warning( disable : 4996 )
@@ -150,10 +151,21 @@ static int InitGL(GLvoid)										// All Setup For OpenGL Goes Here
 }
 
 					  // GLvoid,
-static int DrawGLScene(visualize_application::OnDrawFrame onDraw, void* user_ptr )									// Here's Where We Do All The Drawing
+static int DrawGLScene(visualize_application::OnDrawFrame3D onDraw, 
+					   visualize_application::OnDrawFrame2D onDraw2d, 
+					   void* user_ptr )	 // Here's Where We Do All The Drawing
 {
+
+	glClearColor(0.0f, 0.0f , 1.0f , 0.0f );
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);	// Clear Screen And Depth Buffer
-	glLoadIdentity();									// Reset The Current Modelview Matrix
+
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+
+
 
 
 
@@ -171,8 +183,21 @@ static int DrawGLScene(visualize_application::OnDrawFrame onDraw, void* user_ptr
 	{
 		return FALSE;
 	}
+
    }
 
+   glClear( GL_DEPTH_BUFFER_BIT );
+   gluOrtho2D(0.0 , 0.0 , 600, 800  );
+
+
+   if(onDraw2d)
+   {
+	   if( !onDraw2d(user_ptr    ) )
+	   {
+		   return FALSE;
+	   }
+
+   }
 
 
 	//glTranslatef(0.0f,0.0f,-1.0f);						// Move One Unit Into The Screen
@@ -247,7 +272,7 @@ static GLvoid KillGLWindow(GLvoid)								// Properly Kill The Window
 static BOOL CreateGLWindow(const char* title, int width, int height, int bits, bool fullscreenflag)
 {
 	GLuint		PixelFormat;			// Holds The Results After Searching For A Match
-	WNDCLASSA	wc;						// Windows Class Structure
+	WNDCLASSW	wc;						// Windows Class Structure
 	DWORD		dwExStyle;				// Window Extended Style
 	DWORD		dwStyle;				// Window Style
 	RECT		WindowRect;				// Grabs Rectangle Upper Left / Lower Right Values
@@ -268,9 +293,9 @@ static BOOL CreateGLWindow(const char* title, int width, int height, int bits, b
 	wc.hCursor			= LoadCursor(NULL, IDC_ARROW);			// Load The Arrow Pointer
 	wc.hbrBackground	= NULL;									// No Background Required For GL
 	wc.lpszMenuName		= NULL;									// We Don't Want A Menu
-	wc.lpszClassName	= "OpenGL";								// Set The Class Name
+	wc.lpszClassName	= L"OpenGL";								// Set The Class Name
 
-	if (!RegisterClassA(&wc))									// Attempt To Register The Window Class
+	if (!RegisterClassW(&wc))									// Attempt To Register The Window Class
 	{
 		MessageBoxA(NULL,"Failed To Register The Window Class.","ERROR",MB_OK|MB_ICONEXCLAMATION);
 		return FALSE;											// Return FALSE
@@ -314,7 +339,7 @@ static BOOL CreateGLWindow(const char* title, int width, int height, int bits, b
 		dwExStyle=WS_EX_APPWINDOW | WS_EX_WINDOWEDGE;			// Window Extended Style
 		dwStyle=WS_OVERLAPPEDWINDOW;							// Windows Style
 	}
-
+	    
 	AdjustWindowRectEx(&WindowRect, dwStyle, FALSE, dwExStyle);		// Adjust Window To True Requested Size
 
 	// Create The Window
@@ -490,22 +515,61 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
  
 
 
- 
+void visualize_application::Draw_line(int x, int y, const char* text)
+{
 
-int visualize_application::Run(visualize_application::OnDrawFrame onDraw,  visualize_application::OnResize onResize, void* user_ptr)
+	glPushAttrib(GL_LIST_BIT);							// Pushes The Display List Bits
+	glListBase(detail_visappl::base - 32);								// Sets The Base Character to 32
+	glCallLists( (GLsizei)strlen(text), GL_UNSIGNED_BYTE, text);	// Draws The Display List Text
+	glPopAttrib();
+
+	return;
+
+#if 0
+	glTranslatef(0.0f,0.0f,-1.0f);						// Move One Unit Into The Screen
+
+
+	 Pulsing Colors Based On Text Position
+	glColor3f(1.0f*float(cos(cnt1)),1.0f*float(sin(cnt2)),1.0f-0.5f*float(cos(cnt1+cnt2)));
+
+	 Position The Text On The Screen
+
+		glRasterPos2f(
+			-0.45f+0.05f*float(cos( cnt1)),
+			0.32f*float(sin( cnt2)));
+
+		glPrint("Active OpenGL Text With NeHe - %7.2f", cnt1);	// Print GL Text To The Screen
+		//cnt1+=0.051f;										// Increase The First Counter
+		//cnt2+=0.005f;										// Increase The First Counter
+
+#endif 
+}
+
+
+int visualize_application::Run(
+		visualize_application::OnDrawFrame3D onDraw,  
+		visualize_application::OnDrawFrame2D onDraw2d,  
+		visualize_application::OnResize onResize, void* user_ptr)
 {
  
 	detail_visappl::g_OnResize = onResize;
 	detail_visappl::g_user_ptr = user_ptr;
 
-	MSG		msg;									// Windows Message Structure
-	BOOL	done=FALSE;								// Bool Variable To Exit Loop
+	MSG		msg;		 // Windows Message Structure
+	BOOL	done = FALSE;	 // Bool Variable To Exit Loop
 
+
+
+#if 0
 	// Ask The User Which Screen Mode They Prefer
 	if (MessageBoxA(NULL,"Would You Like To Run In Fullscreen Mode?", "Start FullScreen?",MB_YESNO|MB_ICONQUESTION)==IDNO)
 	{
-		detail_visappl::fullscreen=FALSE;							// Windowed Mode
+		detail_visappl::fullscreen=FALSE;	 // Windowed Mode
 	}
+#endif 
+
+	detail_visappl::fullscreen=FALSE;
+
 
 	// Create Our OpenGL Window
 	if (!detail_visappl::CreateGLWindow("visualize application",
@@ -533,7 +597,7 @@ int visualize_application::Run(visualize_application::OnDrawFrame onDraw,  visua
 		else										// If There Are No Messages
 		{
 			// Draw The Scene.  Watch For ESC Key And Quit Messages From DrawGLScene()
-			if ((detail_visappl::active && !detail_visappl::DrawGLScene(onDraw, user_ptr) ) || detail_visappl::keys[VK_ESCAPE])	// Active?  Was There A Quit Received?
+			if ((detail_visappl::active && !detail_visappl::DrawGLScene(onDraw, onDraw2d, user_ptr) ) || detail_visappl::keys[VK_ESCAPE])	// Active?  Was There A Quit Received?
 			{
 				done=TRUE;							// ESC or DrawGLScene Signalled A Quit
 			}
@@ -589,7 +653,7 @@ void do_test_visualize_application()
 {
  
 
-	visualize_application::Run(__OnDrawFrame, __OnResize, NULL);
+	visualize_application::Run(__OnDrawFrame, NULL, __OnResize, NULL);
 
 
 

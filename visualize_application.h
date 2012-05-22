@@ -10,15 +10,19 @@
     #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
-
 #ifdef WIN32
-#if GBMATH_USE_VISUALIZE_APPLICATION
+#ifdef GBMATH_USE_VISUALIZE_APPLICATION
+
+#ifndef UNICODE
+#error  UNICODE ONLY
+#endif 
 
 
 #include <windows.h>
-#include <math.h>
-#include <stdio.h>
-#include <stdarg.h>
+//#include <math.h>
+//#include <stdio.h>
+//#include <stdarg.h>
+
 #include <gl\gl.h>
 #include <gl\glu.h>
 #include <gl\glaux.h>
@@ -55,12 +59,15 @@ namespace gbmath
 		};
 
 
-		typedef bool (__cdecl *OnDrawFrame)(void* user_ptr, DrawFrameParams* const dfp );
+		typedef bool (__cdecl *OnDrawFrame3D)(void* user_ptr, DrawFrameParams* const dfp );
+		typedef bool (__cdecl *OnDrawFrame2D)(void* user_ptr  );
 		typedef void (__cdecl *OnResize)(void* user_ptr, int w, int y);
  
 
 
-		static int Run( OnDrawFrame onDraw,  OnResize onResize, void* user_ptr);
+		static int Run( OnDrawFrame3D onDraw, OnDrawFrame2D onDraw2d,  OnResize onResize, void* user_ptr);
+
+		static void Draw_line(int x, int y, const char* str);
 	
 	
 	};

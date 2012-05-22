@@ -3,10 +3,11 @@
 #include "_gbmath.h"
 
 
-#if GBMATH_USE_OPENGL_DRAWER
+#ifdef GBMATH_USE_OPENGL_DRAWER
 
-//#include "drawer.h"
-#include <gl\gl.h>
+#include "drawer.h"  
+
+
 
 namespace gbmath
 {
@@ -16,25 +17,13 @@ namespace gbmath
 	{
 		m_world.setIdentity();
 		m_view.setIdentity();
+
+		set_pointsize(2);
 	
 	}
 	
 	
-	
-	void drawer::set_color(float r, float g, float b, float a) 
-	{ 
-		glColor4f(r,g,b,a); 
-	}
-	
-	void drawer::set_pointsize(int size) 
-	{  
-		glPointSize( (GLfloat) size ); 
-	}
-	
-	void drawer::set_color(const color4f& a) 
-	{ 
-		set_color(a.r, a.g, a.b, a.a); 
-	}
+
 
 	void drawer::set_transform_matrix_world (const mat44& m) 
 	{
