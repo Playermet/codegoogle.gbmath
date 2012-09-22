@@ -603,6 +603,15 @@ namespace gbmath
 		return stream;
 	}
 	
+
+	inline void offset(float x, float y)
+	{
+		min.x += x;
+		min.y += y;
+
+		max.x += x;
+		min.y += y;
+	}
 	
 		};
 

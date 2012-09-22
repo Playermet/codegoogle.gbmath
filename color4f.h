@@ -47,6 +47,14 @@ namespace gbmath
 				a = col.a;
 			}
 
+			inline color4f( const color4<float>& arg )
+			{
+				r = arg.r;
+				g = arg.g;
+				b = arg.b;
+				a = arg.a;
+			}
+
 			inline color4f(float _r, float _g, float _b)
 			{
 				r = _r;
