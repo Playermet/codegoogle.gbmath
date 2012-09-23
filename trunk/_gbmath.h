@@ -214,6 +214,7 @@ namespace gbmath
 #include "line3d.h"
 #include "transformdata_quat.h"
 #include "transformdata_axang.h"
+#include "triangle_2d.h"
 #include "triangle.h"
 #include "projector.h"
 
