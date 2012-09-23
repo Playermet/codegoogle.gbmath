@@ -97,6 +97,7 @@ namespace gbmath
 
 
 
+
 			inline unsigned int to_uint32_rgba() const
 			{ 
 
