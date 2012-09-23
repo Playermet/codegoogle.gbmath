@@ -246,6 +246,11 @@ namespace gbmath
 			 r = g = b = a = T();
 		 }
 
+		 inline color4<T>& set_alpha(const T val)
+		{
+			a = val;
+			return  *this;
+		}
 
 
 		 //! \brief    linear interpolation between this and the color on k.
