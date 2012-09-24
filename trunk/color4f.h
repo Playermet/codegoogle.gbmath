@@ -71,6 +71,16 @@ namespace gbmath
 				a = _a;
 			}
 
+			color4f(int _r, int _g, int _b)
+			{
+				r = (float)_r;
+				g = (float)_g;
+				b = (float)_b;
+				a = 1.0f;
+			}
+
+
+
 			 /****************
 			//!   \brief Конструктор по байтам ( 0->0.0f   ,  255->1.0f )
 			inline color4f( byte_t _r,  byte_t _g,  byte_t _b,  byte_t _a )
