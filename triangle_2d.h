@@ -56,6 +56,35 @@ namespace gbmath
 				return res;
 			}
 
+
+			inline triangle_2d& offset(float x, float y)
+			{
+				p1 += vec2(x,y);
+				p2 += vec2(x,y);
+				p3 += vec2(x,y);
+				return *this;
+			}
+
+			inline triangle_2d& offset(const vec2& val)
+			{
+				p1 += val;
+				p2 += val;
+				p3 += val;
+				return *this;
+			}
+
+
+			operator const float*() const 
+			{
+				return &p1.x;
+			}
+
+			operator  float*()  
+			{
+				return &p1.x;
+			}
+
+
 			/*
 			//! \brief Compute and return the plane to the points of the triangle
 			plane_s get_plane() const
