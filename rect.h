@@ -610,7 +610,7 @@ namespace gbmath
 		min.y += y;
 
 		max.x += x;
-		min.y += y;
+		max.y += y;
 	}
 	
 		};
