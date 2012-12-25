@@ -1,0 +1,61 @@
+
+
+
+  /*
+
+
+
+bool CollisionSPhereCIrcle3d ( const vec3& centre_sphere , float radius_sphere , const vec3& line_p0 , const vec3& line_p1 , 
+				vec3& p0 , vec3& p1 )
+{
+	//парамметрическое ур-е прямой
+	//p = line_p0 + Dir * t 
+	//x = line_p0.x + Dir.x * t
+	//...
+	//получаю направление
+	const vec3 Dir = ( line_p1 - line_p0 ) ;
+
+	//ур-е сферы
+	//( x - x0 ) ^ 2 + ( y - y0 ) ^ 2 + ( z - z0 ) ^ 2 = R ^ 2
+	//( line_p0.x + Dir.x * t - centre_sphere.x ) ^ 2 + ... = R ^ 2  
+	//замена констант
+	//VecConst.x = line_p0.x - centre_sphere.x
+	//...
+	const vec3 VecConst = vec3 ( line_p0.x - centre_sphere.x , line_p0.y - centre_sphere.y ,
+		line_p0.z - centre_sphere.z ) ;
+
+	//( VecConst.x + Dir.x * t ) ^ 2 + ... = R ^ 2
+	//раскрывая скобки получаем квадратное ур-е вида A * t ^ 2 + B * t + C = 0
+
+	const float A = Dir.length_sq( ) ; // magnitudeSquared
+
+	const float B = 2.0f * ( VecConst.x * Dir.x + VecConst.y * Dir.y + VecConst.z * Dir.z ) ;
+
+						   // magnitudeSquared
+	const float C = VecConst.length_sq ( ) - pow ( radius_sphere , 2.0f ) ;
+
+	//дискриминант
+	const float D = pow ( B , 2.0f ) - 4.0f * A * C ;
+
+	if ( D < 0.0f )
+		return false ;
+
+	//корни ур-я
+	const float T0 = ( - B + sqrt ( D ) ) / ( 2.0f * A ) ;
+	const float T1 = ( - B - sqrt ( D ) ) / ( 2.0f * A ) ;
+
+	//вычисление точек
+	if ( T0 > T1 )
+	{
+		p0 = line_p0 + Dir * T0 ;
+		p1 = line_p0 + Dir * T1 ;
+	}
+	else
+	{
+		p0 = line_p0 + Dir * T1 ;
+		p1 = line_p0 + Dir * T0 ;
+	}
+
+	return true ;
+}
+ */
