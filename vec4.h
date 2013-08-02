@@ -344,58 +344,58 @@ namespace gbmath
 				return res;
 			}
 
-		/** \brief  вычисл. минимальной абсолютной компоненты.  */
-		inline float minAbsVal() const
-		{
-			float ax=abs(x);
-			float ay=abs(y);
-			float az=abs(z);
-			float aw=abs(w);
-				  float res=ax;
-				  if(ay<res) res=ay;
-				  if(az<res) res=az;
-				  if(aw<res) res=aw;
-				  return res;
-		}
+			/** \brief  вычисл. минимальной абсолютной компоненты.  */
+			inline float minAbsVal() const
+			{
+				float ax=abs(x);
+				float ay=abs(y);
+				float az=abs(z);
+				float aw=abs(w);
+					  float res=ax;
+					  if(ay<res) res=ay;
+					  if(az<res) res=az;
+					  if(aw<res) res=aw;
+					  return res;
+			}
 
-		/** \brief  вычисл. максимальной абсолютной компоненты.  */
-		inline float maxAbsVal() const
-		{
-			float ax=abs(x);
-			float ay=abs(y);
-			float az=abs(z);
-			float aw=abs(w);
-				  float res=ax;
-				  if(ay>res) res=ay;
-				  if(az>res) res=az;
-				  if(aw>res) res=aw;
-				  return res;
-		}
-
-
-		//! \brief Выполнить отсечение значений в диапазоне между vmin и vmax
-		inline void clump(const vec4& vmin, const vec4& vmax)
-		{
-			if( x < vmin.x) x=vmin.x;  if(x > vmax.x) x=vmax.x;
-			if( y < vmin.y) y=vmin.y;  if(y > vmax.y) y=vmax.y;
-			if( z < vmin.z) z=vmin.z;  if(z > vmax.z) z=vmax.z;
-			if( w < vmin.w) w=vmin.w;  if(w > vmax.w) w=vmax.w;
-		}
+			/** \brief  вычисл. максимальной абсолютной компоненты.  */
+			inline float maxAbsVal() const
+			{
+				float ax=abs(x);
+				float ay=abs(y);
+				float az=abs(z);
+				float aw=abs(w);
+					  float res=ax;
+					  if(ay>res) res=ay;
+					  if(az>res) res=az;
+					  if(aw>res) res=aw;
+					  return res;
+			}
 
 
+			//! \brief Выполнить отсечение значений в диапазоне между vmin и vmax
+			inline void clump(const vec4& vmin, const vec4& vmax)
+			{
+				if( x < vmin.x) x=vmin.x;  if(x > vmax.x) x=vmax.x;
+				if( y < vmin.y) y=vmin.y;  if(y > vmax.y) y=vmax.y;
+				if( z < vmin.z) z=vmin.z;  if(z > vmax.z) z=vmax.z;
+				if( w < vmin.w) w=vmin.w;  if(w > vmax.w) w=vmax.w;
+			}
 
-	//void toCstr(char* buf) const
-	//{
-	//	*buf = '\0';
-	//    sprintf(buf, "%f %f %f %f", x, y, z, w );
-	//}
 
-	//bool fromCstr(const char* s)
-	//{
-	//	const int NS = sscanf(s, "%f%f%f%f", &x, &y, &z, &w);
-	//	if(4!=NS)  return false;
-	//	return true;
-	//}
+
+			//void toCstr(char* buf) const
+			//{
+			//	*buf = '\0';
+			//    sprintf(buf, "%f %f %f %f", x, y, z, w );
+			//}
+
+			//bool fromCstr(const char* s)
+			//{
+			//	const int NS = sscanf(s, "%f%f%f%f", &x, &y, &z, &w);
+			//	if(4!=NS)  return false;
+			//	return true;
+			//}
 
 
 			friend std::ostream &operator << (std::ostream &stream, const vec4& v)

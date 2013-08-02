@@ -24,8 +24,8 @@ namespace gbmath
 	//! \brief Axis Aligned Bounding Box  by min and max points.
 	class aabb {
 	public:
-	vec3   min; ///< min box point
-	vec3   max; ///< max box pointбокса
+	vec3   min; 
+	vec3   max; 
 
 		//! box corners
 		struct corners 

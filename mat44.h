@@ -179,7 +179,7 @@ namespace gbmath
 
 
 
-			//!  \brief Строгое сравнение   
+			//!  \brief strict comparison 
 			inline bool operator == ( const mat44& m ) const
 			{
 			 return ( ( _11 == m._11) &&
@@ -207,7 +207,7 @@ namespace gbmath
 
 
 
-			//!   \brief Строгое сравнение с отрицанием   
+			//!   \brief strict comparison with the denial
 			inline bool operator != ( const mat44& m ) const
 			{
 		      return ( ( _11 != m._11) ||
@@ -417,7 +417,6 @@ namespace gbmath
 			}
 
 
-			//!  OK!  
 			mat44 operator * ( const mat44& m ) const;
 			 
 
@@ -434,7 +433,7 @@ namespace gbmath
 
 			bool empty() const ;
 
-			//! \brief Зануление всех элементов.
+			//! \brief  all set to zero
 			inline void       setzero() { memset(&_11, 0, sizeof(mat44)  ); }
 
 			//! \brief    Set Identity.
@@ -447,6 +446,7 @@ namespace gbmath
 				 return *this;
 	        }
 
+			//! \brief check is matrix identity
 			inline bool isIdentity() const
 			{
 			 return floats[0][0] == 1.0f && floats[0][1] == 0.0f && floats[0][2] == 0.0f && floats[0][3] == 0.0f &&
@@ -462,7 +462,7 @@ namespace gbmath
 				return *this; 
 			}
 
-			//! \brief Транспонирование. (Отражение элементов по главной диагонали)  ПРОВЕРЕНО!
+			//! \brief Transposition. (Reflection of the elements on the main diagonal) CHEKED!
 			inline mat44& transpone()
 			{
 				   register float f;
@@ -475,7 +475,7 @@ namespace gbmath
 				  return *this;
 			}
 
-			//!  религиозно-синтаксическое   Вычислить и вернуть транспонированое значение .
+			//!  return transposed  .
 			mat44 transponed() const
 			{
 				mat44 res = *this;
@@ -483,7 +483,8 @@ namespace gbmath
 				return res;
 			}
 
-			//! \brief Вычислить и вернуть транспонированое значение . 
+			
+			//! \brief return transposed  .
 			inline mat44 getTransponed() const 
 			{ 
 				mat44 r=*this; 
@@ -491,7 +492,8 @@ namespace gbmath
 				return r; 
 			}
 
-			//! \brief Вычислить и вернуть определитель. 
+
+			//! \brief  compute ans return determinant. 
 			inline float determinant()  const
 			{
 				 return
@@ -503,10 +505,10 @@ namespace gbmath
 					( _13 *  _24 -  _14 *  _23) * ( _31 *  _42 -  _32 *  _41);
 			};
 
-			//! \brief Инверсия. Бросает исключение если инверсия невозможна. OK. 
+			//! \brief Inversion. Throws an exception if the inversion is not possible. OK. 
 			mat44&  invert () throw();
 
-			//! \brief Вернуть инвертированую
+			//! \brief return inverted.
 			mat44 inverted() const throw()
 			{
 			  mat44 res = *this;
@@ -539,20 +541,15 @@ namespace gbmath
 			    floats[0][index]=col.x; floats[1][index]=col.y; floats[2][index]=col.z; floats[3][index]=col.w;
 			}
 
-			//! \brief   Изволечь данные трансляции.
+			//! \brief  get translation part.
 			inline vec3 getTranslation() const
 			{
 				return vec3(floats[3][0], floats[3][1], floats[3][2]);
 			}
 
-			//-------------------------------------------------------------
-
-			//! \brief  Раскидать матрицу на данные трансформации. ПРОВЕРЕНО!
+			//! \brief  Decompose matrix transform data CHEKED!
 			void decompose( vec3& scale,  Quaternion& rot, vec3& pos ) const;
 
-			//-------------------------------------------------------------
-
-			//! \brief Построение матрицы отражения по оси X
 			inline mat44& setMirrorX ()
 			{
 				setIdentity();
@@ -560,7 +557,6 @@ namespace gbmath
 				return *this;
 			}
 
-			//! \brief Построение матрицы отражения по оси Y
 			inline mat44& setMirrorY ()
 			{
 				setIdentity();
@@ -568,7 +564,6 @@ namespace gbmath
 				return *this;
 			}
 
-			//! \brief Построение матрицы отражения по оси Z
 			inline mat44& setMirrorZ ()
 			{
 				setIdentity();
@@ -576,14 +571,13 @@ namespace gbmath
 				return *this;
 			}
 
-		    //! \brief Построение матрицы отражения по плоскости plane.   ПРОВЕРЕНО!
+		    //! \brief  Construction of a matrix reflection plane.  
 			mat44& setReflection(const plane_s& plane );
 
 
-			//! \brief  Построение теневой матрицы.  Рендеринг теней.   ПРОВЕРЕНО!
+			//! \brief  Make shadow matrix.  Rendering shadows.   CHEKED!
 			mat44&  setShadow(const vec4& Light, const plane_s&Plane );
 
-			//! \brief Построение матрицы поворота по оси X на угол angle . ПРОВЕРЕНО!
 			inline mat44&  setRotationX( const float angle )
 			{
 				setIdentity();
@@ -596,7 +590,6 @@ namespace gbmath
                   return *this;
 			}
 
-			//! \brief Построение матрицы поворота по оси Y на угол angle . ПРОВЕРЕНО!
 			inline mat44&  setRotationY( const float angle )
 			{
 				setIdentity();
@@ -607,9 +600,8 @@ namespace gbmath
 				_31 =  sina;
 				_33 =  cosa;
 				return *this;
-			};
+			}
 
-			//! \brief Построение матрицы поворота по оси Z на угол angle . ПРОВЕРЕНО!
 			inline mat44&  setRotationZ( const float angle )
 			{
 				setIdentity();
@@ -620,10 +612,8 @@ namespace gbmath
 				_21 = -sina;
 				_22 =  cosa;
 				return *this;
-			};
+			}
 
-
-			//! \brief Построение матрицы поворота по оси vAx на угол angle . ПРОВЕРЕНО!
 			inline mat44&  setRotationAxis( const vec3& vAx,  const float angle )
 			{
 				float sina, cosa, mcosa;
@@ -656,19 +646,16 @@ namespace gbmath
 				transpone(); // need
 
 				return *this;
-			};
+			}
 
-
-			//! \brief Построение матрицы поворота по оси по компонентам(axX,axY,axZ) на угол angle  . ПРОВЕРЕНО!
 			inline mat44&  setRotationAxis( float axX, float axY, float axZ, float angle )
 			{
 				vec3 vax;
 				vax.x = axX; vax.y = axY; vax.z = axZ;
 				vax.normalize();
 				return setRotationAxis(  vax, angle);
-			};
+			}
 
-			//! \brief  Построение матрицы поворота по углам Элера (Yaw-Y, Pitch-X, Roll-Z). ПРОВЕРЕНО!
 			mat44& setRotationYawPitchRoll(float Yaw, float Pitch, float Roll)
 			{
 				mat44 mrYaw, mrPitch, mrRoll;
@@ -679,28 +666,22 @@ namespace gbmath
 
 				*this =  mrRoll * mrPitch * mrYaw;
 				return *this;
-			};
+			}
 
-			//! \brief Построить матрицу поворота по кватерниону.  ПРОВЕРЕНО!
 			mat44& setRotationQuaternion(const  Quaternion& q) ;
 
-
-
-			//! \brief Построение матрицы сдвига (позиции)  . ПРОВЕРЕНО!
 			inline mat44&  setTranslation( float x, float y, float z )
 			{
 				setIdentity();
 				_41 = x;   _42 = y;  _43 = z;
 				return *this;
-			};
+			}
 
-			//! \brief Построение матрицы сдвига (позиции)  ПРОВЕРЕНО!
 			inline mat44&  setTranslation( const vec3& vTransl)
 			{
 				return  setTranslation(  vTransl.x, vTransl.y, vTransl.z);
 			}
 
-			//! \brief Построение матрицы масштабирования ПРОВЕРЕНО!
 			inline mat44&  setScaling( float x, float y, float z)
 			{
 				_11 = x;   _12=0.0f;   _13=0.0f;   _14=0.0f;
@@ -710,23 +691,17 @@ namespace gbmath
 				return *this;
 			}
 
-			//! \brief Построение матрицы масштабирования	 ПРОВЕРЕНО!
 			inline mat44&  setScaling( const vec3& vScaling)
 			{
 			  return setScaling( vScaling.x, vScaling.y, vScaling.z );
 			}
 
-
-			//! \brief Построить как матрицу трансформации
 			mat44& setTransformation(const vec3& vScale,
 								            const  Quaternion& qRotation,
 								            const vec3& vTranslation);
 
-			//! \brief Построить как матрицу трансформации
 			mat44& setWorldTransform(const TransformData& t);
 
-
-			//! \brief Построение ортографической левосторонней проекционной матрицы. ПРОВЕРЕНО.
 			inline void setOrthoLH(float w, float h, float zn, float zf)
 			{
 				_11=2.0f/w;    _12=0.0f;       _13=0.0f;           _14=0.0f;
@@ -740,7 +715,6 @@ namespace gbmath
 				// 0    0   -zn/(zf-zn)  1
 			}
 
-			//! \brief Построение ортографической правосторонней проекционной матрицы. ПРОВЕРЕНО.
 			inline void setOrthoRH(float w, float h, float zn, float zf)
 			{
 				_11=2.0f/w;     _12=0.0f;    _13=0.0f;          _14=0.0f;
@@ -754,8 +728,6 @@ namespace gbmath
 				// 0    0    zn/(zn-zf)  l
 			}
 
-
-			//! \brief Построение ортографической матрицы   ПРОВЕРЕНО
 			inline void setOrthoOffCenterLH(float minX, float maxX, float minY, float maxY, float zn, float zf)
 			{
 				_11 = 2.0f/(maxX-minX);         _12 = 0.0f,                     _13 = 0.0f,            _14 = 0.0f;
@@ -764,8 +736,6 @@ namespace gbmath
 				_41 = (minX+maxX)/(minX-maxX);  _42 = (maxY+minY)/(minY-maxY);  _43 = zn/(zn-zf);      _44 = 1.0f;
 			}
 
-
-			//! \brief Построение ортографической матрицы  ПРОВЕРЕНО
 			inline void setOrthoOffCenterRH(float minX, float maxX, float minY, float maxY, float zn, float zf)
 			{
 				_11=2.0f/(maxX-minX);        _12=0.0f;                     _13=0.0f;            _14=0.0f;
@@ -782,7 +752,6 @@ namespace gbmath
 
 			//-------------------------------------------------------------
 
-			//! \brief построение перспективной левосторонней матрицы. ПРОВЕРЕНО.
 			void setPerspectiveFovLH(float fov, float asp, float zn, float zf)
 			{
 				const float yScale =   gbmath::scalar::cotan(fov/2.0f); //yScale = cot(fovY/2)
@@ -798,7 +767,6 @@ namespace gbmath
 				_41 = 0.0f;     _42 = 0.0f;    _43 = -zn*zf/(zf-zn);   _44 = 0.0f;
 			}
 
-			//! \brief построение перспективной правосторонней матрицы. ПРОВЕРЕНО.
 			void setPerspectiveFovRH(float fov, float asp, float zn, float zf)
 			{
 			 const float yScale =   gbmath::scalar::cotan(fov/2.0f);
@@ -817,8 +785,6 @@ namespace gbmath
 				// xScale = yScale / aspect ratio
 			}
 
-
-			//! \brief Построение перспективной левосторонней матрицы по высоте и ширине .ПРОВЕРЕНО.
 			void setPerspectiveLH(float w, float h, float zn, float zf)
 			{
 				// 2*zn/w  0       0              0
@@ -832,7 +798,6 @@ namespace gbmath
 				_41 = 0.0f,       _42 = 0.0f,        _43 = zn*zf/(zn-zf);  _44 = 0.0f;
 			}
 
-			//! \brief Построение перспективной правосторонней матрицы по высоте и ширине. ПРОВЕРЕНО.
 			void setPerspectiveRH(float w, float h, float zn, float zf)
 			{
 				// 2*zn/w  0       0              0
@@ -846,10 +811,8 @@ namespace gbmath
 				_41 = 0.0f,       _42 = 0.0f,       _43 = zn*zf/(zn-zf);  _44 = 0.0f;
 			}
 
-
 			//-------------------------------------------------------------
 
-			/** \brief Построение левосторонней матрицы вида. ПРОВЕРЕНО.  */
 			void setViewLookAtLH(const vec3& eye, const vec3& at, const vec3& up)
 			{
             vec3  zaxis = (at - eye);  zaxis.normalize();
@@ -870,8 +833,6 @@ namespace gbmath
 			// -dot(xaxis, eye)  -dot(yaxis, eye)  -dot(zaxis, eye)  l
 			}
 
-
-			/** \brief Построение правосторонней матрицы вида. ПРОВЕРЕНО.  */
 			void setViewLookAtRH(const vec3& eye, const vec3& at, const vec3& up)
 			{
             vec3  zaxis = (eye - at);  zaxis.normalize();
@@ -892,8 +853,6 @@ namespace gbmath
 	     	// -dot(xaxis, eye)  -dot(yaxis, eye)  -dot(zaxis, eye)
 			}
 
-
-			/** \brief Построение левосторонней матрицы вида  по направлению взгляда */
 			inline  void setViewDirLH(const vec3& eye, const vec3& dir, const vec3& up)
 			{
                 
@@ -907,7 +866,6 @@ namespace gbmath
 				setViewLookAtLH( eye, at, up);
 			}
 
-			/** \brief Построение правосторонней матрицы вида  по направлению взгляда */
 			inline  void setViewDirRH(const vec3& eye, const vec3& dir, const vec3& up)
 			{
 				
@@ -926,19 +884,19 @@ namespace gbmath
 
 #if ( defined GB_OPENGL  && defined __GL_H__ )
 
-			//! \brief  Старый способ  перемножения матрицы с текущей в OpenGL
+			//! \brief  The old way of multiplying the current matrix in Opengl
 			inline void glMul()  { glMultMatrixf( (GLfloat*)&_11  ); }
 
-			//! \brief   Старый способ загрузки матрицы  в OpenGL
+			//! \brief   The old way of loading matrix in Opengl
 			inline void glLoad() { glLoadMatrixf( (GLfloat*)&_11  ); }
 
-			//! \brief Загрузить из контекста OpenGL проекционную матрицу.
+			//! \brief get the OpenGL context of the projection matrix.
 			inline void glGetProjection()
 			{
 				glGetFloatv(GL_PROJECTION_MATRIX, &_11);
 			}
 
-			//! \brief Загрузить из контекста OpenGL модель-видовую (WORLD X VIEW) матрицу.
+			//! \brief get of the OpenGL context model 'productivity (WORLD X VIEW) matrix.
 			inline void glGetModelView()
 			{
 				glGetFloatv(GL_MODELVIEW_MATRIX, &_11);
@@ -949,25 +907,25 @@ namespace gbmath
 
 #ifdef _D3D9_H_  // d3d9 device methods
 
-			   //! \brief Установить матрицу в устройство d3d9 как матрицу ВИДА
+			   //! \brief set matrix in d3d9 device as view matrix
 			   inline HRESULT makeDevice9TransfView(IDirect3DDevice9* pdevice) const
 			   {
 				   return pdevice->SetTransform(D3DTS_VIEW, (D3DMATRIX*)&_11 );
 			   }
 
-			   //! \brief Установить матрицу в устройство d3d9 как матрицу ПРОЕКЦИИ
+			   //! \brief set matrix in d3d9 device as projection matrix
 			   inline HRESULT makeDevice9TransfProj(IDirect3DDevice9* pdevice) const
 			   {
 				   return pdevice->SetTransform(D3DTS_PROJECTION, (D3DMATRIX*)&_11 );
 			   }
 
-			   //! \brief Установить матрицу в устройство d3d9 как матрицу ТРАНСФОРМАЦИИ
+			   //! \brief as view matrix in d3vice d3d9 as transform 
 			   inline HRESULT makeDevice9TransfWorld(IDirect3DDevice9* pdevice)
 			   {
 				   return pdevice->SetTransform(D3DTS_WORLD, (D3DMATRIX*)&_11 );
 			   }
 
-			   //! \brief Установить матрицу в девайс как матрицу трансформации по данному типу trType
+			   //! \brief set metrix in device d3d9 as ...
 			   inline HRESULT makeDevice9Transf(IDirect3DDevice9* pdevice, D3DTRANSFORMSTATETYPE trType ) const
 			   {
 				   return pdevice->SetTransform( trType, (D3DMATRIX*)&_11 );
@@ -976,19 +934,19 @@ namespace gbmath
 
 
 
-			   //! \brief Получить из устройства d3d9   матрицу ВИДА
+			   //! \brief  get device d3d9 matrix view
 			   inline HRESULT readDevice9TransfView(IDirect3DDevice9* pdevice)
 			   {
 				   return pdevice->GetTransform(D3DTS_VIEW, (D3DMATRIX*)&_11 );
 			   }
 
-			   //! \brief Получить из устройства устройства d3d9   матрицу ПРОЕКЦИИ
+			   //! \brief get device d3d9 matrix projection
 			   inline HRESULT readDevice9TransfProj(IDirect3DDevice9* pdevice)
 			   {
 				   return pdevice->GetTransform(D3DTS_PROJECTION, (D3DMATRIX*)&_11 );
 			   }
 
-			   //! \brief Получить из устройства устройства d3d9   матрицу ТРАНСФОРМАЦИИ
+			   //! \brief get device d3d9 matrix world
 			   inline HRESULT readDevice9TransfWorld(IDirect3DDevice9* pdevice)
 			   {
 				   return pdevice->GetTransform(D3DTS_WORLD, (D3DMATRIX*)&_11 );
@@ -997,20 +955,7 @@ namespace gbmath
 
 
 #endif // _D3D9_H_
-
  
- 
-			   //inline void print() const
-			   //{
-				  // printf("\n%f   %f   %f   %f  \n%f   %f   %f   %f  \n%f   %f   %f   %f  \n%f   %f   %f   %f  \n  ",
-					 //  _11, _12, _13, _14,
-					 //  _21, _22, _23, _24,
-					 //  _31, _32, _33, _34,
-					 //  _41, _42, _43, _44
-					 //  );
-			   //}
-
-
 			   friend std::ostream &operator << (std::ostream &stream, const mat44& m)
 			   {
 				   stream
@@ -1095,21 +1040,16 @@ namespace gbmath
 
 
 		};
-
-
-
-
-
-
-			static const mat44     MATRIX44_IDENTITY =  mat44
-			(
-			  1.0f,  0.0f,  0.0f,  0.0f,
-			  0.0f,  1.0f,  0.0f,  0.0f,
-			  0.0f,  0.0f,  1.0f,  0.0f,
-			  0.0f,  0.0f,  0.0f,  1.0f
-			);
-
-
+		
+		//------------------------------------------------------------------------------------------------
+ 
+		static const mat44     MATRIX44_IDENTITY =  mat44
+		(
+		  1.0f,  0.0f,  0.0f,  0.0f,
+		  0.0f,  1.0f,  0.0f,  0.0f,
+		  0.0f,  0.0f,  1.0f,  0.0f,
+		  0.0f,  0.0f,  0.0f,  1.0f
+		);
 
 
 

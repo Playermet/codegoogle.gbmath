@@ -17,7 +17,7 @@
  {
 
 
-    //! \brief  Цветовые константы.
+    //! \brief  color constants
    namespace color_const
    {
 
