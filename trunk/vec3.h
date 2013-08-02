@@ -97,7 +97,6 @@ namespace gbmath
 #endif 
  
 
-			//! \brief Присваивание из float-массива
 			inline void operator = (const float* pf) 
 			{
 				x = pf[0]; 
@@ -175,6 +174,7 @@ namespace gbmath
 			inline operator D3DVECTOR() const  { D3DVECTOR r; r.x=x; r.y=y; r.z=z; return r;  }
 			inline void operator = (const D3DVECTOR& v) {	x=v.x; y=v.y; z=v.z; }
 #endif // #ifdef _D3D9_H_
+
 
 #ifdef __D3DX9MATH_H__
 			inline operator D3DXVECTOR3*() { return (D3DXVECTOR3*)&x; }
@@ -315,7 +315,7 @@ namespace gbmath
 				return *this;
 			}
 
-			//! \brief  a normalized
+			//! \brief  get normalized
 			inline vec3    normalized() const 
 			{ 
 				vec3 r = *this; 
@@ -336,7 +336,7 @@ namespace gbmath
 			}
 
 
-			//! \brief Получить наибольшее абсолютное из каждой компоненты
+			//! \brief Get the most out of each component of the absolute
 			inline float     get_max_value () const 
 			{   
 				return scalar::max3 ( fabs (x), fabs (y), fabs (z) );   
@@ -359,7 +359,7 @@ namespace gbmath
 				return r;
 			}
 
-			//! \brief     получить минимальную компоненту
+			//! \brief     get min component
 			inline float min_value() const
 			{
 				float ret = x;
@@ -368,7 +368,7 @@ namespace gbmath
 				return ret;
 			}
 
-			//! \brief     получить максимальную компоненту
+			//! \brief     get max component
 			inline float max_value()  const
 			{
 				float ret = x;
@@ -378,7 +378,7 @@ namespace gbmath
 			}
 
 
-			//* \brief   вычисл. мин. абсолютное из компонент.
+			//! \brief   get min absolute component
 			inline float minAbsVal() const
 			{
 				float ax=abs(x);
@@ -391,7 +391,7 @@ namespace gbmath
 			}
 
 
-			//* \brief   вычисл. макс. абсолютное из компонент.
+			//! \brief      get max absolute component
 			inline float maxAbsVal() const
 			{
 				float ax=abs(x);
@@ -404,8 +404,6 @@ namespace gbmath
 			}
 
 
-
-			//! \brief  Сравнить два вектора v1 и v2 и присвоить максимальный
 			vec3& maximize(const vec3& v1, const vec3& v2)
 			{
 				if (v1.x > v2.x) x = v1.x; else x = v2.x;
@@ -414,7 +412,6 @@ namespace gbmath
 				return *this;
 			}
 
-			//! \brief  Сравнить вектор v и собственное значение и присвоить максимальный
 			vec3& maximize(const vec3& v)
 			{
 				if (v.x > x) x = v.x;
@@ -423,7 +420,6 @@ namespace gbmath
 				return *this;
 			}
 
-			//! \brief  Сравнить два вектора v1 и v2 и присвоить минимальный
 			vec3& minimize(const vec3& v1, const vec3& v2)
 			{
 				if (v1.x < v2.x) x = v1.x; else x = v2.x;
@@ -432,7 +428,6 @@ namespace gbmath
 				return *this;
 			}
 
-			//! \brief  Сравнить вектор v и собственное значение и присвоить минимальный
 			vec3& minimize(const vec3& v)
 			{
 				if (v.x < x) x = v.x;
@@ -441,14 +436,12 @@ namespace gbmath
 				return *this;
 			}
 
-			//! \brief Вернуть минимальный вектор между this и v
 			inline vec3 minimized(const vec3& v) const 
 			{ 
 				vec3 r; r.minimize(*this, v); 
 				return r; 
 			}
 
-			//! \brief Вернуть максимальный вектор между this и v
 			inline vec3 maximized(const vec3& v) const 
 			{ 
 				vec3 r; r.maximize(*this, v); 
@@ -457,7 +450,7 @@ namespace gbmath
 
 
 
-			//! \brief  отсеч значения в диапазоне между vmin и vmax
+			//! \brief  set clumped
 			inline vec3& clump(const vec3& vmin, const vec3& vmax)
 			{
 				if( x < vmin.x) x=vmin.x;  if(x > vmax.x) x=vmax.x;
@@ -466,7 +459,7 @@ namespace gbmath
 				  return *this;
 			}
 
-			//! \brief Вернуть среднюю точку между this и point
+			//! \brief return middle point between this and point
 			inline vec3 middle(const vec3& point) const
 			{
 				vec3 res;
@@ -476,16 +469,16 @@ namespace gbmath
 				return res;
 			}
 
-			//! \brief  Вернёт true если все компоненты положительные.
+			//! \brief  return true if all > 0.0
 			inline bool is_positive() const 
 			{  
 				return ( (x>=0.0f) && (y>=0.0f) && (z>=0.0f) );	
 			}
 
-			//! \brief Тарнсформировать по матрице m   как координату. ПРОВЕРЕНО!
+			//! \brief  Transform as point
 			vec3&  transform_coord(const mat44& m);
 
-			//! \brief Тарнсформировать по матрице m   как нормаль. ПРОВЕРЕНО!
+			//! \brief  Transform as normal
 			vec3&  transform_normal(const mat44& m);
 
 
@@ -494,24 +487,24 @@ namespace gbmath
     // TODO: void transformNormalArray(float* pfOut, int strideOut, const float* pvInput, int strideInput,  const M44& m, const int num) {...}
 
 
-			/** \brief  Проекция вектора из виртуального "зазеркалья" на экран.
-			     Возвращает спроектированый экранный вектор. ПРОВЕРЕНА!	*/
+			/** \brief  The projection of the vector from the virtual "Looking Glass" on the screen.
+					Returns a display designed according vector.	*/
 			vec3 project (
-				const ViewportZ& vp,   //<  область вывода
-				const  mat44& Proj, //<	матрица проекции
-				const  mat44& View, //<	матрица вида
-				const  mat44& World //<	матрица модельная
+				const ViewportZ& vp,
+				const  mat44& Proj, 
+				const  mat44& View, 
+				const  mat44& World 
 				)  const;
 
 
 
-			/** \brief Анпроекция. Перевод из экранных координат в пространственые координаты
-			Возвращает переведённый вектор . ПРОВЕРЕНА! */
+			/** \brief  Translation of the screen coordinates in the spatial coordinates
+					Returns the mapped vector.  */
 			vec3  unproject(
-				const ViewportZ& vp,    //<  область вывода
-				const  mat44& Proj,	//<	матрица проекции
-				const  mat44& View,	//<	матрица вида
-				const  mat44& World	//<	матрица модельная
+				const ViewportZ& vp,    
+				const  mat44& Proj,	
+				const  mat44& View,	
+				const  mat44& World	
 				) const	;
 
 

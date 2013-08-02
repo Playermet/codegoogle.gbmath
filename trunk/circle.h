@@ -1,10 +1,14 @@
 ﻿/**  \file
  \brief  circle in two-dimensional space 
  
+ 
+ 
+ //!   \todo Написать для circle построение внутреннего и внешнего прямоуголника.
+ 
 */
 
 
-//!   \todo Написать для circle построение внутреннего и внешнего прямоуголника.
+
 
 
 #pragma once
@@ -88,14 +92,7 @@ namespace gbmath
 			// bool checkIntersectContactPoints(vec2& outp1, vec2& outp2, const Circle& c) {...}
 			// http://algolist.manual.ru/maths/geom/intersect/circlecircle2d.php
 
-
-			/****************
-			bool checkIntersectCircleContactPnt(const Circle& c, vec3_s& pc1, vec3_s& pc2) const {...}
-
-
-			**************/
-
-
+			
 			//! \brief Verification of the point
 			inline bool checkContainPoint(const  vec2 point)
 			{

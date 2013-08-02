@@ -1,7 +1,10 @@
 /** \file
  \brief   standard quaternion
 
+<br><br>
 
+\TODO Сделать без d3dx  return calculates the natural logarithm.
+ 
 */
 
 #pragma once
@@ -51,7 +54,7 @@ namespace gbmath
 		}
 
 		//-----------------------------------------------------------------
-		//                     ОПЕРАТОРЫ
+		//                     operators
 		//-----------------------------------------------------------------
 
 		inline operator         float*()         { return &x; };
@@ -127,8 +130,6 @@ namespace gbmath
 			return Quaternion(x - q.x, y - q.y, z - q.z, w - q.w);
 		}
 
-
-		//!   ПРОВЕРЕНО
 		inline Quaternion operator * ( const Quaternion &q ) const
 		{
 			Quaternion res;
@@ -172,33 +173,30 @@ namespace gbmath
 
 
 		//----------------------------------------------------------------//
-		//                           МЕТОДЫ		        	              //
+		//                           methods		        	              //
 		//----------------------------------------------------------------//
 
-		// \brief  Присвоить значения  затем нормализовать
+		// \brief  set and normalize
 		inline void set(float _x, float _y, float _z, float _w)
 		{
 			x=_x; y=_y; z=_z; w=_w;
 			normalize();
 		}
 
-		// \brief Сбросить в идентичный
 		inline void setIdentity() { x=y=z=0.0f; w=1.0f; }
-		// \brief Сбросить в идентичный
+		// \brief  reset to identity
 		inline void reset() { setIdentity(); }
 
-		// \brief Проверка на идентичное значение
+		// \brief ckeck identity
 		inline bool isIdentity(float eps = 0.0f) const
 		{
 			return abs(x) <= eps && abs(y) <= eps && abs(z) <= eps && abs(w) - 1.0f <= eps;
 		}
 
-		//! \brief  Получить длинну
 		inline float length() const	{ return sqrt(x*x + y*y + z*z + w*w); }
-		//! \brief  Получить квадрат длинны
+		//! \brief  get length squared
 		inline float lengthSq() const {	return   (x*x + y*y + z*z + w*w); }
 
-		// \brief   Нормализовать   ПРОВЕРЕНО!
 		inline Quaternion&  normalize()
 		{
 			const float len = length();
@@ -212,10 +210,7 @@ namespace gbmath
 			return *this;
 		}
 
-		// //! \brief Получить нормализованый кватернион
-		// inline Quaternion getNormalized() const { Quaternion r = *this; r.normalize(); return r;  }
-
-		//! \brief  вернуть сопряженный кватернион   ПРОВЕРЕНО
+		//! \brief  return the conjugate quaternion  
 		inline Quaternion conjugate(const Quaternion &q) const
 		{
 			  Quaternion res;
@@ -226,7 +221,7 @@ namespace gbmath
 			  return  res;
 		}
 
-		//! \brief Вернуть скалярное произведение
+		//! \brief return a dot product
 		inline float dot(const Quaternion &g) const
 		{
 			return w*g.w + x*g.x + y*g.y + z*g.z;
@@ -235,7 +230,6 @@ namespace gbmath
 		//! \brief return  exponentiation
 		Quaternion  pow(const Quaternion &q, float exponent) const;
 
-		//! \brief  Инвертировать.  ПРОВЕРЕНО !
 		void inverse ()
 		{
 			const float fNorm = x*x + y*y + z*z + w*w;
@@ -253,7 +247,7 @@ namespace gbmath
 			}
 		}
 
-		//! \brief  Вернуть инвертированый .
+		//! \brief  return inversed
 		inline Quaternion inversed() const
 		{
 		  Quaternion res(*this);
@@ -291,7 +285,7 @@ namespace gbmath
 #ifdef __D3DX9MATH_H__
 
 
-		//! \brief Сделать без d3dx  return calculates the natural logarithm.
+		//! \brief  
 		Quaternion ln(const Quaternion& q)
 		{
 		//A unit quaternion, is defined by:
@@ -303,8 +297,6 @@ namespace gbmath
 		}
 
 
-
-		// todo Сделать без d3dx
 		Quaternion  exp(const Quaternion& qu) const
 		{
 			//Given a pure quaternion defined by:
@@ -314,30 +306,28 @@ namespace gbmath
 			Quaternion res;
 			D3DXQuaternionExp(  res , qu  );
 			return res;
-		};
+		}
 
 
-		// todo Сделать без d3dx
 	   Quaternion& setBaryCentric(const Quaternion& q1,	const Quaternion& q2,const Quaternion& q3, float f,	float g	)
 	   {
 		   D3DXQuaternionBaryCentric( *this, q1, q2, q3, f,	g);
            return *this;
-	   };
+	   }
 
 
-      // todo Сделать без d3dx
       Quaternion& setSquad(const Quaternion& q1, const Quaternion& a,  const Quaternion& b,  const Quaternion& c, float t )
 	  {
 		  D3DXQuaternionSquad( *this, q1, a, b, c, t);
 		  return *this;
-	  };
+	  }
 
 
       static void  squadSetup( Quaternion& AOut, Quaternion& BOut, Quaternion& COut,
 	             const Quaternion& Q0, const Quaternion& Q1, const Quaternion& Q2, const Quaternion& Q3 )
 	   {
 		     D3DXQuaternionSquadSetup( AOut,  BOut, COut, Q0,  Q1, Q2 , Q3  );
-	   };
+	   }
 
 
 
@@ -411,7 +401,7 @@ namespace gbmath
 		Quaternion&  setRotationAxis(const axies_angle& aa) ;
 
 
-		//! \brief  Построить поворотный по углам эллера
+		//! \brief  set as rotation quaternion ( Построить поворотный по углам эллера)
 		void setRotationYawPitchRoll( float yaw, float pitch, float roll)
 		{
 			float	sp, sb, sh;
@@ -426,10 +416,10 @@ namespace gbmath
 		}
 
 
-		//! \brief  Построить поворотный по углам эллера
+		//! \brief  Construct turning the corners Eller
 		void setRotationEulersAngles(const euler_angles& ea);
 
-		//! \brief Построение из матрицы поворота
+		//! \brief set as rotation from matrix
 		Quaternion&  setRotationMatrix(const  mat44& m);
 
  /*****************************
@@ -488,4 +478,4 @@ namespace gbmath
 
 // static const Quaternion QUATERNION_IDENTITY = Quaternion( 0.0f, 0.0f, 0.0f, 1.0f );
 
-} // end namespace gbmath
+}

@@ -39,11 +39,9 @@ namespace gbmath
 
 			    inline vec2(const vec2& v)      { x=v.x;  y=v.y;  }
 				inline vec2(const vec2* v)      { x=v->x;  y=v->y;    }
-
 			    inline vec2(float _x, float _y)   { x=_x;   y=_y;   }
-
-
 				inline vec2(const float* pfArray) { *this = pfArray; }
+				
 				
 				#ifdef B2_MATH_H
 				
@@ -52,11 +50,10 @@ namespace gbmath
 					x = (float)a.x;
 					y = (float)a.y;
 				}
-				
-				
+
 				#endif 
 
-				//! \brief Присваивание из float-массива
+
 				inline void operator = (const float* pf)
 				{
 					x=pf[0];
@@ -67,13 +64,6 @@ namespace gbmath
 				{
 					return (x == v.x && y == v.y  );
 				}
-
-
-				// new
-				//friend bool operator == (const vec2& v1, const vec2& v2)
-				//{
-				//	
-				//}
 
 				inline bool  operator != (const vec2 & v) const
 				{
@@ -158,17 +148,6 @@ namespace gbmath
 #endif 
  
 
-
-			/*
-#ifdef   __GB_TYPES_H__
-	 void operator = (const POINT& p)
-	 {
-		 x = (float)p.x;
-		 y = (float)p.y;
-	 }
-#endif
-*/
-
 #endif
 
 
@@ -200,7 +179,7 @@ namespace gbmath
 
 				inline vec2&   normalize()
 				{
-					if( (0.0f==x) && (0.0f==y) ) // < без этого глючит. nan
+					if( (0.0f==x) && (0.0f==y) ) // < NAN
 						return *this;
 
 					register float fl=length();
@@ -209,7 +188,7 @@ namespace gbmath
 					return *this;
 				}
 
-				//! \brief  Вернуть нормализованый
+				//! \brief  return normalized
 				inline vec2 normalized() const
 				{
 					vec2 res(*this);
@@ -223,11 +202,11 @@ namespace gbmath
 				}
 
 
-				//! \brief Returns the z-component by taking the cross product of two 2D vectors.  ПРОВЕРЕНА!
+				//! \brief Returns the z-component by taking the cross product of two 2D vectors. 
 				float ccw(const vec2& v) const ;
 
 
-				//! \brief  Инвертировать (поменять знаки компонентов).
+				//! \brief  invert signs
 				inline vec2& inverse()
 				{
 					x = -x;
@@ -235,7 +214,7 @@ namespace gbmath
 					return *this;
 				}
 
-				//! \brief Вернуть вектор, с противоположными знаками
+				//! \brief return inverted
 				inline vec2  inverted() const
 				{
 					return vec2 ( -x, -y );
@@ -250,8 +229,6 @@ namespace gbmath
 						return y;
 				}
 
-  			   // inline vec2&   invert() {x=-x; y=-y;  return *this; }
-
 				inline vec2    lerp(const vec2& v, const float k) const
 				{
 					vec2 r;
@@ -261,41 +238,24 @@ namespace gbmath
 				}
 
 
-
-				//! \brief  Получить минимальную компоненту
+				//! \brief  get minimal component
 				inline float min_value() const 
 				{ 
 					if(x<y) return x;   return y; 
 				}
 
-				//! \brief  Получить Максимальную компоненту
+				//! \brief  get meximum component
 				inline float max_value() const { if(x>y) return x;   return y; }
-
-				////! \brief  Сравнить два вектора v1 и v2 и присвоить минимальный
-				//inline vec2& minimize(const vec2& v1, const vec2& v2)
-				//{
-				//	if (v1.x < v2.x) x = v1.x; else  x = v2.x;
-				//	if (v1.y < v2.y) y = v1.y; else  y = v2.y;
-				//	return *this;
-				//}
-
-				//! \brief  Сравнить вектор v и собственное значение и присвоить минимальный
+ 
+				//! \brief  return min vector
 				inline vec2& minimize(const vec2& v)
 				{
 					if (v.x < x) x = v.x;
 					if (v.y < y) y = v.y;
 					return *this;
 				}
-
-				////! \brief  Сравнить два вектора v1 и v2 и присвоить максимальный
-				//inline vec2& maximize(const vec2& v1, const vec2& v2)
-				//{
-				//	if (v1.x > v2.x) x = v1.x; else  x = v2.x;
-				//	if (v1.y > v2.y) y = v1.y; else  y = v2.y;
-				//	return *this;
-				//}
-
-				//! \brief  Сравнить вектор v и собственное значение и присвоить максимальный
+ 
+				//! \brief  return max vector
 				inline vec2& maximize(const vec2& v)
 				{
 					if (v.x > x) x = v.x;
@@ -303,7 +263,7 @@ namespace gbmath
 					return *this;
 				}
 
-				//! \brief Вернуть минимальный вектор между this и v
+				//! \brief return min vector between this and v
 				inline vec2 minimized(const vec2& v) const 
 				{ 
 					vec2 r = *this; 
@@ -311,7 +271,7 @@ namespace gbmath
 					return r; 
 				}
 
-				//! \brief Вернуть максимальный вектор между this и v
+				//! \brief return max vector between this and v
 				inline vec2 maximized(const vec2& v) const 
 				{ 
 					vec2 r = *this; 
@@ -320,7 +280,7 @@ namespace gbmath
 				}
 
 
-				//! \brief  вычислить мин. абсолютное значение компонент.
+				//! \brief  return min absolute
 				inline float min_abs_value() const 
 				{ 
 					float ax=abs(x); 
@@ -330,7 +290,7 @@ namespace gbmath
 					return res; 
 				}
 
-				//! \brief  вычислить макс. абсолютное значение компонент
+				//! \brief  return max absolute
 				inline float max_abs_value() const 
 				{ 
 					float ax=abs(x); 
@@ -340,30 +300,16 @@ namespace gbmath
 					return res; 
 				}
 
-/***********
-				//! \brief  вычисление миним, компоненты
-				inline float min_abs_value() const 
-				{
-					if( abs(x) < abs(y) ) return x; 
-					return y;	
-				}
-
-				//! \brief  вычисление. макс компоненты
-				inline float max_abs_value() const 
-				{ 
-					if( abs(x) > abs(y) ) return x; 
-					return y;	
-				}
-****************/
-
-				//! \brief  Отсечение значений в пределах vmin и vmax
-				inline void clump(const vec2& vmin, const vec2& vmax)
+				//! \brief  Clipping values ​​within vmin and vmax
+				inline vec2& clump(const vec2& vmin, const vec2& vmax)
 				{
 					if( x < vmin.x) x=vmin.x;  if(x > vmax.x) x=vmax.x;
 					if( y < vmin.y) y=vmin.y;  if(y > vmax.y) y=vmax.y;
+					
+					return *this;
 				}
 
-				//! \brief Вернуть среднюю точку между this и point
+				//! \brief return middle point between this and point
 				inline vec2 middle(const vec2& point) const
 				{
 					vec2 res;
@@ -373,7 +319,7 @@ namespace gbmath
 				}
 
 
-				//!  \brief   Вернёт true если все компоненты положительные.
+				//!  \brief   return true if all components > 0
 				inline bool is_positive() const
 				{
 					return ( (x>=0.0f) && (y>=0.0f) );
@@ -418,43 +364,7 @@ namespace gbmath
 
 
 
-
-
- /*
-
-			#if defined(_MSC_VER)
-			#pragma warning( push )
-			#pragma warning( disable : 4290 )
-			#endif
-
-			friend std::stringstream &operator >> (std::stringstream &stream, color3<T>& c) throw (std::invalid_argument)
-			{
-				stream >> c.r;
-				stream >> c.g;
-				stream >> c.b;
-
-				if(stream.fail())
-				{
-					throw std::invalid_argument("cast error");
-				}
-
-				return stream;
-			}
-
-
-
-			#if defined(_MSC_VER)
-			#pragma warning( pop )
-			#endif
-
-
-*/
-
-
-
 			};
 
 
-
- 
 }

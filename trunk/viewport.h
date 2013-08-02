@@ -1,7 +1,8 @@
 ﻿/**  \file
  \brief Viewport. Output area in the coordinate and size.
-
-  \todo  vieport_s  в нём типы заменить на стандартные.
+ <br><br>
+ 
+  \todo  vieport_s it replace the standard types.
 
 
 */

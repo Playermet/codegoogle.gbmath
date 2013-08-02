@@ -170,6 +170,7 @@ namespace gbmath
 	}
 
 
+	//! \brief it will be delete. DEPRACATED.
 	class valueServer {
 	private:
 		std::vector<detail::itemFloatValue> m_FloatValues;
