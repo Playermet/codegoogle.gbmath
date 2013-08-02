@@ -26,8 +26,14 @@ namespace gbmath
 			float _y;
 			float _z;
 
-			//! \brief  По дефолту координата нулевая .
-			inline point3() { _x=0.0f; _y=0.0f; _z=0.0f;  }
+			//! \brief   set all to zero
+			inline point3() 
+			{ 
+				_x=0.0f; 
+				_y=0.0f; 
+				_z=0.0f;  
+			}
+			
 			inline point3(const point3& p) { _x=p._x; _y=p._y; _z=p._z; }
 			inline point3(float x, float y, float z) {_x=x; _y=y; _z=z; }
 
@@ -47,7 +53,7 @@ namespace gbmath
 #endif
 
 
-			//! \brief установка  средней точки
+			//! \brief  set middle point
 			inline point3& setMiddle(const  vec3& p1, const  vec3& p2)
 			{
 				_x = (p1.x + p2.x) / 2.0f;
@@ -57,7 +63,7 @@ namespace gbmath
 			}
 
 
-			//! \brief установка  средней точки
+			//! \brief   set middle point
 			inline point3& setMiddle(const point3& p)
 			{
 				_x = (_x + p._x) / 2.0f;
@@ -66,7 +72,7 @@ namespace gbmath
 				return *this;
 			}
 
-			//! \brief  Движение к точке posTo на расстояние distance
+			//! \brief  Going to the point posTo a distance-distance
 			point3& moveTo(const point3& posTo, float distance)
 			{
 				 vec3 vn = ( vec3)posTo - ( vec3)*this;
@@ -76,7 +82,7 @@ namespace gbmath
 				return *this;
 			}
 
-			//! \brief  Перемещение точки по направлению normal на расстояние distance
+			//! \brief Moving toward the point normal at a distance distance
 			point3& moveAlongNormal(const normal3& normal, float distance)
 			{
 				 vec3 vn = normal;
@@ -85,7 +91,7 @@ namespace gbmath
 				return *this;
 			}
 
-			//! \brief Вернуть расстояние между точками.
+			//! \brief  return distance between points
 			inline float distanceBetween(const point3& p) const
 			{
 		       vec3 sub = ( vec3)*this - ( vec3)p;
@@ -93,8 +99,8 @@ namespace gbmath
 		    }
 
 
-			/**  \brief  Изменить расстояние между this и точкой pnt по коэф. k.
-			 Если k меньше 1 то производится сближение, если больше , то удаление   */
+			/**  \brief  Change the distance between this point and the coefficient on pnt. k.
+			If k is less than 1 then the convergence is made if more then removal    */
 			point3& adjustDistancePoint(const point3& pnt, const float k)
 			{
 				 vec3 dv  = ( vec3)pnt - ( vec3)*this;
@@ -105,7 +111,7 @@ namespace gbmath
 			}
 
 
-			//! \brief Трансформировать точку по матрице m
+			//! \brief  transform coordinate
 			point3& transform(const  mat44& m)
 			{
 			    vec3 v = *this;
@@ -117,9 +123,7 @@ namespace gbmath
 			// void fromScreenSpace(const Point2& p, const VP& vp, const M& m) {....}
 
 		};
-		// end class
-
-
+ 
 
  
 }

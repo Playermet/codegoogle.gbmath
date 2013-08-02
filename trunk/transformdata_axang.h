@@ -1,6 +1,8 @@
 ﻿/**  \file
  \brief Assembling the transformation
 
+ 
+ 
 */
 
 #pragma once
@@ -15,8 +17,7 @@ namespace gbmath
 {
  
 
-   //! \brief Assembling the transformation 
-	  //   (scaling + rotation (axis and angle) + Position)
+   //! \brief Assembling the transformation    (scaling + rotation (axis and angle) + Position)
    struct TransformData2
    {
 	   vec3            scaling;

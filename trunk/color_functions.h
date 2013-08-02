@@ -36,7 +36,7 @@ namespace gbmath
 //
 
 
-//!  \brief   Построение цвета по байтам. Альфа первая.  
+//!  \brief   Building a color-by-byte. Alpha One.
 inline unsigned int make_color_argb( byte_t a, byte_t r, byte_t g, byte_t b )
 {
 	//#define MAKECOLOR_ARGB(a,r,g,b)
@@ -47,7 +47,7 @@ inline unsigned int make_color_argb( byte_t a, byte_t r, byte_t g, byte_t b )
 }
 
 
-//!   \brief  Построение цвета по байтам. Альфа последняя  
+//!   \brief Building a color-by-byte. Alfa last
 inline unsigned int make_color_rgba( byte_t r , byte_t g , byte_t b , byte_t a )
 {
 	//#define MAKECOLOR_RGBA(r,g,b,a)
@@ -56,7 +56,7 @@ inline unsigned int make_color_rgba( byte_t r , byte_t g , byte_t b , byte_t a )
 }
 
 
-/*****************************
+/* ****************************
 / **  \brief   Построение цвета color_rgb24_s  по трём элементам  //  * /
 inline color_rgb24_s  make_rgb(byte_t r, byte_t g, byte_t b)
 {
@@ -68,7 +68,7 @@ inline color_rgb24_s  make_rgb(byte_t r, byte_t g, byte_t b)
  *****************************/
 
 
-//!  \brief   Построение целочисленого цвета по компонентам float (0.0f ... 1.0f) 
+//!  \brief  The construction of an integer-valued color on components float (0.0f ... 1.0f)
 inline unsigned int make_rgba(float r, float g, float b, float a)
 {
 	assert(sizeof(unsigned int) == 4);
@@ -313,7 +313,7 @@ inline void  colorRgb24_SwapGB( color3_24& color )
 }
 
 
-//! \brief Конвертация uicolor32_t в color_rgb24_s.  
+//! \brief Conversion uicolor32_t in color_rgb24_s.
 inline color3_24   color_rgb_fFrom_uicolor (unsigned int    color)
 {
 	color3_24 res;

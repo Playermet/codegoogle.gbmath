@@ -15,15 +15,13 @@
 namespace gbmath
 {
 
-
-//	#error need this class ??
-
+ 
 
 	//!  \brief   infinite spotlight on the line (point base) and corner spotlight
 	class  projector {
 	public:
-		ray3d ray;   ///< луч (центр и направление прожектора)
-		float phi; ///< угол конуса
+		ray3d ray;   ///<  ray of proj
+		float phi; ///< angle of proj
 
 		projector() 
 		{

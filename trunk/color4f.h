@@ -83,7 +83,7 @@ namespace gbmath
 
 
 
-			 /****************
+			 /* ***************
 			//!   \brief Конструктор по байтам ( 0->0.0f   ,  255->1.0f )
 			inline color4f( byte_t _r,  byte_t _g,  byte_t _b,  byte_t _a )
 			{
@@ -95,7 +95,7 @@ namespace gbmath
 			*********************/
 
 
-			/**********************
+			/* *********************
 			//! \brief установка значений из байт с переводом в float формат (0.0f ... 1.0f)
 			inline color4f& set_bytes(uint8_t _r, uint8_t _g, uint8_t _b, uint8_t _a)
 			{
@@ -194,7 +194,7 @@ namespace gbmath
 
 
 
-			/** \brief Построение цвета  из целочисленого 4-x  байтового цвета.  */
+			/** \brief   Построение цвета  из целочисленого 4-x  байтового цвета.  */
 			void operator =  (const color4_32 val) ;
 
 

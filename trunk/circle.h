@@ -25,7 +25,8 @@ namespace gbmath
  
 
 		//! \brief circle in two-dimensional space 
-		class Circle {
+		class Circle 
+		{
 		public:
 
 			 vec2	center;

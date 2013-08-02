@@ -13,9 +13,9 @@
     #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
-
-//#include <gbmath/_gbmath.h>
-
+ 
+ 
+ 
 
 namespace gbmath
 {
@@ -235,7 +235,7 @@ namespace gbmath
 
 		    int  setWorldRotationYawPitchRoll(float yaw, float pitch, float roll) ;
 
-		//    int  setWorldRotationVal(float axX, float axY, float axZ, float angle) ;
+			//    int  setWorldRotationVal(float axX, float axY, float axZ, float angle) ;
 
 		    int  setWorldRotationQuaternion(const Quaternion *q) ;
 		    int  setWorldRotationAxiesAngle(const vec3 *vAx, float angle) ;
@@ -254,7 +254,7 @@ namespace gbmath
 			}
 
 
-			/************************************
+		/************************************
 		    UINT get_matrix_WorldStackSize()const
 		  {
 		    return (UINT)m_MatrixStackWorld.size();
@@ -267,7 +267,7 @@ namespace gbmath
 		  {
 		    return (UINT)m_MatrixStackProj.size();
 		  };
-		     ************************************/
+		   ************************************/
  
 
 			inline unsigned int GetCountSetWorldMatrix() const 

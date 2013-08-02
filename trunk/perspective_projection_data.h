@@ -66,7 +66,7 @@ namespace gbmath
 
 
  
-			//! \brief Извлечь проекционные данные из левосторонней перспективной матрицы .
+			//! \brief Extract the projection data of left-sided perspective of the matrix.
 			inline void extractProjPerspectLH(const mat44& mPerspectProjLH)
 			{
 				aspect = mPerspectProjLH._22/mPerspectProjLH._11;

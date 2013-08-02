@@ -6,6 +6,15 @@
 
 #pragma once
 
+
+#ifndef __GBMATH_H__
+    #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
+#endif
+
+
+
+
+/*
 //#define __GB__BASE__RECTANGLE_H__
 
 //#include "../Config.h"
@@ -16,7 +25,7 @@
 #include <ostream>
 #include <sstream>
 #include <string>
-
+*/
  
 namespace gbmath
 {
