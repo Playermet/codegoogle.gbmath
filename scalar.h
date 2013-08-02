@@ -9,26 +9,7 @@
     #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
-
-
-//#include </Config.h>
-//#include </base/Constants.h>
-
-/*******************************************************
-
- TODO:
-
-  -- возможно переделать некоторые операции на шаблоны.
-  -- убрать все шаблоны
-
-STORY:
- --- добавлены ещё некоторые операции
- --- добавлена функция получения максимального по трём значениям
- -- round поправлена и перенесена в инлайн. Спасибо Zeux`у
-
-********************************************************/
-
-
+ 
 
 //! \brief   math operations and structures .
 namespace gbmath
@@ -71,7 +52,7 @@ namespace gbmath
 
 
 
-    //! \brief   с  вещественными типами  (float/double).  
+    //! \brief   static math functions(float/double).  
     namespace scalar
 	{
 
@@ -122,10 +103,10 @@ namespace gbmath
     }
 
 
-		//! \brief  Квадрат
-		inline float sqr(float a) 
+		//! \brief  x*x
+		inline float sqr(float x) 
 		{ 
-			return a*a; 
+			return x*x; 
 		}
 
 		inline float abs(float val)
@@ -202,7 +183,7 @@ namespace gbmath
 	}
 
 
-	//! \brief Отсечение значения в пределах между минимумом и максимумом включительно. 
+	//! \brief Clipping values ​​in a range between minimum and maximum inclusive. 
 	inline float clump(float value, float _min, float _max)
 	{
 	      float r = value;
@@ -220,7 +201,7 @@ namespace gbmath
 
     #if defined (_MSC_VER)
 
-	//! \brief ассемблерный способ получить синус и косинус 
+	//! \brief assembler way to get the sine and cosine.
 	inline void sincosAsm (float a, float& s, float& c)
 	{
 		__asm  {
@@ -366,7 +347,7 @@ namespace gbmath
 		return   pow( r, 1.0f/(float)num );
 	}
 
-	//! \brief Получение случайного значения в диапазоне ( 0.0f ... 1.0f )
+	//! \brief random values ​​in the range ( 0.0f ... 1.0f )
 	float random();
 
 

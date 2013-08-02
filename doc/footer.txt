@@ -3,7 +3,7 @@
 <!--small-->
 <br>
 
-&nbsp;&nbsp;&nbsp;<b>Project page:</b> &nbsp;<a target="_blank" href="http://www.gbmath.googlecode.com">http://www.gbmath.googlecode.com</a>&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;<b>Project page:</b> &nbsp;<a target="_blank" href="https://code.google.com/p/gbmath/">https://code.google.com/p/gbmath/</a>&nbsp;&nbsp;<br>
 &nbsp;&nbsp;&nbsp;<b>Doc page:</b> &nbsp;<a target="_blank" href="http://www.it.ks777.ru/docs">http://www.it.ks777.ru/docs</a>&nbsp;&nbsp;<br>
 
 <br>

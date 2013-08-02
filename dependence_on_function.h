@@ -1,6 +1,9 @@
 /**  \file
  \brief mathematical dependence of the function
 
+ 
+ 
+ 
 */
 
 #pragma once

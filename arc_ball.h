@@ -5,7 +5,7 @@
 
 #pragma once
 
-#ifdef WIN32  // only for windows p;atform
+#ifdef WIN32  // only for windows platform
 
 namespace gbmath
 {

@@ -13,7 +13,8 @@
 namespace gbmath
 {
 
-	struct clip_values {
+	struct clip_values 
+	{
 	
 		float znear;
 		float zfar;

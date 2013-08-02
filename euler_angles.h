@@ -19,8 +19,10 @@ namespace gbmath
  
 
 	//! \brief  Ehler angles. Angles of rotation along all three axes.
-	class euler_angles {
+	class euler_angles 
+	{
 	public:
+	
 		float yaw;    ///<   Yaw around the y-axis, in radians.
 		float pitch;  ///<   Pitch around the x-axis, in radians.
 		float roll;   ///<   Roll around the z-axis, in radians.

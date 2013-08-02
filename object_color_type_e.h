@@ -1,6 +1,9 @@
 ﻿/**    \file
  \brief  The role of color in the scene
  
+ 
+ 
+ 
  */
 
 #pragma once
@@ -10,10 +13,7 @@
     #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
-
-//#include <string>
-
-
+ 
  
 namespace gbmath
 {
@@ -23,7 +23,7 @@ namespace gbmath
 		{
 			enum e
 			{
-				UNDEFINED = 0,  ///< не определено
+				UNDEFINED = 0,  ///<  undefgined
 
 				AMBIENT, 
 				DIFFUSE,
@@ -33,15 +33,15 @@ namespace gbmath
 				LIGHTMAPCOLOR,
 
 
-				UNUSED_DACLARED_LAST, ///< не используется . Декларировать последним
-				UNUSED_FROCE32 = 0xff000000  ///< не используется. Для выравнивания по 4 байтам
+				UNUSED_DACLARED_LAST, ///< not used. Declare last.
+				UNUSED_FROCE32 = 0xff000000  ///< not used. align 4 bytes.
 
 			};
 
-			//! перечисление в строку. Вернёт пустую строку, если _enum некорректно.
+			//!  enum to string
 			static std::string tostr(e) ;
 
-			//! перечисление из строки. Вернёт false, если строка некорректна
+			//!  enum from string
 			static bool fromstr(e&, const std::string&) ;
 		};	 
 	 

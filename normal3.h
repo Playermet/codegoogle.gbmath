@@ -16,10 +16,11 @@ namespace gbmath
 {
  
 
-		/** \brief  direction / normal in 3-dimensional space.
-Higher level than a vector. Always normalized. */
-		class normal3 {
+		/** \brief  direction / normal in 3-dimensional space. Higher level than a vector. Always normalized. */
+		class normal3 
+		{
 		private:
+		
 			float _x;
 			float _y;
 			float _z;

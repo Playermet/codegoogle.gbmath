@@ -54,12 +54,7 @@ namespace gbmath
 				dest = _dest;
 			}
 
-
-			// TODO: vec2 projectPoint(const vec2& pnt) const
-
-			// TODO: checkIntersect......
-
-
+ 
 
 
 		};

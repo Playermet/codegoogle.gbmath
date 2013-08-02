@@ -223,14 +223,14 @@ namespace gbmath
 				return res;
 			}
 
-			//! \brief Проверка точки содержится ли она внутри плоскости.
+			//! \brief  check plane contain point
 			inline bool checkPointInside(const  vec3& point)
 			{
 			  if( dotCoord(point) < 0.0f ) return true;
 			  return false;
 			}
 
-			//! \brief Получить минимальное расстояние от точки pnt до плоскости .
+			//! \brief  get minimum distance between point and plane .
 			inline float distance(const  vec3& point)
 			{
 			   return abs( dotCoord(point) );
