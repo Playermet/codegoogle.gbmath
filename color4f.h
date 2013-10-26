@@ -36,6 +36,34 @@ namespace gbmath
 				// float floats[4];
 			//};
 
+			static color4f MakeWhite()
+			{
+				return color4f(1.0f , 1.0f , 1.0f , 1.0f);
+			}
+
+			static color4f MakeBlack()
+			{
+				return color4f(0.0f , 0.0f , 0.0f , 1.0f);
+			}
+
+			static color4f MakeRed()
+			{
+				return color4f(1.0f , 0.0f , 0.0f , 1.0f);
+			}
+
+			static color4f MakeGreen()
+			{
+				return color4f(0.0f , 1.0f , 0.0f , 1.0f);
+			}
+
+			static color4f MakeBlue()
+			{
+				return color4f(0.0f , 0.0f , 1.0f , 1.0f);
+			}
+
+
+
+
 			inline color4f()
 			{
 				r = g = b = a = 0.0f;
