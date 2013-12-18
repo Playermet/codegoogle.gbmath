@@ -48,14 +48,14 @@ namespace gbmath
 			 a = _a;
 		  }
 
-
-		  inline operator int() const
-		  {
-			  assert( sizeof(int) == 4 );
-			  int res =0;
-			  res = (r<<24) | (g<<16) | (b<<8) | (a) ;
-			  return res;
-		  }
+		//! \brief cast to integer x32
+		inline operator int() const
+		{
+			assert( sizeof(int) == 4 );
+			int res =0;
+			res = (r<<24) | (g<<16) | (b<<8) | (a) ;
+			return res;
+		}
 
 
 

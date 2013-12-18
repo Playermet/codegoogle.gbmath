@@ -2552,6 +2552,11 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structgbmath_1_1color4f.html#a2f3058f4665b85aebac8993920797e81"><param name="Name" value="color4f"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structgbmath_1_1color4f.html#a153c0397a04346026dd5eba28f52cf31"><param name="Name" value="from_uint32_argb"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structgbmath_1_1color4f.html#a975845748b5e6337ceb78c34effb4934"><param name="Name" value="from_uint32_as_d3d9color"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structgbmath_1_1color4f.html#a85f47f2f677fb2b1cc966737fc958ae5"><param name="Name" value="MakeBlack"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structgbmath_1_1color4f.html#af2a0f6d44073bc9c868e85c662e30ee2"><param name="Name" value="MakeBlue"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structgbmath_1_1color4f.html#a533eade0054e1677105123ded8152f48"><param name="Name" value="MakeGreen"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structgbmath_1_1color4f.html#a36c4cb88ded918b5e21d633cc3fe2afd"><param name="Name" value="MakeRed"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structgbmath_1_1color4f.html#a277b85226c9bcbfa75e335fa1075537b"><param name="Name" value="MakeWhite"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structgbmath_1_1color4f.html#a84973b5498957b8ab224723d95c2c60a"><param name="Name" value="operator color4_32"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structgbmath_1_1color4f.html#a9542862038b860f93be43c47fddc1355"><param name="Name" value="operator std::string"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structgbmath_1_1color4f.html#abbd49896711f6867e66f808ae2ef5328"><param name="Name" value="operator="></OBJECT>
@@ -4273,8 +4278,13 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="namespacegbmath.html#a090e1dac80cfc9de247cb2232a8d53ee"><param name="Name" value="color_functions.h"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="namespacegbmath.html#a090e1dac80cfc9de247cb2232a8d53ee"><param name="Name" value="gbmath"></OBJECT>
   </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structgbmath_1_1color4f.html#a85f47f2f677fb2b1cc966737fc958ae5"><param name="Name" value="MakeBlack"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structgbmath_1_1color4f.html#af2a0f6d44073bc9c868e85c662e30ee2"><param name="Name" value="MakeBlue"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structgbmath_1_1color4f.html#a533eade0054e1677105123ded8152f48"><param name="Name" value="MakeGreen"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="structgbmath_1_1perspective__projection__data.html#a7522bcf159425a7669f178ddb2d89b2f"><param name="Name" value="makePerspectiveMatrixLH"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="structgbmath_1_1perspective__projection__data.html#ae7801bcae27e2befc914907a013a179a"><param name="Name" value="makePerspectiveMatrixRH"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structgbmath_1_1color4f.html#a36c4cb88ded918b5e21d633cc3fe2afd"><param name="Name" value="MakeRed"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structgbmath_1_1color4f.html#a277b85226c9bcbfa75e335fa1075537b"><param name="Name" value="MakeWhite"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="mat22_8h.html"><param name="Name" value="mat22.h"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="structgbmath_1_1mat22.html#a0114699ecb5dfdf466315608e500cabf"><param name="Name" value="mat22"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="mat33_8h.html"><param name="Name" value="mat33.h"></OBJECT>
