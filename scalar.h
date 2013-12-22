@@ -200,7 +200,7 @@ namespace gbmath
 	}
 
     #if defined (_MSC_VER)
-
+	#ifdef GBMATH_USE_ASM
 	//! \brief assembler way to get the sine and cosine.
 	inline void sincosAsm (float a, float& s, float& c)
 	{
@@ -213,6 +213,7 @@ namespace gbmath
 				fstp [eax];
 			};
 	};
+	#endif 
 	#endif
 
 	//! \brief Calculate the arc cotangent 
@@ -296,6 +297,7 @@ namespace gbmath
 	}
 
 	#if defined (_MSC_VER)
+	#ifdef GBMATH_USE_ASM
 
 	//! \brief rounding asm . 
 	inline int roundAsm(float a)
@@ -305,7 +307,7 @@ namespace gbmath
 		 __asm fistp retval
 			   return retval;
 	}
-
+	#endif
 	#endif
 
 
