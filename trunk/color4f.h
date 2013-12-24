@@ -60,6 +60,43 @@ namespace gbmath
 			{
 				return color4f(0.0f , 0.0f , 1.0f , 1.0f);
 			}
+ 
+			static color4f MakeAqua()
+			{
+				return color4f(0.0f,   1.0f,   1.0f, 1.0f );
+			}			
+
+			static color4f MakeYellow()
+			{
+				return color4f(  1.0f, 1.0f, 0.0f,  1.0f  );
+			}
+
+			static color4f MakeViolet()
+			{
+				return color4f(  0.309804f, 0.184314f,  0.309804f,  1.0f);
+			}
+
+			static color4f MakePink()
+			{
+				return color4f(  0.737255f,  0.560784f,  0.560784f,  1.0f  );
+			}
+
+			static color4f MakeMaroon()
+			{
+				return color4f( 0.556863f,  0.137255f,  0.419608f,  1.0f);
+			}
+
+			static color4f MakeCoral()
+			{
+				return color4f( 1.0f,       0.498039f,  0.0f,       1.0f );
+			}
+
+			static color4f MakeGray()
+			{
+				return color4f( 0.752941f,  0.752941f,  0.752941f,  1.0f );
+			}
+
+
 
 
 
