@@ -46,6 +46,43 @@ namespace gbmath
 
 		};
 
+
+	inline static aabb MakeFromPositionAndDimensions(const vec3& pos, float size_x, float size_y, float size_z)
+	{
+		aabb res;
+
+		res.min.x = pos.x - size_x*0.5f;
+		res.min.y = pos.y - size_y*0.5f;
+		res.min.z = pos.z - size_z*0.5f;
+
+		res.max.x = pos.x + size_x*0.5f;
+		res.max.y = pos.y + size_y*0.5f;
+		res.max.z = pos.z + size_z*0.5f;
+
+		return res;
+	}
+
+	inline static aabb MakeFromMinMax(const vec3& amin , const vec3& amax)
+	{
+		aabb res;
+		res.min = amin;
+		res.max = amax;
+		return res;
+	}
+
+	inline static aabb MakeFromCube( const vec3& aCenter, const float aSize )
+	{
+		aabb res;
+		res.min.x = aCenter.x - aSize*0.5f;
+		res.min.y = aCenter.y - aSize*0.5f;
+		res.min.z = aCenter.z - aSize*0.5f;
+
+		res.max.x = aCenter.x + aSize*0.5f;
+		res.max.y = aCenter.y + aSize*0.5f;
+		res.max.z = aCenter.z + aSize*0.5f;
+		return res;
+	}
+
 	inline aabb() 
 	{
 		min.setzero();	
