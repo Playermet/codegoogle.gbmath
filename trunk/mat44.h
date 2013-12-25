@@ -855,14 +855,13 @@ namespace gbmath
 
 			inline  void setViewDirLH(const vec3& eye, const vec3& dir, const vec3& up)
 			{
-                
-
-				vec3 dirn = dir.normalized();
-				const float flen = eye.length();
-				dirn.x += flen;
-				dirn.y += flen;
-				dirn.z += flen;
-				vec3 at = eye + dirn;
+ 
+				//vec3 dirn = dir.normalized();
+				//const float flen = eye.length();
+				//dirn.x += flen;
+				//dirn.y += flen;
+				//dirn.z += flen;
+				vec3 at = eye + (dir.normalized() * 100.0f);
 				setViewLookAtLH( eye, at, up);
 			}
 
