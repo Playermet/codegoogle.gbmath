@@ -83,6 +83,21 @@ namespace gbmath
 		return res;
 	}
 
+	inline static aabb MakeFromPoints(const vec3* points, const size_t num, const size_t stride)
+	{
+		float famin = -9.999e12f; //std::numeric_limits<float>::min();
+		float famax =  9.999e12f; //std::numeric_limits<float>::max();
+		aabb res( vec3(famax,famax,famax) , vec3(famin,famin,famin) );
+		for(size_t c=0; c<num; c++)
+		{
+			const char* ptemp = (const char*)( points );
+			const char* ptemp2 = ptemp + c * stride;
+			vec3 val = *(vec3*)( ptemp2 );
+			res.includePoint(val);
+		}
+		return res;
+	}
+
 	inline aabb() 
 	{
 		min.setzero();	
