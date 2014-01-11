@@ -353,10 +353,11 @@ namespace gbmath
 
 
 	//! \brief  move.
-	inline void offset(const  vec3& v)
+	inline aabb& offset(const  vec3& v)
 	{
 		min += v;
 		max += v;
+		return *this;
 	}
 
 	//! \brief Combine with Box

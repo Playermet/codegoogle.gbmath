@@ -108,47 +108,48 @@ namespace gbmath
 				}
 
 
-#ifdef __D3DX9MATH_H__
+				#ifdef __D3DX9MATH_H__
 
-			inline operator const D3DXVECTOR2*() const { return (D3DXVECTOR2*)&x; }
-			inline operator   D3DXVECTOR2*()   { return (D3DXVECTOR2*)&x; }
-			inline operator   D3DXVECTOR2() const  { return D3DXVECTOR2(x,y); }
+				inline operator const D3DXVECTOR2*() const { return (D3DXVECTOR2*)&x; }
+				inline operator   D3DXVECTOR2*()   { return (D3DXVECTOR2*)&x; }
+				inline operator   D3DXVECTOR2() const  { return D3DXVECTOR2(x,y); }
 
-			inline void operator = (const D3DXVECTOR2& v) {	x=v.x; y=v.y; }
-#endif
-
-
-
-#if  defined(_WINDOWS_) && defined(WIN32)
-	 void operator = (const POINT& p)
-	 {
-		 x = (float)p.x;
-		 y = (float)p.y;
-	 }
-#else
+				inline void operator = (const D3DXVECTOR2& v) {	x=v.x; y=v.y; }
+				#endif
 
 
-#ifdef B2_MATH_H
 
-	inline void operator = (const b2Vec2& a)
-	{
-		x = (float)a.x;
-		y = (float)a.y;
-	}
-	
-	inline operator  b2Vec2 () const 
-	{
-		b2Vec2 res;
-		res.x = (float32)x;
-		res.y = (float32)y;
-		return res;
-	}
+				#if  defined(_WINDOWS_) && defined(WIN32)
+				void operator = (const POINT& p)
+				{
+					x = (float)p.x;
+					y = (float)p.y;
+				}
+
+				#else
 
 
-#endif 
- 
+				#ifdef B2_MATH_H
 
-#endif
+				inline void operator = (const b2Vec2& a)
+				{
+					x = (float)a.x;
+					y = (float)a.y;
+				}
+
+				inline operator  b2Vec2 () const 
+				{
+					b2Vec2 res;
+					res.x = (float32)x;
+					res.y = (float32)y;
+					return res;
+				}
+
+
+				#endif 
+				 
+
+				#endif
 
 
 				inline void setzero() {x=y=0.0f; }
@@ -205,6 +206,12 @@ namespace gbmath
 				//! \brief Returns the z-component by taking the cross product of two 2D vectors. 
 				float ccw(const vec2& v) const ;
 
+
+				inline float angle (const vec2& a) const
+				{
+					const float fdot = x*a.x + y*a.y;
+					return acos( fdot );
+				}
 
 				//! \brief  invert signs
 				inline vec2& inverse()
