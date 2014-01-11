@@ -162,9 +162,11 @@ mat44 mat44::operator * ( const mat44& m ) const
 //=========================================================================
 mat44& mat44::invert () throw()
 {
+	mat44* pthis = this;
+
 #define SWAP_ROWS(a, b) {  float * _tmp = a; (a)=(b); (b)=_tmp; }
 #define MAT(fl,r,c)     fl [r][c]
-#define INV_ERR   std::runtime_error("invert failed");
+#define INV_ERR  // throw std::runtime_error("invert failed");
 
 	float	wtmp [4][8];
 	float	m0, m1, m2, m3, s;
