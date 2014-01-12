@@ -358,6 +358,12 @@ namespace gbmath
 				r.z = z + (v.z - z) * k;
 				return r;
 			}
+			
+			inline float angle (const vec3& n)
+			{
+				const float fdot = dot(n);
+				return acos(  fdot );
+			}
 
 			//! \brief     get min component
 			inline float min_value() const
