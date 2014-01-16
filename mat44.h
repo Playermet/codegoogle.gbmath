@@ -513,27 +513,27 @@ namespace gbmath
 		}
 
 
-		vec4 getRow(unsigned int index) const
+		vec4 getRow( size_t index) const
 		{
-			assert(index<4  && "invalid index" );
+			if(index>=4)  throw(size_t);
 			return vec4( floats[index][0], floats[index][1], floats[index][2], floats[index][3] );
 		}
 
-		vec4 setRow(unsigned int index, const vec4& row)
+		vec4 setRow(size_t index, const vec4& row)
 		{
-			assert(index<4  && "invalid index" );
+			if(index>=4)  throw(size_t);
 			floats[index][0]=row.x; floats[index][1]=row.y; floats[index][2]=row.z; floats[index][3]=row.w;
 		}
 
-		vec4 getColumn(unsigned int index) const
+		vec4 getColumn(size_t index) const
 		{
-			assert( index<4 && "invalid index" );
+			if(index>=4)  throw(size_t);
 			return vec4( floats[0][index], floats[1][index], floats[2][index], floats[3][index] );
 		}
 
-		void setColumn(unsigned int index, const vec4& col)
+		void setColumn(size_t, const vec4& col)
 		{
-			assert( index<4 && "invalid index" );
+			if(index>=4)  throw(size_t);
 			floats[0][index]=col.x; floats[1][index]=col.y; floats[2][index]=col.z; floats[3][index]=col.w;
 		}
 

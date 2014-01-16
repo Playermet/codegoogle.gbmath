@@ -93,11 +93,11 @@ namespace gbmath
 
 	void drawer::draw_line(const vec3& p1, const vec3& p2)
 	{
-	/*
-#define GL_LINES                          0x0001
-#define GL_LINE_LOOP                      0x0002
-#define GL_LINE_STRIP 
-	*/
+		/*
+		#define GL_LINES                          0x0001
+		#define GL_LINE_LOOP                      0x0002
+		#define GL_LINE_STRIP 
+		*/
 
 		glBegin(GL_LINES);    // GL_LINES
 			glVertex3f( p1.x , p1.y , p1.z );
@@ -115,11 +115,11 @@ namespace gbmath
 	void drawer::draw_rect(const Rectangle& r) 
 	{
 		assert(false);
-			//int left; //< позиция по X.
-			//int top;  //< позиция по Y.
-			//int width;  //< ширина.
-			//int height; //< высота.
-	
+		//int left; //< позиция по X.
+		//int top;  //< позиция по Y.
+		//int width;  //< ширина.
+		//int height; //< высота.
+
 		// 5 points
 		glBegin(GL_LINES);
 		for(int c=0; c<5; c++)
@@ -142,17 +142,15 @@ namespace gbmath
 	
 	void drawer::draw_box(const vec3& min, const vec3& max)
 	{
-	assert(false);
+		assert(false);
 	}
 	
 	void drawer::draw_sphere(const vec3& center, const float radius)
 	{
-	assert(false);
+		assert(false);
 	}
 
 	
-
 }
 
-#endif // GBMATH_USE_OPENGL_DRAWER
-
+#endif 

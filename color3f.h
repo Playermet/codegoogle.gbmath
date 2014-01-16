@@ -22,6 +22,7 @@ namespace gbmath
 	class Color3f  : public  color3<float> 
 	{
 	public:
+	
 		//union
 		//{
 		//	struct
@@ -156,15 +157,9 @@ namespace gbmath
 	//#pragma warning (pop)
 	//
 	//
-	//	/** \brief печать значений на консоль */
-	//	inline void print() const { printf( "%f  %f  %f", r, g, b);  }
-	//
-
-
+ 
 
 	};
-	// end class
-
+ 
 
 }
-

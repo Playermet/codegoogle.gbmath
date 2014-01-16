@@ -134,7 +134,7 @@ const color4f*  object_color::getByType(const object_color_type_e::e value) cons
 }
 
 
-	assert( false && " bad input value " );
+	throw std::runtime_error( " bad input value " );
 	return NULL;
 }
 
