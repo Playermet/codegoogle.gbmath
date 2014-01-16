@@ -38,13 +38,7 @@ namespace gbmath
 				   m_stack.pop();
 			}
 		}
-
-		// //! \brief Заглушка для перекрытия пользователем. Обработка события изменения матрицы.
-		//virtual long onSetNewMatrix(const mat44& m)
-		//{
-		//	 return 0;
-		//}
-
+ 
 		int empty() const
 		{
 			return m_stack.size()==0;
@@ -69,7 +63,6 @@ namespace gbmath
 
 				m_stack.pop();
 
-				//if( onSetNewMatrix(top() );
 		}
 
 		mat44& top()
@@ -196,9 +189,8 @@ namespace gbmath
 
 	};
 
-	//-----------------------------------------------------------------------------------------
 
-
+	
 	template<size_t TSIZE>
 	//! \brief The stack of matrices based on the array
 	class MatrixStackFixed {
@@ -281,9 +273,8 @@ namespace gbmath
 		}
 
 
-
-
 	private:
+	
 		int m_pos;
 		mat44 m_array[TSIZE];
 

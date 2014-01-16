@@ -8,15 +8,6 @@ namespace gbmath
 
 
 
-
-
-//=========================================================================
-//    mat44
-//=========================================================================
-
-
-
-//=====================================================================
 mat44& mat44::setRotationQuaternion(const  Quaternion& q)
 {
 
@@ -31,10 +22,9 @@ mat44& mat44::setRotationQuaternion(const  Quaternion& q)
 	*this = t;
 
 	return *this;
-};
+}
 
 
-//=========================================================================
 mat44& mat44::setTransformation(const vec3& vScale,
 								const  Quaternion& qRotation,
 								const vec3& vTranslation)
@@ -51,15 +41,15 @@ mat44& mat44::setTransformation(const vec3& vScale,
    *this = mt * mr * ms;
 
    return *this;
-};
+}
 
-//=========================================================================
+
 mat44& mat44::setWorldTransform(const TransformData& t)
 {
 	return setTransformation(t.vScaling, t.qRotation, t.vTranslation );
 }
 
-//=========================================================================
+
 mat44& mat44::setReflection(const plane_s& plane )
 {
 
@@ -84,9 +74,9 @@ mat44& mat44::setReflection(const plane_s& plane )
 	*this = Out;
 
 	return *this;
-};
+}
 
-//=========================================================================
+
 mat44&  mat44::setShadow(const vec4& Light, const plane_s& Plane )
 {
 	float a,b,c,d;
@@ -117,9 +107,9 @@ mat44&  mat44::setShadow(const vec4& Light, const plane_s& Plane )
 	 *this = Out;
 
      return *this;
-};
+}
 
-//=============================================
+
 bool mat44::empty() const
 {
 	static const mat44 _ZERO(0.0f);
@@ -129,7 +119,7 @@ bool mat44::empty() const
 	return false;
 }
 
-//=========================================================================
+
 mat44 mat44::operator * ( const mat44& m ) const
 {
 	mat44 r;
@@ -158,8 +148,6 @@ mat44 mat44::operator * ( const mat44& m ) const
 }
 
 
-
-//=========================================================================
 mat44& mat44::invert () throw()
 {
 	mat44* pthis = this;
@@ -396,7 +384,7 @@ mat44& mat44::invert () throw()
 #undef SWAP_ROWS
 #undef INV_ERR
 
-	//return true;
+ 
 	return *this;
 }
 
@@ -425,10 +413,8 @@ void mat44::decompose( vec3& scale,  Quaternion& rot, vec3& pos ) const
 	rot.setRotationMatrix(m);
 
 
-};
+}
 
-
-//=========================================================================
 
 
 // void mat44::decompose(vec3& pos,  Quaternion& rot, vec3& scale) const

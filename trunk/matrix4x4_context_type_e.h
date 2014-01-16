@@ -50,9 +50,9 @@ namespace gbmath
 
 
 
-			  UNUSED_DECLARED_LAST, ///< НЕ ИСПОЛЬЗУЕТСЯ.   Декларируется последним.
+			  UNUSED_DECLARED_LAST, ///< UNUSED. declared last.
 
-			  UNUSED_FORCE32  = 0x7f000000	///< НЕ ИСПОЛЬЗУЕТСЯ. Для выравнивания по 4 байтам.
+			  UNUSED_FORCE32  = 0x7f000000	///< НЕ UNUSED. allign 4 bytes.
 		  };
 
 		  static std::string tostr(const e);

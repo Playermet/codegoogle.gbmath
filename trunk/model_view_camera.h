@@ -21,7 +21,7 @@ namespace gbmath
 		virtual ~model_view_camera() {}
 
 		#ifdef _D3D9_H_
-		//! \brief Сделать камеру текущей
+		//! \brief  set transform to device
 		virtual HRESULT makeCurrent(IDirect3DDevice9* pDevice, bool bNeedSetWorld=true) 
 		{
 			HRESULT hr =0;
@@ -38,11 +38,15 @@ namespace gbmath
 		#endif
 
 	    // Call these from client and use Get*Matrix() to read new matrices
+		//
+		
 	    virtual LRESULT handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam );
 	    virtual void frameMove( float fElapsedTime );
 
 	   
 	    // Functions to change behavior
+		//
+		
 	    virtual void setDragRect( RECT &rc );
 	    void reset(); 
 	    void setViewParams( const vec3& pvEyePt, const vec3& pvLookatPt );
@@ -57,6 +61,8 @@ namespace gbmath
 	    void setWorldQuat( Quaternion q ) { m_WorldArcBall.setQuatNow( q ); m_bDragSinceLastUpdate = true; }
 
 	    // Functions to get state
+		//
+		
 	    const mat44& getWorldMatrix() const { return m_mWorld; }
 	    void setWorldMatrix( mat44 &mWorld ) { m_mWorld = mWorld; m_bDragSinceLastUpdate = true; }
 
@@ -65,9 +71,9 @@ namespace gbmath
 	    arc_ball  m_WorldArcBall;
 	    arc_ball  m_ViewArcBall;
 	    vec3  m_vModelCenter;
-	    mat44   m_mModelLastRot;        // Last arcball rotation matrix for model 
-	    mat44   m_mModelRot;            // Rotation matrix of model
-	    mat44   m_mWorld;               // World matrix of model
+	    mat44   m_mModelLastRot;        ///< Last arcball rotation matrix for model 
+	    mat44   m_mModelRot;            ///< Rotation matrix of model
+	    mat44   m_mWorld;               ///< World matrix of model
 
 	    int          m_nRotateModelButtonMask;
 	    int          m_nZoomButtonMask;
@@ -75,11 +81,11 @@ namespace gbmath
 
 	    bool         m_bAttachCameraToModel;
 	    bool         m_bLimitPitch;
-	    float        m_fRadius;              // Distance from the camera to model 
-	    float        m_fDefaultRadius;       // Distance from the camera to model 
-	    float        m_fMinRadius;           // Min radius
-	    float        m_fMaxRadius;           // Max radius
-	    bool         m_bDragSinceLastUpdate; // True if mouse drag has happened since last time FrameMove is called.
+	    float        m_fRadius;              ///< Distance from the camera to model 
+	    float        m_fDefaultRadius;       ///< Distance from the camera to model 
+	    float        m_fMinRadius;           ///< Min radius
+	    float        m_fMaxRadius;           ///< Max radius
+	    bool         m_bDragSinceLastUpdate; ///< True if mouse drag has happened since last time FrameMove is called.
 
 	    mat44   m_mCameraRotLast;
 

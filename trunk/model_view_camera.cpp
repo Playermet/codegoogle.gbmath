@@ -190,22 +190,22 @@ void model_view_camera::reset()
 // Override for setting the view parameters
 void model_view_camera::setViewParams( const vec3& pvEyePt, const vec3& pvLookatPt )
 {
-    base_camera::setViewParams( pvEyePt, pvLookatPt );
+	base_camera::setViewParams( pvEyePt, pvLookatPt );
 
-    // Propogate changes to the member arcball
-    Quaternion quat;
-    mat44 mRotation;
-    vec3 vUp(0,1,0);
-  
+	// Propogate changes to the member arcball
+	Quaternion quat;
+	mat44 mRotation;
+	vec3 vUp(0,1,0);
 
-		if (m_bcameraLeftHandle)
-		{
-			mRotation.setViewLookAtLH(  pvEyePt, pvLookatPt, vUp    );
-		}
-		else
-		{
-			mRotation.setViewLookAtRH(  pvEyePt, pvLookatPt, vUp    );
-		}
+
+	if (m_bcameraLeftHandle)
+	{
+		mRotation.setViewLookAtLH(  pvEyePt, pvLookatPt, vUp    );
+	}
+	else
+	{
+		mRotation.setViewLookAtRH(  pvEyePt, pvLookatPt, vUp    );
+	}
 
 
 	quat.setRotationMatrix(mRotation);
