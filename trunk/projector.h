@@ -18,8 +18,10 @@ namespace gbmath
  
 
 	//!  \brief   infinite spotlight on the line (point base) and corner spotlight
-	class  projector {
+	class  projector 
+	{
 	public:
+	
 		ray3d ray;   ///<  ray of proj
 		float phi; ///< angle of proj
 

@@ -6,17 +6,7 @@
 namespace gbmath
 {
 
-//=========================================================================
-
-
-
-
-
-//=========================================================================
-//                          Quaternion
-//=========================================================================
-
-//=========================================================================
+ 
 Quaternion&  Quaternion::setRotationMatrix(const  mat44& m)
 {
 
@@ -55,98 +45,13 @@ Quaternion&  Quaternion::setRotationMatrix(const  mat44& m)
 	}
 
    return *this;
-};
+}
 
 
-//=========================================================================
+ 
 Quaternion Quaternion::slerp( const Quaternion &q1, float t )
 {
-
-//
-//	// Check for out-of range parameter and return edge points if so
-//
-//	if (t <= 0.0f) return q0;
-//	if (t >= 1.0f) return q1;
-//
-//	// Compute "cosine of angle between quaternions" using dot product
-//
-//	float cosOmega =   q0.dot(q1); //  xx  dotProduct(q0, q1);
-//
-//	// If negative dot, use -q1.  Two quaternions q and -q
-//	// represent the same rotation, but may produce
-//	// different slerp.  We chose q or -q to rotate using
-//	// the acute angle.
-//
-//	float q1w = q1.w;
-//	float q1x = q1.x;
-//	float q1y = q1.y;
-//	float q1z = q1.z;
-//
-//	if (cosOmega < 0.0f)
-//	{
-//		q1w = -q1w;
-//		q1x = -q1x;
-//		q1y = -q1y;
-//		q1z = -q1z;
-//		cosOmega = -cosOmega;
-//	}
-//
-//	// We should have two unit quaternions, so dot should be <= 1.0
-//
-//#pragma message("ks777::  gbmath::quat slerp ассерт отключён"  __FILE__)
-////	assert(cosOmega < 1.1f);
-//
-//
-//	// Compute interpolation fraction, checking for quaternions
-//	// almost exactly the same
-//
-//	float k0, k1;
-//	if (cosOmega > 0.9999f)
-//	{
-//
-//		// Very close - just use linear interpolation,
-//		// which will protect againt a divide by zero
-//
-//		k0 = 1.0f-t;
-//		k1 = t;
-//
-//	}
-//	else
-//	{
-//
-//		// Compute the sin of the angle using the
-//		// trig identity sin^2(omega) + cos^2(omega) = 1
-//
-//		float sinOmega = sqrt(1.0f - cosOmega*cosOmega);
-//
-//		// Compute the angle from its sin and cosine
-//
-//		float omega = atan2(sinOmega, cosOmega);
-//
-//		// Compute inverse of denominator, so we only have
-//		// to divide once
-//
-//		float oneOverSinOmega = 1.0f / sinOmega;
-//
-//		// Compute interpolation parameters
-//
-//		k0 = sin((1.0f - t) * omega) * oneOverSinOmega;
-//		k1 = sin(t * omega) * oneOverSinOmega;
-//	}
-//
-//	// Interpolate
-//
-//	Quaternion result;
-//	result.x = k0*q0.x + k1*q1x;
-//	result.y = k0*q0.y + k1*q1y;
-//	result.z = k0*q0.z + k1*q1z;
-//	result.w = k0*q0.w + k1*q1w;
-//
-//	// Return it
-//
-//	return result;
-//
-
+ 
 	Quaternion res;
 
 	float k0,k1,cosomega = this->x * q1.x + this->y * q1.y + this->z * q1.z + this->w * q1.w;
@@ -184,16 +89,14 @@ Quaternion Quaternion::slerp( const Quaternion &q1, float t )
 	res.w = this->w * k0 + q.w * k1;
 	return res;
 
-};
+}
 
-//=======================================================================
+
 Quaternion Quaternion::pow(const Quaternion &q, float exponent) const
 {
 
-	// Check for the case of an identity quaternion.
-	// This will protect against divide by zero
-
-	if (fabs(q.w) > .9999f) {
+	if (fabs(q.w) > .9999f) 
+	{
 		return q;
 	}
 
@@ -220,12 +123,10 @@ Quaternion Quaternion::pow(const Quaternion &q, float exponent) const
 	// Return it
 
 	return result;
-
-
 }
 
-//=========================================================================
- vec3	Quaternion::getRotationAxis() const
+
+vec3 Quaternion::getRotationAxis() const
 {
 
 	// Compute sin^2(theta/2).  Remember that w = cos(theta/2),
@@ -235,7 +136,8 @@ Quaternion Quaternion::pow(const Quaternion &q, float exponent) const
 
 	// Protect against numerical imprecision
 
-	if (sinThetaOver2Sq <= 0.0f) {
+	if (sinThetaOver2Sq <= 0.0f) 
+	{
 
 		// Identity quaternion, or numerical imprecision.  Just
 		// return any valid vector, since it doesn't matter
@@ -256,7 +158,7 @@ Quaternion Quaternion::pow(const Quaternion &q, float exponent) const
 		);
 }
 
-//=========================================================================
+
 Quaternion&  Quaternion::setRotationAxis(const  vec3 &axis, float theta)
 {
 
@@ -277,7 +179,7 @@ Quaternion&  Quaternion::setRotationAxis(const  vec3 &axis, float theta)
 	return *this;
 }
 
-//=========================================================================
+
 inline axies_angle Quaternion::getRotationAxiesAngle() const
 {
 	 axies_angle res;
@@ -286,28 +188,26 @@ inline axies_angle Quaternion::getRotationAxiesAngle() const
 	return res;
 }
 
-//=========================================================================
+
 axies_angle Quaternion::toAxiesAngle() const
 {
 	return getRotationAxiesAngle();
 }
 
-//=========================================================================
+
 Quaternion&  Quaternion::setRotationAxis(const axies_angle& aa)
 {
 	return setRotationAxis( aa.axies , aa.angle );
 }
 
-//=========================================================================
+
 void Quaternion::setRotationEulersAngles(const euler_angles& ea)
 {
 	setRotationYawPitchRoll(ea.yaw, ea.pitch, ea.roll);
 }
 
 
-//=========================================================================
-
-} // end  namespace
 
 
-// end file
+}
+

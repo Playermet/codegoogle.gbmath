@@ -2,6 +2,25 @@
  \brief TODO  doc (RUS)
 
  
+ 
+ \brief для точки 2д  добавить трансформацию и процее. 
+ \brief  (ДЛЯ ЛУЧА)
+	   \todo Сделать перечечения: луч, сфера, бокс, плоскость,
+	  \todo   bool checkIntersectRay(const ray3d& ray) {....}
+	  \todo   bool checkIntersecеSphere(const Sphere& sph) {....}
+	  \todo  bool checkIntersectAABB(const aabb& aabb) {....}
+	  \todo  bool checkIntersectPlane(const Plane& aabb) {....}
+	   так же поправить  и комменты
+  
+ \brief    для ray2d добавить
+  			// bool checkIntersectCircle(const CIrcle& c)
+			// bool checkIntersectRect(const Rect& r)
+			// bool checkIntersectRectContactPnts(const Rect& r)
+			// bool checkIntersectLine
+  
+ 
+ \brief Quaternion поправить оттестировать добавить методов
+ \brief для Rect добавить методов   void move(const Normal2& normal, float distance) { } 
  \brief можно зачести свой класс исключений
  \brief определиться кидает ли mat44::invert исключение и поправить код
  \todo оставить только один матр. стек.

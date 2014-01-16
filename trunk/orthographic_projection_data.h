@@ -11,7 +11,8 @@ namespace gbmath
 {
 
 	//! \brief  orthographic projection data
-	struct orthographic_projection_data {
+	struct orthographic_projection_data 
+	{
 	
 		float width; 
 		float height;

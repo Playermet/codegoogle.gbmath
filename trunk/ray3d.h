@@ -2,11 +2,7 @@
  \brief  ray in 3d space
 
 
-  \todo Сделать перечечения: луч, сфера, бокс, плоскость,
-  \todo   bool checkIntersectRay(const ray3d& ray) {....}
-  \todo   bool checkIntersecеSphere(const Sphere& sph) {....}
-  \todo  bool checkIntersectAABB(const aabb& aabb) {....}
-  \todo  bool checkIntersectPlane(const Plane& aabb) {....}
+
 
 */
 
@@ -23,7 +19,8 @@ namespace gbmath
 
 
 	//! \brief  ray in 3d space
-	class ray3d {
+	class ray3d 
+	{
 	public:
 	    vec3   orig; 
 	    vec3   dir; 
@@ -49,14 +46,11 @@ namespace gbmath
 
 
 
-		//>>>>>>>>>>>>>>>       checkIntersectSphere  >>>>>>>>>>>>>>>>>>>>>>>>>>>
-
 		//  http://netlib.narod.ru/library/book0032/ch15_04.htm
 		bool  checkIntersectSphere(const sphere& sphere) const ;
 
 
-		 /**   \brief
-		 http://www.gamecoder.ru/2011/04/3d-3d.html    */
+		 /**   \brief  http://www.gamecoder.ru/2011/04/3d-3d.html    */
 		bool checkIntersectSphere_2 (const sphere& sphere, float* result) ;
 
 
@@ -68,15 +62,10 @@ namespace gbmath
 		//>>>>>>>>>>>>>>      checkIntersectAABB        >>>>>>>>>>>>>>>>>>>>>>>>>>>
 		//
 
-		//bool checkIntersectAABB( const aabb& aabb) {....}
-
 
 		// http://www.gamecoder.ru/2011/04/3d-3d.html
 		bool checkIntersectAABB(const aabb& aabb,  float* result) ;
 
-
-
-		//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
 		//
@@ -98,9 +87,6 @@ namespace gbmath
 
 
 	};
-	// end class
-
-
 
  
 }

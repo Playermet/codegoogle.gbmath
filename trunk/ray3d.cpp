@@ -52,7 +52,7 @@ bool ray3d::checkIntersectSphere_2 (const sphere& sphere, float* result)
    }
 
 
-  const  float b = vect.dot(dir);//    dotProduct(vect, ray.direction);
+  const  float b = vect.dot(dir);
 
 
    const float d = b*b - c;
@@ -94,38 +94,35 @@ bool ray3d::checkIntersectSphere_3( const sphere& sph )
 	// квадрат расстояния от точки до центра сферы
 	float d = 0.0f;
 	
-  {
-	 //  assert(false);
-	  // inline float distance_sq(const vec3& point) const { return vec3(*this-point).lenghtSq ;  }
-	//  vec3 vs = sph.center-orig;
-	// d =  vs.length_sq(); //  sph.center.length_sq();//  lenghtSq(p); // norm2(c-p);
-	   d = sph.center.distance_sq(orig);
-  }
+	{
+		//  assert(false);
+		// inline float distance_sq(const vec3& point) const { return vec3(*this-point).lenghtSq ;  }
+		//  vec3 vs = sph.center-orig;
+		// d =  vs.length_sq(); //  sph.center.length_sq();//  lenghtSq(p); // norm2(c-p);
+		d = sph.center.distance_sq(orig);
+	}
 
-  // проекция центра сферы на луч
-  float s =   (sph.center-orig).dot(dir) / dir.length(); //         sprod(c-p,l)/norm(l);
+	// проекция центра сферы на луч
+	float s =   (sph.center-orig).dot(dir) / dir.length(); //         sprod(c-p,l)/norm(l);
 
-  if( (d>r) && (s<0) ) // точка снаружи сферы и луч направлен от сферы
-  {
-
-	res = __infin__; // return INF; // нет пересечения
-	 return false;
-  }
+	if( (d>r) && (s<0) ) // точка снаружи сферы и луч направлен от сферы
+	{
+		res = __infin__; // return INF; // нет пересечения
+		return false;
+	}
 
   // квадрат расстояния от прямой до центра сферы по теореме Пифагора
   float h = d - s*s;
 
-  if(h>r) // луч не пересекает сферу
-  {
-	  res = __infin__;
-	return false;
-  }
+	if(h > r) // луч не пересекает сферу
+	{
+		res = __infin__;
+		return false;
+	}
 
-  res = s+sqrt(r-h)*gbmath::scalar::sign(r-d); // расстояние до пересечения
-
-  // inline int Sign(float x) {  return (x>0)-(x<0);  }
-
-  return  true;
+    res = s+sqrt(r-h)*gbmath::scalar::sign(r-d); // расстояние до пересечения
+ 
+    return  true;
 }
 
 
