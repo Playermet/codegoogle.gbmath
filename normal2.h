@@ -18,7 +18,8 @@ namespace gbmath
 
 
 	//! \brief direction / normal in 2-dimensional space. Higher level than a vector. Always normalized.
-	class normal2 {
+	class normal2 
+	{
 	private:
 	   float _x;
 	   float _y;
