@@ -15,21 +15,20 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdarg.h>
-
+#include <assert.h>
 #include <math.h>
 #include <float.h>
 
-#include <limits>
 
+#include <limits>
 #include <iostream>
 #include <sstream>
 #include <string>
 #include <vector>
 #include <stdexcept>
 
-#include <assert.h>
 
-#include <limits>
+
  
 #ifdef _WIN32
 	#if _MSC_VER<1600

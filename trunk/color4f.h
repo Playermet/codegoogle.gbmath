@@ -2,16 +2,9 @@
  \brief Standard four-color float
 
  
- 
- 
 */
 
 #pragma once
-
-/*
-#include "color4.h"
-#include "color_typedef.h"
-*/
 
 #ifndef __GBMATH_H__
 #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
@@ -24,8 +17,10 @@ namespace gbmath
 
 
 		//!   \brief  Standard four-color float .
-		struct color4f : public color4<float> {
+		struct color4f : public color4<float> 
+		{
 		public:
+		
 			//union
 			//{
 				// struct

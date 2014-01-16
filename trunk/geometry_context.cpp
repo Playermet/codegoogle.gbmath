@@ -14,15 +14,7 @@ namespace gbmath
 {
 
  
-
-
-//=========================================================================
-//				geometry_context
-//=========================================================================
-
-
-
-//=========================================================================
+ 
 long  geometry_context::setMatrices(const mat44 *mWorld, const mat44 *mView, const mat44 *mProj)
 {
   long  hr = 0;
@@ -114,39 +106,12 @@ long  geometry_context::setMatrices(const mat44 *mWorld, const mat44 *mView, con
    long lres =0;
    lres=onNewMatrices(mWorld, mView, mProj);
 
-
-  //if (pdvc)
-  //{
-
-  //  if (mWorld)
-  //  {
-  //    hr |= pdvc->SetTransform(D3DTS_WORLD, &m_mWorld);
-  //  };
-
-  //  if (mView)
-  //  {
-  //    hr |= pdvc->SetTransform(D3DTS_VIEW, &m_mView);
-  //  };
-
-  //  if (mProj)
-  //  {
-  //    hr |= pdvc->SetTransform(D3DTS_PROJECTION, &m_mProj);
-  //  };
-
-  //}
-  //else
-  //{
-  //  MONPRINT("device is NULL");
-  //  hr |= S_FALSE;
-
-  //};
-
-
+ 
 
   return hr;
-};
+}
 
-//====================================================================
+
 const mat44 *geometry_context::get_matrix_ViewProjection()const
 {
   if (m_matr.mViewProjection .bChangeFlag)
@@ -158,9 +123,9 @@ const mat44 *geometry_context::get_matrix_ViewProjection()const
   }
 
   return  &m_matr.mViewProjection.matrix;
-};
+}
 
-//====================================================================
+
 const mat44 *geometry_context::get_matrix_ViewProjectionInverse()const
 {
   if (m_matr.mViewProjectionInverse.bChangeFlag)
@@ -175,9 +140,9 @@ const mat44 *geometry_context::get_matrix_ViewProjectionInverse()const
   }
 
   return  &m_matr.mViewProjectionInverse.matrix;
-};
+}
 
-//====================================================================
+
 const mat44 *geometry_context::get_matrix_ViewProjectionInverseTranspone()const
 {
   if (m_matr.mViewProjectionInverseTranspone.bChangeFlag)
@@ -196,9 +161,9 @@ const mat44 *geometry_context::get_matrix_ViewProjectionInverseTranspone()const
   }
 
   return  &m_matr.mViewProjectionInverseTranspone.matrix;
-};
+}
 
-//====================================================================
+
 const mat44 *geometry_context::get_matrix_ViewProjectionTranspone()const
 {
   if (m_matr.mViewProjectionTranspone.bChangeFlag)
@@ -212,9 +177,9 @@ const mat44 *geometry_context::get_matrix_ViewProjectionTranspone()const
   }
 
   return  &m_matr.mViewProjectionTranspone.matrix;
-};
+}
 
-//====================================================================
+
 const mat44 *geometry_context::get_matrix_ViewTranspone()const
 {
   if (m_matr.mViewTranspone.bChangeFlag)
@@ -226,9 +191,9 @@ const mat44 *geometry_context::get_matrix_ViewTranspone()const
   }
 
   return  &m_matr.mViewTranspone.matrix;
-};
+}
 
-//====================================================================
+
 const mat44 *geometry_context::get_matrix_ViewInverse()const
 {
   if (m_matr.mViewInverse.bChangeFlag)
@@ -240,9 +205,9 @@ const mat44 *geometry_context::get_matrix_ViewInverse()const
   }
 
   return  &m_matr.mViewInverse.matrix;
-};
+}
 
-//====================================================================
+
 const mat44 *geometry_context::get_matrix_ViewInverseTranspone()const
 {
   if (m_matr.mViewInverseTranspone.bChangeFlag)
@@ -256,9 +221,9 @@ const mat44 *geometry_context::get_matrix_ViewInverseTranspone()const
   }
 
   return  &m_matr.mViewInverseTranspone.matrix;
-};
+}
 
-//====================================================================
+
 const mat44 *geometry_context::get_matrix_ProjectionInverse()const
 {
   if (m_matr.mProjectionInverse.bChangeFlag)
@@ -270,9 +235,9 @@ const mat44 *geometry_context::get_matrix_ProjectionInverse()const
   }
 
   return  &m_matr.mProjectionInverse.matrix;
-};
+}
 
-//====================================================================
+
 const mat44 *geometry_context::get_matrix_ProjectionTranspone()const
 {
   if (m_matr.mProjectionTranspone.bChangeFlag)
@@ -284,9 +249,9 @@ const mat44 *geometry_context::get_matrix_ProjectionTranspone()const
   }
 
   return  &m_matr.mProjectionTranspone.matrix;
-};
+}
 
-//====================================================================
+
 const mat44 *geometry_context::get_matrix_ProjectionInverseTranspone()const
 {
   if (m_matr.mProjectionInverseTranspone.bChangeFlag)
@@ -300,9 +265,9 @@ const mat44 *geometry_context::get_matrix_ProjectionInverseTranspone()const
   }
 
   return  &m_matr.mProjectionInverseTranspone.matrix;
-};
+}
 
-//====================================================================
+
 const mat44 *geometry_context::get_matrix_WorldViewProjection()const
 {
   if (m_matr.mWorldViewProjection.bChangeFlag)
@@ -317,9 +282,9 @@ const mat44 *geometry_context::get_matrix_WorldViewProjection()const
   }
 
   return  &m_matr.mWorldViewProjection.matrix;
-};
+}
 
-//====================================================================
+
 const mat44 *geometry_context::get_matrix_WorldViewProjectionTranspone()const
 {
   if (m_matr.mWorldViewProjectionTranspone.bChangeFlag)
@@ -329,16 +294,16 @@ const mat44 *geometry_context::get_matrix_WorldViewProjectionTranspone()const
     //MMUL(&m_temp2, &m_mWorld, &m_temp);
 		  m_temp2 = m_mWorld * m_temp;
 
-//    D3DXMatrixTranspose(&m_matr.mWorldViewProjectionTranspone.matrix, &m_temp2);
+
 	 m_matr.mWorldViewProjectionTranspone.matrix = m_temp2.transponed();
 
     m_matr.mWorldViewProjectionTranspone.bChangeFlag =  0 ;
   }
 
   return  &m_matr.mWorldViewProjectionTranspone.matrix;
-};
+}
 
-//====================================================================
+
 const mat44 *geometry_context::get_matrix_WorldViewProjectionInverse()const
 {
   if (m_matr.mWorldViewProjectionInverse.bChangeFlag)
@@ -349,40 +314,34 @@ const mat44 *geometry_context::get_matrix_WorldViewProjectionInverse()const
     //MMUL(&m_temp2, &m_mWorld, &m_temp);
 		  m_temp2 =m_mWorld * m_temp;
 
-//    D3DXMatrixInverse(&m_matr.mWorldViewProjectionInverse.matrix, NULL, &m_temp2);
 	 m_matr.mWorldViewProjectionInverse.matrix = m_temp2.inverted();
 
     m_matr.mWorldViewProjectionInverse.bChangeFlag =  0 ;
   }
 
   return  &m_matr.mWorldViewProjectionInverse.matrix;
-};
+}
 
-//====================================================================
+
 const mat44 *geometry_context::get_matrix_WorldViewProjectionInverseTranspone()const
 {
-  mat44 temp;
-  if (m_matr.mWorldViewProjectionInverseTranspone.bChangeFlag)
-  {
-    //MMUL(&m_temp, &m_mView, &m_mProj);
-		  m_temp =m_mView * m_mProj;
-    //MMUL(&m_temp2, &m_mWorld, &m_temp);
-		 m_temp2 =m_mWorld * m_temp;
+	mat44 temp;
+	if (m_matr.mWorldViewProjectionInverseTranspone.bChangeFlag)
+	{
+		//MMUL(&m_temp, &m_mView, &m_mProj);
+		m_temp =m_mView * m_mProj;
+		//MMUL(&m_temp2, &m_mWorld, &m_temp);
+		m_temp2 =m_mWorld * m_temp;
+
+		temp = m_temp2.inverted();
+		m_matr.mWorldViewProjectionInverseTranspone.matrix=temp.transponed();
+		m_matr.mWorldViewProjectionInverseTranspone.bChangeFlag =  0 ;
+	}
+
+	return  &m_matr.mWorldViewProjectionInverseTranspone.matrix;
+}
 
 
-   // D3DXMatrixInverse(&temp, NULL, &m_temp2);
-	   temp = m_temp2.inverted();
-
-//    D3DXMatrixTranspose(&m_matr.mWorldViewProjectionInverseTranspone.matrix, &temp);
-	  m_matr.mWorldViewProjectionInverseTranspone.matrix=temp.transponed();
-
-    m_matr.mWorldViewProjectionInverseTranspone.bChangeFlag =  0 ;
-  }
-
-  return  &m_matr.mWorldViewProjectionInverseTranspone.matrix;
-};
-
-//====================================================================
 const mat44 *geometry_context::get_matrix_WorldTranspone()const
 {
   if (m_matr.mWorldTranspone.bChangeFlag)
@@ -394,9 +353,9 @@ const mat44 *geometry_context::get_matrix_WorldTranspone()const
   }
 
   return  &m_matr.mWorldTranspone.matrix;
-};
+}
 
-//====================================================================
+
 const mat44 *geometry_context::get_matrix_WorldInverse()const
 {
   if (m_matr.mWorldInverse.bChangeFlag)
@@ -408,9 +367,9 @@ const mat44 *geometry_context::get_matrix_WorldInverse()const
   }
 
   return  &m_matr.mWorldInverse.matrix;
-};
+}
 
-//====================================================================
+
 const mat44 *geometry_context::get_matrix_WorldInverseTranspone()const
 {
   if (m_matr.mWorldInverseTranspone.bChangeFlag)
@@ -425,9 +384,9 @@ const mat44 *geometry_context::get_matrix_WorldInverseTranspone()const
   }
 
   return  &m_matr.mWorldInverseTranspone.matrix;
-};
+}
 
-//====================================================================
+
 const mat44 *geometry_context::get_matrix_WorldView()const
 {
   if (m_matr.mWorldView .bChangeFlag)
@@ -439,9 +398,9 @@ const mat44 *geometry_context::get_matrix_WorldView()const
   }
 
   return  &m_matr.mWorldView.matrix;
-};
+}
 
-//====================================================================
+
 const mat44 *geometry_context::get_matrix_WorldViewTranspone()const
 {
   if (m_matr.mWorldViewTranspone.bChangeFlag)
@@ -456,29 +415,27 @@ const mat44 *geometry_context::get_matrix_WorldViewTranspone()const
   }
 
   return  &m_matr.mWorldViewTranspone.matrix;
-};
-
-//#error ДОДЕЛАТЬ ДАЛЬШЕ !!!!
+}
 
 
-//====================================================================
 const mat44 *geometry_context::get_matrix_WorldViewInverse()const
 {
   if (m_matr.mWorldViewInverse.bChangeFlag)
   {
-    //MMUL(&m_temp, &m_mWorld, &m_mView);
-	m_temp =  m_mWorld * m_mView;
+		//MMUL(&m_temp, &m_mWorld, &m_mView);
+		m_temp =  m_mWorld * m_mView;
 
-    //D3DXMatrixInverse(&m_matr.mWorldViewInverse.matrix, NULL, &m_temp);
- m_matr.mWorldViewInverse.matrix = m_temp.inverted();
+		//D3DXMatrixInverse(&m_matr.mWorldViewInverse.matrix, NULL, &m_temp);
+		m_matr.mWorldViewInverse.matrix = m_temp.inverted();
 
 
-    m_matr.mWorldViewInverse.bChangeFlag =  0 ;
-  };
+		m_matr.mWorldViewInverse.bChangeFlag =  0 ;
+  }
+  
   return  &m_matr.mWorldViewInverse.matrix;
-};
+}
 
-//====================================================================
+
 const mat44 *geometry_context::get_matrix_WorldViewInverseTranspone()const
 {
   if (m_matr.mWorldViewInverseTranspone.bChangeFlag)
@@ -496,17 +453,12 @@ const mat44 *geometry_context::get_matrix_WorldViewInverseTranspone()const
     m_matr.mWorldViewInverseTranspone.bChangeFlag =  0 ;
   };
   return  &m_matr.mWorldViewInverseTranspone.matrix;
-};
+}
 
 
-//=====================================================================
 const vec3* geometry_context::get_vector3_by_context_type(
 				const vector_context_type_e::e value) const  throw(int)
 {
- 
-
-	//const vector_context_type_e::e val = (const vector_context_type_e::e)value;
- 
 
 	switch(value)
 	{
@@ -565,9 +517,8 @@ const vec3* geometry_context::get_vector3_by_context_type(
 	return NULL;
 }
 
-//=====================================================================
-const vec4* geometry_context::get_vector4_by_context_type(
-	     const vector_context_type_e::e val) const	throw(int)
+
+const vec4* geometry_context::get_vector4_by_context_type( const vector_context_type_e::e val) const throw(int)
 {
   switch(val)
   {
@@ -608,188 +559,187 @@ const vec4* geometry_context::get_vector4_by_context_type(
   return NULL;
 }
 
-//====================================================================
+
 const mat44 * geometry_context::get_matrix_by_context_type(
 				const matrix4x4_context_type_e::e  val ) const  	throw(int)
 {
-  switch(val)
-  {
 
-		case matrix4x4_context_type_e::VIEWPROJECTION:
-			{
-				return get_matrix_ViewProjection();
-			}
-			break;
-
-		case matrix4x4_context_type_e::VIEWPROJECTIONINVERSE:
-			{
-				return get_matrix_ViewProjectionInverse();
-			}
-			break;
-
-		case matrix4x4_context_type_e::VIEWPROJECTIONINVERSETRANSPONE:
-			{
-				return get_matrix_ViewProjectionInverseTranspone();
-			}
-			break;
-
-		case matrix4x4_context_type_e::VIEWPROJECTIONTRANSPONE:
-			{
-				return get_matrix_ViewProjectionTranspone();
-			}
-			break;
-
-
-		//================================
-
-
-		case matrix4x4_context_type_e::VIEW:
-			{
-				return get_matrix_View();
-			}
-			break;
-
-		case matrix4x4_context_type_e::VIEWTRANSPONE:
-			{
-				return get_matrix_ViewTranspone();
-			}
-			break;
-
-		case matrix4x4_context_type_e::VIEWINVERSE:
-			{
-				return  get_matrix_ViewInverse();
-			}
-			break;
-
-		case matrix4x4_context_type_e::VIEWINVERSETRANSPONE:
-			{
-				return  get_matrix_ViewInverseTranspone();
-			}
-			break;
-
-
-
-
-
-		case matrix4x4_context_type_e::PROJECTION:
-			{
-				return  get_matrix_Proj();
-			}
-			break;
-
-		case matrix4x4_context_type_e::PROJECTIONINVERSE:
-			{
-				return  get_matrix_ProjectionInverse();
-			}
-			break;
-
-		case matrix4x4_context_type_e::PROJECTIONTRANSPONE:
-			{
-				return get_matrix_ProjectionTranspone();
-			}
-			break;
-
-		case matrix4x4_context_type_e::PROJECTIONINVERSETRANSPONE:
-			{
-				return get_matrix_ProjectionInverseTranspone();
-			}
-			break;
-
-
-
-		case matrix4x4_context_type_e::WORLDVIEWPROJECTION:
-			{
-				return get_matrix_WorldViewProjection();
-			}
-			break;
-
-		case matrix4x4_context_type_e::WORLDVIEWPROJECTIONTRANSPONE:
-			{
-				return get_matrix_WorldViewProjectionTranspone();
-			}
-			break;
-
-		case matrix4x4_context_type_e::WORLDVIEWPROJECTIONINVERSE:
-			{
-				return get_matrix_WorldViewProjectionInverse();
-			}
-			break;
-
-		case matrix4x4_context_type_e::WORLDVIEWPROJECTIONINVERSETRANSPONE:
-			{
-				return get_matrix_WorldViewProjectionInverseTranspone();
-			}
-			break;
-
-		case matrix4x4_context_type_e::WORLD:
-			{
-				return get_matrix_World();
-			}
-			break;
-
-		case matrix4x4_context_type_e::WORLDTRANSPONE:
-			{
-				return get_matrix_WorldTranspone();
-			}
-			break;
-
-		case matrix4x4_context_type_e::WORLDINVERSE:
-			{
-				return get_matrix_WorldInverse();
-			}
-			break;
-
-	   //========================
-
-
-		case matrix4x4_context_type_e::WORLDINVERSETRANSPONE:
-			{
-				return get_matrix_WorldInverseTranspone();
-			}
-			break;
-
-		case matrix4x4_context_type_e::WORLDVIEW:
-			{
-				return get_matrix_WorldView();
-			}
-			break;
-
-
-		case matrix4x4_context_type_e::WORLDVIEWTRANSPONE:
-			{
-				return get_matrix_WorldViewTranspone();
-			}
-			break;
-
-		case matrix4x4_context_type_e::WORLDVIEWINVERSE:
-			{
-				return get_matrix_WorldViewInverse();
-			}
-			break;
-
-		case matrix4x4_context_type_e::WORLDVIEWINVERSETRANSPONE:
-			{
-				return get_matrix_WorldViewInverseTranspone();
-			}
-			break;
-
-
-  default:
+	  switch(val)
 	  {
 
-	  }
-  }
+			case matrix4x4_context_type_e::VIEWPROJECTION:
+				{
+					return get_matrix_ViewProjection();
+				}
+				break;
 
-		#ifdef _DEBUG
-		  printf("unknown enum value:  %i  \n", (int)val );
-		#endif 
+			case matrix4x4_context_type_e::VIEWPROJECTIONINVERSE:
+				{
+					return get_matrix_ViewProjectionInverse();
+				}
+				break;
+
+			case matrix4x4_context_type_e::VIEWPROJECTIONINVERSETRANSPONE:
+				{
+					return get_matrix_ViewProjectionInverseTranspone();
+				}
+				break;
+
+			case matrix4x4_context_type_e::VIEWPROJECTIONTRANSPONE:
+				{
+					return get_matrix_ViewProjectionTranspone();
+				}
+				break;
+
+
+
+
+			case matrix4x4_context_type_e::VIEW:
+				{
+					return get_matrix_View();
+				}
+				break;
+
+			case matrix4x4_context_type_e::VIEWTRANSPONE:
+				{
+					return get_matrix_ViewTranspone();
+				}
+				break;
+
+			case matrix4x4_context_type_e::VIEWINVERSE:
+				{
+					return  get_matrix_ViewInverse();
+				}
+				break;
+
+			case matrix4x4_context_type_e::VIEWINVERSETRANSPONE:
+				{
+					return  get_matrix_ViewInverseTranspone();
+				}
+				break;
+
+
+
+
+
+			case matrix4x4_context_type_e::PROJECTION:
+				{
+					return  get_matrix_Proj();
+				}
+				break;
+
+			case matrix4x4_context_type_e::PROJECTIONINVERSE:
+				{
+					return  get_matrix_ProjectionInverse();
+				}
+				break;
+
+			case matrix4x4_context_type_e::PROJECTIONTRANSPONE:
+				{
+					return get_matrix_ProjectionTranspone();
+				}
+				break;
+
+			case matrix4x4_context_type_e::PROJECTIONINVERSETRANSPONE:
+				{
+					return get_matrix_ProjectionInverseTranspone();
+				}
+				break;
+
+
+
+			case matrix4x4_context_type_e::WORLDVIEWPROJECTION:
+				{
+					return get_matrix_WorldViewProjection();
+				}
+				break;
+
+			case matrix4x4_context_type_e::WORLDVIEWPROJECTIONTRANSPONE:
+				{
+					return get_matrix_WorldViewProjectionTranspone();
+				}
+				break;
+
+			case matrix4x4_context_type_e::WORLDVIEWPROJECTIONINVERSE:
+				{
+					return get_matrix_WorldViewProjectionInverse();
+				}
+				break;
+
+			case matrix4x4_context_type_e::WORLDVIEWPROJECTIONINVERSETRANSPONE:
+				{
+					return get_matrix_WorldViewProjectionInverseTranspone();
+				}
+				break;
+
+			case matrix4x4_context_type_e::WORLD:
+				{
+					return get_matrix_World();
+				}
+				break;
+
+			case matrix4x4_context_type_e::WORLDTRANSPONE:
+				{
+					return get_matrix_WorldTranspone();
+				}
+				break;
+
+			case matrix4x4_context_type_e::WORLDINVERSE:
+				{
+					return get_matrix_WorldInverse();
+				}
+				break;
+
+
+
+			case matrix4x4_context_type_e::WORLDINVERSETRANSPONE:
+				{
+					return get_matrix_WorldInverseTranspone();
+				}
+				break;
+
+			case matrix4x4_context_type_e::WORLDVIEW:
+				{
+					return get_matrix_WorldView();
+				}
+				break;
+
+
+			case matrix4x4_context_type_e::WORLDVIEWTRANSPONE:
+				{
+					return get_matrix_WorldViewTranspone();
+				}
+				break;
+
+			case matrix4x4_context_type_e::WORLDVIEWINVERSE:
+				{
+					return get_matrix_WorldViewInverse();
+				}
+				break;
+
+			case matrix4x4_context_type_e::WORLDVIEWINVERSETRANSPONE:
+				{
+					return get_matrix_WorldViewInverseTranspone();
+				}
+				break;
+
+
+	  default:
+		  {
+
+		  }
+	  }
+
+	#ifdef _DEBUG
+	printf("unknown enum value:  %i  \n", (int)val );
+	#endif 
 
 	// not found !!
 	assert(false && "matrix not found");
 	return NULL;
 }
 
-//====================================================================
+
 void geometry_context::__checkViewVectors()const
 {
   if (m_matr.mViewInverse.bChangeFlag)
@@ -799,10 +749,10 @@ void geometry_context::__checkViewVectors()const
     m_VewPos = *((vec3*) &m_matr.mViewInverse.matrix._41);
     m_ViewDir = *((vec3*) &m_matr.mViewInverse.matrix._31);
     m_ViewUp = *((vec3*) &m_matr.mViewInverse.matrix._21);
-  };
-};
+  }
+}
 
-//====================================================================
+
 const vec4 *geometry_context::get_vector4_ViewPos()const
 {
   __checkViewVectors();
@@ -811,9 +761,8 @@ const vec4 *geometry_context::get_vector4_ViewPos()const
   m_vec4Temp.z = m_VewPos.z;
   m_vec4Temp.w = 1.0f;
   return  &m_vec4Temp;
-};
+}
 
-//====================================================================
 const vec4 *geometry_context::get_vector4_ViewDir()const
 {
   __checkViewVectors();
@@ -822,9 +771,9 @@ const vec4 *geometry_context::get_vector4_ViewDir()const
   m_vec4Temp.z = m_ViewDir.z;
   m_vec4Temp.w = 1.0f;
   return  &m_vec4Temp;
-};
+}
 
-//====================================================================
+
 const vec4 *geometry_context::get_vector4_ViewUp()const
 {
   __checkViewVectors();
@@ -833,9 +782,9 @@ const vec4 *geometry_context::get_vector4_ViewUp()const
   m_vec4Temp.z = m_ViewUp.z;
   m_vec4Temp.w = 1.0f;
   return  &m_vec4Temp;
-};
+}
 
-//====================================================================
+
 const vec3 *geometry_context::get_vector3_ViewSide()const
 {
 
@@ -844,9 +793,9 @@ const vec3 *geometry_context::get_vector3_ViewSide()const
 
 
   return  &m_vec3Temp;
-};
+}
 
-//====================================================================
+
 const vec4 *geometry_context::get_vector4_ViewSide()const
 {
   vec3 res =  *get_vector3_ViewUp();
@@ -855,124 +804,30 @@ const vec4 *geometry_context::get_vector4_ViewSide()const
   m_vec4Temp.z = res.z;
   m_vec4Temp.w = 1.0f;
   return  &m_vec4Temp;
-};
-
- /************************
-//==================================================================
-const vec3 *geometry_context::GetMouseCoordCameraUnproject()const
-{
-  //ViewportZ  vp ;
-  //  POINT  pntMouseCoord ;
-
-  // get viewport and mouse coord
-  const DAPLIB_RenderContext *prcontext = DAPL_GetRenderContext();
-
-  POINT msCoord = RWnd_GetWindowCursorPosition();
-
-  return GetMouseCoordCameraUnproject(GetViewPortPtr(), &GetPointCursorWindowPosition() // &prcontext->GetPointCursorWindowPosition();
-
-  );
-};
-
-//==================================================================
-const vec3 *geometry_context::get_vector3_Unproject(const  ViewportZ *vp, const  POINT *pntCoord)const
-{
-  vec3 vsrc;
-  vsrc.x = (FLOAT)pntCoord->x;
-  vsrc.y = (FLOAT)pntCoord->y;
-  vsrc.z = 0.0f;
-
-
-
-  ViewportZ __viewport;
-
-  if (vp)
-  {
-    __viewport =  *vp;
-  }
-  else
-  {
-    //const DAPLIB_RenderContext* prcontext =  DAPL_GetRenderContext();
-    // viewport = prcontext->viewport;
-    __viewport =  *GetViewPortPtr();
-  }
-
-
-  static vec3 res[4];
-
-
-  static int nCurrResult = 0;
-  nCurrResult++;
-  if (nCurrResult >= 4)
-  {
-    nCurrResult = 0;
-  }
-
-  vec3 *pResult = &res[nCurrResult];
-
-
-
-
-
-  D3DXVec3Unproject(pResult,  // vec3 * pOut,
-   &vsrc,  //CONST vec3 * pV,
-   &__viewport,  //CONST ViewportZ * pViewport,
-  get_matrix_Proj(),  //CONST mat44 * pProjection,
-  get_matrix_View(),  //CONST mat44 * pView,
-  get_matrix_World() // CONST mat44 * pWorld
-  );
-
-
-
-  return pResult;
-};
-
-//====================================================================
-const vec3 *geometry_context::GetMouseCoordCameraUnproject(const ViewportZ *vp, const POINT *pntMouseCoord)const
-{
-
-  if (m_bMouseCoordCameraUnproject_change)
-  {
-    // compute
-    vec3 vsrc;
-    vsrc.x = (FLOAT)pntMouseCoord->x;
-    vsrc.y = (FLOAT)pntMouseCoord->y;
-    vsrc.z = 0.0f;
-
-    D3DXVec3Unproject( &m_vec3_MouseCoordCameraUnproject,  // vec3 * pOut,
-     &vsrc,  //CONST vec3 * pV,
-    vp,  //CONST ViewportZ * pViewport,
-    get_matrix_Proj(),  //CONST mat44 * pProjection,
-    get_matrix_View(),  //CONST mat44 * pView,
-    get_matrix_World() // CONST mat44 * pWorld
-    );
-
-
-    m_bMouseCoordCameraUnproject_change = false;
-  };
-
-  return  &m_vec3_MouseCoordCameraUnproject;
-};
- ************************************/
-
+}
+ 
+ 
 const vec3 *geometry_context::get_vector3_VewPos()const
 {
   __checkViewVectors();
   return  &m_VewPos;
-};
+}
+
 const vec3 *geometry_context::get_vector3_ViewDir()const
 {
   __checkViewVectors();
   return  &m_ViewDir;
-};
+}
+
 const vec3 *geometry_context::get_vector3_ViewUp()const
 {
   __checkViewVectors();
   return  &m_ViewUp;
-};
+}
 
 
-//===============================================
+
+
 const perspective_projection_data *geometry_context::get_projection_Data()const
 {
   if (m_BoolChangedMatr.bProjChange)
@@ -985,14 +840,14 @@ const perspective_projection_data *geometry_context::get_projection_Data()const
 
       m_bChangeProjectionData =  0 ;
 
-    } // if
+    }
 
 
-  }; // if
+  }
 
 
   return  &m_PerspectiveProjData;
-};
+}
 
 
 /****************************
@@ -1212,14 +1067,14 @@ int  geometry_context::PopAllMatrices()const
 };
 ****************************************/
 
-//=======================================================
+
 eyedata geometry_context::getViewParams()const
 {
   eyedata res =  *getViewParamsPtr();
   return res;
-};
+}
 
-//=======================================================
+
 const eyedata *geometry_context::getViewParamsPtr()const
 {
 	assert(false  && "  need a debug step");
@@ -1252,11 +1107,9 @@ const eyedata *geometry_context::getViewParamsPtr()const
   }
 
   return  &m_EyeData;
-};
+}
 
 
-
-//===========================================================
 int  geometry_context::setViewParams(const  vec3 *eye, const  vec3 *at, const  vec3 *up)
 {
   int  hr = 0;
@@ -1275,9 +1128,10 @@ int  geometry_context::setViewParams(const  vec3 *eye, const  vec3 *at, const  v
   hr |= setViewParams(&vp);
 
   return hr;
-};
+}
 
-//===========================================================
+
+
 int  geometry_context::setViewParams(const eyedata *pvp)
 {
   int  hr = 0;
@@ -1285,7 +1139,6 @@ int  geometry_context::setViewParams(const eyedata *pvp)
   mat44 mv;
   m_EyeData =  *pvp;
 
-//  D3DXMatrixLookAtLH(&mv, &m_EyeData.eye_position, &m_EyeData.eye_up, &m_EyeData.eye_up);
 
   mv.setViewLookAtLH( m_EyeData.eye_position, m_EyeData.eye_at, m_EyeData.eye_up  );
 
@@ -1293,9 +1146,10 @@ int  geometry_context::setViewParams(const eyedata *pvp)
   hr |= set_matrix_View(&mv);
   m_bIsParameter_EyeData_changed =  0 ;
   return hr;
-};
+}
 
-//===========================================================
+
+
 int  geometry_context::setViewEye(const vec3 *eye)
 {
   int  hr = 0;
@@ -1305,9 +1159,9 @@ int  geometry_context::setViewEye(const vec3 *eye)
   hr |= setViewParams(&vp);
 
   return hr;
-};
+}
 
-//===========================================================
+
 int  geometry_context::setViewAt(const vec3 *at)
 {
   int  hr = 0;
@@ -1317,9 +1171,10 @@ int  geometry_context::setViewAt(const vec3 *at)
   hr |= setViewParams(&vp);
 
   return hr;
-};
+}
 
-//===========================================================
+
+
 int  geometry_context::setViewUp(const vec3 *up)
 {
   int  hr = 0;
@@ -1329,14 +1184,9 @@ int  geometry_context::setViewUp(const vec3 *up)
   hr |= setViewParams(&vp);
 
   return hr;
-};
-
-//===========================================================
+}
 
 
-
-
-//==============================================
 int  geometry_context::setProjectionParams(float fFov, float fAsp, float fZNear, float fZFar)
 {
   int  hr = 0;
@@ -1351,136 +1201,99 @@ int  geometry_context::setProjectionParams(float fFov, float fAsp, float fZNear,
   hr |= setProjectionParams(&pd);
 
   return hr;
-};
+}
 
-//===================================
+
+
 int  geometry_context::setProjectionParams(const perspective_projection_data *proj)
 {
-  int  hr = 0;
-  try
-  {
+	int  hr = 0;
 
-    mat44 mproj;
-   // D3DXMatrixPerspectiveFovLH(&mproj, proj->fFovy, proj->fAspect, proj->fZnear, proj->fZfar);
-   mproj.setPerspectiveFovLH(proj->fovy, proj->aspect, proj->zn, proj->zf);
+	mat44 mproj;
+	// D3DXMatrixPerspectiveFovLH(&mproj, proj->fFovy, proj->fAspect, proj->fZnear, proj->fZfar);
+	mproj.setPerspectiveFovLH(proj->fovy, proj->aspect, proj->zn, proj->zf);
 
 
 	hr |= set_matrix_Proj(&mproj);
 
-  }
-  catch(...)
-  {
-    hr |= (-1);
-  }
 
-  return hr;
-};
+	return hr;
+}
 
-//==============================================
+
+
 int  geometry_context::setProjectionFov(float fFov)
 {
   int  hr = 0;
 
-  try
-  {
+
     perspective_projection_data proj =  *get_projection_Data();
     proj.fovy = fFov;
     setProjectionParams(&proj);
-  }
-  catch(...)
-  {
-    //MONPRINT("Exception ");
-    hr |= (-1);
-  };
+
+
 
   return hr;
-};
+}
 
-//===================================================
+
 int  geometry_context::setProjectionAsp(float fAsp)
 {
   int  hr = 0;
 
 
-  try
-  {
+
     perspective_projection_data proj =  *get_projection_Data();
     proj.aspect = fAsp;
     setProjectionParams(&proj);
-  }
-  catch(...)
-  {
-    //MONPRINT("Exception ");
-    hr |= (-1);
-  };
-
 
   return hr;
 
-};
+}
 
-//===================================================
+
+
+
 int  geometry_context::setProjectionZNear(float fZNear)
 {
   int  hr = 0;
 
-  try
-  {
     perspective_projection_data proj =  *get_projection_Data();
     proj.zn = fZNear;
     setProjectionParams(&proj);
-  }
-  catch(...)
-  {
-//    MONPRINT("Exception ");
-    hr |= (-1);
-  };
 
 
   return hr;
 }
 
-//===================================================
+
+
 int  geometry_context::setProjectionZFar(float fZFar)
 {
   int  hr = 0;
 
-  try
-  {
     perspective_projection_data proj =  *get_projection_Data();
     proj.zf = fZFar;
     setProjectionParams(&proj);
-  }
-  catch(...)
-  {
-    hr |= -1;
-  }
 
   return hr;
 }
 
-//=====================================================
+
 int  geometry_context::setProjectionZNearZFar(float fZNear, float fZFar)
 {
   int  hr = 0;
 
-  try
-  {
     perspective_projection_data proj =  *get_projection_Data();
     proj.zn = fZNear;
     proj.zf = fZFar;
     setProjectionParams(&proj);
-  }
-  catch(...)
-  {
-//    MONPRINT("Exception ");
-    hr |= (-1);
-  };
 
   return hr;
 }
 
-//==========================================
+
+
 TransformData  geometry_context::getWorldTransformData()const
 {
   TransformData  res =  *getWorldTransformDataPtr();
@@ -1488,15 +1301,12 @@ TransformData  geometry_context::getWorldTransformData()const
 }
 
 
-//==========================================
+
 const TransformData  *geometry_context::getWorldTransformDataPtr()const
 {
 
   if (m_bTransfDataChange)
   {
-
-
-
     const mat44 *mw = get_matrix_World();
 
 
@@ -1518,11 +1328,6 @@ const TransformData  *geometry_context::getWorldTransformDataPtr()const
 	   );
 
 
-  //  if FAILED(hrDecomp)
-  //  {
-    //  throw std::runtime_error("Error decompose matrix");
-   // }
-
 
    // D3DXQuaternionToAxisAngle( &m_qRotation,  // CONST Quaternion * pQ,
    //  &m_TransformData.rot.vRotAx,  //vec3 * pAxis,
@@ -1541,13 +1346,13 @@ const TransformData  *geometry_context::getWorldTransformDataPtr()const
 
 
     m_bTransfDataChange =  0 ;
-  }; // if
+  } 
 
 
   return  &m_TransformData;
 }
 
-//==========================================
+
 vec3 geometry_context::getWorldScaling()const
 {
 
@@ -1557,7 +1362,7 @@ vec3 geometry_context::getWorldScaling()const
 
 }
 
-//==========================================
+
 axies_angle geometry_context::getWorldRotationAxiesAngle() const
 {
 	const TransformData  *ptd = getWorldTransformDataPtr();
@@ -1565,21 +1370,16 @@ axies_angle geometry_context::getWorldRotationAxiesAngle() const
 	return qrot.toAxiesAngle();
 }
 
-//==========================================
+
 Quaternion geometry_context::getWorldRotationQuaternion() const
 {
-  // get const to check calculate
-  const TransformData  *ptr = getWorldTransformDataPtr();
- 
- 
-  assert(false && "  need a check ");
-	return ptr->qRotation;
+	const TransformData  *ptr = getWorldTransformDataPtr();
 
-  // OLD
-  //return m_qRotation;
+	assert(false && "  need a check ");
+	return ptr->qRotation;
 }
 
-//==========================================
+
 vec3 geometry_context::getWorldPosition()const
 {
 
@@ -1590,7 +1390,6 @@ vec3 geometry_context::getWorldPosition()const
 }
 
 
-//==========================================
 int  geometry_context::setWorldTransformData(const TransformData  *pTr)
 {
   int  hr = 0;
@@ -1637,7 +1436,7 @@ int  geometry_context::setWorldTransformData(const TransformData  *pTr)
   return hr;
 }
 
-//==========================================
+
 int  geometry_context::setWorldPositionVal(float x, float y, float z)
 {
   int  hr = 0;
@@ -1653,7 +1452,7 @@ int  geometry_context::setWorldPositionVal(float x, float y, float z)
   return hr;
 }
 
-//==========================================
+
 int  geometry_context::setWorldPositionVec(const vec3 *pos)
 {
   int  hr = 0;
@@ -1664,18 +1463,17 @@ int  geometry_context::setWorldPositionVec(const vec3 *pos)
 }
 
 
-//==========================================
 int  geometry_context::setWorldRotationYawPitchRoll(float yaw, float pitch, float roll)
 {
-  int  hr = 0;
-  Quaternion q;
+	int  hr = 0;
+	Quaternion q;
 
-  //D3DXQuaternionRotationYawPitchRoll(&q, yaw, pitch, roll);
-   q.setRotationYawPitchRoll(  yaw, pitch, roll )  ;
 
-  hr |= setWorldRotationQuaternion(&q);
+	q.setRotationYawPitchRoll(  yaw, pitch, roll )  ;
 
-  return hr;
+	hr |= setWorldRotationQuaternion(&q);
+
+	return hr;
 }
 
 /********************************
@@ -1704,49 +1502,49 @@ int  geometry_context::setWorldRotationVal(float axX, float axY, float axZ, floa
 }
 *******************************/
 
-//==========================================
+
+
 int  geometry_context::setWorldRotationQuaternion(const Quaternion *q)
 {
-  int  hr = 0;
-  TransformData  trd = getWorldTransformData();
-//  m_qRotation =  *q;
+	int  hr = 0;
+	TransformData  trd = getWorldTransformData();
+	//  m_qRotation =  *q;
+
+	// D3DXQuaternionToAxisAngle( &m_qRotation,  // CONST Quaternion * pQ,
+	//   &trd.rot.vRotAx,  // vec3 * pAxis,
+	//   &trd.rot.fAngle  //  FLOAT * pAngle
+	//  );
+	trd.qRotation = *q;
 
 
- // D3DXQuaternionToAxisAngle( &m_qRotation,  // CONST Quaternion * pQ,
-//   &trd.rot.vRotAx,  // vec3 * pAxis,
-//   &trd.rot.fAngle  //  FLOAT * pAngle
-//  );
-trd.qRotation = *q;
-
-
- // m_qRotation.setRotationAxis(trd.rot.vRotAx, trd.rot.fAngle );
-
-
-
-  mat44 world;
-
-  /******************
-  D3DXMatrixTransformation( &world,  //mat44 * pOut,
-  NULL,  //CONST vec3 * pScalingCenter,
-  NULL,  //CONST Quaternion * pScalingRotation,
-   &trd.vSc,  // CONST vec3 * pScaling,
-  NULL,  //CONST vec3 * pRotationCenter,
-   &m_qRotation,  // CONST Quaternion * pRotation,
-   &trd.vTrnsl  //  CONST vec3 * pTranslation
-  );
-  ***************/
-   world.setTransformation(trd.vScaling , trd.qRotation , trd.vTranslation);
-
-
-  m_bTransfDataChange = true;
+	// m_qRotation.setRotationAxis(trd.rot.vRotAx, trd.rot.fAngle );
 
 
 
+	mat44 world;
 
-  return hr;
+	/******************
+	D3DXMatrixTransformation( &world,  //mat44 * pOut,
+	NULL,  //CONST vec3 * pScalingCenter,
+	NULL,  //CONST Quaternion * pScalingRotation,
+	&trd.vSc,  // CONST vec3 * pScaling,
+	NULL,  //CONST vec3 * pRotationCenter,
+	&m_qRotation,  // CONST Quaternion * pRotation,
+	&trd.vTrnsl  //  CONST vec3 * pTranslation
+	);
+	***************/
+	world.setTransformation(trd.vScaling , trd.qRotation , trd.vTranslation);
+
+
+	m_bTransfDataChange = true;
+
+
+
+
+	return hr;
 }
 
-//=========================================================================
+
 int  geometry_context::setWorldRotationAxiesAngle(const vec3 *vAx, float angle )
 {
   int  hr = 0;
@@ -1768,7 +1566,6 @@ int  geometry_context::setWorldRotationAxiesAngle(const vec3 *vAx, float angle )
 }
 
 
-//=========================================================================
 int  geometry_context::setWorldScaling(float val)
 {
   int  hr = 0;
@@ -1777,7 +1574,8 @@ int  geometry_context::setWorldScaling(float val)
   return hr;
 }
 
-//=========================================================================
+
+
 int  geometry_context::setWorldScaling(float x, float y, float z)
 {
 	int  hr = 0;
@@ -1792,7 +1590,7 @@ int  geometry_context::setWorldScaling(float x, float y, float z)
 	return hr;
 }
 
-//=========================================================================
+
 int  geometry_context::setWorldScalingVec(const vec3 *vSc)
 {
   int  hr = 0;
@@ -1802,7 +1600,7 @@ int  geometry_context::setWorldScalingVec(const vec3 *vSc)
   return hr;
 }
 
-//=========================================================================
+
 int  geometry_context::setWorldScalingTranslation(float fScale, const vec3 *vTrnsl)
 {
   int  hr = 0;
@@ -1814,7 +1612,7 @@ int  geometry_context::setWorldScalingTranslation(float fScale, const vec3 *vTrn
   return hr;
 }
 
-//=========================================================================
+
 int  geometry_context::setWorldScalingTranslation(float fScale, float x, float y, float z)
 {
   int  hr = 0;
@@ -1829,19 +1627,8 @@ int  geometry_context::setWorldScalingTranslation(float fScale, float x, float y
   return hr;
 }
 
-//
-//#pragma message("ks777: NEED DELETE MAIN()  " __FILE__ )
-//int main()
-//{
-//	return 0;
-//}
-//
 
- 
-
-
-
-/*
+/* *****************************************************************
 //=================================================================
 std::string  matrix4x4_context_type_e::tostr(const matrix4x4_context_type_e::e val)
 {
@@ -2014,7 +1801,7 @@ std::string  matrix4x4_context_type_e::tostr(const matrix4x4_context_type_e::e v
 
 	return res;
 }
-*/
+************************************************************************ */
 
 
 

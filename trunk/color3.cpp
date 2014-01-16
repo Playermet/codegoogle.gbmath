@@ -1,7 +1,7 @@
 ﻿#pragma once
 
 #include "_gbmath.h"
-//#include "color3.h"
+
 
 namespace gbmath
 {

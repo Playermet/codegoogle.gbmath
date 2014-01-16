@@ -1,5 +1,7 @@
 ﻿/** \file
  \brief  Color constants.
+ 
+ 
 */
 
 #pragma once
@@ -7,19 +9,15 @@
 #ifndef __GBMATH_H__
 	#error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
-
-
  
+ 
+namespace gbmath
+{
 
 
-
- namespace gbmath
- {
-
-
-    //! \brief  color constants
-   namespace color_const
-   {
+//! \brief  color constants
+namespace color_const
+{
 
 
 
@@ -290,9 +288,6 @@ static const     unsigned int      CUICOLOR_YELLOWGREEN      = 0xFF9ACD32;
 
 
 
-
-   }
- }
-
-
- 
+}
+   
+}

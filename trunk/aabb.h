@@ -11,18 +11,20 @@
 #endif
 
 
+	 // many rus info aabox  
+	 // http://www.devmaster.net/forums/showthread.php?t=10324
+
+	//todo: bool checkIntersectRay(const Ray& ray) {....}
+	//todo: bool checkIntersecеSphere(const sphere& sph) {....}
+	//todo: bool checkIntersectAABB_ex(Plane& outContactPlane, const aabb& aabb) {....}
+
 namespace gbmath
 {
 
 
-
-
-
-	// many rus info aabox  
-	 // http://www.devmaster.net/forums/showthread.php?t=10324
-
 	//! \brief Axis Aligned Bounding Box  by min and max points.
-	class aabb {
+	class aabb 
+	{
 	public:
 	vec3   min; 
 	vec3   max; 
@@ -374,7 +376,7 @@ namespace gbmath
 		return *this;
 	}
 
-	//! \brief  Преобразование в сферу. Край сферы по углам бокса.
+	//! \brief  Transformation into a sphere. Edge of the sphere at the corners of the box.
 	sphere toSphere() const
 	{
 		sphere res;
@@ -386,20 +388,18 @@ namespace gbmath
 	//! \brief Check points for being in a box.   OK!
 	inline bool checkContainPoint(const  vec3& p )
 	{
-		return      (p.x <= this->max.x) && (p.x >= this->min.x)
-		&& (p.y <= this->max.y) && (p.y >= this->min.y)
-		&& (p.z <= this->max.z) && (p.z >= this->min.z);
+		return (p.x <= this->max.x) && (p.x >= this->min.x)
+			&& (p.y <= this->max.y) && (p.y >= this->min.y)
+			&& (p.z <= this->max.z) && (p.z >= this->min.z);
 	}
 
 	//!  check Intersect Plane    NEED_CHECK!!!
 	bool checkIntersectPlane(const plane_s& pl) const;
 
-	//todo: bool checkIntersectRay(const Ray& ray) {....}
-	//todo: bool checkIntersecеSphere(const sphere& sph) {....}
-	//todo: bool checkIntersectAABB_ex(Plane& outContactPlane, const aabb& aabb) {....}
 
 
-	//* TEMP. Check boxes to the touch..
+
+	//! TEMP. Check boxes to the touch..
 	bool checkIntersectAABB(const aabb& b) const
 	{
 		if( (max.x < b.min.x) || (min.x > b.max.x) ) return false;
@@ -411,7 +411,7 @@ namespace gbmath
 
 	// http://www.devmaster.net/forums/showthread.php?t=10324   #5
 
-	//   Check boxes to the touch..
+	//!   Check boxes to the touch..
 	bool checkIntersectAABB_2(aabb& aabb) const
 	{
 		return
@@ -422,7 +422,7 @@ namespace gbmath
 
 
  
-	//  Check boxes to the touch..  
+	//!  Check boxes to the touch..  
 	obj_contains_e checkContainsAabb( const aabb& box ) const
 	{
 		if
@@ -449,7 +449,7 @@ namespace gbmath
 		}
 		//else
 		return  SC_NOOVERLAP;
-	};
+	}
 
 
 	obj_contains_e checkContainsSphere( const sphere& s)  const
@@ -461,7 +461,6 @@ namespace gbmath
 
 
 	};
-	// end class
  
 
 }

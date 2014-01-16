@@ -13,7 +13,6 @@
 
 #ifdef GBMATH_USE_OPENGL_DRAWER
 
-
 #include <gl/gl.h>
 
 
@@ -21,23 +20,18 @@ namespace gbmath
 {
 
 	//!  \brief  Drawing of mathematical objects through OpenGL .
-	class drawer {
+	class drawer 
+	{
 	public:
 	
 		drawer();
-
-		~drawer() 
-		{
-
-		}	
+		~drawer() { }	
 		
 		void set_transform_matrix_world (const mat44&);
 		void set_transform_matrix_view  (const mat44&);	
 		void set_transform_matrix_proj  (const mat44&);
 		
 		void mul_world(const mat44& m);
-
-
 
 
 
@@ -89,8 +83,7 @@ namespace gbmath
 		
 		
 	
-			
-		
+				
 		private:
 			mat44 m_world;
 			mat44 m_view;

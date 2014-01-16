@@ -11,7 +11,7 @@ namespace gbmath
 
 
 
-//=========================================================================
+ 
 arc_ball::arc_ball(bool cameraLeftHandle) : m_bArcBallLeftHandle(cameraLeftHandle)
 {
     reset();

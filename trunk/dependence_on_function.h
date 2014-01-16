@@ -11,13 +11,13 @@
 #include <float.h>
 #include <string>
 
-// dependence_on_function.h
-
+ 
 namespace gbmath
 {
 
 	//! \brief    mathematical dependence of the function
-	struct dependence_on_function {
+	struct dependence_on_function 
+	{
 	
 		enum e
 		{
@@ -38,6 +38,8 @@ namespace gbmath
 			__UNUSED_DCLARED_LAST,
 			__UNUSED_ALIGN32 = 0x7f000000
 		};
+		
+		e _e;
 	
 		inline dependence_on_function() 
 		{
@@ -65,12 +67,7 @@ namespace gbmath
 			return _e; 
 		}
 		
-		// TODO: to/ from str <<
-
-		//void operator = (const std::string& str)
-		//{
-		//}
-
+ 
 		operator std::string() const;
  
 		void operator = (const std::string& str);
@@ -83,12 +80,7 @@ namespace gbmath
 		
 			
 		static  float formula(float x, const e depend ) ;
-
-		
-	private:
-		e _e;		
-		
-
+	
 	};
 
  

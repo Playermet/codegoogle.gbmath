@@ -1,5 +1,5 @@
 
-#include "triangle.h"
+#include "_gbmath.h"
 
 namespace gbmath
 {

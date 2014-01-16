@@ -1,5 +1,5 @@
 /** \file  
- \brief  First-person camera 
+ \brief  First-person camera. windows only
 
 */
 
@@ -12,9 +12,9 @@ namespace gbmath
 
 
 
-	//! \brief First-person camera.
-	//   Uses window messages for reading keyboard: forward, backward, left, right, up, down  
-	class first_person_camera : public base_camera {
+	//! \brief First-person camera.  windows only.  Uses window messages for reading keyboard: forward, backward, left, right, up, down  
+	class first_person_camera : public base_camera 
+	{
 	public:
 
 				  first_person_camera();
@@ -37,8 +37,7 @@ namespace gbmath
 		virtual void frameMove( float fElapsedTime );
 
 		//  Functions to change behavior
-		void setRotateButtons( bool bLeft, bool bMiddle, bool bRight,
-						bool bRotateWithoutButtonDown = false );
+		void setRotateButtons( bool bLeft, bool bMiddle, bool bRight, bool bRotateWithoutButtonDown = false );
 
 		void setResetCursorAfterMove( bool bResetCursorAfterMove ) 
 		{ 
@@ -88,8 +87,6 @@ namespace gbmath
 		bool       m_bResetCursorAfterMove; ///< If true, the class will reset the cursor position so that the cursor always has space to move 
 
 	};
-	// end class
-
 	 
 }
 

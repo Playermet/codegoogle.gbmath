@@ -8,7 +8,6 @@
 
 #include "_gbmath.h"
 
-///////////////////////////////////////////////
 #if 0
 
    #pragma comment( lib, "dxerr.lib" )
@@ -28,25 +27,23 @@
    #pragma comment( lib, "winmm.lib" )
    #pragma comment( lib, "comctl32.lib" )
 
-#endif   // #if
-////////////////////////////////////////////////
+#endif
+
 
 #include "assert.h"
 
-//======================================================
+
 
 namespace gbmath 
 {
  
  
 
-//========================================================================
-	base_camera::base_camera(bool cameraLeftHandle) : m_bcameraLeftHandle(cameraLeftHandle)
+base_camera::base_camera(bool cameraLeftHandle) : m_bcameraLeftHandle(cameraLeftHandle)
 {
 	m_hwnd = 0;
     m_cKeysDown = 0;
     ZeroMemory( m_aKeys, sizeof(BYTE)*CAM_MAX_KEYS );
-//    ZeroMemory( m_GamePad, sizeof(MYUT_GAMEPAD)*MYUT_MAX_CONTROLLERS );
 
     // Set attributes for the view matrix
     vec3 vEyePt    = vec3(0.0f,0.0f,0.0f);
@@ -92,16 +89,8 @@ namespace gbmath
     m_vMaxBoundary = vec3(1,1,1);
 }
 
-
-//========================================================================
-// Client can call this to change the position and direction of camera
-//========================================================================
 void base_camera::setViewParams( const vec3& pvEyePt, const vec3& pvLookatPt)
 {
-   
-	//if( NULL == pvEyePt || NULL == pvLookatPt )
-    //    return;
-
     m_vDefaultEye = m_vEye = pvEyePt;
     m_vDefaultLookAt = m_vLookAt = pvLookatPt;
 
@@ -116,9 +105,6 @@ void base_camera::setViewParams( const vec3& pvEyePt, const vec3& pvLookatPt)
 	{
 	 m_mView.setViewLookAtRH(pvEyePt, pvLookatPt, vUp );
 	}
-
-
-
 
     mat44 mInvView;
    // D 3DX MatrixInverse( mInvView, NULL, m_mView );
@@ -135,24 +121,14 @@ void base_camera::setViewParams( const vec3& pvEyePt, const vec3& pvLookatPt)
 }
 
 
-
-
-//========================================================================
-// Calculates the projection matrix based on input params
-//========================================================================
-void base_camera::setProjParams( float fFOV, float fAspect, 
-								float fNearPlane,  float fFarPlane )
+void base_camera::setProjParams( float fFOV, float fAspect, float fNearPlane,  float fFarPlane )
 {
     // Set attributes for the projection matrix
     m_fFOV        = fFOV;
     m_fAspect     = fAspect;
     m_fNearPlane  = fNearPlane;
     m_fFarPlane   = fFarPlane;
-
-   // D 3DXMatrixPerspectiveFovLH( m_mProj, fFOV, fAspect, fNearPlane, fFarPlane );
-	// m_mProj.setPerspectiveFovLH( fFOV, fAspect, fNearPlane, fFarPlane  );
-
-
+ 
 	 if (m_bcameraLeftHandle)
 	 {
 		 m_mProj.setPerspectiveFovLH( fFOV, fAspect, fNearPlane, fFarPlane);
@@ -164,13 +140,8 @@ void base_camera::setProjParams( float fFOV, float fAspect,
 }
 
 
-
-
-//========================================================================
-// Call this from your message proc so this class can handle window messages
-//========================================================================
-LRESULT base_camera::handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam, 
-												LPARAM lParam )
+ 
+LRESULT base_camera::handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
 {
 	m_hwnd = hWnd;
     UNREFERENCED_PARAMETER( hWnd );
@@ -307,9 +278,6 @@ LRESULT base_camera::handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam,
 }
 
 
-//========================================================================
-// Figure out the velocity based on keyboard input & drag if any
-//========================================================================
 void base_camera::getInput( bool bGetKeyboardInput, bool bGetMouseInput, 
 						   bool bGetGamepadInput, bool bResetCursorAfterMove )
 {
@@ -356,9 +324,9 @@ void base_camera::getInput( bool bGetKeyboardInput, bool bGetMouseInput,
             ptCurMouseDelta.y = 0;
         }
 
-		/**************** ИСКЛЮЧЕНО ********* MONITOR INFO
-        if( bResetCursorAfterMove && TRUE) // ks777 MYUTIsActive() )
-        {
+		// **************** REMOVED  ********* MONITOR INFO
+        // if( bResetCursorAfterMove && TRUE) // ks777 MYUTIsActive() )
+/*         {
             // Set position of camera to center of desktop, 
             // so it always has room to move.  This is very useful
             // if the cursor is hidden.  If this isn't done and cursor is hidden, 
@@ -376,8 +344,8 @@ void base_camera::getInput( bool bGetKeyboardInput, bool bGetMouseInput,
             ptCenter.y = (mi.rcMonitor.top + mi.rcMonitor.bottom) / 2;   
             SetCursorPos( ptCenter.x, ptCenter.y );
             m_ptLastMousePosition = ptCenter;
-        }
-		***********************************************/
+        } */
+ 
 
 
         // Smooth the relative mouse data over a few frames so it isn't 
@@ -403,10 +371,7 @@ void base_camera::getInput( bool bGetKeyboardInput, bool bGetMouseInput,
     }
 }
 
-
-//========================================================================
-// Figure out the velocity based on keyboard input & drag if any
-//========================================================================
+ 
 void base_camera::updateVelocity( float fElapsedTime )
 {
     mat44 mRotDelta;
@@ -465,12 +430,7 @@ void base_camera::updateVelocity( float fElapsedTime )
     }
 }
 
-
-
-
-//========================================================================
-// Clamps pV to lie inside m_vMinBoundary & m_vMaxBoundary
-//========================================================================
+ 
 void base_camera::constrainToBoundary( vec3* pV )
 {
     // Constrain vector to a bounding box 
@@ -484,11 +444,6 @@ void base_camera::constrainToBoundary( vec3* pV )
 }
 
 
-
-
-//========================================================================
-// Maps a windows virtual key to an enum
-//========================================================================
 CameraKeys base_camera::mapKey( UINT nKey )
 {
     // This could be upgraded to a method that's user-definable but for 
@@ -524,11 +479,6 @@ CameraKeys base_camera::mapKey( UINT nKey )
 }
 
 
-
-
-//========================================================================
-// Reset the camera's position back to the default
-//========================================================================
 void base_camera::reset()
 {
     setViewParams( m_vDefaultEye, m_vDefaultLookAt );
