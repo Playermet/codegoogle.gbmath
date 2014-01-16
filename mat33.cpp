@@ -9,12 +9,6 @@ namespace gbmath
 
 
 
-
-//=========================================================================
-//         mat33
-//=========================================================================
-
-//=========================================================================
 mat33& mat33::operator *= ( float f )
 {
 	floats[0][0] *= f;
@@ -30,7 +24,7 @@ mat33& mat33::operator *= ( float f )
 	return *this;
 }
 
-//=========================================================================
+
 mat33& mat33::operator /= ( float f )
 {
 	floats[0][0] /= f;
@@ -44,9 +38,9 @@ mat33& mat33::operator /= ( float f )
 	floats[2][2] /= f;
 
 	return *this;
-};
+}
 
-//=========================================================================
+
 float mat33::determinant () const
 {
 	return floats [0][0]*(floats [1][1]* floats [2][2]-floats [1][2]* floats [2][1]) -
@@ -54,7 +48,7 @@ float mat33::determinant () const
 	       floats [0][2]*(floats [1][0]* floats [2][1]-floats [1][1]* floats [2][0]);
 }
 
-//=========================================================================
+
 mat33&  mat33::invert ()
 {
 	mat33 a;
@@ -80,7 +74,6 @@ mat33&  mat33::invert ()
 	return *this;
 }
 
-//=========================================================================
 
 mat33 mat33::operator + ( const mat33& m ) const
 {
@@ -99,7 +92,7 @@ mat33 mat33::operator + ( const mat33& m ) const
 	return res;
 }
 
-//=========================================================================
+
 mat33 mat33::operator - ( const mat33& m ) const
 {
 	mat33 r;
@@ -117,7 +110,7 @@ mat33 mat33::operator - ( const mat33& m ) const
 	return r;
 }
 
-//==========================================================================
+
 mat33& mat33::operator = ( float a )
 {
   floats [0][1] = floats [0][2] = floats [1][0] =
@@ -128,7 +121,7 @@ mat33& mat33::operator = ( float a )
 	return *this;
 }
 
-//=========================================================================
+
 mat33& mat33::operator += ( const mat33& a )
 {
   floats [0][0] += a.floats  [0][0];
@@ -144,7 +137,7 @@ mat33& mat33::operator += ( const mat33& a )
 	return *this;
 }
 
-//=========================================================================
+
 mat33& mat33::operator -= ( const mat33& a )
 {
   floats [0][0] -=a.floats  [0][0];
@@ -161,8 +154,7 @@ mat33& mat33::operator -= ( const mat33& a )
 }
 
 
-//=========================================================================
-mat33 mat33::operator * ( const mat33& m) const
+mat33 mat33::operator * ( const mat33& m ) const
 {
 	mat33 res;
     res = *this;
@@ -180,7 +172,7 @@ mat33 mat33::operator * ( const mat33& m) const
 	return res;
 }
 
-//=========================================================================
+
 mat33 mat33::operator * (  float f ) const
 {
 	mat33  res;
@@ -198,7 +190,7 @@ mat33 mat33::operator * (  float f ) const
 	return res;
 }
 
-//=========================================================================
+
 mat33&   mat33::operator *= ( const mat33& m )
 {
 	mat33 t  = *this;
@@ -216,7 +208,7 @@ mat33&   mat33::operator *= ( const mat33& m )
 	return *this;
 }
 
-//=========================================================================
+
 vec3 mat33::operator * ( const vec3& v ) const
 {
 	vec3 res;
@@ -228,7 +220,7 @@ vec3 mat33::operator * ( const vec3& v ) const
 	return res;
 }
 
-//=========================================================================
+
 mat33& mat33::setScaling ( float x, float y, float z )
 {
 	 setIdentity();
@@ -240,7 +232,7 @@ mat33& mat33::setScaling ( float x, float y, float z )
 	return *this;
 }
 
-//=========================================================================
+
 mat33& mat33::setScaling ( const vec3& v )
 {
     setIdentity();
@@ -252,7 +244,7 @@ mat33& mat33::setScaling ( const vec3& v )
 	return *this;
 }
 
-//=========================================================================
+
 mat33& mat33::setRotationX ( float angle )
 {
 	float sine ,  cosine;
@@ -267,7 +259,7 @@ mat33& mat33::setRotationX ( float angle )
 	return *this;
 }
 
-//=========================================================================
+
 mat33& mat33::setRotationY ( float angle )
 {
 	float sine ,  cosine;
@@ -282,7 +274,7 @@ mat33& mat33::setRotationY ( float angle )
 	return *this;
 }
 
-//=========================================================================
+
 mat33& mat33::setRotationZ ( float angle )
 {
 
@@ -298,7 +290,7 @@ mat33& mat33::setRotationZ ( float angle )
 	return *this;
 }
 
-//=========================================================================
+
 mat33& mat33::setRotation ( const vec3& v, float angle )
 {
 
@@ -319,28 +311,28 @@ mat33& mat33::setRotation ( const vec3& v, float angle )
 	return *this;
 }
 
-//=========================================================================
+
 mat33&  mat33::setMirrorX()
 {
- setIdentity();
- floats  [0][0] = -1.0;
- return *this;
+	setIdentity();
+	floats  [0][0] = -1.0;
+	return *this;
 }
 
-//=========================================================================
+
 mat33&  mat33::setMirrorY()
 {
- setIdentity();
-  floats  [1][1] = -1.0;
- return *this;
+	setIdentity();
+	floats  [1][1] = -1.0;
+	return *this;
 }
 
-//=========================================================================
+ 
 mat33&  mat33::setMirrorZ()
 {
- setIdentity();
- floats  [2][2] = -1.0;
- return  *this;
+	setIdentity();
+	floats  [2][2] = -1.0;
+	return  *this;
 }
 
 

@@ -6,34 +6,18 @@
 namespace gbmath
 {
 
-
-
-//========================================================================
-// Constructor
-//========================================================================
+ 
 first_person_camera::first_person_camera() :
     m_nActiveButtonMask( 0x07 )
 {
     m_bRotateWithoutButtonDown = false;
 }
 
-
-
-
-//========================================================================
-// Update the view matrix based on user input & elapsed time
-//========================================================================
+ 
 void first_person_camera::frameMove( float fElapsedTime )
 {
 
-
-  //  if( MYUTGetGlobalTimer()->IsStopped() )
-	//{
-  //      fElapsedTime = 1.0f / MYUTGetFPS();
-	//}
-
-
-
+ 
     if( isKeyDown(m_aKeys[CAM_RESET]) )
         reset();
 
@@ -74,8 +58,7 @@ void first_person_camera::frameMove( float fElapsedTime )
 
     // Make a rotation matrix based on the camera's yaw & pitch
     mat44 mCameraRot;
-    //D 3DX MatrixRotationYawPitchRoll( mCameraRot, m_fCameraYawAngle, m_fCameraPitchAngle, 0 );
-	  mCameraRot.setRotationYawPitchRoll( m_fCameraYawAngle, m_fCameraPitchAngle, 0.0f  );
+	mCameraRot.setRotationYawPitchRoll( m_fCameraYawAngle, m_fCameraPitchAngle, 0.0f  );
 
 
 
@@ -84,15 +67,11 @@ void first_person_camera::frameMove( float fElapsedTime )
     vec3 vLocalUp    = vec3(0,1,0);
     vec3 vLocalAhead = vec3(0,0,1);
 
-   // D 3DX Vec3TransformCoord( vWorldUp, vLocalUp, mCameraRot );
-	  vWorldUp = vLocalUp;
-		 vWorldUp.transform_coord(mCameraRot);
+	vWorldUp = vLocalUp;
+	vWorldUp.transform_coord(mCameraRot);
 
-   // D 3DX Vec3TransformCoord( vWorldAhead, vLocalAhead, mCameraRot );
-	 vWorldAhead = vLocalAhead;
-	  vWorldAhead.transform_coord(mCameraRot);
-
-
+	vWorldAhead = vLocalAhead;
+	vWorldAhead.transform_coord(mCameraRot);
 
     // Transform the position delta by the camera's rotation 
     vec3 vPosDeltaWorld;
@@ -100,14 +79,12 @@ void first_person_camera::frameMove( float fElapsedTime )
     {
         // If restricting Y movement, do not include pitch
         // when transforming position delta vector.
-        //D 3DX MatrixRotationYawPitchRoll( mCameraRot, m_fCameraYawAngle, 0.0f, 0.0f );
 		mCameraRot.setRotationYawPitchRoll(m_fCameraYawAngle, 0.0f, 0.0f  );
 
     }
 
-    //D 3DX Vec3TransformCoord( vPosDeltaWorld, vPosDelta, mCameraRot );
-	 vPosDeltaWorld =   vPosDelta;
-	 vPosDeltaWorld.transform_coord(mCameraRot);
+	vPosDeltaWorld =   vPosDelta;
+	vPosDeltaWorld.transform_coord(mCameraRot);
 
 
     // Move the eye position 
@@ -118,22 +95,13 @@ void first_person_camera::frameMove( float fElapsedTime )
     // Update the lookAt position based on the eye position 
     m_vLookAt = m_vEye + vWorldAhead;
 
-
     // Update the view matrix
-    //D 3DX MatrixLookAtLH( m_mView, m_vEye, m_vLookAt, vWorldUp );
 	m_mView.setViewLookAtLH(  m_vEye, m_vLookAt, vWorldUp  );
 
-
-
-  //D 3DX MatrixInverse( m_mCameraWorld, NULL, m_mView );
 	m_mCameraWorld = m_mView.inverted();
-
 }
 
 
-//========================================================================
-// Enable or disable each of the mouse buttons for rotation drag.
-//========================================================================
 void first_person_camera::setRotateButtons( bool bLeft, bool bMiddle, 
 										   bool bRight, 
 										   bool bRotateWithoutButtonDown )

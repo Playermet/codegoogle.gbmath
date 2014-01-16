@@ -9,11 +9,7 @@
 #ifndef __GBMATH_H__
 #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
-
-//#include "../base/Types.h"
-//#include "color4.h"
-
-
+ 
 namespace gbmath
 {
 
@@ -30,10 +26,10 @@ namespace gbmath
 
 	};
 
-	//template <typename T>
 
 	//! \brief  Standard four-color int
-	struct color4_32 : public color4<byte_t> {
+	struct color4_32 : public color4<byte_t> 
+	{
 
 		  inline color4_32() 
 		  {  
@@ -60,11 +56,6 @@ namespace gbmath
 
 
 	};
-
-
-
-
-
 
 
 }

@@ -19,7 +19,8 @@ namespace gbmath
 	 
 
 	//!  \brief      Three-standard color float. 
-	class Color3f  : public  color3<float> {
+	class Color3f  : public  color3<float> 
+	{
 	public:
 		//union
 		//{

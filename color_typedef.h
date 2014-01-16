@@ -10,8 +10,6 @@
 #include "color3.h"
 #include "color4.h"
 
-//#include "color3f.h"
-//#include "color4f.h"
 
  
 namespace gbmath

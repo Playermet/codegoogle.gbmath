@@ -1,6 +1,7 @@
 ﻿/**  \file
  \brief vectors of observations.
 
+ 
 */
 
 #pragma once
@@ -9,6 +10,7 @@
     #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
 #endif
 
+
 namespace gbmath
 {
 
@@ -16,9 +18,9 @@ namespace gbmath
    //! \brief vectors of observations..
    struct eyedata
    {
-	 vec3   eye_position;  ///<	  position.
-	 vec3   eye_at;        ///<   target.
-	 vec3   eye_up;        ///<   up.
+	 vec3   eye_position;  ///<  position.
+	 vec3   eye_at;        ///<  target.
+	 vec3   eye_up;        ///<  up.
 
 
 	 //! \brief   get the direction of observation.
@@ -29,23 +31,24 @@ namespace gbmath
 		 return res;
 	 }
 
-	 void decomposeInverseView(const mat44& mInverseView)
-	 {
-	  assert(  false && " need check code  decomposeInverseView");
- 
+	void decomposeInverseView(const mat44& mInverseView)
+	{
+		assert(  false && " need check code  decomposeInverseView");
+
 		// assert(   false &&  "no code");
-	  eye_position.x = mInverseView._41;
-	  eye_position.y = mInverseView._42;
-	  eye_position.z = mInverseView._43;
+		eye_position.x
+		= mInverseView._41;
+		eye_position.y = mInverseView._42;
+		eye_position.z = mInverseView._43;
 
-	  assert(false);
+		assert(false);
 
-     // dir = *( (vec3*)&minv._31);
+		// dir = *( (vec3*)&minv._31);
 
 
-     // up  = *( (vec3*)&minv._21);
+		// up  = *( (vec3*)&minv._21);
 
-	 }
+	}
 
 	 operator std::string() const
 	 {
@@ -83,10 +86,6 @@ namespace gbmath
 	 }
 
 
-
-
-
    };
  
 }
-

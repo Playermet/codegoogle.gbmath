@@ -9,24 +9,6 @@
 #endif
 
  
-
-//#include "color.h"
-//#include "color_integer.h"
-//#include "color_def.h"
-
-
-//#include <float.h>
-//#include <math.h>
-//#include <string>
-
-//#include <assert.h>
-
-//#include "color.h"
-//#include "color3.h"
-//#include "color4.h"
-//#include "color_def.h"
-
- 
 namespace gbmath
 {
 
@@ -39,8 +21,6 @@ namespace gbmath
 //!  \brief   Building a color-by-byte. Alpha One.
 inline unsigned int make_color_argb( byte_t a, byte_t r, byte_t g, byte_t b )
 {
-	//#define MAKECOLOR_ARGB(a,r,g,b)
-	//(( uicolor32_t)((((a)&0xff)<<24)|(((r)&0xff)<<16)|(((g)&0xff)<<8)|((b)&0xff)))
 	assert( sizeof(int) == 4 && "check platform" );
 	int res =  ( (a&0xff)<<24 ) | ( (r&0xff)<<16 ) | ( (g&0xff)<<8 ) |  (b&0xff);
 	return res;
@@ -50,8 +30,6 @@ inline unsigned int make_color_argb( byte_t a, byte_t r, byte_t g, byte_t b )
 //!   \brief Building a color-by-byte. Alfa last
 inline unsigned int make_color_rgba( byte_t r , byte_t g , byte_t b , byte_t a )
 {
-	//#define MAKECOLOR_RGBA(r,g,b,a)
-	// MAKECOLOR_ARGB(a,r,g,b)
 	return make_color_argb(a,r,g,b);
 }
 
@@ -72,8 +50,6 @@ inline color_rgb24_s  make_rgb(byte_t r, byte_t g, byte_t b)
 inline unsigned int make_rgba(float r, float g, float b, float a)
 {
 	assert(sizeof(unsigned int) == 4);
-	//#define MAKECOLOR_FLOAT_RGBA(r,g,b,a) \
-	// MAKECOLOR_RGBA((uint32_t)((r)*255.f),(uint32_t)((g)*255.f),(uint32_t)((b)*255.f),(uint32_t)((a)*255.f))
 	return make_color_rgba(
 		(byte_t)(r*255.f),(byte_t) (g*255.f),	(byte_t)(b*255.f),	(byte_t)(a*255.f)
 	);
@@ -104,7 +80,7 @@ inline D3DCOLORVALUE make_d3dcolorvalue( D3DCOLOR col )
 	return res;
 }
 
-#endif    // _D3D9_H_
+#endif   // _D3D9_H_
 
 
 
@@ -145,16 +121,12 @@ inline void colorSwapGB(unsigned int&  color)
 	color |= ( (unsigned int)_b << 8);
 }
 
-
-
 //! \brief  Converting 4-byte RGBA color order in the order ARGB.
 inline  unsigned int   rgba_to_argb(unsigned  int val )
 {
 	assert( sizeof(unsigned int) == 4 );
 	return ( (val>>8) | (val<<24)  );
 }
-
-
 
 //! \brief	 Converting 4-byte order ARGB color in order RGBA.
 inline unsigned int   argb_to_rgba(unsigned  int val )
@@ -169,7 +141,6 @@ inline unsigned int   argb_to_rgba(unsigned  int val )
 //------------------------------------------------
 // Isolation of the color components
 //------------------------------------------------
-
 
 inline byte_t   colorExtractA( unsigned int color )
 {
@@ -192,10 +163,10 @@ inline byte_t   colorExtractB( unsigned int color )
 }
 
 
+
 //-------------------------------------------------
 //  Isolation of the color component  as float.
 //-------------------------------------------------
-
 
 
 inline float   colorExtractAf( unsigned int color )
@@ -222,10 +193,11 @@ inline float   colorExtractBf( unsigned int color )
 }
 
 
+
+
 //-------------------------------------------------
 // Set the color components
 //-------------------------------------------------
-
 
 
 inline void   colorSetA( unsigned int & col, byte_t a ) 

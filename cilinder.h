@@ -18,7 +18,8 @@ namespace gbmath
 
 
    //! \brief Class points on the cylinder base center coordinates and radius
-   class cilinder {
+   class cilinder 
+   {
    public:
 	    vec3  p1;  ///< The first coordinate in the center of the cylinder.
 	    vec3  p2;  ///< The second coordinate in the center of the cylinder.

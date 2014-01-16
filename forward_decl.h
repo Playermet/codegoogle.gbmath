@@ -15,7 +15,6 @@
 namespace gbmath
 {
 
-//---------------------------------------------------------------
 
 namespace scalar
 {
@@ -23,7 +22,6 @@ namespace scalar
 
 }
 
-//-------------------------------------------------------------------------
 
 // color
 
@@ -47,16 +45,6 @@ struct vec4;
 struct mat22;
 struct mat33;
 struct mat44;
-
-//template <typename T>
-//struct matrix2x2;
-
-//template <typename T>
-//struct matrix3x3;
-
-//template <typename T>
-//struct matrix4x4;
-
 
 class  Quaternion;
 
@@ -126,4 +114,3 @@ class geometry_context;
 
 
 }
-// end namespace gbmath

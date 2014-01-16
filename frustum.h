@@ -14,24 +14,12 @@ namespace gbmath
 {
 
    //! \brief   frustum. Standard frustum
-   class frustum  {
+   class frustum  
+   {
    public:
 
-	   //union 
-	   //{
-	   
-		   //struct 
-		   //{
-			//   plane_s  front;
-			//   plane_s  back;
-			//   plane_s  left;
-			//   plane_s  right;
-			//   plane_s  top;
-			//   plane_s  bottom;
-		   //}; 
+		plane_s  planes [6] ;
 
-		   plane_s  planes [6] ;
-	   //};
 
 	   inline frustum() 
 	   {
@@ -69,14 +57,7 @@ namespace gbmath
 	   //! \brief   Hit Testing in the pyramid box
        bool checkAABB(const aabb& aabb) const;
 
-
-	   		// left 0 
-			// right 1
-			// top 2
-			// Bottom 3
-			// back 4
-			// front 5
-     
+	   
 	   const plane_s& get_left() const
 	   {
 			return planes[0];
@@ -118,15 +99,6 @@ namespace gbmath
 		os  << "top    = " << fr.get_top()     << "\n";
 		os  << "bottom = " << fr.get_bottom()  << "\n";
 
-		 /*
-		 os << "front  = " << planes[5] << "\n";
-		 os << "back   = " << planes[4] << "\n";
-		 os << "left   = " << planes[0] << "\n";
-		 os << "right  = " << planes[1] << "\n";
-		 os << "top    = " << planes[2] << "\n";
-		 os << "bottom = " << planes[3] << "\n";
-		  */
-
 		return os;
 	 }
 
@@ -134,13 +106,4 @@ namespace gbmath
 
    };
 
-
-
-
-
-
-
-
-
- 
 }

@@ -17,455 +17,455 @@ namespace gbmath
 {
 
 	//! \brief  template color4
-	 template <typename T>
-	 struct color4
+	template <typename T>
+	struct color4
+	{
+	 T   r, g, b, a;
+
+
+	 color4()
 	 {
-		 T   r, g, b, a;
+		r = g = b = a = T();
+	 }
+
+	color4<T> (const color4<T>& c)
+	{
+		r = c.r;
+		g = c.g;
+		b = c.b;
+		a = c.a;
+	}
+
+	inline color4<T>( T _r , T _g , T _b )
+	{
+		r = _r;
+		g = _g;
+		b = _b;
+		a = 1;
+	}
+
+	inline color4<T>( T _r , T _g , T _b , T _a )
+	{
+		r = _r;
+		g = _g;
+		b = _b;
+		a = _a;
+	}
 
 
-		 color4()
-		 {
-			r = g = b = a = T();
-		 }
 
-		color4<T> (const color4<T>& c)
+	 inline  operator T*()                { return &r; }
+	 inline  operator const T*() const    { return &r; }
+
+
+
+	 inline bool operator == (const color4<T>& c) const
+	 {
+		 return (r==c.r) && (g==c.g) && (b==c.b) && (a==c.a);
+	 }
+
+	 inline bool operator != (const color4<T>& c) const
+	 {
+		 return (r!=c.r) && (g!=c.g) && (b!=c.b) && (a!=c.a);
+	 }
+
+	 inline color4<T>& operator *= (const T s)
+	 {
+		 r*=s;
+		 b*=s;
+		 g*=s;
+		 a*=s;
+		 return *this;
+	 }
+
+	 inline color4<T>& operator *= (const color4<T>& c)
+	 {
+		 r *= c.r;
+		 b *= c.b;
+		 g *= c.g;
+		 a *= c.a;
+		 return *this;
+	 }
+
+	 inline color4<T>& operator /= (const T s)
+	 {
+		 r /= s;
+		 b /= s;
+		 g /= s;
+		 a /= s;
+		 return *this;
+	 }
+
+	 inline color4<T>& operator /= (const color4<T>& c)
+	 {
+		 r /= c.r;
+		 b /= c.b;
+		 g /= c.g;
+		 a /= c.a;
+		 return *this;
+	 }
+
+	 inline color4<T>& operator += (const T s)
+	 {
+		 r += s;
+		 b += s;
+		 g += s;
+		 a += s;
+		 return *this;
+	 }
+
+	 inline color4<T>& operator += (const color4<T>& c)
+	 {
+		 r += c.r;
+		 b += c.b;
+		 g += c.g;
+		 a += c.a;
+		 return *this;
+	 }
+
+	 inline color4<T>& operator -= (const T s)
+	 {
+		 r -= s;
+		 b -= s;
+		 g -= s;
+		 a -= s;
+		 return *this;
+	 }
+
+	 inline color4<T>& operator -= (const color4<T>& c)
+	 {
+		 r -= c.r;
+		 b -= c.b;
+		 g -= c.g;
+		 a -= c.a;
+		 return *this;
+	 }
+
+	 inline color4<T>  operator + (const color4<T>& c) const
+	 {
+		 color4<T> res;
+		 res.r = r + c.r;
+		 res.g = g + c.g;
+		 res.b = b + c.b;
+		 res.a = a + c.a;
+		 return res;
+	 }
+
+	 inline color4<T>  operator + (const T f) const
+	 {
+		 color4<T> res;
+		 res.r = r + f;
+		 res.g = g + f;
+		 res.b = b + f;
+		 res.a = a + f;
+		 return res;
+	 }
+
+
+	 inline color4<T>   operator - (const color4<T>& color) const
+	 {
+		 Color4f res;
+		 res.r=r-color.r;
+		 res.g=g-color.g;
+		 res.b=b-color.b;
+		 res.a=a-color.a;
+		 return res;
+	 }
+
+	 inline color4<T>   operator - (const T f) const
+	 {
+		 color4<T> res;
+		 res.r = r-f;
+		 res.g = g-f;
+		 res.b = b-f;
+		 res.a = a-f;
+		 return res;
+	 }
+
+
+	 inline color4<T>   operator / (const color4<T>& color) const
+	 {
+		 color4<T> res;
+		 res.r = r / color.r;
+		 res.g = g / color.g;
+		 res.b = b / color.b;
+		 res.a = a / color.a;
+		 return res;
+	 }
+
+	 inline color4<T>   operator / (const T f) const
+	 {
+		 color4<T> res;
+		 res.r = r / f;
+		 res.g = g / f;
+		 res.b = b / f;
+		 res.a = a / f;
+		 return res;
+	 }
+
+
+	 color4<T>   operator * (const color4<T>& color) const
+	 {
+		 color4<T> res;
+		 res.r = r*color.r;
+		 res.g = g*color.g;
+		 res.b = b*color.b;
+		 res.a = a*color.a;
+		 return res;
+	 }
+
+	 color4<T>   operator * (const T f) const
+	 {
+		 color4<T> res;
+		 res.r = r * f;
+		 res.g = g * f;
+		 res.b = b * f;
+		 res.a = a * f;
+		 return res;
+	 }
+
+
+	 inline void init( T _r, T _g, T _b,  T _a )
+	 {
+		 r = _r;
+		 g = _g;
+		 b = _b;
+		 a = _a;
+	 }
+
+
+	 //! \brief  test each component of zero
+	 inline bool empty() const
+	 {
+		 const T _e = T();
+		 return (r == _e) && (g == _e) && (b == _e) && (a == _e);
+	 }
+
+	 //! \brief  set to zero each component.
+	 inline void setzero()
+	 {
+		 r = g = b = a = T();
+	 }
+
+	 inline color4<T>& set_alpha(const T val)
+	{
+		a = val;
+		return  *this;
+	}
+
+
+	 //! \brief    linear interpolation between this and the color on k.
+	 inline color4<T> lerp(const color4<T>& color, const T k) const
+	 {
+		 color4<T> res;
+		 res.r = color.r + k * ( r - color.r );
+		 res.g = color.g + k * ( g - color.g );
+		 res.b = color.b + k * ( b - color.b );
+		 res.a = color.a + k * ( a - color.a );
+		 return res;
+	 }
+
+
+	 //! \brief Scaling of color. Changing the brightness.
+	 inline color4<T>& modulate(const color4<T>& color)
+	 {
+		 r *= color.r;
+		 g *= color.g;
+		 b *= color.b;
+		 a *= color.a;
+		 return *this;
+	 }
+
+	 //! \brief get color scale. Changing the brightness.
+	 inline color4<T> modulated(const color4<T>& color) const
+	 {
+		 color4<T> res;
+		 res.r = r * color.r;
+		 res.g = g * color.g;
+		 res.b = b * color.b;
+		 res.a = a * color.a;
+		 return *this;
+	 }
+
+
+	 inline color4<T>& negative()
+	 {
+		 r = 1 - r;
+		 g = 1 - g;
+		 b = 1 - b;
+		 a = 1 - a;
+		 return *this;
+	 }
+
+	 //! \brief   a negative.
+	 inline color4<T> negatived() const
+	 {
+		 color4<T> res (*this);
+		 res.negative();
+		 return res;
+	 }
+
+
+	 //! \brief Pruning values ​​within 0.0 ... 1.0
+	 inline color4<T>& saturate()
+	 {
+		if(r>1) r=1;   if(r<0) r=0;
+		if(g>1) g=1;   if(g<0) g=0;
+		if(b>1) b=1;   if(b<0) b=0;
+		if(a>1) a=1;   if(a<0) a=0;
+		return *this;
+	 }
+
+	 //! \brief get clipping values ​​within 0.0 ... 1.0
+	 inline color4<T> saturated() const
+	 {
+		 color4<T> res (*this);
+		 res.saturate();
+		 return res;
+	 }
+
+	 //! \brief Set as the average color between this and col.
+	 inline color4<T>& average(const color4<T>& c)
+	 {
+		const T _two = (T)2;
+		r = (r + c.r) / _two;
+		g = (g + c.g) / _two;
+		b = (b + c.b) / _two;
+		a = (a + c.a) / _two;
+		return *this;
+	 }
+
+	 //! \brief  get   as the average color between this and col.
+	 inline color4<T> averaged(const color4<T>& col) const
+	 {
+		 color4<T> res = *this;
+		 res.average(col);
+		 return res;
+	 }
+
+
+	 //! \brief Addition of only rgb. alpha does not change.
+	 inline color4<T>& add_rgb(const T k)
+	 {
+		 r += k;
+		 g += k;
+		 b += k;
+		 return *this;
+	 }
+
+	  //! \brief scaling of only rgb. alpha does not change.
+	 inline color4<T>& scale_rgb(const T k)
+	 {
+		 r *= k;
+		 g *= k;
+		 b *= k;
+		 return *this;
+	 }
+
+
+
+	 //! \brief change contrast
+	 inline color4<T>& adjust_contrast(const T k)
+	 {
+		 const T _half = (T)0.5;
+		 r =  _half + k * ( r - _half);
+		 g =  _half + k * ( g - _half );
+		 b =  _half + k * ( b - _half );
+		 return *this;
+	 }
+
+
+	 //! \brief  get a change contrast
+	 inline color4<T> adjusted_contrast(const T k) const
+	 {
+		 color4<T> res(*this);
+		 res.adjust_contrast(k);
+		 return res;
+	 }
+
+
+
+	 //! \brief change the saturation
+	 inline color4<T>& adjust_saturation( const T k )
+	 {
+		 const T grey  =  r * (T)0.2125 +  g * (T)0.7154 +  b * (T)0.0721 ;
+		 r  = grey + k * ( k - grey );
+		 g  = grey + k * ( k - grey );
+		 b  = grey + k * ( k - grey );
+		 return *this;
+	 }
+
+	inline color4<T> adjusted_saturation( const T k ) const
+	{
+		color4<T> res (*this);
+		res.adjust_saturation( k );
+		return res;
+	}
+
+	//! \brief  set as white color
+	inline color4<T>& set_white( const T _a = (T)1 )
+	{
+		r = g = b = (T)1;
+		a =_a;
+		return *this;
+	}
+
+	//! \brief set as black color
+	inline color4<T>& set_black( const T _a = (T)1 )
+	{
+		r = g = b = (T)0;
+		a=_a;
+		return *this;
+	}
+
+
+
+	 friend std::ostream &operator << (std::ostream &stream, const color4<T>& c)
+	 {
+		 stream << c.r << " " << c.g << " " << c.b << " " << c.a ;
+		 return stream;
+	 }
+
+	 friend std::istream &operator >> (std::istream &stream,   color4<T>& c)
+	 {
+		 stream >> c.r >> " " >> c.g >> " " >> c.b >> " " >> c.a ;
+		 return stream;
+	 }
+
+	 friend std::ostringstream &operator << (std::ostringstream &stream, const color4<T>& c)
+	 {
+		 stream << c.r << " " << c.g << " " << c.b << " " << c.a ;
+		 return stream;
+	 }
+
+	#if defined(_MSC_VER)
+		#pragma warning( push )
+		#pragma warning( disable : 4290 )
+	#endif
+
+	 friend std::stringstream &operator >> (std::stringstream &stream, color4<T>& c) 
+														throw (std::invalid_argument)
+	 {
+		stream >> c.r;
+		stream >> c.g;
+		stream >> c.b;
+		stream >> c.a;
+
+		if(stream.fail())
 		{
-			r = c.r;
-			g = c.g;
-			b = c.b;
-			a = c.a;
+			throw std::invalid_argument("cast error");
 		}
 
-		inline color4<T>( T _r , T _g , T _b )
-		{
-			r = _r;
-			g = _g;
-			b = _b;
-			a = 1;
-		}
+		return stream;
+	 }
 
-		inline color4<T>( T _r , T _g , T _b , T _a )
-		{
-			r = _r;
-			g = _g;
-			b = _b;
-			a = _a;
-		}
 
+	#if defined(_MSC_VER)
+		#pragma warning( pop )
+	#endif
 
 
-		 inline  operator T*()                { return &r; }
-		 inline  operator const T*() const    { return &r; }
 
+	};
 
-
-		 inline bool operator == (const color4<T>& c) const
-		 {
-			 return (r==c.r) && (g==c.g) && (b==c.b) && (a==c.a);
-		 }
-
-		 inline bool operator != (const color4<T>& c) const
-		 {
-			 return (r!=c.r) && (g!=c.g) && (b!=c.b) && (a!=c.a);
-		 }
-
-		 inline color4<T>& operator *= (const T s)
-		 {
-			 r*=s;
-			 b*=s;
-			 g*=s;
-			 a*=s;
-			 return *this;
-		 }
-
-		 inline color4<T>& operator *= (const color4<T>& c)
-		 {
-			 r *= c.r;
-			 b *= c.b;
-			 g *= c.g;
-			 a *= c.a;
-			 return *this;
-		 }
-
-		 inline color4<T>& operator /= (const T s)
-		 {
-			 r /= s;
-			 b /= s;
-			 g /= s;
-			 a /= s;
-			 return *this;
-		 }
-
-		 inline color4<T>& operator /= (const color4<T>& c)
-		 {
-			 r /= c.r;
-			 b /= c.b;
-			 g /= c.g;
-			 a /= c.a;
-			 return *this;
-		 }
-
-		 inline color4<T>& operator += (const T s)
-		 {
-			 r += s;
-			 b += s;
-			 g += s;
-			 a += s;
-			 return *this;
-		 }
-
-		 inline color4<T>& operator += (const color4<T>& c)
-		 {
-			 r += c.r;
-			 b += c.b;
-			 g += c.g;
-			 a += c.a;
-			 return *this;
-		 }
-
-		 inline color4<T>& operator -= (const T s)
-		 {
-			 r -= s;
-			 b -= s;
-			 g -= s;
-			 a -= s;
-			 return *this;
-		 }
-
-		 inline color4<T>& operator -= (const color4<T>& c)
-		 {
-			 r -= c.r;
-			 b -= c.b;
-			 g -= c.g;
-			 a -= c.a;
-			 return *this;
-		 }
-
-		 inline color4<T>  operator + (const color4<T>& c) const
-		 {
-			 color4<T> res;
-			 res.r = r + c.r;
-			 res.g = g + c.g;
-			 res.b = b + c.b;
-			 res.a = a + c.a;
-			 return res;
-		 }
-
-		 inline color4<T>  operator + (const T f) const
-		 {
-			 color4<T> res;
-			 res.r = r + f;
-			 res.g = g + f;
-			 res.b = b + f;
-			 res.a = a + f;
-			 return res;
-		 }
-
-
-		 inline color4<T>   operator - (const color4<T>& color) const
-		 {
-			 Color4f res;
-			 res.r=r-color.r;
-			 res.g=g-color.g;
-			 res.b=b-color.b;
-			 res.a=a-color.a;
-			 return res;
-		 }
-
-		 inline color4<T>   operator - (const T f) const
-		 {
-			 color4<T> res;
-			 res.r = r-f;
-			 res.g = g-f;
-			 res.b = b-f;
-			 res.a = a-f;
-			 return res;
-		 }
-
-
-		 inline color4<T>   operator / (const color4<T>& color) const
-		 {
-			 color4<T> res;
-			 res.r = r / color.r;
-			 res.g = g / color.g;
-			 res.b = b / color.b;
-			 res.a = a / color.a;
-			 return res;
-		 }
-
-		 inline color4<T>   operator / (const T f) const
-		 {
-			 color4<T> res;
-			 res.r = r / f;
-			 res.g = g / f;
-			 res.b = b / f;
-			 res.a = a / f;
-			 return res;
-		 }
-
-
-		 color4<T>   operator * (const color4<T>& color) const
-		 {
-			 color4<T> res;
-			 res.r = r*color.r;
-			 res.g = g*color.g;
-			 res.b = b*color.b;
-			 res.a = a*color.a;
-			 return res;
-		 }
-
-		 color4<T>   operator * (const T f) const
-		 {
-			 color4<T> res;
-			 res.r = r * f;
-			 res.g = g * f;
-			 res.b = b * f;
-			 res.a = a * f;
-			 return res;
-		 }
-
-
-		 inline void init( T _r, T _g, T _b,  T _a )
-		 {
-			 r = _r;
-			 g = _g;
-			 b = _b;
-			 a = _a;
-		 }
-
-
-		 //! \brief  test each component of zero
-		 inline bool empty() const
-		 {
-			 const T _e = T();
-			 return (r == _e) && (g == _e) && (b == _e) && (a == _e);
-		 }
-
-		 //! \brief  set to zero each component.
-		 inline void setzero()
-		 {
-			 r = g = b = a = T();
-		 }
-
-		 inline color4<T>& set_alpha(const T val)
-		{
-			a = val;
-			return  *this;
-		}
-
-
-		 //! \brief    linear interpolation between this and the color on k.
-		 inline color4<T> lerp(const color4<T>& color, const T k) const
-		 {
-			 color4<T> res;
-			 res.r = color.r + k * ( r - color.r );
-			 res.g = color.g + k * ( g - color.g );
-			 res.b = color.b + k * ( b - color.b );
-			 res.a = color.a + k * ( a - color.a );
-			 return res;
-		 }
-
-
-		 //! \brief Scaling of color. Changing the brightness.
-		 inline color4<T>& modulate(const color4<T>& color)
-		 {
-			 r *= color.r;
-			 g *= color.g;
-			 b *= color.b;
-			 a *= color.a;
-			 return *this;
-		 }
-
-		 //! \brief get color scale. Changing the brightness.
-		 inline color4<T> modulated(const color4<T>& color) const
-		 {
-			 color4<T> res;
-			 res.r = r * color.r;
-			 res.g = g * color.g;
-			 res.b = b * color.b;
-			 res.a = a * color.a;
-			 return *this;
-		 }
-
- 
-		 inline color4<T>& negative()
-		 {
-			 r = 1 - r;
-			 g = 1 - g;
-			 b = 1 - b;
-			 a = 1 - a;
-			 return *this;
-		 }
-
-		 //! \brief   a negative.
-		 inline color4<T> negatived() const
-		 {
-			 color4<T> res (*this);
-			 res.negative();
-			 return res;
-		 }
-
-
-		 //! \brief Pruning values ​​within 0.0 ... 1.0
-		 inline color4<T>& saturate()
-		 {
-			if(r>1) r=1;   if(r<0) r=0;
-			if(g>1) g=1;   if(g<0) g=0;
-			if(b>1) b=1;   if(b<0) b=0;
-			if(a>1) a=1;   if(a<0) a=0;
-			return *this;
-		 }
-
-		 //! \brief get clipping values ​​within 0.0 ... 1.0
-		 inline color4<T> saturated() const
-		 {
-			 color4<T> res (*this);
-			 res.saturate();
-			 return res;
-		 }
-
-		 //! \brief Set as the average color between this and col.
-		 inline color4<T>& average(const color4<T>& c)
-		 {
-			const T _two = (T)2;
-			r = (r + c.r) / _two;
-			g = (g + c.g) / _two;
-			b = (b + c.b) / _two;
-			a = (a + c.a) / _two;
-			return *this;
-		 }
-
-		 //! \brief  get   as the average color between this and col.
-		 inline color4<T> averaged(const color4<T>& col) const
-		 {
-			 color4<T> res = *this;
-			 res.average(col);
-			 return res;
-		 }
-
-
-		 //! \brief Addition of only rgb. alpha does not change.
-		 inline color4<T>& add_rgb(const T k)
-		 {
-			 r += k;
-			 g += k;
-			 b += k;
-			 return *this;
-		 }
-
- 		  //! \brief scaling of only rgb. alpha does not change.
-		 inline color4<T>& scale_rgb(const T k)
-		 {
-			 r *= k;
-			 g *= k;
-			 b *= k;
-			 return *this;
-		 }
-
-
-
-		 //! \brief change contrast
-		 inline color4<T>& adjust_contrast(const T k)
-		 {
-			 const T _half = (T)0.5;
-			 r =  _half + k * ( r - _half);
-			 g =  _half + k * ( g - _half );
-			 b =  _half + k * ( b - _half );
-			 return *this;
-		 }
-
-
-		 //! \brief  get a change contrast
-		 inline color4<T> adjusted_contrast(const T k) const
-		 {
-			 color4<T> res(*this);
-			 res.adjust_contrast(k);
-			 return res;
-		 }
-
-
-
-		 //! \brief change the saturation
-		 inline color4<T>& adjust_saturation( const T k )
-		 {
-			 const T grey  =  r * (T)0.2125 +  g * (T)0.7154 +  b * (T)0.0721 ;
-			 r  = grey + k * ( k - grey );
-			 g  = grey + k * ( k - grey );
-			 b  = grey + k * ( k - grey );
-			 return *this;
-		 }
-
-		inline color4<T> adjusted_saturation( const T k ) const
-		{
-			color4<T> res (*this);
-			res.adjust_saturation( k );
-			return res;
-		}
-
-		//! \brief  set as white color
-		inline color4<T>& set_white( const T _a = (T)1 )
-		{
-			r = g = b = (T)1;
-			a =_a;
-			return *this;
-		}
-
-		//! \brief set as black color
-		inline color4<T>& set_black( const T _a = (T)1 )
-		{
-			r = g = b = (T)0;
-			a=_a;
-			return *this;
-		}
-
-
-
-		 friend std::ostream &operator << (std::ostream &stream, const color4<T>& c)
-		 {
-			 stream << c.r << " " << c.g << " " << c.b << " " << c.a ;
-			 return stream;
-		 }
-
-		 friend std::istream &operator >> (std::istream &stream,   color4<T>& c)
-		 {
-			 stream >> c.r >> " " >> c.g >> " " >> c.b >> " " >> c.a ;
-			 return stream;
-		 }
-
-		 friend std::ostringstream &operator << (std::ostringstream &stream, const color4<T>& c)
-		 {
-			 stream << c.r << " " << c.g << " " << c.b << " " << c.a ;
-			 return stream;
-		 }
-
-		#if defined(_MSC_VER)
-			#pragma warning( push )
-			#pragma warning( disable : 4290 )
-		#endif
-
-		 friend std::stringstream &operator >> (std::stringstream &stream, color4<T>& c) 
-															throw (std::invalid_argument)
-		 {
-			stream >> c.r;
-			stream >> c.g;
-			stream >> c.b;
-			stream >> c.a;
-
-			if(stream.fail())
-			{
-				throw std::invalid_argument("cast error");
-			}
-
-			return stream;
-		 }
-
-
-		#if defined(_MSC_VER)
-			#pragma warning( pop )
-		#endif
-
- 
-
-	 };
- 
 }

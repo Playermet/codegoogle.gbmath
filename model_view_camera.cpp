@@ -5,16 +5,13 @@
 namespace gbmath
 {
 
-
-
-
-//========================================================================
+ 
 model_view_camera::model_view_camera()
 {
-    m_mWorld.reset(); // D 3 D X MatrixIdentity( m_mWorld );
-    m_mModelRot.reset(); //  D 3 D X MatrixIdentity( m_mModelRot );
-    m_mModelLastRot.reset(); // D 3 D X MatrixIdentity( m_mModelLastRot );    
-    m_mCameraRotLast.reset(); // D 3 D X MatrixIdentity( m_mCameraRotLast );    
+    m_mWorld.reset();  
+    m_mModelRot.reset();  
+    m_mModelLastRot.reset();  
+    m_mCameraRotLast.reset();  
     m_vModelCenter = vec3(0,0,0);
     m_fRadius    = 5.0f;
     m_fDefaultRadius = 5.0f;
@@ -31,12 +28,8 @@ model_view_camera::model_view_camera()
 }
 
 
-
-
-//========================================================================
 // Update the view matrix & the model's world matrix based 
 //       on user input & elapsed time
-//========================================================================
 void model_view_camera::frameMove( float fElapsedTime )
 {
     if( isKeyDown(m_aKeys[CAM_RESET]) )
@@ -66,32 +59,29 @@ void model_view_camera::frameMove( float fElapsedTime )
 
     // Get the inverse of the arcball's rotation matrix
     mat44 mCameraRot;
-    //D 3DXMatrixInverse( mCameraRot, NULL, m_ViewArcBall.getRotationMatrix() );
-	 mCameraRot = m_ViewArcBall.getRotationMatrix().inverted();
+	mCameraRot = m_ViewArcBall.getRotationMatrix().inverted();
 
 
-    // Transform vectors based on camera's rotation matrix
-    vec3 vWorldUp, vWorldAhead;
-    vec3 vLocalUp    = vec3(0,1,0);
-    vec3 vLocalAhead = vec3(0,0,1);
+	// Transform vectors based on camera's rotation matrix
+	vec3 vWorldUp, vWorldAhead;
+	vec3 vLocalUp    = vec3(0,1,0);
+	vec3 vLocalAhead = vec3(0,0,1);
 
+ 
+	vWorldUp = vLocalUp;
+	vWorldUp.transform_coord(mCameraRot);
 
-   // D 3DX Vec3TransformCoord( vWorldUp, vLocalUp, mCameraRot );
-	 vWorldUp = vLocalUp;
-	 vWorldUp.transform_coord(mCameraRot);
-
-
-   // D 3DX Vec3TransformCoord( vWorldAhead, vLocalAhead, mCameraRot );
-		vWorldAhead =   vLocalAhead;
-		vWorldAhead.transform_coord(mCameraRot);
+ 
+	vWorldAhead =   vLocalAhead;
+	vWorldAhead.transform_coord(mCameraRot);
 
 
 
     // Transform the position delta by the camera's rotation 
     vec3 vPosDeltaWorld;
-    //D 3DX Vec3TransformCoord( vPosDeltaWorld, vPosDelta, mCameraRot );
-		vPosDeltaWorld = vPosDelta;
-		vPosDeltaWorld.transform_coord(mCameraRot);
+
+	vPosDeltaWorld = vPosDelta;
+	vPosDeltaWorld.transform_coord(mCameraRot);
 
 
 
@@ -105,26 +95,25 @@ void model_view_camera::frameMove( float fElapsedTime )
 
     // Update the view matrix
  
-		if(m_bcameraLeftHandle)
-		{
-			m_mView.setViewLookAtLH(m_vEye, m_vLookAt, vWorldUp);
-		}
-		else
-		{
-			m_mView.setViewLookAtRH(m_vEye, m_vLookAt, vWorldUp);
-		}
+	if(m_bcameraLeftHandle)
+	{
+		m_mView.setViewLookAtLH(m_vEye, m_vLookAt, vWorldUp);
+	}
+	else
+	{
+		m_mView.setViewLookAtRH(m_vEye, m_vLookAt, vWorldUp);
+	}
 
 
-    mat44 mInvView;
-    //D 3DXMatrixInverse( mInvView, NULL, m_mView );
-		mInvView = m_mView.inverted();
+	mat44 mInvView;
+ 
+	mInvView = m_mView.inverted();
 
-    mInvView._41 = mInvView._42 = mInvView._43 = 0;
+	mInvView._41 = mInvView._42 = mInvView._43 = 0;
 
 
     mat44 mModelLastRotInv;
-    //D 3DXMatrixInverse(mModelLastRotInv, NULL, m_mModelLastRot);
-		mModelLastRotInv =	m_mModelLastRot.inverted();
+	mModelLastRotInv =	m_mModelLastRot.inverted();
 
     // Accumulate the delta of the arcball's rotation in view space.
     // Note that per-frame delta rotations could be problematic over long periods of time.
@@ -135,16 +124,15 @@ void model_view_camera::frameMove( float fElapsedTime )
     if( m_ViewArcBall.isBeingDragged() && m_bAttachCameraToModel && !isKeyDown(m_aKeys[CAM_CONTROLDOWN]) )
     {
 
-        // Attach camera to model by inverse of the model rotation
-        mat44 mCameraLastRotInv;
-        //D 3DXMatrixInverse(mCameraLastRotInv, NULL, m_mCameraRotLast);
-		  mCameraLastRotInv = m_mCameraRotLast.inverted();
+		// Attach camera to model by inverse of the model rotation
+		mat44 mCameraLastRotInv;
+		mCameraLastRotInv = m_mCameraRotLast.inverted();
 
-        mat44 mCameraRotDelta = mCameraLastRotInv * mCameraRot; // local to world matrix
-        m_mModelRot *= mCameraRotDelta;
+		mat44 mCameraRotDelta = mCameraLastRotInv * mCameraRot; // local to world matrix
+		m_mModelRot *= mCameraRotDelta;
     }
+	
     m_mCameraRotLast = mCameraRot; 
-
     m_mModelLastRot = mModelRot;
 
     // Since we're accumulating delta rotations, we need to orthonormalize 
@@ -153,17 +141,10 @@ void model_view_camera::frameMove( float fElapsedTime )
     vec3* pYBasis = (vec3*) &m_mModelRot._21;
     vec3* pZBasis = (vec3*) &m_mModelRot._31;
 
-    //D 3DX Vec3Normalize( *pXBasis, *pXBasis );
-	 pXBasis->normalize();
-
-//    D 3DX Vec3Cross( *pYBasis, *pZBasis, *pXBasis );
-	 *pYBasis = pZBasis->cross(*pXBasis);
-
-    // D 3DX Vec3Normalize( *pYBasis, *pYBasis );
-	  pYBasis->normalize();
-
-  //  D 3DX Vec3Cross( *pZBasis, *pXBasis, *pYBasis );
-    *pZBasis = pXBasis->cross(  *pYBasis  );
+	pXBasis->normalize();
+	*pYBasis = pZBasis->cross(*pXBasis);
+	pYBasis->normalize();
+	*pZBasis = pXBasis->cross(  *pYBasis  );
 
 
     // Translate the rotation matrix to the same position as the lookAt position
@@ -173,8 +154,7 @@ void model_view_camera::frameMove( float fElapsedTime )
 
     // Translate world matrix so its at the center of the model
     mat44 mTrans;
-    //D 3DXMatrixTranslation( mTrans, -m_vModelCenter.x, -m_vModelCenter.y, -m_vModelCenter.z );
-	 mTrans.setTranslation( -m_vModelCenter.x, -m_vModelCenter.y, -m_vModelCenter.z   );
+	mTrans.setTranslation( -m_vModelCenter.x, -m_vModelCenter.y, -m_vModelCenter.z   );
 
     m_mWorld = mTrans * m_mModelRot;
 }
@@ -190,27 +170,24 @@ void model_view_camera::setDragRect( RECT &rc )
 }
 
 
-//========================================================================
+
 // Reset the camera's position back to the default
-//========================================================================
 void model_view_camera::reset()
 {
-    base_camera::reset();
+	base_camera::reset();
 
-  m_mWorld.reset(); //  D 3 DXMatrixIdentity( m_mWorld );
-  m_mModelRot.reset(); //  D 3 DXMatrixIdentity( m_mModelRot );
-  m_mModelLastRot.reset(); //  D 3 DXMatrixIdentity( m_mModelLastRot );    
-  m_mCameraRotLast.reset(); //  D 3 DXMatrixIdentity( m_mCameraRotLast );    
+	m_mWorld.reset(); //  D 3 DXMatrixIdentity( m_mWorld );
+	m_mModelRot.reset(); //  D 3 DXMatrixIdentity( m_mModelRot );
+	m_mModelLastRot.reset(); //  D 3 DXMatrixIdentity( m_mModelLastRot );    
+	m_mCameraRotLast.reset(); //  D 3 DXMatrixIdentity( m_mCameraRotLast );    
 
-    m_fRadius = m_fDefaultRadius;
-    m_WorldArcBall.reset();
-    m_ViewArcBall.reset();
+	m_fRadius = m_fDefaultRadius;
+	m_WorldArcBall.reset();
+	m_ViewArcBall.reset();
 }
 
 
-//========================================================================
 // Override for setting the view parameters
-//========================================================================
 void model_view_camera::setViewParams( const vec3& pvEyePt, const vec3& pvLookatPt )
 {
     base_camera::setViewParams( pvEyePt, pvLookatPt );
@@ -231,29 +208,23 @@ void model_view_camera::setViewParams( const vec3& pvEyePt, const vec3& pvLookat
 		}
 
 
-   // D 3DX QuaternionRotationMatrix( quat, mRotation );
-  quat.setRotationMatrix(mRotation);
+	quat.setRotationMatrix(mRotation);
 
-    m_ViewArcBall.setQuatNow( quat );
+	m_ViewArcBall.setQuatNow( quat );
 
-    // Set the radius according to the distance
-    vec3 vEyeToPoint;
-    //D 3DXVec3Subtract( vEyeToPoint, pvLookatPt, pvEyePt );
-//#pragma message("ks777::devhelp::model_view_camera::setViewParams  ¬Œ«ÃŒ∆ÕŒ Õ≈œ–¿¬»À‹ÕŒ"   __FILE__)
-	  vEyeToPoint =  pvEyePt -   pvLookatPt;
+	// Set the radius according to the distance
+	vec3 vEyeToPoint;
+	//#pragma message("ks777::devhelp::model_view_camera::setViewParams  ¬Œ«ÃŒ∆ÕŒ Õ≈œ–¿¬»À‹ÕŒ"   __FILE__)
+	vEyeToPoint =  pvEyePt -   pvLookatPt;
 
-	  //D 3DX Vec3Length( vEyeToPoint   );
-    setRadius( vEyeToPoint.length()  );   
+	setRadius( vEyeToPoint.length()  );   
 
-    // View information changed. FrameMove should be called.
-    m_bDragSinceLastUpdate = true;
+	// View information changed. FrameMove should be called.
+	m_bDragSinceLastUpdate = true;
 }
 
 
-
-//========================================================================
 // Call this from your message proc so this class can handle window messages
-//========================================================================
 LRESULT model_view_camera::handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
 {
     base_camera::handleMessages( hWnd, uMsg, wParam, lParam );
@@ -335,7 +306,6 @@ LRESULT model_view_camera::handleMessages( HWND hWnd, UINT uMsg, WPARAM wParam, 
 
     return FALSE;
 }
-
 
 
 

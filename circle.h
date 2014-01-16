@@ -2,13 +2,7 @@
  \brief  circle in two-dimensional space 
  
  
- 
- //!   \todo Написать для circle построение внутреннего и внешнего прямоуголника.
- 
 */
-
-
-
 
 
 #pragma once
@@ -21,8 +15,6 @@
  
 namespace gbmath
 {
-
- 
 
 		//! \brief circle in two-dimensional space 
 		class Circle 
@@ -87,12 +79,6 @@ namespace gbmath
 				if (fDist >= (radius + c.radius))	return false;
 				return true;
 			}
-
-
-
-			// bool checkIntersectContactPoints(vec2& outp1, vec2& outp2, const Circle& c) {...}
-			// http://algolist.manual.ru/maths/geom/intersect/circlecircle2d.php
-
 			
 			//! \brief Verification of the point
 			inline bool checkContainPoint(const  vec2 point)
@@ -108,22 +94,7 @@ namespace gbmath
 
 				return true;
 			}
-
-
-			// TODO: bool checkIntersectCircle(const Circle& c) const {...}
-			// TODO: bool checkIntersectRect(const Rect& r) const {...}
-
-			// TODO:  3d::Sphere toObjectSphere(VP& vp, )
-
-
-
-			// fromCstr(const char* s) {..}
-			// toCstr(char* buf) const	  {....}
-
-
-
-			//-----------------------------------
-
+ 
 			void operator  = (const std::string& str) throw (std::runtime_error)
 			{
 				std::istringstream iss(str);
