@@ -47,7 +47,7 @@ namespace gbmath
 	 
 	 
 
-		struct object_color
+		struct object_colors
 		{
 
 
@@ -59,7 +59,7 @@ namespace gbmath
 				color4f  LightmapColor;
 
 
-				object_color() 
+				object_colors() 
 				{
 
 				}

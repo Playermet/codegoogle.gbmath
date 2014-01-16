@@ -5,22 +5,20 @@
 */
 
 #pragma once
-
-//#include "../Config.h"
-//#include "config.h"
-//#include "Types.h"
-
-#include <ostream>
-#include <iostream>
-#include <sstream>
-#include <string>
-
  
-namespace gbmath {
+
+#ifndef __GBMATH_H__
+    #error  DO NOT INCLUDE THIS FILE. USE:   #include <gbmath/_gbmath.h>
+#endif
+ 
+ 
+namespace gbmath 
+{
 
 
-	//! \brief   simple point.
-	struct point {
+	//! \brief   simple point (integer).
+	struct point 
+	{
 	public:
 
 		union 
@@ -148,7 +146,3 @@ namespace gbmath {
 
 
 }
- 
- 
-
-// end file

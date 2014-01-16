@@ -20,11 +20,11 @@
 namespace gbmath
 {
 
-//----------------------------------------------------------------------
 
 
 	//! \brief standard quaternion.
-	class Quaternion   {
+	class Quaternion   
+	{
 	public:
 
 		union {
@@ -32,7 +32,12 @@ namespace gbmath
 			float floats [4];
 		};
 
-		inline Quaternion() { x=y=z=0.0f; w=1.0f; }
+		inline Quaternion() 
+		{ 
+			x=y=z=0.0f; 
+			w=1.0f; 
+		}
+		
 		inline Quaternion(const Quaternion& q)
 		{
 			x=q.x; y=q.y; z=q.z; w=q.w;
@@ -183,17 +188,25 @@ namespace gbmath
 			normalize();
 		}
 
-		inline void setIdentity() { x=y=z=0.0f; w=1.0f; }
-		// \brief  reset to identity
+		inline void setIdentity() 
+		{ 
+			x=y=z=0.0f; w=1.0f; 
+		}
+		
+		//! \brief  reset to identity
 		inline void reset() { setIdentity(); }
 
-		// \brief ckeck identity
+		//! \brief ckeck identity
 		inline bool isIdentity(float eps = 0.0f) const
 		{
 			return abs(x) <= eps && abs(y) <= eps && abs(z) <= eps && abs(w) - 1.0f <= eps;
 		}
 
-		inline float length() const	{ return sqrt(x*x + y*y + z*z + w*w); }
+		inline float length() const	
+		{ 
+			return sqrt(x*x + y*y + z*z + w*w); 
+		}
+		
 		//! \brief  get length squared
 		inline float lengthSq() const {	return   (x*x + y*y + z*z + w*w); }
 
@@ -256,29 +269,7 @@ namespace gbmath
 		}
 
 
-
-
-		////*  natural log
-		//Quaternion  logn () const
-		//{
-		//	Quaternion res;
-
-		//	//		A unit quaternion, is defined by:
-		//	//Q == (cos(theta), sin(theta) * v) where |v| = 1
-		//	//The natural logarithm of Q is, ln(Q) = (0, theta * v)
-
-
-		//	//????
-		//		return res;
-
-		//}
-
-
-
-		// todo !!!!!!!!!!!!!!!!!!!
-	//	Quaternion& setFromRotationMatrix(const  mat44& m);
-
-
+ 
 
 
 
@@ -288,11 +279,11 @@ namespace gbmath
 		//! \brief  
 		Quaternion ln(const Quaternion& q)
 		{
-		//A unit quaternion, is defined by:
-		//Q == (cos(theta), sin(theta) * v) where |v| = 1
-		//The natural logarithm of Q is, ln(Q) = (0, theta * v)
-             Quaternion res;
-			D3DXQuaternionLn(res , *this );
+			//A unit quaternion, is defined by:
+			//Q == (cos(theta), sin(theta) * v) where |v| = 1
+			//The natural logarithm of Q is, ln(Q) = (0, theta * v)
+			//Quaternion res;
+			//D3DXQuaternionLn(res , *this );
 			return res;
 		}
 
@@ -444,7 +435,6 @@ namespace gbmath
 
 		friend std::istream &operator >> (std::istream &stream,  Quaternion& q)
 		{
-			//std::istringstream ss(str);
 			stream >> q.x;
 			stream >> q.y;
 			stream >> q.z;
@@ -470,12 +460,7 @@ namespace gbmath
 		}
 
 
-
-
-
 	};
 
-
-// static const Quaternion QUATERNION_IDENTITY = Quaternion( 0.0f, 0.0f, 0.0f, 1.0f );
 
 }

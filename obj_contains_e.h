@@ -16,15 +16,13 @@ namespace gbmath
 {
 
 
-	
+	//! \brief  description of spatial objects crossing
+	enum  obj_contains_e
+	{
+		SC_NOOVERLAP, ///<   object does not apply to another object
+		SC_CONTAINSFULLY, ///<   the object is fully located in another
+		SC_CONTAINSPARTIALLY  ///< object is partially contained in the other
+	};
 
-		//! \brief  description of spatial objects crossing
-		enum  obj_contains_e
-		{
-			SC_NOOVERLAP, ///<   object does not apply to another object
-			SC_CONTAINSFULLY, ///<   the object is fully located in another
-			SC_CONTAINSPARTIALLY  ///< object is partially contained in the other
-		};
 
- 
 }
