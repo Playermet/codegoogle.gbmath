@@ -1,6 +1,8 @@
 ﻿/** \file
  \brief TODO  doc (RUS)
 
+ 
+ \brief  добавить сегменты segment2 segment3  с методами пересечения и пр.
  \brief демы сделать на основе GLUT   class GLutApplication
  
  \brief для точки 2д  добавить трансформацию и процее. 
@@ -11,7 +13,7 @@
 	  \todo  bool checkIntersectAABB(const aabb& aabb) {....}
 	  \todo  bool checkIntersectPlane(const Plane& aabb) {....}
 	   так же поправить  и комменты
-  
+  +
  \brief    для ray2d добавить
   			// bool checkIntersectCircle(const CIrcle& c)
 			// bool checkIntersectRect(const Rect& r)
