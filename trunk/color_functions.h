@@ -21,7 +21,7 @@ namespace gbmath
 //!  \brief   Building a color-by-byte. Alpha One.
 inline unsigned int make_color_argb( byte_t a, byte_t r, byte_t g, byte_t b )
 {
-	assert( sizeof(int) == 4 && "check platform" );
+	assert( sizeof(int) == 4 && " check platform " );
 	int res =  ( (a&0xff)<<24 ) | ( (r&0xff)<<16 ) | ( (g&0xff)<<8 ) |  (b&0xff);
 	return res;
 }

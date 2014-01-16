@@ -1,37 +1,8 @@
-﻿
+﻿#pragma once
 
-#pragma once
-
-
-#ifdef WIN32 // only windows platform
-
+#ifdef WIN32 
 
 #include "_gbmath.h"
-
-#if 0
-
-   #pragma comment( lib, "dxerr.lib" )
-   #pragma comment( lib, "dxguid.lib" )
-   
-		#if defined(DEBUG) || defined(_DEBUG)
-
-		   #pragma comment( lib, "d3dx9d.lib" )
-
-		#else
-
-		   #pragma comment( lib, "d3dx9.lib" )
-
-		#endif
-
-   #pragma comment( lib, "d3d9.lib" )
-   #pragma comment( lib, "winmm.lib" )
-   #pragma comment( lib, "comctl32.lib" )
-
-#endif
-
-
-#include "assert.h"
-
 
 
 namespace gbmath 
@@ -333,7 +304,7 @@ void base_camera::getInput( bool bGetKeyboardInput, bool bGetMouseInput,
             // then invisible cursor will hit the edge of the screen 
             // and the user can't tell what happened
             POINT ptCenter;
-			assert(m_hwnd && "m_hwnd is zero");
+			a ssert(m_hwnd && "m_hwnd is zero");
 
             // Get the center of the current monitor
             MYMONITORINFO mi;

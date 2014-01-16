@@ -188,9 +188,9 @@ namespace gbmath
 			return res;
 		}
 
-		inline vec2 row(unsigned int index)
+		inline vec2 row(size_t index)
 		{
-		   assert(index<2 && "invalid index");
+		   if(index>=2) throw (index) ;
 		   vec2 res;
 
 		   switch(index)
@@ -202,9 +202,9 @@ namespace gbmath
 		   return res;
 		}
 
-		inline vec2 column(unsigned int index)
+		inline vec2 column(size_t index)
 		{
-			assert(index<2 && "invalid index");
+			if(index>=2) throw (index) ;
 
 			vec2 res;
 			switch(index)

@@ -34,15 +34,15 @@ namespace gbmath
 		{
 			vec3 points [8];
 
-			inline  vec3& operator [] (unsigned int index)
+			inline  vec3& operator [] (size_t index) throw(size_t)
 			{
-				assert(index<8 && "invalid index");
+				if(index>=8) throw (index);
 				return points[index];
 			}
 
-			inline  vec3 operator [] (unsigned int index)   const
+			inline  vec3 operator [] (size_t index)   const throw(size_t)
 			{
-				assert(index<8 && "invalid index");
+				if(index>=8) throw (index);
 				return points[index];  
 			}
 

@@ -95,7 +95,7 @@ bool ray3d::checkIntersectSphere_3( const sphere& sph )
 	float d = 0.0f;
 	
 	{
-		//  assert(false);
+		//  a ssert(false);
 		// inline float distance_sq(const vec3& point) const { return vec3(*this-point).lenghtSq ;  }
 		//  vec3 vs = sph.center-orig;
 		// d =  vs.length_sq(); //  sph.center.length_sq();//  lenghtSq(p); // norm2(c-p);

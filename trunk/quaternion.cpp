@@ -165,7 +165,7 @@ Quaternion&  Quaternion::setRotationAxis(const  vec3 &axis, float theta)
 	// The axis of rotation must be normalized
 
 
-	// assert( fabs(vectorMag(axis) - 1.0f) < 0.01f );
+	// a ssert( fabs(vectorMag(axis) - 1.0f) < 0.01f );
 
 	// Compute the half angle and its sin
 	const float	thetaOver2 = theta*0.5f;

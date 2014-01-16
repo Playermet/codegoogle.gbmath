@@ -77,7 +77,8 @@ namespace gbmath
 
  			inline void extractProjPerspectRH(const mat44& mPerspectProjLH)
 			{
-				assert(  false  &&  " none code ");
+				assert(false);
+				throw std::runtime_error( " none code ");
 			}
 
 
