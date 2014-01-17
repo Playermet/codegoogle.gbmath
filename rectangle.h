@@ -19,8 +19,19 @@ namespace gbmath
 	//! \brief integer values rectangle
 	struct Rectangle
 	{
-		int  left; ///< position X.
-		int  top;  ///< position Y.
+		union 
+		{
+			int left; ///< position X.
+			int x;
+		};
+
+		union 
+		{
+			int  top; ///< position Y.
+			int y;
+		};
+		
+ 
 
 		int  width;  ///< rect width.
 		int  height; ///< rect height.
@@ -59,13 +70,7 @@ namespace gbmath
 			*this = r;
 		}
 #endif
-
-		Rectangle &operator = (const Rectangle &other)
-		{
-			init(other);
-			return *this;
-		}
-
+ 
 		void init(int x, int y, int w, int h)
 		{
 			left = x;

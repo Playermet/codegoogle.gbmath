@@ -25,7 +25,7 @@ namespace gbmath
 		virtual HRESULT makeCurrent(IDirect3DDevice9* pDevice, bool bNeedSetWorld=true) 
 		{
 			HRESULT hr =0;
-			if(!pDevice); throw std::runtime_error(" device pointer is null ");
+			if(!pDevice) throw std::runtime_error(" device pointer is null ");
 			if(bNeedSetWorld)
 			{
 				hr |= pDevice->SetTransform( D3DTS_WORLD ,      getWorldMatrix()  );

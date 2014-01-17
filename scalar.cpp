@@ -8,8 +8,6 @@
  
 namespace gbmath
 {
-namespace scalar
-{
  
 
 float random()
@@ -30,6 +28,6 @@ float random()
 
 
  
-}
+ 
  
 }

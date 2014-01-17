@@ -112,7 +112,7 @@ bool object_color_type_e::fromstr(e& outval, const std::string& str_arg)
 }
 
  
-const color4f*  object_color::getByType(const object_color_type_e::e value) const 
+const color4f*  object_colors::getByType(const object_color_type_e::e value) const 
 {
 
 	switch(value)

@@ -282,8 +282,8 @@ namespace gbmath
 			//A unit quaternion, is defined by:
 			//Q == (cos(theta), sin(theta) * v) where |v| = 1
 			//The natural logarithm of Q is, ln(Q) = (0, theta * v)
-			//Quaternion res;
-			//D3DXQuaternionLn(res , *this );
+			Quaternion res;
+			D3DXQuaternionLn(res , *this );
 			return res;
 		}
 
@@ -340,7 +340,7 @@ namespace gbmath
 		inline float getRotationAngle() const
 		{
 			// Compute the half angle.  Remember that w = cos(theta / 2)
-			float thetaOver2 = scalar::safeAcos(w);
+			float thetaOver2 =  safeAcos(w);
 			// Return the rotation angle
 			return thetaOver2 * 2.0f;
 		}
@@ -397,9 +397,9 @@ namespace gbmath
 		{
 			float	sp, sb, sh;
 			float	cp, cb, ch;
-			gbmath::scalar::sincos(pitch * 0.5f , sp , cp  );
-			gbmath::scalar::sincos(roll * 0.5f  , sb , cb  );
-			gbmath::scalar::sincos(yaw * 0.5f   , sh , ch  );
+			gbmath:: sincos(pitch * 0.5f , sp , cp  );
+			gbmath:: sincos(roll * 0.5f  , sb , cb  );
+			gbmath:: sincos(yaw * 0.5f   , sh , ch  );
 			  x =  -(-ch*sp*cb - sh*cp*sb);
 			  y =  -(ch*sp*sb  - sh*cb*cp);
 			  z =  -(sh*sp*cb  - ch*cp*sb);

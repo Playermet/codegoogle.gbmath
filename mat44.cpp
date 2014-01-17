@@ -63,11 +63,11 @@ mat44& mat44::setReflection(const plane_s& plane )
 
 	mat44 Out;
 
-	Out._11=1.0f-2.0f*scalar::sqr(a);   Out._12=-2.0f*b*a;					 Out._13=-2.0f*c*a;				    Out._14=0.0f;
+	Out._11=1.0f-2.0f* sqr(a);   Out._12=-2.0f*b*a;					 Out._13=-2.0f*c*a;				    Out._14=0.0f;
 
-	Out._21=-2.0f*a*b;					  Out._22=1.0f-2.0f*scalar::sqr(b);  Out._23=-2.0f*c*b;					Out._24=0.0f;
+	Out._21=-2.0f*a*b;					  Out._22=1.0f-2.0f* sqr(b);  Out._23=-2.0f*c*b;					Out._24=0.0f;
 
-	Out._31=-2.0f*a*c;				     Out._32=-2.0f*b*c;					 Out._33=1.0f-2.0f*scalar::sqr(c);  Out._34=0.0f;
+	Out._31=-2.0f*a*c;				     Out._32=-2.0f*b*c;					 Out._33=1.0f-2.0f* sqr(c);  Out._34=0.0f;
 
 	Out._41=-2.0f*a*d;					 Out._42=-2.0f*b*d;				     Out._43=-2.0f*c*d;				    Out._44=1.0f;
 
@@ -80,7 +80,7 @@ mat44& mat44::setReflection(const plane_s& plane )
 mat44&  mat44::setShadow(const vec4& Light, const plane_s& Plane )
 {
 	float a,b,c,d;
-	const float k = sqrt( scalar::sqr(Plane.a) + scalar::sqr(Plane.b) + scalar::sqr(Plane.c) );
+	const float k = sqrt(  sqr(Plane.a) +  sqr(Plane.b) +  sqr(Plane.c) );
 	a = Plane.a / k;
 	b = Plane.b / k;
 	c = Plane.c / k;
@@ -396,13 +396,13 @@ void mat44::decompose( vec3& scale,  Quaternion& rot, vec3& pos ) const
 
 	pos =  getTranslation();
 
-	scale.x =  sqrt( scalar::sqr(m.floats[0][0]) +  scalar::sqr(m.floats[0][1]) +  scalar::sqr(m.floats[0][2]));
-	scale.y =  sqrt( scalar::sqr(m.floats[1][0]) +  scalar::sqr(m.floats[1][1]) +  scalar::sqr(m.floats[1][2]));
-	scale.z =  sqrt( scalar::sqr(m.floats[2][0]) +  scalar::sqr(m.floats[2][1]) +  scalar::sqr(m.floats[2][2]));
+	scale.x =  sqrt(  sqr(m.floats[0][0]) +   sqr(m.floats[0][1]) +   sqr(m.floats[0][2]));
+	scale.y =  sqrt(  sqr(m.floats[1][0]) +   sqr(m.floats[1][1]) +   sqr(m.floats[1][2]));
+	scale.z =  sqrt(  sqr(m.floats[2][0]) +   sqr(m.floats[2][1]) +   sqr(m.floats[2][2]));
 
 	for (int i=0; i<3; i++)
 	{
-		if (scale.floats[i] > constan::EPSILON)
+		if (scale.floats[i] > EPSILON)
 		{
 			m.floats[i][0] /= scale.floats[i];
 			m.floats[i][1] /= scale.floats[i];

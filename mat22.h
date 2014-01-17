@@ -292,7 +292,7 @@ namespace gbmath
 		mat22&  setRotation ( float angle )
 		{
 			float    cosine, sine;
-			scalar::sincos(angle , sine , cosine );
+			 sincos(angle , sine , cosine );
 			floats [0][0] = cosine;
 			floats [0][1] = sine;
 			floats [1][0] = -sine;

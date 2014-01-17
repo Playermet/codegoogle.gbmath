@@ -48,9 +48,9 @@ obj_contains_e sphere::BSphereContainsBSphere(const sphere& s) const
 {
 	   const float d2 = (center - s.center).length_sq();
 
-	  if(  d2 < scalar::sqr( radius + s.radius)  )
+	  if(  d2 <  sqr( radius + s.radius)  )
 	  {
-			if ( d2 < scalar::sqr(radius-s.radius) )
+			if ( d2 <  sqr(radius-s.radius) )
 				return SC_CONTAINSFULLY;
 
 			else

@@ -28,8 +28,9 @@ namespace gbmath
 
 
 	//! \brief  Standard four-color int
-	struct color4_32 : public color4<byte_t> 
+	struct color4_32 //  : public color4<byte_t> 
 	{
+		byte_t r, g, b, a;
 
 		  inline color4_32() 
 		  {  
