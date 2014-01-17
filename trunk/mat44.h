@@ -515,25 +515,25 @@ namespace gbmath
 
 		vec4 getRow( size_t index) const
 		{
-			if(index>=4)  throw(size_t);
+			if(index>=4)  throw(index);
 			return vec4( floats[index][0], floats[index][1], floats[index][2], floats[index][3] );
 		}
 
 		vec4 setRow(size_t index, const vec4& row)
 		{
-			if(index>=4)  throw(size_t);
+			if(index>=4)  throw(index);
 			floats[index][0]=row.x; floats[index][1]=row.y; floats[index][2]=row.z; floats[index][3]=row.w;
 		}
 
 		vec4 getColumn(size_t index) const
 		{
-			if(index>=4)  throw(size_t);
+			if(index>=4)  throw(index);
 			return vec4( floats[0][index], floats[1][index], floats[2][index], floats[3][index] );
 		}
 
-		void setColumn(size_t, const vec4& col)
+		void setColumn(size_t index, const vec4& col)
 		{
-			if(index>=4)  throw(size_t);
+			if(index>=4)  throw(index);
 			floats[0][index]=col.x; floats[1][index]=col.y; floats[2][index]=col.z; floats[3][index]=col.w;
 		}
 
@@ -578,7 +578,7 @@ namespace gbmath
 		{
 			setIdentity();
 			float sina, cosa;
-			scalar::sincos(angle, sina, cosa);
+			sincos(angle, sina, cosa);
 			_22 =  cosa;
 			_23 =  sina;
 			_32 = -sina;
@@ -590,7 +590,7 @@ namespace gbmath
 		{
 			setIdentity();
 			float sina, cosa;
-			scalar::sincos(angle, sina, cosa);
+			sincos(angle, sina, cosa);
 			_11 =  cosa;
 			_13 = -sina;
 			_31 =  sina;
@@ -602,7 +602,7 @@ namespace gbmath
 		{
 			setIdentity();
 			float sina, cosa;
-			scalar::sincos(angle, sina, cosa);
+			 sincos(angle, sina, cosa);
 			_11 =  cosa;
 			_12 =  sina;
 			_21 = -sina;
@@ -613,7 +613,7 @@ namespace gbmath
 		inline mat44&  setRotationAxis( const vec3& vAx,  const float angle )
 		{
 			float sina, cosa, mcosa;
-			scalar::sincos( angle , sina, cosa );
+			 sincos( angle , sina, cosa );
 			mcosa = 1.0f - cosa;
 
 			vec3 ax = vAx;
@@ -750,7 +750,7 @@ namespace gbmath
 
 		void setPerspectiveFovLH(float fov, float asp, float zn, float zf)
 		{
-			const float yScale =   gbmath::scalar::cotan(fov/2.0f); //yScale = cot(fovY/2)
+			const float yScale =  cotan(fov/2.0f); //yScale = cot(fovY/2)
 			const float xScale = yScale / asp;     //xScale = yScale / aspect ratio
 
 			//xScale     0          0               0
@@ -765,7 +765,7 @@ namespace gbmath
 
 		void setPerspectiveFovRH(float fov, float asp, float zn, float zf)
 		{
-		 const float yScale =   gbmath::scalar::cotan(fov/2.0f);
+		 const float yScale =   gbmath::cotan(fov/2.0f);
 		 const float xScale = yScale / asp;
 
 			_11 = xScale;   _12 = 0.0f;    _13 = 0.0f;           _14 = 0.0f;

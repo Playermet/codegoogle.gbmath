@@ -41,14 +41,14 @@ namespace gbmath
 		inline void operator = (const POINT& p) { _x=(float)p.x; _y=(float)p.y; }
 		#endif
 
-		point2& moveAlongNormal(const Normal2& normal, float distance) 
+		point2& moveAlongNormal(const normal2& normal, float distance) 
 		{
 			_x += normal.x() * distance;
 			_y += normal.y() * distance;
 			return *this;
 		}
 		
-		point2& transform(const  mat22_s& m) 
+		point2& transform(const  mat22& m) 
 		{
 			vec2 temp = vec2(_x, _y);
 			temp = m * temp;

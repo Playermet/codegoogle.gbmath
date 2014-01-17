@@ -248,7 +248,7 @@ mat33& mat33::setScaling ( const vec3& v )
 mat33& mat33::setRotationX ( float angle )
 {
 	float sine ,  cosine;
-	scalar::sincos(angle , sine, cosine);
+	 sincos(angle , sine, cosine);
 
 	setIdentity();
 	floats  [1][1] = cosine;
@@ -263,7 +263,7 @@ mat33& mat33::setRotationX ( float angle )
 mat33& mat33::setRotationY ( float angle )
 {
 	float sine ,  cosine;
-	scalar::sincos(angle , sine, cosine);
+	 sincos(angle , sine, cosine);
 
 	setIdentity();
 	floats  [0][0] = cosine;
@@ -279,7 +279,7 @@ mat33& mat33::setRotationZ ( float angle )
 {
 
 	float sine ,  cosine;
-	scalar::sincos(angle , sine, cosine);
+	 sincos(angle , sine, cosine);
 
 	setIdentity();
 	floats  [0][0] = cosine;
@@ -295,7 +295,7 @@ mat33& mat33::setRotation ( const vec3& v, float angle )
 {
 
  	float sine ,  cosine;
- 	scalar::sincos(angle , sine, cosine);
+ 	 sincos(angle , sine, cosine);
 
 	 floats [0][0] = v.x *v.x + (1-v.x*v.x) * cosine;
 	 floats [0][1] = v.x *v.y * (1-cosine) + v.z * sine;

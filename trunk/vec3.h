@@ -334,7 +334,7 @@ namespace gbmath
 		//! \brief Get the most out of each component of the absolute
 		inline float     get_max_value () const 
 		{   
-			return scalar::max3 ( fabs (x), fabs (y), fabs (z) );   
+			return max3 ( fabs (x), fabs (y), fabs (z) );   
 		}
 
 		inline vec3&   invert() 
@@ -490,7 +490,7 @@ namespace gbmath
 		/** \brief  The projection of the vector from the virtual "Looking Glass" on the screen.
 				Returns a display designed according vector.	*/
 		vec3 project (
-			const ViewportZ& vp,
+			const Rectangle& vp,
 			const  mat44& Proj, 
 			const  mat44& View, 
 			const  mat44& World 
@@ -501,7 +501,7 @@ namespace gbmath
 		/** \brief  Translation of the screen coordinates in the spatial coordinates
 				Returns the mapped vector.  */
 		vec3  unproject(
-			const ViewportZ& vp,    
+			const Rectangle& vp,    
 			const  mat44& Proj,	
 			const  mat44& View,	
 			const  mat44& World	

@@ -17,8 +17,9 @@ namespace gbmath
 
 
 	//! \brief  Three-standard color byte.
-	struct color3_24 : public color3<byte_t> 
+	struct color3_24  // : public color3<byte_t> 
 	{
+		byte_t r, g, b;
 
 		inline color3_24() 
 		{  

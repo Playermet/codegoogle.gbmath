@@ -22,6 +22,7 @@
 
 #include <limits>
 #include <iostream>
+#include <istream>
 #include <sstream>
 #include <string>
 #include <vector>
@@ -159,10 +160,10 @@ namespace gbmath
 #include "forward_decl.h"
 
 // color
-#include "color3.h"
+ 
 #include "color3f.h"
 #include "color3_24.h"
-#include "color4.h"
+ 
 #include "color4f.h"
 #include "color4_32.h"
 #include "object_color_type_e.h"
@@ -203,7 +204,7 @@ namespace gbmath
 #include "sphere.h"
 #include "aabb.h"
 #include "oobb.h"
-#include "aabb_tree.h"
+ 
  
 #include "ray3d.h"
 	 
@@ -224,18 +225,16 @@ namespace gbmath
 #include "orthographic_projection_data.h"
 #include "perspective_projection_data.h"
 #include "related_coord.h"
-#include "viewport.h"
  
-#include "valueserver.h"
  
 #include "matrix4x4_context_type_e.h"
 #include "vector_context_type_e.h"
-#include "geometry_context.h"
+ 
 
 // camera
 #include "arc_ball.h"
 #include "base_camera.h"
-#include "target_camera.h"
+ 
 #include "first_person_camera.h"
 #include "model_view_camera.h"
 
@@ -245,19 +244,12 @@ namespace gbmath
 
 //-------------------------------------------------------------------
  
-
-//! render math opt
-//#define  GBMATH_USE_OPENGL_DRAWER    0 
+ 
  
 #include "drawer.h"
 
-
-//#define  GBMATH_USE_VISUALIZE_APPLICATION    0
-
-#include "visualize_application.h"
-
-
-
+ 
+ 
 
 //-------------------------------------------------------------
 

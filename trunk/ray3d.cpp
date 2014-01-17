@@ -120,7 +120,7 @@ bool ray3d::checkIntersectSphere_3( const sphere& sph )
 		return false;
 	}
 
-    res = s+sqrt(r-h)*gbmath::scalar::sign(r-d); // расстояние до пересечения
+    res = s+sqrt(r-h)*gbmath:: sign(r-d); // расстояние до пересечения
  
     return  true;
 }

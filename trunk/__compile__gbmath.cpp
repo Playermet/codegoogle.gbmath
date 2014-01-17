@@ -1,18 +1,15 @@
  
 
-#pragma once
-
-
 #include "aabb.cpp"
-#include "aabbtree.cpp"
+ 
 #include "arc_ball.cpp"
 #include "axies_angle.cpp"
 #include "base_camera.cpp"
 #include "cilinder.cpp"
 #include "circle.cpp"
-#include "color3.cpp"
+
 #include "color3f.cpp"
-#include "color4.cpp"
+
 #include "color4f.cpp"
 #include "euler_angles.cpp"
 #include "eyedata.cpp"
@@ -40,6 +37,9 @@
 #include "vector2.cpp"
 #include "vector4.cpp"
 #include "triangle.cpp"
+
+#include "segment2.cpp"
+#include "segment3.cpp"
 
 #include "valueserver.cpp"
 

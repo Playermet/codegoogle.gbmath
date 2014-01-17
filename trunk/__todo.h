@@ -2,15 +2,13 @@
  \brief TODO  doc (RUS)
 
  
+ 
+ 
   \brief для vec3
-	// TODO: void transformCoordArray(float* pfOut, int strideOut, const float* pvInput, int strideInput,  const M44& m, const int num) {...}
-	// TODO: void transformNormalArray(float* pfOut, int strideOut, const float* pvInput, int strideInput,  const M44& m, const int num) {...}
-	// new:
 	// static void TransformCoordArray    (vec3* points, const size_t num, const size_t stride, const mat44& m);
 	// static void TransformNormalArray  (vec3* points, const size_t num, const size_t stride, const mat44& m);
 
  
- \brief scalar убрать 
  \brief  добавить сегменты segment2 segment3  с методами пересечения и пр.
  \brief демы сделать на основе GLUT   class GLutApplication
  
@@ -31,7 +29,8 @@
 	  \todo  bool checkIntersectAABB(const aabb& aabb) {....}
 	  \todo  bool checkIntersectPlane(const Plane& aabb) {....}
 	   так же поправить  и комменты
-  +
+
+	   
  \brief    для ray2d добавить
   			// bool checkIntersectCircle(const CIrcle& c)
 			// bool checkIntersectRect(const Rect& r)

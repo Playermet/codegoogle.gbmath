@@ -92,9 +92,6 @@ struct TransformData;
 struct PerspectiveProjData;
 struct related_coord;
 
-struct vieport_s;
-class ViewportZ;
-
  
 
 //-------------------------------------------------------------------------

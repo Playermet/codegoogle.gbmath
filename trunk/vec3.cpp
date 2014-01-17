@@ -17,7 +17,7 @@ void  vec3::operator = (const point3& pnt)
 
  
 vec3  vec3::project (
-			const ViewportZ& vp,
+			const Rectangle& vp, 
 			const  mat44& Proj,
 			const  mat44& View,
 			const  mat44& World ) const
@@ -35,12 +35,12 @@ vec3  vec3::project (
 			 vec3  res;
 			res.x = vp.x + vp.width  * (1.0f + c.x)  /  2.0f;
 			res.y = vp.y + vp.height * (1.0f - c.y)  /  2.0f;
-			res.z = vp.minZ + c.z * (vp.maxZ-vp.minZ);
+			res.z = 0.0f; //vp.minZ + c.z * (vp.maxZ-vp.minZ);
 			return res;
 }
 
  
-vec3  vec3::unproject( const ViewportZ& vp,
+vec3  vec3::unproject( const Rectangle& vp,
 						   const  mat44& Proj,
 				 		   const  mat44& View,
 						   const  mat44& World) const
@@ -53,7 +53,7 @@ vec3  vec3::unproject( const ViewportZ& vp,
 	vec4 a;
 	a.x =        (x-vp.x) * 2.0f   /  ( vp.width-1.0f );
 	a.y = 1.0f - (y-vp.y) * 2.0f   /    vp.height;
-	a.z = (z-vp.minZ)  /  (vp.maxZ - vp.minZ);
+	a.z = 0.0f; //(z-vp.minZ)  /  (vp.maxZ - vp.minZ);
 	a.w = 1.0f;
 
 	vec4 b  =  MAT * a ;

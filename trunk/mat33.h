@@ -99,17 +99,10 @@ namespace gbmath
 		//!	 \brief Access to the rows of the index. 
 		inline const vec3 operator [] ( size_t index ) const
 		{
-		   if( index >= 3 ) throw(size_t);
+		   if( index >= 3 ) throw(index);
 		   return reinterpret_cast<const vec3*>(this)[index];
 		}
-		
-		//!	 \brief Access to the rows of the index. 
-		inline vec3& operator [] ( size_t index ) 
-		{
-		   if( index >= 3 ) throw(size_t);
-		   return reinterpret_cast<const vec3*>(this)[index];
-		}		
-		
+ 
 
 		//!	 \brief Conversion to 2x2 matrix
 		inline operator mat22()
