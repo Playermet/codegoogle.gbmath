@@ -20,10 +20,12 @@ namespace gbmath
 	//!  \brief  describes a point/coordinate/position in 3-dimensional space. Level higher than the vector 
 	class point2 
 	{
-	public:
-
 		float _x;
 		float _y;
+
+	public:
+
+
 
 		point2() { _x=0.0f; _y=0.0f; }
 		point2(const point2& p) {_x=p._x ; _y=p._y ; }
@@ -41,26 +43,18 @@ namespace gbmath
 		inline void operator = (const POINT& p) { _x=(float)p.x; _y=(float)p.y; }
 		#endif
 
-		point2& moveAlongNormal(const normal2& normal, float distance) 
-		{
-			_x += normal.x() * distance;
-			_y += normal.y() * distance;
-			return *this;
-		}
+		inline float x() const { return _x; }
+		inline float y() const { return _y; }
+
+		point2& moveAlongNormal(const normal2& normal, float distance) ;
+
+		normal2 direction_to(const point2& _to) const  ;
+
+		point2& move_to(const point2& _to, float dist) ;
 		
-		point2& transform(const  mat22& m) 
-		{
-			vec2 temp = vec2(_x, _y);
-			temp = m * temp;
-			_x = temp.x;
-			_y = temp.y;
-			return *this;
-		}
+		point2& transform(const  mat22& m) ;
 
-
-		//  Point3 from3dSpace(const VP& vp, const mat44_s& mwvp) {...}
-
-
+ 
 
 	};
 

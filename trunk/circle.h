@@ -94,6 +94,10 @@ namespace gbmath
 
 				return true;
 			}
+
+			Rect to_rec_outside() const ;
+
+			Rect to_rec_inside() const ;
  
 			void operator  = (const std::string& str) throw (std::runtime_error)
 			{
@@ -123,6 +127,9 @@ namespace gbmath
 				os << a.radius;
 				return os;
 			}
+
+
+
 
 
 		};

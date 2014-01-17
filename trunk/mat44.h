@@ -898,6 +898,7 @@ namespace gbmath
 #endif //   OpenGL
 
 
+
 #ifdef _D3D9_H_  // d3d9 device methods
 
 		   //! \brief set matrix in d3d9 device as view matrix

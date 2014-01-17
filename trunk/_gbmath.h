@@ -193,6 +193,7 @@ namespace gbmath
 #include "line2d.h"
 #include "circle.h"
 #include "rect.h"
+#include "segment2.h"
 
 // 3d
 #include "normal3.h"
@@ -219,6 +220,7 @@ namespace gbmath
 #include "triangle_2d.h"
 #include "triangle.h"
 #include "projector.h"
+#include "segment3.h"
 
 // proj
 #include "clip_values.h"

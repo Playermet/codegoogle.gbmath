@@ -21,14 +21,16 @@ namespace gbmath
 	class normal2 
 	{
 	private:
+
 	   float _x;
 	   float _y;
 
-	  inline void __normalize()
+	  inline normal2& __normalize()
 	  {
 		  float fm = sqrt(_x*_x+_y*_y);
-		  _x/=fm;
-		  _y/=fm;
+		  _x /= fm;
+		  _y /= fm;
+		  return *this;
 	  }
 
 	public:
@@ -80,15 +82,19 @@ namespace gbmath
 			_x=-_x; 
 			_y=-_y; 
 		}
+ 
+		normal2& rotate (const mat22& m);
+
+		float angle( const normal2& n ) const;
+
+		normal2& direction_between( const point2& src , const point2& dest  );
+
 
 		// setDirBetweenPoints(const Point2& src, const Point2& dest)
-	    // void transform(const  mat44_s& m) {....}
+		// void transform(const  mat44_s& m) {....}
 		// normal2 cross(){...}
-		// inline float angle(const Normal& n) const {...}
 
-		// rotate (const mat22_s& m) {...}
-
-
+		// 
 
 
 	};

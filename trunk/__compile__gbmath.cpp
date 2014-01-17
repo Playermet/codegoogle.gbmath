@@ -15,6 +15,8 @@
 #include "eyedata.cpp"
 #include "first_person_camera.cpp"
 
+#include "GLutApplication.h"
+
 #include "frustum.cpp"
 #include "geometry_context.cpp"
 #include "mat22.cpp"

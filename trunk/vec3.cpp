@@ -101,4 +101,26 @@ vec3&  vec3::transform_normal(const mat44& m)
 
 
 
+void vec3::TransformCoordArray   (vec3* points, const size_t num, const size_t stride, const mat44& m)
+{
+	for( size_t c=0; c<num; c++ )
+	{
+		unsigned char* temp = (unsigned char*)points;
+		vec3* curr = (vec3*)( temp + stride );
+		curr->transform_coord(m);
+	}
+}
+
+void vec3::TransformNormalArray  (vec3* points, const size_t num, const size_t stride, const mat44& m)
+{
+	for( size_t c=0; c<num; c++ )
+	{
+		unsigned char* temp = (unsigned char*)points;
+		vec3* curr = (vec3*)( temp + stride );
+		curr->transform_normal(m);
+	}
+}
+
+
+
 }
