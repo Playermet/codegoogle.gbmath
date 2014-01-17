@@ -15,7 +15,8 @@ namespace gbmath
 {
 
 	//! \brief Triangle by three points.
-	class triangle {
+	class triangle 
+	{
 	public:
 		 vec3   p1; ///< the first  point (vertex) triangular
 		 vec3   p2; ///< the second point (vertex) triangular
@@ -76,7 +77,6 @@ namespace gbmath
 		#endif
 
 
-
 		friend std::ostream &operator << (std::ostream &stream, const triangle& t)
 		{
 			stream << t.p1 << " " << t.p2 << " " << t.p3 ;
@@ -106,5 +106,6 @@ namespace gbmath
 
 	};
 
+	
 }
 

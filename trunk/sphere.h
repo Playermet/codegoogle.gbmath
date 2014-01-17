@@ -18,10 +18,11 @@ namespace gbmath
 
 
 	//! \brief The scope of the center point and radius. She Bounding sphere.
-	class sphere {
+	class sphere 
+	{
 	public:
 
-	   vec3  center;  ///<  center of sphere.
+	   vec3   center;  ///<  center of sphere.
 	  float   radius;  ///<  radius of sphere.
 
 	  inline sphere()
@@ -64,7 +65,7 @@ namespace gbmath
 
 
 	  //! \brief Get the distance between the edges of the spheres.
-				// Returns a negative value if the spheres intersect.
+				
 	  inline float distanceBetweenSpheres(const sphere& s) const
 	  {
 		  const float dist = center.distance(s.center);
@@ -79,7 +80,7 @@ namespace gbmath
 	  aabb toAabbOutside() const;
 
 
-	  //! \brief Проверка  на контакт сфер  . ПРОВЕРЕНО!
+	  //! \brief  check sphere is contact . TESTED!
 	  inline bool checkIntersectSphere(const sphere& s) const
 	  {
 		  const float dist = center.distance(s.center);
@@ -92,10 +93,7 @@ namespace gbmath
 	  }
 
 
-// TODO: bool checkIntersectRay(const Ray& ray) {....}	<- ненадо. Есть у луча
-// TODO: bool checkIntersecеSphere(const sphere& sph) {....}   есть
-// TODO: bool checkIntersectAABB(const aabb& aabb) {....}
-// TODO: bool checkIntersectPlane(const Plane& aabb) {....}
+
 
 
 	obj_contains_e BSphereContainsBSphere(const sphere& s) const ;

@@ -186,10 +186,10 @@ namespace gbmath
 	//! \brief Clipping values ​​in a range between minimum and maximum inclusive. 
 	inline float clump(float value, float _min, float _max)
 	{
-	      float r = value;
-	    if(r < _min) r=_min;
-	    if(r > _max) r=_max;
-	      return r;
+		float r = value;
+		if(r < _min) r=_min;
+		if(r > _max) r=_max;
+		return r;
 	}
 
 	//! \brief   sine and cosine.
@@ -204,34 +204,29 @@ namespace gbmath
 	//! \brief assembler way to get the sine and cosine.
 	inline void sincosAsm (float a, float& s, float& c)
 	{
-		__asm  {
+		__asm  
+		{
 				fld a;
 				fsincos;
 				mov eax, [c];
 				fstp [eax];
 				mov eax, [s];
 				fstp [eax];
-			};
+		};
 	};
 	#endif 
 	#endif
 
 	//! \brief Calculate the arc cotangent 
-    inline float arccot(float f) //throw()
+    inline float arccot(float f) 
 	{
-	   //if(0.0f==f)
-	     // throw std::runtime_error("Inv arg");
 	   return atan(1.0f / f);
-	};
+	}
 
 	//! \brief Calculate the arc tangent
 	inline float arctg(float y, float x)
 	{
-			//#ifdef __BCPLUSPLUS__
-			//	return atan2(y, x);
-			//#else
-				return atan2f(y, x);
-			//#endif
+		return atan2f(y, x);
 	}
 
 	/** \brief  Same as acos(x), but if x is out of range, it is "clamped"
@@ -283,7 +278,6 @@ namespace gbmath
 		return (angle - TWO_PI *  floor( ( angle + _PI_ ) / TWO_PI) );
 	}
 
-
 	//!  \brief  Linear interpolation  
     inline float lerp(const float f1, const float f2, const float k) 
 	{ 
@@ -302,11 +296,12 @@ namespace gbmath
 	//! \brief rounding asm . 
 	inline int roundAsm(float a)
 	{
-	   register int retval;
-		 __asm fld a
-		 __asm fistp retval
-			   return retval;
+		register int retval;
+		__asm fld a
+		__asm fistp retval
+		return retval;
 	}
+	
 	#endif
 	#endif
 
@@ -320,7 +315,7 @@ namespace gbmath
 
 
 	//! \brief  Compute and return the average (arithmetic) 
-	inline float aver_a(const float* pf, const unsigned int num)
+	inline float average_arithmetic(const float* pf, const unsigned int num)
 	{
 		float r = 0.0f;
 		if(num==0) 
@@ -335,7 +330,7 @@ namespace gbmath
 	}
 
 	//!  \brief  Compute and return the geometric mean 
-	inline float aver_g(const float* pf, const unsigned int num)
+	inline float average_geometric(const float* pf, const unsigned int num)
 	{
 		float r = 1.0f;
 		if(num==0) 
@@ -352,10 +347,9 @@ namespace gbmath
 	//! \brief random values ​​in the range ( 0.0f ... 1.0f )
 	float random();
 
-
-
-	//---------------------------------------------------------------------
-
+ 
+ 
+ 
 	}
 
 }

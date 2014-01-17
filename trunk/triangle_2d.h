@@ -15,7 +15,8 @@ namespace gbmath
 {
 
 		//! \brief Triangle by three points.
-		class triangle_2d {
+		class triangle_2d 
+		{
 		public:
 		
 			 vec2   p1; ///< the first  point (vertex) triangular
@@ -85,21 +86,8 @@ namespace gbmath
 			}
 
 
-			/*
-			//! \brief Compute and return the plane to the points of the triangle
-			plane_s get_plane() const
-			{
-				plane_s plane;
-				plane.make_from_points(p1,p2,p3);
-				return plane;
-			}
-			*/
-
-
 			#if ( defined(GB_OPENGL) && defined(__GL_H__)   )
 
-			
-			/*
 			//! \brief rendering via OpenGL
 			inline void glVertex()
 			{
@@ -107,13 +95,12 @@ namespace gbmath
 				glVertex3f(p2.x, p2.y, p2.z);
 				glVertex3f(p3.x, p3.y, p3.z);
 			}
-			*/
 
 			#endif
 
 
 
-			friend std::ostream &operator << (std::ostream &stream, const triangle_2d& t)
+			friend std::ostream &operator << ( std::ostream &stream, const triangle_2d& t )
 			{
 				stream << t.p1 << " " << t.p2 << " " << t.p3 ;
 				return stream;
@@ -140,6 +127,6 @@ namespace gbmath
 			}
  
 		};
+		
  
 }
-

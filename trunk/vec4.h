@@ -254,8 +254,6 @@ namespace gbmath
 		}
 
 
-
-
 		//! \brief Get the vector (cross) product of the vector
 		inline vec4  cross ( const vec4 & v) const
 		{
@@ -266,7 +264,6 @@ namespace gbmath
 			r.w = ( z * v.y - y * v.z) * x + ( x * v.z - z * v.x) * y + ( y * v.x - x * v.y) * z;
 			  return r;
 		}
-
 
 
 		//! \brief  invert.

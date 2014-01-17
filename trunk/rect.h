@@ -95,10 +95,10 @@ namespace gbmath
 			inline operator RECT () const
 			{
 				RECT res;
-				res.left   = (long)min.x;   //x1;
-				res.top    = (long)min.y;   //y1;
-				res.right  = (long)max.x;   //x2;
-				res.bottom = (long)max.y;   //y2;
+				res.left   = (long)min.x;
+				res.top    = (long)min.y;
+				res.right  = (long)max.x;
+				res.bottom = (long)max.y;
 				return res;
 			}
 
@@ -150,7 +150,7 @@ namespace gbmath
 				translate( val.x , val.y );
 			}
 
-#if ( defined(_WINDOWS_) )
+			#if ( defined(_WINDOWS_) )
 
 			//! \brief The shift of origin. The motion of the rectangle
 			inline void translate(const POINT& p)
@@ -158,7 +158,7 @@ namespace gbmath
 				translate( (float)p.x, (float)p.y );
 			}
 
-#endif
+			#endif
 
 
 			//! \brief Getting the width of the rectangle
@@ -211,6 +211,7 @@ namespace gbmath
 				set_position_topleft( v.x , v.y ); 
 			}
 
+			
 			#if ( defined(_WINDOWS_) )
 
 			//! \brief new position at the top left edge of the rectangle. The dimensions are not changed. 
@@ -232,203 +233,198 @@ namespace gbmath
 			}
 
 
- 
-	  inline void set_width(float fWidth)   
-	  { 
-		  max.x = min.x + fWidth;  
-	  }
+	 
+		  inline void set_width(float fWidth)   
+		  { 
+			  max.x = min.x + fWidth;  
+		  }
 
- 
-	  inline void set_height(float fHeight) 
-	  { 
-		  max.y = min.y + fHeight; 
-	  }
+	 
+		  inline void set_height(float fHeight) 
+		  { 
+			  max.y = min.y + fHeight; 
+		  }
 
- 
-	  inline void set_width_height(float fWidth, float fHeight)
-	  {
-			max.x = min.x + fWidth;
-			max.y = min.y + fHeight;
-	  }
+	 
+		  inline void set_width_height(float fWidth, float fHeight)
+		  {
+				max.x = min.x + fWidth;
+				max.y = min.y + fHeight;
+		  }
 
 
 
 		inline point get_topleft() const
 		{
-		  point res = point( (long)min.x , (long)min.y );
-		  return res;
+			point res = point( (long)min.x , (long)min.y );
+			return res;
 		}
 
- 
+
 		inline point get_bottomright() const
 		{
-		  point res = point(  (long)max.x , (long)max.y );
-		  return res;
+			point res = point(  (long)max.x , (long)max.y );
+			return res;
 		}
 
-	  
-
- 
-	  inline  vec2 get_center() const 
-	  {
+		inline  vec2 get_center() const 
+		{
 			vec2 res;
 			point pTpLft = get_topleft();
 			point pBtRt  = get_bottomright();
 			res.x = ( (float)pTpLft.x + (float)pBtRt.x ) / 2.0f;
 			res.y = ( (float)pTpLft.y + (float)pBtRt.y ) / 2.0f;
 			return res;
-	  }
+		}
 
- 
-	  inline void  set_center(const  vec2& pnt) 
-	  {
-		  float nw = get_width();
-		  float nh = get_height();
+	 
+		inline void  set_center(const  vec2& pnt) 
+		{
+			float nw = get_width();
+			float nh = get_height();
 
-		  min.x = (float)pnt.x - nw / 2.0f;
-		  min.y = (float)pnt.y - nh / 2.0f;
+			min.x = (float)pnt.x - nw / 2.0f;
+			min.y = (float)pnt.y - nh / 2.0f;
 
-		  max.x = min.x + nw;
-		  max.y = min.y + nh;
-	  }
-
-
+			max.x = min.x + nw;
+			max.y = min.y + nh;
+		}
 
 
-	  //! \brief Отсечение координат точки p в пределах прямоугольника 
-	  inline void clump_coord( point& pntTobeClump ) const
-	  {
-		  if( (float)pntTobeClump.x < min.x ) { pntTobeClump.x = (long)min.x; };
-		  if( (float)pntTobeClump.x > max.x ) { pntTobeClump.x = (long)max.x; };
-		  if( (float)pntTobeClump.y < min.y ) { pntTobeClump.y = (long)min.y; };
-		  if( (float)pntTobeClump.y > max.y ) { pntTobeClump.y = (long)max.y; };
-	  }
+		  //! \brief Отсечение координат точки p в пределах прямоугольника 
+		  inline void clump_coord( point& pntTobeClump ) const
+		  {
+			  if( (float)pntTobeClump.x < min.x ) { pntTobeClump.x = (long)min.x; };
+			  if( (float)pntTobeClump.x > max.x ) { pntTobeClump.x = (long)max.x; };
+			  if( (float)pntTobeClump.y < min.y ) { pntTobeClump.y = (long)min.y; };
+			  if( (float)pntTobeClump.y > max.y ) { pntTobeClump.y = (long)max.y; };
+		  }
 
 
 
-	//! \brief Clipping coordinate point p within the rectangle  
-	inline void clump_coord( vec2& pntTobeClump ) const
-	{
-	  if( pntTobeClump.x < min.x ) { pntTobeClump.x = min.x; };
-	  if( pntTobeClump.x > max.x ) { pntTobeClump.x = max.x; };
-	  if( pntTobeClump.y < min.y ) { pntTobeClump.y = min.y; };
-	  if( pntTobeClump.y > max.y ) { pntTobeClump.y = max.y; };
-	}
+		//! \brief Clipping coordinate point p within the rectangle  
+		inline void clump_coord( vec2& pntTobeClump ) const
+		{
+		  if( pntTobeClump.x < min.x ) { pntTobeClump.x = min.x; };
+		  if( pntTobeClump.x > max.x ) { pntTobeClump.x = max.x; };
+		  if( pntTobeClump.y < min.y ) { pntTobeClump.y = min.y; };
+		  if( pntTobeClump.y > max.y ) { pntTobeClump.y = max.y; };
+		}
 
 
-	inline bool check_contain_point(int x, int y) const
-	{
-		if( (x>min.x) && (y>min.y) && (x<max.x) && (y<max.y) ) 
-			return true;
-		return false;
-	}
+		inline bool check_contain_point(int x, int y) const
+		{
+			if( (x>min.x) && (y>min.y) && (x<max.x) && (y<max.y) ) 
+				return true;
+			return false;
+		}
 
-	inline bool check_contain_point(const point& pnt) const 
-	{ 
-	  return check_contain_point(pnt.x, pnt.y); 
-	}
+		inline bool check_contain_point(const point& pnt) const 
+		{ 
+			return check_contain_point(pnt.x, pnt.y); 
+		}
 
-  
+	  
 #if ( defined(_WINDOWS_) )
 
-	  //! \brief Проверка попадания точки в прямоугольник .
-	  inline bool check_contain_point(const POINT& pnt) const 
-	  { 
-		  return check_contain_point(pnt.x, pnt.y); 
-	  }
+		  inline bool check_contain_point(const POINT& pnt) const 
+		  { 
+			  return check_contain_point(pnt.x, pnt.y); 
+		  }
 
 #endif
 
 
 
+		//!   \brief Calculate the area.
+		inline float compute_square() 
+		{ 
+			return  get_width() * get_height();  
+		}
 
-	//!   \brief Calculate the area.
-	inline float compute_square() 
-	{ 
-		return  get_width() * get_height();  
-	}
-
-	void operator = (const std::string& str)
-	{
-		std::istringstream ss(str);
-		ss >> min;
-		ss >> max;
-		if( ss.fail() )  throw std::invalid_argument("bad input string");
-	}
-
-
-	operator std::string() const
-	{
-		std::ostringstream sstrm;
-		sstrm << min << "   " << max;
-		return sstrm.str();
-	}
+		void operator = (const std::string& str)
+		{
+			std::istringstream ss(str);
+			ss >> min;
+			ss >> max;
+			if( ss.fail() )  throw std::invalid_argument("bad input string");
+		}
 
 
-
-	#ifdef _D3D9_H_
-
-	  void operator = (const D3DRECT&  rc) 
-	  { 
-		min.x = (float)rc.x1; 
-		min.y = (float)rc.y1; 
-		
-		max.x = (float)rc.x2; 
-		max.y = (float)rc.y2; 
-	  }
+		operator std::string() const
+		{
+			std::ostringstream sstrm;
+			sstrm << min << "   " << max;
+			return sstrm.str();
+		}
 
 
- 
-	  inline operator D3DRECT() const 
-	  { 
-		D3DRECT r; 
-		r.x1 = (LONG)min.x;
-		r.y1 = (LONG)min.y;
-		r.x2 = (LONG)max.x;
-		r.y2 = (LONG)max.y;
-		return r; 
-	  }
- 
+
+		#ifdef _D3D9_H_
+
+		  void operator = (const D3DRECT&  rc) 
+		  { 
+			min.x = (float)rc.x1; 
+			min.y = (float)rc.y1; 
+			
+			max.x = (float)rc.x2; 
+			max.y = (float)rc.y2; 
+		  }
 
 
-	inline void operator =  ( const D3DVIEWPORT9& vp )
-	{
-		min.x = (float)vp.X;
-		min.y = (float)vp.Y;
-		max.x = min.x + (float)vp.Width;
-		max.y = min.y + (float)vp.Height;
-	}
+	 
+		  inline operator D3DRECT() const 
+		  { 
+			D3DRECT r; 
+			r.x1 = (LONG)min.x;
+			r.y1 = (LONG)min.y;
+			r.x2 = (LONG)max.x;
+			r.y2 = (LONG)max.y;
+			return r; 
+		  }
+	 
 
 
-	void to_viewport(D3DVIEWPORT9& vpInOut) const
-	{
-		vpInOut.X = (DWORD)min.x;
-		vpInOut.Y = (DWORD)min.y;
-		vpInOut.Width = (DWORD)get_width();
-		vpInOut.Height = (DWORD)get_height();
-	}
+		inline void operator =  ( const D3DVIEWPORT9& vp )
+		{
+			min.x = (float)vp.X;
+			min.y = (float)vp.Y;
+			max.x = min.x + (float)vp.Width;
+			max.y = min.y + (float)vp.Height;
+		}
+
+
+		void to_viewport(D3DVIEWPORT9& vpInOut) const
+		{
+			vpInOut.X = (DWORD)min.x;
+			vpInOut.Y = (DWORD)min.y;
+			vpInOut.Width = (DWORD)get_width();
+			vpInOut.Height = (DWORD)get_height();
+		}
 
 
 #endif   // #ifdef _D3D9_H_
 
 
-	 
-		friend std::ostream &operator << (std::ostream &stream, const Rect& r)
-		{
-			stream << r.min << "    " << r.max;
-			return stream;
-		}
+		 
+			friend std::ostream &operator << (std::ostream &stream, const Rect& r)
+			{
+				stream << r.min << "    " << r.max;
+				return stream;
+			}
+			
+
+			inline void offset(float x, float y)
+			{
+				min.x += x;
+				min.y += y;
+
+				max.x += x;
+				max.y += y;
+			}
 		
-
-		inline void offset(float x, float y)
-		{
-			min.x += x;
-			min.y += y;
-
-			max.x += x;
-			max.y += y;
-		}
-	
+		
+		
 	};
 
 

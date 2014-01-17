@@ -1,5 +1,5 @@
 ﻿/**  \file
-* \brief Data transformation (rotation by quaternion).
+* \brief Data transformation (rotation by quaternion).   The assembly of data transformation
 
 
 
@@ -17,13 +17,10 @@ namespace gbmath
 {
 
 
-
-
-
-   //! \brief The assembly of data transformation: 
+   //! \brief : 
 					// scaling (vector) + rotation (quaternion) + position (vector).
 
-	//! \brief  Data transformation (rotation by quaternion).
+	//! \brief  Data transformation (rotation by quaternion).  The assembly of data transformation
    struct TransformData
    {
 	    vec3         vScaling;      ///< scaling
@@ -72,7 +69,4 @@ namespace gbmath
 
    };
 
-
-
- 
 }

@@ -12,39 +12,41 @@
  
 namespace gbmath
 {
-		//! \brief 3-dimensional size.
-		struct size3d {
 
-			union
-			{
-				float x;
-				float width;
-			};
+	//! \brief 3-dimensional size.
+	struct size3d 
+	{
 
-			union
-			{
-				float y;
-				float height;
-			};
-
-			union
-			{
-				float z;
-				float depth;
-			};
-
-			inline operator  vec3() const 
-			{ 
-				return  vec3(x,y,z); 
-			}
-
-			friend std::ostream& operator << (std::ostream& os, const size3d& a)
-			{
-				os << a.x << " " << a.y << " " << a.z;
-				return os;
-			}
-
-
+		union
+		{
+			float x;
+			float width;
 		};
+
+		union
+		{
+			float y;
+			float height;
+		};
+
+		union
+		{
+			float z;
+			float depth;
+		};
+
+		inline operator  vec3() const 
+		{ 
+			return  vec3(x,y,z); 
+		}
+
+		friend std::ostream& operator << (std::ostream& os, const size3d& a)
+		{
+			os << a.x << " " << a.y << " " << a.z;
+			return os;
+		}
+
+
+	};
  
 }
