@@ -7,13 +7,6 @@ namespace gbmath
 {
 
 
-
-
-//=========================================================================
-//  sphere
-//=========================================================================
-
-//=========================================================================
 aabb sphere::toAabbInside() const
 {
   aabb res;
@@ -33,10 +26,10 @@ aabb sphere::toAabbInside() const
 
 }
 
-//================================================================
+
 aabb sphere::toAabbOutside() const
 {
-    aabb res;
+  aabb res;
 
   res.min.x = center.x - radius;
   res.min.y = center.y - radius;
@@ -50,7 +43,7 @@ aabb sphere::toAabbOutside() const
 
 }
 
-//========================================================
+
 obj_contains_e sphere::BSphereContainsBSphere(const sphere& s) const
 {
 	   const float d2 = (center - s.center).length_sq();
@@ -68,7 +61,7 @@ obj_contains_e sphere::BSphereContainsBSphere(const sphere& s) const
 	  //  return SC_NOOVERLAP;
 
 	  return   SC_NOOVERLAP;
-};
+}
 
 
 

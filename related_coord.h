@@ -26,9 +26,10 @@ namespace gbmath
 		/** \brief   Conversion of absolute screen coordinates, in
 				relative screen coordinates,
 				to fit the screen (vpWidth and vpHeight) TESTED!  OK! */
-		inline void   fromScreenCoord( // ScreenCoord_To_RelatCoord(
-											const  vec2& vScrCoord,
-											const int vpWidth, const int vpHeight )
+		inline void   fromScreenCoord( 
+							const  vec2& vScrCoord,
+							const int vpWidth, const int vpHeight 
+							)
 		{
 			  x = - ( ((float)vpWidth /2.0f) - vScrCoord.x ) / ((float)vpWidth /2.0f);
 			  y = - ( ((float)vpHeight/2.0f) - vScrCoord.y ) / ((float)vpHeight/2.0f);
@@ -37,7 +38,7 @@ namespace gbmath
 
 		/** \briefConversion of relative screen coordinates
 			in absolute screen coordinates,
-			to fit the screen (vpWidth and vpHeight) TESTED!  OK! */
+			to fit the screen (vpWidth and vpHeight) TESTED!  OK!  */
 		inline  vec2  toScreenCoord(const int vpWidth, const int vpHeight ) const
 		{
 				vec2 res;

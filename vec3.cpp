@@ -7,15 +7,15 @@ namespace gbmath
 {
 
 
-//=====================================================================
+
 void  vec3::operator = (const point3& pnt)
 {
- x=pnt._x;
- y=pnt._y;
- z=pnt._z;
-};
+	x=pnt._x;
+	y=pnt._y;
+	z=pnt._z;
+}
 
-//=====================================================================
+ 
 vec3  vec3::project (
 			const ViewportZ& vp,
 			const  mat44& Proj,
@@ -39,7 +39,7 @@ vec3  vec3::project (
 			return res;
 }
 
-//=======================================================
+ 
 vec3  vec3::unproject( const ViewportZ& vp,
 						   const  mat44& Proj,
 				 		   const  mat44& View,
@@ -47,8 +47,8 @@ vec3  vec3::unproject( const ViewportZ& vp,
 
 
 {
-	 mat44 MAT = World * View *  Proj;
-	 MAT.invert();
+	mat44 MAT = World * View *  Proj;
+	MAT.invert();
 
 	vec4 a;
 	a.x =        (x-vp.x) * 2.0f   /  ( vp.width-1.0f );
@@ -58,14 +58,12 @@ vec3  vec3::unproject( const ViewportZ& vp,
 
 	vec4 b  =  MAT * a ;
 
-	 const float k = 1.0f/b.w;
+	const float k = 1.0f/b.w;
 	vec3  res = vec3(  b.x*k  , b.y*k , b.z*k  );
-	return  res ;
-};
+	return  res;
+}
 
-
-
-//=============================================================
+ 
 vec3&  vec3::transform_coord(const mat44& m)
 {
 	vec4 v;
@@ -80,10 +78,10 @@ vec3&  vec3::transform_coord(const mat44& m)
 	y = v.y;
 	z = v.z;
 
-    return *this;
-};
+	return *this;
+}
 
-//=============================================================
+ 
 vec3&  vec3::transform_normal(const mat44& m)
 {
 	vec4 v;
@@ -99,7 +97,7 @@ vec3&  vec3::transform_normal(const mat44& m)
 	z = v.z;
 
     return *this;
-};
+}
 
 
 

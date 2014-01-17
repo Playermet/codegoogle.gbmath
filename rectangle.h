@@ -1,5 +1,5 @@
  /**   \file
-  \brief  integer values rectangle
+  \brief  integer values rectangle.  
 
 
  */

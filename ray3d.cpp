@@ -237,7 +237,7 @@ bool ray3d::checkIntersectAABB(const aabb& aabb,  float* result)
 }
 
 
-bool ray3d::checkIntersectPlane( const plane_s& plane , float* pfOutResult) const
+bool ray3d::checkIntersectPlane( const plane_s& plane , float* pfOutResult ) const
 {
 	const  vec3 plNrml = plane.normal();
 	const float alpha = plNrml.dot(dir); //    dotProduct(plane.normal, dir);

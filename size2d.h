@@ -14,8 +14,8 @@ namespace gbmath
 {
 
         //! \brief 2-dimensional size. 
-		struct size2d {
-
+		struct size2d 
+		{
 			union
 			{
 				float x;
@@ -42,6 +42,8 @@ namespace gbmath
 			}
 
 
+			
+			
 		};
  
 }

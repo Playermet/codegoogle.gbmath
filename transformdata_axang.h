@@ -25,11 +25,7 @@ namespace gbmath
 	   vec3            translatiion;
 
 
-
-
-
-	   friend std::ostream& operator << (std::ostream& os, 
-											const TransformData2& a)
+	   friend std::ostream& operator << (std::ostream& os, const TransformData2& a)
 	   {
 			os << a.scaling;
 			os << "\n";

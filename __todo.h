@@ -2,8 +2,26 @@
  \brief TODO  doc (RUS)
 
  
+  \brief для vec3
+	// TODO: void transformCoordArray(float* pfOut, int strideOut, const float* pvInput, int strideInput,  const M44& m, const int num) {...}
+	// TODO: void transformNormalArray(float* pfOut, int strideOut, const float* pvInput, int strideInput,  const M44& m, const int num) {...}
+	// new:
+	// static void TransformCoordArray    (vec3* points, const size_t num, const size_t stride, const mat44& m);
+	// static void TransformNormalArray  (vec3* points, const size_t num, const size_t stride, const mat44& m);
+
+ 
+ \brief scalar убрать 
  \brief  добавить сегменты segment2 segment3  с методами пересечения и пр.
  \brief демы сделать на основе GLUT   class GLutApplication
+ 
+ 
+ \brief для СФЕРЫ 
+		 // TODO: bool checkIntersectRay(const Ray& ray) {....}	<- ненадо. Есть у луча
+		// TODO: bool checkIntersecеSphere(const sphere& sph) {....}   есть
+		// TODO: bool checkIntersectAABB(const aabb& aabb) {....}
+		// TODO: bool checkIntersectPlane(const Plane& aabb) {....}
+
+
  
  \brief для точки 2д  добавить трансформацию и процее. 
  \brief  (ДЛЯ ЛУЧА)

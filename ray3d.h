@@ -46,7 +46,7 @@ namespace gbmath
 
 
 
-		//  http://netlib.narod.ru/library/book0032/ch15_04.htm
+		//!  http://netlib.narod.ru/library/book0032/ch15_04.htm
 		bool  checkIntersectSphere(const sphere& sphere) const ;
 
 
