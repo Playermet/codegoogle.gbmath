@@ -72,8 +72,12 @@ namespace gbmath
 		inline vec2  operator + () const   { 	return *this; }
 		inline vec2  operator - () const   { vec2 res; res.x = -x;	res.y = -y;	return res; }
 
-		inline vec2  operator + (const vec2 &v) const { vec2 res;	res = *this; res += v; return res; }
-		inline vec2  operator - (const vec2 &v) const {	vec2 res;	res = *this; res -= v; return res; }
+		inline vec2  operator + (const vec2 &v) const { vec2 res = *this; res += v; return res; }
+		inline vec2  operator - (const vec2 &v) const {	vec2 res = *this; res -= v; return res; }
+
+		inline vec2  operator + (const float v) const { vec2 res = *this; res.x += v; res.x += v; return res; }
+		inline vec2  operator - (const float v) const {	vec2 res = *this; res.x -= v; res.y -= v; return res; }
+		
 		inline vec2  operator * (float f) const         { vec2 res;	res = *this; res.x *= f;  res.y *= f; return res; }
 		inline vec2  operator / (float f) const         { vec2 res;	res = *this; res.x /= f;  res.y /= f; return res; }
 

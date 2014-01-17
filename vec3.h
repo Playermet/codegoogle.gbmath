@@ -264,6 +264,9 @@ namespace gbmath
 		{	
 			return (float)sqrt ( x*x + y*y + z*z );	
 		}
+		
+		//! \brief alias
+		inline float magnitude() const { return length(); }
 
 		inline float     length_sq() const 
 		{	 
@@ -483,6 +486,8 @@ namespace gbmath
 		vec3&  transform_normal(const mat44& m);
 
 
+		static void TransformCoordArray   (vec3* points, const size_t num, const size_t stride, const mat44& m);
+		static void TransformNormalArray  (vec3* points, const size_t num, const size_t stride, const mat44& m);
 
 
 
@@ -490,7 +495,7 @@ namespace gbmath
 		/** \brief  The projection of the vector from the virtual "Looking Glass" on the screen.
 				Returns a display designed according vector.	*/
 		vec3 project (
-			const Rectangle& vp,
+			const Rectangle& rViewport,
 			const  mat44& Proj, 
 			const  mat44& View, 
 			const  mat44& World 
@@ -501,13 +506,55 @@ namespace gbmath
 		/** \brief  Translation of the screen coordinates in the spatial coordinates
 				Returns the mapped vector.  */
 		vec3  unproject(
-			const Rectangle& vp,    
+			const Rectangle& rViewport,    
 			const  mat44& Proj,	
 			const  mat44& View,	
 			const  mat44& World	
 			) const	;
 
+			
+		/** \brief   Performs Gram-Schmidt Orthogonalization on the 2 basis vectors to
+		   turn them into orthonormal basis vectors.  */
+		inline vec3& orthogonalize(vec3 &v1, vec3 &v2)
+		{
+		    v2 = v2 - v2.proj( v1);
+		    v2.normalize();
+			return *this;			
+		}
 
+		/** \brief  Performs Gram-Schmidt Orthogonalization on the 3 basis vectors to
+		       turn them into orthonormal basis vectors.	*/
+		static inline void orthogonalize( vec3 &v1, vec3 &v2, vec3 &v3 )
+		{
+		    v2 = v2 - v2.proj(v1);
+		    v2.normalize();
+
+		    v3 = v3 - v3.proj( v1 ) - v3.proj(v2);
+		    v3.normalize();
+		}
+
+		inline vec3 proj( const vec3& q ) const
+		{
+		    // Calculates the projection of 'p' onto 'q'.
+		    float fLength =  q.magnitude();
+		    return q * ( dot(q) / (fLength * fLength) );
+		}
+		
+		//! \brief  component of  perpendicular to 'q'.
+		inline vec3 perp( const vec3 &q )  const
+		{
+		    float length = q.magnitude();
+		    return *this - (  q * (  dot( q) / (length * length)  )  );
+		}
+
+		//! \brief  Calculates reflection vector from entering ray direction 'i'   and surface normal 'n'.  
+		inline vec3 reflect( const vec3& n ) const
+		{
+			return *this - (proj( n ) * 2.0f);
+		}
+
+		
+		
 		friend std::ostream &operator << (std::ostream &stream, const vec3& v)
 		{
 			stream << v.x << " " << v.y << " " << v.z ;

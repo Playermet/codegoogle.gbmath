@@ -35,6 +35,12 @@ namespace gbmath
 				min = max = vec2( 0.0f , 0.0f );
 			}
 
+			inline Rect( const vec2& amin , const vec2& amax ) 
+			{ 
+				min = amin;
+				max = amax;
+			}
+
 			inline Rect(const Rect& r)
 			{
 				min = r.min;
