@@ -1,6 +1,4 @@
-
-
-#include "_gbmath.h"
+ 
 
 
 #ifdef GBMATH_USE_OPENGL_DRAWER

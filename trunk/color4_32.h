@@ -13,37 +13,24 @@
 namespace gbmath
 {
 
-	//! \brief  Standard four-color int  (for union)
-	struct color4_32_s
+ 
+	//! \brief  Standard four-color int
+	struct color4_32  
 	{
 		byte_t r, g, b, a;
 
-		inline bool operator == (const color4_32_s arg) const 
-		{
-			return r==arg.r && g==arg.g && b==arg.b && a==arg.a;
+		inline color4_32() 
+		{  
+		  r = g = b = a = 0; 
 		}
 
-
-	};
-
-
-	//! \brief  Standard four-color int
-	struct color4_32 //  : public color4<byte_t> 
-	{
-		byte_t r, g, b, a;
-
-		  inline color4_32() 
-		  {  
-			  r = g = b = a = 0; 
-		  }
-
-		  inline color4_32(byte_t _r, byte_t _g, byte_t _b, byte_t _a)
-		  {
-			 r = _r;
-			 g = _g;
-			 b = _b;
-			 a = _a;
-		  }
+		inline color4_32(byte_t _r, byte_t _g, byte_t _b, byte_t _a)
+		{
+		 r = _r;
+		 g = _g;
+		 b = _b;
+		 a = _a;
+		}
 
 		//! \brief cast to integer x32
 		inline operator int() const

@@ -461,14 +461,14 @@ namespace gbmath
 		//! \brief Transposition. (Reflection of the elements on the main diagonal) CHEKED!
 		inline mat44& transpone()
 		{
-			   register float f;
+			register float f;
 			f = _12;  _12 = _21;  _21 = f;
 			f = _13;  _13 = _31;  _31 = f;
 			f = _14;  _14 = _41;  _41 = f;
 			f = _23;  _23 = _32;  _32 = f;
 			f = _24;  _24 = _42;  _42 = f;
 			f = _34;  _34 = _43;  _43 = f;
-			  return *this;
+			return *this;
 		}
 
 		//!  return transposed  .
@@ -499,7 +499,7 @@ namespace gbmath
 				( _12 *  _23 -  _13 *  _22) * ( _31 *  _44 -  _34 *  _41) -
 				( _12 *  _24 -  _14 *  _22) * ( _31 *  _43 -  _33 *  _41) +
 				( _13 *  _24 -  _14 *  _23) * ( _31 *  _42 -  _32 *  _41);
-		};
+		}
 
 		//! \brief Inversion. Throws an exception if the inversion is not possible. OK. 
 		mat44&  invert () throw();

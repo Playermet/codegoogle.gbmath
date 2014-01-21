@@ -20,13 +20,14 @@ namespace gbmath
 	{
 	public:
 	
-		vec2 a1, a2;
+		vec2 p1, p2;
 		
 		segment2() {}
 		segment2(const segment2& a) { *this = a; }
-		segment2(const vec2& _a1 , const vec2& _a2) : a1(_a1) , a2(_a2) {}
+		segment2(const vec2& _p1 , const vec2& _p2) : p1(_p1) , p2(_p2) {}
 	
 	
+		bool IsIntersection( const segment2& s2,  vec2& pIntersect );
 	
 	
 	};

@@ -331,6 +331,25 @@ namespace gbmath
 			return ( (x>=0.0f) && (y>=0.0f) );
 		}
 
+		vec2& move( const vec2& dir, float dist)
+		{
+			*this += dir * dist;
+			return *this;
+		}
+
+		//! \brief return moved point
+		vec2 moved( const vec2& dir, float dist) const
+		{
+			vec2 res(*this);
+			res.move(dir, dist);
+			return res;
+		}
+
+		vec2 direction_to(const vec2& pnt) const 
+		{
+			return vec2 (pnt - *this).normalize();
+		}
+
 		friend std::ostream &operator << (std::ostream &stream, const vec2& v)
 		{
 			stream << v.x << " " << v.y ;

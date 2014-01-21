@@ -50,10 +50,18 @@ namespace gbmath
 			dest = _dest;
 		}
 
+		vec2  project_point( const vec2& pnt );
+		bool  IsIntersectCircle(float* ps0, float* ps1,   const Circle& cir );
+		bool  IsIntersectCircleContactPoints(vec2& pContact1, vec2& pContact2, const Circle& cir );
+
 
 
 
 	};
+
+
+
+
 
 }
 

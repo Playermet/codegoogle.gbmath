@@ -84,6 +84,7 @@ namespace gbmath
 		}
  
 		normal2& rotate (const mat22& m);
+		normal2& rotate90Degr( bool clockWise );
 
 		float angle( const normal2& n ) const;
 
@@ -96,6 +97,8 @@ namespace gbmath
 
 		// 
 
+		normal2& operator = (const vec2& a);
+		operator vec2 () const;
 
 	};
  

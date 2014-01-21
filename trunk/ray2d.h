@@ -27,11 +27,15 @@ namespace gbmath
 		inline ray2d(const ray2d& r) {orig=r.orig; dir=r.dir; }
 		inline ray2d(const  vec2& _orig, const  vec2& _dir, bool bNeedNormalizeDir)
 		{
-			orig=_orig;
-			dir=_dir;
+			orig = _orig;
+			dir = _dir;
 			if(bNeedNormalizeDir) dir.normalize();
 		}
 
+
+		bool IsIntersect(vec2& pointIntersection , const ray2d& ry );
+		bool IsIntersectCircle(float* ps0, float* ps1, const Circle& cir );
+		bool IsIntersectCirclePoints(vec2& point0, vec2& point1,  const Circle& cir );
 
 
 
