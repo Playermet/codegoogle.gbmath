@@ -53,6 +53,23 @@ namespace gbmath
 	
 	typedef  unsigned char    byte_t;
 
+
+//
+// lib assert
+//
+
+#ifdef _DEBUG
+
+	#define GBMATH_ASSERT(condition,msge) if( !(condition) ) { gbmath_assert_failed(__FUNCTION__, __FILE__,__LINE__,(msge)); }
+	void gbmath_assert_failed( const char* srcfunc, const char* srcfile, const int srcline, const char* msg );
+
+#else
+
+	#define GBMATH_ASSERT(condition,msge)
+
+#endif
+
+
 }
 
 // new 
@@ -78,8 +95,7 @@ namespace gbmath
 		
 		e value;
 	
-		//
-
+ 
 		axies_e()
 		{
 			value = undefined;
@@ -117,40 +133,37 @@ namespace gbmath
 {
 
 
-	static const float EPSILON	  =	1.0e-6f;
+	static const float EPSILON	     = 1.0e-6f;
 
-	static const float PI       = 3.1415926536f; ///<   PI
-	static const float C1BYPI    = 0.3183098862f; ///<   1/PI
+	static const float PI            = 3.1415926536f; ///<   PI
+	static const float C1BYPI        = 0.3183098862f; ///<   1/PI
 
-	static const float PI2         =  6.283185307f; ///<  	2*PI
+	static const float PI2           =  6.283185307f; ///<   2*PI
 	static const float PI_DIV_2      =  1.570796326f; ///<   PI/2
 	static const float PI_DIV_4      =  0.785398163f; ///<   PI/4
 	static const float PI_DIV_6      =  0.523598776f; ///<   PI/6
 
 	static const float PI_DIV_180    =  0.017453292f; ///<   PI/180
-	static const float C180DIVPI    =  57.29577951f; ///<   180/PI
+	static const float C180DIVPI     =  57.29577951f; ///<   180/PI
 
-	static const float C3PIDIV4     = 2.35619449f;   ///<   3/4 PI
-	static const float PI2_INV      = 0.159154943f;  ///<   1/(2PI)
-	static const float CINV360      = 0.002777778f;  ///<   1/360
+	static const float C3PIDIV4     = 2.35619449f;    ///<   3/4 PI
+	static const float PI2_INV      = 0.159154943f;   ///<   1/(2PI)
+	static const float CINV360      = 0.002777778f;   ///<   1/360
 	static const float C180         = 180.0f;
 	static const float C360         = 360.0f;
-	static const float HALF     = 0.5f;
-	static const float TWO         = 2.0f;
-	static const float LN10        = 2.302585093f;
+	static const float HALF         = 0.5f;
+	static const float TWO          = 2.0f;
+	static const float LN10         = 2.302585093f;
 
-	static const float SQRT_2       = 1.4142135624f; ///< sqrt(2)
-	static const float SQRT_HALF    = 0.7071067812f; ///< sqrt(1/2)
+	static const float SQRT_2       = 1.4142135624f;   ///<   sqrt(2)
+	static const float SQRT_HALF    = 0.7071067812f;   ///<   sqrt(1/2)
 
-	static const float E           = 2.718281828459f; ///<  e
+	static const float E            = 2.718281828459f; ///<  e
 
 
 }
 
-
-// include lib headers
-
-
+ 
 
 #include "point.h"
 #include "rectangle.h"
@@ -169,7 +182,7 @@ namespace gbmath
 #include "object_color_type_e.h"
 #include "color_functions.h"
 
-//#include "color_const/color_const.h"
+ 
 #include "color_const.h"
 
 
@@ -194,6 +207,7 @@ namespace gbmath
 #include "circle.h"
 #include "rect.h"
 #include "segment2.h"
+
 
 // 3d
 #include "normal3.h"
@@ -243,36 +257,13 @@ namespace gbmath
 // math dependence
 #include "dependence_on_function.h"
 
-
-//-------------------------------------------------------------------
- 
- 
  
 #include "drawer.h"
 
- 
- 
-
-//-------------------------------------------------------------
-
+  
 
 #ifdef _MSC_VER
 	#pragma  warning(pop)
 #endif
 
-
  
-//// do include static lib for VC
-//#if GB_LIB
-//	#ifndef _LIB_GB_FMATH
-//		#ifdef _DEBUG
-//				#pragma comment( lib , "gb_fmath_d.lib" )
-//		#else
-//				#pragma comment( lib , "gb_fmath.lib" )
-//		#endif
-//	#endif
-//#endif
- 
-
-
-// end file

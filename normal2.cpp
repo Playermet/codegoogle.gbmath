@@ -1,4 +1,4 @@
-﻿#pragma once
+﻿ 
 
 #include "_gbmath.h"
 
@@ -30,6 +30,50 @@ normal2& normal2::direction_between( const point2& src , const point2& dst )
 	_y = dst.y() - src.y();
 	return __normalize();
 }
+
+
+
+normal2& normal2::rotate90Degr( bool clockWise )
+{
+	mat22 mat;
+
+	if( clockWise == false )
+	{
+		mat.floats [0][0] =  0.0f; // cosine
+		mat.floats [0][1] =  1.0f;   // sine
+		mat.floats [1][0] = -1.0f;   // -sine
+		mat.floats [1][1] =  0.0f; // cosine	 
+
+	}
+	else
+	{
+		mat.floats [0][0] =  0.0f; // cosine
+		mat.floats [0][1] = -1.0f;   // sine
+		mat.floats [1][0] =  1.0f;   // -sine
+		mat.floats [1][1] =  0.0f; // cosine
+	}
+
+	vec2 temp = vec2( _x , _y );
+	temp = mat * temp;
+	_x = temp.x;
+	_y = temp.y;
+
+
+	return *this;
+}
+
+normal2::operator vec2 () const
+{
+	return vec2(_x,_y);
+}
+
+normal2& normal2::operator = (const vec2& a)
+{
+	_x = a.x;
+	_y = a.y;
+	return __normalize();
+}
+
 
 
 }

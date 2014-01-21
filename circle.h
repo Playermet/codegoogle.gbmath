@@ -81,23 +81,16 @@ namespace gbmath
 			}
 			
 			//! \brief Verification of the point
-			inline bool checkContainPoint(const  vec2 point)
-			{
-				float fDist;
-				{  
-					vec2 t(center - point); 
-					fDist = t.length();  
-				}
+			bool checkContainPoint(const  vec2 point) ;
 
-				if( fDist > radius )
-					return false;
-
-				return true;
-			}
 
 			Rect to_rec_outside() const ;
 
 			Rect to_rec_inside() const ;
+
+			bool IsContactCircles( const Circle& c2, bool& containFully );
+			bool IsContactCirclesWithContactPoints( const Circle& c2, 
+				bool& containFully, vec2& pContact1, vec2& pContact2 );
  
 			void operator  = (const std::string& str) throw (std::runtime_error)
 			{

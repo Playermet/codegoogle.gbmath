@@ -1,4 +1,4 @@
-#pragma once
+ 
 
 #include "_gbmath.h"
 
@@ -182,7 +182,7 @@ Quaternion&  Quaternion::setRotationAxis(const  vec3 &axis, float theta)
 
 inline axies_angle Quaternion::getRotationAxiesAngle() const
 {
-	 axies_angle res;
+	axies_angle res;
 	res.angle = getRotationAngle();
 	res.axies = getRotationAxis();
 	return res;
