@@ -19,7 +19,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.jpg"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">gbmath
-   &#160;<span id="projectnumber">v0.05</span>
+   &#160;<span id="projectnumber">v0.051</span>
    </div>
    <div id="projectbrief">c++ math library</div>
   </td>
@@ -61,36 +61,35 @@
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span>gbmath</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="classgbmath_1_1ray2d.html">   23</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classgbmath_1_1ray2d.html" title="ray in 2d space ">ray2d</a> {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="classgbmath_1_1ray2d.html#a5dbdc7a0e2244fcc9c9570bfda828de6">   25</a></span>&#160;             <a class="code" href="structgbmath_1_1vec2.html" title="2d-base vector. Corrected by operators epislon ">vec2</a>   <a class="code" href="classgbmath_1_1ray2d.html#a5dbdc7a0e2244fcc9c9570bfda828de6" title="точка центр луча ">orig</a>; </div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="classgbmath_1_1ray2d.html#ad40cb26f9e12e1ee678f0c1cd0c0a7a4">   26</a></span>&#160;             <a class="code" href="structgbmath_1_1vec2.html" title="2d-base vector. Corrected by operators epislon ">vec2</a>   <a class="code" href="classgbmath_1_1ray2d.html#ad40cb26f9e12e1ee678f0c1cd0c0a7a4" title="направление луча ( должен быть нормализован) ">dir</a>;  </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="classgbmath_1_1ray2d.html#adfa9ceec5ac0aa0fb9190fdec9650918">   28</a></span>&#160;            <span class="keyword">inline</span> <a class="code" href="classgbmath_1_1ray2d.html#adfa9ceec5ac0aa0fb9190fdec9650918">ray2d</a>() {}</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="classgbmath_1_1ray2d.html#a473f7a73df81bbd9fea1ca3fba201913">   29</a></span>&#160;            <span class="keyword">inline</span> <a class="code" href="classgbmath_1_1ray2d.html#a473f7a73df81bbd9fea1ca3fba201913">ray2d</a>(<span class="keyword">const</span> <a class="code" href="classgbmath_1_1ray2d.html" title="ray in 2d space ">ray2d</a>&amp; r) {<a class="code" href="classgbmath_1_1ray2d.html#a5dbdc7a0e2244fcc9c9570bfda828de6" title="точка центр луча ">orig</a>=r.<a class="code" href="classgbmath_1_1ray2d.html#a5dbdc7a0e2244fcc9c9570bfda828de6" title="точка центр луча ">orig</a>; <a class="code" href="classgbmath_1_1ray2d.html#ad40cb26f9e12e1ee678f0c1cd0c0a7a4" title="направление луча ( должен быть нормализован) ">dir</a>=r.<a class="code" href="classgbmath_1_1ray2d.html#ad40cb26f9e12e1ee678f0c1cd0c0a7a4" title="направление луча ( должен быть нормализован) ">dir</a>; }</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="classgbmath_1_1ray2d.html#a833a8aae46f7f2657bfdcd318b1e6816">   30</a></span>&#160;            <span class="keyword">inline</span> <a class="code" href="classgbmath_1_1ray2d.html#a833a8aae46f7f2657bfdcd318b1e6816">ray2d</a>(<span class="keyword">const</span>  <a class="code" href="structgbmath_1_1vec2.html" title="2d-base vector. Corrected by operators epislon ">vec2</a>&amp; _orig, <span class="keyword">const</span>  <a class="code" href="structgbmath_1_1vec2.html" title="2d-base vector. Corrected by operators epislon ">vec2</a>&amp; _dir, <span class="keywordtype">bool</span> bNeedNormalizeDir)</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <a class="code" href="classgbmath_1_1ray2d.html#a5dbdc7a0e2244fcc9c9570bfda828de6" title="точка центр луча ">orig</a>=_orig;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <a class="code" href="classgbmath_1_1ray2d.html#ad40cb26f9e12e1ee678f0c1cd0c0a7a4" title="направление луча ( должен быть нормализован) ">dir</a>=_dir;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <span class="keywordflow">if</span>(bNeedNormalizeDir) <a class="code" href="classgbmath_1_1ray2d.html#ad40cb26f9e12e1ee678f0c1cd0c0a7a4" title="направление луча ( должен быть нормализован) ">dir</a>.<a class="code" href="structgbmath_1_1vec2.html#ada98e790dd68c989b03dbf9b4e5cabaf">normalize</a>();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="comment">// bool checkIntersectCircle(const CIrcle&amp; c)</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="comment">// bool checkIntersectRect(const Rect&amp; r)</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="comment">// bool checkIntersectRectContactPnts(const Rect&amp; r)</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="comment">// bool checkIntersectLine</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="classgbmath_1_1ray2d.html">   20</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classgbmath_1_1ray2d.html" title="ray in 2d space ">ray2d</a> </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="classgbmath_1_1ray2d.html#a5dbdc7a0e2244fcc9c9570bfda828de6">   23</a></span>&#160;         <a class="code" href="structgbmath_1_1vec2.html" title="2d-base vector. Corrected by operators epislon ">vec2</a>   <a class="code" href="classgbmath_1_1ray2d.html#a5dbdc7a0e2244fcc9c9570bfda828de6" title="center ray ">orig</a>; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="classgbmath_1_1ray2d.html#ad40cb26f9e12e1ee678f0c1cd0c0a7a4">   24</a></span>&#160;         <a class="code" href="structgbmath_1_1vec2.html" title="2d-base vector. Corrected by operators epislon ">vec2</a>   <a class="code" href="classgbmath_1_1ray2d.html#ad40cb26f9e12e1ee678f0c1cd0c0a7a4" title="direction ray (most normalized) ">dir</a>;  </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="classgbmath_1_1ray2d.html#adfa9ceec5ac0aa0fb9190fdec9650918">   26</a></span>&#160;        <span class="keyword">inline</span> <a class="code" href="classgbmath_1_1ray2d.html#adfa9ceec5ac0aa0fb9190fdec9650918">ray2d</a>() {}</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="classgbmath_1_1ray2d.html#a473f7a73df81bbd9fea1ca3fba201913">   27</a></span>&#160;        <span class="keyword">inline</span> <a class="code" href="classgbmath_1_1ray2d.html#a473f7a73df81bbd9fea1ca3fba201913">ray2d</a>(<span class="keyword">const</span> <a class="code" href="classgbmath_1_1ray2d.html" title="ray in 2d space ">ray2d</a>&amp; r) {<a class="code" href="classgbmath_1_1ray2d.html#a5dbdc7a0e2244fcc9c9570bfda828de6" title="center ray ">orig</a>=r.<a class="code" href="classgbmath_1_1ray2d.html#a5dbdc7a0e2244fcc9c9570bfda828de6" title="center ray ">orig</a>; <a class="code" href="classgbmath_1_1ray2d.html#ad40cb26f9e12e1ee678f0c1cd0c0a7a4" title="direction ray (most normalized) ">dir</a>=r.<a class="code" href="classgbmath_1_1ray2d.html#ad40cb26f9e12e1ee678f0c1cd0c0a7a4" title="direction ray (most normalized) ">dir</a>; }</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="classgbmath_1_1ray2d.html#a833a8aae46f7f2657bfdcd318b1e6816">   28</a></span>&#160;        <span class="keyword">inline</span> <a class="code" href="classgbmath_1_1ray2d.html#a833a8aae46f7f2657bfdcd318b1e6816">ray2d</a>(<span class="keyword">const</span>  <a class="code" href="structgbmath_1_1vec2.html" title="2d-base vector. Corrected by operators epislon ">vec2</a>&amp; _orig, <span class="keyword">const</span>  <a class="code" href="structgbmath_1_1vec2.html" title="2d-base vector. Corrected by operators epislon ">vec2</a>&amp; _dir, <span class="keywordtype">bool</span> bNeedNormalizeDir)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="code" href="classgbmath_1_1ray2d.html#a5dbdc7a0e2244fcc9c9570bfda828de6" title="center ray ">orig</a> = _orig;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <a class="code" href="classgbmath_1_1ray2d.html#ad40cb26f9e12e1ee678f0c1cd0c0a7a4" title="direction ray (most normalized) ">dir</a> = _dir;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">if</span>(bNeedNormalizeDir) <a class="code" href="classgbmath_1_1ray2d.html#ad40cb26f9e12e1ee678f0c1cd0c0a7a4" title="direction ray (most normalized) ">dir</a>.<a class="code" href="structgbmath_1_1vec2.html#ada98e790dd68c989b03dbf9b4e5cabaf">normalize</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classgbmath_1_1ray2d.html#a5bb845b6e484b2a843ea2f7ae90fe101">IsIntersect</a>(<a class="code" href="structgbmath_1_1vec2.html" title="2d-base vector. Corrected by operators epislon ">vec2</a>&amp; pointIntersection , <span class="keyword">const</span> <a class="code" href="classgbmath_1_1ray2d.html" title="ray in 2d space ">ray2d</a>&amp; ry );</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classgbmath_1_1ray2d.html#a3469dce01e0e7a857d9539afac4a3513">IsIntersectCircle</a>(<span class="keywordtype">float</span>* ps0, <span class="keywordtype">float</span>* ps1, <span class="keyword">const</span> <a class="code" href="classgbmath_1_1_circle.html" title="circle in two-dimensional space ">Circle</a>&amp; cir );</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classgbmath_1_1ray2d.html#a29733e768f2b9198ea26317468510e1a">IsIntersectCirclePoints</a>(<a class="code" href="structgbmath_1_1vec2.html" title="2d-base vector. Corrected by operators epislon ">vec2</a>&amp; point0, <a class="code" href="structgbmath_1_1vec2.html" title="2d-base vector. Corrected by operators epislon ">vec2</a>&amp; point1,  <span class="keyword">const</span> <a class="code" href="classgbmath_1_1_circle.html" title="circle in two-dimensional space ">Circle</a>&amp; cir );</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        };</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    };</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <hr class="footer"/>
 <!--address class="footer"-->

@@ -19,7 +19,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.jpg"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">gbmath
-   &#160;<span id="projectnumber">v0.05</span>
+   &#160;<span id="projectnumber">v0.051</span>
    </div>
    <div id="projectbrief">c++ math library</div>
   </td>
@@ -50,7 +50,7 @@
 <div class="title">normal2.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="normal2_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;﻿#pragma once</div>
+<a href="normal2_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;﻿ </div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="__gbmath_8h.html" title="MAIN INCLUDE HEADER. ">_gbmath.h</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
@@ -58,11 +58,78 @@
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>gbmath</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="code" href="classgbmath_1_1normal2.html#a561282954d124f254fa12033b4ad3545">    9</a></span>&#160;<a class="code" href="classgbmath_1_1normal2.html" title="direction / normal in 2-dimensional space. Higher level than a vector. Always normalized. ">normal2</a>&amp; <a class="code" href="classgbmath_1_1normal2.html#a561282954d124f254fa12033b4ad3545">normal2::rotate</a> (<span class="keyword">const</span> <a class="code" href="structgbmath_1_1mat22.html" title="matrix 2x2 ">mat22</a>&amp; m) </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="structgbmath_1_1vec2.html" title="2d-base vector. Corrected by operators epislon ">vec2</a> tmp(<a class="code" href="classgbmath_1_1normal2.html#a73c6faabb977ba6e35e771886a5aeee5">_x</a>,<a class="code" href="classgbmath_1_1normal2.html#a131bc0450e0b2be23fce7a00ec9cfb7a">_y</a>);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    tmp = m * tmp;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classgbmath_1_1normal2.html#a73c6faabb977ba6e35e771886a5aeee5">_x</a>=tmp.x; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="classgbmath_1_1normal2.html#a131bc0450e0b2be23fce7a00ec9cfb7a">_y</a>=tmp.y;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="classgbmath_1_1normal2.html#a1e9ce2c0a7d5cafdf63560a6df1fdbbf">   18</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="classgbmath_1_1normal2.html#a1e9ce2c0a7d5cafdf63560a6df1fdbbf">normal2::angle</a>( <span class="keyword">const</span> <a class="code" href="classgbmath_1_1normal2.html" title="direction / normal in 2-dimensional space. Higher level than a vector. Always normalized. ">normal2</a>&amp; n )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">float</span> fdot = <a class="code" href="structgbmath_1_1vec2.html" title="2d-base vector. Corrected by operators epislon ">vec2</a>(<a class="code" href="classgbmath_1_1normal2.html#a73c6faabb977ba6e35e771886a5aeee5">_x</a>,<a class="code" href="classgbmath_1_1normal2.html#a131bc0450e0b2be23fce7a00ec9cfb7a">_y</a>).<a class="code" href="structgbmath_1_1vec2.html#ab9f06c31143d61552717f11182ae4c0b">dot</a>( <a class="code" href="structgbmath_1_1vec2.html" title="2d-base vector. Corrected by operators epislon ">vec2</a>(n.<a class="code" href="classgbmath_1_1normal2.html#a73c6faabb977ba6e35e771886a5aeee5">_x</a> , n.<a class="code" href="classgbmath_1_1normal2.html#a131bc0450e0b2be23fce7a00ec9cfb7a">_y</a>) );</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">float</span> res = acos(fdot);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="classgbmath_1_1normal2.html#acc0afc5af1d427eab1580f09e9f7d033">   25</a></span>&#160;<a class="code" href="classgbmath_1_1normal2.html" title="direction / normal in 2-dimensional space. Higher level than a vector. Always normalized. ">normal2</a>&amp; <a class="code" href="classgbmath_1_1normal2.html#acc0afc5af1d427eab1580f09e9f7d033">normal2::direction_between</a>( <span class="keyword">const</span> <a class="code" href="classgbmath_1_1point2.html" title="describes a point/coordinate/position in 3-dimensional space. Level higher than the vector ...">point2</a>&amp; src , <span class="keyword">const</span> <a class="code" href="classgbmath_1_1point2.html" title="describes a point/coordinate/position in 3-dimensional space. Level higher than the vector ...">point2</a>&amp; dst )</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">//vec2 vsrc(src._x , src._y);</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">//vec2 vdst(dst._x , dst._y);</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classgbmath_1_1normal2.html#a73c6faabb977ba6e35e771886a5aeee5">_x</a> = dst.<a class="code" href="classgbmath_1_1point2.html#af072417656d83d7e4e8e0bfd85c2e09f">x</a>() - src.<a class="code" href="classgbmath_1_1point2.html#af072417656d83d7e4e8e0bfd85c2e09f">x</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classgbmath_1_1normal2.html#a131bc0450e0b2be23fce7a00ec9cfb7a">_y</a> = dst.<a class="code" href="classgbmath_1_1point2.html#af935ad3379bb0a7c14cf784be871f939">y</a>() - src.<a class="code" href="classgbmath_1_1point2.html#af935ad3379bb0a7c14cf784be871f939">y</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classgbmath_1_1normal2.html#a002619c74ae1bb4c85e72429f821bbad">__normalize</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="classgbmath_1_1normal2.html#a81a51af9edaf987df62e64f358eea787">   36</a></span>&#160;<a class="code" href="classgbmath_1_1normal2.html" title="direction / normal in 2-dimensional space. Higher level than a vector. Always normalized. ">normal2</a>&amp; <a class="code" href="classgbmath_1_1normal2.html#a81a51af9edaf987df62e64f358eea787">normal2::rotate90Degr</a>( <span class="keywordtype">bool</span> clockWise )</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="structgbmath_1_1mat22.html" title="matrix 2x2 ">mat22</a> mat;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span>( clockWise == <span class="keyword">false</span> )</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        mat.<a class="code" href="structgbmath_1_1mat22.html#aa9824a91f0d7ac802dfbbbf5a2eff7b2">floats</a> [0][0] =  0.0f; <span class="comment">// cosine</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        mat.<a class="code" href="structgbmath_1_1mat22.html#aa9824a91f0d7ac802dfbbbf5a2eff7b2">floats</a> [0][1] =  1.0f;   <span class="comment">// sine</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        mat.<a class="code" href="structgbmath_1_1mat22.html#aa9824a91f0d7ac802dfbbbf5a2eff7b2">floats</a> [1][0] = -1.0f;   <span class="comment">// -sine</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        mat.<a class="code" href="structgbmath_1_1mat22.html#aa9824a91f0d7ac802dfbbbf5a2eff7b2">floats</a> [1][1] =  0.0f; <span class="comment">// cosine     </span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        mat.<a class="code" href="structgbmath_1_1mat22.html#aa9824a91f0d7ac802dfbbbf5a2eff7b2">floats</a> [0][0] =  0.0f; <span class="comment">// cosine</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        mat.<a class="code" href="structgbmath_1_1mat22.html#aa9824a91f0d7ac802dfbbbf5a2eff7b2">floats</a> [0][1] = -1.0f;   <span class="comment">// sine</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        mat.<a class="code" href="structgbmath_1_1mat22.html#aa9824a91f0d7ac802dfbbbf5a2eff7b2">floats</a> [1][0] =  1.0f;   <span class="comment">// -sine</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        mat.<a class="code" href="structgbmath_1_1mat22.html#aa9824a91f0d7ac802dfbbbf5a2eff7b2">floats</a> [1][1] =  0.0f; <span class="comment">// cosine</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="structgbmath_1_1vec2.html" title="2d-base vector. Corrected by operators epislon ">vec2</a> temp = <a class="code" href="structgbmath_1_1vec2.html" title="2d-base vector. Corrected by operators epislon ">vec2</a>( <a class="code" href="classgbmath_1_1normal2.html#a73c6faabb977ba6e35e771886a5aeee5">_x</a> , <a class="code" href="classgbmath_1_1normal2.html#a131bc0450e0b2be23fce7a00ec9cfb7a">_y</a> );</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    temp = mat * temp;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="classgbmath_1_1normal2.html#a73c6faabb977ba6e35e771886a5aeee5">_x</a> = temp.x;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="classgbmath_1_1normal2.html#a131bc0450e0b2be23fce7a00ec9cfb7a">_y</a> = temp.y;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="classgbmath_1_1normal2.html#aa468d2bc84915d09da19cf3ca895b7e0">   65</a></span>&#160;normal2::operator <a class="code" href="structgbmath_1_1vec2.html" title="2d-base vector. Corrected by operators epislon ">vec2</a> ()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structgbmath_1_1vec2.html" title="2d-base vector. Corrected by operators epislon ">vec2</a>(_x,_y);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="classgbmath_1_1normal2.html#af08a51e5e9aa96377b497a4ab1d4086d">   70</a></span>&#160;<a class="code" href="classgbmath_1_1normal2.html" title="direction / normal in 2-dimensional space. Higher level than a vector. Always normalized. ">normal2</a>&amp; <a class="code" href="classgbmath_1_1normal2.html#a0c2506e1770e05bace11ebc62e30643a">normal2::operator = </a>(<span class="keyword">const</span> <a class="code" href="structgbmath_1_1vec2.html" title="2d-base vector. Corrected by operators epislon ">vec2</a>&amp; a)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="classgbmath_1_1normal2.html#a73c6faabb977ba6e35e771886a5aeee5">_x</a> = a.<a class="code" href="structgbmath_1_1vec2.html#a86ff75c64d87662abfee8c35c5a343d0">x</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="classgbmath_1_1normal2.html#a131bc0450e0b2be23fce7a00ec9cfb7a">_y</a> = a.<a class="code" href="structgbmath_1_1vec2.html#a9212649e2705d2216739fc89763f00b6">y</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classgbmath_1_1normal2.html#a002619c74ae1bb4c85e72429f821bbad">__normalize</a>();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 <hr class="footer"/>
 <!--address class="footer"-->

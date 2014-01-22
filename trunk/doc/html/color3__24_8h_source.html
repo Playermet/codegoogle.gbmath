@@ -19,7 +19,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.jpg"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">gbmath
-   &#160;<span id="projectnumber">v0.05</span>
+   &#160;<span id="projectnumber">v0.051</span>
    </div>
    <div id="projectbrief">c++ math library</div>
   </td>
@@ -63,35 +63,37 @@
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="structgbmath_1_1color3__24.html">   20</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="structgbmath_1_1color3__24.html" title="Three-standard color byte. ">color3_24</a> : <span class="keyword">public</span> <a class="code" href="structgbmath_1_1color3.html" title="template color3 ">color3</a>&lt;byte_t&gt; {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="structgbmath_1_1color3__24.html#a10ec63d1d9d18706a073c3be11053f6b">   22</a></span>&#160;            <span class="keyword">inline</span> <a class="code" href="structgbmath_1_1color3__24.html#a10ec63d1d9d18706a073c3be11053f6b">color3_24</a>() </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            {  </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <a class="code" href="structgbmath_1_1color3.html#a4334237f7470c37229a375a83c52b733">r</a> = <a class="code" href="structgbmath_1_1color3.html#a4769e1d5eb6b0c5ed75e404643c3c105">g</a> = <a class="code" href="structgbmath_1_1color3.html#a1fa2594b4bbebc4efea2831bf88dd70a">b</a> = 0; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="structgbmath_1_1color3__24.html#ac198bb3bdbf04c4db5c3d1539f1ec128">   27</a></span>&#160;            <span class="keyword">inline</span> <a class="code" href="structgbmath_1_1color3__24.html#ac198bb3bdbf04c4db5c3d1539f1ec128">color3_24</a>(<span class="keyword">const</span> <a class="code" href="structgbmath_1_1color3__24.html" title="Three-standard color byte. ">color3_24</a>&amp; a)</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                *<span class="keyword">this</span> = a;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            }</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="structgbmath_1_1color3__24.html#a154fa7fd8bd1bddb719958c519fa3fa9">   32</a></span>&#160;            <a class="code" href="structgbmath_1_1color3__24.html#a154fa7fd8bd1bddb719958c519fa3fa9">color3_24</a>( <a class="code" href="namespacegbmath.html#ad73cf6b0a8f2b7d9b6d5156f515f132a">byte_t</a> _r, <a class="code" href="namespacegbmath.html#ad73cf6b0a8f2b7d9b6d5156f515f132a">byte_t</a> _g, <a class="code" href="namespacegbmath.html#ad73cf6b0a8f2b7d9b6d5156f515f132a">byte_t</a> _b )</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <a class="code" href="structgbmath_1_1color3.html#a4334237f7470c37229a375a83c52b733">r</a> = _r;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <a class="code" href="structgbmath_1_1color3.html#a4769e1d5eb6b0c5ed75e404643c3c105">g</a> = _g;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <a class="code" href="structgbmath_1_1color3.html#a1fa2594b4bbebc4efea2831bf88dd70a">b</a> = _b;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="structgbmath_1_1color3__24.html">   20</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structgbmath_1_1color3__24.html" title="Three-standard color byte. ">color3_24</a>  <span class="comment">// : public color3&lt;byte_t&gt; </span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="structgbmath_1_1color3__24.html#acaeda6e3113897d9b0eb56bda43a3ea8">   22</a></span>&#160;        <a class="code" href="namespacegbmath.html#ad73cf6b0a8f2b7d9b6d5156f515f132a">byte_t</a> <a class="code" href="structgbmath_1_1color3__24.html#acaeda6e3113897d9b0eb56bda43a3ea8">r</a>, <a class="code" href="structgbmath_1_1color3__24.html#aa2a248e85765a8ca01e395bba57844f9">g</a>, <a class="code" href="structgbmath_1_1color3__24.html#a1f0fe1bf854fffaab1efcc243402ab3b">b</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="structgbmath_1_1color3__24.html#a10ec63d1d9d18706a073c3be11053f6b">   24</a></span>&#160;        <span class="keyword">inline</span> <a class="code" href="structgbmath_1_1color3__24.html#a10ec63d1d9d18706a073c3be11053f6b">color3_24</a>() </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        {  </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="structgbmath_1_1color3__24.html#acaeda6e3113897d9b0eb56bda43a3ea8">r</a> = <a class="code" href="structgbmath_1_1color3__24.html#aa2a248e85765a8ca01e395bba57844f9">g</a> = <a class="code" href="structgbmath_1_1color3__24.html#a1f0fe1bf854fffaab1efcc243402ab3b">b</a> = 0; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="structgbmath_1_1color3__24.html#ac198bb3bdbf04c4db5c3d1539f1ec128">   29</a></span>&#160;        <span class="keyword">inline</span> <a class="code" href="structgbmath_1_1color3__24.html#ac198bb3bdbf04c4db5c3d1539f1ec128">color3_24</a>(<span class="keyword">const</span> <a class="code" href="structgbmath_1_1color3__24.html" title="Three-standard color byte. ">color3_24</a>&amp; a)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            *<span class="keyword">this</span> = a;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="structgbmath_1_1color3__24.html#a154fa7fd8bd1bddb719958c519fa3fa9">   34</a></span>&#160;        <a class="code" href="structgbmath_1_1color3__24.html#a154fa7fd8bd1bddb719958c519fa3fa9">color3_24</a>( <a class="code" href="namespacegbmath.html#ad73cf6b0a8f2b7d9b6d5156f515f132a">byte_t</a> _r, <a class="code" href="namespacegbmath.html#ad73cf6b0a8f2b7d9b6d5156f515f132a">byte_t</a> _g, <a class="code" href="namespacegbmath.html#ad73cf6b0a8f2b7d9b6d5156f515f132a">byte_t</a> _b )</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <a class="code" href="structgbmath_1_1color3__24.html#acaeda6e3113897d9b0eb56bda43a3ea8">r</a> = _r;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <a class="code" href="structgbmath_1_1color3__24.html#aa2a248e85765a8ca01e395bba57844f9">g</a> = _g;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <a class="code" href="structgbmath_1_1color3__24.html#a1f0fe1bf854fffaab1efcc243402ab3b">b</a> = _b;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        };</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    };</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <hr class="footer"/>
 <!--address class="footer"-->

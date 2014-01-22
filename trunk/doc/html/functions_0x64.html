@@ -19,7 +19,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.jpg"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">gbmath
-   &#160;<span id="projectnumber">v0.05</span>
+   &#160;<span id="projectnumber">v0.051</span>
    </div>
    <div id="projectbrief">c++ math library</div>
   </td>
@@ -42,7 +42,6 @@
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li class="current"><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -51,7 +50,6 @@
       <li class="current"><a href="functions.html"><span>All</span></a></li>
       <li><a href="functions_func.html"><span>Functions</span></a></li>
       <li><a href="functions_vars.html"><span>Variables</span></a></li>
-      <li><a href="functions_type.html"><span>Typedefs</span></a></li>
       <li><a href="functions_enum.html"><span>Enumerations</span></a></li>
       <li><a href="functions_eval.html"><span>Enumerator</span></a></li>
       <li><a href="functions_rela.html"><span>Related&#160;Functions</span></a></li>
@@ -104,9 +102,6 @@
 <li>dependence_on_function()
 : <a class="el" href="structgbmath_1_1dependence__on__function.html#aa84f05f6bfbb60c5a04ec6af3ba8d763">gbmath::dependence_on_function</a>
 </li>
-<li>deph
-: <a class="el" href="structgbmath_1_1box3d.html#a4675bea88e6604103110ea4b4f7dfff8">gbmath::box3d</a>
-</li>
 <li>depth
 : <a class="el" href="structgbmath_1_1size3d.html#aa2560afce8be77785cb188a6f9735482">gbmath::size3d</a>
 </li>
@@ -123,16 +118,23 @@
 : <a class="el" href="structgbmath_1_1object__color__type__e.html#a92eebbfea13b49e8b5cc6bdf52ee181aaa9dba42fbb76c086490de6960288e761">gbmath::object_color_type_e</a>
 </li>
 <li>Diffuse
-: <a class="el" href="structgbmath_1_1object__color.html#a3d5ac2ecc062b666ef103704ba823186">gbmath::object_color</a>
+: <a class="el" href="structgbmath_1_1object__colors.html#a21901f755f823808f56b97b4baf3a087">gbmath::object_colors</a>
 </li>
 <li>dir
-: <a class="el" href="classgbmath_1_1ray2d.html#ad40cb26f9e12e1ee678f0c1cd0c0a7a4">gbmath::ray2d</a>
-, <a class="el" href="classgbmath_1_1ray3d.html#a1dad3371200a316e8678061da93bf62c">gbmath::ray3d</a>
+: <a class="el" href="classgbmath_1_1ray3d.html#a1dad3371200a316e8678061da93bf62c">gbmath::ray3d</a>
+, <a class="el" href="classgbmath_1_1ray2d.html#ad40cb26f9e12e1ee678f0c1cd0c0a7a4">gbmath::ray2d</a>
 </li>
 <li>direction()
 : <a class="el" href="structgbmath_1_1eyedata.html#a02cf813dd37427ba5cc97ba7a4613d28">gbmath::eyedata</a>
 , <a class="el" href="classgbmath_1_1line2d.html#ac98f6441aeb863faca901889c1d682a1">gbmath::line2d</a>
 , <a class="el" href="classgbmath_1_1line3d.html#a5d77fd63022e21989b208d339dd89b84">gbmath::line3d</a>
+</li>
+<li>direction_between()
+: <a class="el" href="classgbmath_1_1normal2.html#acc0afc5af1d427eab1580f09e9f7d033">gbmath::normal2</a>
+</li>
+<li>direction_to()
+: <a class="el" href="classgbmath_1_1point2.html#adddf2b1ba25032a168cf16a4c60be0c3">gbmath::point2</a>
+, <a class="el" href="structgbmath_1_1vec2.html#a0ef16b107a451521701541480a76394b">gbmath::vec2</a>
 </li>
 <li>distance()
 : <a class="el" href="structgbmath_1_1plane__s.html#adbbf445dad987fd41aa6e1f5546a3e54">gbmath::plane_s</a>
@@ -140,8 +142,8 @@
 , <a class="el" href="structgbmath_1_1vec3.html#a89d5f86f16967723ae1e30fa4202d953">gbmath::vec3</a>
 </li>
 <li>distance_sq()
-: <a class="el" href="structgbmath_1_1vec3.html#afb285453ff42d7071dd75848d87aeee4">gbmath::vec3</a>
-, <a class="el" href="structgbmath_1_1vec2.html#a0acbb496da83beaf4e3afcf6858977a8">gbmath::vec2</a>
+: <a class="el" href="structgbmath_1_1vec2.html#a0acbb496da83beaf4e3afcf6858977a8">gbmath::vec2</a>
+, <a class="el" href="structgbmath_1_1vec3.html#afb285453ff42d7071dd75848d87aeee4">gbmath::vec3</a>
 </li>
 <li>distanceBetween()
 : <a class="el" href="classgbmath_1_1point3.html#a21ab6027345cd237994a2d180b27e908">gbmath::point3</a>
@@ -153,11 +155,11 @@
 : <a class="el" href="classgbmath_1_1ray3d.html#aeeef1c1186bfe39dae5ae94e970b53e1">gbmath::ray3d</a>
 </li>
 <li>dot()
-: <a class="el" href="classgbmath_1_1_quaternion.html#a264fd43b0e574148711ac71b1e7f1876">gbmath::Quaternion</a>
+: <a class="el" href="structgbmath_1_1vec2.html#ab9f06c31143d61552717f11182ae4c0b">gbmath::vec2</a>
 , <a class="el" href="structgbmath_1_1plane__s.html#a8001238412cfef24c46bb93e97661b22">gbmath::plane_s</a>
 , <a class="el" href="structgbmath_1_1vec4.html#a2a16b2df3650e827c35b10361fbabf29">gbmath::vec4</a>
 , <a class="el" href="structgbmath_1_1vec3.html#a4f2a1ebac341810c42a6c277760b134b">gbmath::vec3</a>
-, <a class="el" href="structgbmath_1_1vec2.html#ab9f06c31143d61552717f11182ae4c0b">gbmath::vec2</a>
+, <a class="el" href="classgbmath_1_1_quaternion.html#a264fd43b0e574148711ac71b1e7f1876">gbmath::Quaternion</a>
 </li>
 <li>dotCoord()
 : <a class="el" href="structgbmath_1_1plane__s.html#ab97e744e8ca491f5f1ce734f37e204ca">gbmath::plane_s</a>

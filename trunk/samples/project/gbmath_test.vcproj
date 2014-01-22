@@ -176,6 +176,10 @@
 				RelativePath="..\..\__compile__gbmath.cpp"
 				>
 			</File>
+			<File
+				RelativePath="..\sample_400_aabb.cpp"
+				>
+			</File>
 		</Filter>
 	</Files>
 	<Globals>

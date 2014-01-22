@@ -19,7 +19,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.jpg"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">gbmath
-   &#160;<span id="projectnumber">v0.05</span>
+   &#160;<span id="projectnumber">v0.051</span>
    </div>
    <div id="projectbrief">c++ math library</div>
   </td>
@@ -42,7 +42,6 @@
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -76,9 +75,13 @@
   <tr class="even"><td class="entry"><a class="el" href="classgbmath_1_1aabb.html#a8d0882944c616739ed9bc70a28692e7a">includePoint</a>(const vec3 &amp;pnt)</td><td class="entry"><a class="el" href="classgbmath_1_1aabb.html">gbmath::aabb</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr><td class="entry"><a class="el" href="classgbmath_1_1aabb.html#a90fe79a869e0e4f26300fd1ed0de3ad8">make</a>(const vec3 &amp;p1, const vec3 &amp;p2)</td><td class="entry"><a class="el" href="classgbmath_1_1aabb.html">gbmath::aabb</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classgbmath_1_1aabb.html#af253f49da4b280cc113fce612648e5f6">make</a>(float p1_x, float p1_y, float p1_z, float p2_x, float p2_y, float p2_z)</td><td class="entry"><a class="el" href="classgbmath_1_1aabb.html">gbmath::aabb</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classgbmath_1_1aabb.html#ae0ed3e01375b5eb11f231b30c86e589a">MakeFromCube</a>(const vec3 &amp;aCenter, const float aSize)</td><td class="entry"><a class="el" href="classgbmath_1_1aabb.html">gbmath::aabb</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classgbmath_1_1aabb.html#a38c83c591f2eff4c580f5e881d1bb03e">MakeFromMinMax</a>(const vec3 &amp;amin, const vec3 &amp;amax)</td><td class="entry"><a class="el" href="classgbmath_1_1aabb.html">gbmath::aabb</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classgbmath_1_1aabb.html#ad0b9ecbf6b8870ebb64e192a703c0b47">MakeFromPoints</a>(const vec3 *points, const size_t num, const size_t stride)</td><td class="entry"><a class="el" href="classgbmath_1_1aabb.html">gbmath::aabb</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classgbmath_1_1aabb.html#aa832aec9aecdcf21d742824bf82133bb">MakeFromPositionAndDimensions</a>(const vec3 &amp;pos, float size_x, float size_y, float size_z)</td><td class="entry"><a class="el" href="classgbmath_1_1aabb.html">gbmath::aabb</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
   <tr><td class="entry"><a class="el" href="classgbmath_1_1aabb.html#a739cbaa1eef4c6f6d4018ed566fa9d5c">max</a></td><td class="entry"><a class="el" href="classgbmath_1_1aabb.html">gbmath::aabb</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classgbmath_1_1aabb.html#a8d9ee7f37938613852e9bad91560fadf">min</a></td><td class="entry"><a class="el" href="classgbmath_1_1aabb.html">gbmath::aabb</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classgbmath_1_1aabb.html#a3f2ca35196bf1af5ae073916e4c9bed8">offset</a>(const vec3 &amp;v)</td><td class="entry"><a class="el" href="classgbmath_1_1aabb.html">gbmath::aabb</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classgbmath_1_1aabb.html#a2da4633130d1fa0024b7bb15e8aa6b2c">offset</a>(const vec3 &amp;v)</td><td class="entry"><a class="el" href="classgbmath_1_1aabb.html">gbmath::aabb</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classgbmath_1_1aabb.html#a747fc568d4dab03b79cbd53274b29341">operator+</a>(const aabb &amp;_aabb) const </td><td class="entry"><a class="el" href="classgbmath_1_1aabb.html">gbmath::aabb</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr><td class="entry"><a class="el" href="classgbmath_1_1aabb.html#a5d33b3ef0d7cba000624941774279cb3">operator+</a>(const vec3 &amp;pnt) const </td><td class="entry"><a class="el" href="classgbmath_1_1aabb.html">gbmath::aabb</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classgbmath_1_1aabb.html#a8aa896121dd26502a1808f194d95207d">operator+=</a>(const aabb &amp;_aabb)</td><td class="entry"><a class="el" href="classgbmath_1_1aabb.html">gbmath::aabb</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>

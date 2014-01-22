@@ -19,7 +19,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.jpg"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">gbmath
-   &#160;<span id="projectnumber">v0.05</span>
+   &#160;<span id="projectnumber">v0.051</span>
    </div>
    <div id="projectbrief">c++ math library</div>
   </td>
@@ -42,7 +42,6 @@
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -54,6 +53,7 @@
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="structgbmath_1_1vec3-members.html">List of all members</a>  </div>
@@ -115,10 +115,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a820d4a4d4a572e9f3de7877645de2855"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d1d7086d2a2d0cc0b75768db775bbb8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vec3.html#a3d1d7086d2a2d0cc0b75768db775bbb8">operator float *</a> ()</td></tr>
 <tr class="separator:a3d1d7086d2a2d0cc0b75768db775bbb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21528a054cfff2e27cb2a02092475a2d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vec3.html#a21528a054cfff2e27cb2a02092475a2d">operator[]</a> (unsigned int index) const   throw (std::out_of_range)</td></tr>
-<tr class="separator:a21528a054cfff2e27cb2a02092475a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae35445ff30ad552edf19d8939fbf7307"><td class="memItemLeft" align="right" valign="top">float &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vec3.html#ae35445ff30ad552edf19d8939fbf7307">operator[]</a> (unsigned int index)  throw (std::out_of_range)</td></tr>
-<tr class="separator:ae35445ff30ad552edf19d8939fbf7307"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab56951f9d022e4eee0cdec9bd62d41e9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vec3.html#ab56951f9d022e4eee0cdec9bd62d41e9">operator[]</a> (size_t index) const   throw (std::out_of_range)</td></tr>
+<tr class="separator:ab56951f9d022e4eee0cdec9bd62d41e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfe1223a89eab8e72deee1d7d575ec6c"><td class="memItemLeft" align="right" valign="top">float &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vec3.html#abfe1223a89eab8e72deee1d7d575ec6c">operator[]</a> (size_t index)  throw (std::out_of_range)</td></tr>
+<tr class="separator:abfe1223a89eab8e72deee1d7d575ec6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e79653f4dfba34b4aedb2e241ac2473"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vec3.html#a1e79653f4dfba34b4aedb2e241ac2473">operator=</a> (const <a class="el" href="classgbmath_1_1point3.html">point3</a> &amp;pnt)</td></tr>
 <tr class="separator:a1e79653f4dfba34b4aedb2e241ac2473"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4c9960c40bf781518304c24f45f471d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vec3.html#ab4c9960c40bf781518304c24f45f471d">setzero</a> ()</td></tr>
@@ -133,6 +133,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a660afe2d25b1503ec42ea1a11458f7f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30effe274e32c5af662df9477221982d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vec3.html#a30effe274e32c5af662df9477221982d">length</a> () const </td></tr>
 <tr class="separator:a30effe274e32c5af662df9477221982d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b4ef1ae12ea9a10fbf75d2b0dc70007"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vec3.html#a9b4ef1ae12ea9a10fbf75d2b0dc70007">magnitude</a> () const </td></tr>
+<tr class="memdesc:a9b4ef1ae12ea9a10fbf75d2b0dc70007"><td class="mdescLeft">&#160;</td><td class="mdescRight">alias  <a href="#a9b4ef1ae12ea9a10fbf75d2b0dc70007">More...</a><br/></td></tr>
+<tr class="separator:a9b4ef1ae12ea9a10fbf75d2b0dc70007"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39aeb4da19026149e85efbd62d70b66d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vec3.html#a39aeb4da19026149e85efbd62d70b66d">length_sq</a> () const </td></tr>
 <tr class="separator:a39aeb4da19026149e85efbd62d70b66d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f2a1ebac341810c42a6c277760b134b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vec3.html#a4f2a1ebac341810c42a6c277760b134b">dot</a> (const <a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;v) const </td></tr>
@@ -161,6 +164,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a15fa7bf37103f9abc8f6fb88cfd588d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a8e1159b7c6ae1ac9b21bbaebf4f408"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1vec3.html">vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vec3.html#a6a8e1159b7c6ae1ac9b21bbaebf4f408">lerp</a> (const <a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;v, const float k) const </td></tr>
 <tr class="separator:a6a8e1159b7c6ae1ac9b21bbaebf4f408"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9653780bc52ca34d4f9e792809dd9a72"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vec3.html#a9653780bc52ca34d4f9e792809dd9a72">angle</a> (const <a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;n)</td></tr>
+<tr class="separator:a9653780bc52ca34d4f9e792809dd9a72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2daeb0a99d3d6a0b1012abeacd425be7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vec3.html#a2daeb0a99d3d6a0b1012abeacd425be7">min_value</a> () const </td></tr>
 <tr class="memdesc:a2daeb0a99d3d6a0b1012abeacd425be7"><td class="mdescLeft">&#160;</td><td class="mdescRight">get min component  <a href="#a2daeb0a99d3d6a0b1012abeacd425be7">More...</a><br/></td></tr>
 <tr class="separator:a2daeb0a99d3d6a0b1012abeacd425be7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -200,33 +205,54 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abab0eed903e0f9c8bd881ac54b7c1afa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vec3.html#abab0eed903e0f9c8bd881ac54b7c1afa">transform_normal</a> (const <a class="el" href="structgbmath_1_1mat44.html">mat44</a> &amp;m)</td></tr>
 <tr class="memdesc:abab0eed903e0f9c8bd881ac54b7c1afa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transform as normal.  <a href="#abab0eed903e0f9c8bd881ac54b7c1afa">More...</a><br/></td></tr>
 <tr class="separator:abab0eed903e0f9c8bd881ac54b7c1afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82bf12385a7aeb94f72084290c6bea3f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1vec3.html">vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vec3.html#a82bf12385a7aeb94f72084290c6bea3f">project</a> (const <a class="el" href="classgbmath_1_1_viewport_z.html">ViewportZ</a> &amp;vp, const <a class="el" href="structgbmath_1_1mat44.html">mat44</a> &amp;Proj, const <a class="el" href="structgbmath_1_1mat44.html">mat44</a> &amp;View, const <a class="el" href="structgbmath_1_1mat44.html">mat44</a> &amp;World) const </td></tr>
-<tr class="memdesc:a82bf12385a7aeb94f72084290c6bea3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The projection of the vector from the virtual "Looking Glass" on the screen. Returns a display designed according vector.  <a href="#a82bf12385a7aeb94f72084290c6bea3f">More...</a><br/></td></tr>
-<tr class="separator:a82bf12385a7aeb94f72084290c6bea3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b3c9c2517fbf87c9e67047b375705ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1vec3.html">vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vec3.html#a1b3c9c2517fbf87c9e67047b375705ae">unproject</a> (const <a class="el" href="classgbmath_1_1_viewport_z.html">ViewportZ</a> &amp;vp, const <a class="el" href="structgbmath_1_1mat44.html">mat44</a> &amp;Proj, const <a class="el" href="structgbmath_1_1mat44.html">mat44</a> &amp;View, const <a class="el" href="structgbmath_1_1mat44.html">mat44</a> &amp;World) const </td></tr>
-<tr class="memdesc:a1b3c9c2517fbf87c9e67047b375705ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translation of the screen coordinates in the spatial coordinates Returns the mapped vector.  <a href="#a1b3c9c2517fbf87c9e67047b375705ae">More...</a><br/></td></tr>
-<tr class="separator:a1b3c9c2517fbf87c9e67047b375705ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82125ca00367142fab1e4dc7bf599110"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1vec3.html">vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vec3.html#a82125ca00367142fab1e4dc7bf599110">project</a> (const <a class="el" href="structgbmath_1_1_rectangle.html">Rectangle</a> &amp;rViewport, const <a class="el" href="structgbmath_1_1mat44.html">mat44</a> &amp;Proj, const <a class="el" href="structgbmath_1_1mat44.html">mat44</a> &amp;View, const <a class="el" href="structgbmath_1_1mat44.html">mat44</a> &amp;World) const </td></tr>
+<tr class="memdesc:a82125ca00367142fab1e4dc7bf599110"><td class="mdescLeft">&#160;</td><td class="mdescRight">The projection of the vector from the virtual "Looking Glass" on the screen. Returns a display designed according vector.  <a href="#a82125ca00367142fab1e4dc7bf599110">More...</a><br/></td></tr>
+<tr class="separator:a82125ca00367142fab1e4dc7bf599110"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9627ec9e6f4b84c58bc6276d1c512160"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1vec3.html">vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vec3.html#a9627ec9e6f4b84c58bc6276d1c512160">unproject</a> (const <a class="el" href="structgbmath_1_1_rectangle.html">Rectangle</a> &amp;rViewport, const <a class="el" href="structgbmath_1_1mat44.html">mat44</a> &amp;Proj, const <a class="el" href="structgbmath_1_1mat44.html">mat44</a> &amp;View, const <a class="el" href="structgbmath_1_1mat44.html">mat44</a> &amp;World) const </td></tr>
+<tr class="memdesc:a9627ec9e6f4b84c58bc6276d1c512160"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translation of the screen coordinates in the spatial coordinates Returns the mapped vector.  <a href="#a9627ec9e6f4b84c58bc6276d1c512160">More...</a><br/></td></tr>
+<tr class="separator:a9627ec9e6f4b84c58bc6276d1c512160"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebe08853d7bbb78e9872b5b0ff4cc03b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vec3.html#aebe08853d7bbb78e9872b5b0ff4cc03b">orthogonalize</a> (<a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;v1, <a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;v2)</td></tr>
+<tr class="memdesc:aebe08853d7bbb78e9872b5b0ff4cc03b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs Gram-Schmidt Orthogonalization on the 2 basis vectors to turn them into orthonormal basis vectors.  <a href="#aebe08853d7bbb78e9872b5b0ff4cc03b">More...</a><br/></td></tr>
+<tr class="separator:aebe08853d7bbb78e9872b5b0ff4cc03b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94ac99389c1255de09e9c77d3feabc16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1vec3.html">vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vec3.html#a94ac99389c1255de09e9c77d3feabc16">proj</a> (const <a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;q) const </td></tr>
+<tr class="separator:a94ac99389c1255de09e9c77d3feabc16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16f63ff2e658350bee743fb0568c553d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1vec3.html">vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vec3.html#a16f63ff2e658350bee743fb0568c553d">perp</a> (const <a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;q) const </td></tr>
+<tr class="memdesc:a16f63ff2e658350bee743fb0568c553d"><td class="mdescLeft">&#160;</td><td class="mdescRight">component of perpendicular to 'q'.  <a href="#a16f63ff2e658350bee743fb0568c553d">More...</a><br/></td></tr>
+<tr class="separator:a16f63ff2e658350bee743fb0568c553d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fa52bcf4da93d45f61f3f54e30f521a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgbmath_1_1vec3.html">vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vec3.html#a9fa52bcf4da93d45f61f3f54e30f521a">reflect</a> (const <a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;n) const </td></tr>
+<tr class="memdesc:a9fa52bcf4da93d45f61f3f54e30f521a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates reflection vector from entering ray direction 'i' and surface normal 'n'.  <a href="#a9fa52bcf4da93d45f61f3f54e30f521a">More...</a><br/></td></tr>
+<tr class="separator:a9fa52bcf4da93d45f61f3f54e30f521a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf52215a4ce7f0900b1099e78cf03357"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vec3.html#abf52215a4ce7f0900b1099e78cf03357">operator std::string</a> () const </td></tr>
 <tr class="separator:abf52215a4ce7f0900b1099e78cf03357"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9be9251905546c869bc26aa2dc113561"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vec3.html#a9be9251905546c869bc26aa2dc113561">operator=</a> (const std::string &amp;str)  throw (std::invalid_argument)</td></tr>
 <tr class="separator:a9be9251905546c869bc26aa2dc113561"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a9bb0a953a135944fa0b35ae1052d980c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vec3.html#a9bb0a953a135944fa0b35ae1052d980c">TransformCoordArray</a> (<a class="el" href="structgbmath_1_1vec3.html">vec3</a> *points, const size_t num, const size_t stride, const <a class="el" href="structgbmath_1_1mat44.html">mat44</a> &amp;m)</td></tr>
+<tr class="separator:a9bb0a953a135944fa0b35ae1052d980c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a207be7f252cd650850c51f467db4fb5e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vec3.html#a207be7f252cd650850c51f467db4fb5e">TransformNormalArray</a> (<a class="el" href="structgbmath_1_1vec3.html">vec3</a> *points, const size_t num, const size_t stride, const <a class="el" href="structgbmath_1_1mat44.html">mat44</a> &amp;m)</td></tr>
+<tr class="separator:a207be7f252cd650850c51f467db4fb5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52675fed7999e07728ebad79285e1640"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbmath_1_1vec3.html#a52675fed7999e07728ebad79285e1640">orthogonalize</a> (<a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;v1, <a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;v2, <a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;v3)</td></tr>
+<tr class="memdesc:a52675fed7999e07728ebad79285e1640"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs Gram-Schmidt Orthogonalization on the 3 basis vectors to turn them into orthonormal basis vectors.  <a href="#a52675fed7999e07728ebad79285e1640">More...</a><br/></td></tr>
+<tr class="separator:a52675fed7999e07728ebad79285e1640"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:aaa21257bc2864ab76624fe51ad5d3ece"><td class="memItemLeft" >union {</td></tr>
-<tr class="memitem:a8885234922c706c0014b5f52a7aaf604"><td class="memItemLeft" >&#160;&#160;&#160;struct {</td></tr>
-<tr class="memitem:aa0708b8fa2fcf4e15592c10bd6c31b7d"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;float&#160;&#160;&#160;<a class="el" href="structgbmath_1_1vec3.html#a5fb2cf8734338da1ad7b4251a3bde292">x</a></td></tr>
-<tr class="separator:aa0708b8fa2fcf4e15592c10bd6c31b7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ed6d1a727b2db789d2b4382498d0d42"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;float&#160;&#160;&#160;<a class="el" href="structgbmath_1_1vec3.html#aa096d36a3c46c4224f0195f70eb580ec">y</a></td></tr>
-<tr class="separator:a9ed6d1a727b2db789d2b4382498d0d42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae35686c4d174b4a1925ecb797190e51b"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;float&#160;&#160;&#160;<a class="el" href="structgbmath_1_1vec3.html#a546e6c38e7c49102f064d130ed3475ee">z</a></td></tr>
-<tr class="separator:ae35686c4d174b4a1925ecb797190e51b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8885234922c706c0014b5f52a7aaf604"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
-<tr class="separator:a8885234922c706c0014b5f52a7aaf604"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac79a2574eca3256c1f963c91b6ff1a2e"><td class="memItemLeft" >&#160;&#160;&#160;float&#160;&#160;&#160;<a class="el" href="structgbmath_1_1vec3.html#abbb36cd61978768f94caf3b8d57c2680">floats</a> [3]</td></tr>
-<tr class="separator:ac79a2574eca3256c1f963c91b6ff1a2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa21257bc2864ab76624fe51ad5d3ece"><td class="memItemLeft" valign="top">};&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
-<tr class="separator:aaa21257bc2864ab76624fe51ad5d3ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24c8b8f6931ed34ebc84e02ec6397c8a"><td class="memItemLeft" >union {</td></tr>
+<tr class="memitem:a363ad9c420a12a44fd2e09c2ed29cf1f"><td class="memItemLeft" >&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:ab56dc739bb8b95955e371e6663a1dd23"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;float&#160;&#160;&#160;<a class="el" href="structgbmath_1_1vec3.html#a5fb2cf8734338da1ad7b4251a3bde292">x</a></td></tr>
+<tr class="separator:ab56dc739bb8b95955e371e6663a1dd23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b8df4d9590b5fd73c6e86f5d1587c99"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;float&#160;&#160;&#160;<a class="el" href="structgbmath_1_1vec3.html#aa096d36a3c46c4224f0195f70eb580ec">y</a></td></tr>
+<tr class="separator:a0b8df4d9590b5fd73c6e86f5d1587c99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b7e356d71a48fff7369bfbe6a019405"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;float&#160;&#160;&#160;<a class="el" href="structgbmath_1_1vec3.html#a546e6c38e7c49102f064d130ed3475ee">z</a></td></tr>
+<tr class="separator:a0b7e356d71a48fff7369bfbe6a019405"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a363ad9c420a12a44fd2e09c2ed29cf1f"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:a363ad9c420a12a44fd2e09c2ed29cf1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4c8bc3acf43b0edbc170d1df2785357"><td class="memItemLeft" >&#160;&#160;&#160;float&#160;&#160;&#160;<a class="el" href="structgbmath_1_1vec3.html#abbb36cd61978768f94caf3b8d57c2680">floats</a> [3]</td></tr>
+<tr class="separator:ab4c8bc3acf43b0edbc170d1df2785357"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24c8b8f6931ed34ebc84e02ec6397c8a"><td class="memItemLeft" valign="top">};&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:a24c8b8f6931ed34ebc84e02ec6397c8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -238,7 +264,7 @@ Friends</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>3d-base vector. Corrected by operators epislon </p>
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00021">21</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00019">19</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a43b07c0b9adde00a06e2f50ae42b5090"></a>
 <div class="memitem">
@@ -261,7 +287,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00034">34</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00031">31</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -287,7 +313,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00039">39</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00036">36</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -313,7 +339,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00046">46</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00043">43</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -349,7 +375,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00053">53</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00050">50</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -391,7 +417,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00060">60</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00057">57</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -417,11 +443,37 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00068">68</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00065">65</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a9653780bc52ca34d4f9e792809dd9a72"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float gbmath::vec3::angle </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;&#160;</td>
+          <td class="paramname"><em>n</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00360">360</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a0de5655050f6fb78de653bda44a11672"></a>
 <div class="memitem">
 <div class="memproto">
@@ -456,7 +508,7 @@ Friends</h2></td></tr>
 
 <p>set clumped </p>
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00454">454</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00458">458</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -482,7 +534,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00296">296</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00294">294</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -510,7 +562,7 @@ Friends</h2></td></tr>
 
 <p>Compute and return the distance between this and point. </p>
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00327">327</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00325">325</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -538,7 +590,7 @@ Friends</h2></td></tr>
 
 <p>Compute and return the square of the distance between the points and this point. </p>
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00333">333</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00331">331</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -564,7 +616,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00278">278</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00276">276</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -589,7 +641,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00242">242</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00237">237</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -616,7 +668,7 @@ Friends</h2></td></tr>
 
 <p>Get the most out of each component of the absolute. </p>
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00340">340</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00338">338</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -641,7 +693,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00283">283</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00281">281</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -666,7 +718,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00345">345</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00343">343</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -691,7 +743,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00291">291</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00289">289</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -718,7 +770,7 @@ Friends</h2></td></tr>
 
 <p>return true if all &gt; 0.0 </p>
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00473">473</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00477">477</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -744,7 +796,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00263">263</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00258">258</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -769,7 +821,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00268">268</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00263">263</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -794,7 +846,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00273">273</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00271">271</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -830,7 +882,34 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00353">353</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00351">351</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9b4ef1ae12ea9a10fbf75d2b0dc70007"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float gbmath::vec3::magnitude </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>alias </p>
+
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00269">269</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -857,7 +936,7 @@ Friends</h2></td></tr>
 
 <p>get max component </p>
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00372">372</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00376">376</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -884,7 +963,7 @@ Friends</h2></td></tr>
 
 <p>get max absolute component </p>
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00395">395</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00399">399</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -920,7 +999,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00407">407</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00411">411</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -946,7 +1025,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00415">415</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00419">419</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -972,7 +1051,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00445">445</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00449">449</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1000,7 +1079,7 @@ Friends</h2></td></tr>
 
 <p>return middle point between this and point </p>
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00463">463</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00467">467</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1027,7 +1106,7 @@ Friends</h2></td></tr>
 
 <p>get min component </p>
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00363">363</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00367">367</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1054,7 +1133,7 @@ Friends</h2></td></tr>
 
 <p>get min absolute component </p>
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00382">382</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00386">386</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1090,7 +1169,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00423">423</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00427">427</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1116,7 +1195,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00431">431</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00435">435</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1142,7 +1221,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00439">439</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00443">443</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1167,7 +1246,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00306">306</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00304">304</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1194,7 +1273,7 @@ Friends</h2></td></tr>
 
 <p>get normalized </p>
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00319">319</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00317">317</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1219,7 +1298,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00150">150</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00145">145</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1244,7 +1323,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00151">151</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00146">146</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1269,7 +1348,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00543">543</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00572">572</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1295,7 +1374,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00112">112</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00109">109</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1321,7 +1400,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00138">138</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00135">135</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1347,7 +1426,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00143">143</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00140">140</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1373,7 +1452,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00144">144</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00141">141</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1398,7 +1477,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00122">122</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00119">119</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1424,7 +1503,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00136">136</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00133">133</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1450,7 +1529,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00141">141</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00138">138</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1475,7 +1554,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00127">127</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00124">124</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1501,7 +1580,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00137">137</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00134">134</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1527,7 +1606,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00142">142</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00139">139</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1553,7 +1632,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00139">139</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00136">136</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1579,7 +1658,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00145">145</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00142">142</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1605,7 +1684,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00146">146</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00143">143</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1631,7 +1710,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00100">100</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00097">97</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1681,7 +1760,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00550">550</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00579">579</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1707,11 +1786,11 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00107">107</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00104">104</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a21528a054cfff2e27cb2a02092475a2d"></a>
+<a class="anchor" id="ab56951f9d022e4eee0cdec9bd62d41e9"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1721,7 +1800,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">float gbmath::vec3::operator[] </td>
           <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>index</em>)</td><td></td>
           <td> const</td>
         </tr>
@@ -1739,11 +1818,11 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00154">154</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00149">149</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ae35445ff30ad552edf19d8939fbf7307"></a>
+<a class="anchor" id="abfe1223a89eab8e72deee1d7d575ec6c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1753,7 +1832,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">float&amp; gbmath::vec3::operator[] </td>
           <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>index</em>)</td><td></td>
           <td></td>
         </tr>
@@ -1771,19 +1850,155 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00161">161</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00156">156</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a82bf12385a7aeb94f72084290c6bea3f"></a>
+<a class="anchor" id="aebe08853d7bbb78e9872b5b0ff4cc03b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structgbmath_1_1vec3.html">vec3</a>&amp; gbmath::vec3::orthogonalize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;&#160;</td>
+          <td class="paramname"><em>v1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;&#160;</td>
+          <td class="paramname"><em>v2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Performs Gram-Schmidt Orthogonalization on the 2 basis vectors to turn them into orthonormal basis vectors. </p>
+
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00518">518</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a52675fed7999e07728ebad79285e1640"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void gbmath::vec3::orthogonalize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;&#160;</td>
+          <td class="paramname"><em>v1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;&#160;</td>
+          <td class="paramname"><em>v2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;&#160;</td>
+          <td class="paramname"><em>v3</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Performs Gram-Schmidt Orthogonalization on the 3 basis vectors to turn them into orthonormal basis vectors. </p>
+
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00527">527</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a16f63ff2e658350bee743fb0568c553d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structgbmath_1_1vec3.html">vec3</a> gbmath::vec3::perp </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;&#160;</td>
+          <td class="paramname"><em>q</em>)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>component of perpendicular to 'q'. </p>
+
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00544">544</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a94ac99389c1255de09e9c77d3feabc16"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structgbmath_1_1vec3.html">vec3</a> gbmath::vec3::proj </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;&#160;</td>
+          <td class="paramname"><em>q</em>)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00536">536</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a82125ca00367142fab1e4dc7bf599110"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="structgbmath_1_1vec3.html">vec3</a> gbmath::vec3::project </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classgbmath_1_1_viewport_z.html">ViewportZ</a> &amp;&#160;</td>
-          <td class="paramname"><em>vp</em>, </td>
+          <td class="paramtype">const <a class="el" href="structgbmath_1_1_rectangle.html">Rectangle</a> &amp;&#160;</td>
+          <td class="paramname"><em>rViewport</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1814,6 +2029,34 @@ Friends</h2></td></tr>
 <p>The projection of the vector from the virtual "Looking Glass" on the screen. Returns a display designed according vector. </p>
 
 <p>Definition at line <a class="el" href="vec3_8cpp_source.html#l00019">19</a> of file <a class="el" href="vec3_8cpp_source.html">vec3.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9fa52bcf4da93d45f61f3f54e30f521a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structgbmath_1_1vec3.html">vec3</a> gbmath::vec3::reflect </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;&#160;</td>
+          <td class="paramname"><em>n</em>)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculates reflection vector from entering ray direction 'i' and surface normal 'n'. </p>
+
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00551">551</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1855,7 +2098,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00247">247</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00242">242</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1881,7 +2124,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00255">255</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00250">250</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1906,7 +2149,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00237">237</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00232">232</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -1926,7 +2169,7 @@ Friends</h2></td></tr>
 
 <p>Transform as point. </p>
 
-<p>Definition at line <a class="el" href="vec3_8cpp_source.html#l00069">69</a> of file <a class="el" href="vec3_8cpp_source.html">vec3.cpp</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8cpp_source.html#l00067">67</a> of file <a class="el" href="vec3_8cpp_source.html">vec3.cpp</a>.</p>
 
 </div>
 </div>
@@ -1946,19 +2189,115 @@ Friends</h2></td></tr>
 
 <p>Transform as normal. </p>
 
-<p>Definition at line <a class="el" href="vec3_8cpp_source.html#l00087">87</a> of file <a class="el" href="vec3_8cpp_source.html">vec3.cpp</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8cpp_source.html#l00085">85</a> of file <a class="el" href="vec3_8cpp_source.html">vec3.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a1b3c9c2517fbf87c9e67047b375705ae"></a>
+<a class="anchor" id="a9bb0a953a135944fa0b35ae1052d980c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gbmath::vec3::TransformCoordArray </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgbmath_1_1vec3.html">vec3</a> *&#160;</td>
+          <td class="paramname"><em>points</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>stride</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structgbmath_1_1mat44.html">mat44</a> &amp;&#160;</td>
+          <td class="paramname"><em>m</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="vec3_8cpp_source.html#l00104">104</a> of file <a class="el" href="vec3_8cpp_source.html">vec3.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a207be7f252cd650850c51f467db4fb5e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gbmath::vec3::TransformNormalArray </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgbmath_1_1vec3.html">vec3</a> *&#160;</td>
+          <td class="paramname"><em>points</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>stride</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structgbmath_1_1mat44.html">mat44</a> &amp;&#160;</td>
+          <td class="paramname"><em>m</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="vec3_8cpp_source.html#l00114">114</a> of file <a class="el" href="vec3_8cpp_source.html">vec3.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9627ec9e6f4b84c58bc6276d1c512160"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="structgbmath_1_1vec3.html">vec3</a> gbmath::vec3::unproject </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classgbmath_1_1_viewport_z.html">ViewportZ</a> &amp;&#160;</td>
-          <td class="paramname"><em>vp</em>, </td>
+          <td class="paramtype">const <a class="el" href="structgbmath_1_1_rectangle.html">Rectangle</a> &amp;&#160;</td>
+          <td class="paramname"><em>rViewport</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -2025,7 +2364,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00511">511</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00558">558</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -2061,12 +2400,12 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00517">517</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00564">564</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="aaa21257bc2864ab76624fe51ad5d3ece"></a>
+<a class="anchor" id="a24c8b8f6931ed34ebc84e02ec6397c8a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -2088,7 +2427,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00031">31</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00028">28</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -2102,7 +2441,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00028">28</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00025">25</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -2116,7 +2455,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00028">28</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00025">25</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>
@@ -2130,7 +2469,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="vec3_8h_source.html#l00028">28</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
+<p>Definition at line <a class="el" href="vec3_8h_source.html#l00025">25</a> of file <a class="el" href="vec3_8h_source.html">vec3.h</a>.</p>
 
 </div>
 </div>

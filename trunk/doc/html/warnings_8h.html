@@ -19,7 +19,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.jpg"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">gbmath
-   &#160;<span id="projectnumber">v0.05</span>
+   &#160;<span id="projectnumber">v0.051</span>
    </div>
    <div id="projectbrief">c++ math library</div>
   </td>
@@ -93,8 +93,7 @@
 <p>#pragma message(" base_camera ::  delete this: CameraKeys" <b>FILE</b> ) <br/>
 <br/>
 </p>
-<pre class="fragment">#pragma message(" base_camera &gt;&gt; delete this: KEY_WAS_DOWN_MASK .....    " __FILE__ )
-</pre><p> <br/>
+<p>#pragma message(" base_camera &gt;&gt; delete this: KEY_WAS_DOWN_MASK .....    " <b>FILE</b> ) <br/>
 <br/>
 </p>
 <p>#pragma message(" first_person_camera::framemove  ПРОВЕРИТЬ МЕТОД!  " <b>FILE</b>) <br/>
@@ -106,85 +105,73 @@
 <p>#pragma message("&gt;&gt; geometry_context::setWorldRotationQuaternion(const Quaternion *q) &gt;&gt; NEED CHECK IMPLEMENTATION" <b>FILE</b> ) <br/>
 <br/>
 </p>
-<pre class="fragment">#pragma message("  geometry_context::setWorldTransformData  NEED CHECK IMPLEMENTATION  " __FILE__ )
-</pre><p> <br/>
+<p>#pragma message("  geometry_context::setWorldTransformData  NEED CHECK IMPLEMENTATION  " <b>FILE</b> ) <br/>
 <br/>
  #pragma message("   geometry_context::getWorldTransformDataPtr()   NEED CHECK IMPLEMENTATION" <b>FILE</b> ) <br/>
 <br/>
 </p>
-<pre class="fragment"> #pragma message ("  geometry_context::get_vector3_ViewSide  :: ПРОВЕРИТЬ ПОЛУЧЕНИЕ БОКОВОГО ВЕКТОРА ВИДА")
-&lt;br&gt;&lt;br&gt;
-
- #pragma message ("   geometry_context::__checkViewVectors() :: ПРОВЕРИТЬ ПОЛУЧЕНИЕ ВЕКТОРОВ  ВИДА ИЗ ИНВЕРСНОЙ ВИДОВОЙ МАТРИЦЫ ")
-&lt;br&gt;&lt;br&gt;
-
- #pragma message("  matrix4x4_context_type_e.h  попробовать переделат в класс энумератор  "  __FILE__ )
-&lt;br&gt;&lt;br&gt;
-
-#pragma message ("  obj_contains_e.h    need rename  " __FILE__  )
-&lt;br&gt;&lt;br&gt;
-
- #pragma message( " perspective_projection_data.h  rename this  "  __FILE__ )
-&lt;br&gt;&lt;br&gt;
-
-
- #pragma message(" plane.h need rename plane_s  "  __FILE__ )
-&lt;br&gt;&lt;br&gt;
-
-
-
-  #pragma message(" Quaternion::setRotationAxis &gt;&gt; NEED CHECK !!"   __FILE__ )
-    &lt;br&gt;&lt;br&gt;
-</pre><p>#pragma message(" quaternion.h    NEED RENAME QUAT  " <b>FILE</b> ) <br/>
+<p>#pragma message ("  geometry_context::get_vector3_ViewSide  :: ПРОВЕРИТЬ ПОЛУЧЕНИЕ БОКОВОГО ВЕКТОРА ВИДА") <br/>
 <br/>
 </p>
-<pre class="fragment">  #pragma message("rect.h  #error  need rename class  (aabr or rect)"  __FILE__ )
-    &lt;br&gt;&lt;br&gt;
-
-
-   #pragma message("rect.h  #error  need  set vec2 min  and vec2 max   "  __FILE__ )
-    &lt;br&gt;&lt;br&gt;
-
-
-#pragma message(" transformdata_axang.h   :: NEED operators   "   __FILE__ )
-      &lt;br&gt;&lt;br&gt;
-
-      const eyedata *geometry_context::getViewParamsPtr()const
-
-      assert(false);
-      #pragma message ( "geometry_context::getViewParamsPtr :: ПОГОНЯТЬ В ОТЛАДКЕ ЭТОТ МЕТОД  "  __FILE__ )
-
-
-       &lt;br&gt;&lt;br&gt;
-       void decomposeInverseView(const mat44&amp; mInverseView)
-       #pragma message(" eyedata::decomposeInverseView  need code . extract inverse view matrix")
-
-
-       &lt;br&gt;&lt;br&gt;
-   const eyedata *geometry_context::getViewParamsPtr()const
-   NEED CHECK CODE
-
-
-       &lt;br&gt;&lt;br&gt;
-
-       Quaternion geometry_context::getWorldRotationQuaternion() const
-</pre><p> get const to check calculate const TransformData *ptr = getWorldTransformDataPtr();</p>
+<p>#pragma message ("   geometry_context::__checkViewVectors() :: ПРОВЕРИТЬ ПОЛУЧЕНИЕ ВЕКТОРОВ  ВИДА ИЗ ИНВЕРСНОЙ ВИДОВОЙ МАТРИЦЫ ") <br/>
+<br/>
+</p>
+<p>#pragma message("  matrix4x4_context_type_e.h  попробовать переделат в класс энумератор  " <b>FILE</b> ) <br/>
+<br/>
+</p>
+<p>#pragma message ("  obj_contains_e.h    need rename  " <b>FILE</b> ) <br/>
+<br/>
+</p>
+<p>#pragma message( " perspective_projection_data.h  rename this  " <b>FILE</b> ) <br/>
+<br/>
+</p>
+<p>#pragma message(" plane.h need rename plane_s  " <b>FILE</b> ) <br/>
+<br/>
+</p>
+<p>#pragma message(" Quaternion::setRotationAxis &gt;&gt; NEED CHECK !!" <b>FILE</b> ) <br/>
+<br/>
+</p>
+<p>#pragma message(" quaternion.h    NEED RENAME QUAT  " <b>FILE</b> ) <br/>
+<br/>
+</p>
+<p>#pragma message("rect.h  #error  need rename class  (aabr or rect)" <b>FILE</b> ) <br/>
+<br/>
+</p>
+<p>#pragma message("rect.h  #error  need  set vec2 min  and vec2 max   " <b>FILE</b> ) <br/>
+<br/>
+</p>
+<p>#pragma message(" transformdata_axang.h   :: NEED operators   " <b>FILE</b> ) <br/>
+<br/>
+</p>
+<p>const eyedata *geometry_context::getViewParamsPtr()const</p>
+<p>assert(false); #pragma message ( "geometry_context::getViewParamsPtr :: ПОГОНЯТЬ В ОТЛАДКЕ ЭТОТ МЕТОД  " <b>FILE</b> )</p>
+<p><br/>
+<br/>
+ void decomposeInverseView(const mat44&amp; mInverseView) #pragma message(" eyedata::decomposeInverseView  need code . extract inverse view matrix")</p>
+<p><br/>
+<br/>
+ const eyedata *geometry_context::getViewParamsPtr()const NEED CHECK CODE</p>
+<p><br/>
+<br/>
+</p>
+<p>Quaternion geometry_context::getWorldRotationQuaternion() const get const to check calculate const TransformData *ptr = getWorldTransformDataPtr();</p>
 <p>#pragma message("ks777   Quaternion geometry_context::getWorldRotationQuaternion() const  Need check code    " <b>FILE</b> ) assert(false &amp;&amp; "  need a check ");</p>
 <p><br/>
 <br/>
 </p>
-<pre class="fragment">       &lt;br&gt;&lt;br&gt;
+<p><br/>
+<br/>
+</p>
+<p><br/>
+<br/>
+</p>
+<p><br/>
+<br/>
+</p>
+<p><br/>
+<br/>
+ </p>
 
-
-       &lt;br&gt;&lt;br&gt;
-
-
-
-       &lt;br&gt;&lt;br&gt;
-
-
-
-       &lt;br&gt;&lt;br&gt;</pre>
 <p>Definition in file <a class="el" href="warnings_8h_source.html">warnings.h</a>.</p>
 </div></div><!-- contents -->
 <hr class="footer"/>
