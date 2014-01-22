@@ -19,7 +19,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.jpg"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">gbmath
-   &#160;<span id="projectnumber">v0.05</span>
+   &#160;<span id="projectnumber">v0.051</span>
    </div>
    <div id="projectbrief">c++ math library</div>
   </td>
@@ -62,34 +62,35 @@
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="structgbmath_1_1related__coord.html">   19</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="structgbmath_1_1related__coord.html" title="The relative screen coordinates. ">related_coord</a></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        {</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="structgbmath_1_1related__coord.html">   19</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structgbmath_1_1related__coord.html" title="The relative screen coordinates. ">related_coord</a></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="structgbmath_1_1related__coord.html#af424e595e95a3998422709bcd507eedd">   22</a></span>&#160;              <span class="keywordtype">float</span> <a class="code" href="structgbmath_1_1related__coord.html#af424e595e95a3998422709bcd507eedd">x</a>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="structgbmath_1_1related__coord.html#a780a5c8ed4d7b79480366857e2af70e1">   23</a></span>&#160;              <span class="keywordtype">float</span> <a class="code" href="structgbmath_1_1related__coord.html#a780a5c8ed4d7b79480366857e2af70e1">y</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="structgbmath_1_1related__coord.html#af424e595e95a3998422709bcd507eedd">   22</a></span>&#160;          <span class="keywordtype">float</span> <a class="code" href="structgbmath_1_1related__coord.html#af424e595e95a3998422709bcd507eedd">x</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="structgbmath_1_1related__coord.html#a780a5c8ed4d7b79480366857e2af70e1">   23</a></span>&#160;          <span class="keywordtype">float</span> <a class="code" href="structgbmath_1_1related__coord.html#a780a5c8ed4d7b79480366857e2af70e1">y</a>;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="structgbmath_1_1related__coord.html#a50c158ef2791e456e2ce43e08a72bc96">   29</a></span>&#160;            <span class="keyword">inline</span> <span class="keywordtype">void</span>   <a class="code" href="structgbmath_1_1related__coord.html#a50c158ef2791e456e2ce43e08a72bc96" title="Conversion of absolute screen coordinates, in relative screen coordinates, to fit the screen (vpWidth...">fromScreenCoord</a>( <span class="comment">// ScreenCoord_To_RelatCoord(</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                                                <span class="keyword">const</span>  <a class="code" href="structgbmath_1_1vec2.html" title="2d-base vector. Corrected by operators epislon ">vec2</a>&amp; vScrCoord,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                                <span class="keyword">const</span> <span class="keywordtype">int</span> vpWidth, <span class="keyword">const</span> <span class="keywordtype">int</span> vpHeight )</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                  <a class="code" href="structgbmath_1_1related__coord.html#af424e595e95a3998422709bcd507eedd">x</a> = - ( ((float)vpWidth /2.0f) - vScrCoord.<a class="code" href="structgbmath_1_1vec2.html#a86ff75c64d87662abfee8c35c5a343d0">x</a> ) / ((<span class="keywordtype">float</span>)vpWidth /2.0f);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                  <a class="code" href="structgbmath_1_1related__coord.html#a780a5c8ed4d7b79480366857e2af70e1">y</a> = - ( ((float)vpHeight/2.0f) - vScrCoord.<a class="code" href="structgbmath_1_1vec2.html#a9212649e2705d2216739fc89763f00b6">y</a> ) / ((<span class="keywordtype">float</span>)vpHeight/2.0f);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="structgbmath_1_1related__coord.html#a50c158ef2791e456e2ce43e08a72bc96">   29</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">void</span>   <a class="code" href="structgbmath_1_1related__coord.html#a50c158ef2791e456e2ce43e08a72bc96" title="Conversion of absolute screen coordinates, in relative screen coordinates, to fit the screen (vpWidth...">fromScreenCoord</a>( </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                            <span class="keyword">const</span>  <a class="code" href="structgbmath_1_1vec2.html" title="2d-base vector. Corrected by operators epislon ">vec2</a>&amp; vScrCoord,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">int</span> vpWidth, <span class="keyword">const</span> <span class="keywordtype">int</span> vpHeight </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                            )</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;              <a class="code" href="structgbmath_1_1related__coord.html#af424e595e95a3998422709bcd507eedd">x</a> = - ( ((float)vpWidth /2.0f) - vScrCoord.<a class="code" href="structgbmath_1_1vec2.html#a86ff75c64d87662abfee8c35c5a343d0">x</a> ) / ((<span class="keywordtype">float</span>)vpWidth /2.0f);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;              <a class="code" href="structgbmath_1_1related__coord.html#a780a5c8ed4d7b79480366857e2af70e1">y</a> = - ( ((float)vpHeight/2.0f) - vScrCoord.<a class="code" href="structgbmath_1_1vec2.html#a9212649e2705d2216739fc89763f00b6">y</a> ) / ((<span class="keywordtype">float</span>)vpHeight/2.0f);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="structgbmath_1_1related__coord.html#a22b559083a469fdd5b073c0de7eb7be9">   41</a></span>&#160;            <span class="keyword">inline</span>  <a class="code" href="structgbmath_1_1vec2.html" title="2d-base vector. Corrected by operators epislon ">vec2</a>  <a class="code" href="structgbmath_1_1related__coord.html#a22b559083a469fdd5b073c0de7eb7be9">toScreenCoord</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> vpWidth, <span class="keyword">const</span> <span class="keywordtype">int</span> vpHeight )<span class="keyword"> const</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">            </span>{</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    <a class="code" href="structgbmath_1_1vec2.html" title="2d-base vector. Corrected by operators epislon ">vec2</a> res;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                   res.<a class="code" href="structgbmath_1_1vec2.html#a86ff75c64d87662abfee8c35c5a343d0">x</a> =  ((float)vpWidth /2.0f) +   <a class="code" href="structgbmath_1_1related__coord.html#af424e595e95a3998422709bcd507eedd">x</a> * ((float)vpWidth /2.0f);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                   res.<a class="code" href="structgbmath_1_1vec2.html#a9212649e2705d2216739fc89763f00b6">y</a> =  ((float)vpHeight/2.0f) +   <a class="code" href="structgbmath_1_1related__coord.html#a780a5c8ed4d7b79480366857e2af70e1">y</a> * ((float)vpHeight/2.0f);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                   <span class="keywordflow">return</span> res;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        };</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="structgbmath_1_1related__coord.html#a22b559083a469fdd5b073c0de7eb7be9">   42</a></span>&#160;        <span class="keyword">inline</span>  <a class="code" href="structgbmath_1_1vec2.html" title="2d-base vector. Corrected by operators epislon ">vec2</a>  <a class="code" href="structgbmath_1_1related__coord.html#a22b559083a469fdd5b073c0de7eb7be9">toScreenCoord</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> vpWidth, <span class="keyword">const</span> <span class="keywordtype">int</span> vpHeight )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <a class="code" href="structgbmath_1_1vec2.html" title="2d-base vector. Corrected by operators epislon ">vec2</a> res;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;               res.<a class="code" href="structgbmath_1_1vec2.html#a86ff75c64d87662abfee8c35c5a343d0">x</a> =  ((float)vpWidth /2.0f) +   <a class="code" href="structgbmath_1_1related__coord.html#af424e595e95a3998422709bcd507eedd">x</a> * ((float)vpWidth /2.0f);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;               res.<a class="code" href="structgbmath_1_1vec2.html#a9212649e2705d2216739fc89763f00b6">y</a> =  ((float)vpHeight/2.0f) +   <a class="code" href="structgbmath_1_1related__coord.html#a780a5c8ed4d7b79480366857e2af70e1">y</a> * ((float)vpHeight/2.0f);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;               <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    };</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
 <hr class="footer"/>
 <!--address class="footer"-->

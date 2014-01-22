@@ -167,8 +167,10 @@ void set_lokat( const vec3& eye, const vec3& center )
 	gluLookAt( (GLdouble)eye.x,    (GLdouble)eye.y,     (GLdouble)eye.z,
 			   (GLdouble)center.x, (GLdouble)center.y,  (GLdouble)center.z,
 			   (GLdouble)0.0,      (GLdouble)1.0,       (GLdouble)0.0    );
-
-
 }
 
+void draw(const aabb& val)
+{
+	assert(false);
+}
 

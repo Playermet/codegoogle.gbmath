@@ -19,7 +19,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.jpg"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">gbmath
-   &#160;<span id="projectnumber">v0.05</span>
+   &#160;<span id="projectnumber">v0.051</span>
    </div>
    <div id="projectbrief">c++ math library</div>
   </td>
@@ -42,7 +42,6 @@
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -64,12 +63,12 @@
   <tr class="even"><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#a4cca3e0fabe1af443936e26e0c718016">_21</a></td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#adcbdd9114b754d1e81389f29580290d7">_22</a></td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#a17c1ea6260885332db0a051d29373a01">array</a></td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#abe0cd2cdc9e7fce85a6893ed3b058156">column</a>(unsigned int index)</td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#ab3bed90759cc335e5ec3114acbd67934">column</a>(size_t index)</td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#a1513ffabbc401039b60416dd4acac93c">determinant</a>() const </td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#a04a1a186ac590e3aceafd288e1d99434">empty</a>() const </td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#aa9824a91f0d7ac802dfbbbf5a2eff7b2">floats</a></td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#a67565f453e5f73a50925261116d5b6e5">getInverted</a>() const </td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#a04ad8faacecc8653411670b46deff83f">invert</a>()</td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#a04ad8faacecc8653411670b46deff83f">invert</a>()</td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#a520daa43826a3bf53906203240bfcc3f">inverted</a>() const </td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#a6843d677691ab0cc91e6f9aebf35acc7">isIdentity</a>() const </td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#a0114699ecb5dfdf466315608e500cabf">mat22</a>()</td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#a3ce69b9dec3da7fbd6613e19ee35fa16">mat22</a>(const mat22 &amp;m)</td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
@@ -91,15 +90,16 @@
   <tr><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#a4a396a00a518e2612027f0290f722f71">operator=</a>(const mat22 &amp;m)</td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#a87b3c83f265b9bbc9ae001cf627b9484">operator=</a>(const float *pfArray)</td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#a01cdb51a31819d199f6cd1a1b0e68c09">operator=</a>(float f)</td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#a02b49ad77701a56dff7658d47c340a4d">row</a>(unsigned int index)</td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#ab7578ef106f4d8c6658eea0904f27771">setIdentity</a>()</td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#a7abdead0245d4fdc37f96a6ca202c2d1">setMirrorX</a>()</td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#a8aea4baa351b6506bbbd1492be24e444">setMirrorY</a>()</td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#a7af7497163c4bfbd671b9f5cdfcd60b1">setRotation</a>(float angle)</td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#af9972904ed56ddaab35a276d17144a01">setScaling</a>(const vec2 &amp;v)</td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#a8162da6446dc18fe30db41e814428b3a">setScaling</a>(float x, float y)</td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#a8590abcfe2f13b5f2f18c2087e334c7d">setzero</a>()</td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#a0e7b8b1ec7764c7efcecc8c9b58d3a7a">transpone</a>()</td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#a3d512628208f650014e66fed0f699a23">reset</a>()</td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#a18c890b73ee4efb04eb592d35dda3443">row</a>(size_t index)</td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#ab7578ef106f4d8c6658eea0904f27771">setIdentity</a>()</td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#a7abdead0245d4fdc37f96a6ca202c2d1">setMirrorX</a>()</td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#a8aea4baa351b6506bbbd1492be24e444">setMirrorY</a>()</td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#a7af7497163c4bfbd671b9f5cdfcd60b1">setRotation</a>(float angle)</td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#af9972904ed56ddaab35a276d17144a01">setScaling</a>(const vec2 &amp;v)</td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#a8162da6446dc18fe30db41e814428b3a">setScaling</a>(float x, float y)</td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#a8590abcfe2f13b5f2f18c2087e334c7d">setzero</a>()</td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="structgbmath_1_1mat22.html#a0e7b8b1ec7764c7efcecc8c9b58d3a7a">transpone</a>()</td><td class="entry"><a class="el" href="structgbmath_1_1mat22.html">gbmath::mat22</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
 </table></div><!-- contents -->
 <hr class="footer"/>
 <!--address class="footer"-->

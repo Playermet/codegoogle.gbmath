@@ -19,7 +19,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.jpg"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">gbmath
-   &#160;<span id="projectnumber">v0.05</span>
+   &#160;<span id="projectnumber">v0.051</span>
    </div>
    <div id="projectbrief">c++ math library</div>
   </td>
@@ -50,7 +50,7 @@
 <div class="title">normal3.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="normal3_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;﻿#pragma once</div>
+<a href="normal3_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;﻿ </div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="__gbmath_8h.html" title="MAIN INCLUDE HEADER. ">_gbmath.h</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
@@ -60,25 +60,19 @@
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">//=========================================================================</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//                          normal3</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//=========================================================================</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//=========================================================================</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="classgbmath_1_1normal3.html#a7f1b3e5cec1b1d500eefb5f2a3cd3b4f">   17</a></span>&#160;    <a class="code" href="classgbmath_1_1normal3.html" title="direction / normal in 3-dimensional space. Higher level than a vector. Always normalized. ">normal3</a>&amp; <a class="code" href="classgbmath_1_1normal3.html#a7f1b3e5cec1b1d500eefb5f2a3cd3b4f" title="Set the direction between points and pntDest pntSrc. ">normal3::setDirectionBetweenPoints</a>(<span class="keyword">const</span> <a class="code" href="classgbmath_1_1point3.html" title="describes a point/coordinate/position in 3-dimensional space. Level higher than the vector ...">point3</a>&amp; pntSrc, <span class="keyword">const</span> <a class="code" href="classgbmath_1_1point3.html" title="describes a point/coordinate/position in 3-dimensional space. Level higher than the vector ...">point3</a>&amp; pntDest)</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;         <a class="code" href="structgbmath_1_1vec3.html" title="3d-base vector. Corrected by operators epislon ">vec3</a> v;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        v.<a class="code" href="structgbmath_1_1vec3.html#a5fb2cf8734338da1ad7b4251a3bde292">x</a>=  pntDest.<a class="code" href="classgbmath_1_1point3.html#a703b998c070ba691d2930919a90ff199">_x</a> - pntSrc.<a class="code" href="classgbmath_1_1point3.html#a703b998c070ba691d2930919a90ff199">_x</a>; <span class="comment">// пусть пока так будет</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        v.<a class="code" href="structgbmath_1_1vec3.html#aa096d36a3c46c4224f0195f70eb580ec">y</a>=  pntDest.<a class="code" href="classgbmath_1_1point3.html#a91e3d97210dca91ceec50db824efbc48">_y</a> - pntSrc.<a class="code" href="classgbmath_1_1point3.html#a91e3d97210dca91ceec50db824efbc48">_y</a>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        v.<a class="code" href="structgbmath_1_1vec3.html#a546e6c38e7c49102f064d130ed3475ee">z</a>=  pntDest.<a class="code" href="classgbmath_1_1point3.html#a9fdbabfb5430759cf46f7c3ce2e232f9">_z</a> - pntSrc.<a class="code" href="classgbmath_1_1point3.html#a9fdbabfb5430759cf46f7c3ce2e232f9">_z</a>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        *<span class="keyword">this</span> = v;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="code" href="classgbmath_1_1normal3.html#a7f1b3e5cec1b1d500eefb5f2a3cd3b4f">   11</a></span>&#160;<a class="code" href="classgbmath_1_1normal3.html" title="direction / normal in 3-dimensional space. Higher level than a vector. Always normalized. ">normal3</a>&amp; <a class="code" href="classgbmath_1_1normal3.html#a7f1b3e5cec1b1d500eefb5f2a3cd3b4f" title="Set the direction between points and pntDest pntSrc. ">normal3::setDirectionBetweenPoints</a>(<span class="keyword">const</span> <a class="code" href="classgbmath_1_1point3.html" title="describes a point/coordinate/position in 3-dimensional space. Level higher than the vector ...">point3</a>&amp; pntSrc, <span class="keyword">const</span> <a class="code" href="classgbmath_1_1point3.html" title="describes a point/coordinate/position in 3-dimensional space. Level higher than the vector ...">point3</a>&amp; pntDest)</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="structgbmath_1_1vec3.html" title="3d-base vector. Corrected by operators epislon ">vec3</a> v;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    v.<a class="code" href="structgbmath_1_1vec3.html#a5fb2cf8734338da1ad7b4251a3bde292">x</a>=  pntDest.<a class="code" href="classgbmath_1_1point3.html#a703b998c070ba691d2930919a90ff199">_x</a> - pntSrc.<a class="code" href="classgbmath_1_1point3.html#a703b998c070ba691d2930919a90ff199">_x</a>; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    v.<a class="code" href="structgbmath_1_1vec3.html#aa096d36a3c46c4224f0195f70eb580ec">y</a>=  pntDest.<a class="code" href="classgbmath_1_1point3.html#a91e3d97210dca91ceec50db824efbc48">_y</a> - pntSrc.<a class="code" href="classgbmath_1_1point3.html#a91e3d97210dca91ceec50db824efbc48">_y</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    v.<a class="code" href="structgbmath_1_1vec3.html#a546e6c38e7c49102f064d130ed3475ee">z</a>=  pntDest.<a class="code" href="classgbmath_1_1point3.html#a9fdbabfb5430759cf46f7c3ce2e232f9">_z</a> - pntSrc.<a class="code" href="classgbmath_1_1point3.html#a9fdbabfb5430759cf46f7c3ce2e232f9">_z</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    *<span class="keyword">this</span> = v;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <hr class="footer"/>
 <!--address class="footer"-->

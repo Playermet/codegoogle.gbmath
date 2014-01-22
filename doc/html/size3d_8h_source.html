@@ -19,7 +19,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.jpg"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">gbmath
-   &#160;<span id="projectnumber">v0.05</span>
+   &#160;<span id="projectnumber">v0.051</span>
    </div>
    <div id="projectbrief">c++ math library</div>
   </td>
@@ -60,41 +60,43 @@
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span>gbmath</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="structgbmath_1_1size3d.html">   16</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="structgbmath_1_1size3d.html" title="3-dimensional size. ">size3d</a> {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keyword">union</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            {</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="structgbmath_1_1size3d.html#afb31394a823668de20ea5e18ab0cc8af">   20</a></span>&#160;                <span class="keywordtype">float</span> <a class="code" href="structgbmath_1_1size3d.html#afb31394a823668de20ea5e18ab0cc8af">x</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="structgbmath_1_1size3d.html#a5679b22a388e4201846f3ffd80388019">   21</a></span>&#160;                <span class="keywordtype">float</span> <a class="code" href="structgbmath_1_1size3d.html#a5679b22a388e4201846f3ffd80388019">width</a>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            };</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keyword">union</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            {</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="structgbmath_1_1size3d.html#a685914886e7b1c96d0bad55b315d86ee">   26</a></span>&#160;                <span class="keywordtype">float</span> <a class="code" href="structgbmath_1_1size3d.html#a685914886e7b1c96d0bad55b315d86ee">y</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="structgbmath_1_1size3d.html#a2f34b0a4b48d426b7dda8679c1aee19b">   27</a></span>&#160;                <span class="keywordtype">float</span> <a class="code" href="structgbmath_1_1size3d.html#a2f34b0a4b48d426b7dda8679c1aee19b">height</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            };</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keyword">union</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            {</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="structgbmath_1_1size3d.html#ac88314fe2b3701ec9a62aa771d9d3037">   32</a></span>&#160;                <span class="keywordtype">float</span> <a class="code" href="structgbmath_1_1size3d.html#ac88314fe2b3701ec9a62aa771d9d3037">z</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="structgbmath_1_1size3d.html#aa2560afce8be77785cb188a6f9735482">   33</a></span>&#160;                <span class="keywordtype">float</span> <a class="code" href="structgbmath_1_1size3d.html#aa2560afce8be77785cb188a6f9735482">depth</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            };</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="structgbmath_1_1size3d.html#a12ea38effb6c60dce9972cfbe26cd4ee">   36</a></span>&#160;            <span class="keyword">inline</span> <span class="keyword">operator</span>  <a class="code" href="structgbmath_1_1vec3.html" title="3d-base vector. Corrected by operators epislon ">vec3</a>()<span class="keyword"> const </span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">            </span>{ </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="keywordflow">return</span>  <a class="code" href="structgbmath_1_1vec3.html" title="3d-base vector. Corrected by operators epislon ">vec3</a>(<a class="code" href="structgbmath_1_1size3d.html#afb31394a823668de20ea5e18ab0cc8af">x</a>,<a class="code" href="structgbmath_1_1size3d.html#a685914886e7b1c96d0bad55b315d86ee">y</a>,<a class="code" href="structgbmath_1_1size3d.html#ac88314fe2b3701ec9a62aa771d9d3037">z</a>); </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="structgbmath_1_1size3d.html#ac60ebf6e9278b3e4e70f09d9ee0b1334">   41</a></span>&#160;            <span class="keyword">friend</span> std::ostream&amp; <a class="code" href="structgbmath_1_1size3d.html#ac60ebf6e9278b3e4e70f09d9ee0b1334">operator &lt;&lt; </a>(std::ostream&amp; os, <span class="keyword">const</span> <a class="code" href="structgbmath_1_1size3d.html" title="3-dimensional size. ">size3d</a>&amp; a)</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                os &lt;&lt; a.<a class="code" href="structgbmath_1_1size3d.html#afb31394a823668de20ea5e18ab0cc8af">x</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; a.<a class="code" href="structgbmath_1_1size3d.html#a685914886e7b1c96d0bad55b315d86ee">y</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; a.<a class="code" href="structgbmath_1_1size3d.html#ac88314fe2b3701ec9a62aa771d9d3037">z</a>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keywordflow">return</span> os;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        };</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="structgbmath_1_1size3d.html">   17</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structgbmath_1_1size3d.html" title="3-dimensional size. ">size3d</a> </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">union</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="structgbmath_1_1size3d.html#afb31394a823668de20ea5e18ab0cc8af">   22</a></span>&#160;            <span class="keywordtype">float</span> <a class="code" href="structgbmath_1_1size3d.html#afb31394a823668de20ea5e18ab0cc8af">x</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="structgbmath_1_1size3d.html#a5679b22a388e4201846f3ffd80388019">   23</a></span>&#160;            <span class="keywordtype">float</span> <a class="code" href="structgbmath_1_1size3d.html#a5679b22a388e4201846f3ffd80388019">width</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        };</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">union</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="structgbmath_1_1size3d.html#a685914886e7b1c96d0bad55b315d86ee">   28</a></span>&#160;            <span class="keywordtype">float</span> <a class="code" href="structgbmath_1_1size3d.html#a685914886e7b1c96d0bad55b315d86ee">y</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="structgbmath_1_1size3d.html#a2f34b0a4b48d426b7dda8679c1aee19b">   29</a></span>&#160;            <span class="keywordtype">float</span> <a class="code" href="structgbmath_1_1size3d.html#a2f34b0a4b48d426b7dda8679c1aee19b">height</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        };</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">union</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="structgbmath_1_1size3d.html#ac88314fe2b3701ec9a62aa771d9d3037">   34</a></span>&#160;            <span class="keywordtype">float</span> <a class="code" href="structgbmath_1_1size3d.html#ac88314fe2b3701ec9a62aa771d9d3037">z</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="structgbmath_1_1size3d.html#aa2560afce8be77785cb188a6f9735482">   35</a></span>&#160;            <span class="keywordtype">float</span> <a class="code" href="structgbmath_1_1size3d.html#aa2560afce8be77785cb188a6f9735482">depth</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        };</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="structgbmath_1_1size3d.html#a12ea38effb6c60dce9972cfbe26cd4ee">   38</a></span>&#160;        <span class="keyword">inline</span> <span class="keyword">operator</span>  <a class="code" href="structgbmath_1_1vec3.html" title="3d-base vector. Corrected by operators epislon ">vec3</a>()<span class="keyword"> const </span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">        </span>{ </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">return</span>  <a class="code" href="structgbmath_1_1vec3.html" title="3d-base vector. Corrected by operators epislon ">vec3</a>(<a class="code" href="structgbmath_1_1size3d.html#afb31394a823668de20ea5e18ab0cc8af">x</a>,<a class="code" href="structgbmath_1_1size3d.html#a685914886e7b1c96d0bad55b315d86ee">y</a>,<a class="code" href="structgbmath_1_1size3d.html#ac88314fe2b3701ec9a62aa771d9d3037">z</a>); </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="structgbmath_1_1size3d.html#ac60ebf6e9278b3e4e70f09d9ee0b1334">   43</a></span>&#160;        <span class="keyword">friend</span> std::ostream&amp; <a class="code" href="structgbmath_1_1size3d.html#ac60ebf6e9278b3e4e70f09d9ee0b1334">operator &lt;&lt; </a>(std::ostream&amp; os, <span class="keyword">const</span> <a class="code" href="structgbmath_1_1size3d.html" title="3-dimensional size. ">size3d</a>&amp; a)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            os &lt;&lt; a.<a class="code" href="structgbmath_1_1size3d.html#afb31394a823668de20ea5e18ab0cc8af">x</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; a.<a class="code" href="structgbmath_1_1size3d.html#a685914886e7b1c96d0bad55b315d86ee">y</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; a.<a class="code" href="structgbmath_1_1size3d.html#ac88314fe2b3701ec9a62aa771d9d3037">z</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">return</span> os;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    };</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <hr class="footer"/>
 <!--address class="footer"-->

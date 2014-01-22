@@ -19,7 +19,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.jpg"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">gbmath
-   &#160;<span id="projectnumber">v0.05</span>
+   &#160;<span id="projectnumber">v0.051</span>
    </div>
    <div id="projectbrief">c++ math library</div>
   </td>
@@ -42,7 +42,6 @@
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li class="current"><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -51,7 +50,6 @@
       <li><a href="functions.html"><span>All</span></a></li>
       <li class="current"><a href="functions_func.html"><span>Functions</span></a></li>
       <li><a href="functions_vars.html"><span>Variables</span></a></li>
-      <li><a href="functions_type.html"><span>Typedefs</span></a></li>
       <li><a href="functions_enum.html"><span>Enumerations</span></a></li>
       <li><a href="functions_eval.html"><span>Enumerator</span></a></li>
       <li><a href="functions_rela.html"><span>Related&#160;Functions</span></a></li>
@@ -90,8 +88,11 @@
 &#160;
 
 <h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
-<li>TargetCamera()
-: <a class="el" href="classgbmath_1_1_target_camera.html#a529fcd941f8ef071e5c9cd3745f57869">gbmath::TargetCamera</a>
+<li>to_rec_inside()
+: <a class="el" href="classgbmath_1_1_circle.html#a396979d16c541985877fe4b0ae4fb439">gbmath::Circle</a>
+</li>
+<li>to_rec_outside()
+: <a class="el" href="classgbmath_1_1_circle.html#ac200fe4bdd180822ae684b6377a6786c">gbmath::Circle</a>
 </li>
 <li>to_uint32_argb()
 : <a class="el" href="structgbmath_1_1color4f.html#ac763a9004863f64dbfe3a57f0179aabb">gbmath::color4f</a>
@@ -113,7 +114,6 @@
 </li>
 <li>top()
 : <a class="el" href="classgbmath_1_1_matrix_stack_std.html#a21fa16532e81e682ea4dcd5c19764031">gbmath::MatrixStackStd</a>
-, <a class="el" href="classgbmath_1_1_matrix_stack_fixed.html#aeb9349eccfd7fc6ef6a83d108859f211">gbmath::MatrixStackFixed&lt; TSIZE &gt;</a>
 </li>
 <li>toScreenCoord()
 : <a class="el" href="structgbmath_1_1related__coord.html#a22b559083a469fdd5b073c0de7eb7be9">gbmath::related_coord</a>
@@ -129,6 +129,7 @@
 <li>transform()
 : <a class="el" href="classgbmath_1_1aabb.html#ac1d52176dabc60221a5c3b157b17f224">gbmath::aabb</a>
 , <a class="el" href="classgbmath_1_1normal3.html#a644b98f4e06ef597c6557532e576a629">gbmath::normal3</a>
+, <a class="el" href="classgbmath_1_1point2.html#ae9c6845a4c758e3a08c6057fadba6e7e">gbmath::point2</a>
 , <a class="el" href="classgbmath_1_1point3.html#a4ce8e4565b7ba497f56eec04d9b6c2a7">gbmath::point3</a>
 , <a class="el" href="classgbmath_1_1ray3d.html#abdddf73841038d392b516e5a2373cf4a">gbmath::ray3d</a>
 </li>
@@ -138,24 +139,30 @@
 <li>transform_normal()
 : <a class="el" href="structgbmath_1_1vec3.html#abab0eed903e0f9c8bd881ac54b7c1afa">gbmath::vec3</a>
 </li>
+<li>TransformCoordArray()
+: <a class="el" href="structgbmath_1_1vec3.html#a9bb0a953a135944fa0b35ae1052d980c">gbmath::vec3</a>
+</li>
+<li>TransformNormalArray()
+: <a class="el" href="structgbmath_1_1vec3.html#a207be7f252cd650850c51f467db4fb5e">gbmath::vec3</a>
+</li>
 <li>translate()
-: <a class="el" href="classgbmath_1_1_matrix_stack_std.html#a646c14c796d0a145b718eed3d1e114c0">gbmath::MatrixStackStd</a>
+: <a class="el" href="classgbmath_1_1_rect.html#aad0247c5ca850f2c277ad4041daeb672">gbmath::Rect</a>
+, <a class="el" href="classgbmath_1_1_matrix_stack_std.html#a646c14c796d0a145b718eed3d1e114c0">gbmath::MatrixStackStd</a>
 , <a class="el" href="classgbmath_1_1_rect.html#a73e11d9ad6222a69bfb56f774f3cf29a">gbmath::Rect</a>
-, <a class="el" href="classgbmath_1_1_matrix_stack_std.html#afe7e93ead06ce11ea8fa0fdcfe72fa22">gbmath::MatrixStackStd</a>
 </li>
 <li>transpone()
-: <a class="el" href="structgbmath_1_1mat33.html#aaf10d3d8fbbb3d85664a97b773ec5ebb">gbmath::mat33</a>
+: <a class="el" href="structgbmath_1_1mat22.html#a0e7b8b1ec7764c7efcecc8c9b58d3a7a">gbmath::mat22</a>
 , <a class="el" href="structgbmath_1_1mat44.html#a70e3d2546a6de9bec292e60237efeb54">gbmath::mat44</a>
-, <a class="el" href="structgbmath_1_1mat22.html#a0e7b8b1ec7764c7efcecc8c9b58d3a7a">gbmath::mat22</a>
+, <a class="el" href="structgbmath_1_1mat33.html#aaf10d3d8fbbb3d85664a97b773ec5ebb">gbmath::mat33</a>
 </li>
 <li>transponed()
 : <a class="el" href="structgbmath_1_1mat44.html#aba9a4eb76a14da524dcc990e982252ec">gbmath::mat44</a>
 </li>
 <li>triangle()
-: <a class="el" href="classgbmath_1_1triangle.html#ae42b022aad88deeb4032c704453f33f4">gbmath::triangle</a>
+: <a class="el" href="classgbmath_1_1triangle.html#a7cab04d466be5b43b5cbe066225e0be8">gbmath::triangle</a>
 </li>
 <li>triangle_2d()
-: <a class="el" href="classgbmath_1_1triangle__2d.html#acd89c330d78baf0c1f8c49aaaeb16fba">gbmath::triangle_2d</a>
+: <a class="el" href="classgbmath_1_1triangle__2d.html#a30f1e4bd67bb742bde7e3097e0a34c53">gbmath::triangle_2d</a>
 </li>
 </ul>
 </div><!-- contents -->

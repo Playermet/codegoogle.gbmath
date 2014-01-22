@@ -19,7 +19,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.jpg"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">gbmath
-   &#160;<span id="projectnumber">v0.05</span>
+   &#160;<span id="projectnumber">v0.051</span>
    </div>
    <div id="projectbrief">c++ math library</div>
   </td>
@@ -64,24 +64,23 @@
 <code>#include &lt;stdlib.h&gt;</code><br/>
 <code>#include &lt;stdio.h&gt;</code><br/>
 <code>#include &lt;stdarg.h&gt;</code><br/>
+<code>#include &lt;assert.h&gt;</code><br/>
 <code>#include &lt;math.h&gt;</code><br/>
 <code>#include &lt;float.h&gt;</code><br/>
 <code>#include &lt;limits&gt;</code><br/>
 <code>#include &lt;iostream&gt;</code><br/>
+<code>#include &lt;istream&gt;</code><br/>
 <code>#include &lt;sstream&gt;</code><br/>
 <code>#include &lt;string&gt;</code><br/>
 <code>#include &lt;vector&gt;</code><br/>
 <code>#include &lt;stdexcept&gt;</code><br/>
-<code>#include &lt;assert.h&gt;</code><br/>
 <code>#include &quot;<a class="el" href="config_8h_source.html">config.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="point_8h_source.html">point.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="rectangle_8h_source.html">rectangle.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="scalar_8h_source.html">scalar.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="forward__decl_8h_source.html">forward_decl.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="color3_8h_source.html">color3.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="color3f_8h_source.html">color3f.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="color3__24_8h_source.html">color3_24.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="color4_8h_source.html">color4.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="color4f_8h_source.html">color4f.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="color4__32_8h_source.html">color4_32.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="object__color__type__e_8h_source.html">object_color_type_e.h</a>&quot;</code><br/>
@@ -102,6 +101,7 @@
 <code>#include &quot;<a class="el" href="line2d_8h_source.html">line2d.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="circle_8h_source.html">circle.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="rect_8h_source.html">rect.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="segment2_8h_source.html">segment2.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="normal3_8h_source.html">normal3.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="point3_8h_source.html">point3.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="size3d_8h_source.html">size3d.h</a>&quot;</code><br/>
@@ -110,7 +110,6 @@
 <code>#include &quot;<a class="el" href="sphere_8h_source.html">sphere.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="aabb_8h_source.html">aabb.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="oobb_8h_source.html">oobb.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="aabb__tree_8h_source.html">aabb_tree.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="ray3d_8h_source.html">ray3d.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="axies__angle_8h_source.html">axies_angle.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="cilinder_8h_source.html">cilinder.h</a>&quot;</code><br/>
@@ -123,23 +122,19 @@
 <code>#include &quot;<a class="el" href="triangle__2d_8h_source.html">triangle_2d.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="triangle_8h_source.html">triangle.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="projector_8h_source.html">projector.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="segment3_8h_source.html">segment3.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="clip__values_8h_source.html">clip_values.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="orthographic__projection__data_8h_source.html">orthographic_projection_data.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="perspective__projection__data_8h_source.html">perspective_projection_data.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="related__coord_8h_source.html">related_coord.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="viewport_8h_source.html">viewport.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="valueserver_8h_source.html">valueserver.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="matrix4x4__context__type__e_8h_source.html">matrix4x4_context_type_e.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="vector__context__type__e_8h_source.html">vector_context_type_e.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="geometry__context_8h_source.html">geometry_context.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="arc__ball_8h_source.html">arc_ball.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="base__camera_8h_source.html">base_camera.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="target__camera_8h_source.html">target_camera.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="first__person__camera_8h_source.html">first_person_camera.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="model__view__camera_8h_source.html">model_view_camera.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="dependence__on__function_8h_source.html">dependence_on_function.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="drawer_8h_source.html">drawer.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="visualize__application_8h_source.html">visualize_application.h</a>&quot;</code><br/>
 </div>
 <p><a href="__gbmath_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -167,6 +162,8 @@ Macros</h2></td></tr>
 <tr class="separator:abbc4791084768f8f26c631924ac04b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a525335710b53cb064ca56b936120431e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="__gbmath_8h.html#a525335710b53cb064ca56b936120431e">_USE_MATH_DEFINES</a></td></tr>
 <tr class="separator:a525335710b53cb064ca56b936120431e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cb3d88ea5bba49c7c597cbbb15e9325"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="__gbmath_8h.html#a9cb3d88ea5bba49c7c597cbbb15e9325">GBMATH_ASSERT</a>(condition, msge)</td></tr>
+<tr class="separator:a9cb3d88ea5bba49c7c597cbbb15e9325"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -260,6 +257,34 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="__gbmath_8h_source.html#l00012">12</a> of file <a class="el" href="__gbmath_8h_source.html">_gbmath.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9cb3d88ea5bba49c7c597cbbb15e9325"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GBMATH_ASSERT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">condition, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">msge&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="__gbmath_8h_source.html#l00068">68</a> of file <a class="el" href="__gbmath_8h_source.html">_gbmath.h</a>.</p>
 
 </div>
 </div>

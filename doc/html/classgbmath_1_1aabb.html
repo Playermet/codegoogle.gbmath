@@ -19,7 +19,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.jpg"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">gbmath
-   &#160;<span id="projectnumber">v0.05</span>
+   &#160;<span id="projectnumber">v0.051</span>
    </div>
    <div id="projectbrief">c++ math library</div>
   </td>
@@ -42,7 +42,6 @@
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -55,6 +54,7 @@
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classgbmath_1_1aabb-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -147,14 +147,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac1d52176dabc60221a5c3b157b17f224"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgbmath_1_1aabb.html">aabb</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1aabb.html#ac1d52176dabc60221a5c3b157b17f224">transform</a> (const <a class="el" href="structgbmath_1_1mat44.html">mat44</a> &amp;m)</td></tr>
 <tr class="memdesc:ac1d52176dabc60221a5c3b157b17f224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transform the matrix m. Get aligned corners.  <a href="#ac1d52176dabc60221a5c3b157b17f224">More...</a><br/></td></tr>
 <tr class="separator:ac1d52176dabc60221a5c3b157b17f224"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f2ca35196bf1af5ae073916e4c9bed8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1aabb.html#a3f2ca35196bf1af5ae073916e4c9bed8">offset</a> (const <a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;v)</td></tr>
-<tr class="memdesc:a3f2ca35196bf1af5ae073916e4c9bed8"><td class="mdescLeft">&#160;</td><td class="mdescRight">move.  <a href="#a3f2ca35196bf1af5ae073916e4c9bed8">More...</a><br/></td></tr>
-<tr class="separator:a3f2ca35196bf1af5ae073916e4c9bed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2da4633130d1fa0024b7bb15e8aa6b2c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgbmath_1_1aabb.html">aabb</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1aabb.html#a2da4633130d1fa0024b7bb15e8aa6b2c">offset</a> (const <a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;v)</td></tr>
+<tr class="memdesc:a2da4633130d1fa0024b7bb15e8aa6b2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">move.  <a href="#a2da4633130d1fa0024b7bb15e8aa6b2c">More...</a><br/></td></tr>
+<tr class="separator:a2da4633130d1fa0024b7bb15e8aa6b2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c29ecbf2221f90a1e85fae9f078cc65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgbmath_1_1aabb.html">aabb</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1aabb.html#a4c29ecbf2221f90a1e85fae9f078cc65">includeAabb</a> (const <a class="el" href="classgbmath_1_1aabb.html">aabb</a> &amp;<a class="el" href="classgbmath_1_1aabb.html">aabb</a>)</td></tr>
 <tr class="memdesc:a4c29ecbf2221f90a1e85fae9f078cc65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combine with Box.  <a href="#a4c29ecbf2221f90a1e85fae9f078cc65">More...</a><br/></td></tr>
 <tr class="separator:a4c29ecbf2221f90a1e85fae9f078cc65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b9c2b1b17620cfab7d46662f66f3821"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgbmath_1_1sphere.html">sphere</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1aabb.html#a7b9c2b1b17620cfab7d46662f66f3821">toSphere</a> () const </td></tr>
-<tr class="memdesc:a7b9c2b1b17620cfab7d46662f66f3821"><td class="mdescLeft">&#160;</td><td class="mdescRight">Преобразование в сферу. Край сферы по углам бокса.  <a href="#a7b9c2b1b17620cfab7d46662f66f3821">More...</a><br/></td></tr>
+<tr class="memdesc:a7b9c2b1b17620cfab7d46662f66f3821"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transformation into a sphere. Edge of the sphere at the corners of the box.  <a href="#a7b9c2b1b17620cfab7d46662f66f3821">More...</a><br/></td></tr>
 <tr class="separator:a7b9c2b1b17620cfab7d46662f66f3821"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0dd886a31e052d8453a3a4e033288958"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1aabb.html#a0dd886a31e052d8453a3a4e033288958">checkContainPoint</a> (const <a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;p)</td></tr>
 <tr class="memdesc:a0dd886a31e052d8453a3a4e033288958"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check points for being in a box. OK!  <a href="#a0dd886a31e052d8453a3a4e033288958">More...</a><br/></td></tr>
@@ -163,13 +163,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aab2c07864d8d0c2da253bea55b4c863d"><td class="mdescLeft">&#160;</td><td class="mdescRight">check Intersect Plane NEED_CHECK!!!  <a href="#aab2c07864d8d0c2da253bea55b4c863d">More...</a><br/></td></tr>
 <tr class="separator:aab2c07864d8d0c2da253bea55b4c863d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a595e40059467e73a83acfb1e2e153c0f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1aabb.html#a595e40059467e73a83acfb1e2e153c0f">checkIntersectAABB</a> (const <a class="el" href="classgbmath_1_1aabb.html">aabb</a> &amp;b) const </td></tr>
+<tr class="memdesc:a595e40059467e73a83acfb1e2e153c0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">TEMP. Check boxes to the touch..  <a href="#a595e40059467e73a83acfb1e2e153c0f">More...</a><br/></td></tr>
 <tr class="separator:a595e40059467e73a83acfb1e2e153c0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ba8acd1b20cf80e08cd783715f86bc5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1aabb.html#a2ba8acd1b20cf80e08cd783715f86bc5">checkIntersectAABB_2</a> (<a class="el" href="classgbmath_1_1aabb.html">aabb</a> &amp;<a class="el" href="classgbmath_1_1aabb.html">aabb</a>) const </td></tr>
+<tr class="memdesc:a2ba8acd1b20cf80e08cd783715f86bc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check boxes to the touch..  <a href="#a2ba8acd1b20cf80e08cd783715f86bc5">More...</a><br/></td></tr>
 <tr class="separator:a2ba8acd1b20cf80e08cd783715f86bc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ad45862b4c3b5061825070607dbc6fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacegbmath.html#a52378c6698d1142d3539c0424773a59e">obj_contains_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1aabb.html#a3ad45862b4c3b5061825070607dbc6fd">checkContainsAabb</a> (const <a class="el" href="classgbmath_1_1aabb.html">aabb</a> &amp;box) const </td></tr>
+<tr class="memdesc:a3ad45862b4c3b5061825070607dbc6fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check boxes to the touch..  <a href="#a3ad45862b4c3b5061825070607dbc6fd">More...</a><br/></td></tr>
 <tr class="separator:a3ad45862b4c3b5061825070607dbc6fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0cccc16e0bf7dba73efac66d04f334b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacegbmath.html#a52378c6698d1142d3539c0424773a59e">obj_contains_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1aabb.html#ae0cccc16e0bf7dba73efac66d04f334b">checkContainsSphere</a> (const <a class="el" href="classgbmath_1_1sphere.html">sphere</a> &amp;s) const </td></tr>
 <tr class="separator:ae0cccc16e0bf7dba73efac66d04f334b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:aa832aec9aecdcf21d742824bf82133bb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classgbmath_1_1aabb.html">aabb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1aabb.html#aa832aec9aecdcf21d742824bf82133bb">MakeFromPositionAndDimensions</a> (const <a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;pos, float <a class="el" href="classgbmath_1_1aabb.html#ab29cd289240e3f3bce4b06af50181b37">size_x</a>, float <a class="el" href="classgbmath_1_1aabb.html#a20d91fce4d6b48b58c0e44a703a53151">size_y</a>, float <a class="el" href="classgbmath_1_1aabb.html#ae51e546a77ef1f8998f7619ffb3d3851">size_z</a>)</td></tr>
+<tr class="separator:aa832aec9aecdcf21d742824bf82133bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38c83c591f2eff4c580f5e881d1bb03e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classgbmath_1_1aabb.html">aabb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1aabb.html#a38c83c591f2eff4c580f5e881d1bb03e">MakeFromMinMax</a> (const <a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;amin, const <a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;amax)</td></tr>
+<tr class="separator:a38c83c591f2eff4c580f5e881d1bb03e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0ed3e01375b5eb11f231b30c86e589a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classgbmath_1_1aabb.html">aabb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1aabb.html#ae0ed3e01375b5eb11f231b30c86e589a">MakeFromCube</a> (const <a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;aCenter, const float aSize)</td></tr>
+<tr class="separator:ae0ed3e01375b5eb11f231b30c86e589a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0b9ecbf6b8870ebb64e192a703c0b47"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classgbmath_1_1aabb.html">aabb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbmath_1_1aabb.html#ad0b9ecbf6b8870ebb64e192a703c0b47">MakeFromPoints</a> (const <a class="el" href="structgbmath_1_1vec3.html">vec3</a> *points, const size_t num, const size_t stride)</td></tr>
+<tr class="separator:ad0b9ecbf6b8870ebb64e192a703c0b47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -181,7 +195,7 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Axis Aligned Bounding Box by min and max points. </p>
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00025">25</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00026">26</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a0bc8415f70ec69b6e3120fe3aa8817fa"></a>
 <div class="memitem">
@@ -204,7 +218,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00049">49</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00103">103</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -230,7 +244,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00055">55</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00109">109</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -266,7 +280,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00061">61</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00115">115</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -294,7 +308,7 @@ Public Attributes</h2></td></tr>
 
 <p>get box center coord. </p>
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00166">166</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00220">220</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -322,7 +336,7 @@ Public Attributes</h2></td></tr>
 
 <p>Check points for being in a box. OK! </p>
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00334">334</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00389">389</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -348,7 +362,9 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00373">373</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Check boxes to the touch.. </p>
+
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00426">426</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -374,7 +390,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00402">402</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00455">455</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -400,7 +416,9 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00350">350</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>TEMP. Check boxes to the touch.. </p>
+
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00403">403</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -426,7 +444,9 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00362">362</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Check boxes to the touch.. </p>
+
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00415">415</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -446,7 +466,7 @@ Public Attributes</h2></td></tr>
 
 <p>check Intersect Plane NEED_CHECK!!! </p>
 
-<p>Definition at line <a class="el" href="aabb_8cpp_source.html#l00016">16</a> of file <a class="el" href="aabb_8cpp_source.html">aabb.cpp</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8cpp_source.html#l00012">12</a> of file <a class="el" href="aabb_8cpp_source.html">aabb.cpp</a>.</p>
 
 </div>
 </div>
@@ -474,7 +494,7 @@ Public Attributes</h2></td></tr>
 
 <p>cut coordinate coord within boxing and return the result </p>
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00189">189</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00243">243</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -499,7 +519,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00067">67</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00121">121</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -527,7 +547,7 @@ Public Attributes</h2></td></tr>
 
 <p>extract the coordinates of the corners of boxing </p>
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00152">152</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00206">206</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -555,7 +575,7 @@ Public Attributes</h2></td></tr>
 
 <p>Combine with Box. </p>
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00311">311</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00366">366</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -583,7 +603,7 @@ Public Attributes</h2></td></tr>
 
 <p>Including the coordinates of pnt in boxing. </p>
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00176">176</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00230">230</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -621,7 +641,7 @@ Public Attributes</h2></td></tr>
 
 <p>Construct by point. NEED_CHECK!!! </p>
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00137">137</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00191">191</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -683,11 +703,11 @@ Public Attributes</h2></td></tr>
 
 <p>Construct by point. </p>
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00144">144</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00198">198</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a3f2ca35196bf1af5ae073916e4c9bed8"></a>
+<a class="anchor" id="ae0ed3e01375b5eb11f231b30c86e589a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -695,7 +715,169 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void gbmath::aabb::offset </td>
+          <td class="memname">static <a class="el" href="classgbmath_1_1aabb.html">aabb</a> gbmath::aabb::MakeFromCube </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;&#160;</td>
+          <td class="paramname"><em>aCenter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>aSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00075">75</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a38c83c591f2eff4c580f5e881d1bb03e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classgbmath_1_1aabb.html">aabb</a> gbmath::aabb::MakeFromMinMax </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;&#160;</td>
+          <td class="paramname"><em>amin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;&#160;</td>
+          <td class="paramname"><em>amax</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00067">67</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad0b9ecbf6b8870ebb64e192a703c0b47"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classgbmath_1_1aabb.html">aabb</a> gbmath::aabb::MakeFromPoints </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structgbmath_1_1vec3.html">vec3</a> *&#160;</td>
+          <td class="paramname"><em>points</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>stride</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00088">88</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa832aec9aecdcf21d742824bf82133bb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classgbmath_1_1aabb.html">aabb</a> gbmath::aabb::MakeFromPositionAndDimensions </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>size_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>size_y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>size_z</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00052">52</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2da4633130d1fa0024b7bb15e8aa6b2c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classgbmath_1_1aabb.html">aabb</a>&amp; gbmath::aabb::offset </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structgbmath_1_1vec3.html">vec3</a> &amp;&#160;</td>
           <td class="paramname"><em>v</em>)</td><td></td>
@@ -711,7 +893,7 @@ Public Attributes</h2></td></tr>
 
 <p>move. </p>
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00304">304</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00358">358</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -739,7 +921,7 @@ Public Attributes</h2></td></tr>
 
 <p>Return combined with boxing. </p>
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00088">88</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00142">142</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -767,7 +949,7 @@ Public Attributes</h2></td></tr>
 
 <p>Return combined with a point. </p>
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00103">103</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00157">157</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -795,7 +977,7 @@ Public Attributes</h2></td></tr>
 
 <p>Merge with another box. </p>
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00117">117</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00171">171</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -823,7 +1005,7 @@ Public Attributes</h2></td></tr>
 
 <p>Merge point. </p>
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00130">130</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00184">184</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -849,7 +1031,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00081">81</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00135">135</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -874,7 +1056,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00247">247</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00301">301</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -899,7 +1081,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00261">261</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00315">315</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -924,7 +1106,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00275">275</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00329">329</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -949,7 +1131,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00240">240</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00294">294</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -974,7 +1156,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00254">254</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00308">308</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -999,7 +1181,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00268">268</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00322">322</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -1024,7 +1206,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00075">75</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00129">129</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -1051,7 +1233,7 @@ Public Attributes</h2></td></tr>
 
 <p>Get 3d-box size. </p>
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00224">224</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00278">278</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -1078,7 +1260,7 @@ Public Attributes</h2></td></tr>
 
 <p>get size X </p>
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00206">206</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00260">260</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -1105,7 +1287,7 @@ Public Attributes</h2></td></tr>
 
 <p>get size Y </p>
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00212">212</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00266">266</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -1132,7 +1314,7 @@ Public Attributes</h2></td></tr>
 
 <p>get size Z </p>
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00218">218</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00272">272</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -1157,9 +1339,9 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Преобразование в сферу. Край сферы по углам бокса. </p>
+<p>Transformation into a sphere. Edge of the sphere at the corners of the box. </p>
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00325">325</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00380">380</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -1187,7 +1369,7 @@ Public Attributes</h2></td></tr>
 
 <p>Transform the matrix m. Get aligned corners. </p>
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00284">284</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00338">338</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -1214,7 +1396,7 @@ Public Attributes</h2></td></tr>
 
 <p>get volume </p>
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00234">234</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00288">288</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -1229,7 +1411,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00028">28</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00030">30</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
@@ -1243,7 +1425,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="aabb_8h_source.html#l00027">27</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
+<p>Definition at line <a class="el" href="aabb_8h_source.html#l00029">29</a> of file <a class="el" href="aabb_8h_source.html">aabb.h</a>.</p>
 
 </div>
 </div>
