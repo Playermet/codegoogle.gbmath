@@ -211,7 +211,7 @@ namespace gbmath
 												bool bGetGamepadInput, 
 												bool bResetCursorAfterMove);
 	 
-		const bool     m_bcameraLeftHandle;
+ 
 
 	    mat44            m_mView; ///< View matrix 
 	    mat44            m_mProj; ///< Projection matrix
